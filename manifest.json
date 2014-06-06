@@ -1,0 +1,15 @@
+{
+    "name": "com.ubuntu.clock",
+    "description": "description of ubuntu-clock-app",
+    "framework": "ubuntu-sdk-14.10-qml-dev1",
+    "architecture": "all",
+    "title": "ubuntu-clock-app",
+    "hooks": {
+        "ubuntu-clock-app": {
+            "apparmor": "ubuntu-clock-app.json",
+            "desktop": "ubuntu-clock-app.desktop"
+        }
+    },
+    "version": "0.1",
+    "maintainer": "Nekhelesh Ramananthan <krnekhelesh@gmail.com>"
+}
