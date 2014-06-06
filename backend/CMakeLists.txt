@@ -2,7 +2,7 @@ include_directories(
     ${CMAKE_CURRENT_SOURCE_DIR}
 )
 
-set(ubuntu-clock-appbackend_SRCS modules/Timezone/backend.cpp modules/Timezone/timezone.cpp)
+set(ubuntu-clock-appbackend_SRCS modules/Timezone/backend.cpp modules/Timezone/zone.cpp)
 
 add_library(ubuntu-clock-appbackend MODULE ${ubuntu-clock-appbackend_SRCS})
 

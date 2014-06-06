@@ -1,14 +1,14 @@
 #include <QtQml>
 #include <QtQml/QQmlContext>
 #include "backend.h"
-#include "mytype.h"
+#include "zone.h"
 
 
 void BackendPlugin::registerTypes(const char *uri)
 {
     Q_ASSERT(uri == QLatin1String("Timezone"));
 
-    qmlRegisterType<MyType>(uri, 1, 0, "MyType");
+    qmlRegisterType<Zone>(uri, 1, 0, "Zone");
 }
 
 void BackendPlugin::initializeEngine(QQmlEngine *engine, const char *uri)

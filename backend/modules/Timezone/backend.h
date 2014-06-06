@@ -7,19 +7,19 @@
 /*
  ----8<-----
 
- import ubuntu-clock-app 1.0
+ import Timezone 1.0
 
  Rectangle {
    width: 200
    height: 200
 
-   MyType {
-      id: helloType
+   Timezone {
+      id: timezone
    }
 
    Text {
      anchors.centerIn: parent
-     text: helloType.helloworld
+     text: timezone.helloworld
    }
  }
 

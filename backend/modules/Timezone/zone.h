@@ -1,16 +1,16 @@
-#ifndef TIMEZONE_H
-#define TIMEZONE_H
+#ifndef ZONE_H
+#define ZONE_H
 
 #include <QObject>
 
-class Timezone : public QObject
+class Zone : public QObject
 {
     Q_OBJECT
     Q_PROPERTY( QString helloWorld READ helloWorld WRITE setHelloWorld NOTIFY helloWorldChanged )
 
 public:
-    explicit Timezone(QObject *parent = 0);
-    ~Timezone();
+    explicit Zone(QObject *parent = 0);
+    ~Zone();
 
 Q_SIGNALS:
     void helloWorldChanged();
@@ -22,4 +22,4 @@ protected:
     QString m_message;
 };
 
-#endif // TIMEZONE_H
+#endif // ZONE_H
