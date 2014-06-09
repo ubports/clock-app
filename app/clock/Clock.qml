@@ -21,15 +21,11 @@ import "../components"
 ClockCircle {
     id: outerCircle
 
+    // Property to set the digital time label
     property alias time: digitalTime.text
     
     isOuter: true
-    
-    width: units.gu(0)
-    anchors.verticalCenter: parent.verticalCenter
-    anchors.verticalCenterOffset: -parent.height/6
-    anchors.horizontalCenter: parent.horizontalCenter
-    
+
     Component.onCompleted: clockOpenAnimation.start()
     
     ParallelAnimation {
@@ -39,7 +35,6 @@ ClockCircle {
             id: outerCircleAnimation
             target: outerCircle
             property: "width"
-            from: units.gu(0)
             to: units.gu(32)
             duration: 900
         }
@@ -51,8 +46,7 @@ ClockCircle {
     
     ClockCircle {
         id: innerCircle
-        
-        width: units.gu(0)
+
         anchors.centerIn: parent
         
         Timer {
