@@ -1,0 +1,10 @@
+Code Style
+==========
+
+We are trying to use a common code style throughout the code base to maintain
+uniformity and improve code clarity. Listed below are the code styles guides
+that will be followed based on the language used.
+
+QML        - http://qt-project.org/doc/qt-5/qml-codingconventions.html 
+C++        - https://google-styleguide.googlecode.com/svn/trunk/cppguide.xml
+Python     - Code should follow PEP8 and Flake regulations
