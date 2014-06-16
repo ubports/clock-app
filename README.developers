@@ -6,5 +6,11 @@ uniformity and improve code clarity. Listed below are the code styles guides
 that will be followed based on the language used.
 
 QML        - http://qt-project.org/doc/qt-5/qml-codingconventions.html 
-C++        - https://google-styleguide.googlecode.com/svn/trunk/cppguide.xml
+JS, C++    - https://google-styleguide.googlecode.com/svn/trunk/cppguide.xml
 Python     - Code should follow PEP8 and Flake regulations
+
+Note: In the QML code convention, ignore the Javascript code section guidelines.
+So the sections that should be taken into account in the QML conventions are QML 
+Object Declarations, Grouped Properties and Lists.
+
+
