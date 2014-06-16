@@ -86,6 +86,15 @@ MainView {
 
         ClockPage {
             id: clockPage
+
+            /*
+              #FIXME: When the SDK support hiding the header, then enable the
+              clock page title. This will then set the correct window title on
+              the desktop.
+
+              title: "Clock"
+            */
+
             bottomEdgeTitle: i18n.tr("%1 alarms").arg(alarmModel.count)
             bottomEdgePageComponent: AlarmPage {}
         }
