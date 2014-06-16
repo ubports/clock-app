@@ -17,7 +17,9 @@
 import QtQuick 2.0
 import Ubuntu.Components 1.1
 import "clock"
+import "alarm"
 import "components"
+import "components/Utils.js" as Utils
 
 MainView {
     id: clockApp
@@ -25,10 +27,13 @@ MainView {
     // Property to store the state of an application (active or suspended)
     property bool applicationState: Qt.application.active
 
+    // Property to enable/disable the debug mode to show more console output
+    property bool debugMode: true
+
     // objectName for functional testing purposes (autopilot-qt5)
     objectName: "clock"
 
-    //applicationName for click packages (used as an unique app identifier)
+    // applicationName for click packages (used as an unique app identifier)
     applicationName: "com.ubuntu.clock"
 
     /*
@@ -69,12 +74,26 @@ MainView {
         onTriggered: clockPage.updateTime()
     }
 
+    AlarmModel {
+        id: alarmModel
+        Component.onCompleted: Utils.log(debugMode, "Alarm Database loaded")
+    }
+
     PageStack {
         id: mainStack
+
         Component.onCompleted: push(clockPage)
 
         ClockPage {
             id: clockPage
+
+            bottomEdgeTitle: i18n.tr("%1 alarms").arg(alarmModel.count)
+
+            bottomEdgePageComponent: AlarmPage {
+                anchors.fill: parent
+                anchors.topMargin: active ? units.gu(9.5) : units.gu(0)
+            }
         }
     }
 }
+
