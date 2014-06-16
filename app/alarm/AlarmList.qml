@@ -33,21 +33,35 @@ Column {
         objectName: "listSavedAlarm"
 
         clip: true
-        anchors { left: parent.left; right: parent.right }
-        height: 2 * units.gu(6)
+        height: parent.height
+        anchors.left: parent.left
+        anchors.right: parent.right
+
         currentIndex: -1
 
         delegate: ListItem.Base {
             objectName: "alarm" + index
-            height: alarmTimeContainer.height + units.gu(2)
+
+            Label {
+                id: alarmTime
+                objectName: "listAlarmTime" + index
+
+                anchors.verticalCenter: parent.verticalCenter
+                anchors.left: parent.left
+                anchors.leftMargin: units.gu(0)
+
+                fontSize: "large"
+                color: model.enabled ? Theme.palette.normal.baseText : Qt.rgba(1,1,1,0.3)
+                text: alarmUtils.convertTime(date.getHours(), date.getMinutes(), 0, "24-hour")
+            }
 
             Column {
                 id: alarmDetailsColumn
                 anchors {
-                    left: parent.left
-                    right: alarmTimeContainer.left
-                    verticalCenter: alarmTimeContainer.verticalCenter
-                    leftMargin: units.gu(1)
+                    left: alarmTime.right
+                    right: alarmStatus.left
+                    verticalCenter: parent.verticalCenter
+                    leftMargin: units.gu(2)
                     rightMargin: units.gu(2)
                 }
 
@@ -57,7 +71,7 @@ Column {
                     fontSize: "large";
                     text: message
                     elide: Text.ElideRight
-                    color: Theme.palette.normal.baseText
+                    color: UbuntuColors.midAubergine
                 }
 
                 Label {
@@ -69,26 +83,11 @@ Column {
                 }
             }
 
-            UbuntuShape {
-                id: alarmTimeContainer
-                radius: "medium"
-                width: units.gu(12)
-                height: alarmTime.contentHeight + units.gu(2)
-                color: model.enabled ? "#37C837" : Qt.rgba(0,0,0,0.3)
-                anchors {
-                    verticalCenter: parent.verticalCenter
-                    right: parent.right
-                    rightMargin: units.gu(1)
-                }
-
-                Label {
-                    id: alarmTime
-                    objectName: "listAlarmTime" + index
-                    fontSize: "large";
-                    anchors.centerIn: parent
-                    color: model.enabled ? Theme.palette.normal.baseText : Qt.rgba(1,1,1,0.3)
-                    text: alarmUtils.convertTime(date.getHours(), date.getMinutes(), 0, "12-hour")
-                }
+            Switch {
+                id: alarmStatus
+                enabled: model.enabled
+                anchors.right: parent.right
+                anchors.verticalCenter: parent.verticalCenter
             }
 
             selected: listSavedAlarm.currentIndex == index

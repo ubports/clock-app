@@ -35,7 +35,6 @@ PageWithBottomEdge {
     property int _minThreshold: -40
 
     flickable: null
-    anchors.fill: parent
 
     Component.onCompleted: Utils.log(debugMode, "Clock Page loaded")
 

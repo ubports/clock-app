@@ -86,13 +86,8 @@ MainView {
 
         ClockPage {
             id: clockPage
-
             bottomEdgeTitle: i18n.tr("%1 alarms").arg(alarmModel.count)
-
-            bottomEdgePageComponent: AlarmPage {
-                anchors.fill: parent
-                anchors.topMargin: active ? units.gu(9.5) : units.gu(0)
-            }
+            bottomEdgePageComponent: AlarmPage {}
         }
     }
 }
