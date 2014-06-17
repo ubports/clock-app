@@ -26,13 +26,13 @@ PageWithBottomEdge {
       Property to set the maximum drag distance before freezing the add
       city button resize
     */
-    property int _maxThreshold: -50
+    property int _maxThreshold: -90
 
     /*
       Property to set the minimum drag distance before activating the add
       city signal
     */
-    property int _minThreshold: -40
+    property int _minThreshold: _maxThreshold + 10
 
     flickable: null
 
@@ -52,7 +52,7 @@ PageWithBottomEdge {
         AddCityButton {
             id: addCityButton
             anchors.top: parent.top
-            anchors.topMargin: -labelHeight
+            anchors.topMargin: -labelHeight - units.gu(6)
             anchors.horizontalCenter: parent.horizontalCenter
             maxThreshold: _maxThreshold
         }
@@ -60,21 +60,21 @@ PageWithBottomEdge {
         Clock {
             id: clock
             anchors.verticalCenter: parent.top
-            anchors.verticalCenterOffset: units.gu(16) + clockApp.height/8
+            anchors.verticalCenterOffset: units.gu(20)
             anchors.horizontalCenter: parent.horizontalCenter
         }
 
         Label {
             id: date
 
-            Component.onCompleted: anchors.topMargin = units.gu(44)
+            Component.onCompleted: anchors.topMargin = units.gu(40)
 
             anchors.top: parent.top
-            anchors.topMargin: units.gu(40)
+            anchors.topMargin: units.gu(36)
             anchors.horizontalCenter: parent.horizontalCenter
 
             text: Qt.formatDate(new Date(), "dddd, d MMMM yyyy")
-            fontSize: "medium"
+            fontSize: "small"
 
             Behavior on anchors.topMargin {
                 UbuntuNumberAnimation { duration: 900 }
@@ -100,7 +100,7 @@ PageWithBottomEdge {
             Label {
                 id: location
                 text: "Location"
-                fontSize: "large"
+                fontSize: "medium"
                 anchors.verticalCenter: locationIcon.verticalCenter
                 color: UbuntuColors.midAubergine
             }

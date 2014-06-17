@@ -36,7 +36,7 @@ Row {
         id: _add
 
         text: "Add"
-        fontSize: "large"
+        fontSize: "medium"
         color: UbuntuColors.midAubergine
         anchors.verticalCenter: parent.verticalCenter
     }
@@ -51,7 +51,6 @@ Row {
             id: plusLabel
 
             anchors.centerIn: parent
-            color: UbuntuColors.midAubergine
             font.pixelSize: dragPosition >= maxThreshold ? dragPosition * units.dp(30)/maxThreshold : units.dp(30)
             text: "+"
         }
@@ -64,7 +63,7 @@ Row {
     
     Label {
         text: "City"
-        fontSize: "large"
+        fontSize: "medium"
         color: UbuntuColors.midAubergine
         anchors.verticalCenter: parent.verticalCenter
     }

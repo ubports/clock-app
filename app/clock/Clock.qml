@@ -69,7 +69,7 @@ ClockCircle {
             PropertyAnimation {
                 target: digitalTime
                 property: "font.pixelSize"
-                to: units.dp(45)
+                to: units.dp(62)
                 duration: 900
             }
         }
@@ -77,9 +77,8 @@ ClockCircle {
         Label {
             id: digitalTime
             anchors.centerIn: parent
-            font.weight: Font.Light
             color: UbuntuColors.midAubergine
-            opacity: font.pixelSize === units.dp(45) ? 1 : 0
+            opacity: font.pixelSize === units.dp(62) ? 1 : 0
             text: Qt.formatTime(new Date(), "hh:mm")
         }
     }
