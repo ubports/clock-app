@@ -95,7 +95,7 @@ MainView {
               title: "Clock"
             */
 
-            bottomEdgeTitle: i18n.tr("%1 alarms").arg(alarmModel.count)
+            bottomEdgeTitle: i18n.tr("Next Alarm in ..")
             bottomEdgePageComponent: AlarmPage {}
         }
     }
