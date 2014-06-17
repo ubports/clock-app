@@ -1,9 +1,9 @@
 /*
- * Copyright (C) 2014 Canonical Ltd
+ * Copyright (C) 2014 Canonical, Ltd.
  *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License version 3 as
- * published by the Free Software Foundation.
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; version 3.
  *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -87,6 +87,7 @@ Page {
     signal bottomEdgeReleased()
     signal bottomEdgeDismissed()
 
+
     function showBottomEdgePage(source, properties)
     {
         edgeLoader.setSource(source, properties)
@@ -111,6 +112,7 @@ Page {
                 edgeLoader.item.ready()
         }
     }
+
 
     Component.onCompleted: {
         // avoid a binding on the expanded height value
@@ -140,18 +142,21 @@ Page {
         z: 1
     }
 
+    Timer {
+        id: hideIndicator
+
+        interval: 2966
+        running: true
+        repeat: false
+        onTriggered: tipContainer.y = -units.gu(1)
+    }
+
     Rectangle {
         id: bottomEdge
         objectName: "bottomEdge"
 
-        property int tipHeight: units.gu(0)
+        readonly property int tipHeight: units.gu(3)
         readonly property int pageStartY: 0
-
-        Behavior on tipHeight {
-            UbuntuNumberAnimation { duration: 233 }
-        }
-
-        Component.onCompleted: tipHeight = units.gu(3)
 
         z: 1
         color: Theme.palette.normal.background
@@ -188,6 +193,9 @@ Page {
             clip: true
             y: -bottomEdge.tipHeight
             anchors.horizontalCenter: parent.horizontalCenter
+            Behavior on y {
+                NumberAnimation {}
+            }
 
             UbuntuShape {
                 id: tip
@@ -234,10 +242,7 @@ Page {
                 }
             }
 
-            onPressed: {
-                bottomEdge.state = "floating"
-                bottomEdge.y -= bottomEdge.tipHeight
-            }
+            onPressed: bottomEdge.state = "floating"
         }
 
         Behavior on y {
@@ -256,6 +261,14 @@ Page {
                     target: tip
                     opacity: 1.0
                 }
+                PropertyChanges {
+                    target: tipContainer
+                    y: -bottomEdge.tipHeight
+                }
+                PropertyChanges {
+                    target: hideIndicator
+                    running: true
+                }
             },
             State {
                 name: "expanded"
@@ -267,12 +280,28 @@ Page {
                     target: tip
                     opacity: 0.0
                 }
+                PropertyChanges {
+                    target: tipContainer
+                    y: -bottomEdge.tipHeight
+                }
+                PropertyChanges {
+                    target: hideIndicator
+                    running: false
+                }
             },
             State {
                 name: "floating"
                 PropertyChanges {
                     target: shadow
                     opacity: 1.0
+                }
+                PropertyChanges {
+                    target: hideIndicator
+                    running: false
+                }
+                PropertyChanges {
+                    target: tipContainer
+                    y: -bottomEdge.tipHeight
                 }
             }
         ]
@@ -319,6 +348,8 @@ Page {
 
                             // load a new bottom page in memory
                             edgeLoader.active = true
+
+                            hideIndicator.restart()
                         }
                     }
                 }
