@@ -56,8 +56,8 @@ MainView {
 
     onApplicationStateChanged: {
         /*
-          Update Clock time immediately when the clock app is brought from suspend
-          instead of waiting for the next minute to update.
+          Update Clock time immediately when the clock app is brought from
+          suspend instead of waiting for the next minute to update.
         */
         if(applicationState)
             clockPage.updateTime()
