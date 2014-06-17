@@ -57,19 +57,20 @@ Column {
 
             Column {
                 id: alarmDetailsColumn
+
                 anchors {
                     left: alarmTime.right
                     right: alarmStatus.left
                     verticalCenter: parent.verticalCenter
-                    leftMargin: units.gu(2)
-                    rightMargin: units.gu(2)
+                    margins: units.gu(1)
                 }
 
                 Label {
                     id: alarmLabel
                     objectName: "listAlarmLabel" + index
-                    fontSize: "large";
+
                     text: message
+                    fontSize: "medium"
                     elide: Text.ElideRight
                     color: UbuntuColors.midAubergine
                 }
@@ -77,17 +78,19 @@ Column {
                 Label {
                     id: alarmSubtitle
                     objectName: "listAlarmSubtitle" + index
-                    fontSize: "small";
+
+                    fontSize: "small"
                     text: alarmUtils.format_day_string(daysOfWeek, type)
-                    color: Theme.palette.normal.backgroundText
                 }
             }
 
             Switch {
                 id: alarmStatus
-                enabled: model.enabled
+
                 anchors.right: parent.right
                 anchors.verticalCenter: parent.verticalCenter
+
+                enabled: model.enabled
             }
 
             selected: listSavedAlarm.currentIndex == index
