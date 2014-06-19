@@ -51,7 +51,7 @@ Column {
                 anchors.leftMargin: units.gu(0)
 
                 fontSize: "medium"
-                text: alarmUtils.convertTime(date.getHours(), date.getMinutes(), 0, "24-hour")
+                text: Qt.formatTime(date)
             }
 
             Column {
