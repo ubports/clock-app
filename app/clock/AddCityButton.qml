@@ -36,7 +36,7 @@ Row {
         id: _add
 
         text: "Add"
-        fontSize: "large"
+        fontSize: "medium"
         color: UbuntuColors.midAubergine
         anchors.verticalCenter: parent.verticalCenter
     }
@@ -47,24 +47,23 @@ Row {
         isOuter: true
         width: dragPosition >= maxThreshold ? dragPosition * units.gu(6.5)/maxThreshold : units.gu(6.5)
 
-        Label {
-            id: plusLabel
-
-            anchors.centerIn: parent
-            color: UbuntuColors.midAubergine
-            font.pixelSize: dragPosition >= maxThreshold ? dragPosition * units.dp(30)/maxThreshold : units.dp(30)
-            text: "+"
-        }
-
         ClockCircle {
             width: dragPosition >= maxThreshold ? dragPosition * units.gu(4.5)/maxThreshold : units.gu(4.5)
             anchors.centerIn: parent
+
+            Label {
+                id: _plusLabel
+
+                anchors.centerIn: parent
+                font.pixelSize: dragPosition >= maxThreshold ? dragPosition * units.dp(30)/maxThreshold : units.dp(30)
+                text: "+"
+            }
         }
     }
     
     Label {
         text: "City"
-        fontSize: "large"
+        fontSize: "medium"
         color: UbuntuColors.midAubergine
         anchors.verticalCenter: parent.verticalCenter
     }

@@ -20,16 +20,6 @@ import Ubuntu.Components 1.1
 QtObject {
     id: alarmUtils
 
-    // Function to convert time to 12/24 hour format (Input has to be in 24 hour format)
-    function convertTime(hours, minutes, seconds, format) {
-        var tempTime = new Date()
-        tempTime.setHours(hours, minutes,seconds)
-        if (format === "12-hour")
-            return Qt.formatTime(tempTime, "h:mm AP")
-        else
-            return Qt.formatTime(tempTime, "hh:mm")
-    }
-
     function format_day_string(value, type) {
         var occurs = get_day(value, type);
         var WeekDay = 0;

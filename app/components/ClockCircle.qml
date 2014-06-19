@@ -26,6 +26,9 @@ import QtGraphicalEffects 1.0
   has a 30% white shade. On the other hand, if used as the inner clock circle
   then the shadows are at the bottom and the background has a 3% darker shade.
 
+  If used as the inner circle, a textured background image is set as part of
+  the new design specs.
+
   The circle position is set by the public property "isOuter". If true, the
   outer circle characteristics are set and vice-versa.
  */
@@ -46,8 +49,6 @@ Rectangle {
       Rectangle with a gradient background which will be used as a source for
       the opacity mask. It starts of transparent and then gradually turns
       gray at the bottom.
-
-      #TODO: Check with the design team if the gradient positions are correct.
      */
     Rectangle {
         id: _source
@@ -74,13 +75,20 @@ Rectangle {
             }
         }
     }
-    
+
+    Image {
+        id: _innerBackground
+
+        visible: !isOuter
+        anchors.fill: parent
+        fillMode: Image.PreserveAspectFit
+        source: "../graphics/Inner_Clock_Texture.png"
+    }
+
     /*
       Rectangle which will be masked over by the source rectangle. This
       rectangle is required for the border effect which results in the
       shadow.
-
-      #TODO: Check with the design team if the shadow width used is acceptable.
      */
     Rectangle {
         id: _mask

@@ -28,6 +28,6 @@ Image {
     anchors.top: parent.top
     anchors.left: parent.left
 
-    source: "../graphics/bg_crop.png"
+    source: "../graphics/Background_Texture.jpg"
     fillMode: Image.PreserveAspectFit
 }
