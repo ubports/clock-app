@@ -52,7 +52,7 @@ Row {
             anchors.centerIn: parent
 
             Label {
-                id: plusLabel
+                id: _plusLabel
 
                 anchors.centerIn: parent
                 font.pixelSize: dragPosition >= maxThreshold ? dragPosition * units.dp(30)/maxThreshold : units.dp(30)

@@ -211,6 +211,8 @@ Page {
                         left: parent.left
                         right: parent.right
                     }
+
+                    fontSize: "xx-small"
                     height: bottomEdge.tipHeight
                     verticalAlignment: Text.AlignVCenter
                     horizontalAlignment: Text.AlignHCenter

@@ -20,7 +20,7 @@ import "../components"
 import "../components/Utils.js" as Utils
 
 PageWithBottomEdge {
-    id: clockPage
+    id: _clockPage
 
     /*
       Property to set the maximum drag distance before freezing the add
@@ -43,7 +43,7 @@ PageWithBottomEdge {
     }
 
     Flickable {
-        id: flickable
+        id: _flickable
 
         anchors.fill: parent
         contentWidth: parent.width
