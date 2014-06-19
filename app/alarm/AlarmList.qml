@@ -68,16 +68,17 @@ Flickable {
             ListItem.Base {
                 objectName: "alarm" + index
 
+                height: units.gu(7)
+
                 Label {
                     id: alarmTime
                     objectName: "listAlarmTime" + index
 
-                    anchors.verticalCenter: parent.verticalCenter
+                    anchors.top: alarmDetailsColumn.top
                     anchors.left: parent.left
                     anchors.leftMargin: units.gu(0)
 
-                    fontSize: "large"
-                    color: model.enabled ? Theme.palette.normal.baseText : Qt.rgba(1,1,1,0.3)
+                    fontSize: "medium"
                     text: alarmUtils.convertTime(date.getHours(), date.getMinutes(), 0, "24-hour")
                 }
 
@@ -105,7 +106,7 @@ Flickable {
                         id: alarmSubtitle
                         objectName: "listAlarmSubtitle" + index
 
-                        fontSize: "small"
+                        fontSize: "x-small"
                         text: alarmUtils.format_day_string(daysOfWeek, type)
                     }
                 }

@@ -78,7 +78,7 @@ PageWithBottomEdge {
             anchors.horizontalCenter: parent.horizontalCenter
 
             text: Qt.formatDate(new Date(), "dddd, d MMMM yyyy")
-            fontSize: "small"
+            fontSize: "x-small"
 
             Behavior on anchors.topMargin {
                 UbuntuNumberAnimation { duration: 900 }
