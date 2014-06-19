@@ -11,5 +11,6 @@ install(FILES ${CMAKE_CURRENT_BINARY_DIR}/${DESKTOP_FILE} DESTINATION ${DESKTOP_
 install(FILES ${QML_JS_FILES} DESTINATION ${UBUNTU-CLOCK-APP_DIR})
 
 add_subdirectory(clock)
+add_subdirectory(alarm)
 add_subdirectory(graphics)
 add_subdirectory(components)

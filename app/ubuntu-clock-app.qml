@@ -17,7 +17,9 @@
 import QtQuick 2.0
 import Ubuntu.Components 1.1
 import "clock"
+import "alarm"
 import "components"
+import "components/Utils.js" as Utils
 
 MainView {
     id: clockApp
@@ -25,22 +27,26 @@ MainView {
     // Property to store the state of an application (active or suspended)
     property bool applicationState: Qt.application.active
 
+    // Property to enable/disable the debug mode to show more console output
+    property bool debugMode: true
+
     // objectName for functional testing purposes (autopilot-qt5)
     objectName: "clock"
 
-    //applicationName for click packages (used as an unique app identifier)
+    // applicationName for click packages (used as an unique app identifier)
     applicationName: "com.ubuntu.clock"
 
     /*
       This property enables the application to change orientation when the
       device is rotated. This has been set to false since we are currently
       only focussing on the phone interface.
-     */
+    */
     automaticOrientation: false
 
-    /* The width and height defined below are the same dimension used by the
-       designers in the clock visual spec.
-     */
+    /*
+      The width and height defined below are the same dimension used by the
+      designers in the clock visual spec.
+    */
     width: units.gu(40)
     height: units.gu(70)
 
@@ -52,13 +58,9 @@ MainView {
         /*
           Update Clock time immediately when the clock app is brought from suspend
           instead of waiting for the next minute to update.
-         */
+        */
         if(applicationState)
-            updateTime()
-    }
-
-    function updateTime() {
-        clock.time = Qt.formatTime(new Date(), "hh:mm")
+            clockPage.updateTime()
     }
 
     Background {}
@@ -69,95 +71,33 @@ MainView {
         interval: 60000
         repeat: true
         running: true
-        onTriggered: updateTime()
+        onTriggered: clockPage.updateTime()
     }
 
-    Flickable {
-        id: flickable
+    AlarmModel {
+        id: alarmModel
+        Component.onCompleted: Utils.log(debugMode, "Alarm Database loaded")
+    }
 
-        anchors.fill: parent
-        contentWidth: parent.width
-        contentHeight: clock.height + date.height + locationRow.height
+    PageStack {
+        id: mainStack
 
-        /*
-          Property to set the maximum drag distance before freezing the add
-          city button resize
-         */
-        property int _maxThreshold: -50
+        Component.onCompleted: push(clockPage)
 
-        /*
-          Property to set the minimum drag distance before activating the add
-          city signal
-         */
-        property int _minThreshold: -40
+        ClockPage {
+            id: clockPage
 
-        AddCityButton {
-            id: addCityButton
-            anchors.top: parent.top
-            anchors.topMargin: -labelHeight
-            anchors.horizontalCenter: parent.horizontalCenter
-            maxThreshold: flickable._maxThreshold
-        }
+            /*
+              #FIXME: When the SDK support hiding the header, then enable the
+              clock page title. This will then set the correct window title on
+              the desktop.
 
-        Clock {
-            id: clock
-            anchors.verticalCenter: parent.top
-            anchors.verticalCenterOffset: units.gu(16) + clockApp.height/8
-            anchors.horizontalCenter: parent.horizontalCenter
-        }
+              title: "Clock"
+            */
 
-        Label {
-            id: date
-
-            Component.onCompleted: anchors.topMargin = units.gu(44)
-
-            anchors.top: parent.top
-            anchors.topMargin: units.gu(40)
-            anchors.horizontalCenter: parent.horizontalCenter
-
-            text: Qt.formatDate(new Date(), "dddd, d MMMM yyyy")
-            fontSize: "medium"
-
-            Behavior on anchors.topMargin {
-                UbuntuNumberAnimation { duration: 900 }
-            }
-        }
-
-
-        Row {
-            id: locationRow
-
-            spacing: units.gu(1)
-
-            anchors.top: date.bottom
-            anchors.topMargin: units.gu(1)
-            anchors.horizontalCenter: parent.horizontalCenter
-
-            Image {
-                id: locationIcon
-                source: "graphics/Location_Pin.png"
-                width: units.gu(1.2)
-                height: units.gu(2.2)
-            }
-
-            Label {
-                id: location
-                text: "Location"
-                fontSize: "large"
-                anchors.verticalCenter: locationIcon.verticalCenter
-                color: UbuntuColors.midAubergine
-            }
-        }
-
-        onDragEnded: {
-            if(contentY < _minThreshold)
-                console.log("[LOG]: Activate add city signal")
-        }
-
-        onContentYChanged: {
-            if(contentY < 0 && flickable.atYBeginning) {
-                addCityButton.dragPosition = contentY.toFixed(0)
-            }
+            bottomEdgeTitle: i18n.tr("Next Alarm in ..")
+            bottomEdgePageComponent: AlarmPage {}
         }
     }
 }
+
