@@ -106,7 +106,7 @@ Flickable {
                         id: alarmSubtitle
                         objectName: "listAlarmSubtitle" + index
 
-                        fontSize: "x-small"
+                        fontSize: "xx-small"
                         text: alarmUtils.format_day_string(daysOfWeek, type)
                     }
                 }
