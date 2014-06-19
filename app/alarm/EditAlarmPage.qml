@@ -16,43 +16,34 @@
 
 import QtQuick 2.0
 import Ubuntu.Components 1.1
+import Ubuntu.Components.Pickers 1.0
+import "../components"
 import "../components/Utils.js" as Utils
 
 Page {
-    title: "Alarms"
+    id: _editAlarmPage
 
-    flickable: null
+    title: i18n.tr("New Alarm")
+    visible: false
 
-    Component.onCompleted: Utils.log(debugMode, "Alarm Page loaded")
-
-    AlarmModel {
-        id: alarmModel
-        Component.onCompleted: Utils.log(debugMode, "Alarm Database loaded")
-    }
-
-    AlarmList{
-        id: listAlarm
-        model: alarmModel
-        anchors.fill: parent
-    }
-
-    tools: ToolbarItems {
-        back: Button {
-            action: Action {
-                iconName: "back"
-                onTriggered: {
-                    mainStack.pop()
-                }
-            }
-        }
-
-        ToolbarButton {
-            action: Action {
-                iconName: "add"
-                onTriggered: {
-                    mainStack.push(Qt.resolvedUrl("EditAlarmPage.qml"))
-                }
+    Alarm {
+        id: alarm
+        onStatusChanged: {
+            if (status != Alarm.Ready)
+                return;
+            if ((operation > Alarm.NoOperation) && (operation < Alarm.Reseting)) {
+                mainStack.pop();
             }
         }
     }
+
+    DatePicker {
+            id: datePicker
+            clip: true
+            mode: "Hours|Minutes"
+            anchors.top: parent.top
+            anchors.left: parent.left
+            anchors.right: parent.right
+            anchors.margins: units.gu(-2)
+        }
 }

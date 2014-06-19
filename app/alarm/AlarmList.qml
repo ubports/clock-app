@@ -133,7 +133,7 @@ Flickable {
 
     onDragEnded: {
         if(contentY < _minThreshold)
-            Utils.log(debugMode, "Activate add alarm signal")
+            mainStack.push(Qt.resolvedUrl("EditAlarmPage.qml"))
     }
 
     onContentYChanged: {
