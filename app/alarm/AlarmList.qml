@@ -17,90 +17,128 @@
 import QtQuick 2.0
 import Ubuntu.Components 1.1
 import Ubuntu.Components.ListItems 1.0 as ListItem
+import "../components"
+import "../components/Utils.js" as Utils
 
-Column {
-    id: listAlarm
+Flickable {
+    id: alarmListFlickable
+    objectName: "alarmListFlickable"
 
     // Property to set the model of the saved alarm list
-    property alias model: listSavedAlarm.model
+    property var model
+
+    /*
+      Property to set the maximum drag distance before freezing the pull to add
+      button resize
+    */
+    property int _maxThreshold: -80
+
+    /*
+      Property to set the minimum drag distance before activating the add
+      alarm signal
+    */
+    property int _minThreshold: _maxThreshold + 10
+
+    clip: true
+    anchors.fill: parent
+    contentHeight: alarmList.height
 
     AlarmUtils {
         id: alarmUtils
     }
 
-    ListView {
-        id: listSavedAlarm
-        objectName: "listSavedAlarm"
+    PullToAdd {
+        id: addAlarmButton
 
-        clip: true
-        height: parent.height
-        anchors.left: parent.left
-        anchors.right: parent.right
+        anchors.top: parent.top
+        anchors.topMargin: -labelHeight - units.gu(6)
+        anchors.horizontalCenter: parent.horizontalCenter
 
-        currentIndex: -1
+        leftLabel: i18n.tr("Add")
+        rightLabel: i18n.tr("Alarm")
+        maxThreshold: alarmListFlickable._maxThreshold
+    }
 
-        delegate: ListItem.Base {
-            objectName: "alarm" + index
+    Column {
+        id: alarmList
+        anchors.fill: parent
 
-            Label {
-                id: alarmTime
-                objectName: "listAlarmTime" + index
-
-                anchors.verticalCenter: parent.verticalCenter
-                anchors.left: parent.left
-                anchors.leftMargin: units.gu(0)
-
-                fontSize: "large"
-                color: model.enabled ? Theme.palette.normal.baseText : Qt.rgba(1,1,1,0.3)
-                text: alarmUtils.convertTime(date.getHours(), date.getMinutes(), 0, "24-hour")
-            }
-
-            Column {
-                id: alarmDetailsColumn
-
-                anchors {
-                    left: alarmTime.right
-                    right: alarmStatus.left
-                    verticalCenter: parent.verticalCenter
-                    margins: units.gu(1)
-                }
+        Repeater {
+            model: alarmListFlickable.model
+            ListItem.Base {
+                objectName: "alarm" + index
 
                 Label {
-                    id: alarmLabel
-                    objectName: "listAlarmLabel" + index
+                    id: alarmTime
+                    objectName: "listAlarmTime" + index
 
-                    text: message
-                    fontSize: "medium"
-                    elide: Text.ElideRight
-                    color: UbuntuColors.midAubergine
+                    anchors.verticalCenter: parent.verticalCenter
+                    anchors.left: parent.left
+                    anchors.leftMargin: units.gu(0)
+
+                    fontSize: "large"
+                    color: model.enabled ? Theme.palette.normal.baseText : Qt.rgba(1,1,1,0.3)
+                    text: alarmUtils.convertTime(date.getHours(), date.getMinutes(), 0, "24-hour")
                 }
 
-                Label {
-                    id: alarmSubtitle
-                    objectName: "listAlarmSubtitle" + index
+                Column {
+                    id: alarmDetailsColumn
 
-                    fontSize: "small"
-                    text: alarmUtils.format_day_string(daysOfWeek, type)
+                    anchors {
+                        left: alarmTime.right
+                        right: alarmStatus.left
+                        verticalCenter: parent.verticalCenter
+                        margins: units.gu(1)
+                    }
+
+                    Label {
+                        id: alarmLabel
+                        objectName: "listAlarmLabel" + index
+
+                        text: message
+                        fontSize: "medium"
+                        elide: Text.ElideRight
+                        color: UbuntuColors.midAubergine
+                    }
+
+                    Label {
+                        id: alarmSubtitle
+                        objectName: "listAlarmSubtitle" + index
+
+                        fontSize: "small"
+                        text: alarmUtils.format_day_string(daysOfWeek, type)
+                    }
                 }
-            }
 
-            Switch {
-                id: alarmStatus
+                Switch {
+                    id: alarmStatus
 
-                anchors.right: parent.right
-                anchors.verticalCenter: parent.verticalCenter
+                    anchors.right: parent.right
+                    anchors.verticalCenter: parent.verticalCenter
 
-                enabled: model.enabled
-            }
+                    checked: enabled
+                }
 
-            selected: listSavedAlarm.currentIndex == index
-            removable: true
-            confirmRemoval: true
+                removable: true
+                confirmRemoval: true
 
-            onItemRemoved: {
-                var alarm = alarmModel.get(index)
-                alarm.cancel()
+                onItemRemoved: {
+                    var alarm = alarmModel.get(index)
+                    alarm.cancel()
+                }
             }
         }
     }
+
+    onDragEnded: {
+        if(contentY < _minThreshold)
+            Utils.log(debugMode, "Activate add alarm signal")
+    }
+
+    onContentYChanged: {
+        if(contentY < 0 && atYBeginning) {
+            addAlarmButton.dragPosition = contentY.toFixed(0)
+        }
+    }
 }
+

@@ -16,9 +16,19 @@
 
 import QtQuick 2.0
 import Ubuntu.Components 1.1
+import "../components/Utils.js" as Utils
 
 Page {
     title: "Alarms"
+
+    flickable: null
+
+    Component.onCompleted: Utils.log(debugMode, "Alarm Page loaded")
+
+    AlarmModel {
+        id: alarmModel
+        Component.onCompleted: Utils.log(debugMode, "Alarm Database loaded")
+    }
 
     AlarmList{
         id: listAlarm
