@@ -78,7 +78,7 @@ ClockCircle {
             anchors.centerIn: parent
             color: UbuntuColors.midAubergine
             opacity: font.pixelSize === units.dp(62) ? 1 : 0
-            text: Qt.formatTime(new Date(), "hh:mm")
+            text: Qt.formatTime(new Date())
         }
     }
 }

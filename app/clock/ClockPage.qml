@@ -39,7 +39,7 @@ PageWithBottomEdge {
     Component.onCompleted: Utils.log(debugMode, "Clock Page loaded")
 
     function updateTime() {
-        clock.time = Qt.formatTime(new Date(), "hh:mm")
+        clock.time = Qt.formatTime(new Date())
     }
 
     Flickable {
