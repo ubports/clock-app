@@ -145,7 +145,7 @@ Page {
     Timer {
         id: hideIndicator
 
-        interval: 2966
+        interval: 3000
         running: true
         repeat: false
         onTriggered: tipContainer.y = -units.gu(1)
@@ -194,7 +194,7 @@ Page {
             y: -bottomEdge.tipHeight
             anchors.horizontalCenter: parent.horizontalCenter
             Behavior on y {
-                NumberAnimation {}
+                UbuntuNumberAnimation {}
             }
 
             UbuntuShape {
