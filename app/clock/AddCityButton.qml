@@ -47,17 +47,17 @@ Row {
         isOuter: true
         width: dragPosition >= maxThreshold ? dragPosition * units.gu(6.5)/maxThreshold : units.gu(6.5)
 
-        Label {
-            id: plusLabel
-
-            anchors.centerIn: parent
-            font.pixelSize: dragPosition >= maxThreshold ? dragPosition * units.dp(30)/maxThreshold : units.dp(30)
-            text: "+"
-        }
-
         ClockCircle {
             width: dragPosition >= maxThreshold ? dragPosition * units.gu(4.5)/maxThreshold : units.gu(4.5)
             anchors.centerIn: parent
+
+            Label {
+                id: _plusLabel
+
+                anchors.centerIn: parent
+                font.pixelSize: dragPosition >= maxThreshold ? dragPosition * units.dp(30)/maxThreshold : units.dp(30)
+                text: "+"
+            }
         }
     }
     

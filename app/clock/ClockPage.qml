@@ -20,7 +20,7 @@ import "../components"
 import "../components/Utils.js" as Utils
 
 PageWithBottomEdge {
-    id: clockPage
+    id: _clockPage
 
     /*
       Property to set the maximum drag distance before freezing the add
@@ -39,11 +39,11 @@ PageWithBottomEdge {
     Component.onCompleted: Utils.log(debugMode, "Clock Page loaded")
 
     function updateTime() {
-        clock.time = Qt.formatTime(new Date(), "hh:mm")
+        clock.time = Qt.formatTime(new Date())
     }
 
     Flickable {
-        id: flickable
+        id: _flickable
 
         anchors.fill: parent
         contentWidth: parent.width

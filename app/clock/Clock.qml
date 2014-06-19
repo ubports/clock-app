@@ -19,10 +19,10 @@ import Ubuntu.Components 1.1
 import "../components"
 
 ClockCircle {
-    id: outerCircle
+    id: _outerCircle
 
     // Property to set the digital time label
-    property alias time: digitalTime.text
+    property alias time: _digitalTime.text
     
     isOuter: true
 
@@ -32,8 +32,7 @@ ClockCircle {
         id: clockOpenAnimation
         
         PropertyAnimation {
-            id: outerCircleAnimation
-            target: outerCircle
+            target: _outerCircle
             property: "width"
             to: units.gu(32)
             duration: 900
@@ -45,7 +44,7 @@ ClockCircle {
     }
     
     ClockCircle {
-        id: innerCircle
+        id: _innerCircle
 
         anchors.centerIn: parent
         
@@ -53,21 +52,21 @@ ClockCircle {
             id: animationTimer
             interval: 200
             repeat: false
-            onTriggered: innerCircleAnimation.start()
+            onTriggered: _innerCircleAnimation.start()
         }
         
         ParallelAnimation {
-            id: innerCircleAnimation
+            id: _innerCircleAnimation
             
             PropertyAnimation {
-                target: innerCircle
+                target: _innerCircle
                 property: "width"
                 to: units.gu(23)
                 duration: 900
             }
             
             PropertyAnimation {
-                target: digitalTime
+                target: _digitalTime
                 property: "font.pixelSize"
                 to: units.dp(62)
                 duration: 900
@@ -75,11 +74,11 @@ ClockCircle {
         }
         
         Label {
-            id: digitalTime
+            id: _digitalTime
             anchors.centerIn: parent
             color: UbuntuColors.midAubergine
             opacity: font.pixelSize === units.dp(62) ? 1 : 0
-            text: Qt.formatTime(new Date(), "hh:mm")
+            text: Qt.formatTime(new Date())
         }
     }
 }
