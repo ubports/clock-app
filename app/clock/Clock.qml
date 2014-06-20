@@ -22,7 +22,8 @@ ClockCircle {
     id: _outerCircle
 
     // Property to set the digital time label
-    property alias time: _digitalTime.text
+    property alias hours: _digitalTimeHours.text
+    property alias minutes: _digitalTimeMinutes.text
     
     isOuter: true
 
@@ -66,7 +67,21 @@ ClockCircle {
             }
             
             PropertyAnimation {
-                target: _digitalTime
+                target: _digitalTimeHours
+                property: "font.pixelSize"
+                to: units.dp(62)
+                duration: 900
+            }
+
+            PropertyAnimation {
+                target: _digitalTimeDivider
+                property: "font.pixelSize"
+                to: units.dp(62)
+                duration: 900
+            }
+
+            PropertyAnimation {
+                target: _digitalTimeMinutes
                 property: "font.pixelSize"
                 to: units.dp(62)
                 duration: 900
@@ -74,11 +89,33 @@ ClockCircle {
         }
         
         Label {
-            id: _digitalTime
-            anchors.centerIn: parent
+            id: _digitalTimeHours
+            anchors {
+                right: _digitalTimeDivider.left
+                verticalCenter: parent.verticalCenter
+            }
             color: UbuntuColors.midAubergine
             opacity: font.pixelSize === units.dp(62) ? 1 : 0
-            text: Qt.formatTime(new Date())
+            text: Qt.formatTime(new Date(), "hh")
+        }
+
+        Label {
+            id: _digitalTimeDivider
+            anchors.centerIn: parent
+            color: UbuntuColors.coolGrey
+            opacity: font.pixelSize === units.dp(62) ? 1 : 0
+            text: ":"
+        }
+
+        Label {
+            id: _digitalTimeMinutes
+            anchors {
+                left: _digitalTimeDivider.right
+                verticalCenter: parent.verticalCenter
+            }
+            color: UbuntuColors.midAubergine
+            opacity: font.pixelSize === units.dp(62) ? 1 : 0
+            text: Qt.formatTime(new Date(), "m")
         }
     }
 }
