@@ -93,45 +93,44 @@ ClockCircle {
                 duration: 900
             }
         }
+
+        Row {
+            id: _digitalTimeRow
+            anchors {
+                centerIn: parent
+            }
         
-        Label {
-            property string hours: time.split(":")[0]
-            id: _digitalTimeHours
-            anchors {
-                right: _digitalTimeDivider.left
-                verticalCenter: parent.verticalCenter
+            Label {
+                property string hours: time.split(":")[0]
+                id: _digitalTimeHours
+                color: UbuntuColors.midAubergine
+                opacity: font.pixelSize === units.dp(62) ? 1 : 0
+                text: hours
             }
-            color: UbuntuColors.midAubergine
-            opacity: font.pixelSize === units.dp(62) ? 1 : 0
-            text: hours
-        }
 
-        Label {
-            id: _digitalTimeDivider
-            anchors.centerIn: parent
-            color: UbuntuColors.coolGrey
-            opacity: font.pixelSize === units.dp(62) ? 1 : 0
-            text: ":"
-        }
+            Label {
 
-        Label {
-            property string minutes: time.split(":")[1].split(" ")[0]
-            id: _digitalTimeMinutes
-            anchors {
-                left: _digitalTimeDivider.right
-                verticalCenter: parent.verticalCenter
+                id: _digitalTimeDivider
+                color: UbuntuColors.coolGrey
+                opacity: font.pixelSize === units.dp(62) ? 1 : 0
+                text: ":"
             }
-            color: UbuntuColors.midAubergine
-            opacity: font.pixelSize === units.dp(62) ? 1 : 0
-            text: minutes
+
+            Label {
+                property string minutes: time.split(":")[1].split(" ")[0]
+                id: _digitalTimeMinutes
+                color: UbuntuColors.midAubergine
+                opacity: font.pixelSize === units.dp(62) ? 1 : 0
+                text: minutes
+            }
         }
 
         Label {
             property string period: time.split(":")[1].split(" ")[1] !== undefined ? time.split(":")[1].split(" ")[1] : ""
             id: _digitalTimePeriod
             anchors {
-                top: _digitalTimeMinutes.bottom
-                horizontalCenter: _digitalTimeMinutes.horizontalCenter
+                top: _digitalTimeRow.bottom
+                horizontalCenter: parent.horizontalCenter
             }
             color: UbuntuColors.midAubergine
             opacity: font.pixelSize === units.dp(24) ? 1 : 0
