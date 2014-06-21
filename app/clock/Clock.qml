@@ -22,8 +22,7 @@ ClockCircle {
     id: _outerCircle
 
     // Property to set the digital time label
-    property alias hours: _digitalTimeHours.text
-    property alias minutes: _digitalTimeMinutes.text
+    property string time: Qt.formatTime(new Date())
     
     isOuter: true
 
@@ -86,9 +85,17 @@ ClockCircle {
                 to: units.dp(62)
                 duration: 900
             }
+
+            PropertyAnimation {
+                target: _digitalTimePeriod
+                property: "font.pixelSize"
+                to: units.dp(24)
+                duration: 900
+            }
         }
         
         Label {
+            property string hours: time.split(":")[0]
             id: _digitalTimeHours
             anchors {
                 right: _digitalTimeDivider.left
@@ -96,7 +103,7 @@ ClockCircle {
             }
             color: UbuntuColors.midAubergine
             opacity: font.pixelSize === units.dp(62) ? 1 : 0
-            text: Qt.formatTime(new Date(), "hh")
+            text: hours
         }
 
         Label {
@@ -108,6 +115,7 @@ ClockCircle {
         }
 
         Label {
+            property string minutes: time.split(":")[1].split(" ")[0]
             id: _digitalTimeMinutes
             anchors {
                 left: _digitalTimeDivider.right
@@ -115,7 +123,19 @@ ClockCircle {
             }
             color: UbuntuColors.midAubergine
             opacity: font.pixelSize === units.dp(62) ? 1 : 0
-            text: Qt.formatTime(new Date(), "m")
+            text: minutes
+        }
+
+        Label {
+            property string period: time.split(":")[1].split(" ")[1]
+            id: _digitalTimePeriod
+            anchors {
+                top: _digitalTimeMinutes.bottom
+                horizontalCenter: _digitalTimeMinutes.horizontalCenter
+            }
+            color: UbuntuColors.midAubergine
+            opacity: font.pixelSize === units.dp(24) ? 1 : 0
+            text: period
         }
     }
 }
