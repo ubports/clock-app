@@ -102,7 +102,7 @@ ClockCircle {
                 verticalCenter: parent.verticalCenter
             }
             color: UbuntuColors.midAubergine
-            opacity: font.pixelSize === units.dp(62) ? 1 : 0
+            font.pixelSize: units.dp(1)
             text: hours
         }
 
@@ -110,7 +110,7 @@ ClockCircle {
             id: _digitalTimeDivider
             anchors.centerIn: parent
             color: UbuntuColors.coolGrey
-            opacity: font.pixelSize === units.dp(62) ? 1 : 0
+            font.pixelSize: units.dp(1)
             text: ":"
         }
 
@@ -122,7 +122,7 @@ ClockCircle {
                 verticalCenter: parent.verticalCenter
             }
             color: UbuntuColors.midAubergine
-            opacity: font.pixelSize === units.dp(62) ? 1 : 0
+            font.pixelSize: units.dp(1)
             text: minutes
         }
 
@@ -134,7 +134,7 @@ ClockCircle {
                 horizontalCenter: _digitalTimeMinutes.horizontalCenter
             }
             color: UbuntuColors.midAubergine
-            opacity: font.pixelSize === units.dp(24) ? 1 : 0
+            font.pixelSize: units.dp(1)
             text: period
         }
     }
