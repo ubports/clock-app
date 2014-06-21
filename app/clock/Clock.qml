@@ -127,7 +127,7 @@ ClockCircle {
         }
 
         Label {
-            property string period: time.split(":")[1].split(" ")[1]
+            property string period: time.split(":")[1].split(" ")[1] !== undefined ? time.split(":")[1].split(" ")[1] : ""
             id: _digitalTimePeriod
             anchors {
                 top: _digitalTimeMinutes.bottom
@@ -135,6 +135,7 @@ ClockCircle {
             }
             color: UbuntuColors.midAubergine
             opacity: font.pixelSize === units.dp(24) ? 1 : 0
+            visible: period !== ""
             text: period
         }
     }
