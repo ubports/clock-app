@@ -133,7 +133,7 @@ Flickable {
 
     onDragEnded: {
         if(contentY < _minThreshold)
-            mainStack.push(Qt.resolvedUrl("EditAlarmPage.qml"))
+            mainStack.push(Qt.resolvedUrl("EditAlarmPage.qml"), {"isNewAlarm": true, "alarmCount": alarmModel.count})
     }
 
     onContentYChanged: {

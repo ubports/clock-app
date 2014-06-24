@@ -16,24 +16,31 @@
 
 import QtQuick 2.0
 import Ubuntu.Components 1.1
-import "../components/Utils.js" as Utils
 
 Page {
-    title: "Alarms"
+    id: _alarmLabelPage
 
-    flickable: null
+    visible: false
+    title: i18n.tr("Label")
 
-    Component.onCompleted: Utils.log(debugMode, "Alarm Page loaded")
+    // Property to set the alarm label in the edit alarm page
+    property var alarmLabel: undefined
 
-    AlarmModel {
-        id: alarmModel
-        Component.onCompleted: Utils.log(debugMode, "Alarm Database loaded")
-    }
+    Column {
+        id: _labelColumn
 
-    AlarmList{
-        id: listAlarm
-        model: alarmModel
         anchors.fill: parent
+        anchors.margins: units.gu(2)
+
+        Label {
+            text: i18n.tr("Alarm Label")
+        }
+
+        TextField {
+            id: labelEntry
+            text: alarmLabel.subText
+            width: parent.width
+        }
     }
 
     tools: ToolbarItems {
@@ -41,16 +48,8 @@ Page {
             action: Action {
                 iconName: "back"
                 onTriggered: {
+                    alarmLabel.subText = labelEntry.text
                     mainStack.pop()
-                }
-            }
-        }
-
-        ToolbarButton {
-            action: Action {
-                iconName: "add"
-                onTriggered: {
-                    mainStack.push(Qt.resolvedUrl("EditAlarmPage.qml"), {"isNewAlarm": true, "alarmCount": alarmModel.count})
                 }
             }
         }
