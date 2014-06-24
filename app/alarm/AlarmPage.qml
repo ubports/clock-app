@@ -50,7 +50,8 @@ Page {
             action: Action {
                 iconName: "add"
                 onTriggered: {
-                    mainStack.push(Qt.resolvedUrl("EditAlarmPage.qml"), {"isNewAlarm": true, "alarmCount": alarmModel.count})
+                    mainStack.push(Qt.resolvedUrl("EditAlarmPage.qml"),
+                                   {"alarmCount": alarmModel.count})
                 }
             }
         }

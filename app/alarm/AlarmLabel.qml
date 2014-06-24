@@ -24,10 +24,12 @@ Page {
     title: i18n.tr("Label")
 
     // Property to set the alarm label in the edit alarm page
-    property var alarmLabel: undefined
+    property var alarmLabel
 
     Column {
         id: _labelColumn
+
+        spacing: units.gu(0.5)
 
         anchors.fill: parent
         anchors.margins: units.gu(2)
@@ -37,7 +39,7 @@ Page {
         }
 
         TextField {
-            id: labelEntry
+            id: _labelEntry
             text: alarmLabel.subText
             width: parent.width
         }
@@ -48,7 +50,7 @@ Page {
             action: Action {
                 iconName: "back"
                 onTriggered: {
-                    alarmLabel.subText = labelEntry.text
+                    alarmLabel.subText = _labelEntry.text
                     mainStack.pop()
                 }
             }

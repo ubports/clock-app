@@ -27,24 +27,35 @@ Page {
     // Property to store the total number of alarms in the model
     property int alarmCount
 
-    // Property to store the index of the alarm to be edited
-    property int alarmIndex
-
-    // Property to determine if this is New/Edit mode
-    property bool isNewAlarm
-
-    title: isNewAlarm ? i18n.tr("New Alarm") : i18n.tr("Edit Alarm")
+    title: i18n.tr("New Alarm")
     visible: false
+
+    // Function to save a new alarm
+    function saveNewAlarm() {
+        var alarmTime = new Date()
+        alarmTime.setHours(_timePicker.hours, _timePicker.minutes, 0)
+
+        _alarm.message = _alarmLabel.subText
+        _alarm.date = alarmTime
+        _alarm.type = Alarm.Repeating
+        _alarm.enabled = true
+        _alarm.save()
+    }
 
     Alarm {
         id: _alarm
         onStatusChanged: {
             if (status !== Alarm.Ready)
                 return;
-            if ((operation > Alarm.NoOperation) && (operation < Alarm.Reseting)) {
+            if ((operation > Alarm.NoOperation) &&
+                    (operation < Alarm.Reseting)) {
                 mainStack.pop();
             }
         }
+    }
+
+    AlarmUtils {
+        id: alarmUtils
     }
 
     Column {
@@ -53,7 +64,7 @@ Page {
         anchors.fill: parent
 
         DatePicker {
-            id: _datePicker
+            id: _timePicker
 
             anchors.left: parent.left
             anchors.right: parent.right
@@ -67,7 +78,9 @@ Page {
             id: _alarmRepeat
 
             text: "Repeat"
-            subText: "Never"
+            subText: alarmUtils.format_day_string(_alarm.daysOfWeek)
+            onClicked: mainStack.push(Qt.resolvedUrl("AlarmRepeat.qml"),
+                                      {"alarm": _alarm})
         }
 
         SubtitledListItem {
@@ -75,14 +88,20 @@ Page {
 
             text: "Label"
             subText: i18n.tr("Alarm") + " #%1".arg(alarmCount + 1)
-            onClicked: mainStack.push(Qt.resolvedUrl("AlarmLabel.qml"), {"alarmLabel": _alarmLabel})
+            onClicked: mainStack.push(Qt.resolvedUrl("AlarmLabel.qml"),
+                                      {"alarmLabel": _alarmLabel})
         }
 
         SubtitledListItem {
             id: _alarmSound
-
-            text: "Sound"
-            subText: "Suru Arpeggio"
+            /*
+              #TODO: Add support for choosing new alarm sound when indicator-
+              datetime supports custom alarm sounds
+            */
+            text: "Sound (disabled)"
+            subText: "Suru arpeggio"
+            onClicked: mainStack.push(Qt.resolvedUrl("AlarmSound.qml"),
+                                      {"alarmSound": _alarmSound})
         }
     }
 
@@ -100,7 +119,7 @@ Page {
             action: Action {
                 iconName: "save"
                 onTriggered: {
-                    console.log("Save Alarm")
+                    saveNewAlarm()
                 }
             }
         }

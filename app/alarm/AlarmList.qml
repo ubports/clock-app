@@ -66,13 +66,11 @@ Flickable {
         Repeater {
             model: alarmListFlickable.model
             ListItem.Base {
-                objectName: "alarm" + index
 
                 height: units.gu(7)
 
                 Label {
                     id: alarmTime
-                    objectName: "listAlarmTime" + index
 
                     anchors.top: alarmDetailsColumn.top
                     anchors.left: parent.left
@@ -94,7 +92,6 @@ Flickable {
 
                     Label {
                         id: alarmLabel
-                        objectName: "listAlarmLabel" + index
 
                         text: message
                         fontSize: "medium"
@@ -104,10 +101,11 @@ Flickable {
 
                     Label {
                         id: alarmSubtitle
-                        objectName: "listAlarmSubtitle" + index
 
                         fontSize: "xx-small"
-                        text: alarmUtils.format_day_string(daysOfWeek, type)
+                        width: parent.width
+                        wrapMode: Text.WrapAtWordBoundaryOrAnywhere
+                        text: alarmUtils.format_day_string(daysOfWeek)
                     }
                 }
 
@@ -133,7 +131,8 @@ Flickable {
 
     onDragEnded: {
         if(contentY < _minThreshold)
-            mainStack.push(Qt.resolvedUrl("EditAlarmPage.qml"), {"isNewAlarm": true, "alarmCount": alarmModel.count})
+            mainStack.push(Qt.resolvedUrl("EditAlarmPage.qml"),
+                           {"alarmCount": alarmModel.count})
     }
 
     onContentYChanged: {
