@@ -75,7 +75,13 @@ Page {
         tempAlarm.date = alarmTime
         tempAlarm.type = Alarm.Repeating
         tempAlarm.enabled = _alarm.enabled
+
+        /*
+          #FIXME: Sometimes the clock app crashes due to this code. Cause not
+          known yet!
+        */
         tempAlarm.daysOfWeek = _alarm.daysOfWeek
+
         tempAlarm.save()
 
         if(validateAlarm(tempAlarm)) {
