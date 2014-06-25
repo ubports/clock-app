@@ -25,11 +25,6 @@ Page {
 
     Component.onCompleted: Utils.log(debugMode, "Alarm Page loaded")
 
-    AlarmModel {
-        id: alarmModel
-        Component.onCompleted: Utils.log(debugMode, "Alarm Database loaded")
-    }
-
     AlarmList{
         id: listAlarm
         model: alarmModel

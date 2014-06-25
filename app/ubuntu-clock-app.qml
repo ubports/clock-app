@@ -74,6 +74,11 @@ MainView {
         onTriggered: clockPage.updateTime()
     }
 
+    AlarmModel {
+        id: alarmModel
+        Component.onCompleted: Utils.log(debugMode, "Alarm Database loaded")
+    }
+
     PageStack {
         id: mainStack
 
