@@ -24,11 +24,22 @@ import "../components/Utils.js" as Utils
 Page {
     id: _addAlarmPage
 
-    // Property to store the total number of alarms in the model
-    property int alarmCount
+    // Property to determine if this is a new/saved alarm
+    property bool isNewAlarm: true
 
-    title: i18n.tr("New Alarm")
+    // Property to store the index of the alarm to be edited
+    property int alarmIndex
+
+    property var tempAlarm
+
+    title: isNewAlarm ? i18n.tr("New Alarm") : i18n.tr("Edit Alarm")
     visible: false
+
+    Component.onCompleted: {
+        if(!isNewAlarm) {
+            readAlarm()
+        }
+    }
 
     // Function to save a new alarm
     function saveNewAlarm() {
@@ -42,6 +53,47 @@ Page {
         _alarm.save()
     }
 
+    // Function to read a saved alarm
+    function readAlarm() {
+        tempAlarm = alarmModel.get(alarmIndex)
+
+        _alarm.message = tempAlarm.message
+        _alarm.type = tempAlarm.type
+        _alarm.daysOfWeek = tempAlarm.daysOfWeek
+        _alarm.enabled = tempAlarm.enabled
+        _alarm.date = tempAlarm.date
+    }
+
+    // Function to update a saved alarm
+    function updateAlarm() {
+        tempAlarm = alarmModel.get(alarmIndex)
+
+        var alarmTime = new Date()
+        alarmTime.setHours(_timePicker.hours, _timePicker.minutes, 0)
+
+        tempAlarm.message = _alarm.message
+        tempAlarm.date = alarmTime
+        tempAlarm.type = Alarm.Repeating
+        tempAlarm.enabled = _alarm.enabled
+        tempAlarm.daysOfWeek = _alarm.daysOfWeek
+        tempAlarm.save()
+
+        if(validateAlarm(tempAlarm)) {
+            mainStack.pop()
+        }
+    }
+
+    // Function to validate if the alarm was saved properly
+    function validateAlarm(alarmObject) {
+        if (alarmObject.error !== Alarm.NoError) {
+            Utils.log(debugMode, "Error saving alarm, code: " + alarmObject.error)
+            return false
+        }
+        else {
+            return true
+        }
+    }
+
     Alarm {
         id: _alarm
         onStatusChanged: {
@@ -51,6 +103,12 @@ Page {
                     (operation < Alarm.Reseting)) {
                 mainStack.pop();
             }
+        }
+        onDaysOfWeekChanged: {
+            _alarmRepeat.subText = alarmUtils.format_day_string(_alarm.daysOfWeek)
+        }
+        onDateChanged: {
+            _timePicker.date = _alarm.date
         }
     }
 
@@ -87,9 +145,9 @@ Page {
             id: _alarmLabel
 
             text: "Label"
-            subText: i18n.tr("Alarm") + " #%1".arg(alarmCount + 1)
+            subText: _alarm.message
             onClicked: mainStack.push(Qt.resolvedUrl("AlarmLabel.qml"),
-                                      {"alarmLabel": _alarmLabel})
+                                      {"alarm": _alarm})
         }
 
         SubtitledListItem {
@@ -119,7 +177,12 @@ Page {
             action: Action {
                 iconName: "save"
                 onTriggered: {
-                    saveNewAlarm()
+                    if(isNewAlarm) {
+                        saveNewAlarm()
+                    }
+                    else {
+                        updateAlarm()
+                    }
                 }
             }
         }

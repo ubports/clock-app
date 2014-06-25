@@ -24,7 +24,7 @@ Page {
     title: i18n.tr("Label")
 
     // Property to set the alarm label in the edit alarm page
-    property var alarmLabel
+    property var alarm
 
     Column {
         id: _labelColumn
@@ -40,7 +40,7 @@ Page {
 
         TextField {
             id: _labelEntry
-            text: alarmLabel.subText
+            text: alarm.message
             width: parent.width
         }
     }
@@ -50,7 +50,7 @@ Page {
             action: Action {
                 iconName: "back"
                 onTriggered: {
-                    alarmLabel.subText = _labelEntry.text
+                    alarm.message = _labelEntry.text
                     mainStack.pop()
                 }
             }

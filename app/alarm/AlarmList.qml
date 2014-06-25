@@ -125,14 +125,17 @@ Flickable {
                     var alarm = alarmModel.get(index)
                     alarm.cancel()
                 }
+
+                onClicked: mainStack.push(Qt.resolvedUrl("EditAlarmPage.qml"),
+                                          {"isNewAlarm": false,
+                                              "alarmIndex": index})
             }
         }
     }
 
     onDragEnded: {
         if(contentY < _minThreshold)
-            mainStack.push(Qt.resolvedUrl("EditAlarmPage.qml"),
-                           {"alarmCount": alarmModel.count})
+            mainStack.push(Qt.resolvedUrl("EditAlarmPage.qml"))
     }
 
     onContentYChanged: {
