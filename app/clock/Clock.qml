@@ -113,8 +113,9 @@ ClockCircle {
         }
 
         Label {
-            property string period: time.split(":")[1].split(" ")[1] !== undefined ? time.split(":")[1].split(" ")[1] : ""
             id: _digitalTimePeriod
+            property string period: time.split(":")[1].split(" ")[1] !== undefined
+                                    ? time.split(":")[1].split(" ")[1] : ""
             anchors {
                 top: _digitalTimeRow.bottom
                 horizontalCenter: parent.horizontalCenter
