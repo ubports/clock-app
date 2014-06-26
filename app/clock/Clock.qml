@@ -91,7 +91,6 @@ ClockCircle {
                 id: _digitalTimeHours
                 color: UbuntuColors.midAubergine
                 font.pixelSize: _digitalTimeRow.digitalTimeFontPixelSize
-                font.weight: Font.Light
                 text: time.split(":")[0]
             }
 
@@ -99,7 +98,6 @@ ClockCircle {
                 id: _digitalTimeDivider
                 color: UbuntuColors.coolGrey
                 font.pixelSize: _digitalTimeRow.digitalTimeFontPixelSize
-                font.weight: Font.Light
                 text: ":"
             }
 
@@ -107,7 +105,6 @@ ClockCircle {
                 id: _digitalTimeMinutes
                 color: UbuntuColors.midAubergine
                 font.pixelSize: _digitalTimeRow.digitalTimeFontPixelSize
-                font.weight: Font.Light
                 text: time.split(":")[1].split(" ")[0]
             }
         }
@@ -122,7 +119,6 @@ ClockCircle {
             }
             color: UbuntuColors.midAubergine
             font.pixelSize: units.dp(1)
-            font.weight: Font.Light
             visible: period !== ""
             text: period
         }
