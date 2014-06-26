@@ -90,7 +90,6 @@ ClockCircle {
             Label {
                 id: _digitalTimeHours
                 color: UbuntuColors.midAubergine
-                opacity: font.pixelSize === units.dp(62) ? 1 : 0
                 font.pixelSize: _digitalTimeRow.digitalTimeFontPixelSize
                 text: time.split(":")[0]
             }
@@ -98,7 +97,6 @@ ClockCircle {
             Label {
                 id: _digitalTimeDivider
                 color: UbuntuColors.coolGrey
-                opacity: font.pixelSize === units.dp(62) ? 1 : 0
                 font.pixelSize: _digitalTimeRow.digitalTimeFontPixelSize
                 text: ":"
             }
@@ -106,7 +104,6 @@ ClockCircle {
             Label {
                 id: _digitalTimeMinutes
                 color: UbuntuColors.midAubergine
-                opacity: font.pixelSize === units.dp(62) ? 1 : 0
                 font.pixelSize: _digitalTimeRow.digitalTimeFontPixelSize
                 text: time.split(":")[1].split(" ")[0]
             }
@@ -121,7 +118,7 @@ ClockCircle {
                 horizontalCenter: parent.horizontalCenter
             }
             color: UbuntuColors.midAubergine
-            opacity: font.pixelSize === units.dp(24) ? 1 : 0
+            font.pixelSize: units.dp(1)
             visible: period !== ""
             text: period
         }
