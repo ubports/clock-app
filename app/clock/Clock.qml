@@ -92,6 +92,7 @@ ClockCircle {
                 color: UbuntuColors.midAubergine
                 opacity: font.pixelSize === units.dp(62) ? 1 : 0
                 font.pixelSize: _digitalTimeRow.digitalTimeFontPixelSize
+                font.weight: Font.Light
                 text: time.split(":")[0]
             }
 
@@ -100,6 +101,7 @@ ClockCircle {
                 color: UbuntuColors.coolGrey
                 opacity: font.pixelSize === units.dp(62) ? 1 : 0
                 font.pixelSize: _digitalTimeRow.digitalTimeFontPixelSize
+                font.weight: Font.Light
                 text: ":"
             }
 
@@ -108,6 +110,7 @@ ClockCircle {
                 color: UbuntuColors.midAubergine
                 opacity: font.pixelSize === units.dp(62) ? 1 : 0
                 font.pixelSize: _digitalTimeRow.digitalTimeFontPixelSize
+                font.weight: Font.Light
                 text: time.split(":")[1].split(" ")[0]
             }
         }
@@ -122,6 +125,7 @@ ClockCircle {
             }
             color: UbuntuColors.midAubergine
             opacity: font.pixelSize === units.dp(24) ? 1 : 0
+            font.weight: Font.Light
             visible: period !== ""
             text: period
         }
