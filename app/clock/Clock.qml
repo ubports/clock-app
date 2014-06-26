@@ -66,22 +66,8 @@ ClockCircle {
             }
             
             PropertyAnimation {
-                target: _digitalTimeHours
-                property: "font.pixelSize"
-                to: units.dp(62)
-                duration: 900
-            }
-
-            PropertyAnimation {
-                target: _digitalTimeDivider
-                property: "font.pixelSize"
-                to: units.dp(62)
-                duration: 900
-            }
-
-            PropertyAnimation {
-                target: _digitalTimeMinutes
-                property: "font.pixelSize"
+                target: _digitalTimeRow
+                property: "digitalTimeFontPixelSize"
                 to: units.dp(62)
                 duration: 900
             }
@@ -96,32 +82,33 @@ ClockCircle {
 
         Row {
             id: _digitalTimeRow
+            property real digitalTimeFontPixelSize: units.dp(1)
             anchors {
                 centerIn: parent
             }
         
             Label {
-                property string hours: time.split(":")[0]
                 id: _digitalTimeHours
                 color: UbuntuColors.midAubergine
                 opacity: font.pixelSize === units.dp(62) ? 1 : 0
-                text: hours
+                font.pixelSize: _digitalTimeRow.digitalTimeFontPixelSize
+                text: time.split(":")[0]
             }
 
             Label {
-
                 id: _digitalTimeDivider
                 color: UbuntuColors.coolGrey
                 opacity: font.pixelSize === units.dp(62) ? 1 : 0
+                font.pixelSize: _digitalTimeRow.digitalTimeFontPixelSize
                 text: ":"
             }
 
             Label {
-                property string minutes: time.split(":")[1].split(" ")[0]
                 id: _digitalTimeMinutes
                 color: UbuntuColors.midAubergine
                 opacity: font.pixelSize === units.dp(62) ? 1 : 0
-                text: minutes
+                font.pixelSize: _digitalTimeRow.digitalTimeFontPixelSize
+                text: time.split(":")[1].split(" ")[0]
             }
         }
 
