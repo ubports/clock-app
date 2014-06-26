@@ -66,22 +66,8 @@ ClockCircle {
             }
             
             PropertyAnimation {
-                target: _digitalTimeHours
-                property: "font.pixelSize"
-                to: units.dp(62)
-                duration: 900
-            }
-
-            PropertyAnimation {
-                target: _digitalTimeDivider
-                property: "font.pixelSize"
-                to: units.dp(62)
-                duration: 900
-            }
-
-            PropertyAnimation {
-                target: _digitalTimeMinutes
-                property: "font.pixelSize"
+                target: _digitalTimeRow
+                property: "digitalTimeFontPixelSize"
                 to: units.dp(62)
                 duration: 900
             }
@@ -93,48 +79,47 @@ ClockCircle {
                 duration: 900
             }
         }
+
+        Row {
+            id: _digitalTimeRow
+            property real digitalTimeFontPixelSize: units.dp(1)
+            anchors {
+                centerIn: parent
+            }
         
-        Label {
-            property string hours: time.split(":")[0]
-            id: _digitalTimeHours
-            anchors {
-                right: _digitalTimeDivider.left
-                verticalCenter: parent.verticalCenter
+            Label {
+                id: _digitalTimeHours
+                color: UbuntuColors.midAubergine
+                font.pixelSize: _digitalTimeRow.digitalTimeFontPixelSize
+                text: time.split(":")[0]
             }
-            color: UbuntuColors.midAubergine
-            font.pixelSize: units.dp(1)
-            text: hours
-        }
 
-        Label {
-            id: _digitalTimeDivider
-            anchors.centerIn: parent
-            color: UbuntuColors.coolGrey
-            font.pixelSize: units.dp(1)
-            text: ":"
-        }
-
-        Label {
-            property string minutes: time.split(":")[1].split(" ")[0]
-            id: _digitalTimeMinutes
-            anchors {
-                left: _digitalTimeDivider.right
-                verticalCenter: parent.verticalCenter
+            Label {
+                id: _digitalTimeDivider
+                color: UbuntuColors.coolGrey
+                font.pixelSize: _digitalTimeRow.digitalTimeFontPixelSize
+                text: ":"
             }
-            color: UbuntuColors.midAubergine
-            font.pixelSize: units.dp(1)
-            text: minutes
+
+            Label {
+                id: _digitalTimeMinutes
+                color: UbuntuColors.midAubergine
+                font.pixelSize: _digitalTimeRow.digitalTimeFontPixelSize
+                text: time.split(":")[1].split(" ")[0]
+            }
         }
 
         Label {
-            property string period: time.split(":")[1].split(" ")[1]
             id: _digitalTimePeriod
+            property string period: time.split(":")[1].split(" ")[1] !== undefined
+                                    ? time.split(":")[1].split(" ")[1] : ""
             anchors {
-                top: _digitalTimeMinutes.bottom
-                horizontalCenter: _digitalTimeMinutes.horizontalCenter
+                top: _digitalTimeRow.bottom
+                horizontalCenter: parent.horizontalCenter
             }
             color: UbuntuColors.midAubergine
             font.pixelSize: units.dp(1)
+            visible: period !== ""
             text: period
         }
     }
