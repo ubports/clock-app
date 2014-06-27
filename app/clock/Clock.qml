@@ -22,7 +22,7 @@ ClockCircle {
     id: _outerCircle
 
     // Property to set the digital time label
-    property alias time: _digitalTime.text
+    property string time: Qt.formatTime(new Date())
     
     isOuter: true
 
@@ -66,19 +66,61 @@ ClockCircle {
             }
             
             PropertyAnimation {
-                target: _digitalTime
-                property: "font.pixelSize"
+                target: _digitalTimeRow
+                property: "digitalTimeFontPixelSize"
                 to: units.dp(62)
                 duration: 900
             }
+
+            PropertyAnimation {
+                target: _digitalTimePeriod
+                property: "font.pixelSize"
+                to: units.dp(24)
+                duration: 900
+            }
         }
+
+        Row {
+            id: _digitalTimeRow
+            property real digitalTimeFontPixelSize: units.dp(1)
+            anchors {
+                centerIn: parent
+            }
         
+            Label {
+                id: _digitalTimeHours
+                color: UbuntuColors.midAubergine
+                font.pixelSize: _digitalTimeRow.digitalTimeFontPixelSize
+                text: time.split(":")[0]
+            }
+
+            Label {
+                id: _digitalTimeDivider
+                color: UbuntuColors.coolGrey
+                font.pixelSize: _digitalTimeRow.digitalTimeFontPixelSize
+                text: ":"
+            }
+
+            Label {
+                id: _digitalTimeMinutes
+                color: UbuntuColors.midAubergine
+                font.pixelSize: _digitalTimeRow.digitalTimeFontPixelSize
+                text: time.split(":")[1].split(" ")[0]
+            }
+        }
+
         Label {
-            id: _digitalTime
-            anchors.centerIn: parent
+            id: _digitalTimePeriod
+            property string period: time.split(":")[1].split(" ")[1] !== undefined
+                                    ? time.split(":")[1].split(" ")[1] : ""
+            anchors {
+                top: _digitalTimeRow.bottom
+                horizontalCenter: parent.horizontalCenter
+            }
             color: UbuntuColors.midAubergine
-            opacity: font.pixelSize === units.dp(62) ? 1 : 0
-            text: Qt.formatTime(new Date())
+            font.pixelSize: units.dp(1)
+            visible: period !== ""
+            text: period
         }
     }
 }
