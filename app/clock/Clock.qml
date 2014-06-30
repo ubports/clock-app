@@ -66,8 +66,8 @@ ClockCircle {
             }
             
             PropertyAnimation {
-                target: _digitalTimeRow
-                property: "digitalTimeFontPixelSize"
+                target: _digitalTime
+                property: "font.pixelSize"
                 to: units.dp(62)
                 duration: 900
             }
@@ -80,47 +80,52 @@ ClockCircle {
             }
         }
 
-        Row {
-            id: _digitalTimeRow
-            property real digitalTimeFontPixelSize: units.dp(1)
-            anchors {
-                centerIn: parent
-            }
-        
-            Label {
-                id: _digitalTimeHours
-                color: UbuntuColors.midAubergine
-                font.pixelSize: _digitalTimeRow.digitalTimeFontPixelSize
-                text: time.split(":")[0]
-            }
+        Label {
+            id: _digitalTime
 
-            Label {
-                id: _digitalTimeDivider
-                color: UbuntuColors.coolGrey
-                font.pixelSize: _digitalTimeRow.digitalTimeFontPixelSize
-                text: ":"
-            }
+            anchors.centerIn: parent
 
-            Label {
-                id: _digitalTimeMinutes
-                color: UbuntuColors.midAubergine
-                font.pixelSize: _digitalTimeRow.digitalTimeFontPixelSize
-                text: time.split(":")[1].split(" ")[0]
+            color: UbuntuColors.midAubergine
+            font.pixelSize: units.dp(1)
+            text: {
+                if(time.search(Qt.locale().amText) === -1 &&
+                        time.search(Qt.locale().pmText) === -1) {
+                    // 24-hour format detected, return full time string
+                    return time
+                }
+                else if(time.search(Qt.locale().amText) !== -1) {
+                    // 12 hour format detected with the localised AM text
+                    return time.split(Qt.locale().amText)[0].slice(end-1)
+                }
+                else {
+                    // 12 hour format detected with the localised PM text
+                    return time.split(Qt.locale().pmText)[0].slice(end-1)
+                }
             }
         }
 
         Label {
             id: _digitalTimePeriod
-            property string period: time.split(":")[1].split(" ")[1] !== undefined
-                                    ? time.split(":")[1].split(" ")[1] : ""
-            anchors {
-                top: _digitalTimeRow.bottom
-                horizontalCenter: parent.horizontalCenter
-            }
+
+            anchors.top: _digitalTime.bottom
+            anchors.horizontalCenter: parent.horizontalCenter
+
             color: UbuntuColors.midAubergine
             font.pixelSize: units.dp(1)
-            visible: period !== ""
-            text: period
+            visible: text !== ""
+            text: {
+                if(time.search(Qt.locale().amText) === -1 &&
+                        time.search(Qt.locale().pmText) === -1) {
+                    // 24-hour format
+                    return ""
+                }
+                else if(time.search(Qt.locale().amText) !== -1) {
+                    return Qt.locale().amText
+                }
+                else {
+                    return Qt.locale().pmText
+                }
+            }
         }
     }
 }
