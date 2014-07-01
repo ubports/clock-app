@@ -75,7 +75,7 @@ ClockCircle {
             PropertyAnimation {
                 target: _digitalTimePeriod
                 property: "font.pixelSize"
-                to: units.dp(24)
+                to: units.dp(12)
                 duration: 900
             }
         }
@@ -90,11 +90,11 @@ ClockCircle {
             text: {
                 if (time.search(Qt.locale().amText) !== -1) {
                     // 12 hour format detected with the localised AM text
-                    return time.split(Qt.locale().amText)[0].slice(end-1)
+                    return time.split(Qt.locale().amText)[0].trim()
                 }
                 else if (time.search(Qt.locale().pmText) !== -1) {
                     // 12 hour format detected with the localised PM text
-                    return time.split(Qt.locale().pmText)[0].slice(end-1)
+                    return time.split(Qt.locale().pmText)[0].trim()
                 }
                 else {
                     // 24-hour format detected, return full time string
