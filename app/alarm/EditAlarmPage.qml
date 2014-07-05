@@ -66,6 +66,11 @@ Page {
         DatePicker {
             id: _timePicker
 
+            /*
+              #FIXME: DatePicker does not respect the user's locale. The bug
+              has been reported at http://pad.lv/1338138
+            */
+
             anchors {
                 left: parent.left
                 right: parent.right
