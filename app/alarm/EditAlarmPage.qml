@@ -66,9 +66,11 @@ Page {
         DatePicker {
             id: _timePicker
 
-            anchors.left: parent.left
-            anchors.right: parent.right
-            anchors.margins: units.gu(-2)
+            anchors {
+                left: parent.left
+                right: parent.right
+                margins: units.gu(-2)
+            }
 
             clip: true
             mode: "Hours|Minutes"

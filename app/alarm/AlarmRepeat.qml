@@ -80,9 +80,11 @@ Page {
                 Label {
                     id: _alarmDay
 
-                    anchors.left: parent.left
-                    anchors.leftMargin: units.gu(2)
-                    anchors.verticalCenter: parent.verticalCenter
+                    anchors {
+                        left: parent.left
+                        leftMargin: units.gu(2)
+                        verticalCenter: parent.verticalCenter
+                    }
 
                     color: UbuntuColors.midAubergine
                     text: Qt.locale().standaloneDayName(day, Locale.LongFormat)
