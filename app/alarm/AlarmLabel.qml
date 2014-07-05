@@ -35,7 +35,7 @@ Page {
         anchors.margins: units.gu(2)
 
         Label {
-            text: i18n.tr("Alarm Label")
+            text: i18n.tr("Label")
         }
 
         TextField {

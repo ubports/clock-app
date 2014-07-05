@@ -77,7 +77,7 @@ Page {
         SubtitledListItem {
             id: _alarmRepeat
 
-            text: "Repeat"
+            text: i18n.tr("Repeat")
             subText: alarmUtils.format_day_string(_alarm.daysOfWeek)
             onClicked: mainStack.push(Qt.resolvedUrl("AlarmRepeat.qml"),
                                       {"alarm": _alarm})
@@ -86,7 +86,7 @@ Page {
         SubtitledListItem {
             id: _alarmLabel
 
-            text: "Label"
+            text: i18n.tr("Label")
             subText: i18n.tr("Alarm") + " #%1".arg(alarmCount + 1)
             onClicked: mainStack.push(Qt.resolvedUrl("AlarmLabel.qml"),
                                       {"alarmLabel": _alarmLabel})
@@ -98,7 +98,7 @@ Page {
               #TODO: Add support for choosing new alarm sound when indicator-
               datetime supports custom alarm sounds
             */
-            text: "Sound (disabled)"
+            text: i18n.tr("Sound (disabled)")
             subText: "Suru arpeggio"
             onClicked: mainStack.push(Qt.resolvedUrl("AlarmSound.qml"),
                                       {"alarmSound": _alarmSound})
