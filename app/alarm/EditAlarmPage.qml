@@ -16,6 +16,7 @@
 
 import QtQuick 2.0
 import Ubuntu.Components 1.1
+import Qt.labs.folderlistmodel 2.1
 import Ubuntu.Components.Pickers 1.0
 import Ubuntu.Components.ListItems 1.0 as ListItem
 import "../components"
@@ -46,7 +47,12 @@ Page {
         var alarmTime = new Date()
         alarmTime.setHours(_timePicker.hours, _timePicker.minutes, 0)
 
-        _alarm.message = _alarmLabel.subText
+        /*
+          _alarm.sound, _alarm.message and _alarm.daysOfWeek have been set in
+          the respective individual pages already.
+        */
+
+        console.log("Alarm sound being saved: " + _alarm.sound)
         _alarm.date = alarmTime
         _alarm.type = Alarm.Repeating
         _alarm.enabled = true
@@ -62,6 +68,8 @@ Page {
         _alarm.daysOfWeek = tempAlarm.daysOfWeek
         _alarm.enabled = tempAlarm.enabled
         _alarm.date = tempAlarm.date
+        _alarm.sound = tempAlarm.sound
+        console.log(_alarm.sound.toString() + ":" + tempAlarm.sound)
     }
 
     // Function to update a saved alarm
@@ -75,6 +83,7 @@ Page {
         tempAlarm.date = alarmTime
         tempAlarm.type = Alarm.Repeating
         tempAlarm.enabled = _alarm.enabled
+        tempAlarm.sound = _alarm.sound
 
         /*
           #FIXME: Sometimes the clock app crashes due to this code. Cause not
@@ -100,6 +109,22 @@ Page {
         }
     }
 
+    function getSoundName(chosenSoundPath) {
+        for(var i=0; i<soundModel.count; i++) {
+            if(chosenSoundPath === soundModel.get(i, "filePath")) {
+                return soundModel.get(i, "fileBaseName")
+            }
+        }
+    }
+
+    function getSoundPath(chosenSoundName) {
+        for(var i=0; i<soundModel.count; i++) {
+            if(chosenSoundName === soundModel.get(i, "fileBaseName")) {
+                return soundModel.get(i, "filePath")
+            }
+        }
+    }
+
     Alarm {
         id: _alarm
         onStatusChanged: {
@@ -115,6 +140,31 @@ Page {
         }
         onDateChanged: {
             _timePicker.date = _alarm.date
+        }
+    }
+
+    FolderListModel {
+        id: soundModel
+
+        /*
+          #TODO: Add ubuntu-touch-sounds package as a dependency in the debian
+          control file. It is not present by default in Trusty 14.04.
+        */
+
+        showDirs: false
+        nameFilters: [ "*.ogg", "*.mp3" ]
+        folder: "/usr/share/sounds/ubuntu/ringtones"
+
+        onCountChanged: {
+            if(count > 0) {
+                if(isNewAlarm) {
+                    _alarm.sound = getSoundPath(_alarmSound._soundName)
+                    _alarmSound.subText = _alarmSound._soundName
+                }
+                else {
+                    _alarmSound.subText = getSoundName(_alarm.sound)
+                }
+            }
         }
     }
 
@@ -165,14 +215,16 @@ Page {
 
         SubtitledListItem {
             id: _alarmSound
-            /*
-              #TODO: Add support for choosing new alarm sound when indicator-
-              datetime supports custom alarm sounds
-            */
-            text: i18n.tr("Sound (disabled)")
-            subText: "Suru arpeggio"
-            onClicked: mainStack.push(Qt.resolvedUrl("AlarmSound.qml"),
-                                      {"alarmSound": _alarmSound})
+
+            // Default Alarm Sound for new alarms
+            property string _soundName: "Suru arpeggio"
+
+            text: i18n.tr("Sound")
+            onClicked: mainStack.push(Qt.resolvedUrl("AlarmSound.qml"), {
+                                          "alarmSound": _alarmSound,
+                                          "alarm": _alarm,
+                                          "_soundModel": soundModel
+                                      })
         }
     }
 

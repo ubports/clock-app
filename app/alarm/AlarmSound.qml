@@ -28,13 +28,8 @@ Page {
 
     // Property to set the alarm sound in the edit alarm page
     property var alarmSound
-
-    FolderListModel {
-        id: _soundModel
-        showDirs: false
-        nameFilters: [ "*.ogg", "*.mp3" ]
-        folder: "/usr/share/sounds/ubuntu/ringtones"
-    }
+    property var alarm
+    property var _soundModel
 
     Flickable {
         id: _pageFlickable
@@ -81,11 +76,12 @@ Page {
                             verticalCenter: parent.verticalCenter
                         }
 
-                        checked: alarmSound.subText === _soundName.text ? true :
-                                                                         false
+                        checked: alarmSound.subText === _soundName.text ? true
+                                                                        : false
                         onClicked: {
                             if (checked) {
                                 alarmSound.subText = _soundName.text
+                                alarm.sound = fileURL
 
                                 // Ensures only one alarm sound is selected
                                 for(var i=0; i<_soundModel.count; i++) {
