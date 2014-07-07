@@ -17,61 +17,120 @@
 import QtQuick 2.0
 import Ubuntu.Components 1.1
 
+/*
+  Qt Object containing a collection of useful alarm functions
+*/
 QtObject {
     id: alarmUtils
 
-    function format_day_string(value, type) {
-        var occurs = get_day(value, type);
-        var WeekDay = 0;
-        for (var i = 0; i < Qt.locale().weekDays.length; ++i) {
-            switch (Qt.locale().weekDays[i]) {
-            case Qt.Monday:
-                WeekDay |= Alarm.Monday
-                break;
-            case Qt.Tuesday:
-                WeekDay |= Alarm.Tuesday
-                break;
-            case Qt.Wednesday:
-                WeekDay |= Alarm.Wednesday
-                break;
-            case Qt.Thursday:
-                WeekDay |= Alarm.Thursday
-                break;
-            case Qt.Friday:
-                WeekDay |= Alarm.Friday
-                break;
-            case Qt.Saturday:
-                WeekDay |= Alarm.Saturday
-                break;
-            case Qt.Sunday:
-                WeekDay |= Alarm.Sunday
-                break;
-            }
+    // Function to format the alarm days accordingly to their occurance
+    function format_day_string(value) {
+        var occurs = _get_day(value)
+
+        if (value === _get_weekdays()) {
+            return i18n.tr("Weekdays")
         }
 
-        if (value == WeekDay) {
-            return i18n.tr("Every weekday")
+        else if (value === _get_weekends()) {
+            return i18n.tr("Weekends")
         }
-        else if (value == Alarm.Daily) {
+
+        else if (value === Alarm.Daily) {
             return i18n.tr("Daily")
         }
+
         else {
-            if (type === Alarm.Repeating)
-                return i18n.tr("Every ") + occurs
-            else
-                return i18n.tr("Once on ")  + occurs
+            return occurs
         }
     }
 
-    function get_day(value, type) {
-        var occurs = [];
-        if (value & Alarm.Monday) occurs.push(Qt.locale().standaloneDayName(1, Locale.ShortFormat));
-        if (value & Alarm.Tuesday) occurs.push(Qt.locale().standaloneDayName(2, Locale.ShortFormat));
-        if (value & Alarm.Wednesday) occurs.push(Qt.locale().standaloneDayName(3, Locale.ShortFormat));
-        if (value & Alarm.Thursday) occurs.push(Qt.locale().standaloneDayName(4, Locale.ShortFormat));
-        if (value & Alarm.Friday) occurs.push(Qt.locale().standaloneDayName(5, Locale.ShortFormat));
-        if (value & Alarm.Saturday) occurs.push(Qt.locale().standaloneDayName(6, Locale.ShortFormat));
-        if (value & Alarm.Sunday) occurs.push(Qt.locale().standaloneDayName(7, Locale.ShortFormat));
+    /*
+      INTERNAL FUNCTIONS
+    */
+
+    // Function to determine the locale's weekdays value
+    function _get_weekdays() {
+        var weekDays = 0
+        for (var i = 0; i < Qt.locale().weekDays.length; ++i) {
+            switch (Qt.locale().weekDays[i]) {
+            case Qt.Monday: {
+                weekDays |= Alarm.Monday
+                break
+            }
+
+            case Qt.Tuesday: {
+                weekDays |= Alarm.Tuesday
+                break
+            }
+
+            case Qt.Wednesday: {
+                weekDays |= Alarm.Wednesday
+                break
+            }
+
+            case Qt.Thursday: {
+                weekDays |= Alarm.Thursday
+                break
+            }
+
+            case Qt.Friday: {
+                weekDays |= Alarm.Friday
+                break
+            }
+
+            case Qt.Saturday: {
+                weekDays |= Alarm.Saturday
+                break
+            }
+
+            case Qt.Sunday: {
+                weekDays |= Alarm.Sunday
+                break
+            }
+            }
+        }
+        return weekDays
+    }
+
+    // Function to determine the locale's weekends value
+    function _get_weekends() {
+        return (Alarm.Daily - _get_weekdays())
+    }
+
+    // Function to retrieve the days of the week in the locale system
+    function _get_day(value) {
+        var occurs = []
+
+        if (value & Alarm.Monday) {
+            occurs.push(Qt.locale().standaloneDayName(1, Locale.LongFormat))
+        }
+
+        if (value & Alarm.Tuesday) {
+            occurs.push(Qt.locale().standaloneDayName(2, Locale.LongFormat))
+        }
+
+        if (value & Alarm.Wednesday) {
+            occurs.push(Qt.locale().standaloneDayName(3, Locale.LongFormat))
+        }
+
+        if (value & Alarm.Thursday) {
+            occurs.push(Qt.locale().standaloneDayName(4, Locale.LongFormat))
+        }
+
+        if (value & Alarm.Friday) {
+            occurs.push(Qt.locale().standaloneDayName(5, Locale.LongFormat))
+        }
+
+        if (value & Alarm.Saturday) {
+            occurs.push(Qt.locale().standaloneDayName(6, Locale.LongFormat))
+        }
+
+        if (value & Alarm.Sunday) {
+            occurs.push(Qt.locale().standaloneDayName(0, Locale.LongFormat))
+        }
+
+        occurs = occurs.join(', ');
+
         return occurs;
     }
 }

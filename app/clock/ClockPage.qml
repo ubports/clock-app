@@ -49,12 +49,16 @@ PageWithBottomEdge {
         contentWidth: parent.width
         contentHeight: clock.height + date.height + locationRow.height
 
-        AddCityButton {
+        PullToAdd {
             id: addCityButton
+
             anchors.top: parent.top
             anchors.topMargin: -labelHeight - units.gu(6)
             anchors.horizontalCenter: parent.horizontalCenter
-            maxThreshold: _maxThreshold
+
+            leftLabel: i18n.tr("Add")
+            rightLabel: i18n.tr("City")
+            maxThreshold: clockPage._maxThreshold
         }
 
         Clock {
