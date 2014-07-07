@@ -69,7 +69,7 @@ Page {
         _alarm.enabled = tempAlarm.enabled
         _alarm.date = tempAlarm.date
         _alarm.sound = tempAlarm.sound
-        console.log("Saved Alarm Sound: " + _alarm.sound)
+        console.log("Saved Alarm Sound: " + _alarm.sound.toString())
     }
 
     // Function to update a saved alarm
