@@ -78,7 +78,7 @@ Page {
 
         /*
           #FIXME: Sometimes the clock app crashes due to this code. Cause not
-          known yet!
+          known yet! This has been reported at http://pad.lv/1337405.
         */
         tempAlarm.daysOfWeek = _alarm.daysOfWeek
 
