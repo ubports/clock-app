@@ -31,6 +31,8 @@ Page {
 
     FolderListModel {
         id: _soundModel
+        showDirs: false
+        nameFilters: [ "*.ogg", "*.mp3" ]
         folder: "/usr/share/sounds/ubuntu/ringtones"
     }
 
