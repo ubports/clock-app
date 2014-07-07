@@ -74,6 +74,11 @@ MainView {
         onTriggered: clockPage.updateTime()
     }
 
+    AlarmModel {
+        id: alarmModel
+        Component.onCompleted: Utils.log(debugMode, "Alarm Database loaded")
+    }
+
     PageStack {
         id: mainStack
 
@@ -90,6 +95,10 @@ MainView {
               title: "Clock"
             */
 
+            /*
+              #TODO: The bottom edge title should reflect the time to the next
+              alarm. For instance it should read "Next alarm in 9h23m".
+            */
             bottomEdgeTitle: i18n.tr("Next Alarm in ..")
             bottomEdgePageComponent: AlarmPage {}
         }

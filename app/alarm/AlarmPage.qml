@@ -25,11 +25,6 @@ Page {
 
     Component.onCompleted: Utils.log(debugMode, "Alarm Page loaded")
 
-    AlarmModel {
-        id: alarmModel
-        Component.onCompleted: Utils.log(debugMode, "Alarm Database loaded")
-    }
-
     AlarmList{
         id: listAlarm
         model: alarmModel
@@ -50,8 +45,7 @@ Page {
             action: Action {
                 iconName: "add"
                 onTriggered: {
-                    mainStack.push(Qt.resolvedUrl("EditAlarmPage.qml"),
-                                   {"alarmCount": alarmModel.count})
+                    mainStack.push(Qt.resolvedUrl("EditAlarmPage.qml"))
                 }
             }
         }

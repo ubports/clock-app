@@ -122,6 +122,14 @@ Flickable {
                     }
 
                     checked: enabled
+
+                    /*
+                      #TODO: Add the ability to enable/disable alarms using the
+                      switch. At the moment it only shows the alarm status.
+                      This was postponed since a similar implementation in the
+                      old clock app caused it to loop. So if user clicks on the
+                      switch, it disables and then re-enables the alarm again.
+                    */
                 }
 
                 removable: true
@@ -131,14 +139,17 @@ Flickable {
                     var alarm = alarmModel.get(index)
                     alarm.cancel()
                 }
+
+                onClicked: mainStack.push(Qt.resolvedUrl("EditAlarmPage.qml"),
+                                          {"isNewAlarm": false,
+                                              "alarmIndex": index})
             }
         }
     }
 
     onDragEnded: {
         if(contentY < _minThreshold)
-            mainStack.push(Qt.resolvedUrl("EditAlarmPage.qml"),
-                           {"alarmCount": alarmModel.count})
+            mainStack.push(Qt.resolvedUrl("EditAlarmPage.qml"))
     }
 
     onContentYChanged: {
