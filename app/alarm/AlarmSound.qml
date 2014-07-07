@@ -31,6 +31,8 @@ Page {
 
     FolderListModel {
         id: _soundModel
+        showDirs: false
+        nameFilters: [ "*.ogg", "*.mp3" ]
         folder: "/usr/share/sounds/ubuntu/ringtones"
     }
 
@@ -61,8 +63,10 @@ Page {
                     Label {
                         id: _soundName
 
-                        anchors.left: parent.left
-                        anchors.verticalCenter: parent.verticalCenter
+                        anchors {
+                            left: parent.left
+                            verticalCenter: parent.verticalCenter
+                        }
 
                         color: UbuntuColors.midAubergine
                         fontSize: "medium"
@@ -72,8 +76,10 @@ Page {
                     CheckBox {
                         id: _soundStatus
 
-                        anchors.right: parent.right
-                        anchors.verticalCenter: parent.verticalCenter
+                        anchors {
+                            right: parent.right
+                            verticalCenter: parent.verticalCenter
+                        }
 
                         checked: alarmSound.subText === _soundName.text ? true :
                                                                          false

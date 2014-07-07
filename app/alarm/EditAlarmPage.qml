@@ -130,9 +130,16 @@ Page {
         DatePicker {
             id: _timePicker
 
-            anchors.left: parent.left
-            anchors.right: parent.right
-            anchors.margins: units.gu(-2)
+            /*
+              #FIXME: DatePicker does not respect the user's locale. The bug
+              has been reported at http://pad.lv/1338138
+            */
+
+            anchors {
+                left: parent.left
+                right: parent.right
+                margins: units.gu(-2)
+            }
 
             clip: true
             mode: "Hours|Minutes"
@@ -141,7 +148,7 @@ Page {
         SubtitledListItem {
             id: _alarmRepeat
 
-            text: "Repeat"
+            text: i18n.tr("Repeat")
             subText: alarmUtils.format_day_string(_alarm.daysOfWeek)
             onClicked: mainStack.push(Qt.resolvedUrl("AlarmRepeat.qml"),
                                       {"alarm": _alarm})
@@ -150,7 +157,7 @@ Page {
         SubtitledListItem {
             id: _alarmLabel
 
-            text: "Label"
+            text: i18n.tr("Label")
             subText: _alarm.message
             onClicked: mainStack.push(Qt.resolvedUrl("AlarmLabel.qml"),
                                       {"alarm": _alarm})
@@ -162,7 +169,7 @@ Page {
               #TODO: Add support for choosing new alarm sound when indicator-
               datetime supports custom alarm sounds
             */
-            text: "Sound (disabled)"
+            text: i18n.tr("Sound (disabled)")
             subText: "Suru arpeggio"
             onClicked: mainStack.push(Qt.resolvedUrl("AlarmSound.qml"),
                                       {"alarmSound": _alarmSound})

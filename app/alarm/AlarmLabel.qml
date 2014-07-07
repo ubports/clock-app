@@ -31,11 +31,13 @@ Page {
 
         spacing: units.gu(0.5)
 
-        anchors.fill: parent
-        anchors.margins: units.gu(2)
+        anchors {
+            fill: parent
+            margins: units.gu(2)
+        }
 
         Label {
-            text: i18n.tr("Alarm Label")
+            text: i18n.tr("Label")
         }
 
         TextField {

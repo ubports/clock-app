@@ -40,7 +40,7 @@ QtObject {
         }
 
         else {
-            return occurs + " "
+            return occurs
         }
     }
 
@@ -128,6 +128,8 @@ QtObject {
         if (value & Alarm.Sunday) {
             occurs.push(Qt.locale().standaloneDayName(0, Locale.LongFormat))
         }
+
+        occurs = occurs.join(', ');
 
         return occurs;
     }

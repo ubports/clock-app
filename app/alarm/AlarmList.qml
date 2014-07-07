@@ -50,9 +50,11 @@ Flickable {
     PullToAdd {
         id: addAlarmButton
 
-        anchors.top: parent.top
-        anchors.topMargin: -labelHeight - units.gu(6)
-        anchors.horizontalCenter: parent.horizontalCenter
+        anchors {
+            top: parent.top
+            topMargin: -labelHeight - units.gu(6)
+            horizontalCenter: parent.horizontalCenter
+        }
 
         leftLabel: i18n.tr("Add")
         rightLabel: i18n.tr("Alarm")
@@ -72,9 +74,11 @@ Flickable {
                 Label {
                     id: alarmTime
 
-                    anchors.top: alarmDetailsColumn.top
-                    anchors.left: parent.left
-                    anchors.leftMargin: units.gu(0)
+                    anchors {
+                        top: alarmDetailsColumn.top
+                        left: parent.left
+                        leftMargin: units.gu(0)
+                    }
 
                     fontSize: "medium"
                     text: Qt.formatTime(date)
@@ -112,8 +116,10 @@ Flickable {
                 Switch {
                     id: alarmStatus
 
-                    anchors.right: parent.right
-                    anchors.verticalCenter: parent.verticalCenter
+                    anchors {
+                        right: parent.right
+                        verticalCenter: parent.verticalCenter
+                    }
 
                     checked: enabled
                 }
