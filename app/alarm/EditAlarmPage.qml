@@ -69,7 +69,7 @@ Page {
         _alarm.enabled = tempAlarm.enabled
         _alarm.date = tempAlarm.date
         _alarm.sound = tempAlarm.sound
-        console.log(_alarm.sound.toString() + ":" + tempAlarm.sound)
+        console.log("Saved Alarm Sound: " + _alarm.sound)
     }
 
     // Function to update a saved alarm
@@ -157,6 +157,16 @@ Page {
 
         onCountChanged: {
             if(count > 0) {
+                /*
+                  When folder model is completely loaded, proceed to perform
+                  the following operations,
+
+                  if new alarm, then set the sound name as "Suru arpeggio" and
+                  retrieve the sound path from the folder model
+
+                  If it is a saved alarm, the get sound path from the alarm
+                  object and retrieve the sound name from the folder model.
+                */
                 if(isNewAlarm) {
                     _alarm.sound = getSoundPath(_alarmSound._soundName)
                     _alarmSound.subText = _alarmSound._soundName
