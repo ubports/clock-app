@@ -24,9 +24,6 @@ import "../components/Utils.js" as Utils
 Page {
     id: _addAlarmPage
 
-    // Property to store the total number of alarms in the model
-    property int alarmCount
-
     title: i18n.tr("New Alarm")
     visible: false
 
@@ -94,7 +91,7 @@ Page {
             id: _alarmLabel
 
             text: i18n.tr("Label")
-            subText: i18n.tr("Alarm") + " #%1".arg(alarmCount + 1)
+            subText: i18n.tr("Alarm")
             onClicked: mainStack.push(Qt.resolvedUrl("AlarmLabel.qml"),
                                       {"alarmLabel": _alarmLabel})
         }
