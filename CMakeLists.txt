@@ -1,4 +1,4 @@
-project(com.ubuntu.clock C CXX)
+project(com.ubuntu.clock.devel C CXX)
 cmake_minimum_required(VERSION 2.8.9)
 
 set (UBUNTU_PROJECT_TYPE "ClickApp" CACHE INTERNAL "Tells QtCreator this is a Click application project")
@@ -18,15 +18,15 @@ option(CLICK_MODE "Build as a click package" on)
 set(APP_NAME                clock)
 set(APP_HARDCODE            ubuntu-clock-app)
 set(MAIN_QML                ${APP_HARDCODE}.qml)
-set(ICON                    "share/app/clock_app@30.png")
+set(ICON                    clock-app@30.png)
 
 #set install paths
 if(${CLICK_MODE})
   set(CMAKE_INSTALL_PREFIX /)
   set(DATA_DIR /)
   set(DESKTOP_DIR ${DATA_DIR})
-  set(ICON ".${DATA_DIR}/${ICON}")
   set(UBUNTU-CLOCK-APP_DIR    "share/qml/ubuntu-clock-app")
+  set(ICON "${UBUNTU-CLOCK-APP_DIR}/${ICON}")
 
   execute_process(
       COMMAND dpkg-architecture -qDEB_HOST_MULTIARCH
@@ -37,7 +37,7 @@ if(${CLICK_MODE})
 else()
   set(DATA_DIR "share/clockapp")
   set(DESKTOP_DIR ${DATA_DIR})
-  set(ICON ".${DATA_DIR}/${ICON}")
+  set(ICON "${DATA_DIR}/${ICON}")
   set(UBUNTU-CLOCK-APP_DIR    "share/ubuntu-clock-app/qml")
   include(GNUInstallDirs)
   set(QT_IMPORTS_DIR "${CMAKE_INSTALL_LIBDIR}")
