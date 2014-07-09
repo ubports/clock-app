@@ -1,6 +1,6 @@
 [Desktop Entry]
 Version=1.0
-Name=Clock
+Name=Clock Reboot
 Exec=@EXEC@
 Icon=@ICON@
 Terminal=false
