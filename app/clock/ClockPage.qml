@@ -23,16 +23,10 @@ PageWithBottomEdge {
     id: _clockPage
 
     /*
-      Property to set the maximum drag distance before freezing the add
-      city button resize
-    */
-    property int _maxThreshold: -90
-
-    /*
       Property to set the minimum drag distance before activating the add
       city signal
     */
-    property int _minThreshold: _maxThreshold + 10
+    property int _minThreshold: addCityButton.maxThreshold + units.gu(5)
 
     flickable: null
 
@@ -58,7 +52,6 @@ PageWithBottomEdge {
 
             leftLabel: i18n.tr("Add")
             rightLabel: i18n.tr("City")
-            maxThreshold: clockPage._maxThreshold
         }
 
         Clock {
