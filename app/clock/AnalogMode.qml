@@ -20,8 +20,10 @@ ClockCircle {
     }
 
     PropertyAnimation {
+        id: _innerCircleAnimation
         target: _innerCircleAnalog
         property: "width"
+        from: units.gu(0)
         to: units.gu(23)
         duration: 900
     }
