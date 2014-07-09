@@ -109,9 +109,16 @@ ClockCircle {
         transitions: Transition {
             SequentialAnimation {
                 ScriptAction {
-                    script: clockModeFlipable.isDigital
-                            ? _digitalModeLoader.source = Qt.resolvedUrl("DigitalMode.qml")
-                            : _analogModeLoader.source = ""
+                    script: {
+                        if (clockModeFlipable.isDigital) {
+                            console.log("Loading digital mode...")
+                            _digitalModeLoader.source = Qt.resolvedUrl("DigitalMode.qml")
+                        }
+                        else {
+                            console.log("Loading analog mode..")
+                            _analogModeLoader.source = Qt.resolvedUrl("AnalogMode.qml")
+                        }
+                    }
                 }
 
                 NumberAnimation {
@@ -121,9 +128,16 @@ ClockCircle {
                 }
 
                 ScriptAction {
-                    script: clockModeFlipable.isDigital
-                            ? _analogModeLoader.source = Qt.resolvedUrl("AnalogMode.qml")
-                            : _digitalModeLoader.source = ""
+                    script: {
+                        if (clockModeFlipable.isDigital) {
+                            console.log("unloading analog mode...")
+                            _analogModeLoader.source = ""
+                        }
+                        else {
+                            console.log("unloading digital mode...")
+                            _digitalModeLoader.source = ""
+                        }
+                    }
                 }
             }
         }
