@@ -23,18 +23,18 @@ Page {
 
     flickable: null
 
+    head.actions: Action {
+        iconName: "add"
+        onTriggered: {
+            mainStack.push(Qt.resolvedUrl("EditAlarmPage.qml"))
+        }
+    }
+
     Component.onCompleted: Utils.log(debugMode, "Alarm Page loaded")
 
     AlarmList{
         id: listAlarm
         model: alarmModel
         anchors.fill: parent
-    }
-
-    head.actions: Action {
-        iconName: "add"
-        onTriggered: {
-            mainStack.push(Qt.resolvedUrl("EditAlarmPage.qml"))
-        }
     }
 }
