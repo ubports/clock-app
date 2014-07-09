@@ -176,14 +176,23 @@ Page {
         }
     }
 
-    head.actions: Action {
-        iconName: "save"
-        onTriggered: {
-            if(isNewAlarm) {
-                saveNewAlarm()
+    head {
+        backAction: Action {
+            iconName: "close"
+            onTriggered: {
+                mainStack.pop()
             }
-            else {
-                updateAlarm()
+        }
+
+        actions: Action {
+            iconName: "save"
+            onTriggered: {
+                if(isNewAlarm) {
+                    saveNewAlarm()
+                }
+                else {
+                    updateAlarm()
+                }
             }
         }
     }
