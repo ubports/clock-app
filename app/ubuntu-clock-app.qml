@@ -34,7 +34,7 @@ MainView {
     objectName: "clock"
 
     // applicationName for click packages (used as an unique app identifier)
-    applicationName: "com.ubuntu.clock"
+    applicationName: "com.ubuntu.clock.devel"
 
     /*
       This property enables the application to change orientation when the
