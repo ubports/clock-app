@@ -30,6 +30,11 @@ ClockCircle {
     
     ParallelAnimation {
         id: clockOpenAnimation
+
+        /*
+          This animation and script is only executed ONCE when the clock app is
+          opened.
+        */
         
         PropertyAnimation {
             target: _outerCircle
@@ -39,93 +44,93 @@ ClockCircle {
         }
         
         ScriptAction {
-            script: animationTimer.start()
+            script: {
+                if (clockModeFlipable.isDigital) {
+                    _digitalModeLoader.source = Qt.resolvedUrl("DigitalMode.qml")
+                    _digitalModeLoader.item.animationTimer.start()
+                }
+                else {
+                    _analogModeLoader.source = Qt.resolvedUrl("AnalogMode.qml")
+                    _analogModeLoader.item.animationTimer.start()
+                }
+            }
         }
     }
-    
-    ClockCircle {
-        id: _innerCircle
+
+    Flipable {
+        id: clockModeFlipable
 
         anchors.centerIn: parent
-        
-        Timer {
-            id: animationTimer
-            interval: 200
-            repeat: false
-            onTriggered: _innerCircleAnimation.start()
-        }
-        
-        ParallelAnimation {
-            id: _innerCircleAnimation
-            
-            PropertyAnimation {
-                target: _innerCircle
-                property: "width"
-                to: units.gu(23)
-                duration: 900
-            }
-            
-            PropertyAnimation {
-                target: _digitalTime
-                property: "font.pixelSize"
-                to: units.dp(62)
-                duration: 900
-            }
+        width: units.gu(23)
+        height: units.gu(23)
 
-            PropertyAnimation {
-                target: _digitalTimePeriod
-                property: "font.pixelSize"
-                to: units.dp(12)
-                duration: 900
-            }
-        }
+        property bool isDigital: false
 
-        Label {
-            id: _digitalTime
-
+        front: Loader {
+            id: _analogModeLoader
+            parent: clockModeFlipable
             anchors.centerIn: parent
 
-            color: UbuntuColors.midAubergine
-            font.pixelSize: units.dp(1)
-            text: {
-                if (time.search(Qt.locale().amText) !== -1) {
-                    // 12 hour format detected with the localised AM text
-                    return time.split(Qt.locale().amText)[0].trim()
-                }
-                else if (time.search(Qt.locale().pmText) !== -1) {
-                    // 12 hour format detected with the localised PM text
-                    return time.split(Qt.locale().pmText)[0].trim()
-                }
-                else {
-                    // 24-hour format detected, return full time string
-                    return time
+            onSourceChanged: {
+                if(source !== "") {
+                    item.width = units.gu(23)
                 }
             }
         }
 
-        Label {
-            id: _digitalTimePeriod
+        back: Loader {
+            id: _digitalModeLoader
+            parent: clockModeFlipable
+            anchors.centerIn: parent
 
-            anchors.top: _digitalTime.bottom
-            anchors.horizontalCenter: parent.horizontalCenter
-
-            color: UbuntuColors.midAubergine
-            font.pixelSize: units.dp(1)
-            visible: text !== ""
-            text: {
-                if (time.search(Qt.locale().amText) !== -1) {
-                    // 12 hour format detected with the localised AM text
-                    return Qt.locale().amText
-                }
-                else if (time.search(Qt.locale().pmText) !== -1) {
-                    // 12 hour format detected with the localised PM text
-                    return Qt.locale().pmText
-                }
-                else {
-                    // 24-hour format detected
-                    return ""
+            onSourceChanged: {
+                if(source !== "") {
+                    item.width = units.gu(23)
+                    item.digitalTimeSize = units.dp(62)
+                    item.digitalTimePeriodSize = units.dp(12)
                 }
             }
+        }
+
+        transform: Rotation {
+            id: rotation
+            origin.x: clockModeFlipable.width/2
+            origin.y: clockModeFlipable.height/2
+            axis.x: 1; axis.y: 0; axis.z: 0
+            angle: 0    // the default angle
+        }
+
+        states: State {
+            name: "back"
+            PropertyChanges { target: rotation; angle: 180 }
+            when: clockModeFlipable.isDigital
+        }
+
+        transitions: Transition {
+            SequentialAnimation {
+                ScriptAction {
+                    script: clockModeFlipable.isDigital
+                            ? _digitalModeLoader.source = Qt.resolvedUrl("DigitalMode.qml")
+                            : _analogModeLoader.source = ""
+                }
+
+                NumberAnimation {
+                    target: rotation
+                    property: "angle"
+                    duration: 1000
+                }
+
+                ScriptAction {
+                    script: clockModeFlipable.isDigital
+                            ? _analogModeLoader.source = Qt.resolvedUrl("AnalogMode.qml")
+                            : _digitalModeLoader.source = ""
+                }
+            }
+        }
+
+        MouseArea {
+            anchors.fill: parent
+            onClicked: parent.isDigital = !parent.isDigital
         }
     }
 }
