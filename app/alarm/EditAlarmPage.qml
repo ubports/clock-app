@@ -176,27 +176,14 @@ Page {
         }
     }
 
-    tools: ToolbarItems {
-        back: Button {
-            action: Action {
-                iconName: "close"
-                onTriggered: {
-                    mainStack.pop()
-                }
+    head.actions: Action {
+        iconName: "save"
+        onTriggered: {
+            if(isNewAlarm) {
+                saveNewAlarm()
             }
-        }
-
-        ToolbarButton {
-            action: Action {
-                iconName: "save"
-                onTriggered: {
-                    if(isNewAlarm) {
-                        saveNewAlarm()
-                    }
-                    else {
-                        updateAlarm()
-                    }
-                }
+            else {
+                updateAlarm()
             }
         }
     }

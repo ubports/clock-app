@@ -31,23 +31,10 @@ Page {
         anchors.fill: parent
     }
 
-    tools: ToolbarItems {
-        back: Button {
-            action: Action {
-                iconName: "back"
-                onTriggered: {
-                    mainStack.pop()
-                }
-            }
-        }
-
-        ToolbarButton {
-            action: Action {
-                iconName: "add"
-                onTriggered: {
-                    mainStack.push(Qt.resolvedUrl("EditAlarmPage.qml"))
-                }
-            }
+    head.actions: Action {
+        iconName: "add"
+        onTriggered: {
+            mainStack.push(Qt.resolvedUrl("EditAlarmPage.qml"))
         }
     }
 }
