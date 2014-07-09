@@ -17,79 +17,42 @@
 import QtQuick 2.0
 import Ubuntu.Components 1.1
 import "../components"
+import "../components/Utils.js" as Utils
 
 ClockCircle {
     id: _outerCircle
 
     // Property to set the digital time label
     property string time: Qt.formatTime(new Date())
-    
-    isOuter: true
 
-    Component.onCompleted: clockOpenAnimation.start()
-    
-    ParallelAnimation {
-        id: clockOpenAnimation
+    // Property to trigger the start up animations
+    property bool isStartup: true
 
-        /*
-          This animation and script is only executed ONCE when the clock app is
-          opened.
-        */
-        
-        PropertyAnimation {
-            target: _outerCircle
-            property: "width"
-            to: units.gu(32)
-            duration: 900
-        }
-        
-        ScriptAction {
-            script: {
-                if (clockModeFlipable.isDigital) {
-                    _digitalModeLoader.source = Qt.resolvedUrl("DigitalMode.qml")
-                    _digitalModeLoader.item.animationTimer.start()
-                }
-                else {
-                    _analogModeLoader.source = Qt.resolvedUrl("AnalogMode.qml")
-                    _analogModeLoader.item.animationTimer.start()
-                }
-            }
-        }
+    Component.onCompleted: {
+        clockOpenAnimation.start()
     }
+
+    // Sets the style to outer circle
+    isOuter: true
 
     Flipable {
         id: clockModeFlipable
 
-        anchors.centerIn: parent
+        // Property to switch between digital and analog mode
+        property bool isDigital: true
+
         width: units.gu(23)
         height: units.gu(23)
-
-        property bool isDigital: false
+        anchors.centerIn: parent
 
         front: Loader {
             id: _analogModeLoader
-            parent: clockModeFlipable
             anchors.centerIn: parent
-
-            onSourceChanged: {
-                if(source !== "") {
-                    item.width = units.gu(23)
-                }
-            }
         }
 
         back: Loader {
             id: _digitalModeLoader
-            parent: clockModeFlipable
             anchors.centerIn: parent
-
-            onSourceChanged: {
-                if(source !== "") {
-                    item.width = units.gu(23)
-                    item.digitalTimeSize = units.dp(62)
-                    item.digitalTimePeriodSize = units.dp(12)
-                }
-            }
         }
 
         transform: Rotation {
@@ -97,21 +60,48 @@ ClockCircle {
             origin.x: clockModeFlipable.width/2
             origin.y: clockModeFlipable.height/2
             axis.x: 1; axis.y: 0; axis.z: 0
-            angle: 0    // the default angle
+            angle: 0
         }
 
         states: State {
-            name: "back"
-            PropertyChanges { target: rotation; angle: 180 }
+            name: "Digital"
             when: clockModeFlipable.isDigital
+            PropertyChanges {
+                target: rotation
+                angle: 180
+            }
         }
 
         transitions: Transition {
+
+            /*
+              Rotation animation for switching between analog and digital modes.
+              It is however disabled during app startup.
+            */
+            enabled: !isStartup
+
             SequentialAnimation {
                 ScriptAction {
-                    script: clockModeFlipable.isDigital
-                            ? _digitalModeLoader.source = Qt.resolvedUrl("DigitalMode.qml")
-                            : _analogModeLoader.source = ""
+                    script: {
+                        if (clockModeFlipable.isDigital) {
+                            Utils.log(debugMode, "Loading Digital mode...")
+                            _digitalModeLoader.setSource(
+                                        "DigitalMode.qml",
+                                        {
+                                            "width": units.gu(23),
+                                            "timeFontSize": units.dp(62),
+                                            "timePeriodFontSize": units.dp(12)
+                                        })
+                        }
+                        else {
+                            Utils.log("Loading Analog mode..")
+                            _analogModeLoader.setSource(
+                                        "AnalogMode.qml",
+                                        {
+                                            "width": units.gu(23)
+                                        })
+                        }
+                    }
                 }
 
                 NumberAnimation {
@@ -121,9 +111,16 @@ ClockCircle {
                 }
 
                 ScriptAction {
-                    script: clockModeFlipable.isDigital
-                            ? _analogModeLoader.source = Qt.resolvedUrl("AnalogMode.qml")
-                            : _digitalModeLoader.source = ""
+                    script: {
+                        if (clockModeFlipable.isDigital) {
+                            console.log("unloading analog mode...")
+                            _analogModeLoader.source = ""
+                        }
+                        else {
+                            console.log("unloading digital mode...")
+                            _digitalModeLoader.source = ""
+                        }
+                    }
                 }
             }
         }
@@ -131,6 +128,42 @@ ClockCircle {
         MouseArea {
             anchors.fill: parent
             onClicked: parent.isDigital = !parent.isDigital
+        }
+    }
+
+    SequentialAnimation {
+        id: clockOpenAnimation
+
+        /*
+          This animation and script is only executed once when the clock app is
+          opened.
+        */
+
+        ParallelAnimation {
+
+            PropertyAnimation {
+                target: _outerCircle
+                property: "width"
+                to: units.gu(32)
+                duration: 900
+            }
+
+            ScriptAction {
+                script: {
+                    if (clockModeFlipable.isDigital) {
+                        _digitalModeLoader.source = Qt.resolvedUrl("DigitalMode.qml")
+                        _digitalModeLoader.item.startAnimation()
+                    }
+                    else {
+                        _analogModeLoader.source = Qt.resolvedUrl("AnalogMode.qml")
+                        _analogModeLoader.item.startAnimation()
+                    }
+                }
+            }
+        }
+
+        ScriptAction {
+            script: isStartup = false
         }
     }
 }
