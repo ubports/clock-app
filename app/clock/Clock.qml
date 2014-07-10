@@ -137,13 +137,28 @@ ClockCircle {
         }
     }
 
+    /*
+      The clockOpenAnimation is only executed once when the clock app is
+      opened.
+    */
     SequentialAnimation {
         id: clockOpenAnimation
 
         /*
-          This animation and script is only executed once when the clock app is
-          opened.
+          On startup, first ensure that the correct mode is loaded into memory,
+          and then only proceed to start the startup animation.
         */
+
+        ScriptAction {
+            script: {
+                if (clockModeFlipable.isDigital) {
+                    _digitalModeLoader.source = Qt.resolvedUrl("DigitalMode.qml")
+                }
+                else {
+                    _analogModeLoader.source = Qt.resolvedUrl("AnalogMode.qml")
+                }
+            }
+        }
 
         ParallelAnimation {
 
@@ -157,16 +172,20 @@ ClockCircle {
             ScriptAction {
                 script: {
                     if (clockModeFlipable.isDigital) {
-                        _digitalModeLoader.source = Qt.resolvedUrl("DigitalMode.qml")
                         _digitalModeLoader.item.startAnimation()
                     }
                     else {
-                        _analogModeLoader.source = Qt.resolvedUrl("AnalogMode.qml")
                         _analogModeLoader.item.startAnimation()
                     }
                 }
             }
         }
+
+        /*
+          Once the startup animation is complete, set isStartup to false so that
+          the animation are not performed again during the analog -> digital
+          switch or vice-versa.
+        */
 
         ScriptAction {
             script: isStartup = false
