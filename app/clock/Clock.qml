@@ -22,8 +22,11 @@ import "../components/Utils.js" as Utils
 ClockCircle {
     id: _outerCircle
 
+    // Property to set the analog time
+    property var analogTime: new Date()
+
     // Property to set the digital time label
-    property string time: Qt.formatTime(new Date())
+    property string time: Qt.formatTime(analogTime)
 
     // Property to trigger the start up animations
     property bool isStartup: true
@@ -39,7 +42,7 @@ ClockCircle {
         id: clockModeFlipable
 
         // Property to switch between digital and analog mode
-        property bool isDigital: true
+        property bool isDigital: false
 
         width: units.gu(23)
         height: units.gu(23)
@@ -113,11 +116,11 @@ ClockCircle {
                 ScriptAction {
                     script: {
                         if (clockModeFlipable.isDigital) {
-                            console.log("unloading analog mode...")
+                            Utils.log(debugMode, "Unloading Analog mode...")
                             _analogModeLoader.source = ""
                         }
                         else {
-                            console.log("unloading digital mode...")
+                            Utils.log(debugMode, "Unloading Digital mode...")
                             _digitalModeLoader.source = ""
                         }
                     }

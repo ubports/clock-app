@@ -39,9 +39,51 @@ ClockCircle {
         onTriggered: _innerCircleAnimation.start()
     }
 
-    /*
-      TODO: Add clock hands
-    */
+    Image {
+        id: hourHand
+
+        width: parent.width
+        anchors.centerIn: parent
+
+        smooth: true
+        source: "../graphics/Hour_Hand.png"
+        fillMode: Image.PreserveAspectFit
+        rotation: analogTime.getHours() * 30
+    }
+
+    Image {
+        id: minuteHand
+
+        width: parent.width
+        anchors.centerIn: parent
+
+        smooth: true
+        source: "../graphics/Minute_Hand.png"
+        fillMode: Image.PreserveAspectFit
+        rotation: analogTime.getMinutes() * 6
+    }
+
+    Image {
+        id: secondHand
+
+        anchors.centerIn: parent
+        width: parent.width + units.gu(2)
+
+        smooth: true
+        source: "../graphics/Second_Hand.png"
+        fillMode: Image.PreserveAspectFit
+        rotation: analogTime.getSeconds() * 6
+    }
+
+    Image {
+        id: center
+
+        width: parent.width
+        anchors.centerIn: parent
+
+        fillMode: Image.PreserveAspectFit
+        source: "../graphics/knob.png"
+    }
 
     PropertyAnimation {
         id: _innerCircleAnimation
@@ -51,4 +93,5 @@ ClockCircle {
         to: units.gu(23)
         duration: 900
     }
+
 }

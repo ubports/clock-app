@@ -29,7 +29,7 @@ ClockCircle {
     property alias timePeriodFontSize: _digitalTimePeriod.font.pixelSize
 
     Component.onCompleted: Utils.log(debugMode, "Loaded Digital Mode")
-    Component.onDestruction: console.log("Unloaded Digital Mode")
+    Component.onDestruction: Utils.log(debugMode, "Unloaded Digital Mode")
 
     function startAnimation() {
         _animationTimer.start()
