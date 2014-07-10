@@ -28,6 +28,9 @@ PageWithBottomEdge {
     */
     property int _minThreshold: addCityButton.maxThreshold + units.gu(5)
 
+    // Property to keep track of the clock mode
+    property alias isDigital: clock.clockMode
+
     flickable: null
 
     Component.onCompleted: Utils.log(debugMode, "Clock Page loaded")

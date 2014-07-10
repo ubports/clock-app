@@ -42,6 +42,7 @@ ClockCircle {
     Image {
         id: hourHand
 
+        z: minuteHand.z + 1
         width: parent.width
         anchors.centerIn: parent
 
@@ -78,6 +79,7 @@ ClockCircle {
     Image {
         id: center
 
+        z: hourHand.z + 1
         width: parent.width
         anchors.centerIn: parent
 

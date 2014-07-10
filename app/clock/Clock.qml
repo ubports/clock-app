@@ -31,6 +31,9 @@ ClockCircle {
     // Property to trigger the start up animations
     property bool isStartup: true
 
+    // Property to keep track of the clock mode
+    property alias clockMode: clockModeFlipable.isDigital
+
     Component.onCompleted: {
         clockOpenAnimation.start()
     }
