@@ -84,7 +84,7 @@ ClockCircle {
         anchors.centerIn: parent
 
         fillMode: Image.PreserveAspectFit
-        source: "../graphics/knob.png"
+        source: "../graphics/Knob.png"
     }
 
     PropertyAnimation {
