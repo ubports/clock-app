@@ -100,7 +100,7 @@ ClockCircle {
                                         })
                         }
                         else {
-                            Utils.log("Loading Analog mode..")
+                            Utils.log(debugMode, "Loading Analog mode..")
                             _analogModeLoader.setSource(
                                         "AnalogMode.qml",
                                         {
