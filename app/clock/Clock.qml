@@ -41,6 +41,19 @@ ClockCircle {
     // Sets the style to outer circle
     isOuter: true
 
+    Shadow {
+        id: upperShadow
+        anchors.centerIn: clockModeFlipable
+        anchors.verticalCenterOffset: -units.gu(5.5)
+    }
+
+    Shadow {
+        id: bottomShadow
+        rotation: 180
+        anchors.centerIn: clockModeFlipable
+        anchors.verticalCenterOffset: units.gu(5.5)
+    }
+
     Flipable {
         id: clockModeFlipable
 
@@ -74,7 +87,7 @@ ClockCircle {
             when: clockModeFlipable.isDigital
             PropertyChanges {
                 target: rotation
-                angle: 180
+                angle: isDigital ? -180 : 180
             }
         }
 
@@ -110,10 +123,28 @@ ClockCircle {
                     }
                 }
 
-                NumberAnimation {
-                    target: rotation
-                    property: "angle"
-                    duration: 1000
+                ParallelAnimation {
+                    PropertyAnimation {
+                        target: bottomShadow
+                        property: "opacity"
+                        duration: 333
+                        from: 1
+                        to: 0
+                    }
+
+                    NumberAnimation {
+                        target: rotation
+                        property: "angle"
+                        duration: 666
+                    }
+
+                    PropertyAnimation {
+                        target: upperShadow
+                        property: "opacity"
+                        duration: 666
+                        from: -1
+                        to: 1
+                    }
                 }
 
                 ScriptAction {
