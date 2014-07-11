@@ -33,7 +33,7 @@ Row {
     property alias rightLabel: _rightLabel.text
 
     // Property to set the maximum threshold beyond which the button shouldn't resize
-    property int maxThreshold: -units.gu(15)
+    property int maxThreshold: -units.gu(8)
 
     spacing: units.gu(1)
 
