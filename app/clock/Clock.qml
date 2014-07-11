@@ -77,7 +77,7 @@ ClockCircle {
         id: clockModeFlipable
 
         // Property to switch between digital and analog mode
-        property bool isDigital: false
+        property bool isDigital: true
 
         width: units.gu(23)
         height: units.gu(23)
@@ -110,59 +110,16 @@ ClockCircle {
             }
         }
 
-        transitions: Transition {
-
-            /*
-              Rotation animation for switching between analog and digital modes.
-              It is however disabled during app startup.
-            */
-            enabled: !isStartup
-
-            SequentialAnimation {
-                ScriptAction {
-                    script: {
-                        if (clockModeFlipable.isDigital) {
-                            Utils.log(debugMode, "Loading Digital mode...")
-                            _digitalModeLoader.setSource(
-                                        "DigitalMode.qml",
-                                        {
-                                            "width": units.gu(23),
-                                            "timeFontSize": units.dp(62),
-                                            "timePeriodFontSize": units.dp(12)
-                                        })
-                        }
-                        else {
-                            Utils.log(debugMode, "Loading Analog mode..")
-                            _analogModeLoader.setSource(
-                                        "AnalogMode.qml",
-                                        {
-                                            "width": units.gu(23)
-                                        })
-                        }
-                    }
-                }
-
-                ScriptAction {
-                    script: {
-                        if (clockModeFlipable.isDigital) {
-                            Utils.log(debugMode, "Unloading Analog mode...")
-                            _analogModeLoader.source = ""
-                        }
-                        else {
-                            Utils.log(debugMode, "Unloading Digital mode...")
-                            _digitalModeLoader.source = ""
-                        }
-                    }
-                }
-            }
-        }
-
         MouseArea {
             anchors.fill: parent
             onClicked: clockFlipAnimation.start()
         }
     }
 
+    /*
+      The clockFlipAnimation is executed during every switch between
+      analog and digital modes.
+    */
     SequentialAnimation {
         id: clockFlipAnimation
 
@@ -170,11 +127,7 @@ ClockCircle {
             script: {
                 analogShadow.source = Qt.resolvedUrl("AnalogShadow.qml")
                 digitalShadow.source = Qt.resolvedUrl("DigitalShadow.qml")
-            }
-        }
 
-        ScriptAction {
-            script: {
                 if (clockModeFlipable.isDigital) {
                     digitalShadow.item.isAnalog = true
                 }
@@ -200,12 +153,44 @@ ClockCircle {
             to: 1
         }
 
+        /*
+          Script to clean up after the flip animation is complete which
+          involves (in the order listed below)
+            - Hiding the shadows
+            - Toggling main clock mode and unloading the hidden mode
+            - Unloading the analog and digital shadow required to show the
+              paper effect
+        */
+
         ScriptAction {
             script: {
                 upperShadow.opacity = bottomShadow.opacity = 0
                 clockModeFlipable.isDigital = !clockModeFlipable.isDigital
-                analogShadow.source = ""
-                digitalShadow.source =  ""
+
+                if (clockModeFlipable.isDigital) {
+                    Utils.log(debugMode, "Loaded Digital mode...")
+                    _digitalModeLoader.setSource(
+                                "DigitalMode.qml",
+                                {
+                                    "width": units.gu(23),
+                                    "timeFontSize": units.dp(62),
+                                    "timePeriodFontSize": units.dp(12)
+                                })
+                    Utils.log(debugMode, "Unloaded Analog mode...")
+                    _analogModeLoader.source = ""
+                }
+                else {
+                    Utils.log(debugMode, "Loaded Analog mode..")
+                    _analogModeLoader.setSource(
+                                "AnalogMode.qml",
+                                {
+                                    "width": units.gu(23)
+                                })
+                    Utils.log(debugMode, "Unloaded Digital mode...")
+                    _digitalModeLoader.source = ""
+                }
+
+                analogShadow.source = digitalShadow.source = ""
             }
         }
     }

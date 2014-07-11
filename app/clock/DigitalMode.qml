@@ -28,9 +28,6 @@ ClockCircle {
     // Property to allow setting the time period font size manually
     property alias timePeriodFontSize: _digitalTimePeriod.font.pixelSize
 
-    Component.onCompleted: Utils.log(debugMode, "Loaded Digital Mode")
-    Component.onDestruction: Utils.log(debugMode, "Unloaded Digital Mode")
-
     function startAnimation() {
         _animationTimer.start()
     }

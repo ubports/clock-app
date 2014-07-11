@@ -22,9 +22,6 @@ import "../components/Utils.js" as Utils
 ClockCircle {
     id: _innerCircleAnalog
 
-    Component.onCompleted: Utils.log(debugMode, "Loaded Analog Mode")
-    Component.onDestruction: Utils.log(debugMode, "Unloaded Analog Mode")
-
     function startAnimation() {
         _animationTimer.start()
     }
