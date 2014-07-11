@@ -43,26 +43,34 @@ ClockCircle {
 
     Shadow {
         id: upperShadow
-
-        /*
-          Based on the direction of the flip animation (top to down or down to
-          top) the shadow will be placed accordingly (up or down).
-        */
-
-        rotation: clockModeFlipable.isDigital ? 0 : 180
+        rotation: 0
+        z: clockModeFlipable.z + 2
         anchors.centerIn: clockModeFlipable
-        anchors.verticalCenterOffset: clockModeFlipable.isDigital
-                                      ? -units.gu(5.5)
-                                      : units.gu(5.5)
+        anchors.verticalCenterOffset: -units.gu(5.6)
     }
 
     Shadow {
         id: bottomShadow
-        rotation: isDigital ? 180 : 0
+        rotation: 180
+        z: clockModeFlipable.z + 2
         anchors.centerIn: clockModeFlipable
-        anchors.verticalCenterOffset: clockModeFlipable.isDigital
-                                      ? units.gu(5.5)
-                                      : -units.gu(5.5)
+        anchors.verticalCenterOffset: units.gu(5.6)
+    }
+
+    Loader {
+        id: analogShadow
+        z: clockModeFlipable.isDigital ? clockModeFlipable.z + 1
+                                       : clockModeFlipable.z + 3
+        anchors.horizontalCenter: parent.horizontalCenter
+        anchors.bottom: clockModeFlipable.bottom
+    }
+
+    Loader {
+        id: digitalShadow
+        z: clockModeFlipable.isDigital ? clockModeFlipable.z + 3
+                                       : clockModeFlipable.z + 1
+        anchors.horizontalCenter: parent.horizontalCenter
+        anchors.bottom: clockModeFlipable.bottom
     }
 
     Flipable {
@@ -134,30 +142,6 @@ ClockCircle {
                     }
                 }
 
-                ParallelAnimation {
-                    PropertyAnimation {
-                        target: bottomShadow
-                        property: "opacity"
-                        duration: 333
-                        from: 1
-                        to: 0
-                    }
-
-                    NumberAnimation {
-                        target: rotation
-                        property: "angle"
-                        duration: 666
-                    }
-
-                    PropertyAnimation {
-                        target: upperShadow
-                        property: "opacity"
-                        duration: 666
-                        from: -1
-                        to: 1
-                    }
-                }
-
                 ScriptAction {
                     script: {
                         if (clockModeFlipable.isDigital) {
@@ -175,7 +159,54 @@ ClockCircle {
 
         MouseArea {
             anchors.fill: parent
-            onClicked: parent.isDigital = !parent.isDigital
+            onClicked: clockFlipAnimation.start()
+        }
+    }
+
+    SequentialAnimation {
+        id: clockFlipAnimation
+
+        ScriptAction {
+            script: {
+                analogShadow.source = Qt.resolvedUrl("AnalogShadow.qml")
+                digitalShadow.source = Qt.resolvedUrl("DigitalShadow.qml")
+            }
+        }
+
+        ScriptAction {
+            script: {
+                if (clockModeFlipable.isDigital) {
+                    digitalShadow.item.isAnalog = true
+                }
+                else {
+                    analogShadow.item.isDigital = true
+                }
+            }
+        }
+
+        PropertyAnimation {
+            target: bottomShadow
+            property: "opacity"
+            duration: 333
+            from: 1
+            to: 0
+        }
+
+        PropertyAnimation {
+            target: upperShadow
+            property: "opacity"
+            duration: 333
+            from: 0
+            to: 1
+        }
+
+        ScriptAction {
+            script: {
+                upperShadow.opacity = bottomShadow.opacity = 0
+                clockModeFlipable.isDigital = !clockModeFlipable.isDigital
+                analogShadow.source = ""
+                digitalShadow.source =  ""
+            }
         }
     }
 

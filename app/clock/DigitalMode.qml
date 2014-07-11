@@ -35,7 +35,6 @@ ClockCircle {
         _animationTimer.start()
     }
 
-    anchors.centerIn: parent
     width: units.gu(0)
 
     Timer {
