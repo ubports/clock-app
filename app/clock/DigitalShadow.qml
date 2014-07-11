@@ -68,9 +68,4 @@ Flipable {
             duration: 666
         }
     }
-
-//    MouseArea {
-//        anchors.fill: parent
-//        onClicked: parent.isAnalog = !parent.isAnalog
-//    }
 }
