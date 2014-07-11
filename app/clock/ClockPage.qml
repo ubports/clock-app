@@ -26,7 +26,7 @@ PageWithBottomEdge {
       Property to set the minimum drag distance before activating the add
       city signal
     */
-    property int _minThreshold: addCityButton.maxThreshold + units.gu(5)
+    property int _minThreshold: addCityButton.maxThreshold + units.gu(2)
 
     // Property to keep track of the clock mode
     property alias isDigital: clock.clockMode
@@ -51,7 +51,7 @@ PageWithBottomEdge {
             id: addCityButton
 
             anchors.top: parent.top
-            anchors.topMargin: -labelHeight - units.gu(6)
+            anchors.topMargin: -labelHeight - units.gu(3)
             anchors.horizontalCenter: parent.horizontalCenter
 
             leftLabel: i18n.tr("Add")
@@ -108,8 +108,9 @@ PageWithBottomEdge {
         }
 
         onDragEnded: {
-            if(contentY < _minThreshold)
+            if(contentY < _minThreshold) {
                 Utils.log(debugMode, "Activate add city signal")
+            }
         }
 
         onContentYChanged: {

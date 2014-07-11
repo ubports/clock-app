@@ -41,6 +41,30 @@ ClockCircle {
     // Sets the style to outer circle
     isOuter: true
 
+    Shadow {
+        id: upperShadow
+
+        /*
+          Based on the direction of the flip animation (top to down or down to
+          top) the shadow will be placed accordingly (up or down).
+        */
+
+        rotation: clockModeFlipable.isDigital ? 0 : 180
+        anchors.centerIn: clockModeFlipable
+        anchors.verticalCenterOffset: clockModeFlipable.isDigital
+                                      ? -units.gu(5.5)
+                                      : units.gu(5.5)
+    }
+
+    Shadow {
+        id: bottomShadow
+        rotation: isDigital ? 180 : 0
+        anchors.centerIn: clockModeFlipable
+        anchors.verticalCenterOffset: clockModeFlipable.isDigital
+                                      ? units.gu(5.5)
+                                      : -units.gu(5.5)
+    }
+
     Flipable {
         id: clockModeFlipable
 
@@ -110,10 +134,28 @@ ClockCircle {
                     }
                 }
 
-                NumberAnimation {
-                    target: rotation
-                    property: "angle"
-                    duration: 1000
+                ParallelAnimation {
+                    PropertyAnimation {
+                        target: bottomShadow
+                        property: "opacity"
+                        duration: 333
+                        from: 1
+                        to: 0
+                    }
+
+                    NumberAnimation {
+                        target: rotation
+                        property: "angle"
+                        duration: 666
+                    }
+
+                    PropertyAnimation {
+                        target: upperShadow
+                        property: "opacity"
+                        duration: 666
+                        from: -1
+                        to: 1
+                    }
                 }
 
                 ScriptAction {
