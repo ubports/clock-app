@@ -43,15 +43,20 @@ ClockCircle {
 
     Shadow {
         id: upperShadow
+        rotation: clockModeFlipable.isDigital ? 0 : 180
         anchors.centerIn: clockModeFlipable
-        anchors.verticalCenterOffset: -units.gu(5.5)
+        anchors.verticalCenterOffset: clockModeFlipable.isDigital
+                                      ? -units.gu(5.5)
+                                      : units.gu(5.5)
     }
 
     Shadow {
         id: bottomShadow
-        rotation: 180
+        rotation: isDigital ? 180 : 0
         anchors.centerIn: clockModeFlipable
-        anchors.verticalCenterOffset: units.gu(5.5)
+        anchors.verticalCenterOffset: clockModeFlipable.isDigital
+                                      ? units.gu(5.5)
+                                      : -units.gu(5.5)
     }
 
     Flipable {
@@ -87,7 +92,7 @@ ClockCircle {
             when: clockModeFlipable.isDigital
             PropertyChanges {
                 target: rotation
-                angle: isDigital ? -180 : 180
+                angle: 180
             }
         }
 
