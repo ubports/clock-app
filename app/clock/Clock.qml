@@ -43,6 +43,12 @@ ClockCircle {
 
     Shadow {
         id: upperShadow
+
+        /*
+          Based on the direction of the flip animation (top to down or down to
+          top) the shadow will be placed accordingly (up or down).
+        */
+
         rotation: clockModeFlipable.isDigital ? 0 : 180
         anchors.centerIn: clockModeFlipable
         anchors.verticalCenterOffset: clockModeFlipable.isDigital
