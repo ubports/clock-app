@@ -35,6 +35,28 @@ Page {
     title: isNewAlarm ? i18n.tr("New Alarm") : i18n.tr("Edit Alarm")
     visible: false
 
+    head {
+        backAction: Action {
+            iconName: "close"
+            onTriggered: {
+                mainStack.pop()
+            }
+        }
+
+        actions: Action {
+            iconName: "save"
+            text: i18n.tr("Alarm")
+            onTriggered: {
+                if(isNewAlarm) {
+                    saveNewAlarm()
+                }
+                else {
+                    updateAlarm()
+                }
+            }
+        }
+    }
+
     Component.onCompleted: {
         if(!isNewAlarm) {
             readAlarm()
@@ -173,31 +195,6 @@ Page {
             subText: "Suru arpeggio"
             onClicked: mainStack.push(Qt.resolvedUrl("AlarmSound.qml"),
                                       {"alarmSound": _alarmSound})
-        }
-    }
-
-    tools: ToolbarItems {
-        back: Button {
-            action: Action {
-                iconName: "close"
-                onTriggered: {
-                    mainStack.pop()
-                }
-            }
-        }
-
-        ToolbarButton {
-            action: Action {
-                iconName: "save"
-                onTriggered: {
-                    if(isNewAlarm) {
-                        saveNewAlarm()
-                    }
-                    else {
-                        updateAlarm()
-                    }
-                }
-            }
         }
     }
 }
