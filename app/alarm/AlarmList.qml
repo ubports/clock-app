@@ -31,7 +31,7 @@ Flickable {
       Property to set the minimum drag distance before activating the add
       alarm signal
     */
-    property int _minThreshold: addAlarmButton.maxThreshold + units.gu(5)
+    property int _minThreshold: addAlarmButton.maxThreshold + units.gu(2)
 
     clip: true
     anchors.fill: parent
@@ -46,7 +46,7 @@ Flickable {
 
         anchors {
             top: parent.top
-            topMargin: -labelHeight - units.gu(6)
+            topMargin: -labelHeight - units.gu(3)
             horizontalCenter: parent.horizontalCenter
         }
 
