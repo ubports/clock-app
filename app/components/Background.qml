@@ -24,10 +24,6 @@ import Ubuntu.Components 1.1
 Image {
     id: _background
 
-    width: parent.width
-    anchors.top: parent.top
-    anchors.left: parent.left
-
+    anchors.fill: parent
     source: "../graphics/Background_Texture.jpg"
-    fillMode: Image.PreserveAspectFit
 }
