@@ -44,7 +44,7 @@ Page {
         }
 
         actions: Action {
-            iconName: "save"
+            iconName: "ok"
             text: i18n.tr("Alarm")
             onTriggered: {
                 if(isNewAlarm) {
