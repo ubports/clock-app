@@ -16,26 +16,28 @@
 
 import QtQuick 2.0
 import Ubuntu.Components 1.1
-import "../components/Utils.js" as Utils
 
-Page {
-    title: "Alarms"
+Item {
+    id: _shadowContainer
 
-    flickable: null
+    clip: true
+    width: units.gu(22.5)
+    height: width/2
 
-    head.actions: Action {
-        iconName: "add"
-        text: i18n.tr("Alarm")
-        onTriggered: {
-            mainStack.push(Qt.resolvedUrl("EditAlarmPage.qml"))
+    opacity: 0
+
+    Rectangle {
+        id: _shadow
+
+        width: _shadowContainer.width
+        height: width
+        radius: width/2
+
+        anchors {
+            top: parent.top
+            horizontalCenter: parent.horizontalCenter
         }
-    }
 
-    Component.onCompleted: Utils.log(debugMode, "Alarm Page loaded")
-
-    AlarmList{
-        id: listAlarm
-        model: alarmModel
-        anchors.fill: parent
+        color: Qt.rgba(0,0,0,0.2)
     }
 }

@@ -28,16 +28,10 @@ Flickable {
     property var model
 
     /*
-      Property to set the maximum drag distance before freezing the pull to add
-      button resize
-    */
-    property int _maxThreshold: -80
-
-    /*
       Property to set the minimum drag distance before activating the add
       alarm signal
     */
-    property int _minThreshold: _maxThreshold + 10
+    property int _minThreshold: addAlarmButton.maxThreshold + units.gu(2)
 
     clip: true
     anchors.fill: parent
@@ -52,13 +46,12 @@ Flickable {
 
         anchors {
             top: parent.top
-            topMargin: -labelHeight - units.gu(6)
+            topMargin: -labelHeight - units.gu(3)
             horizontalCenter: parent.horizontalCenter
         }
 
         leftLabel: i18n.tr("Add")
         rightLabel: i18n.tr("Alarm")
-        maxThreshold: alarmListFlickable._maxThreshold
     }
 
     Column {

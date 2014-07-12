@@ -1,9 +1,9 @@
 {
-    "name": "com.ubuntu.clock",
-    "description": "description of ubuntu-clock-app",
-    "framework": "ubuntu-sdk-14.10-qml-dev1",
+    "name": "com.ubuntu.clock.devel",
+    "description": "A sophisticated clock app for Ubuntu Touch",
+    "framework": "ubuntu-sdk-14.10-dev2",
     "architecture": "all",
-    "title": "ubuntu-clock-app",
+    "title": "Clock Reboot",
     "hooks": {
         "ubuntu-clock-app": {
             "apparmor": "ubuntu-clock-app.json",
@@ -11,5 +11,5 @@
         }
     },
     "version": "0.1",
-    "maintainer": "Nekhelesh Ramananthan <krnekhelesh@gmail.com>"
+    "maintainer": "Ubuntu App Cats <ubuntu-touch-coreapps@lists.launchpad.net>"
 }

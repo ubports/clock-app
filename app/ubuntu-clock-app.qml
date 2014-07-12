@@ -34,7 +34,7 @@ MainView {
     objectName: "clock"
 
     // applicationName for click packages (used as an unique app identifier)
-    applicationName: "com.ubuntu.clock"
+    applicationName: "com.ubuntu.clock.devel"
 
     /*
       This property enables the application to change orientation when the
@@ -68,7 +68,7 @@ MainView {
     Timer {
         id: clockTimer
 
-        interval: 60000
+        interval: clockPage.isDigital ? 60000 : 1000
         repeat: true
         running: true
         onTriggered: clockPage.updateTime()
