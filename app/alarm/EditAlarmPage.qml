@@ -32,7 +32,7 @@ Page {
 
     property var tempAlarm
 
-    title: isNewAlarm ? i18n.tr("New Alarm") : i18n.tr("Edit Alarm")
+    title: isNewAlarm ? i18n.tr("New alarm") : i18n.tr("Edit alarm")
     visible: false
 
     head {
