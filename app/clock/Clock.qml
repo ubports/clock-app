@@ -43,26 +43,34 @@ ClockCircle {
 
     Shadow {
         id: upperShadow
-
-        /*
-          Based on the direction of the flip animation (top to down or down to
-          top) the shadow will be placed accordingly (up or down).
-        */
-
-        rotation: clockModeFlipable.isDigital ? 0 : 180
+        rotation: 0
+        z: clockModeFlipable.z + 2
         anchors.centerIn: clockModeFlipable
-        anchors.verticalCenterOffset: clockModeFlipable.isDigital
-                                      ? -units.gu(5.5)
-                                      : units.gu(5.5)
+        anchors.verticalCenterOffset: -units.gu(5.6)
     }
 
     Shadow {
         id: bottomShadow
-        rotation: isDigital ? 180 : 0
+        rotation: 180
+        z: clockModeFlipable.z + 2
         anchors.centerIn: clockModeFlipable
-        anchors.verticalCenterOffset: clockModeFlipable.isDigital
-                                      ? units.gu(5.5)
-                                      : -units.gu(5.5)
+        anchors.verticalCenterOffset: units.gu(5.6)
+    }
+
+    Loader {
+        id: analogShadow
+        z: clockModeFlipable.isDigital ? clockModeFlipable.z + 1
+                                       : clockModeFlipable.z + 3
+        anchors.horizontalCenter: parent.horizontalCenter
+        anchors.bottom: clockModeFlipable.bottom
+    }
+
+    Loader {
+        id: digitalShadow
+        z: clockModeFlipable.isDigital ? clockModeFlipable.z + 3
+                                       : clockModeFlipable.z + 1
+        anchors.horizontalCenter: parent.horizontalCenter
+        anchors.bottom: clockModeFlipable.bottom
     }
 
     Flipable {
@@ -102,80 +110,88 @@ ClockCircle {
             }
         }
 
-        transitions: Transition {
+        MouseArea {
+            anchors.fill: parent
+            onClicked: clockFlipAnimation.start()
+        }
+    }
 
-            /*
-              Rotation animation for switching between analog and digital modes.
-              It is however disabled during app startup.
-            */
-            enabled: !isStartup
+    /*
+      The clockFlipAnimation is executed during every switch between
+      analog and digital modes.
+    */
+    SequentialAnimation {
+        id: clockFlipAnimation
 
-            SequentialAnimation {
-                ScriptAction {
-                    script: {
-                        if (clockModeFlipable.isDigital) {
-                            Utils.log(debugMode, "Loading Digital mode...")
-                            _digitalModeLoader.setSource(
-                                        "DigitalMode.qml",
-                                        {
-                                            "width": units.gu(23),
-                                            "timeFontSize": units.dp(62),
-                                            "timePeriodFontSize": units.dp(12)
-                                        })
-                        }
-                        else {
-                            Utils.log(debugMode, "Loading Analog mode..")
-                            _analogModeLoader.setSource(
-                                        "AnalogMode.qml",
-                                        {
-                                            "width": units.gu(23)
-                                        })
-                        }
-                    }
+        ScriptAction {
+            script: {
+                analogShadow.source = Qt.resolvedUrl("AnalogShadow.qml")
+                digitalShadow.source = Qt.resolvedUrl("DigitalShadow.qml")
+
+                if (clockModeFlipable.isDigital) {
+                    digitalShadow.item.isAnalog = true
                 }
-
-                ParallelAnimation {
-                    PropertyAnimation {
-                        target: bottomShadow
-                        property: "opacity"
-                        duration: 333
-                        from: 1
-                        to: 0
-                    }
-
-                    NumberAnimation {
-                        target: rotation
-                        property: "angle"
-                        duration: 666
-                    }
-
-                    PropertyAnimation {
-                        target: upperShadow
-                        property: "opacity"
-                        duration: 666
-                        from: -1
-                        to: 1
-                    }
-                }
-
-                ScriptAction {
-                    script: {
-                        if (clockModeFlipable.isDigital) {
-                            Utils.log(debugMode, "Unloading Analog mode...")
-                            _analogModeLoader.source = ""
-                        }
-                        else {
-                            Utils.log(debugMode, "Unloading Digital mode...")
-                            _digitalModeLoader.source = ""
-                        }
-                    }
+                else {
+                    analogShadow.item.isDigital = true
                 }
             }
         }
 
-        MouseArea {
-            anchors.fill: parent
-            onClicked: parent.isDigital = !parent.isDigital
+        PropertyAnimation {
+            target: bottomShadow
+            property: "opacity"
+            duration: 333
+            from: 1
+            to: 0
+        }
+
+        PropertyAnimation {
+            target: upperShadow
+            property: "opacity"
+            duration: 333
+            from: 0
+            to: 1
+        }
+
+        /*
+          Script to clean up after the flip animation is complete which
+          involves (in the order listed below)
+            - Hiding the shadows
+            - Toggling main clock mode and unloading the hidden mode
+            - Unloading the analog and digital shadow required to show the
+              paper effect
+        */
+
+        ScriptAction {
+            script: {
+                upperShadow.opacity = bottomShadow.opacity = 0
+                clockModeFlipable.isDigital = !clockModeFlipable.isDigital
+
+                if (clockModeFlipable.isDigital) {
+                    Utils.log(debugMode, "Loaded Digital mode...")
+                    _digitalModeLoader.setSource(
+                                "DigitalMode.qml",
+                                {
+                                    "width": units.gu(23),
+                                    "timeFontSize": units.dp(62),
+                                    "timePeriodFontSize": units.dp(12)
+                                })
+                    Utils.log(debugMode, "Unloaded Analog mode...")
+                    _analogModeLoader.source = ""
+                }
+                else {
+                    Utils.log(debugMode, "Loaded Analog mode..")
+                    _analogModeLoader.setSource(
+                                "AnalogMode.qml",
+                                {
+                                    "width": units.gu(23)
+                                })
+                    Utils.log(debugMode, "Unloaded Digital mode...")
+                    _digitalModeLoader.source = ""
+                }
+
+                analogShadow.source = digitalShadow.source = ""
+            }
         }
     }
 

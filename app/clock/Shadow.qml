@@ -21,7 +21,7 @@ Item {
     id: _shadowContainer
 
     clip: true
-    width: units.gu(22)
+    width: units.gu(22.5)
     height: width/2
 
     opacity: 0
@@ -29,7 +29,7 @@ Item {
     Rectangle {
         id: _shadow
 
-        width: units.gu(22)
+        width: _shadowContainer.width
         height: width
         radius: width/2
 
