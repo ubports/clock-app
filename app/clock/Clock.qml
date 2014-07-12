@@ -77,7 +77,7 @@ ClockCircle {
         id: clockModeFlipable
 
         // Property to switch between digital and analog mode
-        property bool isDigital: true
+        property bool isDigital: false
 
         width: units.gu(23)
         height: units.gu(23)
