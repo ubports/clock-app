@@ -32,7 +32,8 @@ Row {
     // Property to set the label on the right side of the add button
     property alias rightLabel: _rightLabel.text
 
-    // Property to set the maximum threshold beyond which the button shouldn't resize
+    // Property to set the maximum threshold beyond which the button shouldn't
+    // resize
     property int maxThreshold: -units.gu(8)
 
     // Property to set the maximum size of the plus icon
@@ -53,10 +54,14 @@ Row {
         id: _addButton
 
         isOuter: true
-        width: dragPosition >= maxThreshold ? dragPosition * units.gu(6.5)/maxThreshold : units.gu(6.5)
+        width: dragPosition >= maxThreshold
+               ? dragPosition * units.gu(6.5)/maxThreshold
+               : units.gu(6.5)
 
         ClockCircle {
-            width: dragPosition >= maxThreshold ? dragPosition * units.gu(4.5)/maxThreshold : units.gu(4.5)
+            width: dragPosition >= maxThreshold
+                   ? dragPosition * units.gu(4.5)/maxThreshold
+                   : units.gu(4.5)
             anchors.centerIn: parent
 
             Icon {
@@ -64,8 +69,10 @@ Row {
                 anchors.centerIn: parent
                 color: UbuntuColors.coolGrey
                 name: "add"
-                height: dragPosition >= maxThreshold ? (dragPosition * maxPlusSize)/maxThreshold : maxPlusSize
-                width: dragPosition >= maxThreshold ? (dragPosition * maxPlusSize)/maxThreshold : maxPlusSize
+                height: dragPosition >= maxThreshold
+                        ? (dragPosition * maxPlusSize)/maxThreshold
+                        : maxPlusSize
+                width: height
             }
         }
     }
