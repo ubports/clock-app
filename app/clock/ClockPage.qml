@@ -28,12 +28,16 @@ PageWithBottomEdge {
     */
     property int _minThreshold: addCityButton.maxThreshold + units.gu(2)
 
+    // Property to keep track of the clock mode
+    property alias isDigital: clock.clockMode
+
     flickable: null
 
     Component.onCompleted: Utils.log(debugMode, "Clock Page loaded")
 
     function updateTime() {
-        clock.time = Qt.formatTime(new Date())
+        clock.analogTime = new Date()
+        clock.time = Qt.formatTime(clock.analogTime)
     }
 
     Flickable {
