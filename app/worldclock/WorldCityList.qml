@@ -34,6 +34,10 @@ Page {
         delegate: ListItem.Subtitled {
             text: city + "," + country
             subText: timezoneID
+
+            onClicked: {
+                console.log(cityTimezone.getLocalTime(timezoneID))
+            }
         }
     }
 }

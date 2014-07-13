@@ -18,11 +18,14 @@ public:
     ~Zone();
 
 public slots:
-    QDateTime getLocalTime();
+    /*
+     * Public function to receive a Olson Timezone ID as argument and
+     * output that timezone's QDateTime object.
+    */
+    QDateTime getLocalTime(QByteArray *timezoneID);
 
 private:
     QDateTime m_time;
-    QTimeZone m_timezone;
 };
 
 #endif // ZONE_H

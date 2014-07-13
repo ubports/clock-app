@@ -11,17 +11,11 @@ Zone::~Zone() {
 
 }
 
-QDateTime Zone::getLocalTime() {
-    QList<QByteArray> ids = QTimeZone::availableTimeZoneIds();
+QDateTime Zone::getLocalTime(QByteArray *timezoneID) {
+    // Create a QTimeZone object and initiate it with the timezone ID provided
+    QTimeZone zone = QTimeZone(*timezoneID);
 
-    QByteArray test("America/Chicago");
-
-    QTimeZone zone = QTimeZone("America/Chicago");
-
-    QDateTime zoneTime = QDateTime(QDate::currentDate(), QTime::currentTime(), zone).toLocalTime();
-    qDebug() << zoneTime.time();
-
-    m_time.setTimeSpec(Qt::TimeZone);
+    // Convert the QDateTime object to the timezone provided
     m_time.toTimeZone(zone);
 
     qDebug() << m_time;
