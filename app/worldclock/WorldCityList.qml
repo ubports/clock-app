@@ -37,6 +37,7 @@ Page {
 
             onClicked: {
                 console.log(cityTimezone.getLocalTime(timezoneID))
+                console.log(cityTimezone.getCurrentTimeString(timezoneID))
             }
         }
     }
