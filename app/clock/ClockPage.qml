@@ -109,7 +109,7 @@ PageWithBottomEdge {
 
         onDragEnded: {
             if(contentY < _minThreshold) {
-                Utils.log(debugMode, "Activate add city signal")
+                mainStack.push(Qt.resolvedUrl("../worldclock/WorldCityList.qml"))
             }
         }
 

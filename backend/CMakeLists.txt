@@ -2,11 +2,19 @@ include_directories(
     ${CMAKE_CURRENT_SOURCE_DIR}
 )
 
-set(ubuntu-clock-appbackend_SRCS modules/Timezone/backend.cpp modules/Timezone/zone.cpp)
+set(
+    ubuntu-clock-appbackend_SRCS
+    modules/Timezone/backend.cpp
+    modules/Timezone/zone.cpp
+)
 
-add_library(ubuntu-clock-appbackend MODULE ${ubuntu-clock-appbackend_SRCS})
+add_library(ubuntu-clock-appbackend MODULE
+    ${ubuntu-clock-appbackend_SRCS}
+)
 
-set_target_properties(ubuntu-clock-appbackend PROPERTIES LIBRARY_OUTPUT_DIRECTORY Timezone)
+set_target_properties(ubuntu-clock-appbackend PROPERTIES
+    LIBRARY_OUTPUT_DIRECTORY Timezone
+)
 
 qt5_use_modules(ubuntu-clock-appbackend Gui Qml Quick)
 

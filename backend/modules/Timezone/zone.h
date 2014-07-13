@@ -2,24 +2,27 @@
 #define ZONE_H
 
 #include <QObject>
+#include <QDateTime>
+#include <QTimeZone>
+#include <QList>
+#include <QByteArray>
+#include <QDebug>
 
 class Zone : public QObject
 {
     Q_OBJECT
-    Q_PROPERTY( QString helloWorld READ helloWorld WRITE setHelloWorld NOTIFY helloWorldChanged )
+    Q_DISABLE_COPY(Zone)
 
 public:
-    explicit Zone(QObject *parent = 0);
+    Zone(QObject *parent = 0);
     ~Zone();
 
-Q_SIGNALS:
-    void helloWorldChanged();
+public slots:
+    QDateTime getLocalTime();
 
-protected:
-    QString helloWorld() { return m_message; }
-    void setHelloWorld(QString msg) { m_message = msg; Q_EMIT helloWorldChanged(); }
-
-    QString m_message;
+private:
+    QDateTime m_time;
+    QTimeZone m_timezone;
 };
 
 #endif // ZONE_H
