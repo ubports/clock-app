@@ -16,7 +16,8 @@
 
 #include "xmltimezonemodel.h"
 
-XmlTimeZoneModel::XmlTimeZoneModel(QObject *parent)
+XmlTimeZoneModel::XmlTimeZoneModel(QObject *parent):
+    TimeZoneModel(parent)
 {
 }
 
