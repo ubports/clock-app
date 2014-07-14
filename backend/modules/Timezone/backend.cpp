@@ -24,7 +24,6 @@ void BackendPlugin::registerTypes(const char *uri)
 {
     Q_ASSERT(uri == QLatin1String("Timezone"));
 
-    qmlRegisterType<TimeZoneModel>(uri, 1, 0, "TimeZoneModel");
     qmlRegisterType<XmlTimeZoneModel>(uri, 1, 0, "XmlTimeZoneModel");
 }
 
