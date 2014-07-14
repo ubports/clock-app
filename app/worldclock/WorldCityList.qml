@@ -30,23 +30,45 @@ Page {
         PageHeadState {
             name: "default"
             head: worldCityList.head
-            actions: Action {
-                iconName: "search"
-                onTriggered: worldCityList.state = "search"
-            }
+            actions: [
+                Action {
+                    iconName: "search"
+                    text: i18n.tr("City")
+                    onTriggered: {
+                        worldCityList.state = "search"
+                    }
+                },
+
+                Action {
+                    /*
+                      TODO: Enable this action when add a custom city as shown
+                      in the design specs is implemented.
+                    */
+                    enabled: false
+                    iconName: "add"
+                    text: i18n.tr("City")
+                    onTriggered: {
+                        console.log("Not Yet Implemented")
+                    }
+                }
+            ]
         },
 
         PageHeadState {
-            id: headerState
             name: "search"
             head: worldCityList.head
             backAction: Action {
-                id: leaveSearchAction
-                text: "back"
                 iconName: "back"
-                onTriggered: worldCityList.state = "default"
+                text: i18n.tr("Back")
+                onTriggered: {
+                    worldCityList.state = "default"
+                }
             }
             contents: TextField {
+                /*
+                  #TODO: Enable textfield after searching through listview is
+                  implemented.
+                */
                 enabled: false
                 anchors {
                     left: parent ? parent.left : undefined
