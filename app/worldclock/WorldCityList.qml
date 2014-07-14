@@ -62,7 +62,7 @@ Page {
         }
     ]
 
-    TimeZoneModel {
+    XmlTimeZoneModel {
         id: timeZoneModel
         updateInterval: 1000
         source: Qt.resolvedUrl("world-city-list.xml")

@@ -7,6 +7,7 @@ set(
     modules/Timezone/backend.cpp
     modules/Timezone/zone.cpp
     modules/Timezone/timezonemodel.cpp
+    modules/Timezone/xmltimezonemodel.cpp
 )
 
 add_library(ubuntu-clock-appbackend MODULE

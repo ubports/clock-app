@@ -23,9 +23,6 @@ class TimeZoneModel: public QAbstractListModel
 {
     Q_OBJECT
 
-    // Let's have a source property for the xml file, just like the XmlListModel
-    Q_PROPERTY(QUrl source READ source WRITE setSource NOTIFY sourceChanged)
-
     // A this property determines the interval for updating time. The default, 0, doesn't update at all
     Q_PROPERTY(int updateInterval READ updateInterval WRITE setUpdateInterval NOTIFY updateIntervalChanged)
 
@@ -50,35 +47,24 @@ public:
     // between the enum and strings
     QHash<int, QByteArray> roleNames() const override;
 
-    // We need to implement the READ and WRITE methods of the properties
-    QUrl source() const;
-    void setSource(const QUrl &source);
-
     int updateInterval() const;
     void setUpdateInterval(int updateInterval);
 
 signals:
     // and we need a signal for the NOTIFY when the properties change
-    void sourceChanged();
     void updateIntervalChanged();
-
-private:
-    // Lets do the xml parsing in a separate function for less messy code
-    void loadTimeZonesFromXml();
 
 private slots:
     // A private slot that gets called by the updateTimer
     void update();
 
 private:
-    // Keep a list of TimeZone objects, holding all our timeZones.
-    QList<TimeZone> m_timeZones;
-
-    // And keel a store of the source property
-    QUrl m_source;
-
     // Have a timer to update stuff
     QTimer m_updateTimer;
+
+protected:
+    // Keep a list of TimeZone objects, holding all our timeZones.
+    QList<TimeZone> m_timeZones;
 };
 
 #endif
