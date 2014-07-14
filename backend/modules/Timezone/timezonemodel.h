@@ -36,7 +36,7 @@ class TimeZoneModel: public QAbstractListModel
 public:
     enum Roles {
         RoleCityName,
-        RoleCountyName,
+        RoleCountryName,
         RoleTimeZoneId,
         RoleTimeString
     };
