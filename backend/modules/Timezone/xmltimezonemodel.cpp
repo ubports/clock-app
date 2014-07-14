@@ -14,6 +14,10 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+#include <QFile>
+#include <QDebug>
+#include <QXmlStreamReader>
+
 #include "xmltimezonemodel.h"
 
 XmlTimeZoneModel::XmlTimeZoneModel(QObject *parent):
@@ -54,6 +58,7 @@ void XmlTimeZoneModel::loadTimeZonesFromXml()
         endResetModel();
         return;
     }
+
     QXmlStreamReader reader(&file);
     bool haveCities = false;
     bool isCityName = false;
