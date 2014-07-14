@@ -50,7 +50,7 @@ QVariant TimeZoneModel::data(const QModelIndex &index, int role) const
         QTimeZone zone(m_timeZones.at(row).timeZoneId.toLatin1());
         // TODO: pass formatting options as parameter to toString().
         // see: http://qt-project.org/doc/qt-5/qdate.html#toString
-        return QDateTime::currentDateTime().toTimeZone(zone).toString();
+        return QDateTime::currentDateTime().toTimeZone(zone).toString("hh:mm");
     }
 
     // In case the method was called with an invalid index or role, let's
