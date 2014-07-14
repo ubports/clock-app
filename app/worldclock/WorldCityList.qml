@@ -19,6 +19,15 @@ import Timezone 1.0
 import Ubuntu.Components 1.1
 import Ubuntu.Components.ListItems 1.0 as ListItem
 
+/*
+  Page to display a list of cities from which the user can choose a city to add
+  to his world clocks.
+
+  NOTE: This page design should look exactly like the Address book app in terms
+  of visual design. For instance it requires the fast scroll component, section
+  headers, search mode etc.
+*/
+
 Page {
     id: worldCityList
 
@@ -36,19 +45,7 @@ Page {
                     text: i18n.tr("City")
                     onTriggered: {
                         worldCityList.state = "search"
-                    }
-                },
-
-                Action {
-                    /*
-                      TODO: Enable this action when add a custom city as shown
-                      in the design specs is implemented.
-                    */
-                    enabled: false
-                    iconName: "add"
-                    text: i18n.tr("City")
-                    onTriggered: {
-                        console.log("Not Yet Implemented")
+                        searchField.forceActiveFocus()
                     }
                 }
             ]
@@ -61,19 +58,23 @@ Page {
                 iconName: "back"
                 text: i18n.tr("Back")
                 onTriggered: {
+                    sortedTimeZoneModel.filter.pattern = RegExp("")
                     worldCityList.state = "default"
                 }
             }
+
             contents: TextField {
-                /*
-                  #TODO: Enable textfield after searching through listview is
-                  implemented.
-                */
-                enabled: false
+                id: searchField
+
                 anchors {
                     left: parent ? parent.left : undefined
                     right: parent ? parent.right : undefined
                     rightMargin: units.gu(2)
+                }
+
+                onTextChanged: {
+                    sortedTimeZoneModel.filter.property = "city"
+                    sortedTimeZoneModel.filter.pattern = RegExp(searchField.text)
                 }
             }
         }
@@ -85,37 +86,41 @@ Page {
         source: Qt.resolvedUrl("world-city-list.xml")
     }
 
+    SortFilterModel {
+        id: sortedTimeZoneModel
+        model: timeZoneModel
+        sort.property: "city"
+        sort.order: Qt.AscendingOrder
+    }
+
     ListView {
         id: cityList
 
         anchors.fill: parent
-        model: timeZoneModel
 
-        Component {
-            id: sectionHeading
-            ListItem.Header {
-                Label {
-                    anchors {
-                        verticalCenter: parent.verticalCenter
-                        left: parent.left
-                        leftMargin: units.gu(2)
-                    }
-
-                    text: section
-                    color: Theme.palette.normal.baseText
-                    fontSize: "medium"
-                }
-            }
-        }
+        model: sortedTimeZoneModel
 
         section.property: "city"
         section.criteria: ViewSection.FirstCharacter
-        section.delegate: sectionHeading;
         section.labelPositioning: ViewSection.InlineLabels
+
+        section.delegate: ListItem.Header {
+            anchors.margins: units.gu(2)
+            Label {
+                /*
+                  Ideally we wouldn't need this label inside a listitem header,
+                  however the default header text is indented right 2 gu which
+                  doesn't match design spec.
+                */
+                text: section
+                anchors.verticalCenter: parent.verticalCenter
+            }
+        }
 
         delegate: ListItem.Base {
 
             height: units.gu(7)
+            showDivider: false
 
             Column {
                 id: _labelColumn
