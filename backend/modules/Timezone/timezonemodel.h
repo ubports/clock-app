@@ -42,33 +42,40 @@ public:
     };
 
     /*
-     A simple constructor. Add the standard QObject *parent parameter.
-     That helps Qt with "garbage collection"
+     A simple constructor initialize variable values. Added the standard QObject
+    *parent parameter to help Qt with "garbage collection.
     */
     TimeZoneModel(QObject *parent = 0);
 
-    // Let's override the pure virtual functions (the ones marked as
-    // "virtual" and have "= 0" in the end.
+    /*
+     Let's override the pure virtual functions (the ones marked as
+     "virtual" and have "= 0" in the end.
+    */
     int rowCount(const QModelIndex &parent) const override;
     QVariant data(const QModelIndex &index, int role) const override;
 
-    // As QML can't really deal with the Roles enum above, we need a mapping
-    // between the enum and strings
+    /*
+     As QML can't really deal with the Roles enum above, we need a mapping
+     between the enum and strings
+    */
     QHash<int, QByteArray> roleNames() const override;
 
+    // Function to read the update interval
     int updateInterval() const;
+
+    // Function to set the update interval
     void setUpdateInterval(int updateInterval);
 
 signals:
-    // and we need a signal for the NOTIFY when the properties change
+    // Signal to notify the updateInterval change to QML
     void updateIntervalChanged();
 
 private slots:
-    // A private slot that gets called by the updateTimer
+    // Private slot that gets called by the updateTimer
     void update();
 
 private:
-    // Have a timer to update stuff
+    // Timer to update the model at a set interval
     QTimer m_updateTimer;
 
 protected:
