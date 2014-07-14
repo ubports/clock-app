@@ -18,6 +18,7 @@ import QtQuick 2.0
 import Timezone 1.0
 import Ubuntu.Components 1.1
 import Ubuntu.Components.ListItems 1.0 as ListItem
+import "../components"
 
 /*
   Page to display a list of cities from which the user can choose a city to add
@@ -117,29 +118,10 @@ Page {
             }
         }
 
-        delegate: ListItem.Base {
-
-            height: units.gu(7)
+        delegate: SubtitledListItem {
+            text: city
+            subText: country
             showDivider: false
-
-            Column {
-                id: _labelColumn
-
-                anchors.verticalCenter: parent.verticalCenter
-
-                Label {
-                    id: _cityName
-                    fontSize: "medium"
-                    text: city
-                    color: UbuntuColors.midAubergine
-                }
-
-                Label {
-                    id: _countryName
-                    text: country
-                    fontSize: "xx-small"
-                }
-            }
 
             Label {
                 id: _localTime
@@ -152,7 +134,10 @@ Page {
             }
 
             onClicked: {
-                console.log("Add city to U1DB Model")
+                /*
+                  #TODO: Add support for saving chosen city permanently to disk
+                */
+                console.log("#TODO: Add city to U1DB Model")
             }
         }
     }
