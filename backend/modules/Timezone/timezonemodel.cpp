@@ -117,6 +117,7 @@ void TimeZoneModel::loadTimeZonesFromXml()
     QFile file(m_source.path());
     if (!file.open(QFile::ReadOnly)) {
         qWarning() << "Can't open" << m_source << ". Model will be empty.";
+        endResetModel();
         return;
     }
     QXmlStreamReader reader(&file);
