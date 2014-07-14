@@ -12,8 +12,7 @@
 
 class XmlTimeZoneModel : public TimeZoneModel
 {
-    // Q_OBJECT (this is not required since we are subclassing from TimeZoneModel
-    // which is in itself a Q_OBJECT)
+    Q_OBJECT
 
     // Let's have a source property for the xml file, just like the XmlListModel
     // NOTE: Not too sure why I moved the source property to this subclass since

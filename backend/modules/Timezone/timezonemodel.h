@@ -16,7 +16,6 @@ public:
 };
 
 
-
 // We're going to use QAbstractListModel as the base class
 // That makes it compatible to QML's ListView.
 class TimeZoneModel: public QAbstractListModel
