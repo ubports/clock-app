@@ -6,6 +6,7 @@ set(
     ubuntu-clock-appbackend_SRCS
     modules/Timezone/backend.cpp
     modules/Timezone/zone.cpp
+    modules/Timezone/timezonemodel.cpp
 )
 
 add_library(ubuntu-clock-appbackend MODULE

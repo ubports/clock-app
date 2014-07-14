@@ -10,33 +10,24 @@ Page {
     title: i18n.tr("Select a city")
     visible: false
 
-    XmlListModel {
-        id: worldCityModel;
-
+    TimeZoneModel {
+        id: timeZoneModel
         source: Qt.resolvedUrl("world-city-list.xml")
-        query: "/Cities/City"
-
-        XmlRole { name: "city"; query: "cityName/string()"; isKey: true }
-        XmlRole { name: "country"; query: "countryName/string()"; isKey: true }
-        XmlRole { name: "timezoneID"; query: "timezoneID/string()"; isKey: true }
-    }
-
-    Zone {
-        id: cityTimezone
+        updateInterval: 1000
     }
 
     ListView {
         id: cityList
 
         anchors.fill: parent
-        model: worldCityModel
+        model: timeZoneModel
 
         delegate: ListItem.Subtitled {
             text: city + "," + country
-            subText: timezoneID
+            subText: timezoneID + "(" + localTime + ")"
 
             onClicked: {
-                console.log(cityTimezone.getLocalTime(timezoneID))
+                print(model.timezoneID, model.localTime)
             }
         }
     }
