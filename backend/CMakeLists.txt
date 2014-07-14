@@ -5,7 +5,6 @@ include_directories(
 set(
     ubuntu-clock-appbackend_SRCS
     modules/Timezone/backend.cpp
-    modules/Timezone/zone.cpp
     modules/Timezone/timezonemodel.cpp
     modules/Timezone/xmltimezonemodel.cpp
 )
