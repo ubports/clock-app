@@ -18,27 +18,19 @@
 #define TIMEZONEMODEL_H
 
 #include <QAbstractListModel>
-#include <QDateTime>
-#include <QUrl>
 #include <QTimer>
 
-// Create a simple container class to hold our information
-class TimeZone
-{
-public:
-    QString cityName;
-    QString country;
-    QString timeZoneId;
-};
-
-
-// We're going to use QAbstractListModel as the base class
-// That makes it compatible to QML's ListView.
+/*
+  TimeZoneModel class based on QAbstractListModel to make it compatible with
+  QML's ListView.
+*/
 class TimeZoneModel: public QAbstractListModel
 {
     Q_OBJECT
 
-    // A this property determines the interval for updating time. The default, 0, doesn't update at all
+    /*
+      Property to determine the interval before updating the time (default is 0)
+    */
     Q_PROPERTY(int updateInterval READ updateInterval WRITE setUpdateInterval NOTIFY updateIntervalChanged)
 
 public:
@@ -49,8 +41,10 @@ public:
         RoleTimeString
     };
 
-    // A simple constructor. Add the standard QObject *parent parameter.
-    // That helps Qt with "garbage collection"
+    /*
+     A simple constructor. Add the standard QObject *parent parameter.
+     That helps Qt with "garbage collection"
+    */
     TimeZoneModel(QObject *parent = 0);
 
     // Let's override the pure virtual functions (the ones marked as
@@ -78,6 +72,13 @@ private:
     QTimer m_updateTimer;
 
 protected:
+    // Create a simple container class to hold our information
+    struct TimeZone{
+        QString cityName;
+        QString country;
+        QString timeZoneId;
+    };
+
     // Keep a list of TimeZone objects, holding all our timeZones.
     QList<TimeZone> m_timeZones;
 };
