@@ -49,6 +49,11 @@ Page {
             contents: TextField {
                 enabled: false
                 anchors {
+                    /*
+                      #FIXME: The left and right anchoring causes a warning
+                      message to type during run time. Investigate why.
+                      TypeError: Cannot read property of null
+                    */
                     left: parent.left
                     right: parent.right
                     rightMargin: units.gu(2)
