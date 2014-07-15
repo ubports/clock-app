@@ -59,7 +59,7 @@ Page {
                 iconName: "back"
                 text: i18n.tr("Back")
                 onTriggered: {
-                    sortedTimeZoneModel.filter.pattern = RegExp("")
+                    searchField.text = ""
                     worldCityList.state = "default"
                 }
             }
@@ -75,7 +75,7 @@ Page {
 
                 onTextChanged: {
                     sortedTimeZoneModel.filter.property = "city"
-                    sortedTimeZoneModel.filter.pattern = RegExp(searchField.text)
+                    sortedTimeZoneModel.filter.pattern = RegExp(searchField.text, "gi")
                 }
             }
         }
