@@ -15,6 +15,7 @@
  */
 
 import QtQuick 2.0
+import U1db 1.0 as U1db
 import Ubuntu.Components 1.1
 import "../components"
 import "../components/Utils.js" as Utils
@@ -60,9 +61,21 @@ PageWithBottomEdge {
 
         Clock {
             id: clock
+
             anchors.verticalCenter: parent.top
             anchors.verticalCenterOffset: units.gu(20)
             anchors.horizontalCenter: parent.horizontalCenter
+
+            clockMode: clockModeDocument.contents.digitalMode ? true : false
+
+            // Document to store app settings data
+            U1db.Document {
+                id: clockModeDocument
+                create: true
+                database: clockDB
+                docId: "clockModeDocument"
+                defaults: { "digitalMode": false }
+            }
         }
 
         Label {

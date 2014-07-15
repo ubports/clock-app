@@ -112,7 +112,9 @@ ClockCircle {
 
         MouseArea {
             anchors.fill: parent
-            onClicked: clockFlipAnimation.start()
+            onClicked: {
+                clockFlipAnimation.start()
+            }
         }
     }
 
@@ -191,6 +193,10 @@ ClockCircle {
                 }
 
                 analogShadow.source = digitalShadow.source = ""
+
+                var clockModePreference = JSON.parse(JSON.stringify(clockModeDocument.contents))
+                clockModePreference.digitalMode = clockMode
+                clockModeDocument.contents = clockModePreference
             }
         }
     }
