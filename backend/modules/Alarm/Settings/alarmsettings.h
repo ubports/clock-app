@@ -44,6 +44,7 @@ public:
     // Function to set the alarm duration
     void setDuration(const unsigned int &duration);
 
+    // ***************  Cannot Get this to work :/ **********
     Q_INVOKABLE void testOutput(const QString &test);
 
 signals:
