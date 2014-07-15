@@ -39,10 +39,10 @@ public:
     unsigned int duration() const;
 
     // Function to set the alarm volume
-    unsigned int setVolume(const unsigned int &volume);
+    void setVolume(const unsigned int &volume);
 
     // Function to set the alarm duration
-    unsigned int setDuration(const unsigned int &duration);
+    void setDuration(const unsigned int &duration);
 
 signals:
     // Signal to notify the volume change to QML

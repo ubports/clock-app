@@ -33,7 +33,7 @@ unsigned int AlarmSettings::duration() const
     return m_duration;
 }
 
-unsigned int AlarmSettings::setVolume(const unsigned int &volume) const
+void AlarmSettings::setVolume(const unsigned int &volume)
 {
     if(m_volume == volume) {
         // Don't send the volume over dbus if it is the same one already
@@ -49,7 +49,7 @@ unsigned int AlarmSettings::setVolume(const unsigned int &volume) const
     */
 }
 
-unsigned int AlarmSettings::setDuration(const unsigned int &duration) const
+void AlarmSettings::setDuration(const unsigned int &duration)
 {
     if(m_duration == duration) {
         // Don't send the duration over dbus if it is the same one already
