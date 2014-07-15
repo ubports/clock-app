@@ -62,8 +62,6 @@ Flickable {
             model: alarmListFlickable.model
             ListItem.Base {
 
-                height: units.gu(7)
-
                 Label {
                     id: alarmTime
 

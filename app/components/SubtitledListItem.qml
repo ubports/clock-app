@@ -34,8 +34,6 @@ ListItem.Base {
     // Property to set the subtitle label
     property alias subText: _subText.text
     
-    height: units.gu(7)
-    
     Column {
         id: _labelColumn
         

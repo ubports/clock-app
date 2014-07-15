@@ -1,3 +1,15 @@
+Building and running on Utopic Desktop (14.10)
+==============================================
+
+1. Branch the code as usual and navigate to it.
+	bzr branch lp:ubuntu-clock-app/reboot && cd reboot
+2. Create a build dir and navigate to it.
+	mkdir builddir && cd builddir
+3. Build the clock app
+	cmake .. && make
+4. Run the clock app
+	QML2_IMPORT_PATH=backend/ qmlscene ../app/ubuntu-clock-app.qml
+
 Code Style
 ==========
 
