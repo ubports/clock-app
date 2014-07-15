@@ -44,6 +44,8 @@ public:
     // Function to set the alarm duration
     void setDuration(const unsigned int &duration);
 
+    Q_INVOKABLE void testOutput(const QString &test);
+
 signals:
     // Signal to notify the volume change to QML
     void volumeChanged();

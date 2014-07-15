@@ -23,6 +23,11 @@ AlarmSettings::AlarmSettings(QObject *parent):
 {
 }
 
+void AlarmSettings::testOutput(const QString &test)
+{
+    qDebug() << "LOG: " + test;
+}
+
 unsigned int AlarmSettings::volume() const
 {
     return m_volume;

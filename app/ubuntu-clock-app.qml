@@ -15,6 +15,7 @@
  */
 
 import QtQuick 2.0
+import Alarm.Settings 1.0
 import Ubuntu.Components 1.1
 import "clock"
 import "alarm"
@@ -86,6 +87,11 @@ MainView {
 
         ClockPage {
             id: clockPage
+
+            AlarmSettings {
+                id: _alarmSettings
+                Component.onCompleted: _alarmSettings.testOutput("test")
+            }
 
             /*
               #FIXME: When the SDK support hiding the header, then enable the
