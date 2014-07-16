@@ -30,7 +30,7 @@ PageWithBottomEdge {
     property int _minThreshold: addCityButton.maxThreshold + units.gu(2)
 
     // Property to keep track of the clock mode
-    property alias isDigital: clock.clockMode
+    property alias isDigital: clock.isDigital
 
     flickable: null
 
@@ -66,16 +66,7 @@ PageWithBottomEdge {
             anchors.verticalCenterOffset: units.gu(20)
             anchors.horizontalCenter: parent.horizontalCenter
 
-            clockMode: clockModeDocument.contents.digitalMode ? true : false
-
-            // Document to store app settings data
-            U1db.Document {
-                id: clockModeDocument
-                create: true
-                database: clockDB
-                docId: "clockModeDocument"
-                defaults: { "digitalMode": false }
-            }
+            isDigital: clockModeDocument.contents.digitalMode ? true : false
         }
 
         Label {

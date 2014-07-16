@@ -81,6 +81,15 @@ MainView {
         path: "user-preferences"
     }
 
+    // Document to store app settings data
+    U1db.Document {
+        id: clockModeDocument
+        create: true
+        database: clockDB
+        docId: "clockModeDocument"
+        defaults: { "digitalMode": false }
+    }
+
     AlarmModel {
         id: alarmModel
         Component.onCompleted: Utils.log(debugMode, "Alarm Database loaded")

@@ -32,7 +32,7 @@ ClockCircle {
     property bool isStartup: true
 
     // Property to keep track of the clock mode
-    property alias clockMode: clockModeFlipable.isDigital
+    property alias isDigital: clockModeFlipable.isDigital
 
     Component.onCompleted: {
         clockOpenAnimation.start()
@@ -194,9 +194,9 @@ ClockCircle {
 
                 analogShadow.source = digitalShadow.source = ""
 
-                var clockModePreference = JSON.parse(JSON.stringify(clockModeDocument.contents))
-                clockModePreference.digitalMode = clockMode
-                clockModeDocument.contents = clockModePreference
+                var isDigitalSetting = JSON.parse(JSON.stringify(clockModeDocument.contents))
+                isDigitalSetting.digitalMode = isDigital
+                clockModeDocument.contents = isDigitalSetting
             }
         }
     }
