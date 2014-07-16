@@ -111,6 +111,10 @@ Page {
                     height: units.gu(24)
                     delegate: ListItem.Standard {
                         text: title
+                        onClicked: {
+                            alarmSettings.duration = duration
+                            _alarmDuration.expanded = false
+                        }
                     }
                 }
             }
@@ -137,9 +141,10 @@ Page {
                     maximumValue: 100
                     value: alarmSettings.volume
 
-                    /*
-                      TODO: When slider is moved, send the value over dbus
-                    */
+                    onValueChanged: {
+                        //console.log("[DEBUG]: value: " + formatValue(value))
+                        alarmSettings.volume = formatValue(value)
+                    }
                 }
             }
         }

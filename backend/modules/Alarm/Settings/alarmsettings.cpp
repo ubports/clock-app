@@ -53,17 +53,31 @@ void AlarmSettings::refreshProperties()
     emit durationChanged();
 }
 
-unsigned int AlarmSettings::volume() const
+void AlarmSettings::setDBusProperty(const QString &name, const QVariant &value)
+{
+    QDBusInterface handlerPropertiesInterface
+            ("com.canonical.indicator.datetime",
+             "/com/canonical/indicator/datetime/AlarmProperties",
+             "org.freedesktop.DBus.Properties");
+
+    handlerPropertiesInterface.call(
+                "Set",
+                "com.canonical.indicator.datetime.AlarmProperties",
+                name,
+                QVariant::fromValue(QDBusVariant(value)));
+}
+
+ int AlarmSettings::volume() const
 {
     return m_volume;
 }
 
-unsigned int AlarmSettings::duration() const
+ int AlarmSettings::duration() const
 {
     return m_duration;
 }
 
-void AlarmSettings::setVolume(const unsigned int &volume)
+void AlarmSettings::setVolume(const  int &volume)
 {
     if(m_volume == volume) {
         // Don't send the volume over dbus if it is the same one already
@@ -74,12 +88,10 @@ void AlarmSettings::setVolume(const unsigned int &volume)
     m_volume = volume;
     emit volumeChanged();
 
-    /*
-     TODO: Send the volume over dbus
-    */
+    setDBusProperty("DefaultVolume", QVariant(m_volume));
 }
 
-void AlarmSettings::setDuration(const unsigned int &duration)
+void AlarmSettings::setDuration(const  int &duration)
 {
     if(m_duration == duration) {
         // Don't send the duration over dbus if it is the same one already
@@ -90,7 +102,5 @@ void AlarmSettings::setDuration(const unsigned int &duration)
     m_duration = duration;
     emit durationChanged();
 
-    /*
-     TODO: Send the duration over dbus
-    */
+    setDBusProperty("Duration", QVariant(m_duration));
 }
