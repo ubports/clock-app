@@ -32,7 +32,7 @@ set_target_properties(alarm-settingsbackend PROPERTIES
 )
 
 qt5_use_modules(ubuntu-clock-appbackend Gui Qml Quick)
-qt5_use_modules(alarm-settingsbackend Gui Qml Quick)
+qt5_use_modules(alarm-settingsbackend Gui Qml Quick DBus)
 
 # Copy qmldir file to build dir for running in QtCreator
 add_custom_target(ubuntu-clock-appbackend-qmldir ALL

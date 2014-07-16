@@ -30,16 +30,16 @@ AlarmSettings::AlarmSettings(QObject *parent):
 void AlarmSettings::testOutput()
 {
     QDBusInterface handlerPropertiesInterface("com.canonical.indicator.datetime.AlarmProperties",
-                                              "com/canonical/indicator/datetime/AlarmProperties",
+                                              "/com/canonical/indicator/datetime/AlarmProperties",
                                               "org.freedesktop.DBus.Properties");
 
-    QDBusReply<int> reply =
+    QDBusReply<QString> reply =
             handlerPropertiesInterface.call("Get",
                                             "com.canonical.indicator.datetime.AlarmProperties",
-                                            "DefaultVolume");
+                                            "DefaultSound");
 
     if(!reply.isValid()) {
-        qWarning() << "Failed to retrieve the properties from the handler";
+        qWarning() << reply.error();
         return;
     }
 

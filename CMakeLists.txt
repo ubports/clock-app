@@ -8,6 +8,7 @@ set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -fno-permissive -pedantic -W
 find_package(Qt5Core)
 find_package(Qt5Qml)
 find_package(Qt5Quick)
+find_package(Qt5DBus)
 #find_package(ubuntu-sdk-libs)
 
 #automatically create moc files
