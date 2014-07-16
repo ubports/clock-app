@@ -81,7 +81,7 @@ MainView {
         path: "user-preferences"
     }
 
-    // Document to store app settings data
+    // Document to store clock mode chosen by user
     U1db.Document {
         id: clockModeDocument
         create: true
