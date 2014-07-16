@@ -60,7 +60,7 @@ void AlarmSettings::setDBusProperty(const QString &name, const QVariant &value)
              "/com/canonical/indicator/datetime/AlarmProperties",
              "org.freedesktop.DBus.Properties");
 
-    handlerPropertiesInterface.call(
+    handlerPropertiesInterface.asyncCall(
                 "Set",
                 "com.canonical.indicator.datetime.AlarmProperties",
                 name,
