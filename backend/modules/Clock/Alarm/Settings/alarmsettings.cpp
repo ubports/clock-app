@@ -47,10 +47,7 @@ void AlarmSettings::refreshProperties()
     QVariantMap map = reply.value();
 
     m_volume = map["DefaultVolume"].toInt();
-    emit volumeChanged();
-
     m_duration = map["Duration"].toInt();
-    emit durationChanged();
 }
 
 void AlarmSettings::setDBusProperty(const QString &name, const QVariant &value)
