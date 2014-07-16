@@ -21,11 +21,13 @@
 AlarmSettings::AlarmSettings(QObject *parent):
     QObject(parent)
 {
+    testOutput("Output this message in the console log");
 }
 
-void AlarmSettings::testOutput(const QString &test)
+// **********************  Function not working !!! *****************
+void AlarmSettings::testOutput(const QString &outputString)
 {
-    qDebug() << "LOG: " + test;
+    qDebug() << outputString;
 }
 
 unsigned int AlarmSettings::volume() const

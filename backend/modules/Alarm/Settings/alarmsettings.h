@@ -45,7 +45,7 @@ public:
     void setDuration(const unsigned int &duration);
 
     // ***************  Cannot Get this to work :/ **********
-    Q_INVOKABLE void testOutput(const QString &test);
+    Q_INVOKABLE void testOutput(const QString &outputString);
 
 signals:
     // Signal to notify the volume change to QML

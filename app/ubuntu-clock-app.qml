@@ -75,6 +75,10 @@ MainView {
         onTriggered: clockPage.updateTime()
     }
 
+    AlarmSettings {
+        id: _alarmSettings
+    }
+
     AlarmModel {
         id: alarmModel
         Component.onCompleted: Utils.log(debugMode, "Alarm Database loaded")
@@ -87,11 +91,6 @@ MainView {
 
         ClockPage {
             id: clockPage
-
-            AlarmSettings {
-                id: _alarmSettings
-                Component.onCompleted: _alarmSettings.testOutput("test")
-            }
 
             /*
               #FIXME: When the SDK support hiding the header, then enable the
