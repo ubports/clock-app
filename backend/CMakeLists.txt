@@ -50,4 +50,4 @@ install(TARGETS ubuntu-clock-appbackend DESTINATION ${QT_IMPORTS_DIR}/Timezone/)
 install(FILES   modules/Timezone/qmldir DESTINATION ${QT_IMPORTS_DIR}/Timezone/)
 
 install(TARGETS alarm-settingsbackend DESTINATION ${QT_IMPORTS_DIR}/Clock/Alarm/Settings/)
-install(FILES   modules/Alarm/Settings/qmldir DESTINATION ${QT_IMPORTS_DIR}/Clock/Alarm/Settings/)
+install(FILES   modules/Clock/Alarm/Settings/qmldir DESTINATION ${QT_IMPORTS_DIR}/Clock/Alarm/Settings/)
