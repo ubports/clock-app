@@ -15,32 +15,55 @@
  */
 
 #include <QDebug>
+#include <QVariant>
+#include <QtDBus/QDBusInterface>
+#include <QtDBus/QDBusReply>
 
 #include "alarmsettings.h"
 
 AlarmSettings::AlarmSettings(QObject *parent):
     QObject(parent)
 {
-    testOutput("Output this message in the console log");
+    testOutput();
 }
 
-// **********************  Function not working !!! *****************
-void AlarmSettings::testOutput(const QString &outputString)
+void AlarmSettings::testOutput()
 {
-    qDebug() << outputString;
+    QDBusInterface handlerPropertiesInterface("com.canonical.indicator.datetime.AlarmProperties",
+                                              "com/canonical/indicator/datetime/AlarmProperties",
+                                              "org.freedesktop.DBus.Properties");
+
+    QDBusReply<int> reply =
+            handlerPropertiesInterface.call("Get",
+                                            "com.canonical.indicator.datetime.AlarmProperties",
+                                            "DefaultVolume");
+
+    if(!reply.isValid()) {
+        qWarning() << "Failed to retrieve the properties from the handler";
+        return;
+    }
+
+    qDebug() << reply.value();
+
+//    QVariantMap map = reply.value();
+//    qDebug() << map;
+//    m_volume = map["DefaultVolume"].toUInt();
+//    emit volumeChanged();
+
+//    qDebug() << m_volume;
 }
 
-unsigned int AlarmSettings::volume() const
+int AlarmSettings::volume() const
 {
     return m_volume;
 }
 
-unsigned int AlarmSettings::duration() const
+int AlarmSettings::duration() const
 {
     return m_duration;
 }
 
-void AlarmSettings::setVolume(const unsigned int &volume)
+void AlarmSettings::setVolume(const int &volume)
 {
     if(m_volume == volume) {
         // Don't send the volume over dbus if it is the same one already
@@ -56,7 +79,7 @@ void AlarmSettings::setVolume(const unsigned int &volume)
     */
 }
 
-void AlarmSettings::setDuration(const unsigned int &duration)
+void AlarmSettings::setDuration(const int &duration)
 {
     if(m_duration == duration) {
         // Don't send the duration over dbus if it is the same one already

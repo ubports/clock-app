@@ -82,7 +82,8 @@ PageWithBottomEdge {
 
             MouseArea {
                 anchors.fill: parent
-                onClicked: mainStack.push(Qt.resolvedUrl("../alarm/AlarmSettings.qml"))
+                onClicked: mainStack.push(
+                               Qt.resolvedUrl("../alarm/AlarmSettingsPage.qml"))
             }
         }
 
