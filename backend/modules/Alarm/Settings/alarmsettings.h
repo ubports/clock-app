@@ -24,19 +24,25 @@ class AlarmSettings: public QObject
     Q_OBJECT
 
     // Property to control the volume of the alarm
-    Q_PROPERTY( int volume READ volume WRITE setVolume NOTIFY volumeChanged)
+    Q_PROPERTY( int volume
+                READ volume
+                WRITE setVolume
+                NOTIFY volumeChanged)
 
     // Property to control how long the alarm will ring before stopping
-    Q_PROPERTY( int duration READ duration WRITE setDuration NOTIFY durationChanged)
+    Q_PROPERTY( int duration
+                READ duration
+                WRITE setDuration
+                NOTIFY durationChanged)
 
 public:
     AlarmSettings(QObject *parent = 0);
 
     // Function to return the alarm volume
-     int volume() const;
+    int volume() const;
 
     // Function to return the alarm duration
-     int duration() const;
+    int duration() const;
 
     // Function to set the alarm volume
     void setVolume(const  int &volume);
@@ -48,12 +54,17 @@ signals:
     // Signal to notify the volume change to QML
     void volumeChanged();
 
-    // QML to notify the duration change to QML
+    // Signal to notify the duration change to QML
     void durationChanged();
 
 private:
-     int m_volume, m_duration;
+    // Keep a store of the volume and duration properties
+    int m_volume, m_duration;
+
+    // Function to retrieve all the settings from dBus and update the properties
     void refreshProperties();
+
+    // Function to send new values for the dBus settings
     void setDBusProperty(const QString &name, const QVariant &value);
 };
 

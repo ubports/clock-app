@@ -46,10 +46,10 @@ void AlarmSettings::refreshProperties()
 
     QVariantMap map = reply.value();
 
-    m_volume = map["DefaultVolume"].toUInt();
+    m_volume = map["DefaultVolume"].toInt();
     emit volumeChanged();
 
-    m_duration = map["Duration"].toUInt();
+    m_duration = map["Duration"].toInt();
     emit durationChanged();
 }
 
@@ -67,12 +67,12 @@ void AlarmSettings::setDBusProperty(const QString &name, const QVariant &value)
                 QVariant::fromValue(QDBusVariant(value)));
 }
 
- int AlarmSettings::volume() const
+int AlarmSettings::volume() const
 {
     return m_volume;
 }
 
- int AlarmSettings::duration() const
+int AlarmSettings::duration() const
 {
     return m_duration;
 }
