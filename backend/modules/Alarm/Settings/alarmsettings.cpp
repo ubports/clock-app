@@ -24,46 +24,46 @@
 AlarmSettings::AlarmSettings(QObject *parent):
     QObject(parent)
 {
-    testOutput();
+    // On startup, retrieve all the settings values from Dbus
+    refreshProperties();
 }
 
-void AlarmSettings::testOutput()
+void AlarmSettings::refreshProperties()
 {
-    QDBusInterface handlerPropertiesInterface("com.canonical.indicator.datetime.AlarmProperties",
-                                              "/com/canonical/indicator/datetime/AlarmProperties",
-                                              "org.freedesktop.DBus.Properties");
+    QDBusInterface handlerPropertiesInterface
+            ("com.canonical.indicator.datetime",
+             "/com/canonical/indicator/datetime/AlarmProperties",
+             "org.freedesktop.DBus.Properties");
 
-    QDBusReply<QString> reply =
-            handlerPropertiesInterface.call("Get",
-                                            "com.canonical.indicator.datetime.AlarmProperties",
-                                            "DefaultSound");
+    QDBusReply<QVariantMap> reply = handlerPropertiesInterface.call
+            ("GetAll",
+             "com.canonical.indicator.datetime.AlarmProperties");
 
     if(!reply.isValid()) {
         qWarning() << reply.error();
         return;
     }
 
-    qDebug() << reply.value();
+    QVariantMap map = reply.value();
 
-//    QVariantMap map = reply.value();
-//    qDebug() << map;
-//    m_volume = map["DefaultVolume"].toUInt();
-//    emit volumeChanged();
+    m_volume = map["DefaultVolume"].toUInt();
+    emit volumeChanged();
 
-//    qDebug() << m_volume;
+    m_duration = map["Duration"].toUInt();
+    emit durationChanged();
 }
 
-int AlarmSettings::volume() const
+unsigned int AlarmSettings::volume() const
 {
     return m_volume;
 }
 
-int AlarmSettings::duration() const
+unsigned int AlarmSettings::duration() const
 {
     return m_duration;
 }
 
-void AlarmSettings::setVolume(const int &volume)
+void AlarmSettings::setVolume(const unsigned int &volume)
 {
     if(m_volume == volume) {
         // Don't send the volume over dbus if it is the same one already
@@ -79,7 +79,7 @@ void AlarmSettings::setVolume(const int &volume)
     */
 }
 
-void AlarmSettings::setDuration(const int &duration)
+void AlarmSettings::setDuration(const unsigned int &duration)
 {
     if(m_duration == duration) {
         // Don't send the duration over dbus if it is the same one already

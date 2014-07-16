@@ -24,28 +24,25 @@ class AlarmSettings: public QObject
     Q_OBJECT
 
     // Property to control the volume of the alarm
-    Q_PROPERTY(int volume READ volume WRITE setVolume NOTIFY volumeChanged)
+    Q_PROPERTY(unsigned int volume READ volume WRITE setVolume NOTIFY volumeChanged)
 
     // Property to control how long the alarm will ring before stopping
-    Q_PROPERTY(int duration READ duration WRITE setDuration NOTIFY durationChanged)
+    Q_PROPERTY(unsigned int duration READ duration WRITE setDuration NOTIFY durationChanged)
 
 public:
     AlarmSettings(QObject *parent = 0);
 
     // Function to return the alarm volume
-    int volume() const;
+    unsigned int volume() const;
 
     // Function to return the alarm duration
-    int duration() const;
+    unsigned int duration() const;
 
     // Function to set the alarm volume
-    void setVolume(const int &volume);
+    void setVolume(const unsigned int &volume);
 
     // Function to set the alarm duration
-    void setDuration(const int &duration);
-
-    // Test Function to check the function of this class
-    Q_INVOKABLE void testOutput();
+    void setDuration(const unsigned int &duration);
 
 signals:
     // Signal to notify the volume change to QML
@@ -56,6 +53,7 @@ signals:
 
 private:
     int m_volume, m_duration;
+    void refreshProperties();
 };
 
 #endif
