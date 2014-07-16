@@ -45,10 +45,10 @@ public:
     int duration() const;
 
     // Function to set the alarm volume
-    void setVolume(const  int &volume);
+    void setVolume(int volume);
 
     // Function to set the alarm duration
-    void setDuration(const  int &duration);
+    void setDuration(int duration);
 
 signals:
     // Signal to notify the volume change to QML

@@ -74,7 +74,7 @@ int AlarmSettings::duration() const
     return m_duration;
 }
 
-void AlarmSettings::setVolume(const  int &volume)
+void AlarmSettings::setVolume(int volume)
 {
     if(m_volume == volume) {
         // Don't send the volume over dbus if it is the same one already
@@ -88,7 +88,7 @@ void AlarmSettings::setVolume(const  int &volume)
     setDBusProperty("DefaultVolume", QVariant(m_volume));
 }
 
-void AlarmSettings::setDuration(const  int &duration)
+void AlarmSettings::setDuration(int duration)
 {
     if(m_duration == duration) {
         // Don't send the duration over dbus if it is the same one already
