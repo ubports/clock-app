@@ -15,7 +15,6 @@
  */
 
 import QtQuick 2.0
-import Alarm.Settings 1.0
 import Ubuntu.Components 1.1
 import "clock"
 import "alarm"
@@ -73,10 +72,6 @@ MainView {
         repeat: true
         running: true
         onTriggered: clockPage.updateTime()
-    }
-
-    AlarmSettings {
-        id: _alarmSettings
     }
 
     AlarmModel {

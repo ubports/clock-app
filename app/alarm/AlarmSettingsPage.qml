@@ -15,14 +15,20 @@
  */
 
 import QtQuick 2.0
+import Alarm.Settings 1.0
 import Ubuntu.Components 1.1
 import Ubuntu.Components.ListItems 1.0 as ListItem
+import "../components"
 
 Page {
     id: _alarmSettings
 
     title: i18n.tr("Settings")
     visible: false
+
+    AlarmSettings {
+        id: alarmSettings
+    }
 
     ListModel {
         id: durationModel
@@ -62,38 +68,32 @@ Page {
             }
 
             collapseOnClick: true
-            onClicked: expanded = true
             expandedHeight: _contentColumn.height + units.gu(1)
-            enabled: true
 
             Column {
                 id: _contentColumn
-                anchors {
-                    left: parent.left
-                    right: parent.right
-                }
+                width: parent.width
 
                 Item {
-                    anchors {
-                        left: parent.left
-                        right: parent.right
-                    }
-
+                    width: parent.width
                     height: _alarmDuration.collapsedHeight
 
-                    ListItem.Subtitled {
+                    SubtitledListItem {
                         id: _header
                         text: "Silence after"
-                        subText: "30 minutes"
+                        subText: alarmSettings.duration.toString() + " minutes"
                         onClicked: _alarmDuration.expanded = true
 
                         Icon {
-                            name: "go-down"
-                            color: "Grey"
+                            id: _upArrow
+
                             width: units.gu(2)
                             height: width
                             anchors.right: parent.right
                             anchors.verticalCenter: parent.verticalCenter
+
+                            name: "go-down"
+                            color: "Grey"
                             rotation: _alarmDuration.expanded ? 180 : 0
 
                             Behavior on rotation {
@@ -107,15 +107,39 @@ Page {
                     id: _resultsList
                     clip: true
                     model: durationModel
+                    width: parent.width
                     height: units.gu(24)
                     delegate: ListItem.Standard {
                         text: title
                     }
+                }
+            }
+        }
 
-                    anchors {
-                        left: parent.left
-                        right: parent.right
-                    }
+        ListItem.Base {
+            Column {
+                width: parent.width
+                height: childrenRect.height
+                anchors.verticalCenter: parent.verticalCenter
+
+                Label {
+                    color: UbuntuColors.midAubergine
+                    text: i18n.tr("Alarm volume")
+                }
+
+                Slider {
+                    id: _volumeSlider
+
+                    height: units.gu(2)
+                    width: parent.width
+
+                    minimumValue: 1
+                    maximumValue: 100
+                    value: alarmSettings.volume
+
+                    /*
+                      TODO: When slider is moved, send the value over dbus
+                    */
                 }
             }
         }
