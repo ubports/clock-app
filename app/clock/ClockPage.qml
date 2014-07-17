@@ -15,6 +15,7 @@
  */
 
 import QtQuick 2.0
+import U1db 1.0 as U1db
 import Ubuntu.Components 1.1
 import "../components"
 import "../components/Utils.js" as Utils
@@ -29,7 +30,7 @@ PageWithBottomEdge {
     property int _minThreshold: addCityButton.maxThreshold + units.gu(2)
 
     // Property to keep track of the clock mode
-    property alias isDigital: clock.clockMode
+    property alias isDigital: clock.isDigital
 
     flickable: null
 
@@ -60,9 +61,12 @@ PageWithBottomEdge {
 
         Clock {
             id: clock
+
             anchors.verticalCenter: parent.top
             anchors.verticalCenterOffset: units.gu(20)
             anchors.horizontalCenter: parent.horizontalCenter
+
+            isDigital: clockModeDocument.contents.digitalMode ? true : false
         }
 
         Label {

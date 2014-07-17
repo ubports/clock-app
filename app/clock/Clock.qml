@@ -32,7 +32,7 @@ ClockCircle {
     property bool isStartup: true
 
     // Property to keep track of the clock mode
-    property alias clockMode: clockModeFlipable.isDigital
+    property alias isDigital: clockModeFlipable.isDigital
 
     Component.onCompleted: {
         clockOpenAnimation.start()
@@ -112,7 +112,9 @@ ClockCircle {
 
         MouseArea {
             anchors.fill: parent
-            onClicked: clockFlipAnimation.start()
+            onClicked: {
+                clockFlipAnimation.start()
+            }
         }
     }
 
@@ -191,6 +193,10 @@ ClockCircle {
                 }
 
                 analogShadow.source = digitalShadow.source = ""
+
+                var isDigitalSetting = JSON.parse(JSON.stringify(clockModeDocument.contents))
+                isDigitalSetting.digitalMode = isDigital
+                clockModeDocument.contents = isDigitalSetting
             }
         }
     }
