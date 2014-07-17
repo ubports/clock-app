@@ -1,2 +1,2 @@
 module Alarm.Settings
-plugin alarm-settingsbackend
+plugin alarmsettings
