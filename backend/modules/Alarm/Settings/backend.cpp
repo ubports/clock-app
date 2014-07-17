@@ -21,7 +21,7 @@
 
 void BackendPlugin::registerTypes(const char *uri)
 {
-    Q_ASSERT(uri == QLatin1String("Clock.Alarm.Settings"));
+    Q_ASSERT(uri == QLatin1String("Alarm.Settings"));
 
     qmlRegisterType<AlarmSettings>(uri, 1, 0, "AlarmSettings");
 }

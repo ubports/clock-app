@@ -11,8 +11,8 @@ set(
 
 set(
     alarm-settingsbackend_SRCS
-    modules/Clock/Alarm/Settings/backend.cpp
-    modules/Clock/Alarm/Settings/alarmsettings.cpp
+    modules/Alarm/Settings/backend.cpp
+    modules/Alarm/Settings/alarmsettings.cpp
 )
 
 add_library(ubuntu-clock-appbackend MODULE
@@ -28,7 +28,7 @@ set_target_properties(ubuntu-clock-appbackend PROPERTIES
 )
 
 set_target_properties(alarm-settingsbackend PROPERTIES
-    LIBRARY_OUTPUT_DIRECTORY Clock/Alarm/Settings
+    LIBRARY_OUTPUT_DIRECTORY Alarm/Settings
 )
 
 qt5_use_modules(ubuntu-clock-appbackend Gui Qml Quick)
@@ -41,7 +41,7 @@ add_custom_target(ubuntu-clock-appbackend-qmldir ALL
 )
 
 add_custom_target(alarm-settingsbackend-qmldir ALL
-    COMMAND cp ${CMAKE_CURRENT_SOURCE_DIR}/modules/Clock/Alarm/Settings/qmldir ${CMAKE_CURRENT_BINARY_DIR}/Clock/Alarm/Settings
+    COMMAND cp ${CMAKE_CURRENT_SOURCE_DIR}/modules/Alarm/Settings/qmldir ${CMAKE_CURRENT_BINARY_DIR}/Alarm/Settings
     DEPENDS ${QMLFILES}
 )
 
@@ -49,5 +49,5 @@ add_custom_target(alarm-settingsbackend-qmldir ALL
 install(TARGETS ubuntu-clock-appbackend DESTINATION ${QT_IMPORTS_DIR}/Timezone/)
 install(FILES   modules/Timezone/qmldir DESTINATION ${QT_IMPORTS_DIR}/Timezone/)
 
-install(TARGETS alarm-settingsbackend DESTINATION ${QT_IMPORTS_DIR}/Clock/Alarm/Settings/)
-install(FILES   modules/Clock/Alarm/Settings/qmldir DESTINATION ${QT_IMPORTS_DIR}/Clock/Alarm/Settings/)
+install(TARGETS alarm-settingsbackend DESTINATION ${QT_IMPORTS_DIR}/Alarm/Settings/)
+install(FILES   modules/Alarm/Settings/qmldir DESTINATION ${QT_IMPORTS_DIR}/Alarm/Settings/)

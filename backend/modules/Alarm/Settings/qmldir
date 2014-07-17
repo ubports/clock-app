@@ -1,2 +1,2 @@
-module Clock.Alarm.Settings
+module Alarm.Settings
 plugin alarm-settingsbackend
