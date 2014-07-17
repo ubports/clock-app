@@ -58,9 +58,6 @@ signals:
     // Signal to notify the duration change to QML
     void durationChanged();
 
-    // Signal to notify property change by dBus
-    void settingsChanged();
-
 private:
     // Keep a store of the alarm volume
     int m_volume;
