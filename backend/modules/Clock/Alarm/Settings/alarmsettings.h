@@ -58,8 +58,11 @@ signals:
     void durationChanged();
 
 private:
-    // Keep a store of the volume and duration properties
-    int m_volume, m_duration;
+    // Keep a store of the alarm volume
+    int m_volume;
+
+    // Keep a store of the alarm duration
+    int m_duration;
 
     // Function to retrieve all the settings from dBus and update the properties
     void refreshProperties();
