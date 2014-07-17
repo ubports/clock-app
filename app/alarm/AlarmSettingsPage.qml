@@ -80,8 +80,9 @@ Page {
 
                     SubtitledListItem {
                         id: _header
-                        text: "Silence after"
-                        subText: alarmSettings.duration.toString() + " minutes"
+                        text: i18n.tr("Silence after")
+                        subText: alarmSettings.duration.toString() + " "
+                                 + i18n.tr("minutes")
                         onClicked: _alarmDuration.expanded = true
 
                         Icon {
@@ -142,7 +143,6 @@ Page {
                     value: alarmSettings.volume
 
                     onValueChanged: {
-                        //console.log("[DEBUG]: value: " + formatValue(value))
                         alarmSettings.volume = formatValue(value)
                     }
                 }
