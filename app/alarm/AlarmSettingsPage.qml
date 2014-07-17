@@ -33,23 +33,32 @@ Page {
     ListModel {
         id: durationModel
         ListElement {
-            title: "10 minutes"
             duration: 10
         }
 
         ListElement {
-            title: "20 minutes"
             duration: 20
         }
 
         ListElement {
-            title: "30 minutes"
             duration: 30
         }
 
         ListElement {
-            title: "60 minutes"
             duration: 60
+        }
+
+        function title(index) {
+            if (title["text"] === undefined) {
+                title.text =
+                        [
+                            i18n.tr("%1 minutes").arg(10),
+                            i18n.tr("%1 minutes").arg(20),
+                            i18n.tr("%1 minutes").arg(30),
+                            i18n.tr("%1 minutes").arg(60)
+                        ]
+            }
+            return title.text[index]
         }
     }
 
@@ -81,8 +90,7 @@ Page {
                     SubtitledListItem {
                         id: _header
                         text: i18n.tr("Silence after")
-                        subText: alarmSettings.duration.toString() + " "
-                                 + i18n.tr("minutes")
+                        subText: i18n.tr("%1 minutes").arg(alarmSettings.duration)
                         onClicked: _alarmDuration.expanded = true
 
                         Icon {
@@ -111,7 +119,7 @@ Page {
                     width: parent.width
                     height: units.gu(24)
                     delegate: ListItem.Standard {
-                        text: title
+                        text: _resultsList.model.title(index)
                         onClicked: {
                             alarmSettings.duration = duration
                             _alarmDuration.expanded = false
