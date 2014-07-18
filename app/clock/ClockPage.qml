@@ -59,6 +59,35 @@ PageWithBottomEdge {
             rightLabel: i18n.tr("City")
         }
 
+        Icon {
+            id: settingsIcon
+
+            Component.onCompleted: anchors.topMargin = units.gu(2)
+
+            width: units.gu(3)
+            height: width
+
+            anchors {
+                top: parent.top
+                topMargin: units.gu(6)
+                right: parent.right
+                rightMargin: units.gu(2)
+            }
+
+            name: "settings"
+            color: "Grey"
+
+            Behavior on anchors.topMargin {
+                UbuntuNumberAnimation { duration: 900 }
+            }
+
+            MouseArea {
+                anchors.fill: parent
+                onClicked: mainStack.push(
+                               Qt.resolvedUrl("../alarm/AlarmSettingsPage.qml"))
+            }
+        }
+
         Clock {
             id: clock
 

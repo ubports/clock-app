@@ -8,6 +8,7 @@ set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -fno-permissive -pedantic -W
 find_package(Qt5Core)
 find_package(Qt5Qml)
 find_package(Qt5Quick)
+find_package(Qt5DBus)
 #find_package(ubuntu-sdk-libs)
 
 #automatically create moc files
@@ -57,7 +58,7 @@ add_subdirectory(backend)
 
 add_custom_target("autopilot" chmod +x ${CMAKE_SOURCE_DIR}/app/tests/autopilot/run
                     COMMAND ${CMAKE_SOURCE_DIR}/app/tests/autopilot/run
-                    DEPENDS ubuntu-clock-appbackend ubuntu-clock-appbackend-qmldir
+                    DEPENDS timezone timezone-qmldir alarmsettings alarmsettings-qmldir
                     WORKING_DIRECTORY ./app)
 
 enable_testing()
@@ -67,5 +68,5 @@ add_test(NAME basic
 )
 
 add_custom_target("run" /usr/bin/qmlscene -I ${CMAKE_BINARY_DIR}/backend  ${CMAKE_SOURCE_DIR}/app/ubuntu-clock-app.qml
-                    DEPENDS ubuntu-clock-appbackend ubuntu-clock-appbackend-qmldir
+                    DEPENDS timezone timezone-qmldir alarmsettings alarmsettings-qmldir
                     WORKING_DIRECTORY ./app)
