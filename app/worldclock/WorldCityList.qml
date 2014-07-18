@@ -99,6 +99,22 @@ Page {
     ListView {
         id: cityList
 
+        function addWorldCity(city, country, timezone) {
+            console.log("[LOG]: Adding city to U1db Database")
+            clockDB.putDoc
+                    (
+                        {
+                            "worldlocation":
+                            {
+                                "city": city,
+                                "country": country,
+                                "timezone": timezone
+                            }
+                        },
+                        encodeURIComponent(city + "_" + country)
+                        )
+        }
+
         anchors.fill: parent
 
         model: sortedTimeZoneModel
@@ -136,10 +152,7 @@ Page {
             }
 
             onClicked: {
-                /*
-                  #TODO: Add support for saving chosen city permanently to disk
-                */
-                console.log("#TODO: Add city to U1DB Model")
+                cityList.addWorldCity(city, country, timezoneID)
             }
         }
     }

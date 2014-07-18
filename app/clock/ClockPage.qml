@@ -49,6 +49,7 @@ PageWithBottomEdge {
         anchors.fill: parent
         contentWidth: parent.width
         contentHeight: clock.height + date.height + locationRow.height
+                       + worldCityColumn.height + units.gu(20)
 
         PullToAdd {
             id: addCityButton
@@ -139,6 +140,50 @@ PageWithBottomEdge {
                 fontSize: "medium"
                 anchors.verticalCenter: locationIcon.verticalCenter
                 color: UbuntuColors.midAubergine
+            }
+        }
+
+        Column {
+            id: worldCityColumn
+
+            anchors.top: locationRow.bottom
+            anchors.topMargin: units.gu(6)
+            width: parent.width
+
+            // U1db Index to index all documents storing the world city details
+            U1db.Index {
+                id: by_worldcity
+                database: clockDB
+                expression: [
+                    "worldlocation.city",
+                    "worldlocation.country",
+                    "worldlocation.timezone"
+                ]
+            }
+
+            // U1db Query to create a model of the world cities saved by the user
+            U1db.Query {
+                id: worldCityQuery
+                index: by_worldcity
+                query: ["*","*","*"]
+            }
+
+            Repeater {
+                model: worldCityQuery
+                delegate: SubtitledListItem {
+                    text: model.contents.city
+                    subText: model.contents.country
+                    showDivider: false
+                    removable: true
+                    confirmRemoval: true
+
+                    onItemRemoved: {
+                        // NOTE: This causes the document to be deleted twice resulting in an error.
+                        // The bug has been reported at https://bugs.launchpad.net/ubuntu-ui-toolkit/+bug/1276118
+                        Utils.log("Deleting world location: " + model.contents.city)
+                        clockDB.putDoc("", model.docId)
+                    }
+                }
             }
         }
 
