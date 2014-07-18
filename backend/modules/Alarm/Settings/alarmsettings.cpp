@@ -44,16 +44,24 @@ void AlarmSettings::onSettingsChanged(const QString &interface,
         return;
     }
 
-    if(properties.contains("DefaultVolume")
-            && m_volume != properties["DefaultVolume"].toInt()) {
-        m_volume = properties["DefaultVolume"].toInt();
-        emit volumeChanged();
+    auto it = properties.find("DefaultVolume");
+
+    if (it != properties.end()) {
+        const int volume = it.value().toInt();
+        if (m_volume != volume) {
+            m_volume = volume;
+            emit volumeChanged();
+        }
     }
 
-    if(properties.contains("Duration")
-            && m_duration != properties["Duration"].toInt()) {
-        m_duration = properties["Duration"].toInt();
-        emit durationChanged();
+    it = properties.find("Duration");
+
+    if (it != properties.end()) {
+        const int duration = it.value().toInt();
+        if (m_duration != duration) {
+            m_duration = duration;
+            emit durationChanged();
+        }
     }
 }
 
