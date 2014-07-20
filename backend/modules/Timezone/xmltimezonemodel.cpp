@@ -121,7 +121,6 @@ void XmlTimeZoneModel::loadTimeZonesFromXml()
             if (reader.name() == "City") {
                 // A time zone has ended. insert it into list
                 m_timeZones.append(tz);
-                qDebug() << "appended tz:" << tz.cityName << tz.country << tz.timeZoneId;
             }
             if (reader.name() == "cityName") {
                 isCityName = false;
