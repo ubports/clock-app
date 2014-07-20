@@ -47,6 +47,11 @@ void U1dbTimeZoneModel::setModel(QList<QVariant> &model)
 
 void U1dbTimeZoneModel::loadTimeZonesFromU1db()
 {
+    if(m_model.isEmpty()) {
+        // Don't parse an empty model
+        return;
+    }
+
     // Let QML know model is being reset and rebuilt
     beginResetModel();
 
