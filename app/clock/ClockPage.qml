@@ -179,10 +179,18 @@ PageWithBottomEdge {
                 model: u1dbModel
                 delegate: SubtitledListItem {
                     text: model.city
-                    subText: model.localTime
+                    subText: model.country
                     showDivider: false
                     removable: true
                     confirmRemoval: true
+
+                    Label {
+                        id: localTimeLabel
+
+                        anchors.centerIn: parent
+                        fontSize: "large"
+                        text: model.localTime
+                    }
 
                     onItemRemoved: {
                         // NOTE: This causes the document to be deleted twice resulting in an error.
