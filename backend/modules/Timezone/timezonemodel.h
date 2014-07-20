@@ -33,7 +33,10 @@ class TimeZoneModel: public QAbstractListModel
     /*
       Property to determine the interval before updating the time (default is 0)
     */
-    Q_PROPERTY(int updateInterval READ updateInterval WRITE setUpdateInterval NOTIFY updateIntervalChanged)
+    Q_PROPERTY(int updateInterval
+               READ updateInterval
+               WRITE setUpdateInterval
+               NOTIFY updateIntervalChanged)
 
 public:
     enum Roles {

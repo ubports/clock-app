@@ -17,6 +17,7 @@
  */
 
 import QtQuick 2.0
+import Timezone 1.0
 import U1db 1.0 as U1db
 import Ubuntu.Components 1.1
 import "../components"
@@ -168,11 +169,17 @@ PageWithBottomEdge {
                 query: ["*","*","*"]
             }
 
+            U1dbTimeZoneModel {
+                id: u1dbModel
+                updateInterval: 1000
+                model: worldCityQuery.results
+            }
+
             Repeater {
-                model: worldCityQuery
+                model: u1dbModel
                 delegate: SubtitledListItem {
-                    text: model.contents.city
-                    subText: model.contents.country
+                    text: model.city
+                    subText: model.localTime
                     showDivider: false
                     removable: true
                     confirmRemoval: true
@@ -180,8 +187,8 @@ PageWithBottomEdge {
                     onItemRemoved: {
                         // NOTE: This causes the document to be deleted twice resulting in an error.
                         // The bug has been reported at https://bugs.launchpad.net/ubuntu-ui-toolkit/+bug/1276118
-                        Utils.log("Deleting world location: " + model.contents.city)
-                        clockDB.putDoc("", model.docId)
+                        Utils.log("Deleting world location: " + model.city)
+                        clockDB.deleteDoc(worldCityQuery.documents[index])
                     }
                 }
             }
