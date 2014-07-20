@@ -73,8 +73,10 @@ QVariant TimeZoneModel::data(const QModelIndex &index, int role) const
         return m_timeZones.at(row).timeZoneId;
     case RoleTimeString:
         QTimeZone zone(m_timeZones.at(row).timeZoneId.toLatin1());
-        // TODO: pass formatting options as parameter to toString().
-        // see: http://qt-project.org/doc/qt-5/qdate.html#toString
+        /*
+         FIXME: Until https://bugreports.qt-project.org/browse/QTBUG-40275
+         is fixed, we will have to return a string.
+        */
         return QDateTime::currentDateTime().toTimeZone(zone).toString("hh:mm");
     }
 
