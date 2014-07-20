@@ -21,12 +21,14 @@
 #include "backend.h"
 #include "timezonemodel.h"
 #include "xmltimezonemodel.h"
+#include "u1dbtimezonemodel.h"
 
 void BackendPlugin::registerTypes(const char *uri)
 {
     Q_ASSERT(uri == QLatin1String("Timezone"));
 
     qmlRegisterType<XmlTimeZoneModel>(uri, 1, 0, "XmlTimeZoneModel");
+    qmlRegisterType<U1dbTimeZoneModel>(uri, 1, 0, "U1dbTimeZoneModel");
 }
 
 void BackendPlugin::initializeEngine(QQmlEngine *engine, const char *uri)
