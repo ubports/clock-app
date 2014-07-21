@@ -82,12 +82,14 @@ QVariant TimeZoneModel::data(const QModelIndex &index, int role) const
         */
         return worldCityTime.toString("hh:mm");
     case RoleDaysTo: {
-        qDebug() << localCityTime << ":" << worldCityTime;
-        qDebug() << localCityTime.secsTo(worldCityTime);
-        return localCityTime.secsTo(worldCityTime);
+        return localCityTime.daysTo(worldCityTime);
     }
     case RoleTimeTo:
-        return "WIP";
+        /*
+         FIXME: Workaround for localCityTime.secsTo(worldCityTime) which returns
+         0 indicating that the datetime object is invalid.
+        */
+        return localCityTime.offsetFromUtc() - worldCityTime.offsetFromUtc();
     }
 
     /*

@@ -17,7 +17,6 @@
  */
 
 import QtQuick 2.0
-import Timezone 1.0
 import U1db 1.0 as U1db
 import Ubuntu.Components 1.1
 import "../components"
@@ -144,72 +143,8 @@ PageWithBottomEdge {
             }
         }
 
-        Column {
+        UserWorldCityList {
             id: worldCityColumn
-
-            anchors.top: locationRow.bottom
-            anchors.topMargin: units.gu(6)
-            width: parent.width
-
-            // U1db Index to index all documents storing the world city details
-            U1db.Index {
-                id: by_worldcity
-                database: clockDB
-                expression: [
-                    "worldlocation.city",
-                    "worldlocation.country",
-                    "worldlocation.timezone"
-                ]
-            }
-
-            // U1db Query to create a model of the world cities saved by the user
-            U1db.Query {
-                id: worldCityQuery
-                index: by_worldcity
-                query: ["*","*","*"]
-            }
-
-            U1dbTimeZoneModel {
-                id: u1dbModel
-                updateInterval: 1000
-                model: worldCityQuery.results
-            }
-
-            Repeater {
-                model: u1dbModel
-                delegate: SubtitledListItem {
-                    text: model.city
-                    subText: model.country
-                    showDivider: false
-                    removable: true
-                    confirmRemoval: true
-
-                    Label {
-                        id: localTimeLabel
-
-                        anchors.centerIn: parent
-                        fontSize: "large"
-                        text: model.localTime
-                    }
-
-                    Label {
-                        id: relativeTimeLabel
-
-                        anchors.right: parent.right
-                        anchors.verticalCenter: parent.verticalCenter
-                        text: model.daysTo + "\n" + model.timeTo
-                        fontSize: "xx-small"
-                        horizontalAlignment: Text.AlignRight
-                    }
-
-                    onItemRemoved: {
-                        // NOTE: This causes the document to be deleted twice resulting in an error.
-                        // The bug has been reported at https://bugs.launchpad.net/ubuntu-ui-toolkit/+bug/1276118
-                        Utils.log("Deleting world location: " + model.city)
-                        clockDB.deleteDoc(worldCityQuery.documents[index])
-                    }
-                }
-            }
         }
 
         onDragEnded: {
