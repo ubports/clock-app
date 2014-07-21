@@ -90,7 +90,7 @@ Page {
               Update world city list immediately when the clock app is brought
               from suspend instead of waiting for the next minute to update.
             */
-            if(Qt.application.active)
+            if(applicationState)
                 timeZoneModel.update()
         }
     }
