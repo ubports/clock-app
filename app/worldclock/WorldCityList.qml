@@ -165,6 +165,7 @@ Page {
 
             onClicked: {
                 cityList.addWorldCity(city, country, timezoneID)
+                mainStack.pop()
             }
         }
     }
