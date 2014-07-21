@@ -64,6 +64,10 @@ QVariant TimeZoneModel::data(const QModelIndex &index, int role) const
      We have defined Roles in our .h file. Lets use them here.
     */
 
+    QTimeZone zone(m_timeZones.at(row).timeZoneId.toLatin1());
+    QDateTime worldCityTime(QDateTime::currentDateTime().toTimeZone(zone));
+    QDateTime localCityTime(QDateTime::currentDateTime());
+
     switch (role) {
     case RoleCityName:
         return m_timeZones.at(row).cityName;
@@ -72,12 +76,18 @@ QVariant TimeZoneModel::data(const QModelIndex &index, int role) const
     case RoleTimeZoneId:
         return m_timeZones.at(row).timeZoneId;
     case RoleTimeString:
-        QTimeZone zone(m_timeZones.at(row).timeZoneId.toLatin1());
         /*
          FIXME: Until https://bugreports.qt-project.org/browse/QTBUG-40275
          is fixed, we will have to return a string.
         */
-        return QDateTime::currentDateTime().toTimeZone(zone).toString("hh:mm");
+        return worldCityTime.toString("hh:mm");
+    case RoleDaysTo: {
+        qDebug() << localCityTime << ":" << worldCityTime;
+        qDebug() << localCityTime.secsTo(worldCityTime);
+        return localCityTime.secsTo(worldCityTime);
+    }
+    case RoleTimeTo:
+        return "WIP";
     }
 
     /*
@@ -94,6 +104,8 @@ QHash<int, QByteArray> TimeZoneModel::roleNames() const
     roles.insert(RoleCountryName, "country");
     roles.insert(RoleTimeZoneId, "timezoneID");
     roles.insert(RoleTimeString, "localTime");
+    roles.insert(RoleDaysTo, "daysTo");
+    roles.insert(RoleTimeTo, "timeTo");
     return roles;
 }
 

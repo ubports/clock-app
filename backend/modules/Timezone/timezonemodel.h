@@ -43,7 +43,9 @@ public:
         RoleCityName,
         RoleCountryName,
         RoleTimeZoneId,
-        RoleTimeString
+        RoleTimeString,
+        RoleDaysTo,
+        RoleTimeTo,
     };
 
     /*

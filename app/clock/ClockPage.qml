@@ -192,6 +192,16 @@ PageWithBottomEdge {
                         text: model.localTime
                     }
 
+                    Label {
+                        id: relativeTimeLabel
+
+                        anchors.right: parent.right
+                        anchors.verticalCenter: parent.verticalCenter
+                        text: model.daysTo + "\n" + model.timeTo
+                        fontSize: "xx-small"
+                        horizontalAlignment: Text.AlignRight
+                    }
+
                     onItemRemoved: {
                         // NOTE: This causes the document to be deleted twice resulting in an error.
                         // The bug has been reported at https://bugs.launchpad.net/ubuntu-ui-toolkit/+bug/1276118
