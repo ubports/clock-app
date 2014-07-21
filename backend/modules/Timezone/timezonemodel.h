@@ -77,7 +77,7 @@ signals:
     // Signal to notify the updateInterval change to QML
     void updateIntervalChanged();
 
-private slots:
+public slots:
     // Private slot that gets called by the updateTimer
     void update();
 

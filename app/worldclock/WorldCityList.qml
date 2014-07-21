@@ -83,9 +83,21 @@ Page {
         }
     ]
 
+    Connections {
+        target: clockApp
+        onApplicationStateChanged: {
+            /*
+              Update world city list immediately when the clock app is brought
+              from suspend instead of waiting for the next minute to update.
+            */
+            if(Qt.application.active)
+                timeZoneModel.update()
+        }
+    }
+
     XmlTimeZoneModel {
         id: timeZoneModel
-        updateInterval: 1000
+        updateInterval: 60000
         source: Qt.resolvedUrl("world-city-list.xml")
     }
 
