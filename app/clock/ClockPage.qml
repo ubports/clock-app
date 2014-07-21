@@ -20,6 +20,7 @@ import QtQuick 2.0
 import U1db 1.0 as U1db
 import Ubuntu.Components 1.1
 import "../components"
+import "../worldclock"
 import "../components/Utils.js" as Utils
 
 PageWithBottomEdge {
