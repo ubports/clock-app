@@ -71,7 +71,7 @@ MainView {
     Timer {
         id: clockTimer
 
-        interval: clockPage.isDigital ? 60000 : 1000
+        interval: 1000
         repeat: true
         running: true
         onTriggered: clockPage.updateTime()
