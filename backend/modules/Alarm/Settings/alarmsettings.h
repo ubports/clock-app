@@ -20,6 +20,7 @@
 #define ALARMSETTINGS_H
 
 #include <QObject>
+#include <QVariant>
 
 class AlarmSettings: public QObject
 {
@@ -71,6 +72,15 @@ private:
 
     // Function to send new values for the dBus settings
     void setDBusProperty(const QString &name, const QVariant &value);
+
+private slots:
+    /*
+     Function to update the clock alarm settings state automatically when
+     settings values are changed on dBus side
+    */
+    void onSettingsChanged(const QString &interface,
+                           const QVariantMap &properties,
+                           const QStringList &valid);
 };
 
 #endif
