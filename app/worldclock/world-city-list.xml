@@ -1121,6 +1121,196 @@
 		<countryName>Italy</countryName>
 	</City>
 	<City>
+		<cityName>Sacramento</cityName>
+		<timezoneID>America/Los_Angeles</timezoneID>
+		<countryName>United States</countryName>
+	</City>
+	<City>
+		<cityName>Salt Lake City</cityName>
+		<timezoneID>America/Denver</timezoneID>
+		<countryName>United States</countryName>
+	</City>
+	<City>
+		<cityName>Samoa</cityName>
+		<timezoneID>Pacific/Apia</timezoneID>
+		<countryName>Samoa</countryName>
+	</City>
+	<City>
+		<cityName>San Antonio</cityName>
+		<timezoneID>America/Chicago</timezoneID>
+		<countryName>United States</countryName>
+	</City>
+	<City>
+		<cityName>San Diego</cityName>
+		<timezoneID>America/Los_Angeles</timezoneID>
+		<countryName>United States</countryName>
+	</City>
+	<City>
+		<cityName>San Francisco</cityName>
+		<timezoneID>America/Costa_Rica</timezoneID>
+		<countryName>United States</countryName>
+	</City>
+	<City>
+		<cityName>San José</cityName>
+		<timezoneID>America/Costa_Rica</timezoneID>
+		<countryName>Costa Rica</countryName>
+	</City>
+	<City>
+		<cityName>San Juan</cityName>
+		<timezoneID>America/Puerto_Rico</timezoneID>
+		<countryName>Puerto Rico</countryName>
+	</City>
+	<City>
+		<cityName>San Marino</cityName>
+		<timezoneID>Europe/San_Marino</timezoneID>
+		<countryName>San Marino</countryName>
+	</City>
+	<City>
+		<cityName>San Salvador</cityName>
+		<timezoneID>America/El_Salvador</timezoneID>
+		<countryName>El Salvador</countryName>
+	</City>
+	<City>
+		<cityName>Sanaa</cityName>
+		<timezoneID>Asia/Aden</timezoneID>
+		<countryName>Yemen</countryName>
+	</City>
+	<City>
+		<cityName>Santiago</cityName>
+		<timezoneID>America/Santiago</timezoneID>
+		<countryName>Chile</countryName>
+	</City>
+	<City>
+		<cityName>Santo Domingo</cityName>
+		<timezoneID>America/Santo_Domingo</timezoneID>
+		<countryName>Dominican Republic</countryName>
+	</City>
+	<City>
+		<cityName>São Paulo</cityName>
+		<timezoneID>America/Sao_Paulo</timezoneID>
+		<countryName>Brazil</countryName>
+	</City>
+	<City>
+		<cityName>São Tomé</cityName>
+		<timezoneID>Africa/Sao_Tome</timezoneID>
+		<countryName>São Tomé and Príncipe</countryName>
+	</City>
+	<City>
+		<cityName>Sarajevo</cityName>
+		<timezoneID>Europe/Sarajevo</timezoneID>
+		<countryName>Bosnia and Herzegovina</countryName>
+	</City>
+	<City>
+		<cityName>Saskatchewan</cityName>
+		<timezoneID>America/Regina</timezoneID>
+		<countryName>Canada</countryName>
+	</City>
+	<City>
+		<cityName>Seattle</cityName>
+		<timezoneID>America/Los_Angeles</timezoneID>
+		<countryName>United States</countryName>
+	</City>
+	<City>
+		<cityName>Seoul</cityName>
+		<timezoneID>Asia/Seoul</timezoneID>	
+		<countryName>South Korea</countryName>
+	</City>
+	<City>
+		<cityName>Shanghai</cityName>
+		<timezoneID>Asia/Shanghai</timezoneID>	
+		<countryName>China</countryName>
+	</City>
+	<City>
+		<cityName>Singapore</cityName>
+		<timezoneID>Asia/Singapore</timezoneID>	
+		<countryName>Singapore</countryName>
+	</City>
+	<City>
+		<cityName>Simferopol’</cityName>
+		<timezoneID>Europe/Simferopol</timezoneID>
+		<countryName>Ukraine</countryName>
+	</City>
+	<City>
+		<cityName>Skopje</cityName>
+		<timezoneID>Europe/Skopje</timezoneID>
+		<countryName>Macedonia</countryName>
+	</City>
+	<City>
+		<cityName>Sofia</cityName>
+		<timezoneID>Europe/Sofia</timezoneID>
+		<countryName>Bulgaria</countryName>
+	</City>
+	<City>
+		<cityName>St.Johns</cityName>
+		<timezoneID>America/St_Johns</timezoneID>
+		<countryName>Canada</countryName>
+	</City>
+	<City>
+		<cityName>St.Kitts</cityName>
+		<timezoneID>America/St_Kitts</timezoneID>
+		<countryName>Saint Kitts and Nevis</countryName>
+	</City>
+	<City>
+		<cityName>St.Louis</cityName>
+		<timezoneID>America/Chicago</timezoneID>
+		<countryName>United States</countryName>
+	</City>
+	<City>
+		<cityName>Stanley</cityName>
+		<timezoneID>Atlantic/Stanley</timezoneID>
+		<countryName>Falkland Islands</countryName>
+	</City>
+	<City>
+		<cityName>Stockholm</cityName>
+		<timezoneID>Europe/Stockholm</timezoneID>
+		<countryName>Sweden</countryName>
+	</City>
+	<City>
+		<cityName>Suva</cityName>
+		<timezoneID>Pacific/Fiji</timezoneID>
+		<countryName>Fiji</countryName>
+	</City>
+	<City>
+		<cityName>Sydney</cityName>
+		<timezoneID>Australia/Sydney</timezoneID>
+		<countryName>Australia</countryName>
+	</City>
+	<City>
+		<cityName>Taipei</cityName>
+		<timezoneID>Asia/Taipei</timezoneID>
+		<countryName>Taiwan</countryName>
+	</City>
+	<City>
+		<cityName>Tallinn</cityName>
+		<timezoneID>Europe/Tallinn</timezoneID>
+		<countryName>Estonia</countryName>
+	</City>
+	<City>
+		<cityName>Tehran</cityName>
+		<timezoneID>Asia/Tehran</timezoneID>
+		<countryName>Iran</countryName>
+	</City>
+	<City>
+		<cityName>Tokyo</cityName>
+		<timezoneID>Asia/Tokyo</timezoneID>
+		<countryName>Japan</countryName>
+	</City>
+	<City>
+		<cityName>Toronto</cityName>
+		<timezoneID>America/Toronto</timezoneID>
+		<countryName>Canada</countryName>
+	</City>
+	<City>
+		<cityName>Tripoli</cityName>
+		<timezoneID>Africa/Tripoli</timezoneID>
+		<countryName>Libyra</countryName>
+	</City>
+	<City>
+		<cityName>Tunis</cityName>
+		<timezoneID>Africa/Tunis</timezoneID>
+		<countryName>Tunisia</countryName>
+	</City>
+	<City>
 		<cityName>Ulan Bator</cityName>
 		<timezoneID>Asia/Ulan_Bator</timezoneID>
 		<countryName>Mongolia</countryName>
