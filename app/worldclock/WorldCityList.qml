@@ -69,6 +69,8 @@ Page {
             contents: TextField {
                 id: searchField
 
+                inputMethodHints: Qt.ImhNoPredictiveText
+
                 anchors {
                     left: parent ? parent.left : undefined
                     right: parent ? parent.right : undefined

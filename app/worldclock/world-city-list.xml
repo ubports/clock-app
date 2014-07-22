@@ -926,6 +926,201 @@
 		<countryName>Oman</countryName>
 	</City>
 	<City>
+		<cityName>Nairobi</cityName>
+		<timezoneID>Africa/Nairobi</timezoneID>
+		<countryName>Kenya</countryName>
+	</City>
+	<City>
+		<cityName>Nashville</cityName>
+		<timezoneID>America/Chicago</timezoneID>
+		<countryName>United States</countryName>
+	</City>
+	<City>
+		<cityName>Nassau</cityName>
+		<timezoneID>America/Nassau</timezoneID>
+		<countryName>Bahamas</countryName>
+	</City>
+	<City>
+		<cityName>New Orleans</cityName>
+		<timezoneID>America/Chicago</timezoneID>
+		<countryName>United States</countryName>
+	</City>
+	<City>
+		<cityName>New Salem</cityName>
+		<timezoneID>America/North_Dakota/New_Salem</timezoneID>
+		<countryName>United States</countryName>
+	</City>
+	<City>
+		<cityName>New South Wales</cityName>
+		<timezoneID>Australia/Sydney</timezoneID>	
+		<countryName>Australia</countryName>
+	</City>
+	<City>
+		<cityName>New York</cityName>
+		<timezoneID>America/New_York</timezoneID>	
+		<countryName>United States</countryName>
+	</City>
+	<City>
+		<cityName>Newfoundland</cityName>
+		<timezoneID>America/St_Johns</timezoneID>
+		<countryName>United States</countryName>
+	</City>
+	<City>
+		<cityName>Nouméa</cityName>
+		<timezoneID>Pacific/Noumea</timezoneID>
+		<countryName>New Caledonia</countryName>
+	</City>
+	<City>
+		<cityName>Nuestra Señora de La Paz</cityName>
+		<timezoneID>America/Bogota</timezoneID>
+		<countryName>Colombia</countryName>
+	</City>
+	<City>
+		<cityName>Oklahoma City</cityName>
+		<timezoneID>America/Chicago</timezoneID>
+		<countryName>United States</countryName>
+	</City>
+	<City>
+		<cityName>Osaka</cityName>
+		<timezoneID>Asia/Tokyo</timezoneID>	
+		<countryName>Japan</countryName>
+	</City>
+	<City>
+		<cityName>Oslo</cityName>
+		<timezoneID>Europe/Oslo</timezoneID>
+		<countryName>Norway</countryName>
+	</City>
+	<City>
+		<cityName>Ottawa</cityName>
+		<timezoneID>America/Toronto</timezoneID>
+		<countryName>Canada</countryName>
+	</City>
+	<City>
+		<cityName>Oulu</cityName>
+		<timezoneID>Europe/Helsinki</timezoneID>
+		<countryName>Finland</countryName>
+	</City>
+	<City>
+		<cityName>Panamá</cityName>
+		<timezoneID>America/Panama</timezoneID>
+		<countryName>Panama</countryName>
+	</City>
+	<City>
+		<cityName>Paramaribo</cityName>
+		<timezoneID>America/Paramaribo</timezoneID>
+		<countryName>Suriname</countryName>
+	</City>
+	<City>
+		<cityName>Paris</cityName>
+		<timezoneID>Europe/Paris</timezoneID>	
+		<countryName>France</countryName>
+	</City>
+	<City>
+		<cityName>Perth</cityName>
+		<timezoneID>Australia/Perth</timezoneID>	
+		<countryName>Australia</countryName>
+	</City>
+	<City>
+		<cityName>Petersburg</cityName>
+		<timezoneID>America/Indiana/Petersburg</timezoneID>
+		<countryName>Russia</countryName>
+	</City>
+	<City>
+		<cityName>Philadelphia</cityName>
+		<timezoneID>America/New_York</timezoneID>
+		<countryName>United States</countryName>
+	</City>
+	<City>
+		<cityName>Phnom Penh</cityName>
+		<timezoneID>Asia/Phnom_Penh</timezoneID>
+		<countryName>Cambodia</countryName>
+	</City>
+	<City>
+		<cityName>Phoenix</cityName>
+		<timezoneID>America/Phoenix</timezoneID>
+		<countryName>United States</countryName>
+	</City>
+	<City>
+		<cityName>Pittsburgh</cityName>
+		<timezoneID>America/New_York</timezoneID>
+		<countryName>United States</countryName>
+	</City>
+	<City>
+		<cityName>Port of Spain</cityName>
+		<timezoneID>America/Port_of_Spain</timezoneID>
+		<countryName>Trinidad and Tobago</countryName>
+	</City>
+	<City>
+		<cityName>Port au Prince</cityName>
+		<timezoneID>America/Port-au-Prince</timezoneID>
+		<countryName>Haiti</countryName>
+	</City>
+	<City>
+		<cityName>Portland</cityName>
+		<timezoneID>America/Los_Angeles</timezoneID>
+		<countryName>United States</countryName>
+	</City>
+	<City>
+		<cityName>Prague</cityName>
+		<timezoneID>Europe/Prague</timezoneID>	
+		<countryName>Czech</countryName>
+	</City>
+	<City>
+		<cityName>Pyongyang</cityName>
+		<timezoneID>Asia/Pyongyang</timezoneID>
+		<countryName>North Korea</countryName>
+	</City>
+	<City>
+		<cityName>Queensland</cityName>
+		<timezoneID>Australia/Brisbane</timezoneID>
+		<countryName>United States</countryName>
+	</City>
+	<City>
+		<cityName>Quito</cityName>
+		<timezoneID>America/Guayaquil</timezoneID>
+		<countryName>Ecuador</countryName>
+	</City>
+	<City>
+		<cityName>Rangoon</cityName>
+		<timezoneID>Asia/Rangoon</timezoneID>
+		<countryName>Myanmar</countryName>
+	</City>
+	<City>
+		<cityName>Reno</cityName>
+		<timezoneID>America/Los_Angeles</timezoneID>
+		<countryName>United States</countryName>
+	</City>
+	<City>
+		<cityName>Reston</cityName>
+		<timezoneID>America/New_York</timezoneID>
+		<countryName>United States</countryName>
+	</City>
+	<City>
+		<cityName>Reykjavík</cityName>
+		<timezoneID>Atlantic/Reykjavik</timezoneID>
+		<countryName>Iceland</countryName>
+	</City>
+	<City>
+		<cityName>Riga</cityName>
+		<timezoneID>Europe/Riga</timezoneID>
+		<countryName>Latvia</countryName>
+	</City>
+	<City>
+		<cityName>Rio de Janeiro</cityName>
+		<timezoneID>America/Sao_Paulo</timezoneID>
+		<countryName>Brazil</countryName>
+	</City>	
+	<City>
+		<cityName>Riyadh</cityName>
+		<timezoneID>Asia/Riyadh</timezoneID>
+		<countryName>Saudi Arabia</countryName>
+	</City>
+	<City>
+		<cityName>Rome</cityName>
+		<timezoneID>Europe/Rome</timezoneID>
+		<countryName>Italy</countryName>
+	</City>
+	<City>
 		<cityName>Ulan Bator</cityName>
 		<timezoneID>Asia/Ulan_Bator</timezoneID>
 		<countryName>Mongolia</countryName>
