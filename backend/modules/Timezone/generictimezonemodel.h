@@ -16,8 +16,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef U1DBTIMEZONEMODEL_H
-#define U1DBTIMEZONEMODEL_H
+#ifndef GENERICTIMEZONEMODEL_H
+#define GENERICTIMEZONEMODEL_H
 
 #include <QList>
 #include <QVariant>
@@ -55,4 +55,4 @@ private:
     QList<QVariant> m_results;
 };
 
-#endif // U1DBTIMEZONEMODEL_H
+#endif // GENERICTIMEZONEMODEL_H
