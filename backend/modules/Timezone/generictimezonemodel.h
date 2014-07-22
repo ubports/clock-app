@@ -29,30 +29,30 @@ class GenericTimeZoneModel : public TimeZoneModel
     Q_OBJECT
 
     // Property to store the u1db query model results
-    Q_PROPERTY(QList<QVariant> model
-               READ model
-               WRITE setModel
-               NOTIFY modelChanged)
+    Q_PROPERTY(QList<QVariant> results
+               READ results
+               WRITE setResults
+               NOTIFY resultsChanged)
 
 public:
     GenericTimeZoneModel(QObject *parent = 0);
 
     // Function to read the model
-    QList<QVariant> model() const;
+    QList<QVariant> results() const;
 
     // Function to set the model
-    void setModel(const QList<QVariant> &model);
+    void setResults(const QList<QVariant> &results);
 
 signals:
     // Signal to notify the change of the model to QML
-    void modelChanged();
+    void resultsChanged();
 
 private:
     // Function to do the QList parsing
     void loadTimeZonesFromVariantList();
 
     // Private copy of the model received from QML
-    QList<QVariant> m_model;
+    QList<QVariant> m_results;
 };
 
 #endif // U1DBTIMEZONEMODEL_H
