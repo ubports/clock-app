@@ -56,10 +56,10 @@ Column {
         query: ["*","*","*"]
     }
     
-    U1dbTimeZoneModel {
+    GenericTimeZoneModel {
         id: u1dbModel
         updateInterval: 1000
-        model: worldCityQuery.results
+        results: worldCityQuery.results
     }
     
     Repeater {

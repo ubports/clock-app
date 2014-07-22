@@ -17,9 +17,7 @@
  */
 
 #include <QDebug>
-#include <QVariant>
-#include <QtDBus/QDBusInterface>
-#include <QtDBus/QDBusReply>
+#include <QtDBus>
 
 #include "alarmsettings.h"
 
@@ -28,6 +26,45 @@ AlarmSettings::AlarmSettings(QObject *parent):
 {
     // On startup, retrieve all the settings values from Dbus
     refreshProperties();
+
+    // Listen to property changes signal being triggered on the Dbus side
+    QDBusConnection connection = QDBusConnection::sessionBus();
+    connection.connect("com.canonical.indicator.datetime",
+                       "/com/canonical/indicator/datetime/AlarmProperties",
+                       "org.freedesktop.DBus.Properties",
+                       "PropertiesChanged",
+                       this,
+                       SLOT(onSettingsChanged(QString, QVariantMap, QStringList)));
+}
+
+void AlarmSettings::onSettingsChanged(const QString &interface,
+                                      const QVariantMap &properties,
+                                      const QStringList &valid)
+{
+    if(interface != "com.canonical.indicator.datetime.AlarmProperties") {
+        // Check if the properties changed are in the correct interface
+        return;
+    }
+
+    auto it = properties.find("DefaultVolume");
+
+    if (it != properties.end()) {
+        const int volume = it.value().toInt();
+        if (m_volume != volume) {
+            m_volume = volume;
+            emit volumeChanged();
+        }
+    }
+
+    it = properties.find("Duration");
+
+    if (it != properties.end()) {
+        const int duration = it.value().toInt();
+        if (m_duration != duration) {
+            m_duration = duration;
+            emit durationChanged();
+        }
+    }
 }
 
 void AlarmSettings::refreshProperties()

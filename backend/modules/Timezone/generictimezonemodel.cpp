@@ -16,39 +16,39 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "u1dbtimezonemodel.h"
+#include "generictimezonemodel.h"
 
 #include <QDebug>
 
-U1dbTimeZoneModel::U1dbTimeZoneModel(QObject *parent) :
+GenericTimeZoneModel::GenericTimeZoneModel(QObject *parent) :
     TimeZoneModel(parent)
 {
 }
 
-QList<QVariant> U1dbTimeZoneModel::model() const
+QList<QVariant> GenericTimeZoneModel::results() const
 {
-    return m_model;
+    return m_results;
 }
 
-void U1dbTimeZoneModel::setModel(QList<QVariant> &model)
+void GenericTimeZoneModel::setResults(const QList<QVariant> &results)
 {
-    if(m_model == model) {
-        // Don't parse the model again if it is the same model being set again
+    if(m_results == results) {
+        // Don't parse the results again if it is the same results being set again
         return;
     }
 
-    // Change the model and emit the changed signal to let QML know
-    m_model = model;
-    emit modelChanged();
+    // Change the results and emit the changed signal to let QML know
+    m_results = results;
+    emit resultsChanged();
 
-    // Parse through model
-    loadTimeZonesFromU1db();
+    // Parse through results
+    loadTimeZonesFromVariantList();
 }
 
-void U1dbTimeZoneModel::loadTimeZonesFromU1db()
+void GenericTimeZoneModel::loadTimeZonesFromVariantList()
 {
-    if(m_model.isEmpty()) {
-        // Don't parse an empty model
+    if(m_results.isEmpty()) {
+        // Don't parse an empty results
         return;
     }
 
@@ -63,11 +63,11 @@ void U1dbTimeZoneModel::loadTimeZonesFromU1db()
      Cycle through the u1db query model results and transfer them to the
      TimeZone list.
     */
-    for (int i=0; i < m_model.size(); i++) {
+    for (int i=0; i < m_results.size(); i++) {
         // Map query model results to timezone tz
-        tz.cityName = m_model.value(i).toMap().value("city").toString();
-        tz.country = m_model.value(i).toMap().value("country").toString();
-        tz.timeZoneId = m_model.value(i).toMap().value("timezone").toString();
+        tz.cityName = m_results.value(i).toMap().value("city").toString();
+        tz.country = m_results.value(i).toMap().value("country").toString();
+        tz.timeZoneId = m_results.value(i).toMap().value("timezone").toString();
 
         m_timeZones.append(tz);
 

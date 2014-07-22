@@ -78,7 +78,15 @@ signals:
     void updateIntervalChanged();
 
 public slots:
-    // Private slot that gets called by the updateTimer
+    /*
+     Public slot called internally by m_updateTimer and also from QML to
+     explicitly refresh the model when required.
+
+     Use Case: The world city list is updated every minute to improve
+     performance. However when the clock app is brought from the background
+     (due to user switching between apps) the world city list must be updated
+     immediately rather than waiting for a minute before updating.
+    */
     void update();
 
 private:
