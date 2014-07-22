@@ -16,21 +16,21 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "u1dbtimezonemodel.h"
+#include "generictimezonemodel.h"
 
 #include <QDebug>
 
-U1dbTimeZoneModel::U1dbTimeZoneModel(QObject *parent) :
+GenericTimeZoneModel::GenericTimeZoneModel(QObject *parent) :
     TimeZoneModel(parent)
 {
 }
 
-QList<QVariant> U1dbTimeZoneModel::model() const
+QList<QVariant> GenericTimeZoneModel::model() const
 {
     return m_model;
 }
 
-void U1dbTimeZoneModel::setModel(QList<QVariant> &model)
+void GenericTimeZoneModel::setModel(QList<QVariant> &model)
 {
     if(m_model == model) {
         // Don't parse the model again if it is the same model being set again
@@ -45,7 +45,7 @@ void U1dbTimeZoneModel::setModel(QList<QVariant> &model)
     loadTimeZonesFromU1db();
 }
 
-void U1dbTimeZoneModel::loadTimeZonesFromU1db()
+void GenericTimeZoneModel::loadTimeZonesFromU1db()
 {
     if(m_model.isEmpty()) {
         // Don't parse an empty model

@@ -24,7 +24,7 @@
 
 #include "timezonemodel.h"
 
-class U1dbTimeZoneModel : public TimeZoneModel
+class GenericTimeZoneModel : public TimeZoneModel
 {
     Q_OBJECT
 
@@ -35,7 +35,7 @@ class U1dbTimeZoneModel : public TimeZoneModel
                NOTIFY modelChanged)
 
 public:
-    U1dbTimeZoneModel(QObject *parent = 0);
+    GenericTimeZoneModel(QObject *parent = 0);
 
     // Function to read the model
     QList<QVariant> model() const;
