@@ -30,7 +30,7 @@ QList<QVariant> GenericTimeZoneModel::model() const
     return m_model;
 }
 
-void GenericTimeZoneModel::setModel(QList<QVariant> &model)
+void GenericTimeZoneModel::setModel(const QList<QVariant> &model)
 {
     if(m_model == model) {
         // Don't parse the model again if it is the same model being set again

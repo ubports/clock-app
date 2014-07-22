@@ -41,7 +41,7 @@ public:
     QList<QVariant> model() const;
 
     // Function to set the model
-    void setModel(QList<QVariant> &model);
+    void setModel(const QList<QVariant> &model);
 
 signals:
     // Signal to notify the change of the model to QML
