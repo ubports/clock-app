@@ -49,7 +49,7 @@ signals:
 
 private:
     // Function to do the QList parsing
-    void loadTimeZonesFromU1db();
+    void loadTimeZonesFromVariantList();
 
     // Private copy of the model received from QML
     QList<QVariant> m_model;

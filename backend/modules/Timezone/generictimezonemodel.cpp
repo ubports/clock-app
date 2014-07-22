@@ -42,10 +42,10 @@ void GenericTimeZoneModel::setModel(const QList<QVariant> &model)
     emit modelChanged();
 
     // Parse through model
-    loadTimeZonesFromU1db();
+    loadTimeZonesFromVariantList();
 }
 
-void GenericTimeZoneModel::loadTimeZonesFromU1db()
+void GenericTimeZoneModel::loadTimeZonesFromVariantList()
 {
     if(m_model.isEmpty()) {
         // Don't parse an empty model
