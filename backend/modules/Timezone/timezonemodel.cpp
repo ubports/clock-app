@@ -81,9 +81,8 @@ QVariant TimeZoneModel::data(const QModelIndex &index, int role) const
          is fixed, we will have to return a string.
         */
         return worldCityTime.toString("hh:mm");
-    case RoleDaysTo: {
+    case RoleDaysTo:
         return localCityTime.daysTo(worldCityTime);
-    }
     case RoleTimeTo:
         /*
          FIXME: Workaround for localCityTime.secsTo(worldCityTime) which returns
