@@ -23,7 +23,6 @@ Item {
     id: _shadowContainer
 
     clip: true
-    width: units.gu(22.5)
     height: width/2
 
     opacity: 0

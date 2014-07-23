@@ -18,8 +18,6 @@
 
 import QtQuick 2.0
 import Ubuntu.Components 1.1
-import "../components"
-import "../components/Utils.js" as Utils
 
 ClockCircle {
     id: _innerCircle

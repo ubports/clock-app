@@ -73,15 +73,15 @@ Column {
             showDivider: false
             removable: true
             confirmRemoval: true
-            
+
             Label {
                 id: localTimeLabel
-                
+
                 anchors.centerIn: parent
                 fontSize: "large"
                 text: model.localTime
             }
-            
+
             Label {
                 id: relativeTimeLabel
                 

@@ -18,26 +18,18 @@
 
 import QtQuick 2.0
 import Ubuntu.Components 1.1
-import "../components/Utils.js" as Utils
 
 Flipable {
-    id: analogShadow
+    id: digitalShadow
 
     // Property to switch between digital and analog mode
-    property bool isDigital: false
+    property bool isAnalog: false
 
     width: units.gu(23)
     height: width/2
     clip: true
 
-    front: AnalogMode {
-        id: _analogMode
-        width: units.gu(23)
-        anchors.bottom: parent.bottom
-        anchors.horizontalCenter: parent.horizontalCenter
-    }
-
-    back: DigitalMode {
+    front: DigitalMode {
         id: _digitalMode
         width: units.gu(23)
         timeFontSize: units.dp(62)
@@ -46,9 +38,16 @@ Flipable {
         anchors.horizontalCenter: parent.horizontalCenter
     }
 
+    back: AnalogMode {
+        id: _analogMode
+        width: units.gu(23)
+        anchors.bottom: parent.bottom
+        anchors.horizontalCenter: parent.horizontalCenter
+    }
+
     transform: Rotation {
         id: rotation
-        origin.x: analogShadow.width/2
+        origin.x: digitalShadow.width/2
         origin.y: 0
         axis.x: 1; axis.y: 0; axis.z: 0
         angle: 0
@@ -56,7 +55,7 @@ Flipable {
 
     states: State {
         name: "Digital"
-        when: analogShadow.isDigital
+        when: digitalShadow.isAnalog
         PropertyChanges {
             target: rotation
             angle: -180

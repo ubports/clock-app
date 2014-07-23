@@ -92,14 +92,12 @@ PageWithBottomEdge {
             }
         }
 
-        Clock {
+        MainClock {
             id: clock
 
             anchors.verticalCenter: parent.top
             anchors.verticalCenterOffset: units.gu(20)
             anchors.horizontalCenter: parent.horizontalCenter
-
-            isDigital: clockModeDocument.contents.digitalMode ? true : false
         }
 
         Label {
