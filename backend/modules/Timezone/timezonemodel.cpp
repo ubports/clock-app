@@ -64,6 +64,10 @@ QVariant TimeZoneModel::data(const QModelIndex &index, int role) const
      We have defined Roles in our .h file. Lets use them here.
     */
 
+    QTimeZone zone(m_timeZones.at(row).timeZoneId.toLatin1());
+    QDateTime worldCityTime(QDateTime::currentDateTime().toTimeZone(zone));
+    QDateTime localCityTime(QDateTime::currentDateTime());
+
     switch (role) {
     case RoleCityName:
         return m_timeZones.at(row).cityName;
@@ -72,10 +76,19 @@ QVariant TimeZoneModel::data(const QModelIndex &index, int role) const
     case RoleTimeZoneId:
         return m_timeZones.at(row).timeZoneId;
     case RoleTimeString:
-        QTimeZone zone(m_timeZones.at(row).timeZoneId.toLatin1());
-        // TODO: pass formatting options as parameter to toString().
-        // see: http://qt-project.org/doc/qt-5/qdate.html#toString
-        return QDateTime::currentDateTime().toTimeZone(zone).toString("hh:mm");
+        /*
+         FIXME: Until https://bugreports.qt-project.org/browse/QTBUG-40275
+         is fixed, we will have to return a string.
+        */
+        return worldCityTime.toString("hh:mm");
+    case RoleDaysTo:
+        return localCityTime.daysTo(worldCityTime);
+    case RoleTimeTo:
+        /*
+         FIXME: Workaround for localCityTime.secsTo(worldCityTime) which returns
+         0 indicating that the datetime object is invalid.
+        */
+        return localCityTime.offsetFromUtc() - worldCityTime.offsetFromUtc();
     }
 
     /*
@@ -92,6 +105,8 @@ QHash<int, QByteArray> TimeZoneModel::roleNames() const
     roles.insert(RoleCountryName, "country");
     roles.insert(RoleTimeZoneId, "timezoneID");
     roles.insert(RoleTimeString, "localTime");
+    roles.insert(RoleDaysTo, "daysTo");
+    roles.insert(RoleTimeTo, "timeTo");
     return roles;
 }
 

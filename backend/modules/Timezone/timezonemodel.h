@@ -33,14 +33,19 @@ class TimeZoneModel: public QAbstractListModel
     /*
       Property to determine the interval before updating the time (default is 0)
     */
-    Q_PROPERTY(int updateInterval READ updateInterval WRITE setUpdateInterval NOTIFY updateIntervalChanged)
+    Q_PROPERTY(int updateInterval
+               READ updateInterval
+               WRITE setUpdateInterval
+               NOTIFY updateIntervalChanged)
 
 public:
     enum Roles {
         RoleCityName,
         RoleCountryName,
         RoleTimeZoneId,
-        RoleTimeString
+        RoleTimeString,
+        RoleDaysTo,
+        RoleTimeTo,
     };
 
     /*
@@ -72,8 +77,16 @@ signals:
     // Signal to notify the updateInterval change to QML
     void updateIntervalChanged();
 
-private slots:
-    // Private slot that gets called by the updateTimer
+public slots:
+    /*
+     Public slot called internally by m_updateTimer and also from QML to
+     explicitly refresh the model when required.
+
+     Use Case: The world city list is updated every minute to improve
+     performance. However when the clock app is brought from the background
+     (due to user switching between apps) the world city list must be updated
+     immediately rather than waiting for a minute before updating.
+    */
     void update();
 
 private:
