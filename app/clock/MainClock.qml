@@ -35,22 +35,6 @@ Clock {
         clockOpenAnimation.start()
     }
 
-    Timer {
-        id: _animationTimer
-        interval: 200
-        repeat: false
-        onTriggered: _innerCircleAnimation.start()
-    }
-
-    PropertyAnimation {
-        id: _innerCircleAnimation
-        target: digitalModeLoader.item
-        property: "width"
-        from: units.gu(0)
-        to: units.gu(23)
-        duration: 900
-    }
-
     /*
       The clockOpenAnimation is only executed once when the clock app is
       opened.
@@ -66,12 +50,16 @@ Clock {
         ScriptAction {
             script: {
                 if (isDigital) {
-                    digitalModeLoader.source =
-                            Qt.resolvedUrl("../components/DigitalMode.qml")
+                    digitalModeLoader.setSource("../components/DigitalMode.qml",
+                                                {
+                                                    "maxWidth": units.gu(23),
+                                                    "maxTimeFontSize": units.dp(62),
+                                                    "maxPeriodFontSize": units.dp(12),
+                                                })
                 }
                 else {
-                    analogModeLoader.source =
-                            Qt.resolvedUrl("../components/AnalogMode.qml")
+                    analogModeLoader.setSource("../components/AnalogMode.qml",
+                                               {"maxWidth": units.gu(23)})
                 }
             }
         }
@@ -90,7 +78,7 @@ Clock {
                         digitalModeLoader.item.startAnimation()
                     }
                     else {
-                        _animationTimer.start()
+                        analogModeLoader.item.startAnimation()
                     }
                 }
             }

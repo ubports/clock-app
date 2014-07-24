@@ -138,8 +138,18 @@ ClockCircle {
 
         ScriptAction {
             script: {
-                analogShadow.source = Qt.resolvedUrl("AnalogShadow.qml")
-                digitalShadow.source = Qt.resolvedUrl("DigitalShadow.qml")
+                analogShadow.setSource("AnalogShadow.qml",
+                                       {
+                                           "shadowWidth": units.gu(23),
+                                           "shadowTimeFontSize": units.dp(62),
+                                           "shadowPeriodFontSize": units.dp(12),
+                                       })
+                digitalShadow.setSource("DigitalShadow.qml",
+                                        {
+                                            "shadowWidth": units.gu(23),
+                                            "shadowTimeFontSize": units.dp(62),
+                                            "shadowPeriodFontSize": units.dp(12),
+                                        })
 
                 if (clockModeFlipable.isDigital) {
                     digitalShadow.item.isAnalog = true

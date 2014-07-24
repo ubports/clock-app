@@ -22,6 +22,8 @@ import Ubuntu.Components 1.1
 ClockCircle {
     id: _innerCircleAnalog
 
+    property int maxWidth
+
     function startAnimation() {
         _animationTimer.start()
     }
@@ -88,8 +90,7 @@ ClockCircle {
         target: _innerCircleAnalog
         property: "width"
         from: units.gu(0)
-        to: units.gu(23)
+        to: maxWidth
         duration: 900
     }
-
 }

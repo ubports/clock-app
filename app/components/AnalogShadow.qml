@@ -22,25 +22,29 @@ import Ubuntu.Components 1.1
 Flipable {
     id: analogShadow
 
+    property int shadowWidth
+    property int shadowTimeFontSize
+    property int shadowPeriodFontSize
+
     // Property to switch between digital and analog mode
     property bool isDigital: false
 
-    width: units.gu(23)
+    width: shadowWidth
     height: width/2
     clip: true
 
     front: AnalogMode {
         id: _analogMode
-        width: units.gu(23)
+        width: shadowWidth
         anchors.bottom: parent.bottom
         anchors.horizontalCenter: parent.horizontalCenter
     }
 
     back: DigitalMode {
         id: _digitalMode
-        width: units.gu(23)
-        timeFontSize: units.dp(62)
-        timePeriodFontSize: units.dp(12)
+        width: shadowWidth
+        timeFontSize: shadowTimeFontSize
+        timePeriodFontSize: shadowPeriodFontSize
         anchors.bottom: parent.bottom
         anchors.horizontalCenter: parent.horizontalCenter
     }
