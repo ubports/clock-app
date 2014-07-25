@@ -158,5 +158,14 @@ Page {
                 }
             }
         }
+
+        SubtitledListItem {
+            text: i18n.tr("Change time and date")
+            subText: Qt.formatDateTime(new Date(),
+                                       "dddd, d MMMM yyyy hh:mm:ss t")
+            onClicked: {
+                Qt.openUrlExternally("settings:///system/time-date")
+            }
+        }
     }
 }
