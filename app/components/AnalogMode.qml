@@ -22,6 +22,7 @@ import Ubuntu.Components 1.1
 ClockCircle {
     id: _innerCircleAnalog
 
+    // Property to set the max width when running the animation
     property int maxWidth
 
     function startAnimation() {

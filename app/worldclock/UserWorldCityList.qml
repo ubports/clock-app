@@ -86,12 +86,11 @@ Column {
                 }
 
                 fontSize: units.dp(14)
-                periodFontSize: units.dp(10)
+                periodFontSize: units.dp(7)
                 innerCircleWidth: units.gu(5)
                 width: units.gu(7)
 
                 analogTime: getTime(model.localTime)
-                time: model.localTime
 
                 anchors.centerIn: parent
 
@@ -105,13 +104,13 @@ Column {
                 Component.onCompleted: {
                     isDigital = clockModeDocument.contents.digitalMode ? true : false
                     if (clockModeDocument.contents.digitalMode) {
-                        digitalModeLoader.setSource(
-                                    "../components/DigitalMode.qml",
-                                    {
-                                        "width": innerCircleWidth,
-                                        "timeFontSize": fontSize,
-                                        "timePeriodFontSize": periodFontSize
-                                    })
+                        digitalModeLoader.setSource
+                                ("../components/DigitalMode.qml",
+                                 {
+                                     "width": innerCircleWidth,
+                                     "timeFontSize": fontSize,
+                                     "timePeriodFontSize": periodFontSize
+                                 })
                     }
                     else {
                         analogModeLoader.setSource(

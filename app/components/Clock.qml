@@ -20,6 +20,22 @@ import QtQuick 2.0
 import Ubuntu.Components 1.1
 import "Utils.js" as Utils
 
+/*
+ Generic clock component which has a digital and analog mode. A flip animation
+ is shown when switching clock modes. This components is used by the main
+ clock and the world clock list items.
+
+ The component follows a parent-child model where certain functions are
+ available only if used by a parent. You can set parent using the isMainClock
+ variable. Some functions which are provided only to the parent are listed
+ below,
+
+ - Ability to switch clock modes by tapping on the center. As per design, only
+   main clock app should allow switching mode by tapping at the center
+
+ - Modify the user preference settings document to reflect the currently chosen
+   clock mode. We don't want every child element modifying the file unnecessarily
+*/
 ClockCircle {
     id: _outerCircle
 
@@ -32,14 +48,19 @@ ClockCircle {
     // Property to keep track of the clock mode
     property alias isDigital: clockModeFlipable.isDigital
 
-    property int innerCircleWidth
+    // Properties to set the dimension of the clock like the font size, width etc
     property int fontSize
     property int periodFontSize
+    property int innerCircleWidth
+
+    // Property to set if the component is the parent or the child
     property bool isMainClock: false
 
+    // Properties to expose the analog and digital modes
     property alias digitalModeLoader: _digitalModeLoader
     property alias analogModeLoader: _analogModeLoader
 
+    // Signal which is triggered whenever the flip animation is started
     signal triggerFlip();
 
     function flipClock() {
@@ -121,6 +142,7 @@ ClockCircle {
         }
 
         MouseArea {
+            enabled: isMainClock
             anchors.fill: parent
             onClicked: {
                 clockFlipAnimation.start()
@@ -137,22 +159,22 @@ ClockCircle {
 
         ScriptAction {
             script: {
+                triggerFlip()
+                analogShadow.setSource
+                        ("AnalogShadow.qml",
+                         {
+                             "shadowWidth": innerCircleWidth,
+                             "shadowTimeFontSize": fontSize,
+                             "shadowPeriodFontSize": periodFontSize,
+                         })
 
-                if(isMainClock) {
-                    triggerFlip()
-                }
-                analogShadow.setSource("AnalogShadow.qml",
-                                       {
-                                           "shadowWidth": innerCircleWidth,
-                                           "shadowTimeFontSize": fontSize,
-                                           "shadowPeriodFontSize": periodFontSize,
-                                       })
-                digitalShadow.setSource("DigitalShadow.qml",
-                                        {
-                                            "shadowWidth": innerCircleWidth,
-                                            "shadowTimeFontSize": fontSize,
-                                            "shadowPeriodFontSize": periodFontSize,
-                                        })
+                digitalShadow.setSource
+                        ("DigitalShadow.qml",
+                         {
+                             "shadowWidth": innerCircleWidth,
+                             "shadowTimeFontSize": fontSize,
+                             "shadowPeriodFontSize": periodFontSize,
+                         })
 
                 if (clockModeFlipable.isDigital) {
                     digitalShadow.item.isAnalog = true
@@ -183,45 +205,37 @@ ClockCircle {
           Script to clean up after the flip animation is complete which
           involves (in the order listed below)
             - Hiding the shadows
-            - Toggling main clock mode and unloading the hidden mode
+            - Toggling clock mode and unloading the hidden mode
             - Unloading the analog and digital shadow required to show the
               paper effect
         */
 
         ScriptAction {
             script: {
-
-
                 upperShadow.opacity = bottomShadow.opacity = 0
-                clockModeFlipable.isDigital = !clockModeFlipable.isDigital
+                isDigital = !isDigital
 
-                if (clockModeFlipable.isDigital) {
-                    Utils.log(debugMode, "Loaded Digital mode...")
-                    _digitalModeLoader.setSource(
-                                "DigitalMode.qml",
-                                {
-                                    "width": innerCircleWidth,
-                                    "timeFontSize": fontSize,
-                                    "timePeriodFontSize": periodFontSize
-                                })
-                    Utils.log(debugMode, "Unloaded Analog mode...")
+                if (isDigital) {
+                    _digitalModeLoader.setSource
+                            ("DigitalMode.qml",
+                             {
+                                 "width": innerCircleWidth,
+                                 "timeFontSize": fontSize,
+                                 "timePeriodFontSize": periodFontSize
+                             })
                     _analogModeLoader.source = ""
                 }
                 else {
-                    Utils.log(debugMode, "Loaded Analog mode..")
-                    _analogModeLoader.setSource(
-                                "AnalogMode.qml",
-                                {
-                                    "width": _outerCircle.innerCircleWidth
-                                })
-                    Utils.log(debugMode, "Unloaded Digital mode...")
+                    _analogModeLoader.setSource
+                            ("AnalogMode.qml", { "width": innerCircleWidth })
                     _digitalModeLoader.source = ""
                 }
 
                 analogShadow.source = digitalShadow.source = ""
 
                 if(isMainClock) {
-                    var isDigitalSetting = JSON.parse(JSON.stringify(clockModeDocument.contents))
+                    var isDigitalSetting = JSON.parse
+                            (JSON.stringify(clockModeDocument.contents))
                     isDigitalSetting.digitalMode = isDigital
                     clockModeDocument.contents = isDigitalSetting
                 }

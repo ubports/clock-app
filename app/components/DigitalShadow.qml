@@ -22,6 +22,7 @@ import Ubuntu.Components 1.1
 Flipable {
     id: digitalShadow
 
+    // Properties to set the size of the digital shadow
     property int shadowWidth
     property int shadowTimeFontSize
     property int shadowPeriodFontSize
@@ -35,15 +36,18 @@ Flipable {
 
     front: DigitalMode {
         id: _digitalMode
+
         width: shadowWidth
         timeFontSize: shadowTimeFontSize
         timePeriodFontSize: shadowPeriodFontSize
+
         anchors.bottom: parent.bottom
         anchors.horizontalCenter: parent.horizontalCenter
     }
 
     back: AnalogMode {
         id: _analogMode
+
         width: shadowWidth
         anchors.bottom: parent.bottom
         anchors.horizontalCenter: parent.horizontalCenter

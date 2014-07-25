@@ -28,6 +28,7 @@ ClockCircle {
     // Property to allow setting the time period font size manually
     property alias timePeriodFontSize: _digitalTimePeriod.font.pixelSize
 
+    // Properties to set the maximum dimensions when running the animations
     property int maxWidth
     property int maxTimeFontSize
     property int maxPeriodFontSize
