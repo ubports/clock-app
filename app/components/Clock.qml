@@ -40,6 +40,12 @@ ClockCircle {
     property alias digitalModeLoader: _digitalModeLoader
     property alias analogModeLoader: _analogModeLoader
 
+    signal triggerFlip();
+
+    function flipClock() {
+        clockFlipAnimation.start()
+    }
+
     // Sets the style to outer circle
     isOuter: true
 
@@ -120,13 +126,6 @@ ClockCircle {
                 clockFlipAnimation.start()
             }
         }
-
-        onStateChanged: {
-            if(!isMainClock) {
-                console.log(state)
-                clockFlipAnimation.start()
-            }
-        }
     }
 
     /*
@@ -138,17 +137,21 @@ ClockCircle {
 
         ScriptAction {
             script: {
+
+                if(isMainClock) {
+                    triggerFlip()
+                }
                 analogShadow.setSource("AnalogShadow.qml",
                                        {
-                                           "shadowWidth": units.gu(23),
-                                           "shadowTimeFontSize": units.dp(62),
-                                           "shadowPeriodFontSize": units.dp(12),
+                                           "shadowWidth": innerCircleWidth,
+                                           "shadowTimeFontSize": fontSize,
+                                           "shadowPeriodFontSize": periodFontSize,
                                        })
                 digitalShadow.setSource("DigitalShadow.qml",
                                         {
-                                            "shadowWidth": units.gu(23),
-                                            "shadowTimeFontSize": units.dp(62),
-                                            "shadowPeriodFontSize": units.dp(12),
+                                            "shadowWidth": innerCircleWidth,
+                                            "shadowTimeFontSize": fontSize,
+                                            "shadowPeriodFontSize": periodFontSize,
                                         })
 
                 if (clockModeFlipable.isDigital) {
@@ -187,6 +190,8 @@ ClockCircle {
 
         ScriptAction {
             script: {
+
+
                 upperShadow.opacity = bottomShadow.opacity = 0
                 clockModeFlipable.isDigital = !clockModeFlipable.isDigital
 
@@ -195,9 +200,9 @@ ClockCircle {
                     _digitalModeLoader.setSource(
                                 "DigitalMode.qml",
                                 {
-                                    "width": _outerCircle.innerCircleWidth,
-                                    "timeFontSize": _outerCircle.fontSize,
-                                    "timePeriodFontSize": _outerCircle.periodFontSize
+                                    "width": innerCircleWidth,
+                                    "timeFontSize": fontSize,
+                                    "timePeriodFontSize": periodFontSize
                                 })
                     Utils.log(debugMode, "Unloaded Analog mode...")
                     _analogModeLoader.source = ""

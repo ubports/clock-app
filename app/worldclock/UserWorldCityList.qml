@@ -74,12 +74,53 @@ Column {
             removable: true
             confirmRemoval: true
 
-            Label {
-                id: localTimeLabel
+            Clock {
+                id: localTimeVisual
+
+                function getTime(timeString) {
+                    var properTime = new Date()
+                    properTime.setHours(timeString.split(":")[0])
+                    properTime.setMinutes(timeString.split(":")[1])
+                    properTime.setSeconds(0)
+                    return properTime
+                }
+
+                fontSize: units.dp(14)
+                periodFontSize: units.dp(10)
+                innerCircleWidth: units.gu(5)
+                width: units.gu(7)
+
+                analogTime: getTime(model.localTime)
+                time: model.localTime
 
                 anchors.centerIn: parent
-                fontSize: "large"
-                text: model.localTime
+
+                Connections {
+                    target: clock
+                    onTriggerFlip: {
+                        localTimeVisual.flipClock()
+                    }
+                }
+
+                Component.onCompleted: {
+                    isDigital = clockModeDocument.contents.digitalMode ? true : false
+                    if (clockModeDocument.contents.digitalMode) {
+                        digitalModeLoader.setSource(
+                                    "../components/DigitalMode.qml",
+                                    {
+                                        "width": innerCircleWidth,
+                                        "timeFontSize": fontSize,
+                                        "timePeriodFontSize": periodFontSize
+                                    })
+                    }
+                    else {
+                        analogModeLoader.setSource(
+                                    "../components/AnalogMode.qml",
+                                    {
+                                        "width": innerCircleWidth
+                                    })
+                    }
+                }
             }
 
             Label {

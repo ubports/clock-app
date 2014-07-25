@@ -50,16 +50,18 @@ Clock {
         ScriptAction {
             script: {
                 if (isDigital) {
-                    digitalModeLoader.setSource("../components/DigitalMode.qml",
-                                                {
-                                                    "maxWidth": units.gu(23),
-                                                    "maxTimeFontSize": units.dp(62),
-                                                    "maxPeriodFontSize": units.dp(12),
-                                                })
+                    digitalModeLoader.setSource
+                            ("../components/DigitalMode.qml",
+                             {
+                                 "maxWidth": units.gu(23),
+                                 "maxTimeFontSize": units.dp(62),
+                                 "maxPeriodFontSize": units.dp(12),
+                             })
                 }
                 else {
-                    analogModeLoader.setSource("../components/AnalogMode.qml",
-                                               {"maxWidth": units.gu(23)})
+                    analogModeLoader.setSource
+                            ("../components/AnalogMode.qml",
+                             {"maxWidth": units.gu(23)})
                 }
             }
         }
