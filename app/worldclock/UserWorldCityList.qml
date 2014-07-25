@@ -25,7 +25,7 @@ import "../components/Utils.js" as Utils
 
 Column {
     id: worldCityColumn
-    
+
     function getTimeDiff(time) {
         var hours, minutes;
         time = Math.floor(time / 60)
@@ -77,6 +77,13 @@ Column {
             Clock {
                 id: localTimeVisual
 
+                /*
+                 This function would not be required once the upstream QT bug at
+                 https://bugreports.qt-project.org/browse/QTBUG-40275 is fixed.
+                 Due to this bug we are returning a time string instead of a
+                 time object which forces us to parse the string and convert it
+                 into a time object here.
+                */
                 function getTime(timeString) {
                     var properTime = new Date()
                     properTime.setHours(timeString.split(":")[0])
