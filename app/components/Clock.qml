@@ -35,6 +35,9 @@ import "Utils.js" as Utils
 
  - Modify the user preference settings document to reflect the currently chosen
    clock mode. We don't want every child element modifying the file unnecessarily
+
+ - Disable the clock hand in the child elements (world clock) as per the design
+   spec.
 */
 ClockCircle {
     id: _outerCircle
