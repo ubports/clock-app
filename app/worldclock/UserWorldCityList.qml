@@ -35,7 +35,7 @@ Column {
     }
     
     anchors.top: locationRow.bottom
-    anchors.topMargin: units.gu(6)
+    anchors.topMargin: units.gu(4)
     width: parent.width
     
     // U1db Index to index all documents storing the world city details
@@ -66,7 +66,7 @@ Column {
         model: u1dbModel
         delegate: SubtitledListItem {
             
-            height: units.gu(8)
+            height: units.gu(9)
             
             text: model.city
             subText: model.country
