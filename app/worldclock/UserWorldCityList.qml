@@ -123,7 +123,8 @@ Column {
                         analogModeLoader.setSource(
                                     "../components/AnalogMode.qml",
                                     {
-                                        "width": innerCircleWidth
+                                        "width": innerCircleWidth,
+                                        "showSeconds": isMainClock
                                     })
                     }
                 }

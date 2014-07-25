@@ -25,6 +25,9 @@ ClockCircle {
     // Property to set the max width when running the animation
     property int maxWidth
 
+    // Property to show/hide the seconds hand
+    property bool showSeconds
+
     function startAnimation() {
         _animationTimer.start()
     }
@@ -70,9 +73,10 @@ ClockCircle {
         width: parent.width + units.gu(2)
 
         smooth: true
+        visible: showSeconds
         source: "../graphics/Second_Hand.png"
         fillMode: Image.PreserveAspectFit
-        rotation: analogTime.getSeconds() * 6
+        rotation: visible ? analogTime.getSeconds() * 6 : 0
     }
 
     Image {

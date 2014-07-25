@@ -53,15 +53,18 @@ Clock {
                     digitalModeLoader.setSource
                             ("../components/DigitalMode.qml",
                              {
-                                 "maxWidth": units.gu(23),
-                                 "maxTimeFontSize": units.dp(62),
-                                 "maxPeriodFontSize": units.dp(12),
+                                 "maxWidth": innerCircleWidth,
+                                 "maxTimeFontSize": fontSize,
+                                 "maxPeriodFontSize": periodFontSize,
                              })
                 }
                 else {
                     analogModeLoader.setSource
                             ("../components/AnalogMode.qml",
-                             {"maxWidth": units.gu(23)})
+                             {
+                                 "maxWidth": innerCircleWidth,
+                                 "showSeconds": isMainClock
+                             })
                 }
             }
         }

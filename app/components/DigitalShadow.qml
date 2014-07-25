@@ -27,6 +27,9 @@ Flipable {
     property int shadowTimeFontSize
     property int shadowPeriodFontSize
 
+    // Property to disable the seconds hand
+    property alias showSeconds: _analogMode.showSeconds
+
     // Property to switch between digital and analog mode
     property bool isAnalog: false
 

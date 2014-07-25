@@ -166,6 +166,7 @@ ClockCircle {
                              "shadowWidth": innerCircleWidth,
                              "shadowTimeFontSize": fontSize,
                              "shadowPeriodFontSize": periodFontSize,
+                             "showSeconds": isMainClock
                          })
 
                 digitalShadow.setSource
@@ -174,6 +175,7 @@ ClockCircle {
                              "shadowWidth": innerCircleWidth,
                              "shadowTimeFontSize": fontSize,
                              "shadowPeriodFontSize": periodFontSize,
+                             "showSeconds": isMainClock
                          })
 
                 if (clockModeFlipable.isDigital) {
@@ -227,7 +229,11 @@ ClockCircle {
                 }
                 else {
                     _analogModeLoader.setSource
-                            ("AnalogMode.qml", { "width": innerCircleWidth })
+                            ("AnalogMode.qml",
+                             {
+                                 "width": innerCircleWidth,
+                                 "showSeconds": isMainClock
+                             })
                     _digitalModeLoader.source = ""
                 }
 
