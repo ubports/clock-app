@@ -48,7 +48,7 @@ ClockCircle {
         smooth: true
         source: "../graphics/Hour_Hand.png"
         fillMode: Image.PreserveAspectFit
-        rotation: analogTime.getHours() * 30
+        rotation: (analogTime.getHours() * 30) + (analogTime.getMinutes() / 2);
     }
 
     Image {
