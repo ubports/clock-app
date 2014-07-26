@@ -17,6 +17,7 @@
  */
 
 import QtQuick 2.0
+import DateTime 1.0
 import Alarm.Settings 1.0
 import Ubuntu.Components 1.1
 import Ubuntu.Components.ListItems 1.0 as ListItem
@@ -27,6 +28,10 @@ Page {
 
     title: i18n.tr("Settings")
     visible: false
+
+    DateTime {
+        id: localTimeSource
+    }
 
     AlarmSettings {
         id: alarmSettings
@@ -161,8 +166,20 @@ Page {
 
         SubtitledListItem {
             text: i18n.tr("Change time and date")
-            subText: Qt.formatDateTime(new Date(),
-                                       "dddd, d MMMM yyyy hh:mm:ss t")
+            subText: {
+                var localTime = new Date
+                        (
+                            localTimeSource.localDateString.split(":")[0],
+                            localTimeSource.localDateString.split(":")[1]-1,
+                            localTimeSource.localDateString.split(":")[2],
+                            localTimeSource.localTimeString.split(":")[0],
+                            localTimeSource.localTimeString.split(":")[1],
+                            localTimeSource.localTimeString.split(":")[2],
+                            0
+                        )
+                return Qt.formatDateTime(localTime, "dddd, d MMMM yyyy hh:mm:ss t")
+            }
+
             onClicked: {
                 Qt.openUrlExternally("settings:///system/time-date")
             }

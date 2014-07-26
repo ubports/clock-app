@@ -33,7 +33,7 @@ Column {
         hours = Math.floor(time / 60)
         return [hours, minutes]
     }
-    
+
     anchors.top: locationRow.bottom
     anchors.topMargin: units.gu(4)
     width: parent.width
@@ -159,7 +159,7 @@ Column {
                     var timediff = worldCityColumn.getTimeDiff(Math.abs(model.timeTo))
                     var minute = timediff[1]
                     var hour = timediff[0]
-                    
+
                     if(hour > 0 &&  minute > 0) {
                         return ("%1\n%2hr%3min %4")
                         .arg(day)

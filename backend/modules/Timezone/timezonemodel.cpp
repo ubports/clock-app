@@ -68,6 +68,8 @@ QVariant TimeZoneModel::data(const QModelIndex &index, int role) const
     QDateTime worldCityTime(QDateTime::currentDateTime().toTimeZone(zone));
     QDateTime localCityTime(QDateTime::currentDateTime());
 
+    qDebug() << localCityTime.offsetFromUtc()- worldCityTime.offsetFromUtc();
+
     switch (role) {
     case RoleCityName:
         return m_timeZones.at(row).cityName;
