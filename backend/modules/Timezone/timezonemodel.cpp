@@ -68,8 +68,6 @@ QVariant TimeZoneModel::data(const QModelIndex &index, int role) const
     QDateTime worldCityTime(QDateTime::currentDateTime().toTimeZone(zone));
     QDateTime localCityTime(QDateTime::currentDateTime());
 
-    qDebug() << localCityTime.offsetFromUtc()- worldCityTime.offsetFromUtc();
-
     switch (role) {
     case RoleCityName:
         return m_timeZones.at(row).cityName;
@@ -144,6 +142,6 @@ void TimeZoneModel::update()
     QModelIndex startIndex = index(0);
     QModelIndex endIndex = index(m_timeZones.count() - 1);
     QVector<int> roles;
-    roles << RoleTimeString;
+    roles << RoleTimeString << RoleDaysTo << RoleTimeTo;
     emit dataChanged(startIndex, endIndex, roles);
 }
