@@ -29,6 +29,13 @@ Page {
     title: i18n.tr("Settings")
     visible: false
 
+    Connections {
+        target: clockApp
+        onApplicationStateChanged: {
+            localTimeSource.update()
+        }
+    }
+
     DateTime {
         id: localTimeSource
     }
@@ -175,7 +182,7 @@ Page {
                             localTimeSource.localTimeString.split(":")[0],
                             localTimeSource.localTimeString.split(":")[1],
                             localTimeSource.localTimeString.split(":")[2],
-                            0
+                            localTimeSource.localTimeString.split(":")[3]
                         )
                 return Qt.formatDateTime(localTime, "dddd, d MMMM yyyy hh:mm:ss t")
             }

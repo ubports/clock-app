@@ -26,6 +26,12 @@ class DateTime : public QObject
 {
     Q_OBJECT
 
+    // Property to determine the interval before updating the time (default 1 sec)
+    Q_PROPERTY(int updateInterval
+               READ updateInterval
+               WRITE setUpdateInterval
+               NOTIFY updateIntervalChanged)
+
     // Property to determine the local time string (format hh:mm:ss)
     Q_PROPERTY(QString localTimeString
                READ localTimeString
@@ -37,6 +43,12 @@ class DateTime : public QObject
                NOTIFY localDateStringChanged)
 public:
     DateTime(QObject *parent = 0);
+
+    // Function to read the update interval
+    int updateInterval() const;
+
+    // Function to set the update interval
+    void setUpdateInterval(int updateInterval);
 
     // Function to read the local time string
     QString localTimeString() const;
@@ -51,8 +63,14 @@ signals:
     // Signal to notify the local date string change in QML
     void localDateStringChanged();
 
-private slots:
-    // Function called by m_timer to update the date & time every second
+    // Signal to notify the updateInterval change to QML
+    void updateIntervalChanged();
+
+public slots:
+    /*
+     Function called by m_timer to update the date & time every second
+     and also when the clock app is brough from the background
+    */
     void update();
 
 private:

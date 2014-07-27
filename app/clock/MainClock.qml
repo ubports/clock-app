@@ -30,8 +30,16 @@ Clock {
 
     isMainClock: true
 
+    Connections {
+        target: clockApp
+        onApplicationStateChanged: {
+            localTimeSource.update()
+        }
+    }
+
     DateTime {
         id: localTimeSource
+        updateInterval: isDigital ? 1000 : 10
     }
 
     /*
@@ -50,7 +58,7 @@ Clock {
                     localTimeSource.localTimeString.split(":")[0],
                     localTimeSource.localTimeString.split(":")[1],
                     localTimeSource.localTimeString.split(":")[2],
-                    0
+                    localTimeSource.localTimeString.split(":")[3]
                 )
     time: Qt.formatTime(analogTime)
 
