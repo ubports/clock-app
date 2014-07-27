@@ -79,8 +79,7 @@ private slots:
      settings values are changed on dBus side
     */
     void onSettingsChanged(const QString &interface,
-                           const QVariantMap &properties,
-                           const QStringList &valid);
+                           const QVariantMap &properties);
 };
 
 #endif

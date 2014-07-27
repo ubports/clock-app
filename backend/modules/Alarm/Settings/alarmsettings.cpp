@@ -34,12 +34,11 @@ AlarmSettings::AlarmSettings(QObject *parent):
                        "org.freedesktop.DBus.Properties",
                        "PropertiesChanged",
                        this,
-                       SLOT(onSettingsChanged(QString, QVariantMap, QStringList)));
+                       SLOT(onSettingsChanged(QString, QVariantMap)));
 }
 
 void AlarmSettings::onSettingsChanged(const QString &interface,
-                                      const QVariantMap &properties,
-                                      const QStringList &valid)
+                                      const QVariantMap &properties)
 {
     if(interface != "com.canonical.indicator.datetime.AlarmProperties") {
         // Check if the properties changed are in the correct interface
