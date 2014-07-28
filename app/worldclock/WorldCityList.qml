@@ -21,6 +21,7 @@ import Timezone 1.0
 import Ubuntu.Components 1.1
 import Ubuntu.Components.ListItems 1.0 as ListItem
 import "../components"
+import "../upstreamcomponents"
 
 /*
   Page to display a list of cities from which the user can choose a city to add
