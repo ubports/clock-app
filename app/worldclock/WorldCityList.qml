@@ -118,7 +118,7 @@ Page {
 
         anchors {
             top: cityList.top
-            topMargin: units.gu(0.5)
+            topMargin: units.gu(1)
             bottom: cityList.bottom
             right: parent.right
         }
