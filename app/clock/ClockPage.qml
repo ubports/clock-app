@@ -63,10 +63,14 @@ PageWithBottomEdge {
             rightLabel: i18n.tr("City")
         }
 
-        Icon {
+        AbstractButton {
             id: settingsIcon
 
             Component.onCompleted: anchors.topMargin = units.gu(2)
+
+            onClicked: {
+                mainStack.push(Qt.resolvedUrl("../alarm/AlarmSettingsPage.qml"))
+            }
 
             width: units.gu(3)
             height: width
@@ -78,17 +82,14 @@ PageWithBottomEdge {
                 rightMargin: units.gu(2)
             }
 
-            name: "settings"
-            color: "Grey"
+            Icon {
+                anchors.fill: parent
+                name: "settings"
+                color: "Grey"
+            }
 
             Behavior on anchors.topMargin {
                 UbuntuNumberAnimation { duration: 900 }
-            }
-
-            MouseArea {
-                anchors.fill: parent
-                onClicked: mainStack.push(
-                               Qt.resolvedUrl("../alarm/AlarmSettingsPage.qml"))
             }
         }
 
