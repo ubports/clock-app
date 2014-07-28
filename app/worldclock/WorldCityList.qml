@@ -36,6 +36,7 @@ Page {
 
     title: i18n.tr("Select a city")
     visible: false
+    flickable: null
 
     state: "default"
     states: [
@@ -110,6 +111,19 @@ Page {
         sort.order: Qt.AscendingOrder
     }
 
+    FastScroll {
+        id: fastScroll
+
+        listView: cityList
+
+        anchors {
+            top: cityList.top
+            topMargin: units.gu(0.5)
+            bottom: cityList.bottom
+            right: parent.right
+        }
+    }
+
     ListView {
         id: cityList
 
@@ -130,8 +144,12 @@ Page {
         }
 
         anchors.fill: parent
+        anchors.rightMargin: fastScroll.showing ? fastScroll.width - units.gu(1)
+                                                : 0
 
         model: sortedTimeZoneModel
+
+        clip: true
 
         section.property: "city"
         section.criteria: ViewSection.FirstCharacter
@@ -169,6 +187,10 @@ Page {
                 cityList.addWorldCity(city, country, timezoneID)
                 mainStack.pop()
             }
+        }
+
+        Behavior on anchors.rightMargin {
+            UbuntuNumberAnimation {}
         }
     }
 }
