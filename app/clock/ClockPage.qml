@@ -42,6 +42,8 @@ PageWithBottomEdge {
     Flickable {
         id: _flickable
 
+        Component.onCompleted: otherElementsStartUpAnimation.start()
+
         anchors.fill: parent
         contentWidth: parent.width
         contentHeight: clock.height + date.height + locationRow.height
@@ -50,9 +52,11 @@ PageWithBottomEdge {
         PullToAdd {
             id: addCityButton
 
-            anchors.top: parent.top
-            anchors.topMargin: -labelHeight - units.gu(3)
-            anchors.horizontalCenter: parent.horizontalCenter
+            anchors {
+                top: parent.top
+                topMargin: -labelHeight - units.gu(3)
+                horizontalCenter: parent.horizontalCenter
+            }
 
             leftLabel: i18n.tr("Add")
             rightLabel: i18n.tr("City")
@@ -61,10 +65,9 @@ PageWithBottomEdge {
         Icon {
             id: settingsIcon
 
-            Component.onCompleted: anchors.topMargin = units.gu(2)
-
             width: units.gu(3)
             height: width
+            opacity: 0
 
             anchors {
                 top: parent.top
@@ -76,10 +79,6 @@ PageWithBottomEdge {
             name: "settings"
             color: "Grey"
 
-            Behavior on anchors.topMargin {
-                UbuntuNumberAnimation { duration: 900 }
-            }
-
             MouseArea {
                 anchors.fill: parent
                 onClicked: mainStack.push(
@@ -90,36 +89,38 @@ PageWithBottomEdge {
         MainClock {
             id: clock
 
-            anchors.verticalCenter: parent.top
-            anchors.verticalCenterOffset: units.gu(20)
-            anchors.horizontalCenter: parent.horizontalCenter
+            anchors {
+                verticalCenter: parent.top
+                verticalCenterOffset: units.gu(20)
+                horizontalCenter: parent.horizontalCenter
+            }
         }
 
         Label {
             id: date
 
-            Component.onCompleted: anchors.topMargin = units.gu(40)
-
-            anchors.top: parent.top
-            anchors.topMargin: units.gu(36)
-            anchors.horizontalCenter: parent.horizontalCenter
+            anchors {
+                top: parent.top
+                topMargin: units.gu(36)
+                horizontalCenter: parent.horizontalCenter
+            }
 
             text: Qt.formatDate(clock.analogTime, "dddd, d MMMM yyyy")
+            opacity: settingsIcon.opacity
             fontSize: "xx-small"
-
-            Behavior on anchors.topMargin {
-                UbuntuNumberAnimation { duration: 900 }
-            }
         }
 
         Row {
             id: locationRow
 
+            opacity: settingsIcon.opacity
             spacing: units.gu(1)
 
-            anchors.top: date.bottom
-            anchors.topMargin: units.gu(1)
-            anchors.horizontalCenter: parent.horizontalCenter
+            anchors {
+                top: date.bottom
+                topMargin: units.gu(1)
+                horizontalCenter: parent.horizontalCenter
+            }
 
             Image {
                 id: locationIcon
@@ -139,6 +140,7 @@ PageWithBottomEdge {
 
         UserWorldCityList {
             id: worldCityColumn
+            opacity: settingsIcon.opacity
         }
 
         onDragEnded: {
@@ -150,6 +152,34 @@ PageWithBottomEdge {
         onContentYChanged: {
             if(contentY < 0 && atYBeginning) {
                 addCityButton.dragPosition = contentY.toFixed(0)
+            }
+        }
+
+        ParallelAnimation {
+            id: otherElementsStartUpAnimation
+
+            PropertyAnimation {
+                target: settingsIcon
+                property: "anchors.topMargin"
+                from: units.gu(6)
+                to: units.gu(2)
+                duration: 900
+            }
+
+            PropertyAnimation {
+                target: settingsIcon
+                property: "opacity"
+                from: 0
+                to: 1
+                duration: 900
+            }
+
+            PropertyAnimation {
+                target: date
+                property: "anchors.topMargin"
+                from: units.gu(36)
+                to: units.gu(40)
+                duration: 900
             }
         }
     }
