@@ -88,6 +88,16 @@ Page {
         _alarm.date = tempAlarm.date
     }
 
+    // Function to delete a saved alarm
+    function deleteAlarm() {
+        tempAlarm = alarmModel.get(alarmIndex)
+        tempAlarm.cancel()
+
+        if(validateAlarm(tempAlarm)) {
+            mainStack.pop()
+        }
+    }
+
     // Function to update a saved alarm
     function updateAlarm() {
         tempAlarm = alarmModel.get(alarmIndex)
@@ -149,7 +159,8 @@ Page {
     Column {
         id: _alarmColumn
 
-        anchors.fill: parent
+        width: parent.width
+        anchors.top: parent.top
 
         DatePicker {
             id: _timePicker
@@ -197,6 +208,28 @@ Page {
             subText: "Suru arpeggio"
             onClicked: mainStack.push(Qt.resolvedUrl("AlarmSound.qml"),
                                       {"alarmSound": _alarmSound})
+        }
+    }
+
+    Button {
+        id: _deleteAlarmButton
+
+        anchors {
+            top: _alarmColumn.bottom
+            topMargin: units.gu(3)
+            horizontalCenter: parent.horizontalCenter
+        }
+
+        width: units.gu(17)
+        height: units.gu(4)
+
+        visible: !isNewAlarm
+
+        color: "Red"
+        text: i18n.tr("Delete alarm")
+
+        onClicked: {
+            _addAlarmPage.deleteAlarm()
         }
     }
 }
