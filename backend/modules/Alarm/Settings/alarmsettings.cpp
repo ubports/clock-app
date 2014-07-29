@@ -39,7 +39,7 @@ AlarmSettings::AlarmSettings(QObject *parent):
 
 void AlarmSettings::onSettingsChanged(const QString &interface,
                                       const QVariantMap &properties,
-                                      const QStringList &valid)
+                                      const QStringList & /*valid*/)
 {
     if(interface != "com.canonical.indicator.datetime.AlarmProperties") {
         // Check if the properties changed are in the correct interface

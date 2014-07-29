@@ -80,7 +80,7 @@ private slots:
     */
     void onSettingsChanged(const QString &interface,
                            const QVariantMap &properties,
-                           const QStringList &valid);
+                           const QStringList & /*valid*/);
 };
 
 #endif
