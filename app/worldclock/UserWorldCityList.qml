@@ -25,7 +25,7 @@ import "../components/Utils.js" as Utils
 
 Column {
     id: worldCityColumn
-    
+
     function getTimeDiff(time) {
         var hours, minutes;
         time = Math.floor(time / 60)
@@ -35,7 +35,7 @@ Column {
     }
     
     anchors.top: locationRow.bottom
-    anchors.topMargin: units.gu(6)
+    anchors.topMargin: units.gu(4)
     width: parent.width
     
     // U1db Index to index all documents storing the world city details
@@ -66,22 +66,70 @@ Column {
         model: u1dbModel
         delegate: SubtitledListItem {
             
-            height: units.gu(8)
+            height: units.gu(9)
             
             text: model.city
             subText: model.country
             showDivider: false
             removable: true
             confirmRemoval: true
-            
-            Label {
-                id: localTimeLabel
-                
+
+            Clock {
+                id: localTimeVisual
+
+                /*
+                 This function would not be required once the upstream QT bug at
+                 https://bugreports.qt-project.org/browse/QTBUG-40275 is fixed.
+                 Due to this bug we are returning a time string instead of a
+                 time object which forces us to parse the string and convert it
+                 into a time object here.
+                */
+                function getTime(timeString) {
+                    var properTime = new Date()
+                    properTime.setHours(timeString.split(":")[0])
+                    properTime.setMinutes(timeString.split(":")[1])
+                    properTime.setSeconds(0)
+                    return properTime
+                }
+
+                fontSize: units.dp(14)
+                periodFontSize: units.dp(7)
+                innerCircleWidth: units.gu(5)
+                width: units.gu(7)
+
+                analogTime: getTime(model.localTime)
+
                 anchors.centerIn: parent
-                fontSize: "large"
-                text: model.localTime
+
+                Connections {
+                    target: clock
+                    onTriggerFlip: {
+                        localTimeVisual.flipClock()
+                    }
+                }
+
+                Component.onCompleted: {
+                    isDigital = clockModeDocument.contents.digitalMode ? true : false
+                    if (clockModeDocument.contents.digitalMode) {
+                        digitalModeLoader.setSource
+                                ("../components/DigitalMode.qml",
+                                 {
+                                     "width": innerCircleWidth,
+                                     "timeFontSize": fontSize,
+                                     "timePeriodFontSize": periodFontSize
+                                 })
+                    }
+                    else {
+                        analogModeLoader.setSource(
+                                    "../components/AnalogMode.qml",
+                                    {
+                                        "width": innerCircleWidth,
+                                        "showSeconds": isMainClock
+                                    })
+                    }
+                }
             }
-            
+
             Label {
                 id: relativeTimeLabel
                 
