@@ -184,7 +184,7 @@ Page {
                             localTimeSource.localTimeString.split(":")[2],
                             localTimeSource.localTimeString.split(":")[3]
                         )
-                return Qt.formatDateTime(localTime, "dddd, d MMMM yyyy hh:mm:ss t")
+                return localTime.toLocaleString()
             }
 
             onClicked: {
