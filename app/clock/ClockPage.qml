@@ -106,7 +106,7 @@ PageWithBottomEdge {
                 horizontalCenter: parent.horizontalCenter
             }
 
-            text: Qt.formatDate(clock.analogTime, "dddd, d MMMM yyyy")
+            text: clock.analogTime.toLocaleDateString()
             opacity: settingsIcon.opacity
             fontSize: "xx-small"
         }
