@@ -67,8 +67,12 @@ PageWithBottomEdge {
             rightLabel: i18n.tr("City")
         }
 
-        Icon {
+        AbstractButton {
             id: settingsIcon
+
+            onClicked: {
+                mainStack.push(Qt.resolvedUrl("../alarm/AlarmSettingsPage.qml"))
+            }
 
             width: units.gu(3)
             height: width
@@ -81,13 +85,10 @@ PageWithBottomEdge {
                 rightMargin: units.gu(2)
             }
 
-            name: "settings"
-            color: "Grey"
-
-            MouseArea {
+            Icon {
                 anchors.fill: parent
-                onClicked: mainStack.push(
-                               Qt.resolvedUrl("../alarm/AlarmSettingsPage.qml"))
+                name: "settings"
+                color: "Grey"
             }
         }
 
