@@ -32,6 +32,15 @@ class DateTime : public QObject
                WRITE setUpdateInterval
                NOTIFY updateIntervalChanged)
 
+    /*
+     FIXME: Due to upstream QT Bug at
+     https://bugreports.qt-project.org/browse/QTBUG-40275, we are forced to
+     return a string instead of a QDateTime object. As a result, we are
+     returning the string in the format specified below and then use that to
+     construct a new Date() object in the qml side which is then displayed
+     in the correct user locale.
+    */
+
     // Property to determine the local time string (format hh:mm:ss)
     Q_PROPERTY(QString localTimeString
                READ localTimeString
