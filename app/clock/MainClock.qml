@@ -47,7 +47,7 @@ Clock {
      and second received from the DateTime plugin manually to ensure the
      timezone info is set correctly.
 
-     Javascript Month is 0-12 while QDateTime month is 1-12. Hence the -1
+     Javascript Month is 0-11 while QDateTime month is 1-12. Hence the -1
      is required.
     */
 

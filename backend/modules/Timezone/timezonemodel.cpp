@@ -134,9 +134,10 @@ void TimeZoneModel::update()
 {
     /*
      All we have to do is to emit notifications for the view's to re-request
-     the data for role timezoneID because the time will be calculated on the
-     fly anyways. For that we emit dataChanged with a startIndex of 0, an
-     endIndex for the last item and the RoleTimeString as the changed roles.
+     the data for role timezoneID and role TimeTo. The time will be calculated
+     on the fly. For that we emit dataChanged with a startIndex of 0, an
+     endIndex for the last item and the RoleTimeString and RoleTimeTo as the
+     changed roles.
     */
 
     QModelIndex startIndex = index(0);
