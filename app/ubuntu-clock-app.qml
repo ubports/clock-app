@@ -57,25 +57,7 @@ MainView {
 
     useDeprecatedToolbar: false
 
-    onApplicationStateChanged: {
-        /*
-          Update Clock time immediately when the clock app is brought from
-          suspend instead of waiting for the next minute to update.
-        */
-        if(applicationState)
-            clockPage.updateTime()
-    }
-
     Background {}
-
-    Timer {
-        id: clockTimer
-
-        interval: clockPage.isDigital ? 1000 : 10
-        repeat: true
-        running: true
-        onTriggered: clockPage.updateTime()
-    }
 
     // Database to store the user preferences locally
     U1db.Database {

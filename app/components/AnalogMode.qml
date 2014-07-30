@@ -18,11 +18,15 @@
 
 import QtQuick 2.0
 import Ubuntu.Components 1.1
-import "../components"
-import "../components/Utils.js" as Utils
 
 ClockCircle {
     id: _innerCircleAnalog
+
+    // Property to set the max width when running the animation
+    property int maxWidth
+
+    // Property to show/hide the seconds hand
+    property bool showSeconds
 
     function startAnimation() {
         _animationTimer.start()
@@ -69,10 +73,11 @@ ClockCircle {
         width: parent.width + units.gu(2)
 
         smooth: true
+        visible: showSeconds
         source: "../graphics/Second_Hand.png"
         fillMode: Image.PreserveAspectFit
-        rotation: ((360 * ((analogTime.getSeconds() * 1000) +
-                           analogTime.getMilliseconds())) / 60000)
+        rotation: visible ? ((360 * ((analogTime.getSeconds() * 1000) +
+                           analogTime.getMilliseconds())) / 60000) : 0
     }
 
     Image {
@@ -91,8 +96,7 @@ ClockCircle {
         target: _innerCircleAnalog
         property: "width"
         from: units.gu(0)
-        to: units.gu(23)
+        to: maxWidth
         duration: 900
     }
-
 }

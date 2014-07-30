@@ -16,30 +16,20 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import QtQuick 2.0
-import Ubuntu.Components 1.1
+#ifndef BACKEND_PLUGIN_H
+#define BACKEND_PLUGIN_H
 
-Item {
-    id: _shadowContainer
+#include <QtQml/QQmlEngine>
+#include <QtQml/QQmlExtensionPlugin>
 
-    clip: true
-    width: units.gu(22.5)
-    height: width/2
+class BackendPlugin : public QQmlExtensionPlugin
+{
+    Q_OBJECT
+    Q_PLUGIN_METADATA(IID "org.qt-project.Qt.QQmlExtensionInterface")
 
-    opacity: 0
+public:
+    void registerTypes(const char *uri);
+    void initializeEngine(QQmlEngine *engine, const char *uri);
+};
+#endif // BACKEND_PLUGIN_H
 
-    Rectangle {
-        id: _shadow
-
-        width: _shadowContainer.width
-        height: width
-        radius: width/2
-
-        anchors {
-            top: parent.top
-            horizontalCenter: parent.horizontalCenter
-        }
-
-        color: Qt.rgba(0,0,0,0.2)
-    }
-}

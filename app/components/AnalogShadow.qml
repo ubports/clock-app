@@ -18,30 +18,40 @@
 
 import QtQuick 2.0
 import Ubuntu.Components 1.1
-import "../components/Utils.js" as Utils
 
 Flipable {
     id: analogShadow
 
+    // Properties to set the size of the analog shadow
+    property int shadowWidth
+    property int shadowTimeFontSize
+    property int shadowPeriodFontSize
+
+    // Property to disable the seconds hand
+    property alias showSeconds: _analogMode.showSeconds
+
     // Property to switch between digital and analog mode
     property bool isDigital: false
 
-    width: units.gu(23)
+    width: shadowWidth
     height: width/2
     clip: true
 
     front: AnalogMode {
         id: _analogMode
-        width: units.gu(23)
+
+        width: shadowWidth
         anchors.bottom: parent.bottom
         anchors.horizontalCenter: parent.horizontalCenter
     }
 
     back: DigitalMode {
         id: _digitalMode
-        width: units.gu(23)
-        timeFontSize: units.dp(62)
-        timePeriodFontSize: units.dp(12)
+
+        width: shadowWidth
+        timeFontSize: shadowTimeFontSize
+        timePeriodFontSize: shadowPeriodFontSize
+
         anchors.bottom: parent.bottom
         anchors.horizontalCenter: parent.horizontalCenter
     }
