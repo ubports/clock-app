@@ -26,6 +26,7 @@ Page {
     flickable: null
 
     head.actions: Action {
+        objectName: "addAlarmAction"
         iconName: "add"
         text: i18n.tr("Alarm")
         onTriggered: {

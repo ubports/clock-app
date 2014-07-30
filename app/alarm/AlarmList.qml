@@ -58,14 +58,18 @@ Flickable {
 
     Column {
         id: alarmList
+        objectName: 'alarmList'
         anchors.fill: parent
 
         Repeater {
             model: alarmListFlickable.model
+            objectName: "alarmListRepeater"
             ListItem.Base {
+                objectName: "alarm" + index
 
                 Label {
                     id: alarmTime
+                    objectName: "listAlarmTime" + index
 
                     anchors {
                         top: alarmDetailsColumn.top
@@ -89,6 +93,7 @@ Flickable {
 
                     Label {
                         id: alarmLabel
+                        objectName: "listAlarmLabel" + index
 
                         text: message
                         fontSize: "medium"
@@ -98,6 +103,7 @@ Flickable {
 
                     Label {
                         id: alarmSubtitle
+                        objectName: "listAlarmSubtitle" + index
 
                         fontSize: "xx-small"
                         width: parent.width
@@ -108,6 +114,7 @@ Flickable {
 
                 Switch {
                     id: alarmStatus
+                    objectName: "listAlarmStatus" + index
 
                     anchors {
                         right: parent.right
