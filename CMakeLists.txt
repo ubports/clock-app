@@ -58,7 +58,7 @@ add_subdirectory(backend)
 
 add_custom_target("autopilot" chmod +x ${CMAKE_SOURCE_DIR}/app/tests/autopilot/run
                     COMMAND ${CMAKE_SOURCE_DIR}/app/tests/autopilot/run
-                    DEPENDS timezone timezone-qmldir alarmsettings alarmsettings-qmldir
+                    DEPENDS timezone timezone-qmldir alarmsettings alarmsettings-qmldir datetime datetime-qmldir
                     WORKING_DIRECTORY ./app)
 
 enable_testing()
@@ -68,5 +68,5 @@ add_test(NAME basic
 )
 
 add_custom_target("run" /usr/bin/qmlscene -I ${CMAKE_BINARY_DIR}/backend  ${CMAKE_SOURCE_DIR}/app/ubuntu-clock-app.qml
-                    DEPENDS timezone timezone-qmldir alarmsettings alarmsettings-qmldir
+                    DEPENDS timezone timezone-qmldir alarmsettings alarmsettings-qmldir datetime datetime-qmldir
                     WORKING_DIRECTORY ./app)

@@ -11,6 +11,12 @@ set(
 )
 
 set(
+    datetime_SRCS
+    modules/DateTime/backend.cpp
+    modules/DateTime/datetime.cpp
+)
+
+set(
     alarmsettings_SRCS
     modules/Alarm/Settings/backend.cpp
     modules/Alarm/Settings/alarmsettings.cpp
@@ -18,6 +24,10 @@ set(
 
 add_library(timezone MODULE
     ${timezone_SRCS}
+)
+
+add_library(datetime MODULE
+    ${datetime_SRCS}
 )
 
 add_library(alarmsettings MODULE
@@ -28,16 +38,26 @@ set_target_properties(timezone PROPERTIES
     LIBRARY_OUTPUT_DIRECTORY Timezone
 )
 
+set_target_properties(datetime PROPERTIES
+    LIBRARY_OUTPUT_DIRECTORY DateTime
+)
+
 set_target_properties(alarmsettings PROPERTIES
     LIBRARY_OUTPUT_DIRECTORY Alarm/Settings
 )
 
+qt5_use_modules(datetime Gui Qml Quick)
 qt5_use_modules(timezone Gui Qml Quick)
 qt5_use_modules(alarmsettings Gui Qml Quick DBus)
 
 # Copy qmldir file to build dir for running in QtCreator
 add_custom_target(timezone-qmldir ALL
     COMMAND cp ${CMAKE_CURRENT_SOURCE_DIR}/modules/Timezone/qmldir ${CMAKE_CURRENT_BINARY_DIR}/Timezone
+    DEPENDS ${QMLFILES}
+)
+
+add_custom_target(datetime-qmldir ALL
+    COMMAND cp ${CMAKE_CURRENT_SOURCE_DIR}/modules/DateTime/qmldir ${CMAKE_CURRENT_BINARY_DIR}/DateTime
     DEPENDS ${QMLFILES}
 )
 
@@ -49,6 +69,9 @@ add_custom_target(alarmsettings-qmldir ALL
 # Install plugin file
 install(TARGETS timezone DESTINATION ${QT_IMPORTS_DIR}/Timezone/)
 install(FILES   modules/Timezone/qmldir DESTINATION ${QT_IMPORTS_DIR}/Timezone/)
+
+install(TARGETS datetime DESTINATION ${QT_IMPORTS_DIR}/DateTime/)
+install(FILES   modules/DateTime/qmldir DESTINATION ${QT_IMPORTS_DIR}/DateTime/)
 
 install(TARGETS alarmsettings DESTINATION ${QT_IMPORTS_DIR}/Alarm/Settings/)
 install(FILES   modules/Alarm/Settings/qmldir DESTINATION ${QT_IMPORTS_DIR}/Alarm/Settings/)

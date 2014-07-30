@@ -17,6 +17,7 @@
  */
 
 import QtQuick 2.0
+import DateTime 1.0
 import Ubuntu.Components 1.1
 import "../components"
 
@@ -28,6 +29,44 @@ Clock {
     innerCircleWidth: units.gu(23)
 
     isMainClock: true
+
+    Connections {
+        target: clockApp
+        onApplicationStateChanged: {
+            localTimeSource.update()
+        }
+    }
+
+    DateTime {
+        id: localTimeSource
+        updateInterval: isDigital ? 1000 : 10
+    }
+
+    /*
+     Create a new Date() object and pass the date, month, year, hour, minute
+     and second received from the DateTime plugin manually to ensure the
+     timezone info is set correctly.
+
+     Javascript Month is 0-11 while QDateTime month is 1-12. Hence the -1
+     is required.
+    */
+
+    /*
+      FIXME: When the upstream QT bug at
+      https://bugreports.qt-project.org/browse/QTBUG-40275 is fixed it will be
+      possible to receive a datetime object directly instead of using this hack.
+    */
+    analogTime: new Date
+                (
+                    localTimeSource.localDateString.split(":")[0],
+                    localTimeSource.localDateString.split(":")[1]-1,
+                    localTimeSource.localDateString.split(":")[2],
+                    localTimeSource.localTimeString.split(":")[0],
+                    localTimeSource.localTimeString.split(":")[1],
+                    localTimeSource.localTimeString.split(":")[2],
+                    localTimeSource.localTimeString.split(":")[3]
+                )
+    time: Qt.formatTime(analogTime)
 
     isDigital: clockModeDocument.contents.digitalMode ? true : false
 

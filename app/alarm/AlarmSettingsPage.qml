@@ -17,6 +17,7 @@
  */
 
 import QtQuick 2.0
+import DateTime 1.0
 import Alarm.Settings 1.0
 import Ubuntu.Components 1.1
 import Ubuntu.Components.ListItems 1.0 as ListItem
@@ -27,6 +28,17 @@ Page {
 
     title: i18n.tr("Settings")
     visible: false
+
+    Connections {
+        target: clockApp
+        onApplicationStateChanged: {
+            localTimeSource.update()
+        }
+    }
+
+    DateTime {
+        id: localTimeSource
+    }
 
     AlarmSettings {
         id: alarmSettings
@@ -156,6 +168,33 @@ Page {
                         alarmSettings.volume = formatValue(value)
                     }
                 }
+            }
+        }
+
+        SubtitledListItem {
+            text: i18n.tr("Change time and date")
+            subText: {
+                /*
+                  FIXME: When the upstream QT bug at
+                  https://bugreports.qt-project.org/browse/QTBUG-40275 is fixed
+                  it will be possible to receive a datetime object directly
+                  instead of using this hack.
+                */
+                var localTime = new Date
+                        (
+                            localTimeSource.localDateString.split(":")[0],
+                            localTimeSource.localDateString.split(":")[1]-1,
+                            localTimeSource.localDateString.split(":")[2],
+                            localTimeSource.localTimeString.split(":")[0],
+                            localTimeSource.localTimeString.split(":")[1],
+                            localTimeSource.localTimeString.split(":")[2],
+                            localTimeSource.localTimeString.split(":")[3]
+                        )
+                return localTime.toLocaleString()
+            }
+
+            onClicked: {
+                Qt.openUrlExternally("settings:///system/time-date")
             }
         }
     }

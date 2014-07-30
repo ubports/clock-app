@@ -39,11 +39,6 @@ PageWithBottomEdge {
 
     Component.onCompleted: Utils.log(debugMode, "Clock Page loaded")
 
-    function updateTime() {
-        clock.analogTime = new Date()
-        clock.time = Qt.formatTime(clock.analogTime)
-    }
-
     Flickable {
         id: _flickable
 
@@ -111,7 +106,7 @@ PageWithBottomEdge {
                 horizontalCenter: parent.horizontalCenter
             }
 
-            text: Qt.formatDate(new Date(), "dddd, d MMMM yyyy")
+            text: clock.analogTime.toLocaleDateString()
             opacity: settingsIcon.opacity
             fontSize: "xx-small"
         }
