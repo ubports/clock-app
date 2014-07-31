@@ -11,7 +11,7 @@
         }
     },
     "version": "0.1",
-    "maintainer": "Ubuntu App Cats <ubuntu-touch-coreapps@lists.launchpad.net>"
+    "maintainer": "Ubuntu App Cats <ubuntu-touch-coreapps@lists.launchpad.net>",
     "x-test": {
         "autopilot": "ubuntu_clock_app"
     }
