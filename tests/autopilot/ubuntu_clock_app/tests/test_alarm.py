@@ -55,10 +55,10 @@ class TestAlarm(ClockAppTestCase):
         time_to_set = datetime.time(6, 10, 0)
         test_alarm_name = 'Single Test'
         # TODO this will be affected by the locale. --elopio - 2014-02-27
-        expected_alarm_name = unicode(test_alarm_name)
-        expected_recurrence = unicode(tomorrow.strftime('%A'))
+        expected_alarm_name = test_alarm_name
+        expected_recurrence = tomorrow.strftime('%A')
         expected_enabled_value = True
-        expected_time = unicode("06:10:00")
+        expected_time = "06:10:00"
         test_sound_name = "Bliss"
         expected_alarm_info = (
             expected_alarm_name, expected_recurrence, expected_enabled_value,
