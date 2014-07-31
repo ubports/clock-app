@@ -70,7 +70,8 @@ Column {
                     }
                     userWorldCityRepeater._currentSwipedItem = item
                 }
-            } else if (item.swipeState !== "Normal" && userWorldCityRepeater._currentSwipedItem === item) {
+            } else if (item.swipeState !== "Normal"
+                       && userWorldCityRepeater._currentSwipedItem === item) {
                 userWorldCityRepeater._currentSwipedItem = null
             }
         }
@@ -85,6 +86,14 @@ Column {
                 removalAnimation.start()
             }
 
+            onSwippingChanged: {
+                userWorldCityRepeater._updateSwipeState(userWorldCityDelegate)
+            }
+
+            onSwipeStateChanged: {
+                userWorldCityRepeater._updateSwipeState(userWorldCityDelegate)
+            }
+
             leftSideAction: Action {
                 iconName: "delete"
                 text: i18n.tr("Delete")
@@ -95,7 +104,8 @@ Column {
 
             ListView.onRemove: ScriptAction {
                 script: {
-                    if (userWorldCityRepeater._currentSwipedItem === userWorldCityDelegate) {
+                    if (userWorldCityRepeater._currentSwipedItem
+                            === userWorldCityDelegate) {
                         userWorldCityRepeater._currentSwipedItem = null
                     }
                 }
@@ -126,9 +136,6 @@ Column {
                     script: clockDB.deleteDoc(worldCityQuery.documents[index])
                 }
             }
-
-            onSwippingChanged: userWorldCityRepeater._updateSwipeState(userWorldCityDelegate)
-            onSwipeStateChanged: userWorldCityRepeater._updateSwipeState(userWorldCityDelegate)
         }
     }
 }
