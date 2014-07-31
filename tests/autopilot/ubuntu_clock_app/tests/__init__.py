@@ -23,7 +23,7 @@ import os.path
 import os
 import shutil
 import logging
-import locale
+import fixtures
 
 from autopilot import input
 from autopilot.platform import model
@@ -55,7 +55,7 @@ class ClockAppTestCase(base.UbuntuUIToolkitAppTestCase):
         super(ClockAppTestCase, self).setUp()
         self.pointing_device = input.Pointer(self.input_device_class.create())
 
-        locale.setlocale(locale.LC_ALL, '')
+        self.useFixture(fixtures.EnvironmentVariable('LC_ALL', newvalue='C'))
 
         # backup and wipe db's before testing
         self.temp_move_sqlite_db()

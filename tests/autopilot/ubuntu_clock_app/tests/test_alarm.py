@@ -58,7 +58,7 @@ class TestAlarm(ClockAppTestCase):
         expected_alarm_name = unicode(test_alarm_name)
         expected_recurrence = unicode(tomorrow.strftime('%A'))
         expected_enabled_value = True
-        expected_time = unicode("6:10 AM")
+        expected_time = unicode("06:10:00")
         test_sound_name = "Bliss"
         expected_alarm_info = (
             expected_alarm_name, expected_recurrence, expected_enabled_value,

@@ -27,6 +27,8 @@ from terminal:
     $ autopilot run -vv ubuntu_clock_app.tests.test_alarm.TestAlarm.test_add_single_type_alarm_must_add_to_alarm_list
 
 
+If you need to launch the app with "autopilot launch", you need to launch it this way:
+$ autopilot launch -i Qt qmlscene ../../app/ubuntu-clock-app.qml  -I ../../builddir/backend/
 
 
 on device:
