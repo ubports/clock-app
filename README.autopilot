@@ -1,0 +1,37 @@
+Running autopilot tests
+=======================
+
+
+Prerequisities:
+
+Install the following autopilot packages required to run the tests,
+sudo apt-get install python-autopilot libautopilot-qt ubuntu-ui-toolkit-autopilot
+
+
+
+on the desktop:
+
+from terminal:
+
+1.  Branch the code.
+    bzr branch lp:ubuntu-clock-app/reboot
+2.  Navigate to the tests/autopilot directory.
+    cd ubuntu-clock-app/reboot/tests/autopilot
+3.  run all tests.
+    $ autopilot run -vv ubuntu_clock_app
+
+    to list all tests:
+    $ autopilot list ubuntu_clock_app
+
+    To run only one test (for instance: test_add_single_type_alarm_must_add_to_alarm_list in TestAlarm.py):
+    $ autopilot run -vv ubuntu_clock_app.tests.test_alarm.TestAlarm.test_add_single_type_alarm_must_add_to_alarm_list
+
+
+
+
+on device:
+
+Using autopkg:
+
+1. navigate to the directory where the ubuntu-clock-app branch is and run:
+  $ adt-run ubuntu-clock-app --click=com.ubuntu.clock.devel --- ssh -s /usr/share/autopkgtest/ssh-setup/adb
