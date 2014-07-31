@@ -48,7 +48,7 @@ PageWithBottomEdge {
         anchors.fill: parent
         contentWidth: parent.width
         contentHeight: clock.height + date.height + locationRow.height
-                       + worldCityColumn.height + units.gu(20)
+                       + worldCityColumn.height + units.gu(14)
 
         PullToAdd {
             id: addCityButton
@@ -143,6 +143,8 @@ PageWithBottomEdge {
         UserWorldCityList {
             id: worldCityColumn
             opacity: settingsIcon.opacity
+            anchors.top: locationRow.bottom
+            anchors.topMargin: units.gu(4)
         }
 
         onDragEnded: {
