@@ -61,81 +61,92 @@ Flickable {
         anchors.fill: parent
 
         Repeater {
+            id: alarmRepeater
+
+            property var _currentSwipedItem: null
+
+            function _updateSwipeState(item)
+            {
+                if (item.swipping) {
+                    return
+                }
+
+                if (item.swipeState !== "Normal") {
+                    if (alarmRepeater._currentSwipedItem !== item) {
+                        if (alarmRepeater._currentSwipedItem) {
+                            alarmRepeater._currentSwipedItem.resetSwipe()
+                        }
+                        alarmRepeater._currentSwipedItem = item
+                    }
+                } else if (item.swipeState !== "Normal"
+                           && alarmRepeater._currentSwipedItem === item) {
+                    alarmRepeater._currentSwipedItem = null
+                }
+            }
+
             model: alarmListFlickable.model
-            ListItem.Base {
+            delegate: AlarmDelegate {
+                id: alarmDelegate
 
-                Label {
-                    id: alarmTime
+                property var removalAnimation
 
-                    anchors {
-                        top: alarmDetailsColumn.top
-                        left: parent.left
-                        leftMargin: units.gu(0)
-                    }
-
-                    fontSize: "medium"
-                    text: Qt.formatTime(date)
+                function remove() {
+                    removalAnimation.start()
                 }
 
-                Column {
-                    id: alarmDetailsColumn
+                onSwippingChanged: {
+                    alarmRepeater._updateSwipeState(alarmDelegate)
+                }
 
-                    anchors {
-                        left: alarmTime.right
-                        right: alarmStatus.left
-                        verticalCenter: parent.verticalCenter
-                        margins: units.gu(1)
-                    }
+                onSwipeStateChanged: {
+                    alarmRepeater._updateSwipeState(alarmDelegate)
+                }
 
-                    Label {
-                        id: alarmLabel
-
-                        text: message
-                        fontSize: "medium"
-                        elide: Text.ElideRight
-                        color: UbuntuColors.midAubergine
-                    }
-
-                    Label {
-                        id: alarmSubtitle
-
-                        fontSize: "xx-small"
-                        width: parent.width
-                        wrapMode: Text.WrapAtWordBoundaryOrAnywhere
-                        text: alarmUtils.format_day_string(daysOfWeek)
+                leftSideAction: Action {
+                    iconName: "delete"
+                    text: i18n.tr("Delete")
+                    onTriggered: {
+                        alarmDelegate.remove()
                     }
                 }
 
-                Switch {
-                    id: alarmStatus
+                ListView.onRemove: ScriptAction {
+                    script: {
+                        if (alarmRepeater._currentSwipedItem
+                                === alarmDelegate) {
+                            alarmRepeater._currentSwipedItem = null
+                        }
+                    }
+                }
 
-                    anchors {
-                        right: parent.right
-                        verticalCenter: parent.verticalCenter
+                removalAnimation: SequentialAnimation {
+                    alwaysRunToEnd: true
+
+                    PropertyAction {
+                        target: alarmDelegate
+                        property: "ListView.delayRemove"
+                        value: true
                     }
 
-                    checked: enabled
+                    UbuntuNumberAnimation {
+                        target: alarmDelegate
+                        property: "height"
+                        to: 1
+                    }
 
-                    /*
-                      #TODO: Add the ability to enable/disable alarms using the
-                      switch. At the moment it only shows the alarm status.
-                      This was postponed since a similar implementation in the
-                      old clock app caused it to loop. So if user clicks on the
-                      switch, it disables and then re-enables the alarm again.
-                    */
+                    PropertyAction {
+                        target: alarmDelegate
+                        property: "ListView.delayRemove"
+                        value: false
+                    }
+
+                    ScriptAction {
+                        script: {
+                            var alarm = alarmModel.get(index)
+                            alarm.cancel()
+                        }
+                    }
                 }
-
-                removable: true
-                confirmRemoval: true
-
-                onItemRemoved: {
-                    var alarm = alarmModel.get(index)
-                    alarm.cancel()
-                }
-
-                onClicked: mainStack.push(Qt.resolvedUrl("EditAlarmPage.qml"),
-                                          {"isNewAlarm": false,
-                                              "alarmIndex": index})
             }
         }
     }
