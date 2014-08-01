@@ -1,5 +1,6 @@
 ubuntu-clock-app (1.2) utopic; urgency=medium
 
+  [ Daniel Holbach ]
   * Fix debhelper-but-no-misc-depends ubuntu-clock-app-autopilot.
   * Bump Standards-Version to 3.9.5, no changes required.
   * Add missing build-depends. 
@@ -8,6 +9,12 @@ ubuntu-clock-app (1.2) utopic; urgency=medium
   * Rename 'ubuntu-clock-app' to 'ubuntu_clock_app' in tests.
   * Don't try to install files from usr/bin, there are none.
   * Fail if not all files can be installed.
+
+  [ Jussi Pakkanen ]
+  * Use CMake's testing framework instead of a custom target.
+  * Only install manifest in click mode.
+  * Spaces are tabs.
+  * Add a CMake option to build both as a click app and a regular one.
 
  -- Daniel Holbach <daniel.holbach@ubuntu.com>  Fri, 01 Aug 2014 09:16:35 +0200
 
