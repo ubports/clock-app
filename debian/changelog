@@ -2,7 +2,8 @@ ubuntu-clock-app (1.2) utopic; urgency=medium
 
   * Fix debhelper-but-no-misc-depends ubuntu-clock-app-autopilot.
   * Bump Standards-Version to 3.9.5, no changes required.
-  * Add missing build-depends.
+  * Add missing build-depends. 
+  * Run 'wrap-and-sort'.
 
  -- Daniel Holbach <daniel.holbach@ubuntu.com>  Fri, 01 Aug 2014 09:16:35 +0200
 
