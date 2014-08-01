@@ -194,7 +194,7 @@ class EditAlarmPage(Page):
         picker = self.wait_select_single(
             pickers.DatePicker, mode=mode_value, visible=True)
         picker.pick_time(value)
-          # close picker
+        # close picker
         self.pointing_device.click_object(field)
 
     @autopilot_logging.log_action(logger.info)

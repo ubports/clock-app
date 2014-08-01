@@ -25,11 +25,12 @@
 from __future__ import absolute_import
 
 import datetime
+import unittest
 
 from autopilot.matchers import Eventually
 from testtools.matchers import Equals
 from ubuntu_clock_app.tests import ClockAppTestCase
-
+from autopilot.platform import model
 
 class TestAlarm(ClockAppTestCase):
 
@@ -47,6 +48,8 @@ class TestAlarm(ClockAppTestCase):
 
         self.page = self.main_view.open_alarm()
 
+    @unittest.skipIf(model() != 'Desktop',
+                     "datepicker does not work correctly on device")
     def test_add_single_type_alarm_must_add_to_alarm_list(self):
         """Test to check if a single type alarm is saved properly
 
