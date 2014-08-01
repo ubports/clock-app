@@ -22,6 +22,7 @@ import "../components/Utils.js" as Utils
 
 Page {
     title: "Alarms"
+    objectName: 'AlarmPage'
 
     flickable: null
 

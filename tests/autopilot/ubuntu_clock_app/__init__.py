@@ -1,18 +1,24 @@
 # -#- Mode: Python; coding: utf-8; indent-tabs-mode: nil; tab-width: 4 -#-
 #
-# Copyright (C) 2013, 2014 Canonical Ltd
+# -*- Mode: Python; coding: utf-8; indent-tabs-mode: nil; tab-width: 4 -*-
 #
-# This program is free software: you can redistribute it and/or modify
+# Copyright (C) 2014 Canonical Ltd
+#
+# This file is part of Ubuntu Clock App
+#
+# Ubuntu Clock App is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License version 3 as
 # published by the Free Software Foundation.
 #
-# This program is distributed in the hope that it will be useful,
+# Ubuntu Clock App is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
 #
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#
+#
 #
 # Authored by: Renato Araujo Oliveira Filho <renato@canonical.com>
 

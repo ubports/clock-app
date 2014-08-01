@@ -1,22 +1,28 @@
-Running autopilot tests
-=======================
+# Running Autopilot tests
 
+Ubuntu Clock App follows a test driven development where autopilot tests are run before every merge into trunk. If you are submitting your bugfix/patch to the clock app, please follow the following steps below to ensure that all tests pass before proposing a merge request.
 
-Prerequisities:
+If you are looking for more info about Autopilot or writing AP tests for the clock app, here are some useful links to help you,
+
+- http://developer.ubuntu.com/api/devel/ubuntu-14.10/python/autopilot/
+- http://developer.ubuntu.com/api/devel/ubuntu-14.10/python/autopilot-emulator/
+
+## Prerequisites
 
 Install the following autopilot packages required to run the tests,
-sudo apt-get install python-autopilot libautopilot-qt ubuntu-ui-toolkit-autopilot
+$ sudo apt-get install python-autopilot libautopilot-qt ubuntu-ui-toolkit-autopilot
 
 
+#### Running tests on the desktop
 
-on the desktop:
+Using terminal:
 
-from terminal:
+1.  Branch the clock app code,
+    $ bzr branch lp:ubuntu-clock-app/reboot
 
-1.  Branch the code.
-    bzr branch lp:ubuntu-clock-app/reboot
 2.  Navigate to the tests/autopilot directory.
-    cd ubuntu-clock-app/reboot/tests/autopilot
+    $ cd ubuntu-clock-app/reboot/tests/autopilot
+
 3.  run all tests.
     $ autopilot run -vv ubuntu_clock_app
 
@@ -26,12 +32,12 @@ from terminal:
     To run only one test (for instance: test_add_single_type_alarm_must_add_to_alarm_list in TestAlarm.py):
     $ autopilot run -vv ubuntu_clock_app.tests.test_alarm.TestAlarm.test_add_single_type_alarm_must_add_to_alarm_list
 
+    Debugging tests using autopilot vis
+    $ autopilot launch -i Qt qmlscene ../../app/ubuntu-clock-app.qml  -I ../../builddir/backend/
+    $ autopilot vis
 
-If you need to launch the app with "autopilot launch", you need to launch it this way:
-$ autopilot launch -i Qt qmlscene ../../app/ubuntu-clock-app.qml  -I ../../builddir/backend/
 
-
-on device:
+#### Running tests on device or emulator:
 
 Using autopkg:
 

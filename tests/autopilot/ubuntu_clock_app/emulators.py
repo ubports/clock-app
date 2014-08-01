@@ -1,18 +1,20 @@
 # -*- Mode: Python; coding: utf-8; indent-tabs-mode: nil; tab-width: 4 -*-
 #
-# Copyright (C) 2013, 2014 Canonical Ltd.
+# Copyright (C) 2014 Canonical Ltd
 #
-# This program is free software; you can redistribute it and/or modify
-# it under the terms of the GNU Lesser General Public License as published by
-# the Free Software Foundation; version 3.
+# This file is part of Ubuntu Clock App
 #
-# This program is distributed in the hope that it will be useful,
+# Ubuntu Clock App is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License version 3 as
+# published by the Free Software Foundation.
+#
+# Ubuntu Clock App is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-# GNU Lesser General Public License for more details.
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
 #
-# You should have received a copy of the GNU Lesser General Public License
-# along with this program. If not, see <http://www.gnu.org/licenses/>.
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 # Authored by: Nekhelesh Ramananthan <krnekhelesh@gmail.com>
 #              Nicholas Skaggs <nicholas.skaggs@canonical.com>
@@ -21,17 +23,18 @@ import logging
 
 from autopilot import logging as autopilot_logging
 
-from ubuntuuitoolkit import emulators as toolkit_emulators, pickers
+from ubuntuuitoolkit import pickers
+import ubuntuuitoolkit
 
 logger = logging.getLogger(__name__)
 
 
-class ClockEmulatorException(toolkit_emulators.ToolkitEmulatorException):
+class ClockEmulatorException(ubuntuuitoolkit.ToolkitException):
 
     """Exception raised when there is an error with the emulator."""
 
 
-class MainView(toolkit_emulators.MainView):
+class MainView(ubuntuuitoolkit.MainView):
 
     @autopilot_logging.log_action(logger.info)
     def open_clock(self):
@@ -59,7 +62,7 @@ class MainView(toolkit_emulators.MainView):
         return AlarmList.select(self)
 
 
-class Page(toolkit_emulators.UbuntuUIToolkitEmulatorBase):
+class Page(ubuntuuitoolkit.UbuntuUIToolkitCustomProxyObjectBase):
 
     """Autopilot helper for Pages."""
 
@@ -187,17 +190,11 @@ class EditAlarmPage(Page):
         # open picker
         self.pointing_device.click_object(field)
         # valid options are date or time; assume date if invalid/no option
-        if mode == 'time':
-            mode_value = 'Hours|Minutes'
-        else:
-            mode_value = 'Years|Months|Days'
+        mode_value = 'Hours|Minutes'
         picker = self.wait_select_single(
             pickers.DatePicker, mode=mode_value, visible=True)
-        if mode_value == 'Hours|Minutes':
-            picker.pick_time(value)
-        else:
-            picker.pick_date(value)
-        # close picker
+        picker.pick_time(value)
+          # close picker
         self.pointing_device.click_object(field)
 
     @autopilot_logging.log_action(logger.info)
@@ -269,19 +266,15 @@ class AlarmRepeat(Page):
         """
         dayCheckbox = self.wait_select_single(
             'CheckBox', objectName='daySwitch{}'.format(index))
-        if not dayCheckbox.checked:
-            self.pointing_device.click_object(dayCheckbox)
+        dayCheckbox.check()
 
     @autopilot_logging.log_action(logger.info)
     def unselect_selected_days(self):
         """ function for unselecting already selected days.   """
         for index in range(self._get_num_of_days()):
-            if self.wait_select_single(
-                    'CheckBox', objectName='daySwitch{}'.format(index))\
-                    .checked:
-                self.pointing_device.click_object(self.wait_select_single(
-                    'CheckBox', objectName='daySwitch{}'.format(index)))
-                break
+            dayCheckbox = self.wait_select_single(
+                'CheckBox', objectName='daySwitch{}'.format(index))
+            dayCheckbox.uncheck()
 
 
 class AlarmSound(Page):
@@ -314,8 +307,7 @@ class AlarmSound(Page):
         """
         soundCheckbox = self.wait_select_single(
             'CheckBox', objectName='soundStatus{}'.format(index))
-        if not soundCheckbox.checked:
-            self.pointing_device.click_object(soundCheckbox)
+        soundCheckbox.check()
 
 
 class AlarmLable(object):
@@ -389,7 +381,7 @@ class AlarmList(object):
             time = self.proxy_object.wait_select_single(
                 'Label', objectName='listAlarmTime{}'.format(index)).text
             enabled = self.proxy_object.wait_select_single(
-                toolkit_emulators.CheckBox,
+                ubuntuuitoolkit.CheckBox,
                 objectName='listAlarmStatus{}'.format(index)).checked
             alarms.append((name, recurrence, enabled, time))
         return alarms
@@ -399,7 +391,7 @@ class AlarmList(object):
         """Delete an alarm at the specified index."""
         old_alarm_count = self.get_num_of_alarms()
         alarm = self.proxy_object.wait_select_single(
-            toolkit_emulators.Base, objectName='alarm{}'.format(index))
+            'Base', objectName='alarm{}'.format(index))
         alarm.swipe_to_delete()
         alarm.confirm_removal()
         try:
