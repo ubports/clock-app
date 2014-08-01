@@ -6,7 +6,7 @@ Build-Depends: cmake,
                python,
                gettext,
                intltool,
-Standards-Version: 3.9.4
+Standards-Version: 3.9.5
 Section: misc
 Homepage: https://launchpad.net/ubuntu-clock-app
 Vcs-Bzr: https://code.launchpad.net/~ubuntu-clock-dev/ubuntu-clock-app/trunk
