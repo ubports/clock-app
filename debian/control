@@ -6,6 +6,15 @@ Build-Depends: cmake,
                python,
                gettext,
                intltool,
+               qtbase5-dev,
+               qtdeclarative5-dev,
+               autopilot-touch,
+               qtchooser, 
+               qtdeclarative5-dev-tools, 
+               qt5-default, 
+               python3-all, 
+               libqt5test5, 
+               python3-autopilot,
 Standards-Version: 3.9.5
 Section: misc
 Homepage: https://launchpad.net/ubuntu-clock-app
