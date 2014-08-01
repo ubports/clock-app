@@ -4,6 +4,7 @@ ubuntu-clock-app (1.2) utopic; urgency=medium
   * Bump Standards-Version to 3.9.5, no changes required.
   * Add missing build-depends. 
   * Run 'wrap-and-sort'.
+  * Run 'make autopilot' during the build instead of 'make test'.
 
  -- Daniel Holbach <daniel.holbach@ubuntu.com>  Fri, 01 Aug 2014 09:16:35 +0200
 
