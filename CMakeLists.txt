@@ -1,12 +1,14 @@
-project(com.ubuntu.clock C CXX)
+project(com.ubuntu.clock.devel C CXX)
 cmake_minimum_required(VERSION 2.8.9)
 
 set (UBUNTU_PROJECT_TYPE "ClickApp" CACHE INTERNAL "Tells QtCreator this is a Click application project")
 set (CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
+set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -fno-permissive -pedantic -Wall -Wextra")
 
 find_package(Qt5Core)
 find_package(Qt5Qml)
 find_package(Qt5Quick)
+find_package(Qt5DBus)
 #find_package(ubuntu-sdk-libs)
 
 #automatically create moc files
@@ -18,15 +20,15 @@ option(CLICK_MODE "Build as a click package" on)
 set(APP_NAME                clock)
 set(APP_HARDCODE            ubuntu-clock-app)
 set(MAIN_QML                ${APP_HARDCODE}.qml)
-set(ICON                    "share/app/clock_app@30.png")
+set(ICON                    clock-app@30.png)
 
 #set install paths
 if(${CLICK_MODE})
   set(CMAKE_INSTALL_PREFIX /)
   set(DATA_DIR /)
   set(DESKTOP_DIR ${DATA_DIR})
-  set(ICON ".${DATA_DIR}/${ICON}")
   set(UBUNTU-CLOCK-APP_DIR    "share/qml/ubuntu-clock-app")
+  set(ICON "${UBUNTU-CLOCK-APP_DIR}/${ICON}")
 
   execute_process(
       COMMAND dpkg-architecture -qDEB_HOST_MULTIARCH
@@ -37,7 +39,7 @@ if(${CLICK_MODE})
 else()
   set(DATA_DIR "share/clockapp")
   set(DESKTOP_DIR ${DATA_DIR})
-  set(ICON ".${DATA_DIR}/${ICON}")
+  set(ICON "${DATA_DIR}/${ICON}")
   set(UBUNTU-CLOCK-APP_DIR    "share/ubuntu-clock-app/qml")
   include(GNUInstallDirs)
   set(QT_IMPORTS_DIR "${CMAKE_INSTALL_LIBDIR}")
@@ -56,7 +58,7 @@ add_subdirectory(backend)
 
 add_custom_target("autopilot" chmod +x ${CMAKE_SOURCE_DIR}/app/tests/autopilot/run
                     COMMAND ${CMAKE_SOURCE_DIR}/app/tests/autopilot/run
-                    DEPENDS ubuntu-clock-appbackend ubuntu-clock-appbackend-qmldir
+                    DEPENDS timezone timezone-qmldir alarmsettings alarmsettings-qmldir datetime datetime-qmldir
                     WORKING_DIRECTORY ./app)
 
 enable_testing()
@@ -66,5 +68,5 @@ add_test(NAME basic
 )
 
 add_custom_target("run" /usr/bin/qmlscene -I ${CMAKE_BINARY_DIR}/backend  ${CMAKE_SOURCE_DIR}/app/ubuntu-clock-app.qml
-                    DEPENDS ubuntu-clock-appbackend ubuntu-clock-appbackend-qmldir
+                    DEPENDS timezone timezone-qmldir alarmsettings alarmsettings-qmldir datetime datetime-qmldir
                     WORKING_DIRECTORY ./app)
