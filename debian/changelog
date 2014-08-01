@@ -7,6 +7,7 @@ ubuntu-clock-app (1.2) utopic; urgency=medium
   * Run 'make autopilot' during the build instead of 'make test'.
   * Rename 'ubuntu-clock-app' to 'ubuntu_clock_app' in tests.
   * Don't try to install files from usr/bin, there are none.
+  * Fail if not all files can be installed.
 
  -- Daniel Holbach <daniel.holbach@ubuntu.com>  Fri, 01 Aug 2014 09:16:35 +0200
 
