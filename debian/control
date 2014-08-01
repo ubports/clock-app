@@ -1,0 +1,35 @@
+Source: ubuntu-clock-app
+Priority: extra
+Maintainer: Ubuntu App Cats <ubuntu-touch-coreapps@lists.launchpad.net>
+Build-Depends: cmake,
+               debhelper (>= 9),
+               python,
+               gettext,
+               intltool,
+Standards-Version: 3.9.4
+Section: misc
+Homepage: https://launchpad.net/ubuntu-clock-app
+Vcs-Bzr: https://code.launchpad.net/~ubuntu-clock-dev/ubuntu-clock-app/trunk
+
+Package: ubuntu-clock-app
+Section: misc
+Architecture: all
+Depends: qmlscene,
+         qtdeclarative5-localstorage-plugin,
+         qtdeclarative5-qtquick2-plugin,
+         qtdeclarative5-u1db1.0,
+         qtdeclarative5-ubuntu-ui-toolkit-plugin | qt-components-ubuntu,
+         qtdeclarative5-xmllistmodel-plugin,
+		 suru-icon-theme | ubuntu-mobile-icons,
+         ${misc:Depends},
+Description: Clock application
+ Ubuntu Core Clock application which provides Stopwatch, Timer, Alarm and Clock functionalities.
+
+Package: ubuntu-clock-app-autopilot
+Architecture: all
+Depends: libautopilot-qt,
+         libqt5test5,
+         ubuntu-clock-app (= ${source:Version}),
+         ubuntu-ui-toolkit-autopilot,
+Description: Autopilot tests for Ubuntu Clock Application
+ This package contains autopilot tests for the Ubuntu Clock application.

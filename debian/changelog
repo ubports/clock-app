@@ -1,0 +1,153 @@
+ubuntu-clock-app (1.1) raring; urgency=medium
+
+  * New icon
+  * Add -qt5 command line option (LP: #1288885)
+  * Update framework and apparmor profile version
+
+ -- Alan Pope <popey@ubuntu.com>  Fri, 02 May 2014 13:57:25 +0100
+
+ubuntu-clock-app (1.0) saucy; urgency=low
+
+  [Nekhelesh Ramananthan]
+  * World Clock list needs to inform user when results cannot be retrieved due to network error (LP: #1231106)
+  * Load premade presets for new user so user doesn't end up in blank app (LP: #1226131)
+  * Return more fine-grained territorial divisions for city search results (LP: #1230153)
+  * Improve the visual appearance of the clock, timer, stopwatch and alarm
+  * Removed hour support from timer
+  
+  [Sergio Schvezov]
+  * Translation for desktop and debian package
+  * Fix click package confinement issues
+
+  [Riccardo Padovani]
+  * Alarm notifications do not appear when an alarm is triggered (LP: #1233176)
+
+  [Nicholas Skaggs]
+  * Several apps have failing tests with 20131003 ui-toolkit (LP: #1234544)
+
+  [Andrea Cerisara]
+  * Autopilot Testcase Needed: Test Add World Clock (LP: #1210196)
+  * Autopilot Testcase Needed: Test Delete World Clock (LP: #1210197)
+
+ -- Nekhelesh Ramananthan <krnekhelesh@gmail.com>  Fri, 11 Oct 2013 01:45:36 +0200
+
+ubuntu-clock-app (0.7) saucy; urgency=low
+
+  [Nekhelesh Ramananthan]
+  * Alarm doesn't work (LP: #1187994)
+  * Clock app does not honor timezone (LP: #1191291)
+  * Clocks need to sync better and use the same backend (LP: #1201830)
+  * Clock reports time in UTC by default (LP: #1201858)
+  * On scrolling down page, hide tab header (LP: #1226128)
+  * Very difficult to select bottom city in scrollable list of 4 or more (LP: #1227674)
+  * There is no effect on the circle shape (LP: #1215332)
+  * HUD actions should not appear for toolbar button such as save or cancel (LP: #1224891)
+
+  [Paolo Rotolo]
+  * Add error message if no cities were found (LP: #1222235)
+  * Timer label updates before the timer hand reaches destination (LP: #1172869)
+  * Cancel toolbar action needs the correct icon (LP: #1222942) 
+
+ -- Nekhelesh Ramananthan <krnekhelesh@gmail.com>  Fri, 27 Sep 2013 12:47:21 +0200
+
+ubuntu-clock-app (0.6) saucy; urgency=low
+
+  [Nekhelesh Ramananthan]
+  * Digital clock font size is smaller than design spec (LP: #1215334)
+  * Font in world city list are too big (LP: #1200594)
+  * Timer does not inform user if there are no presets (LP: #1169182)
+  * Clicking the Add preset or add city button should reflect on the title for visual feedback (LP: #1168329)
+  * In Timer, clock face is off screen when selecting preset (LP: #1219770)
+  * Toolbar prevents text preset from accepting input (LP: #1209024)
+
+  [Paolo Rotolo]
+  * Search button icon is not as per design specifications (LP: #1221252)
+  * Search icon isn't in Ubuntu Touch Style (LP: #1202364)
+  * Reset button doesn't work while the stopwatch is running (LP: #1204861)
+  * Timer sometimes does not reset its clock hands after stopping it (LP: #1197908)
+  * Provide the ability to delete a stopwatch lap (LP: #1220375)
+  * Scrolling list of cities overlaps labels (LP: #1219768)
+  * Reset and lap icons appear pixelated on a phone (LP: #1218751)
+  * While searching world cities provide a small pause before going online to search (LP: #1200410)
+
+  [Camron]
+  * Stopwatch runs backwards (LP: #1217743)
+
+  [Andrew Starr-Bochicchio]
+  * Sunrise/Sunset Times should be retrieved online sparingly (LP: #1200410)
+
+ -- Nekhelesh Ramananthan <krnekhelesh@gmail.com>  Fri, 06 Sep 2013 23:26:54 +0200
+
+ubuntu-clock-app (0.5) saucy; urgency=low
+
+  [Nekhelesh Ramananthan]
+  * Added background gradients support with proper use of theme palette colors
+  * Connected Sunrise/Sunset to the current location set by the user (LP: #1195701)
+  * Fixed inaccurate timer touch input (LP: #1186396, #1168327)
+  * Fixed second hand moving erratically in mobile devices (LP: #1186279)
+  * Fixed timer being able to start without setting any time (LP: #1197914)
+  * Fixed city name going over the search box (LP: #1199379)
+
+  [Riccardo Padovani]
+  * Added support to pause timer (LP: #1166264)
+  * Added state names to world city search to distinguish cities with duplicate names (LP: #1197436)
+  * Added autopilot test to test adding a timer (LP: #1188800)
+  * Added autopilot test to run a saved timer preset (LP: #1188801)
+  * Added autopilot test to delete a saved timer preset (LP: #1188807)
+
+ -- Nekhelesh Ramananthan <krnekhelesh@gmail.com>  Tue, 16 Jul 2013 21:24:53 +0200
+
+ubuntu-clock-app (0.4) raring; urgency=low
+
+  * Added World Clocks
+  * Added autopilot tests for Stopwatch (LP: #1188796, #1188812, #1188794)
+  * Implemented initial visual designs for Clock
+  * Fixed Timer runs slower than expected (LP: #117655)
+  * Add city clock from toolbar (LP: #1164943)
+  * Added Animations for Clock, Timer and Stopwatch (LP: #1168325, #1169153)
+
+ -- Nekhelesh Ramananthan <krnekhelesh@gmail.com>  Fri, 14 Jun 2013 22:31:07 +0200
+
+ubuntu-clock-app (0.3) raring; urgency=low
+
+  * Added translations support 
+
+ -- David Planella <david.planella@ubuntu.com>  Tue, 07 May 2013 16:10:25 +0200
+
+ubuntu-clock-app (0.2) raring; urgency=low
+
+  [ Nekhelesh Ramananthan ]
+  * Fix Timer Label bugs (LP: #1172864, #1172865, #1173572).
+  * Add blip to the stopwatch (LP: #1168468).
+  * Tweak behavior of timer hand (LP: #1168335).
+  * Timer format should read mm:ss and count upwards into minutes and hours (LP: #1171467).
+
+  [ Alessandro Pozzi ]
+  * Stopwatch needs to show 1/10th of a second in the label for better accuracy (LP: #1163855).
+  * Add gradient to the stopwatch second hand (LP: #1168402).
+
+ -- Nekhelesh Ramananthan <krnekhelesh@gmail.com>  Sun, 28 Apr 2013 15:21:19 +0200
+
+ubuntu-clock-app (0.1) raring; urgency=low
+
+  [ Michael Hall ]
+  * Initial release
+
+  [ Juha Ristolainen ]
+  * Implemented basic clock layout
+
+  [ Nick Leppänen Larsson ]
+  * Implemented Analog Clock Face API
+  * Basic clock layout
+
+  [ Nekhelesh Ramananthan ]
+  * Add copyright/license headers to the clock app files (LP: #1164594)
+  * Analog clock markers around 3,6,9,12 should be differentiated from others (LP: #1163852)
+  * Clock app code style does not follow qml, javascript guidelines (LP: #1167040)
+  * No easy way to set timer for an hour or more (LP: #1163854)
+  
+  [ Alessandro Pozzi ]
+  * Timer function requires design for adding and editing presets (LP: #1164443)
+  * Implemented basic stopwatch functionality
+
+ -- Nekhelesh Ramananthan <krnekhelesh@gmail.com>  Thu, 11 Apr 2013 21:09:19 +0200
