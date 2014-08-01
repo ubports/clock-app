@@ -1,3 +1,9 @@
+ubuntu-clock-app (1.2) utopic; urgency=medium
+
+  * Fix debhelper-but-no-misc-depends ubuntu-clock-app-autopilot.
+
+ -- Daniel Holbach <daniel.holbach@ubuntu.com>  Fri, 01 Aug 2014 09:16:35 +0200
+
 ubuntu-clock-app (1.1) raring; urgency=medium
 
   * New icon
