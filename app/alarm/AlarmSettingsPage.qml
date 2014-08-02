@@ -81,6 +81,34 @@ Page {
 
         anchors.fill: parent
 
+        ListItem.Base {
+            Column {
+                width: parent.width
+                height: childrenRect.height
+                anchors.verticalCenter: parent.verticalCenter
+
+                Label {
+                    color: UbuntuColors.midAubergine
+                    text: i18n.tr("Alarm volume")
+                }
+
+                Slider {
+                    id: _volumeSlider
+
+                    height: units.gu(2)
+                    width: parent.width
+
+                    minimumValue: 1
+                    maximumValue: 100
+                    value: alarmSettings.volume
+
+                    onValueChanged: {
+                        alarmSettings.volume = formatValue(value)
+                    }
+                }
+            }
+        }
+
         ListItem.Expandable {
             id: _alarmDuration
 
@@ -144,28 +172,24 @@ Page {
         }
 
         ListItem.Base {
-            Column {
-                width: parent.width
-                height: childrenRect.height
+            Label {
+                text: "Vibration"
+                color: UbuntuColors.midAubergine
                 anchors.verticalCenter: parent.verticalCenter
+            }
 
-                Label {
-                    color: UbuntuColors.midAubergine
-                    text: i18n.tr("Alarm volume")
+            Switch {
+                anchors {
+                    right: parent.right
+                    verticalCenter: parent.verticalCenter
                 }
 
-                Slider {
-                    id: _volumeSlider
-
-                    height: units.gu(2)
-                    width: parent.width
-
-                    minimumValue: 1
-                    maximumValue: 100
-                    value: alarmSettings.volume
-
-                    onValueChanged: {
-                        alarmSettings.volume = formatValue(value)
+                checked: alarmSettings.vibration === "pulse"
+                onCheckedChanged: {
+                    if(checked) {
+                        alarmSettings.vibration = "pulse"
+                    } else {
+                        alarmSettings.vibration = "none"
                     }
                 }
             }
