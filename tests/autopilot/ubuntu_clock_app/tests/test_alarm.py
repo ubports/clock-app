@@ -1,6 +1,3 @@
-# -*- Mode: Python; coding: utf-8; indent-tabs-mode: nil; tab-width: 4 -*-
-# -*- Mode: Python; coding: utf-8; indent-tabs-mode: nil; tab-width: 4 -*-
-#
 # Copyright (C) 2014 Canonical Ltd
 #
 # This file is part of Ubuntu Clock App
@@ -16,9 +13,6 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
-#
-# Authored by: Nicholas Skaggs <nicholas.skaggs@canonical.com>
-#              Nekhelesh Ramananthan <krnekhelesh@gmail.com>
 
 """Tests for the Clock App - Alarm"""
 
@@ -31,6 +25,7 @@ from autopilot.matchers import Eventually
 from testtools.matchers import Equals
 from ubuntu_clock_app.tests import ClockAppTestCase
 from autopilot.platform import model
+
 
 class TestAlarm(ClockAppTestCase):
 
@@ -48,9 +43,13 @@ class TestAlarm(ClockAppTestCase):
 
         self.page = self.main_view.open_alarm()
 
+    # TODO
+    # Due to bug https://bugs.launchpad.net/ubuntu-calendar-app/+bug/1328600
+    # this test cannot be run on device, so until the bug is not fixed we are
+    # skipping the test if model not Desktop.
     @unittest.skipIf(model() != 'Desktop',
                      "datepicker does not work correctly on device")
-    def test_add_single_type_alarm_must_add_to_alarm_list(self):
+    def test_add_recurring_type_alarm_must_add_to_alarm_list(self):
         """Test to check if a single type alarm is saved properly
 
         This test saves a single type alarm and verifies if it is added to the

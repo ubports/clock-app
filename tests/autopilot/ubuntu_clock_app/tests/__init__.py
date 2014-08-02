@@ -1,7 +1,3 @@
-# -*- Mode: Python; coding: utf-8; indent-tabs-mode: nil; tab-width: 4 -*-
-#
-# -*- Mode: Python; coding: utf-8; indent-tabs-mode: nil; tab-width: 4 -*-
-#
 # Copyright (C) 2014 Canonical Ltd
 #
 # This file is part of Ubuntu Clock App
@@ -17,7 +13,6 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
-#
 
 """clock-app autopilot tests."""
 
@@ -42,7 +37,7 @@ logger = logging.getLogger(__name__)
 class ClockAppTestCase(base.UbuntuUIToolkitAppTestCase):
 
     """A common test case class that provides several useful methods for
-    calendar-app tests.
+    clock-app tests.
 
     """
     local_location = "../../app/ubuntu-clock-app.qml"

@@ -1,6 +1,3 @@
-# -*- Mode: Python; coding: utf-8; indent-tabs-mode: nil; tab-width: 4 -*-
-# -*- Mode: Python; coding: utf-8; indent-tabs-mode: nil; tab-width: 4 -*-
-#
 # Copyright (C) 2014 Canonical Ltd
 #
 # This file is part of Ubuntu Clock App
@@ -16,9 +13,6 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
-#
-# Authored by: Renato Araujo Oliveira Filho <renato@canonical.com>
-#              Nekhelesh Ramananthan <krnekhelesh@gmail.com>
 
 """
 Tests for the Clock App, main window.
