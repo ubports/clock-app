@@ -173,7 +173,7 @@ Page {
 
         ListItem.Base {
             Label {
-                text: "Vibration"
+                text: i18n.tr("Vibration")
                 color: UbuntuColors.midAubergine
                 anchors.verticalCenter: parent.verticalCenter
             }
