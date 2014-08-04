@@ -30,7 +30,7 @@ Using terminal:
     $ autopilot3 list ubuntu_clock_app
 
     To run only one test (for instance: test_add_single_type_alarm_must_add_to_alarm_list in TestAlarm.py):
-    $ autopilot run -vv ubuntu_clock_app.tests.test_alarm.TestAlarm.test_add_single_type_alarm_must_add_to_alarm_list
+    $ autopilot3 run -vv ubuntu_clock_app.tests.test_alarm.TestAlarm.test_add_single_type_alarm_must_add_to_alarm_list
 
     Debugging tests using autopilot vis
     $ autopilot3 launch -i Qt qmlscene ../../app/ubuntu-clock-app.qml  -I ../../builddir/backend/
