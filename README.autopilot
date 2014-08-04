@@ -34,7 +34,7 @@ Using terminal:
 
     Debugging tests using autopilot vis
     $ autopilot3 launch -i Qt qmlscene ../../app/ubuntu-clock-app.qml  -I ../../builddir/backend/
-    $ autopilot vis
+    $ autopilot3 vis
 
 
 #### Running tests on device or emulator:
