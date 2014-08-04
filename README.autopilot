@@ -24,16 +24,16 @@ Using terminal:
     $ cd ubuntu-clock-app/reboot/tests/autopilot
 
 3.  run all tests.
-    $ autopilot run -vv ubuntu_clock_app
+    $ autopilot3 run -vv ubuntu_clock_app
 
     to list all tests:
-    $ autopilot list ubuntu_clock_app
+    $ autopilot3 list ubuntu_clock_app
 
     To run only one test (for instance: test_add_single_type_alarm_must_add_to_alarm_list in TestAlarm.py):
     $ autopilot run -vv ubuntu_clock_app.tests.test_alarm.TestAlarm.test_add_single_type_alarm_must_add_to_alarm_list
 
     Debugging tests using autopilot vis
-    $ autopilot launch -i Qt qmlscene ../../app/ubuntu-clock-app.qml  -I ../../builddir/backend/
+    $ autopilot3 launch -i Qt qmlscene ../../app/ubuntu-clock-app.qml  -I ../../builddir/backend/
     $ autopilot vis
 
 
@@ -42,4 +42,4 @@ Using terminal:
 Using autopkg:
 
 1. navigate to the directory where the ubuntu-clock-app branch is and run:
-  $ adt-run ubuntu-clock-app --click=com.ubuntu.clock.devel --- ssh -s /usr/share/autopkgtest/ssh-setup/adb
+  $ adt-run ubuntu-clock-app --click=com.ubuntu.clock.devel --- ssh -s adb
