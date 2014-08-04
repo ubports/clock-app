@@ -10,7 +10,7 @@ If you are looking for more info about Autopilot or writing AP tests for the clo
 ## Prerequisites
 
 Install the following autopilot packages required to run the tests,
-$ sudo apt-get install python-autopilot libautopilot-qt ubuntu-ui-toolkit-autopilot
+$ sudo apt-get install python-autopilot libautopilot-qt ubuntu-ui-toolkit-autopilot python3-autopilot-vis
 
 
 #### Running tests on the desktop
