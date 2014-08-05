@@ -101,11 +101,11 @@ class Page11(Page):
     """Autopilot helper for the Alarm page."""
 
     @autopilot_logging.log_action(logger.info)
-    def add_single_alarm(self, name, day, time_to_set, test_sound_name):
+    def add_single_alarm(self, name, days, time_to_set, test_sound_name):
         """Add a single type alarm
 
         :param name: name of alarm
-        :param day: day on which the alarm should be triggered
+        :param days: days on which the alarm should be triggered
         :param time_to_set: time to set alarm to
         :param test_sound_name: sound to set in alarm
 
@@ -117,7 +117,7 @@ class Page11(Page):
         edit_alarm_page.set_alarm_time(time_to_set)
 
         alarm_repeat_page = edit_alarm_page.open_alarmRepeat_page()
-        alarm_repeat_page.set_single_alarm_day(day)
+        alarm_repeat_page.set_alarm_days(days)
         self._click_header_backButton()
 
         alarm_label_page = edit_alarm_page.open_alarmLabel_page()
@@ -234,20 +234,20 @@ class AlarmRepeat(Page):
     """Autopilot helper for the  AlarmRepeat page."""
 
     @autopilot_logging.log_action(logger.info)
-    def set_single_alarm_day(self, day):
-        """Set the alarm day of a single type alarm.
+    def set_alarm_days(self, days):
+        """Set the alarm days of a the alarm.
 
-        :param day: single day on which alarm is triggered
+        :param days: days on which alarm is triggered
 
         """
         self.unselect_selected_days()
         index = 0
-        for index in range(self._get_num_of_days()):
-            if self.wait_select_single(
-                    'Label', objectName='alarmDay{}'.format(index))\
-                    .text == day:
-                self._select_single_alarm_day(index)
-                break
+        for index in range(len(days)):
+            for index2 in range(self._get_num_of_days()):
+                if self.wait_select_single('Label',
+                objectName='alarmDay{}'.format(index2)).text == days[index]:
+                    self._select_single_alarm_day(index2)
+                    break
 
     def _get_num_of_days(self):
         return int(self.wait_select_single(
