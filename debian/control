@@ -30,7 +30,7 @@ Depends: qmlscene,
          qtdeclarative5-ubuntu-ui-toolkit-plugin | qt-components-ubuntu,
          qtdeclarative5-xmllistmodel-plugin,
          suru-icon-theme | ubuntu-mobile-icons,
-         ${misc:Depends}
+         ${misc:Depends}, ${shlibs:Depends}
 Description: Clock application
  Ubuntu Core Clock application which provides Stopwatch, Timer, Alarm and Clock functionalities.
 

@@ -12,6 +12,7 @@ ubuntu-clock-app (1.2) utopic; urgency=medium
   * Make ubuntu-clock-app Arch:any.
   * Don't install 'ubuntu-clock-app-autopilot' files for now.
     Bits in the cmake installation have to be fixed.
+  * Add ${shlibs:Depends} to Depends.
 
   [ Jussi Pakkanen ]
   * Use CMake's testing framework instead of a custom target.
