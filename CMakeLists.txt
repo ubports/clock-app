@@ -56,8 +56,8 @@ install(FILES "${APP_HARDCODE}.json" DESTINATION ${DATA_DIR})
 add_subdirectory(app)
 add_subdirectory(backend)
 
-add_custom_target("autopilot" chmod +x ${CMAKE_SOURCE_DIR}/app/tests/autopilot/run
-                    COMMAND ${CMAKE_SOURCE_DIR}/app/tests/autopilot/run
+add_custom_target("autopilot" chmod +x ${CMAKE_SOURCE_DIR}/tests/autopilot/run
+                    COMMAND ${CMAKE_SOURCE_DIR}/tests/autopilot/run
                     DEPENDS timezone timezone-qmldir alarmsettings alarmsettings-qmldir datetime datetime-qmldir
                     WORKING_DIRECTORY ./app)
 
