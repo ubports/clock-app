@@ -45,6 +45,7 @@ Flickable {
 
     PullToAdd {
         id: addAlarmButton
+        objectName: "addAlarmButton"
 
         anchors {
             top: parent.top
