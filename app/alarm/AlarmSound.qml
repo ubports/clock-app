@@ -52,6 +52,7 @@ Page {
 
             Repeater {
                 id: _alarmSounds
+                objectName: "alarmSounds"
 
                 model: _soundModel
 
@@ -64,6 +65,7 @@ Page {
 
                     Label {
                         id: _soundName
+                        objectName: "soundName" + index
 
                         anchors {
                             left: parent.left
@@ -77,6 +79,7 @@ Page {
 
                     CheckBox {
                         id: _soundStatus
+                        objectName: "soundStatus" + index
 
                         anchors {
                             right: parent.right

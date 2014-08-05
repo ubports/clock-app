@@ -21,6 +21,7 @@ import Ubuntu.Components 1.1
 
 Page {
     id: _alarmLabelPage
+    objectName: "alarmLabelPage"
 
     visible: false
     title: i18n.tr("Label")
@@ -44,6 +45,7 @@ Page {
 
         TextField {
             id: _labelEntry
+            objectName: "labelEntry"
             text: alarm.message
             width: parent.width
         }
