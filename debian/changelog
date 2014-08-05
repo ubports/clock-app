@@ -13,6 +13,7 @@ ubuntu-clock-app (1.2) utopic; urgency=medium
   * Don't install 'ubuntu-clock-app-autopilot' files for now.
     Bits in the cmake installation have to be fixed.
   * Add ${shlibs:Depends} to Depends.
+  * Remove duplicate 'Section' definition.
 
   [ Jussi Pakkanen ]
   * Use CMake's testing framework instead of a custom target.

@@ -21,7 +21,6 @@ Homepage: https://launchpad.net/ubuntu-clock-app
 Vcs-Bzr: https://code.launchpad.net/~ubuntu-clock-dev/ubuntu-clock-app/trunk
 
 Package: ubuntu-clock-app
-Section: misc
 Architecture: any
 Depends: qmlscene,
          qtdeclarative5-localstorage-plugin,
