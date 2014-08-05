@@ -7,7 +7,11 @@ ubuntu-clock-app (1.2) utopic; urgency=medium
   * Run 'wrap-and-sort'.
   * Run 'make autopilot' during the build instead of 'make test'.
   * Don't try to install files from usr/bin, there are none.
+  * Install files from usr/lib.
   * Fail if not all files can be installed.
+  * Make ubuntu-clock-app Arch:any.
+  * Don't install 'ubuntu-clock-app-autopilot' files for now.
+    Bits in the cmake installation have to be fixed.
 
   [ Jussi Pakkanen ]
   * Use CMake's testing framework instead of a custom target.

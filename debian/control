@@ -22,7 +22,7 @@ Vcs-Bzr: https://code.launchpad.net/~ubuntu-clock-dev/ubuntu-clock-app/trunk
 
 Package: ubuntu-clock-app
 Section: misc
-Architecture: all
+Architecture: any
 Depends: qmlscene,
          qtdeclarative5-localstorage-plugin,
          qtdeclarative5-qtquick2-plugin,
