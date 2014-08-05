@@ -14,6 +14,8 @@ ubuntu-clock-app (1.2) utopic; urgency=medium
     Bits in the cmake installation have to be fixed.
   * Add ${shlibs:Depends} to Depends.
   * Remove duplicate 'Section' definition.
+  * Relax dependency from ubuntu-clock-app-autopilot on ubuntu-clock-app
+    somewhat.
 
   [ Jussi Pakkanen ]
   * Use CMake's testing framework instead of a custom target.
