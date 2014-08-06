@@ -140,6 +140,7 @@ Page {
                                                 : 0
 
         model: sortedTimeZoneModel
+        currentIndex: -1
 
         clip: true
 
@@ -193,7 +194,7 @@ Page {
 
         anchors {
             top: cityList.top
-            topMargin: units.gu(1)
+            topMargin: units.gu(1.5)
             bottom: cityList.bottom
             right: parent.right
         }
