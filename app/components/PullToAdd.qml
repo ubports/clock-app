@@ -1,11 +1,13 @@
 /*
  * Copyright (C) 2014 Canonical Ltd
  *
- * This program is free software: you can redistribute it and/or modify
+ * This file is part of Ubuntu Clock App
+ *
+ * Ubuntu Clock App is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 3 as
  * published by the Free Software Foundation.
  *
- * This program is distributed in the hope that it will be useful,
+ * Ubuntu Clock App is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
@@ -32,8 +34,12 @@ Row {
     // Property to set the label on the right side of the add button
     property alias rightLabel: _rightLabel.text
 
-    // Property to set the maximum threshold beyond which the button shouldn't resize
-    property int maxThreshold
+    // Property to set the maximum threshold beyond which the button shouldn't
+    // resize
+    property int maxThreshold: -units.gu(8)
+
+    // Property to set the maximum size of the plus icon
+    property int maxPlusSize: _addButton.width * 0.3
 
     spacing: units.gu(1)
 
@@ -50,18 +56,25 @@ Row {
         id: _addButton
 
         isOuter: true
-        width: dragPosition >= maxThreshold ? dragPosition * units.gu(6.5)/maxThreshold : units.gu(6.5)
+        width: dragPosition >= maxThreshold
+               ? dragPosition * units.gu(6.5)/maxThreshold
+               : units.gu(6.5)
 
         ClockCircle {
-            width: dragPosition >= maxThreshold ? dragPosition * units.gu(4.5)/maxThreshold : units.gu(4.5)
+            width: dragPosition >= maxThreshold
+                   ? dragPosition * units.gu(4.5)/maxThreshold
+                   : units.gu(4.5)
             anchors.centerIn: parent
 
-            Label {
-                id: plusLabel
-
+            Icon {
+                id: plusIcon
                 anchors.centerIn: parent
-                font.pixelSize: dragPosition >= maxThreshold ? dragPosition * units.dp(30)/maxThreshold : units.dp(30)
-                text: "+"
+                color: UbuntuColors.coolGrey
+                name: "add"
+                height: dragPosition >= maxThreshold
+                        ? (dragPosition * maxPlusSize)/maxThreshold
+                        : maxPlusSize
+                width: height
             }
         }
     }

@@ -1,11 +1,13 @@
 /*
  * Copyright (C) 2014 Canonical Ltd
  *
- * This program is free software: you can redistribute it and/or modify
+ * This file is part of Ubuntu Clock App
+ *
+ * Ubuntu Clock App is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 3 as
  * published by the Free Software Foundation.
  *
- * This program is distributed in the hope that it will be useful,
+ * Ubuntu Clock App is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
@@ -15,6 +17,7 @@
  */
 
 import QtQuick 2.0
+import U1db 1.0 as U1db
 import Ubuntu.Components 1.1
 import "clock"
 import "alarm"
@@ -54,24 +57,21 @@ MainView {
 
     useDeprecatedToolbar: false
 
-    onApplicationStateChanged: {
-        /*
-          Update Clock time immediately when the clock app is brought from
-          suspend instead of waiting for the next minute to update.
-        */
-        if(applicationState)
-            clockPage.updateTime()
-    }
-
     Background {}
 
-    Timer {
-        id: clockTimer
+    // Database to store the user preferences locally
+    U1db.Database {
+        id: clockDB
+        path: "user-preferences"
+    }
 
-        interval: 60000
-        repeat: true
-        running: true
-        onTriggered: clockPage.updateTime()
+    // Document to store clock mode chosen by user
+    U1db.Document {
+        id: clockModeDocument
+        create: true
+        database: clockDB
+        docId: "clockModeDocument"
+        defaults: { "digitalMode": false }
     }
 
     AlarmModel {

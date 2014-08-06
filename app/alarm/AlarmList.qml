@@ -1,11 +1,13 @@
 /*
  * Copyright (C) 2014 Canonical Ltd
  *
- * This program is free software: you can redistribute it and/or modify
+ * This file is part of Ubuntu Clock App
+ *
+ * Ubuntu Clock App is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 3 as
  * published by the Free Software Foundation.
  *
- * This program is distributed in the hope that it will be useful,
+ * Ubuntu Clock App is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
@@ -28,16 +30,10 @@ Flickable {
     property var model
 
     /*
-      Property to set the maximum drag distance before freezing the pull to add
-      button resize
-    */
-    property int _maxThreshold: -80
-
-    /*
       Property to set the minimum drag distance before activating the add
       alarm signal
     */
-    property int _minThreshold: _maxThreshold + 10
+    property int _minThreshold: addAlarmButton.maxThreshold + units.gu(2)
 
     clip: true
     anchors.fill: parent
@@ -49,30 +45,32 @@ Flickable {
 
     PullToAdd {
         id: addAlarmButton
+        objectName: "addAlarmButton"
 
         anchors {
             top: parent.top
-            topMargin: -labelHeight - units.gu(6)
+            topMargin: -labelHeight - units.gu(3)
             horizontalCenter: parent.horizontalCenter
         }
 
         leftLabel: i18n.tr("Add")
         rightLabel: i18n.tr("Alarm")
-        maxThreshold: alarmListFlickable._maxThreshold
     }
 
     Column {
         id: alarmList
+        objectName: 'alarmList'
         anchors.fill: parent
 
         Repeater {
             model: alarmListFlickable.model
+            objectName: "alarmListRepeater"
             ListItem.Base {
-
-                height: units.gu(7)
+                objectName: "alarm" + index
 
                 Label {
                     id: alarmTime
+                    objectName: "listAlarmTime" + index
 
                     anchors {
                         top: alarmDetailsColumn.top
@@ -96,6 +94,7 @@ Flickable {
 
                     Label {
                         id: alarmLabel
+                        objectName: "listAlarmLabel" + index
 
                         text: message
                         fontSize: "medium"
@@ -105,6 +104,7 @@ Flickable {
 
                     Label {
                         id: alarmSubtitle
+                        objectName: "listAlarmSubtitle" + index
 
                         fontSize: "xx-small"
                         width: parent.width
@@ -115,6 +115,7 @@ Flickable {
 
                 Switch {
                     id: alarmStatus
+                    objectName: "listAlarmStatus" + index
 
                     anchors {
                         right: parent.right
