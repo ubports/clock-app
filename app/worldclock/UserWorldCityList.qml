@@ -28,7 +28,7 @@ Column {
 
     width: parent.width
     height: childrenRect.height
-    
+
     // U1db Index to index all documents storing the world city details
     U1db.Index {
         id: by_worldcity
@@ -39,22 +39,24 @@ Column {
             "worldlocation.timezone"
         ]
     }
-    
+
     // U1db Query to create a model of the world cities saved by the user
     U1db.Query {
         id: worldCityQuery
         index: by_worldcity
         query: ["*","*","*"]
     }
-    
+
     GenericTimeZoneModel {
         id: u1dbModel
         updateInterval: 1000
         results: worldCityQuery.results
     }
-    
+
     Repeater {
         id: userWorldCityRepeater
+        objectName: "userWorldCityRepeater"
+
         property var _currentSwipedItem: null
 
         function _updateSwipeState(item)
@@ -77,8 +79,10 @@ Column {
         }
 
         model: u1dbModel
+
         delegate: UserWorldCityDelegate {
             id: userWorldCityDelegate
+            objectName: "userWorldCityItem" + index
 
             property var removalAnimation
 

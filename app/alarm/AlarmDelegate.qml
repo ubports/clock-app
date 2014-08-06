@@ -39,6 +39,7 @@ ListItemWithActions {
 
         Label {
             id: alarmTime
+            objectName: "listAlarmTime" + index
 
             anchors {
                 top: alarmDetailsColumn.top
@@ -62,6 +63,7 @@ ListItemWithActions {
 
             Label {
                 id: alarmLabel
+                objectName: "listAlarmLabel" + index
 
                 text: message
                 fontSize: "medium"
@@ -71,6 +73,7 @@ ListItemWithActions {
 
             Label {
                 id: alarmSubtitle
+                objectName: "listAlarmSubtitle" + index
 
                 fontSize: "xx-small"
                 width: parent.width
@@ -81,6 +84,7 @@ ListItemWithActions {
 
         Switch {
             id: alarmStatus
+            objectName: "listAlarmStatus" + index
 
             anchors {
                 right: parent.right

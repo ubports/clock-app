@@ -45,6 +45,7 @@ Flickable {
 
     PullToAdd {
         id: addAlarmButton
+        objectName: "addAlarmButton"
 
         anchors {
             top: parent.top
@@ -58,6 +59,7 @@ Flickable {
 
     Column {
         id: alarmList
+        objectName: 'alarmList'
         anchors.fill: parent
 
         Repeater {
@@ -85,8 +87,10 @@ Flickable {
             }
 
             model: alarmListFlickable.model
+
             delegate: AlarmDelegate {
                 id: alarmDelegate
+                objectName: "alarmListRepeater"
 
                 property var removalAnimation
 

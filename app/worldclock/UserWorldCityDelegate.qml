@@ -70,6 +70,7 @@ ListItemWithActions {
 
         Clock {
             id: localTimeVisual
+            objectName: "localTimeVisual" + index
 
             /*
                  This function would not be required once the upstream QT bug at
@@ -126,6 +127,7 @@ ListItemWithActions {
 
         Label {
             id: relativeTimeLabel
+            objectName: "relativeTimeLabel" + index
 
             anchors.right: parent.right
             anchors.verticalCenter: parent.verticalCenter
