@@ -95,7 +95,6 @@ Page {
         _alarm.enabled = tempAlarm.enabled
         _alarm.date = tempAlarm.date
         _alarm.sound = tempAlarm.sound
-        console.log("Saved Alarm Sound: " + _alarm.sound.toString())
     }
 
     // Function to delete a saved alarm
@@ -147,7 +146,7 @@ Page {
 
     function getSoundName(chosenSoundPath) {
         for(var i=0; i<soundModel.count; i++) {
-            if(chosenSoundPath === soundModel.get(i, "filePath")) {
+            if(chosenSoundPath === Qt.resolvedUrl(soundModel.get(i, "filePath"))) {
                 return soundModel.get(i, "fileBaseName")
             }
         }
@@ -208,7 +207,7 @@ Page {
                     _alarmSound.subText = _alarmSound._soundName
                 }
                 else {
-                    _alarmSound.subText = getSoundName(_alarm.sound)
+                    _alarmSound.subText = getSoundName(_alarm.sound.toString())
                 }
             }
         }
