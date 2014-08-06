@@ -235,7 +235,7 @@ class AlarmRepeat(Page):
 
     @autopilot_logging.log_action(logger.info)
     def set_alarm_days(self, days):
-        """Set the alarm days of a the alarm.
+        """Set the alarm days of the alarm.
 
         :param days: days on which alarm is triggered
 
