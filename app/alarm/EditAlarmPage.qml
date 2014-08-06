@@ -262,7 +262,7 @@ Page {
                                       {"alarm": _alarm})
         }
 
-	SubtitledListItem {
+        SubtitledListItem {
             id: _alarmSound
             objectName: "alarmSound"
 
