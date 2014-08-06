@@ -1,11 +1,13 @@
 /*
  * Copyright (C) 2014 Canonical Ltd
  *
- * This program is free software: you can redistribute it and/or modify
+ * This file is part of Ubuntu Clock App
+ *
+ * Ubuntu Clock App is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 3 as
  * published by the Free Software Foundation.
  *
- * This program is distributed in the hope that it will be useful,
+ * Ubuntu Clock App is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
@@ -16,37 +18,47 @@
 
 import QtQuick 2.0
 import Ubuntu.Components 1.1
-import "../components/Utils.js" as Utils
 
 Flipable {
-    id: digitalShadow
+    id: analogShadow
+
+    // Properties to set the size of the analog shadow
+    property int shadowWidth
+    property int shadowTimeFontSize
+    property int shadowPeriodFontSize
+
+    // Property to disable the seconds hand
+    property alias showSeconds: _analogMode.showSeconds
 
     // Property to switch between digital and analog mode
-    property bool isAnalog: false
+    property bool isDigital: false
 
-    width: units.gu(23)
+    width: shadowWidth
     height: width/2
     clip: true
 
-    front: DigitalMode {
-        id: _digitalMode
-        width: units.gu(23)
-        timeFontSize: units.dp(62)
-        timePeriodFontSize: units.dp(12)
+    front: AnalogMode {
+        id: _analogMode
+
+        width: shadowWidth
         anchors.bottom: parent.bottom
         anchors.horizontalCenter: parent.horizontalCenter
     }
 
-    back: AnalogMode {
-        id: _analogMode
-        width: units.gu(23)
+    back: DigitalMode {
+        id: _digitalMode
+
+        width: shadowWidth
+        timeFontSize: shadowTimeFontSize
+        timePeriodFontSize: shadowPeriodFontSize
+
         anchors.bottom: parent.bottom
         anchors.horizontalCenter: parent.horizontalCenter
     }
 
     transform: Rotation {
         id: rotation
-        origin.x: digitalShadow.width/2
+        origin.x: analogShadow.width/2
         origin.y: 0
         axis.x: 1; axis.y: 0; axis.z: 0
         angle: 0
@@ -54,7 +66,7 @@ Flipable {
 
     states: State {
         name: "Digital"
-        when: digitalShadow.isAnalog
+        when: analogShadow.isDigital
         PropertyChanges {
             target: rotation
             angle: -180

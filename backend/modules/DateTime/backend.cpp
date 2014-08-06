@@ -16,20 +16,19 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef BACKEND_PLUGIN_H
-#define BACKEND_PLUGIN_H
+#include <QtQml>
+#include <QtQml/QQmlContext>
+#include "backend.h"
+#include "datetime.h"
 
-#include <QtQml/QQmlEngine>
-#include <QtQml/QQmlExtensionPlugin>
-
-class BackendPlugin : public QQmlExtensionPlugin
+void BackendPlugin::registerTypes(const char *uri)
 {
-    Q_OBJECT
-    Q_PLUGIN_METADATA(IID "org.qt-project.Qt.QQmlExtensionInterface")
+    Q_ASSERT(uri == QLatin1String("DateTime"));
 
-public:
-    void registerTypes(const char *uri);
-    void initializeEngine(QQmlEngine *engine, const char *uri);
-};
-#endif // BACKEND_PLUGIN_H
+    qmlRegisterType<DateTime>(uri, 1, 0, "DateTime");
+}
 
+void BackendPlugin::initializeEngine(QQmlEngine *engine, const char *uri)
+{
+    QQmlExtensionPlugin::initializeEngine(engine, uri);
+}

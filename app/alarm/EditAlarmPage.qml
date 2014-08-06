@@ -1,11 +1,13 @@
 /*
  * Copyright (C) 2014 Canonical Ltd
  *
- * This program is free software: you can redistribute it and/or modify
+ * This file is part of Ubuntu Clock App
+ *
+ * Ubuntu Clock App is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 3 as
  * published by the Free Software Foundation.
  *
- * This program is distributed in the hope that it will be useful,
+ * Ubuntu Clock App is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
@@ -24,6 +26,7 @@ import "../components/Utils.js" as Utils
 
 Page {
     id: _addAlarmPage
+    objectName: "AddAlarmPage"
 
     // Property to determine if this is a new/saved alarm
     property bool isNewAlarm: true
@@ -33,7 +36,7 @@ Page {
 
     property var tempAlarm
 
-    title: isNewAlarm ? i18n.tr("New Alarm") : i18n.tr("Edit Alarm")
+    title: isNewAlarm ? i18n.tr("New alarm") : i18n.tr("Edit alarm")
     visible: false
 
     head {
@@ -45,7 +48,8 @@ Page {
         }
 
         actions: Action {
-            iconName: "save"
+            iconName: "ok"
+            objectName: "saveAlarmAction"
             text: i18n.tr("Alarm")
             onTriggered: {
                 if(isNewAlarm) {
@@ -92,6 +96,16 @@ Page {
         _alarm.date = tempAlarm.date
         _alarm.sound = tempAlarm.sound
         console.log("Saved Alarm Sound: " + _alarm.sound.toString())
+    }
+
+    // Function to delete a saved alarm
+    function deleteAlarm() {
+        tempAlarm = alarmModel.get(alarmIndex)
+        tempAlarm.cancel()
+
+        if(validateAlarm(tempAlarm)) {
+            mainStack.pop()
+        }
     }
 
     // Function to update a saved alarm
@@ -207,7 +221,8 @@ Page {
     Column {
         id: _alarmColumn
 
-        anchors.fill: parent
+        width: parent.width
+        anchors.top: parent.top
 
         DatePicker {
             id: _timePicker
@@ -229,6 +244,7 @@ Page {
 
         SubtitledListItem {
             id: _alarmRepeat
+            objectName: "alarmRepeat"
 
             text: i18n.tr("Repeat")
             subText: alarmUtils.format_day_string(_alarm.daysOfWeek)
@@ -238,6 +254,7 @@ Page {
 
         SubtitledListItem {
             id: _alarmLabel
+            objectName: "alarmLabel"
 
             text: i18n.tr("Label")
             subText: _alarm.message
@@ -245,8 +262,9 @@ Page {
                                       {"alarm": _alarm})
         }
 
-        SubtitledListItem {
+	SubtitledListItem {
             id: _alarmSound
+            objectName: "alarmSound"
 
             // Default Alarm Sound for new alarms
             property string _soundName: "Suru arpeggio"
@@ -257,6 +275,28 @@ Page {
                                           "alarm": _alarm,
                                           "_soundModel": soundModel
                                       })
+        }
+    }
+
+    Button {
+        id: _deleteAlarmButton
+
+        anchors {
+            top: _alarmColumn.bottom
+            topMargin: units.gu(3)
+            horizontalCenter: parent.horizontalCenter
+        }
+
+        width: units.gu(17)
+        height: units.gu(4)
+
+        visible: !isNewAlarm
+
+        color: "Red"
+        text: i18n.tr("Delete alarm")
+
+        onClicked: {
+            _addAlarmPage.deleteAlarm()
         }
     }
 }

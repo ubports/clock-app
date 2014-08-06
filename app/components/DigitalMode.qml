@@ -1,11 +1,13 @@
 /*
  * Copyright (C) 2014 Canonical Ltd
  *
- * This program is free software: you can redistribute it and/or modify
+ * This file is part of Ubuntu Clock App
+ *
+ * Ubuntu Clock App is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 3 as
  * published by the Free Software Foundation.
  *
- * This program is distributed in the hope that it will be useful,
+ * Ubuntu Clock App is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
@@ -16,8 +18,6 @@
 
 import QtQuick 2.0
 import Ubuntu.Components 1.1
-import "../components"
-import "../components/Utils.js" as Utils
 
 ClockCircle {
     id: _innerCircle
@@ -27,6 +27,11 @@ ClockCircle {
 
     // Property to allow setting the time period font size manually
     property alias timePeriodFontSize: _digitalTimePeriod.font.pixelSize
+
+    // Properties to set the maximum dimensions when running the animations
+    property int maxWidth
+    property int maxTimeFontSize
+    property int maxPeriodFontSize
 
     function startAnimation() {
         _animationTimer.start()
@@ -96,7 +101,7 @@ ClockCircle {
             target: _innerCircle
             property: "width"
             from: units.gu(0)
-            to: units.gu(23)
+            to: maxWidth
             duration: 900
         }
 
@@ -104,7 +109,7 @@ ClockCircle {
             target: _digitalTime
             property: "font.pixelSize"
             from: units.dp(1)
-            to: units.dp(62)
+            to: maxTimeFontSize
             duration: 900
         }
 
@@ -112,7 +117,7 @@ ClockCircle {
             target: _digitalTimePeriod
             property: "font.pixelSize"
             from: units.dp(1)
-            to: units.dp(12)
+            to: maxPeriodFontSize
             duration: 900
         }
     }

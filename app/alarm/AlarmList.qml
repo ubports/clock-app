@@ -1,11 +1,13 @@
 /*
  * Copyright (C) 2014 Canonical Ltd
  *
- * This program is free software: you can redistribute it and/or modify
+ * This file is part of Ubuntu Clock App
+ *
+ * Ubuntu Clock App is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 3 as
  * published by the Free Software Foundation.
  *
- * This program is distributed in the hope that it will be useful,
+ * Ubuntu Clock App is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
@@ -43,6 +45,7 @@ Flickable {
 
     PullToAdd {
         id: addAlarmButton
+        objectName: "addAlarmButton"
 
         anchors {
             top: parent.top
@@ -56,16 +59,18 @@ Flickable {
 
     Column {
         id: alarmList
+        objectName: 'alarmList'
         anchors.fill: parent
 
         Repeater {
             model: alarmListFlickable.model
+            objectName: "alarmListRepeater"
             ListItem.Base {
-
-                height: units.gu(7)
+                objectName: "alarm" + index
 
                 Label {
                     id: alarmTime
+                    objectName: "listAlarmTime" + index
 
                     anchors {
                         top: alarmDetailsColumn.top
@@ -89,6 +94,7 @@ Flickable {
 
                     Label {
                         id: alarmLabel
+                        objectName: "listAlarmLabel" + index
 
                         text: message
                         fontSize: "medium"
@@ -98,6 +104,7 @@ Flickable {
 
                     Label {
                         id: alarmSubtitle
+                        objectName: "listAlarmSubtitle" + index
 
                         fontSize: "xx-small"
                         width: parent.width
@@ -108,6 +115,7 @@ Flickable {
 
                 Switch {
                     id: alarmStatus
+                    objectName: "listAlarmStatus" + index
 
                     anchors {
                         right: parent.right

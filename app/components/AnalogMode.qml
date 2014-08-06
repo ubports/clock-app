@@ -1,11 +1,13 @@
 /*
  * Copyright (C) 2014 Canonical Ltd
  *
- * This program is free software: you can redistribute it and/or modify
+ * This file is part of Ubuntu Clock App
+ *
+ * Ubuntu Clock App is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 3 as
  * published by the Free Software Foundation.
  *
- * This program is distributed in the hope that it will be useful,
+ * Ubuntu Clock App is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
@@ -16,11 +18,15 @@
 
 import QtQuick 2.0
 import Ubuntu.Components 1.1
-import "../components"
-import "../components/Utils.js" as Utils
 
 ClockCircle {
     id: _innerCircleAnalog
+
+    // Property to set the max width when running the animation
+    property int maxWidth
+
+    // Property to show/hide the seconds hand
+    property bool showSeconds
 
     function startAnimation() {
         _animationTimer.start()
@@ -45,7 +51,7 @@ ClockCircle {
         smooth: true
         source: "../graphics/Hour_Hand.png"
         fillMode: Image.PreserveAspectFit
-        rotation: analogTime.getHours() * 30
+        rotation: (analogTime.getHours() * 30) + (analogTime.getMinutes() / 2)
     }
 
     Image {
@@ -57,7 +63,7 @@ ClockCircle {
         smooth: true
         source: "../graphics/Minute_Hand.png"
         fillMode: Image.PreserveAspectFit
-        rotation: analogTime.getMinutes() * 6
+        rotation: (analogTime.getMinutes() * 6) + (analogTime.getSeconds() / 10)
     }
 
     Image {
@@ -67,9 +73,11 @@ ClockCircle {
         width: parent.width + units.gu(2)
 
         smooth: true
+        visible: showSeconds
         source: "../graphics/Second_Hand.png"
         fillMode: Image.PreserveAspectFit
-        rotation: analogTime.getSeconds() * 6
+        rotation: visible ? ((360 * ((analogTime.getSeconds() * 1000) +
+                           analogTime.getMilliseconds())) / 60000) : 0
     }
 
     Image {
@@ -88,8 +96,7 @@ ClockCircle {
         target: _innerCircleAnalog
         property: "width"
         from: units.gu(0)
-        to: units.gu(23)
+        to: maxWidth
         duration: 900
     }
-
 }

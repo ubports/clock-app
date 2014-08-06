@@ -16,20 +16,19 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef BACKEND_PLUGIN_H
-#define BACKEND_PLUGIN_H
+#include <QtQml>
+#include <QtQml/QQmlContext>
+#include "backend.h"
+#include "alarmsettings.h"
 
-#include <QtQml/QQmlEngine>
-#include <QtQml/QQmlExtensionPlugin>
-
-class BackendPlugin : public QQmlExtensionPlugin
+void BackendPlugin::registerTypes(const char *uri)
 {
-    Q_OBJECT
-    Q_PLUGIN_METADATA(IID "org.qt-project.Qt.QQmlExtensionInterface")
+    Q_ASSERT(uri == QLatin1String("Alarm.Settings"));
 
-public:
-    void registerTypes(const char *uri);
-    void initializeEngine(QQmlEngine *engine, const char *uri);
-};
-#endif // BACKEND_PLUGIN_H
+    qmlRegisterType<AlarmSettings>(uri, 1, 0, "AlarmSettings");
+}
 
+void BackendPlugin::initializeEngine(QQmlEngine *engine, const char *uri)
+{
+    QQmlExtensionPlugin::initializeEngine(engine, uri);
+}
