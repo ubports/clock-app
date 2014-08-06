@@ -138,7 +138,7 @@ PageWithBottomEdge {
 
             Label {
                 id: location
-                objectName: "location" + index
+                objectName: "location"
                 text: "Location"
                 fontSize: "medium"
                 anchors.verticalCenter: locationIcon.verticalCenter
