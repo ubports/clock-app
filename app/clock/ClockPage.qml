@@ -26,6 +26,7 @@ import "../components/Utils.js" as Utils
 
 PageWithBottomEdge {
     id: _clockPage
+    objectName: "clockPage"
 
     /*
       Property to set the minimum drag distance before activating the add
@@ -52,6 +53,7 @@ PageWithBottomEdge {
 
         PullToAdd {
             id: addCityButton
+            objectName: "addCityButton"
 
             anchors {
                 top: parent.top
@@ -65,6 +67,7 @@ PageWithBottomEdge {
 
         AbstractButton {
             id: settingsIcon
+            objectName: "settingsIcon"
 
             onClicked: {
                 mainStack.push(Qt.resolvedUrl("../alarm/AlarmSettingsPage.qml"))
@@ -90,6 +93,7 @@ PageWithBottomEdge {
 
         MainClock {
             id: clock
+            objectName: "clock"
 
             anchors {
                 verticalCenter: parent.top
@@ -114,6 +118,7 @@ PageWithBottomEdge {
 
         Row {
             id: locationRow
+            objectName: "locationRow"
 
             opacity: settingsIcon.opacity
             spacing: units.gu(1)
@@ -133,6 +138,7 @@ PageWithBottomEdge {
 
             Label {
                 id: location
+                objectName: "location" + index
                 text: "Location"
                 fontSize: "medium"
                 anchors.verticalCenter: locationIcon.verticalCenter
@@ -142,6 +148,7 @@ PageWithBottomEdge {
 
         UserWorldCityList {
             id: worldCityColumn
+            objectName: "worldCityColumn"
             opacity: settingsIcon.opacity
         }
 

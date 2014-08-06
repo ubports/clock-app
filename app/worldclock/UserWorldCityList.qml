@@ -37,7 +37,7 @@ Column {
     anchors.top: locationRow.bottom
     anchors.topMargin: units.gu(4)
     width: parent.width
-    
+
     // U1db Index to index all documents storing the world city details
     U1db.Index {
         id: by_worldcity
@@ -48,26 +48,28 @@ Column {
             "worldlocation.timezone"
         ]
     }
-    
+
     // U1db Query to create a model of the world cities saved by the user
     U1db.Query {
         id: worldCityQuery
         index: by_worldcity
         query: ["*","*","*"]
     }
-    
+
     GenericTimeZoneModel {
         id: u1dbModel
         updateInterval: 1000
         results: worldCityQuery.results
     }
-    
+
     Repeater {
+        objectName: "userWorldCityRepeater"
         model: u1dbModel
         delegate: SubtitledListItem {
-            
+            objectName: "userWorldCityItem" + index
+
             height: units.gu(9)
-            
+
             text: model.city
             subText: model.country
             showDivider: false
@@ -76,6 +78,7 @@ Column {
 
             Clock {
                 id: localTimeVisual
+                objectName: "localTimeVisual" + index
 
                 /*
                  This function would not be required once the upstream QT bug at
@@ -132,30 +135,31 @@ Column {
 
             Label {
                 id: relativeTimeLabel
-                
+                objectName: "relativeTimeLabel" + index
+
                 anchors.right: parent.right
                 anchors.verticalCenter: parent.verticalCenter
-                
+
                 fontSize: "xx-small"
                 horizontalAlignment: Text.AlignRight
                 text: {
                     var day;
-                    
+
                     if(model.daysTo === 0) {
                         day = i18n.tr("Today")
                     }
-                    
+
                     else if(model.daysTo === 1) {
                         day = i18n.tr("Tomorrow")
                     }
-                    
+
                     else if(model.daysTo === -1) {
                         day = i18n.tr("Yesterday")
                     }
-                    
+
                     var isBehind = model.timeTo > 0 ? i18n.tr("behind")
                                                     : i18n.tr("ahead")
-                    
+
                     var timediff = worldCityColumn.getTimeDiff(Math.abs(model.timeTo))
                     var minute = timediff[1]
                     var hour = timediff[0]
@@ -167,27 +171,27 @@ Column {
                         .arg(minute)
                         .arg(isBehind)
                     }
-                    
+
                     else if(hour > 0 && minute === 0) {
                         return ("%1\n%2hr %3")
                         .arg(day)
                         .arg(hour)
                         .arg(isBehind)
                     }
-                    
+
                     else if(hour === 0 && minute > 0) {
                         return ("%1\n%2min %3")
                         .arg(day)
                         .arg(minute)
                         .arg(isBehind)
                     }
-                    
+
                     else {
                         return i18n.tr("No Time Difference")
                     }
                 }
             }
-            
+
             onItemRemoved: {
                 /*
                  NOTE: This causes the document to be deleted twice resulting

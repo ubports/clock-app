@@ -25,6 +25,7 @@ import "../components/Utils.js" as Utils
 
 Page {
     id: _addAlarmPage
+    objectName: "AddAlarmPage"
 
     // Property to determine if this is a new/saved alarm
     property bool isNewAlarm: true
@@ -47,6 +48,7 @@ Page {
 
         actions: Action {
             iconName: "ok"
+            objectName: "saveAlarmAction"
             text: i18n.tr("Alarm")
             onTriggered: {
                 if(isNewAlarm) {
@@ -182,6 +184,7 @@ Page {
 
         SubtitledListItem {
             id: _alarmRepeat
+            objectName: "alarmRepeat"
 
             text: i18n.tr("Repeat")
             subText: alarmUtils.format_day_string(_alarm.daysOfWeek)
@@ -191,6 +194,7 @@ Page {
 
         SubtitledListItem {
             id: _alarmLabel
+            objectName: "alarmLabel"
 
             text: i18n.tr("Label")
             subText: _alarm.message
@@ -200,6 +204,7 @@ Page {
 
         SubtitledListItem {
             id: _alarmSound
+            objectName: "alarmSound"
             /*
               #TODO: Add support for choosing new alarm sound when indicator-
               datetime supports custom alarm sounds
