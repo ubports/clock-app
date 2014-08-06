@@ -112,19 +112,6 @@ Page {
         sort.order: Qt.AscendingOrder
     }
 
-    FastScroll {
-        id: fastScroll
-
-        listView: cityList
-
-        anchors {
-            top: cityList.top
-            topMargin: units.gu(1)
-            bottom: cityList.bottom
-            right: parent.right
-        }
-    }
-
     ListView {
         id: cityList
 
@@ -142,6 +129,10 @@ Page {
                         },
                         encodeURIComponent(city + "_" + country)
                         )
+        }
+
+        function getSectionText(index) {
+            return sortedTimeZoneModel.get(index).city.substring(0,1)
         }
 
         anchors.fill: parent
@@ -192,6 +183,19 @@ Page {
 
         Behavior on anchors.rightMargin {
             UbuntuNumberAnimation {}
+        }
+    }
+
+    FastScroll {
+        id: fastScroll
+
+        listView: cityList
+
+        anchors {
+            top: cityList.top
+            topMargin: units.gu(1)
+            bottom: cityList.bottom
+            right: parent.right
         }
     }
 }
