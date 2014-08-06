@@ -244,8 +244,9 @@ class AlarmRepeat(Page):
         index = 0
         for index in range(len(days)):
             for index2 in range(self._get_num_of_days()):
-                if self.wait_select_single('Label',
-                objectName='alarmDay{}'.format(index2)).text == days[index]:
+                if self.wait_select_single(
+                        'Label', objectName='alarmDay{}'.format(index2)).text\
+                        == days[index]:
                     self._select_single_alarm_day(index2)
                     break
 

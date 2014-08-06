@@ -31,10 +31,10 @@ class TestAlarm(ClockAppTestCase):
 
     """Tests the alarm page features"""
     scenarios = [
-        ('daily Tuesday',
-            {'alarm_name': 'Daily Tuesday Test',
-             'days': ['Tuesday'],
-             'expected_recurrence': 'Tuesday',
+        ('random',
+            {'alarm_name': 'Random days Alarm Test',
+             'days': ['Tuesday', 'Wednesday', 'Friday', 'Sunday'],
+             'expected_recurrence': 'Tuesday, Wednesday, Friday, Sunday',
              'expected_time': '06:10:00',
              'enabled_value': True,
              'test_sound_name': 'Bliss'
@@ -52,7 +52,7 @@ class TestAlarm(ClockAppTestCase):
         ('weekend',
             {'alarm_name': 'Weekend Alarm Test',
              'days': ['Saturday', 'Sunday'],
-             'expected_recurrence': 'Saturday,Sunday'
+             'expected_recurrence': 'Weekends',
              'expected_time': '06:10:00',
              'enabled_value': True,
              'test_sound_name': 'Bliss'
