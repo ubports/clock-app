@@ -43,7 +43,6 @@ ListItemWithActions {
         anchors {
             left: parent.left
             right: parent.right
-            margins: units.gu(2)
         }
 
         Column {
