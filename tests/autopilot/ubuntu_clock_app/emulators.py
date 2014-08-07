@@ -1,3 +1,5 @@
+# -#- Mode: Python; coding: utf-8; indent-tabs-mode: nil; tab-width: 4 -#-
+#
 # Copyright (C) 2014 Canonical Ltd
 #
 # This file is part of Ubuntu Clock App
@@ -17,6 +19,7 @@
 import logging
 
 from autopilot import logging as autopilot_logging
+from autopilot.introspection import dbus
 
 from ubuntuuitoolkit import pickers
 import ubuntuuitoolkit
@@ -75,25 +78,18 @@ class ClockPage(Page):
     @autopilot_logging.log_action(logger.info)
     def drag_bottomEdge_up(self):
         """Function to drag the bottom edge up."""
-        self._click_bottomEdge()
-
-        x, y, w, h = self.globalRect
-        start_x = stop_x = x + (w / 2)
-        start_y = y + (h - 1)
-
-        stop_y = start_y - h
-        self.pointing_device.drag(start_x, start_y, stop_x, stop_y)
-
-        self._wait_for_ClockPage_to_close()
-
-    def _click_bottomEdge(self):
-        """Function to click on the bottom edge."""
-        bottomEdge = self.wait_select_single(
-            'QQuickItem', objectName='bottomEdgeTip')
-        self.pointing_device.click_object(bottomEdge)
-
-    def _wait_for_ClockPage_to_close(self):
-        self.isCollapsed.wait_for(False)
+        try:
+            action_item = self.wait_select_single(objectName='bottomEdgeTip')
+            start_x = (action_item.globalRect.x +
+                        (action_item.globalRect.width * 0.5))
+            start_y = action_item.globalRect.y + (action_item.height * 0.2)
+            stop_y = start_y - (self.height * 0.7)
+            self.pointing_device.drag(
+                start_x, start_y, start_x, stop_y, rate=2)
+            self.isReady.wait_for(True)
+        except dbus.StateNotFoundError:
+            logger.error('BottomEdge element not found.')
+            raise
 
 
 class Page11(Page):
