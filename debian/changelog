@@ -16,6 +16,7 @@ ubuntu-clock-app (1.2) utopic; urgency=medium
   * Relax dependency from ubuntu-clock-app-autopilot on ubuntu-clock-app
     somewhat.
   * Run tests as autopkgtest. (LP: #1354091)
+  * Don't return ignore of autopilot test execution. (LP: #1354095)
 
   [ Jussi Pakkanen ]
   * Use CMake's testing framework instead of a custom target.

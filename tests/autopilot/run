@@ -8,4 +8,6 @@ fi
 SCRIPTPATH=`dirname $0`
 pushd ${SCRIPTPATH}
 autopilot run ubuntu_clock_app
+retcode=$?
 popd
+exit $retcode
