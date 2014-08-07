@@ -179,6 +179,8 @@ Page {
             }
 
             Switch {
+                id: vibrateSwitch
+
                 anchors {
                     right: parent.right
                     verticalCenter: parent.verticalCenter
@@ -192,6 +194,10 @@ Page {
                         alarmSettings.vibration = "none"
                     }
                 }
+            }
+
+            onClicked: {
+                vibrateSwitch.checked = !vibrateSwitch.checked
             }
         }
 
