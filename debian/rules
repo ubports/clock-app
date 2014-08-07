@@ -11,11 +11,7 @@ override_dh_auto_configure:
 	dh_auto_configure -- -DCLICK_MODE=OFF
 
 override_dh_auto_test:
-	cd obj* && \
-	make autopilot && \
-	cd ..
-	# at some stage, run "make test" as well
-	#make test && 
+	echo
 
 override_dh_install:
 	dh_install --fail-missing

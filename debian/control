@@ -1,27 +1,19 @@
 Source: ubuntu-clock-app
 Priority: extra
 Maintainer: Ubuntu App Cats <ubuntu-touch-coreapps@lists.launchpad.net>
-Build-Depends: autopilot-touch,
-               cmake,
+Build-Depends: cmake,
                debhelper (>= 9),
                gettext,
                intltool,
-               libautopilot-qt,
-               libqt5test5,
-               python,
-               python3-all,
-               python3-autopilot,
-               python3-autopilot-vis,
+               python3-minimal,
                qt5-default,
                qtbase5-dev,
-               qtchooser,
-               qtdeclarative5-dev,
-               qtdeclarative5-dev-tools,
-               ubuntu-ui-toolkit-autopilot
+               qtdeclarative5-dev
 Standards-Version: 3.9.5
 Section: misc
 Homepage: https://launchpad.net/ubuntu-clock-app
 Vcs-Bzr: https://code.launchpad.net/~ubuntu-clock-dev/ubuntu-clock-app/trunk
+XS-Testsuite: autopkgtest
 
 Package: ubuntu-clock-app
 Architecture: any
