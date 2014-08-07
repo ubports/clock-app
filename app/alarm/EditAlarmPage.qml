@@ -197,9 +197,10 @@ Page {
                   the following operations,
 
                   if new alarm, then set the sound name as "Suru arpeggio" and
-                  retrieve the sound path from the folder model
+                  retrieve the sound path from the folder model to assign to
+                  the alarm model sound property.
 
-                  If it is a saved alarm, the get sound path from the alarm
+                  If it is a saved alarm, get the sound path from the alarm
                   object and retrieve the sound name from the folder model.
                 */
                 if(isNewAlarm) {

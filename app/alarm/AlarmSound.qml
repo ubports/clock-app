@@ -97,6 +97,19 @@ Page {
                             }
                         }
                     }
+
+                    onClicked: {
+                        alarmSound.subText = _soundName.text
+                        alarm.sound = fileURL
+
+                        // Ensures only one alarm sound is selected
+                        for(var i=0; i<_soundModel.count; i++) {
+                            if(_alarmSounds.itemAt(i).isChecked &&
+                                    i !== index) {
+                                _alarmSounds.itemAt(i).isChecked = false
+                            }
+                        }
+                    }
                 }
             }
         }
