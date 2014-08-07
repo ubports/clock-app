@@ -64,6 +64,7 @@ Flickable {
 
         Repeater {
             id: alarmRepeater
+            objectName: "alarmListRepeater"
 
             property var _currentSwipedItem: null
 
@@ -90,7 +91,7 @@ Flickable {
 
             delegate: AlarmDelegate {
                 id: alarmDelegate
-                objectName: "alarmListRepeater"
+                objectName: "alarm" + index
 
                 property var removalAnimation
 

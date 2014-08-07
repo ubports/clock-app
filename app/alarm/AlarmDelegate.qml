@@ -23,18 +23,14 @@ import "../upstreamcomponents"
 ListItemWithActions {
     id: root
 
-    height: delegate.height
+    height: units.gu(6)
     width: parent ? parent.width : 0
     color: "Transparent"
 
     Item {
         id: delegate
 
-        height: units.gu(6)
-        anchors {
-            left: parent.left
-            right: parent.right
-        }
+        anchors.fill: parent
 
         Label {
             id: alarmTime
@@ -43,7 +39,6 @@ ListItemWithActions {
             anchors {
                 top: alarmDetailsColumn.top
                 left: parent.left
-                leftMargin: units.gu(0)
             }
 
             fontSize: "medium"

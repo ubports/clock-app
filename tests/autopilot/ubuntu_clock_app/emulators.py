@@ -18,6 +18,7 @@ import logging
 
 from autopilot import logging as autopilot_logging
 
+from ubuntuuitoolkit._custom_proxy_objects import _common
 from ubuntuuitoolkit import pickers
 import ubuntuuitoolkit
 
@@ -387,10 +388,26 @@ class AlarmList(object):
         """Delete an alarm at the specified index."""
         old_alarm_count = self.get_num_of_alarms()
         alarm = self.proxy_object.wait_select_single(
-            'Base', objectName='alarm{}'.format(index))
+            objectName='alarm{}'.format(index))
+
         alarm.swipe_to_delete()
         alarm.confirm_removal()
         try:
             self._get_saved_alarms_list().count.wait_for(old_alarm_count - 1)
         except AssertionError:
             raise ClockEmulatorException('Error deleting alarm.')
+
+
+class ListItemWithActions(_common.UbuntuUIToolkitCustomProxyObjectBase):
+
+    def swipe_to_delete(self):
+        x, y, width, height = self.globalRect
+        start_x = x + (width * 0.2)
+        stop_x = x + (width * 0.8)
+        start_y = stop_y = y + (height // 2)
+
+        self.pointing_device.drag(start_x, start_y, stop_x, stop_y)
+
+    def confirm_removal(self):
+        deleteButton = self.wait_select_single(name='delete')
+        self.pointing_device.click_object(deleteButton)

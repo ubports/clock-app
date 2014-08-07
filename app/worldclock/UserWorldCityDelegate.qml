@@ -32,18 +32,14 @@ ListItemWithActions {
         return [hours, minutes]
     }
 
-    height: delegate.height
+    height: units.gu(9)
     width: parent ? parent.width : 0
     color: "Transparent"
 
     Item {
         id: delegate
 
-        height: units.gu(9)
-        anchors {
-            left: parent.left
-            right: parent.right
-        }
+        anchors.fill: parent
 
         Column {
             id: cityColumn
