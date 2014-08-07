@@ -18,7 +18,6 @@ import logging
 
 from autopilot import logging as autopilot_logging
 
-from ubuntuuitoolkit._custom_proxy_objects import _common
 from ubuntuuitoolkit import pickers
 import ubuntuuitoolkit
 
@@ -398,7 +397,7 @@ class AlarmList(object):
             raise ClockEmulatorException('Error deleting alarm.')
 
 
-class ListItemWithActions(_common.UbuntuUIToolkitCustomProxyObjectBase):
+class ListItemWithActions(ubuntuuitoolkit.UbuntuUIToolkitCustomProxyObjectBase):
 
     def swipe_to_delete(self):
         x, y, width, height = self.globalRect
