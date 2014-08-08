@@ -20,24 +20,15 @@ import QtQuick 2.0
 import Timezone 1.0
 import U1db 1.0 as U1db
 import Ubuntu.Components 1.1
-import "../components"
+
 import "../components/Utils.js" as Utils
 
 Column {
     id: worldCityColumn
 
-    function getTimeDiff(time) {
-        var hours, minutes;
-        time = Math.floor(time / 60)
-        minutes = time % 60
-        hours = Math.floor(time / 60)
-        return [hours, minutes]
-    }
-
-    anchors.top: locationRow.bottom
-    anchors.topMargin: units.gu(4)
     width: parent.width
-    
+    height: childrenRect.height
+
     // U1db Index to index all documents storing the world city details
     U1db.Index {
         id: by_worldcity
@@ -48,154 +39,106 @@ Column {
             "worldlocation.timezone"
         ]
     }
-    
+
     // U1db Query to create a model of the world cities saved by the user
     U1db.Query {
         id: worldCityQuery
         index: by_worldcity
         query: ["*","*","*"]
     }
-    
+
     GenericTimeZoneModel {
         id: u1dbModel
         updateInterval: 1000
         results: worldCityQuery.results
     }
-    
+
     Repeater {
+        id: userWorldCityRepeater
+        objectName: "userWorldCityRepeater"
+
+        property var _currentSwipedItem: null
+
+        function _updateSwipeState(item)
+        {
+            if (item.swipping) {
+                return
+            }
+
+            if (item.swipeState !== "Normal") {
+                if (userWorldCityRepeater._currentSwipedItem !== item) {
+                    if (userWorldCityRepeater._currentSwipedItem) {
+                        userWorldCityRepeater._currentSwipedItem.resetSwipe()
+                    }
+                    userWorldCityRepeater._currentSwipedItem = item
+                }
+            } else if (item.swipeState !== "Normal"
+                       && userWorldCityRepeater._currentSwipedItem === item) {
+                userWorldCityRepeater._currentSwipedItem = null
+            }
+        }
+
         model: u1dbModel
-        delegate: SubtitledListItem {
-            
-            height: units.gu(9)
-            
-            text: model.city
-            subText: model.country
-            showDivider: false
-            removable: true
-            confirmRemoval: true
 
-            Clock {
-                id: localTimeVisual
+        delegate: UserWorldCityDelegate {
+            id: userWorldCityDelegate
+            objectName: "userWorldCityItem" + index
 
-                /*
-                 This function would not be required once the upstream QT bug at
-                 https://bugreports.qt-project.org/browse/QTBUG-40275 is fixed.
-                 Due to this bug we are returning a time string instead of a
-                 time object which forces us to parse the string and convert it
-                 into a time object here.
-                */
-                function getTime(timeString) {
-                    var properTime = new Date()
-                    properTime.setHours(timeString.split(":")[0])
-                    properTime.setMinutes(timeString.split(":")[1])
-                    properTime.setSeconds(0)
-                    return properTime
+            property var removalAnimation
+
+            function remove() {
+                removalAnimation.start()
+            }
+
+            onSwippingChanged: {
+                userWorldCityRepeater._updateSwipeState(userWorldCityDelegate)
+            }
+
+            onSwipeStateChanged: {
+                userWorldCityRepeater._updateSwipeState(userWorldCityDelegate)
+            }
+
+            leftSideAction: Action {
+                iconName: "delete"
+                text: i18n.tr("Delete")
+                onTriggered: {
+                    userWorldCityDelegate.remove()
                 }
+            }
 
-                fontSize: units.dp(14)
-                periodFontSize: units.dp(7)
-                innerCircleWidth: units.gu(5)
-                width: units.gu(7)
-
-                analogTime: getTime(model.localTime)
-
-                anchors.centerIn: parent
-
-                Connections {
-                    target: clock
-                    onTriggerFlip: {
-                        localTimeVisual.flipClock()
-                    }
-                }
-
-                Component.onCompleted: {
-                    isDigital = clockModeDocument.contents.digitalMode ? true : false
-                    if (clockModeDocument.contents.digitalMode) {
-                        digitalModeLoader.setSource
-                                ("../components/DigitalMode.qml",
-                                 {
-                                     "width": innerCircleWidth,
-                                     "timeFontSize": fontSize,
-                                     "timePeriodFontSize": periodFontSize
-                                 })
-                    }
-                    else {
-                        analogModeLoader.setSource(
-                                    "../components/AnalogMode.qml",
-                                    {
-                                        "width": innerCircleWidth,
-                                        "showSeconds": isMainClock
-                                    })
+            ListView.onRemove: ScriptAction {
+                script: {
+                    if (userWorldCityRepeater._currentSwipedItem
+                            === userWorldCityDelegate) {
+                        userWorldCityRepeater._currentSwipedItem = null
                     }
                 }
             }
 
-            Label {
-                id: relativeTimeLabel
-                
-                anchors.right: parent.right
-                anchors.verticalCenter: parent.verticalCenter
-                
-                fontSize: "xx-small"
-                horizontalAlignment: Text.AlignRight
-                text: {
-                    var day;
-                    
-                    if(model.daysTo === 0) {
-                        day = i18n.tr("Today")
-                    }
-                    
-                    else if(model.daysTo === 1) {
-                        day = i18n.tr("Tomorrow")
-                    }
-                    
-                    else if(model.daysTo === -1) {
-                        day = i18n.tr("Yesterday")
-                    }
-                    
-                    var isBehind = model.timeTo > 0 ? i18n.tr("behind")
-                                                    : i18n.tr("ahead")
-                    
-                    var timediff = worldCityColumn.getTimeDiff(Math.abs(model.timeTo))
-                    var minute = timediff[1]
-                    var hour = timediff[0]
+            removalAnimation: SequentialAnimation {
+                alwaysRunToEnd: true
 
-                    if(hour > 0 &&  minute > 0) {
-                        return ("%1\n%2hr%3min %4")
-                        .arg(day)
-                        .arg(hour)
-                        .arg(minute)
-                        .arg(isBehind)
-                    }
-                    
-                    else if(hour > 0 && minute === 0) {
-                        return ("%1\n%2hr %3")
-                        .arg(day)
-                        .arg(hour)
-                        .arg(isBehind)
-                    }
-                    
-                    else if(hour === 0 && minute > 0) {
-                        return ("%1\n%2min %3")
-                        .arg(day)
-                        .arg(minute)
-                        .arg(isBehind)
-                    }
-                    
-                    else {
-                        return i18n.tr("No Time Difference")
-                    }
+                PropertyAction {
+                    target: userWorldCityDelegate
+                    property: "ListView.delayRemove"
+                    value: true
                 }
-            }
-            
-            onItemRemoved: {
-                /*
-                 NOTE: This causes the document to be deleted twice resulting
-                 in an error. The bug has been reported at
-                 https://bugs.launchpad.net/ubuntu-ui-toolkit/+bug/1276118
-                */
-                Utils.log("Deleting world location: " + model.city)
-                clockDB.deleteDoc(worldCityQuery.documents[index])
+
+                UbuntuNumberAnimation {
+                    target: userWorldCityDelegate
+                    property: "height"
+                    to: 1
+                }
+
+                PropertyAction {
+                    target: userWorldCityDelegate
+                    property: "ListView.delayRemove"
+                    value: false
+                }
+
+                ScriptAction {
+                    script: clockDB.deleteDoc(worldCityQuery.documents[index])
+                }
             }
         }
     }
