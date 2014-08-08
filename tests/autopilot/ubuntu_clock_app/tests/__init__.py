@@ -43,8 +43,7 @@ class ClockAppTestCase(base.UbuntuUIToolkitAppTestCase):
     local_location = os.path.dirname(os.path.dirname(os.getcwd()))
     local_location_qml = os.path.join(
         local_location, 'app/ubuntu-clock-app.qml')
-    local_location_backend = os.path.join(local_location,
-                                          '../builddir/backend')
+    local_location_backend = os.path.join(local_location, 'builddir/backend')
     installed_location_backend = \
         '/usr/share/ubuntu-clock-app/builddir/backend'
     installed_location_qml = \
