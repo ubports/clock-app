@@ -23,6 +23,8 @@ import "../upstreamcomponents"
 ListItemWithActions {
     id: root
 
+    property bool isCurrentItem: false
+
     height: units.gu(6)
     width: parent ? parent.width : 0
     color: "Transparent"
@@ -95,10 +97,5 @@ ListItemWithActions {
              switch, it disables and then re-enables the alarm again.
             */
         }
-    }
-
-    onItemClicked: {
-        mainStack.push(Qt.resolvedUrl("EditAlarmPage.qml"),
-                       {"isNewAlarm": false, "alarmIndex": index})
     }
 }

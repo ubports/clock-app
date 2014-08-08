@@ -31,6 +31,7 @@ Page {
     flickable: null
 
     state: "default"
+    onStateChanged: console.debug("STATE CHANGEDDDDD" + state)
     states: [
         PageHeadState {
             name: "default"
@@ -56,6 +57,8 @@ Page {
                 iconName: "close"
                 onTriggered: {
                     alarmListView.cancelSelection()
+                    // FIXME: Woraround. It switches from selection to "" and not default.
+                    alarmPage.state = "default"
                 }
             }
 
@@ -80,7 +83,7 @@ Page {
                     iconName: "delete"
                     visible: alarmListView.isInSelectionMode
                     onTriggered: {
-                        console.log("Oops I need to delete something. :P")
+                        console.log("Delete Action WIP")
                     }
                 }
             ]
@@ -90,6 +93,7 @@ Page {
     AlarmList{
         id: alarmListView
         model: alarmModel
+        multiSelectionEnabled: true
         anchors.fill: parent
     }
 }

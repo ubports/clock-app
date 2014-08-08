@@ -28,6 +28,7 @@ MultipleSelectionListView {
     objectName: "alarmListView"
 
     property var _currentSwipedItem: null
+    property bool multiSelectionEnabled: false
 
     function _updateSwipeState(item)
     {
@@ -64,6 +65,10 @@ MultipleSelectionListView {
         function remove() {
             removalAnimation.start()
         }
+
+        selectionMode: alarmListView.isInSelectionMode
+        selected: alarmListView.multiSelectionEnabled && alarmListView.isSelected(alarmDelegate)
+        isCurrentItem: ListView.isCurrentItem
 
         onSwippingChanged: {
             _updateSwipeState(alarmDelegate)
@@ -116,6 +121,28 @@ MultipleSelectionListView {
                     var alarm = alarmModel.get(index)
                     alarm.cancel()
                 }
+            }
+        }
+
+        onItemClicked: {
+            if(alarmListView.isInSelectionMode) {
+                if(!alarmListView.selectItem(alarmDelegate)) {
+                    alarmListView.deselectItem(alarmDelegate)
+                }
+                return
+            }
+
+            else {
+                mainStack.push(Qt.resolvedUrl("EditAlarmPage.qml"),
+                               {"isNewAlarm": false, "alarmIndex": index})
+            }
+        }
+
+        onItemPressAndHold: {
+            if (alarmListView.multiSelectionEnabled) {
+                alarmListView.currentIndex = -1
+                alarmListView.startSelection()
+                alarmListView.selectItem(alarmDelegate)
             }
         }
     }
