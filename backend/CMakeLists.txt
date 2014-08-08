@@ -66,12 +66,14 @@ add_custom_target(alarmsettings-qmldir ALL
     DEPENDS ${QMLFILES}
 )
 
+set(MODULE_PATH ${QT_IMPORTS_DIR}/Clock)
+
 # Install plugin file
-install(TARGETS timezone DESTINATION ${QT_IMPORTS_DIR}/Timezone/)
-install(FILES   modules/Timezone/qmldir DESTINATION ${QT_IMPORTS_DIR}/Timezone/)
+install(TARGETS timezone DESTINATION ${MODULE_PATH}/Timezone/)
+install(FILES   modules/Timezone/qmldir DESTINATION ${MODULE_PATH}/Timezone/)
 
-install(TARGETS datetime DESTINATION ${QT_IMPORTS_DIR}/DateTime/)
-install(FILES   modules/DateTime/qmldir DESTINATION ${QT_IMPORTS_DIR}/DateTime/)
+install(TARGETS datetime DESTINATION ${MODULE_PATH}/DateTime/)
+install(FILES   modules/DateTime/qmldir DESTINATION ${MODULE_PATH}/DateTime/)
 
-install(TARGETS alarmsettings DESTINATION ${QT_IMPORTS_DIR}/Alarm/Settings/)
-install(FILES   modules/Alarm/Settings/qmldir DESTINATION ${QT_IMPORTS_DIR}/Alarm/Settings/)
+install(TARGETS alarmsettings DESTINATION ${MODULE_PATH}/Alarm/Settings/)
+install(FILES   modules/Alarm/Settings/qmldir DESTINATION ${MODULE_PATH}/Alarm/Settings/)

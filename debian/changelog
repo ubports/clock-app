@@ -24,6 +24,19 @@ ubuntu-clock-app (1.2) utopic; urgency=medium
   * Spaces are tabs.
   * Add a CMake option to build both as a click app and a regular one.
 
+  [ Sergio Schvezov ]
+  * Using GnuInstallDirs takes care of the arch triplet.
+  * Used a proper qt_imports_dir (still needs qml import updates).
+  * Moved gnuinstalldirs higher up for better path management.
+  * Removed a bunch of very custom variables and build on top.
+  * Removed the install target for the gallery directory as it was a dup 
+    and going to the wrong path.
+  * Not installing icon for deb and just rely on us using the desktop 
+    default (we can depend on the suru icon set, it's there).
+  * Made some rules filter out if not in qtcreator.
+  * Changed the path for a couple of things to use common subpaths in most
+    cases.
+
  -- Daniel Holbach <daniel.holbach@ubuntu.com>  Fri, 01 Aug 2014 09:16:35 +0200
 
 ubuntu-clock-app (1.1) raring; urgency=medium
