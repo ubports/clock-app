@@ -32,7 +32,7 @@ if(CLICK_MODE)
   set(QT_IMPORTS_DIR "${CMAKE_INSTALL_LIBDIR}")
   set(EXEC "qmlscene $@ ${UBUNTU-CLOCK_APP_DIR}/${MAIN_QML}")
 else(CLICK_MODE)
-  set(UBUNTU-CLOCK_APP_DIR "${CMAKE_INSTALL_DATADIR}/ubuntu-clock-app/qml")
+  set(UBUNTU-CLOCK_APP_DIR "${CMAKE_INSTALL_DATADIR}/ubuntu-clock-app")
   execute_process( 
     COMMAND qmake -query QT_INSTALL_QML 
             OUTPUT_VARIABLE QT_IMPORTS_DIR 
