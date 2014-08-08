@@ -20,6 +20,7 @@ ubuntu-clock-app (1.2) utopic; urgency=medium
   * Fix path in Exec= line of .desktop file. (LP: #1354081) 
   * Move module files into proper place. (LP: #1354079)
   * Make pep8 happy.
+  * Add -I argument to Exec line in .desktop file.
 
   [ Jussi Pakkanen ]
   * Use CMake's testing framework instead of a custom target.

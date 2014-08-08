@@ -66,8 +66,6 @@ add_custom_target(alarmsettings-qmldir ALL
     DEPENDS ${QMLFILES}
 )
 
-set(MODULE_PATH ${QT_IMPORTS_DIR}/ClockApp)
-
 # Install plugin file
 install(TARGETS timezone DESTINATION ${MODULE_PATH}/Timezone/)
 install(FILES   modules/Timezone/qmldir DESTINATION ${MODULE_PATH}/Timezone/)

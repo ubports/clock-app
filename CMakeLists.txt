@@ -39,12 +39,15 @@ else(CLICK_MODE)
             OUTPUT_STRIP_TRAILING_WHITESPACE 
     )
 
-  set(EXEC "qmlscene $@ ${CMAKE_INSTALL_PREFIX}/${UBUNTU-CLOCK_APP_DIR}/${MAIN_QML}")
 endif(CLICK_MODE)
+
+set(MODULE_PATH ${QT_IMPORTS_DIR}/ClockApp)
 
 if(${CLICK_MODE})
   install(FILES manifest.json DESTINATION ${CMAKE_INSTALL_PREFIX})
   install(FILES "${APP_HARDCODE}.json" DESTINATION ${CMAKE_INSTALL_DATADIR})
+else(CLICK_MODE)
+  set(EXEC "qmlscene $@ -I ${MODULE_PATH}  ${CMAKE_INSTALL_PREFIX}/${UBUNTU-CLOCK_APP_DIR}/${MAIN_QML}")
 endif()
 
 add_subdirectory(app)
