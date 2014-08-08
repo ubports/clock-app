@@ -17,6 +17,7 @@ ubuntu-clock-app (1.2) utopic; urgency=medium
     somewhat.
   * Run tests as autopkgtest. (LP: #1354091)
   * Don't return ignore of autopilot test execution. (LP: #1354095)
+  * Fix path in Exec= line of .desktop file. (LP: #1354081) 
 
   [ Jussi Pakkanen ]
   * Use CMake's testing framework instead of a custom target.
