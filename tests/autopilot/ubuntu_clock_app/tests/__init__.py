@@ -33,29 +33,32 @@ from ubuntu_clock_app import emulators
 
 logger = logging.getLogger(__name__)
 
+
 def find_local_path(what):
 
-    """Depending on which directory we build in, paths might be 
-       named differently. This way we find them and don't have to
-       hook into cmake variables.
+    """Depending on which directory we build in, paths might be
+    named differently. This way we find them and don't have to
+    hook into cmake variables.
+
     """
     if not what:
         return None
     if what.endswith("/"):
         what = what[:-1]
     for dirpath, dirnames, filenames in os.walk("../.."):
-        avail_dirs = map(lambda a: os.path.abspath(os.path.join(dirpath, a)), 
+        avail_dirs = map(lambda a: os.path.abspath(os.path.join(dirpath, a)),
                          dirnames)
         match_dirs = filter(lambda a: a.endswith(what), avail_dirs)
         if match_dirs:
             return match_dirs[0]
 
         avail_files = map(lambda a: os.path.abspath(os.path.join(dirpath, a)),
-                         filenames)
+                          filenames)
         match_files = filter(lambda a: a.endswith(what), avail_files)
         if match_files:
             return match_files[0]
     return None
+
 
 class ClockAppTestCase(base.UbuntuUIToolkitAppTestCase):
 

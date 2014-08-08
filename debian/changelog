@@ -19,6 +19,7 @@ ubuntu-clock-app (1.2) utopic; urgency=medium
   * Don't ignore return code of autopilot test execution. (LP: #1354095)
   * Fix path in Exec= line of .desktop file. (LP: #1354081) 
   * Move module files into proper place. (LP: #1354079)
+  * Make pep8 happy.
 
   [ Jussi Pakkanen ]
   * Use CMake's testing framework instead of a custom target.
