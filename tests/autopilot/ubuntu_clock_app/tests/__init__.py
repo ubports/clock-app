@@ -23,6 +23,7 @@ import logging
 import fixtures
 
 from autopilot import input
+from autopilot import logging as autopilot_logging
 from autopilot.platform import model
 from ubuntuuitoolkit import (
     base,
@@ -40,52 +41,63 @@ class ClockAppTestCase(base.UbuntuUIToolkitAppTestCase):
     clock-app tests.
 
     """
-    local_location = "../../app/ubuntu-clock-app.qml"
-    local_backend_dir = "../../builddir/backend/"
-    installed_location = "/usr/share/ubuntu-clock-app/app/ubuntu-clock-app.qml"
-    installed_backend_dir = "/usr/share/ubuntu-clock-app/builddir/backend/"
+
+    local_location = os.path.dirname(os.path.dirname(os.getcwd()))
+    local_location_qml = os.path.join(
+        local_location, 'app/ubuntu-clock-app.qml')
+    local_location_backend = os.path.join(local_location, 'backend')
+    installed_location_backend = \
+        '/usr/share/ubuntu-clock-app/builddir/backend'
+    installed_location_qml = \
+        '/usr/share/ubuntu-clock-app/app/ubuntu-clock-app.qml'
+
+    # note this directory could change to com.ubuntu.clock at some point
     sqlite_dir = os.path.expanduser(
-        "~/.local/share/com.ubuntu.clock")
+        "~/.local/share/com.ubuntu.clock.devel")
     backup_dir = sqlite_dir + ".backup"
 
     def setUp(self):
-        super(ClockAppTestCase, self).setUp()
-        self.pointing_device = input.Pointer(self.input_device_class.create())
-
-        self.useFixture(fixtures.EnvironmentVariable('LC_ALL', newvalue='C'))
-
         # backup and wipe db's before testing
         self.temp_move_sqlite_db()
         self.addCleanup(self.restore_sqlite_db)
 
-        # turn off the OSK so it doesn't block screen elements
-        if model() != 'Desktop':
-            os.system("stop maliit-server")
-            self.addCleanup(os.system, "start maliit-server")
+        launch, self.test_type = self.get_launcher_method_and_type()
+        self.useFixture(fixtures.EnvironmentVariable('LC_ALL', newvalue='C'))
+        super(ClockAppTestCase, self).setUp()
 
-        if os.path.exists(self.local_location):
-            self.launch_test_local()
-        elif os.path.exists(self.installed_location):
-            self.launch_test_installed()
+        launch()
+
+    def get_launcher_method_and_type(self):
+        if os.path.exists(self.local_location_backend):
+            launcher = self.launch_test_local
+            test_type = 'local'
+        elif os.path.exists(self.installed_location_backend):
+            launcher = self.launch_test_installed
+            test_type = 'deb'
         else:
-            self.launch_test_click()
+            launcher = self.launch_test_click
+            test_type = 'click'
+        return launcher, test_type
 
+    @autopilot_logging.log_action(logger.info)
     def launch_test_local(self):
         self.app = self.launch_test_application(
             base.get_qmlscene_launch_command(),
-            self.local_location,
-            "-I", self.local_backend_dir,
+            self.local_location_qml,
+            "-I", self.local_location_backend,
             app_type='qt',
             emulator_base=toolkit_emulators.UbuntuUIToolkitEmulatorBase)
 
+    @autopilot_logging.log_action(logger.info)
     def launch_test_installed(self):
         self.app = self.launch_test_application(
             base.get_qmlscene_launch_command(),
-            self.installed_location,
-            "-I", self.installed_backend_dir,
+            self.installed_location_qml,
+            "-I", self.installed_location_backend,
             app_type='qt',
             emulator_base=toolkit_emulators.UbuntuUIToolkitEmulatorBase)
 
+    @autopilot_logging.log_action(logger.info)
     def launch_test_click(self):
         self.app = self.launch_click_package(
             "com.ubuntu.clock.devel",
