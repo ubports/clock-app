@@ -396,7 +396,8 @@ class AlarmList(object):
             raise ClockEmulatorException('Error deleting alarm.')
 
 
-class ListItemWithActions(ubuntuuitoolkit.UbuntuUIToolkitCustomProxyObjectBase):
+class ListItemWithActions(
+        ubuntuuitoolkit.UbuntuUIToolkitCustomProxyObjectBase):
 
     def swipe_to_delete(self):
         x, y, width, height = self.globalRect
