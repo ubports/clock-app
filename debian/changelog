@@ -16,7 +16,7 @@ ubuntu-clock-app (1.2) utopic; urgency=medium
   * Relax dependency from ubuntu-clock-app-autopilot on ubuntu-clock-app
     somewhat.
   * Run tests as autopkgtest. (LP: #1354091)
-  * Don't return ignore of autopilot test execution. (LP: #1354095)
+  * Don't ignore return code of autopilot test execution. (LP: #1354095)
   * Fix path in Exec= line of .desktop file. (LP: #1354081) 
 
   [ Jussi Pakkanen ]
