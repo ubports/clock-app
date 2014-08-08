@@ -20,6 +20,7 @@ set(APP_NAME                clock)
 set(APP_HARDCODE            ubuntu-clock-app)
 set(MAIN_QML                ${APP_HARDCODE}.qml)
 set(ICON                    clock-app)
+SET(AUTOPILOT_DIR           ubuntu_clock_app)
 
 # Standard install paths 
 include(GNUInstallDirs) 
@@ -52,6 +53,7 @@ endif()
 
 add_subdirectory(app)
 add_subdirectory(backend)
+add_subdirectory(tests)
 
 add_custom_target("autopilot" chmod +x ${CMAKE_SOURCE_DIR}/tests/autopilot/run
                     COMMAND ${CMAKE_SOURCE_DIR}/tests/autopilot/run

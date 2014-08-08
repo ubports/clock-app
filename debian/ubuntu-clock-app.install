@@ -1,2 +1,2 @@
-usr/lib/*
+usr/lib/*/qt5/qml/ClockApp/*
 usr/share/*

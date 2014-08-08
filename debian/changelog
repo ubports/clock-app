@@ -9,8 +9,7 @@ ubuntu-clock-app (1.2) utopic; urgency=medium
   * Install files from usr/lib.
   * Fail if not all files can be installed.
   * Make ubuntu-clock-app Arch:any.
-  * Don't install 'ubuntu-clock-app-autopilot' files for now.
-    Bits in the cmake installation have to be fixed.
+  * Install files into ubuntu-clock-app-autopilot again (LP: #1354074).
   * Add ${shlibs:Depends} to Depends.
   * Remove duplicate 'Section' definition.
   * Relax dependency from ubuntu-clock-app-autopilot on ubuntu-clock-app
