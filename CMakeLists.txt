@@ -58,7 +58,7 @@ add_custom_target("autopilot" chmod +x ${CMAKE_SOURCE_DIR}/tests/autopilot/run
 enable_testing()
 add_test(NAME basic
   WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/app
-  COMMAND /usr/bin/qmltestrunner -input ${CMAKE_SOURCE_DIR}/app/tests/unit -import ${CMAKE_BINARY_DIR}/backend
+  COMMAND /usr/bin/qmltestrunner -input ${CMAKE_SOURCE_DIR}/tests/unit -import ${CMAKE_BINARY_DIR}/backend
 )
 
 add_custom_target("run" /usr/bin/qmlscene -I ${CMAKE_BINARY_DIR}/backend  ${CMAKE_SOURCE_DIR}/app/ubuntu-clock-app.qml
