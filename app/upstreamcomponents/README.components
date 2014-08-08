@@ -15,3 +15,12 @@ https://bazaar.launchpad.net/~phablet-team/address-book-app/trunk/view/head:/src
 FastScroll.qml
 
 https://bazaar.launchpad.net/~phablet-team/address-book-app/trunk/view/head:/src/imports/Ubuntu/Contacts/FastScroll.qml
+
+ListItemWithActions.qml
+
+https://bazaar.launchpad.net/~phablet-team/address-book-app/trunk/view/head:/src/imports/Ubuntu/Contacts/ListItemWithActions.qml
+
+ListItemWithActionsCheckBox.qml
+
+https://bazaar.launchpad.net/~phablet-team/address-book-app/trunk/view/head:/src/imports/Ubuntu/Contacts/ListItemWithActionsCheckBox.qml
+
