@@ -192,6 +192,9 @@ Page {
 
         listView: cityList
 
+        enabled: (cityList.contentHeight > (cityList.height * 2)) &&
+                 (cityList.height >= minimumHeight)
+
         anchors {
             top: cityList.top
             topMargin: units.gu(1.5)
