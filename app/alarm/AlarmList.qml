@@ -28,7 +28,6 @@ MultipleSelectionListView {
     objectName: "alarmListView"
 
     property var _currentSwipedItem: null
-    property bool multiSelectionEnabled: false
 
     function _updateSwipeState(item)
     {
@@ -37,15 +36,15 @@ MultipleSelectionListView {
         }
 
         if (item.swipeState !== "Normal") {
-            if (alarmRepeater._currentSwipedItem !== item) {
-                if (alarmRepeater._currentSwipedItem) {
-                    alarmRepeater._currentSwipedItem.resetSwipe()
+            if (alarmListView._currentSwipedItem !== item) {
+                if (alarmListView._currentSwipedItem) {
+                    alarmListView._currentSwipedItem.resetSwipe()
                 }
-                alarmRepeater._currentSwipedItem = item
+                alarmListView._currentSwipedItem = item
             }
         } else if (item.swipeState !== "Normal"
-                   && alarmRepeater._currentSwipedItem === item) {
-            alarmRepeater._currentSwipedItem = null
+                   && alarmListView._currentSwipedItem === item) {
+            alarmListView._currentSwipedItem = null
         }
     }
 
@@ -56,7 +55,7 @@ MultipleSelectionListView {
         id: alarmUtils
     }
 
-    delegate: AlarmDelegate {
+    listDelegate: AlarmDelegate {
         id: alarmDelegate
         objectName: "alarm" + index
 
@@ -67,8 +66,7 @@ MultipleSelectionListView {
         }
 
         selectionMode: alarmListView.isInSelectionMode
-        selected: alarmListView.multiSelectionEnabled && alarmListView.isSelected(alarmDelegate)
-        isCurrentItem: ListView.isCurrentItem
+        selected: alarmListView.isSelected(alarmDelegate)
 
         onSwippingChanged: {
             _updateSwipeState(alarmDelegate)
@@ -139,8 +137,7 @@ MultipleSelectionListView {
         }
 
         onItemPressAndHold: {
-            if (alarmListView.multiSelectionEnabled) {
-                alarmListView.currentIndex = -1
+            if (!alarmListView.isInSelectionMode) {
                 alarmListView.startSelection()
                 alarmListView.selectItem(alarmDelegate)
             }

@@ -83,7 +83,14 @@ Page {
                     iconName: "delete"
                     visible: alarmListView.isInSelectionMode
                     onTriggered: {
-                        console.log("Delete Action WIP")
+                        var items = alarmListView.selectedItems
+
+                        for(var i=0; i < items.count; i++) {
+                            var alarm = alarmModel.get(items.get(i).itemsIndex)
+                            alarm.cancel()
+                        }
+
+                        alarmListView.endSelection()
                     }
                 }
             ]
@@ -92,8 +99,7 @@ Page {
 
     AlarmList{
         id: alarmListView
-        model: alarmModel
-        multiSelectionEnabled: true
+        listModel: alarmModel
         anchors.fill: parent
     }
 }
