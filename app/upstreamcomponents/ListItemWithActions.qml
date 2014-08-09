@@ -27,8 +27,8 @@ Item {
     property Action activeAction: null
     property var activeItem: null
     property bool triggerActionOnMouseRelease: false
-    property color color: Theme.palette.normal.background
-    property color selectedColor: "#E6E6E6"
+    property color color: "Transparent" //Theme.palette.normal.background
+    property color selectedColor: "Transparent" //"#E6E6E6"
     property bool selected: false
     property bool selectionMode: false
     property alias internalAnchors: mainContents.anchors
