@@ -136,7 +136,7 @@ Flickable {
                     UbuntuNumberAnimation {
                         target: alarmDelegate
                         property: "height"
-                        to: 1
+                        to: 0
                     }
 
                     PropertyAction {
