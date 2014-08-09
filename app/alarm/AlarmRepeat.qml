@@ -22,6 +22,7 @@ import Ubuntu.Components.ListItems 1.0 as ListItem
 
 Page {
     id: _alarmRepeatPage
+    objectName: "alarmRepeatPage"
 
     visible: false
     title: i18n.tr("Repeat")
@@ -75,12 +76,14 @@ Page {
 
         Repeater {
             id: _alarmDays
+            objectName: 'alarmDays'
 
             model: daysModel
 
             ListItem.Standard {
                 Label {
                     id: _alarmDay
+                    objectName: 'alarmDay' + index
 
                     anchors {
                         left: parent.left
@@ -93,6 +96,7 @@ Page {
                 }
 
                 control: Switch {
+                    objectName: 'daySwitch' + index
                     checked: (alarm.daysOfWeek & flag) == flag
                     onCheckedChanged: {
                         if (checked) {

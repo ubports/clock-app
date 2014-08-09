@@ -20,11 +20,13 @@ import QtQuick 2.0
 import U1db 1.0 as U1db
 import Ubuntu.Components 1.1
 import "../components"
+import "../upstreamcomponents"
 import "../worldclock"
 import "../components/Utils.js" as Utils
 
 PageWithBottomEdge {
     id: _clockPage
+    objectName: "clockPage"
 
     /*
       Property to set the minimum drag distance before activating the add
@@ -47,10 +49,11 @@ PageWithBottomEdge {
         anchors.fill: parent
         contentWidth: parent.width
         contentHeight: clock.height + date.height + locationRow.height
-                       + worldCityColumn.height + units.gu(20)
+                       + worldCityColumn.height + units.gu(14)
 
         PullToAdd {
             id: addCityButton
+            objectName: "addCityButton"
 
             anchors {
                 top: parent.top
@@ -64,6 +67,7 @@ PageWithBottomEdge {
 
         AbstractButton {
             id: settingsIcon
+            objectName: "settingsIcon"
 
             onClicked: {
                 mainStack.push(Qt.resolvedUrl("../alarm/AlarmSettingsPage.qml"))
@@ -89,6 +93,7 @@ PageWithBottomEdge {
 
         MainClock {
             id: clock
+            objectName: "clock"
 
             anchors {
                 verticalCenter: parent.top
@@ -113,6 +118,7 @@ PageWithBottomEdge {
 
         Row {
             id: locationRow
+            objectName: "locationRow"
 
             opacity: settingsIcon.opacity
             spacing: units.gu(1)
@@ -132,6 +138,7 @@ PageWithBottomEdge {
 
             Label {
                 id: location
+                objectName: "location"
                 text: "Location"
                 fontSize: "medium"
                 anchors.verticalCenter: locationIcon.verticalCenter
@@ -141,7 +148,10 @@ PageWithBottomEdge {
 
         UserWorldCityList {
             id: worldCityColumn
+            objectName: "worldCityColumn"
             opacity: settingsIcon.opacity
+            anchors.top: locationRow.bottom
+            anchors.topMargin: units.gu(4)
         }
 
         onDragEnded: {
