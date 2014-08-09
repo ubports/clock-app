@@ -31,7 +31,6 @@ Page {
     flickable: null
 
     state: "default"
-    onStateChanged: console.debug("STATE CHANGEDDDDD" + state)
     states: [
         PageHeadState {
             name: "default"
@@ -66,7 +65,6 @@ Page {
                 Action {
                     text: i18n.tr("Select All")
                     iconName: "select"
-                    visible: alarmListView.isInSelectionMode
                     onTriggered: {
                         if(alarmListView.selectedItems.count
                                 === alarmListView.count) {
@@ -81,7 +79,6 @@ Page {
                 Action {
                     text: i18n.tr("Delete")
                     iconName: "delete"
-                    visible: alarmListView.isInSelectionMode
                     onTriggered: {
                         var items = alarmListView.selectedItems
 
@@ -94,6 +91,10 @@ Page {
                     }
                 }
             ]
+
+            contents: Label {
+                text: ""
+            }
         }
     ]
 
