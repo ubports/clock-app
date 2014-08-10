@@ -30,11 +30,11 @@ Page {
 
     flickable: null
 
-    state: "default"
     states: [
         PageHeadState {
             name: "default"
             head: alarmPage.head
+            when: !alarmListView.isInSelectionMode
             actions: [
                 Action {
                     objectName: "addAlarmAction"
@@ -56,14 +56,6 @@ Page {
                 iconName: "close"
                 onTriggered: {
                     alarmListView.cancelSelection()
-                    /*
-                      FIXME: Workaround! When cancelSelection() is called it
-                      switches to the state "", however in that state the add
-                      header button is missing. As a result, I am forced to
-                      add the statement below to force it to go to state
-                      default to show the add button. Why?
-                    */
-                    alarmPage.state = "default"
                 }
             }
 

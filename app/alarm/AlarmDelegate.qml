@@ -25,6 +25,8 @@ ListItemWithActions {
 
     width: parent ? parent.width : 0
     height: units.gu(6)
+    color: "Transparent"
+    selectedColor: "Transparent"
 
     Label {
         id: alarmTime
