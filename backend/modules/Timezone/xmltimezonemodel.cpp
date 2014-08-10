@@ -136,6 +136,5 @@ void XmlTimeZoneModel::loadTimeZonesFromXml()
     }
 
     // Let QML know that the model is usable again.
-
     endResetModel();
 }
