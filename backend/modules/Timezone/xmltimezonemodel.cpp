@@ -19,6 +19,7 @@
 #include <QFile>
 #include <QDebug>
 #include <QXmlStreamReader>
+#include <QDateTime>
 
 #include "xmltimezonemodel.h"
 
@@ -110,7 +111,7 @@ void XmlTimeZoneModel::loadTimeZonesFromXml()
                 tz.country = reader.text().toString();
             }
             if (isTzId) {
-                tz.timeZoneId = reader.text().toString();
+                tz.timeZone = QTimeZone(reader.text().toString().toLatin1());
             }
         }
 
@@ -135,5 +136,6 @@ void XmlTimeZoneModel::loadTimeZonesFromXml()
     }
 
     // Let QML know that the model is usable again.
+
     endResetModel();
 }
