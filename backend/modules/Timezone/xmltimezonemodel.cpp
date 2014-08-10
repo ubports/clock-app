@@ -19,7 +19,7 @@
 #include <QFile>
 #include <QDebug>
 #include <QXmlStreamReader>
-#include <QDateTime>
+#include <QTimeZone>
 
 #include "xmltimezonemodel.h"
 
