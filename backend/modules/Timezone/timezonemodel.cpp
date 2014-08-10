@@ -64,10 +64,6 @@ QVariant TimeZoneModel::data(const QModelIndex &index, int role) const
      We have defined Roles in our .h file. Lets use them here.
     */
 
-    QDateTime currentDateTime = QDateTime::currentDateTime();
-    QDateTime worldCityTime(currentDateTime.toTimeZone(m_timeZones.at(row).timeZone));
-    QDateTime localCityTime(currentDateTime);
-
     switch (role) {
     case RoleCityName:
         return m_timeZones.at(row).cityName;
@@ -75,6 +71,13 @@ QVariant TimeZoneModel::data(const QModelIndex &index, int role) const
         return m_timeZones.at(row).country;
     case RoleTimeZoneId:
         return m_timeZones.at(row).timeZone.id();
+    }
+
+    QDateTime currentDateTime = QDateTime::currentDateTime();
+    QDateTime worldCityTime(currentDateTime.toTimeZone(m_timeZones.at(row).timeZone));
+    QDateTime localCityTime(currentDateTime);
+
+    switch (role) {
     case RoleTimeString:
         /*
          FIXME: Until https://bugreports.qt-project.org/browse/QTBUG-40275
