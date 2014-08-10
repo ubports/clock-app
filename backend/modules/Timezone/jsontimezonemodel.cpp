@@ -16,24 +16,26 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include <QtQml>
-#include <QtQml/QQmlContext>
-#include "backend.h"
-#include "timezonemodel.h"
-#include "xmltimezonemodel.h"
-#include "generictimezonemodel.h"
+#include <QDebug>
+
 #include "jsontimezonemodel.h"
 
-void BackendPlugin::registerTypes(const char *uri)
+JsonTimeZoneModel::JsonTimeZoneModel(QObject *parent):
+    TimeZoneModel(parent)
 {
-    Q_ASSERT(uri == QLatin1String("Timezone"));
-
-    qmlRegisterType<XmlTimeZoneModel>(uri, 1, 0, "XmlTimeZoneModel");
-    qmlRegisterType<GenericTimeZoneModel>(uri, 1, 0, "GenericTimeZoneModel");
-    qmlRegisterType<JsonTimeZoneModel>(uri, 1, 1, "JsonTimeZoneModel");
 }
 
-void BackendPlugin::initializeEngine(QQmlEngine *engine, const char *uri)
+QUrl JsonTimeZoneModel::source() const
 {
-    QQmlExtensionPlugin::initializeEngine(engine, uri);
+    return m_source;
+}
+
+void JsonTimeZoneModel::setSource(const QUrl &source)
+{
+    if (m_source == source) {
+        return;
+    }
+
+    m_source = source;
+    emit sourceChanged();
 }

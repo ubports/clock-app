@@ -8,6 +8,7 @@ set(
     modules/Timezone/timezonemodel.cpp
     modules/Timezone/xmltimezonemodel.cpp
     modules/Timezone/generictimezonemodel.cpp
+    modules/Timezone/jsontimezonemodel.cpp
 )
 
 set(
