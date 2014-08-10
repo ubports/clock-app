@@ -75,7 +75,6 @@ QVariant TimeZoneModel::data(const QModelIndex &index, int role) const
 
     QDateTime currentDateTime = QDateTime::currentDateTime();
     QDateTime worldCityTime(currentDateTime.toTimeZone(m_timeZones.at(row).timeZone));
-    QDateTime localCityTime(currentDateTime);
 
     switch (role) {
     case RoleTimeString:
@@ -85,13 +84,13 @@ QVariant TimeZoneModel::data(const QModelIndex &index, int role) const
         */
         return worldCityTime.toString("hh:mm");
     case RoleDaysTo:
-        return localCityTime.daysTo(worldCityTime);
+        return currentDateTime.daysTo(worldCityTime);
     case RoleTimeTo:
         /*
-         FIXME: Workaround for localCityTime.secsTo(worldCityTime) which returns
+         FIXME: Workaround for currentDateTime.secsTo(worldCityTime) which returns
          0 indicating that the datetime object is invalid.
         */
-        return localCityTime.offsetFromUtc() - worldCityTime.offsetFromUtc();
+        return currentDateTime.offsetFromUtc() - worldCityTime.offsetFromUtc();
     }
 
     /*
