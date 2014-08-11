@@ -55,6 +55,9 @@ void JsonTimeZoneModel::setSource(const QUrl &source)
     m_source = source;
     emit sourceChanged();
 
+    m_loading = true;
+    emit loadingChanged();
+
     // Start the retrieval process
     loadTimeZonesFromJson();
 }
@@ -63,9 +66,6 @@ void JsonTimeZoneModel::loadTimeZonesFromJson()
 {
     // Define the request
     QNetworkRequest request(m_source);
-
-    m_loading = true;
-    emit loadingChanged();
 
     // Make the request to retrieve the data
     m_nam->get(request);
