@@ -127,7 +127,7 @@ Column {
                 UbuntuNumberAnimation {
                     target: userWorldCityDelegate
                     property: "height"
-                    to: 1
+                    to: 0
                 }
 
                 PropertyAction {

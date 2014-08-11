@@ -110,7 +110,7 @@ void XmlTimeZoneModel::loadTimeZonesFromXml()
                 tz.country = reader.text().toString();
             }
             if (isTzId) {
-                tz.timeZoneId = reader.text().toString();
+                tz.timeZone = QTimeZone(reader.text().toString().toLatin1());
             }
         }
 

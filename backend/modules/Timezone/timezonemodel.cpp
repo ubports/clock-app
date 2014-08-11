@@ -64,17 +64,19 @@ QVariant TimeZoneModel::data(const QModelIndex &index, int role) const
      We have defined Roles in our .h file. Lets use them here.
     */
 
-    QTimeZone zone(m_timeZones.at(row).timeZoneId.toLatin1());
-    QDateTime worldCityTime(QDateTime::currentDateTime().toTimeZone(zone));
-    QDateTime localCityTime(QDateTime::currentDateTime());
-
     switch (role) {
     case RoleCityName:
         return m_timeZones.at(row).cityName;
     case RoleCountryName:
         return m_timeZones.at(row).country;
     case RoleTimeZoneId:
-        return m_timeZones.at(row).timeZoneId;
+        return m_timeZones.at(row).timeZone.id();
+    }
+
+    QDateTime currentDateTime = QDateTime::currentDateTime();
+    QDateTime worldCityTime(currentDateTime.toTimeZone(m_timeZones.at(row).timeZone));
+
+    switch (role) {
     case RoleTimeString:
         /*
          FIXME: Until https://bugreports.qt-project.org/browse/QTBUG-40275
@@ -82,13 +84,13 @@ QVariant TimeZoneModel::data(const QModelIndex &index, int role) const
         */
         return worldCityTime.toString("hh:mm");
     case RoleDaysTo:
-        return localCityTime.daysTo(worldCityTime);
+        return currentDateTime.daysTo(worldCityTime);
     case RoleTimeTo:
         /*
-         FIXME: Workaround for localCityTime.secsTo(worldCityTime) which returns
+         FIXME: Workaround for currentDateTime.secsTo(worldCityTime) which returns
          0 indicating that the datetime object is invalid.
         */
-        return localCityTime.offsetFromUtc() - worldCityTime.offsetFromUtc();
+        return currentDateTime.offsetFromUtc() - worldCityTime.offsetFromUtc();
     }
 
     /*
