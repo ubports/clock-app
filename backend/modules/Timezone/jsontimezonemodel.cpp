@@ -84,13 +84,13 @@ void JsonTimeZoneModel::networkReplyFinished(QNetworkReply *reply)
 
     m_timeZones.clear();
 
-    TimeZone tz;
-
     /*
      Cycle through each QVariant object and transfer them to the TimeZone
      list.
     */
     foreach (const QVariant &entry, timezoneData.toList()) {
+        TimeZone tz;
+
         /*
          FIXME: Until geoname-lookup.ubuntu.com returns TimezoneID in its
          results, let's use a fake timezoneID to test the backend and the UI.
@@ -103,9 +103,6 @@ void JsonTimeZoneModel::networkReplyFinished(QNetworkReply *reply)
         tz.timeZone = QTimeZone(temp_timezone.toLatin1());
 
         m_timeZones.append(tz);
-
-        // Clear tz before next iteration
-        tz = TimeZone();
     }
 
     m_loading = false;
