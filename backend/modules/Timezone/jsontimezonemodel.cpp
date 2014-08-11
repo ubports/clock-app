@@ -17,12 +17,20 @@
  */
 
 #include <QDebug>
+#include <QNetworkReply>
+#include <QNetworkRequest>
+#include <QJsonDocument>
 
 #include "jsontimezonemodel.h"
 
 JsonTimeZoneModel::JsonTimeZoneModel(QObject *parent):
     TimeZoneModel(parent)
 {
+    m_nam = new QNetworkAccessManager(this);
+    connect(m_nam,
+            SIGNAL(finished(QNetworkReply*)),
+            this,
+            SLOT(networkReplyFinished(QNetworkReply*)));
 }
 
 QUrl JsonTimeZoneModel::source() const
@@ -33,9 +41,65 @@ QUrl JsonTimeZoneModel::source() const
 void JsonTimeZoneModel::setSource(const QUrl &source)
 {
     if (m_source == source) {
+        // Don't set the source again if it is the same source being set again
         return;
     }
 
+    // Update the source and emit the changed signal to let QML know
     m_source = source;
     emit sourceChanged();
+
+    // Start the retrieval process
+    loadTimeZonesFromJson();
+}
+
+void JsonTimeZoneModel::loadTimeZonesFromJson()
+{
+    // Define the request
+    QNetworkRequest request(m_source);
+
+    // Make the request to retrieve the data
+    m_nam->get(request);
+}
+
+void JsonTimeZoneModel::networkReplyFinished(QNetworkReply *reply)
+{
+    QByteArray data = reply->readAll();
+
+    QJsonDocument jsonDoc = QJsonDocument::fromJson(data);
+
+    QVariant timezoneData = jsonDoc.toVariant();
+
+//    if(timezoneData.isNull()) {
+//        return;
+//    }
+
+    // Let QML know model is being reset and rebuilt
+    beginResetModel();
+
+    m_timeZones.clear();
+
+    TimeZone tz;
+
+    /*
+     Cycle through each QVariant object and transfer them to the TimeZone
+     list.
+    */
+    foreach (const QVariant &entry, timezoneData.toList()) {
+        QString temp_timezone("Europe/Amsterdam");
+
+        tz.cityName = entry.toMap().value("name").toString();
+        tz.country = entry.toMap().value("country").toString();
+        tz.timeZone = QTimeZone(temp_timezone.toLatin1());
+
+        m_timeZones.append(tz);
+
+        // Clear tz before next iteration
+        tz = TimeZone();
+    }
+
+    // Let QML know model is reusable again
+    endResetModel();
+
+    reply->deleteLater();
 }

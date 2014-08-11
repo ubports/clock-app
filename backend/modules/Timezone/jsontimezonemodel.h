@@ -20,6 +20,7 @@
 #define JSONTIMEZONEMODEL_H
 
 #include <QUrl>
+#include <QNetworkAccessManager>
 
 #include "timezonemodel.h"
 
@@ -27,6 +28,7 @@ class JsonTimeZoneModel : public TimeZoneModel
 {
     Q_OBJECT
 
+    // Property to store the json document source
     Q_PROPERTY(QUrl source
                READ source
                WRITE setSource
@@ -35,16 +37,28 @@ class JsonTimeZoneModel : public TimeZoneModel
 public:
     JsonTimeZoneModel(QObject *parent = 0);
 
+    // Function to read the json document source
     QUrl source() const;
 
+    // Function to set the source
     void setSource(const QUrl &source);
 
 signals:
+    // Signal to notify the change of the source to QML
     void sourceChanged();
 
+private slots:
+    // Function to process the json document when a reply is received
+    void networkReplyFinished(QNetworkReply *reply);
+
 private:
+    // Private copy of the source received from QML
     QUrl m_source;
 
+    // Network access manager to request data from the online source
+    QNetworkAccessManager *m_nam;
+
+    // Function to initiate the retrieval process
     void loadTimeZonesFromJson();
 };
 

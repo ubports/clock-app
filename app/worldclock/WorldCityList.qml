@@ -105,6 +105,12 @@ Page {
         source: Qt.resolvedUrl("world-city-list.xml")
     }
 
+    JsonTimeZoneModel {
+        id: jsonTimeZoneModel
+        updateInterval: 60000
+        source: Qt.resolvedUrl("http://geoname-lookup.ubuntu.com/?query=Farnborough&release=utopic")
+    }
+
     SortFilterModel {
         id: sortedTimeZoneModel
         model: timeZoneModel
