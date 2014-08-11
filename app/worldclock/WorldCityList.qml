@@ -84,7 +84,7 @@ Page {
 
                 Timer {
                     id: search_timer
-                    interval: isOnlineMode ? 800 : 0
+                    interval: 500
                     repeat: false
                     onTriggered:  {
                         isOnlineMode = false
@@ -94,11 +94,11 @@ Page {
                             isOnlineMode = false
                         }
 
-                        if(!isOnlineMode) {
-                            if(sortedTimeZoneModel.count === 0) {
-                                console.log("Enabling online mode")
-                                isOnlineMode = true
-                            }
+                        console.log(isOnlineMode + ":" + sortedTimeZoneModel.count)
+
+                        if(!isOnlineMode && sortedTimeZoneModel.count === 0) {
+                            console.log("Enabling online mode")
+                            isOnlineMode = true
                         }
 
                         if(isOnlineMode) {
@@ -147,6 +147,32 @@ Page {
         sort.order: Qt.AscendingOrder
         filter.property: "city"
         filter.pattern: RegExp(searchField.text, "gi")
+    }
+
+    Label {
+        id: onlineStateLabel
+        visible: jsonTimeZoneModel.loading ||
+                 (!jsonTimeZoneModel.loading && sortedTimeZoneModel.count === 0)
+        text: {
+            if(jsonTimeZoneModel.loading)
+                return i18n.tr("Searching for a city")
+            else if(!jsonTimeZoneModel.loading && sortedTimeZoneModel.count === 0)
+                return i18n.tr("No City Found")
+        }
+        anchors {
+            horizontalCenter: parent.horizontalCenter
+            top: parent.top
+            topMargin: units.gu(4)
+        }
+    }
+
+    ActivityIndicator {
+        running: jsonTimeZoneModel.loading
+        anchors {
+            top: onlineStateLabel.bottom
+            topMargin: units.gu(3)
+            horizontalCenter: parent.horizontalCenter
+        }
     }
 
     ListView {
