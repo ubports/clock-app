@@ -91,6 +91,11 @@ void JsonTimeZoneModel::networkReplyFinished(QNetworkReply *reply)
      list.
     */
     foreach (const QVariant &entry, timezoneData.toList()) {
+        /*
+         FIXME: Until geoname-lookup.ubuntu.com returns TimezoneID in its
+         results, let's use a fake timezoneID to test the backend and the UI.
+         Remove this hack before merging to trunk!
+        */
         QString temp_timezone("Europe/Amsterdam");
 
         tz.cityName = entry.toMap().value("name").toString();
