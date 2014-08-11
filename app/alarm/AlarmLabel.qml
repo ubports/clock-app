@@ -48,6 +48,7 @@ Page {
             objectName: "labelEntry"
             text: alarm.message
             width: parent.width
+            inputMethodHints: Qt.ImhNoPredictiveText
         }
     }
 
@@ -55,6 +56,7 @@ Page {
         back: Button {
             action: Action {
                 iconName: "back"
+                enabled: _labelEntry.text !== ""
                 onTriggered: {
                     alarm.message = _labelEntry.text
                     mainStack.pop()
