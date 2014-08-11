@@ -84,17 +84,11 @@ Page {
 
                 Timer {
                     id: search_timer
-                    interval: 500
+                    interval: isOnlineMode ? 1 : 500
                     repeat: false
                     onTriggered:  {
                         isOnlineMode = false
                         console.log("Search string: " + searchField.text)
-
-                        if(searchField.text === "") {
-                            isOnlineMode = false
-                        }
-
-                        console.log(isOnlineMode + ":" + sortedTimeZoneModel.count)
 
                         if(!isOnlineMode && sortedTimeZoneModel.count === 0) {
                             console.log("Enabling online mode")
@@ -156,8 +150,10 @@ Page {
         text: {
             if(jsonTimeZoneModel.loading)
                 return i18n.tr("Searching for a city")
-            else if(!jsonTimeZoneModel.loading && sortedTimeZoneModel.count === 0)
+            else if(!jsonTimeZoneModel.loading && isOnlineMode && sortedTimeZoneModel.count === 0)
                 return i18n.tr("No City Found")
+            else
+                return ""
         }
         anchors {
             horizontalCenter: parent.horizontalCenter
