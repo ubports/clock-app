@@ -79,13 +79,6 @@ void JsonTimeZoneModel::networkReplyFinished(QNetworkReply *reply)
 
     QVariant timezoneData = jsonDoc.toVariant();
 
-//    if(timezoneData.isNull()) {
-//        return;
-//    }
-
-    m_loading = false;
-    emit loadingChanged();
-
     // Let QML know model is being reset and rebuilt
     beginResetModel();
 
@@ -109,6 +102,9 @@ void JsonTimeZoneModel::networkReplyFinished(QNetworkReply *reply)
         // Clear tz before next iteration
         tz = TimeZone();
     }
+
+    m_loading = false;
+    emit loadingChanged();
 
     // Let QML know model is reusable again
     endResetModel();
