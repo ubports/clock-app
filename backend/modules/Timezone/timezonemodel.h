@@ -21,6 +21,7 @@
 
 #include <QAbstractListModel>
 #include <QTimer>
+#include <QTimeZone>
 
 /*
   TimeZoneModel class based on QAbstractListModel to make it compatible with
@@ -98,7 +99,7 @@ protected:
     struct TimeZone{
         QString cityName;
         QString country;
-        QString timeZoneId;
+        QTimeZone timeZone;
     };
 
     // Keep a list of TimeZone objects, holding all our timeZones.
