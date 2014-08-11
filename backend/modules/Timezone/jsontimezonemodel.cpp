@@ -55,6 +55,9 @@ void JsonTimeZoneModel::setSource(const QUrl &source)
     m_source = source;
     emit sourceChanged();
 
+    m_loading = true;
+    emit loadingChanged();
+
     // Start the retrieval process
     loadTimeZonesFromJson();
 }
@@ -63,9 +66,6 @@ void JsonTimeZoneModel::loadTimeZonesFromJson()
 {
     // Define the request
     QNetworkRequest request(m_source);
-
-    m_loading = true;
-    emit loadingChanged();
 
     // Make the request to retrieve the data
     m_nam->get(request);
@@ -91,6 +91,11 @@ void JsonTimeZoneModel::networkReplyFinished(QNetworkReply *reply)
      list.
     */
     foreach (const QVariant &entry, timezoneData.toList()) {
+        /*
+         FIXME: Until geoname-lookup.ubuntu.com returns TimezoneID in its
+         results, let's use a fake timezoneID to test the backend and the UI.
+         Remove this hack before merging to trunk!
+        */
         QString temp_timezone("Europe/Amsterdam");
 
         tz.cityName = entry.toMap().value("name").toString();
