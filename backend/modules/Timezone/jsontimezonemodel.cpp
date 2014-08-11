@@ -24,7 +24,8 @@
 #include "jsontimezonemodel.h"
 
 JsonTimeZoneModel::JsonTimeZoneModel(QObject *parent):
-    TimeZoneModel(parent)
+    TimeZoneModel(parent),
+    m_loading(false)
 {
     m_nam = new QNetworkAccessManager(this);
     connect(m_nam,
@@ -36,6 +37,11 @@ JsonTimeZoneModel::JsonTimeZoneModel(QObject *parent):
 QUrl JsonTimeZoneModel::source() const
 {
     return m_source;
+}
+
+bool JsonTimeZoneModel::loading() const
+{
+    return m_loading;
 }
 
 void JsonTimeZoneModel::setSource(const QUrl &source)
@@ -58,6 +64,9 @@ void JsonTimeZoneModel::loadTimeZonesFromJson()
     // Define the request
     QNetworkRequest request(m_source);
 
+    m_loading = true;
+    emit loadingChanged();
+
     // Make the request to retrieve the data
     m_nam->get(request);
 }
@@ -73,6 +82,9 @@ void JsonTimeZoneModel::networkReplyFinished(QNetworkReply *reply)
 //    if(timezoneData.isNull()) {
 //        return;
 //    }
+
+    m_loading = false;
+    emit loadingChanged();
 
     // Let QML know model is being reset and rebuilt
     beginResetModel();
