@@ -75,6 +75,7 @@ Page {
                 id: searchField
 
                 inputMethodHints: Qt.ImhNoPredictiveText
+                placeholderText: i18n.tr("Search...")
 
                 anchors {
                     left: parent ? parent.left : undefined
@@ -192,6 +193,10 @@ Page {
 
         function getSectionText(index) {
             return sortedTimeZoneModel.get(index).city.substring(0,1)
+        }
+
+        onFlickStarted: {
+            Qt.inputMethod.hide()
         }
 
         anchors.fill: parent
