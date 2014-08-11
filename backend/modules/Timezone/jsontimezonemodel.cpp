@@ -103,9 +103,6 @@ void JsonTimeZoneModel::networkReplyFinished(QNetworkReply *reply)
         tz.timeZone = QTimeZone(temp_timezone.toLatin1());
 
         m_timeZones.append(tz);
-
-        // Clear tz before next iteration
-        tz = TimeZone();
     }
 
     m_loading = false;
