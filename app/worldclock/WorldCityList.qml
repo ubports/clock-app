@@ -35,6 +35,8 @@ import "../upstreamcomponents"
 Page {
     id: worldCityList
 
+    property bool isOnlineMode: false
+
     title: i18n.tr("Select a city")
     visible: false
     flickable: null
@@ -65,6 +67,7 @@ Page {
                 onTriggered: {
                     searchField.text = ""
                     worldCityList.state = "default"
+                    isOnlineMode = false
                 }
             }
 
@@ -79,9 +82,36 @@ Page {
                     rightMargin: units.gu(2)
                 }
 
+                Timer {
+                    id: search_timer
+                    interval: isOnlineMode ? 800 : 0
+                    repeat: false
+                    onTriggered:  {
+                        isOnlineMode = false
+                        console.log("Search string: " + searchField.text)
+
+                        if(searchField.text === "") {
+                            isOnlineMode = false
+                        }
+
+                        if(!isOnlineMode) {
+                            if(sortedTimeZoneModel.count === 0) {
+                                console.log("Enabling online mode")
+                                isOnlineMode = true
+                            }
+                        }
+
+                        if(isOnlineMode) {
+                            var url = "http://geoname-lookup.ubuntu.com/?query="
+                                    + searchField.text
+                            console.log("Online URL: " + url)
+                            jsonTimeZoneModel.source = Qt.resolvedUrl(url)
+                        }
+                    }
+                }
+
                 onTextChanged: {
-                    sortedTimeZoneModel.filter.property = "city"
-                    sortedTimeZoneModel.filter.pattern = RegExp(searchField.text, "gi")
+                    search_timer.restart()
                 }
             }
         }
@@ -95,21 +125,28 @@ Page {
               from suspend instead of waiting for the next minute to update.
             */
             if(applicationState)
-                timeZoneModel.update()
+                xmlTimeZoneModel.update()
         }
     }
 
+    JsonTimeZoneModel {
+        id: jsonTimeZoneModel
+        updateInterval: 60000
+    }
+
     XmlTimeZoneModel {
-        id: timeZoneModel
+        id: xmlTimeZoneModel
         updateInterval: 60000
         source: Qt.resolvedUrl("world-city-list.xml")
     }
 
     SortFilterModel {
         id: sortedTimeZoneModel
-        model: timeZoneModel
+        model: isOnlineMode ? jsonTimeZoneModel : xmlTimeZoneModel
         sort.property: "city"
         sort.order: Qt.AscendingOrder
+        filter.property: "city"
+        filter.pattern: RegExp(searchField.text, "gi")
     }
 
     ListView {
