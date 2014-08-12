@@ -64,7 +64,9 @@ endif()
 
 add_subdirectory(app)
 add_subdirectory(backend)
-add_subdirectory(tests)
+if(NOT CLICK_MODE)
+  add_subdirectory(tests)
+endif(NOT CLICK_MODE)
 
 add_custom_target("autopilot" chmod +x ${CMAKE_SOURCE_DIR}/tests/autopilot/run
                     COMMAND ${CMAKE_SOURCE_DIR}/tests/autopilot/run
