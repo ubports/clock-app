@@ -32,6 +32,7 @@ if(CLICK_MODE)
 
   set(QT_IMPORTS_DIR "${CMAKE_INSTALL_LIBDIR}")
   set(EXEC "qmlscene $@ ${UBUNTU-CLOCK_APP_DIR}/${MAIN_QML}")
+  set(MODULE_PATH ${QT_IMPORTS_DIR})
 else(CLICK_MODE)
   set(UBUNTU-CLOCK_APP_DIR "${CMAKE_INSTALL_DATADIR}/ubuntu-clock-app")
   execute_process( 
@@ -39,10 +40,8 @@ else(CLICK_MODE)
             OUTPUT_VARIABLE QT_IMPORTS_DIR 
             OUTPUT_STRIP_TRAILING_WHITESPACE 
     )
-
-endif(CLICK_MODE)
-
 set(MODULE_PATH ${QT_IMPORTS_DIR}/ClockApp)
+endif(CLICK_MODE)
 
 if(${CLICK_MODE})
   install(FILES manifest.json DESTINATION ${CMAKE_INSTALL_PREFIX})
