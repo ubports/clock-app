@@ -33,6 +33,17 @@ if(CLICK_MODE)
   set(QT_IMPORTS_DIR "${CMAKE_INSTALL_LIBDIR}")
   set(EXEC "qmlscene $@ ${UBUNTU-CLOCK_APP_DIR}/${MAIN_QML}")
   set(MODULE_PATH ${QT_IMPORTS_DIR})
+  if(NOT BZR_REVNO)
+    execute_process( 
+      COMMAND bzr revno
+              OUTPUT_VARIABLE BZR_REVNO 
+              WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+              OUTPUT_STRIP_TRAILING_WHITESPACE 
+      )
+  endif(NOT BZR_REVNO)
+  if(NOT BZR_SOURCE)
+    set(BZR_SOURCE lp:ubuntu-clock-app)
+  endif(NOT BZR_SOURCE)
 else(CLICK_MODE)
   set(UBUNTU-CLOCK_APP_DIR "${CMAKE_INSTALL_DATADIR}/ubuntu-clock-app")
   execute_process( 
@@ -44,7 +55,8 @@ set(MODULE_PATH ${QT_IMPORTS_DIR}/ClockApp)
 endif(CLICK_MODE)
 
 if(${CLICK_MODE})
-  install(FILES manifest.json DESTINATION ${CMAKE_INSTALL_PREFIX})
+  configure_file(manifest.json manifest.json)
+  install(FILES ${CMAKE_CURRENT_BINARY_DIR}/manifest.json DESTINATION ${CMAKE_INSTALL_PREFIX})
   install(FILES "${APP_HARDCODE}.json" DESTINATION ${CMAKE_INSTALL_PREFIX})
 else(CLICK_MODE)
   set(EXEC "qmlscene $@ -I ${MODULE_PATH}  ${CMAKE_INSTALL_PREFIX}/${UBUNTU-CLOCK_APP_DIR}/${MAIN_QML}")

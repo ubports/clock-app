@@ -11,7 +11,7 @@
             "desktop": "share/applications/ubuntu-clock-app.desktop"
         }
     },
-    "version": "0.1",
+    "version": "0.1.@BZR_REVNO@",
     "maintainer": "Ubuntu App Cats <ubuntu-touch-coreapps@lists.launchpad.net>",
     "x-test": {
         "autopilot": "ubuntu_clock_app"
