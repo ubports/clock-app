@@ -347,7 +347,7 @@ class AlarmList(object):
     @classmethod
     def select(cls, main_view):
         proxy_object = main_view.wait_select_single(
-            objectName='alarmListFlickable')
+            'AlarmList', objectName='alarmListView')
         proxy_object.visible.wait_for(True)
         return cls(proxy_object)
 
@@ -357,8 +357,7 @@ class AlarmList(object):
 
     def _get_saved_alarms_list(self):
         """Return the saved alarm list"""
-        return self.proxy_object.wait_select_single(
-            'QQuickRepeater', objectName='alarmListRepeater')
+        return self.proxy_object
 
     def get_saved_alarms(self):
         """Return a list with the information of the saved alarms.

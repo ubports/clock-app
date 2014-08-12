@@ -262,6 +262,7 @@ Item {
             }
         }
         Behavior on color {
+            enabled: (root.color != root.selectedColor)
            ColorAnimation {}
         }
     }

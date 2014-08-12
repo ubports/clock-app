@@ -38,6 +38,12 @@ class AlarmSettings: public QObject
                 WRITE setDuration
                 NOTIFY durationChanged)
 
+    // Property to control the haptic feedback mode
+    Q_PROPERTY(QString vibration
+               READ vibration
+               WRITE setVibration
+               NOTIFY vibrationChanged)
+
 public:
     AlarmSettings(QObject *parent = 0);
 
@@ -47,11 +53,17 @@ public:
     // Function to return the alarm duration
     int duration() const;
 
+    // Function to return the alarm haptic mode
+    QString vibration() const;
+
     // Function to set the alarm volume
     void setVolume(int volume);
 
     // Function to set the alarm duration
     void setDuration(int duration);
+
+    // Function to set the alarm haptic mode
+    void setVibration(QString vibration);
 
 signals:
     // Signal to notify the volume change to QML
@@ -60,12 +72,18 @@ signals:
     // Signal to notify the duration change to QML
     void durationChanged();
 
+    // Signal to notify the vibration mode change to QML
+    void vibrationChanged();
+
 private:
     // Keep a store of the alarm volume
     int m_volume;
 
     // Keep a store of the alarm duration
     int m_duration;
+
+    // Keep a store of the alarm haptic mode
+    QString m_vibration;
 
     // Function to retrieve all the settings from dBus and update the properties
     void refreshProperties();
