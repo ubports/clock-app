@@ -41,7 +41,6 @@ class ClockAppTestCase(base.UbuntuUIToolkitAppTestCase):
 
     """
 
-
     local_location = os.path.dirname(os.path.dirname(os.getcwd()))
     local_location_qml = os.path.join(local_location,
                                       'app/ubuntu-clock-app.qml')
