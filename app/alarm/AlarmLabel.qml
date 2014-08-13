@@ -70,16 +70,13 @@ Page {
         }
     }
 
-    tools: ToolbarItems {
-        back: Button {
-            action: Action {
-                id: backAction
-                iconName: "back"
-                onTriggered: {
-                    alarm.message = _labelEntry.text
-                    mainStack.pop()
-                }
-            }
+    head.backAction: Action {
+        id: backAction
+        objectName: "backAction"
+        iconName: "back"
+        onTriggered: {
+            alarm.message = _labelEntry.text
+            mainStack.pop()
         }
     }
 }
