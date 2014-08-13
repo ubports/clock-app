@@ -4,29 +4,25 @@ import Ubuntu.Test 1.0
 import Ubuntu.Components 1.1
 import "../../app/alarm"
 
-Item {
+MainView {
+    id: mainView
+
     width: units.gu(40)
     height: units.gu(70)
+    useDeprecatedToolbar: false
 
-    MainView {
-        id: mainView
+    Alarm {
+        id: _alarm
+    }
 
-        anchors.fill: parent
-        useDeprecatedToolbar: false
-
-        Alarm {
-            id: _alarm
-        }
-
-        AlarmLabel {
-            id: alarmLabelPage
-            alarm: _alarm
-        }
+    AlarmLabel {
+        id: alarmLabelPage
+        alarm: _alarm
     }
 
     UbuntuTestCase {
         id: alarmLabelPageTest
-        name: "alarmLabelPage"
+        name: "AlarmLabelPage"
 
         when: windowShown
 
