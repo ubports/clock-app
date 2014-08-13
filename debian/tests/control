@@ -1,0 +1,13 @@
+Tests: make-autopilot make-test
+Depends: autopilot-touch,
+         cmake,
+         libautopilot-qt,
+         libqt5test5,
+         python3-autopilot,
+         qml-module-qttest,
+         qt5-default,
+         qtbase5-dev,
+         qtdeclarative5-dev,
+         qtdeclarative5-dev-tools,
+         ubuntu-ui-toolkit-autopilot
+Restrictions: build-needed
