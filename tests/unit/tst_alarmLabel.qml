@@ -37,6 +37,10 @@ Item {
             alarmLabelPageTest.header = findChild(mainView, "MainView_Header")
         }
 
+        /*
+         Test to check if the back button is disabled when the alarm label is
+         an empty string.
+        */
         function test_backButtonDisabledOnEmptyAlarmLabel() {
             var alarmLabel = findChild(alarmLabelPage, "labelEntry")
             var backButton = findChild(header, "customBackButton")
@@ -48,7 +52,7 @@ Item {
             // Get textfield focus by clicking once
             mouseClick(alarmLabel, alarmLabel.width - units.gu(2), alarmLabel.height/2)
 
-            // When textfield is focused, click on the clear button shown on the right
+            // Click on the clear button shown on the right
             mouseClick(alarmLabel, alarmLabel.width - units.gu(2), alarmLabel.height/2)
 
             tryCompare(alarmLabel, "text", "", 0, "Alarm label is empty")
