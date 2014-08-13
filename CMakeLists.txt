@@ -54,7 +54,7 @@ install(DIRECTORY "app/graphics" DESTINATION ${DATA_DIR})
 install(FILES "${APP_HARDCODE}.json" DESTINATION ${DATA_DIR})
 
 file(GLOB_RECURSE I18N_SRC_FILES
-    RELATIVE ${CMAKE_CURRENT_SOURCE_DIR}
+    RELATIVE ${CMAKE_CURRENT_SOURCE_DIR}/po
     app/**.qml backend/**.cpp backend/**.h)
 list(SORT I18N_SRC_FILES)
 
