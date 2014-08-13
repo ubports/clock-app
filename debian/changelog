@@ -1,4 +1,4 @@
-ubuntu-clock-app (3.0.1-0ubuntu2) utopic; urgency=medium
+ubuntu-clock-app (3.1) utopic; urgency=medium
 
   [Nekhelesh Ramananthan]
   * Alarm name label no longer accepts predictive text and empty
