@@ -28,7 +28,8 @@ Depends: qmlscene,
          ${misc:Depends},
          ${shlibs:Depends}
 Description: Clock application
- Ubuntu Core Clock application which provides Stopwatch, Timer, Alarm and Clock functionalities.
+ Ubuntu Core Clock application which provides Stopwatch, Timer, Alarm and 
+ Clock functionalities.
 
 Package: ubuntu-clock-app-autopilot
 Architecture: all
