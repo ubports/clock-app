@@ -6,6 +6,8 @@ set(POT_FILE ${DOMAIN}.pot)
 file(GLOB PO_FILES *.po)
 
 add_custom_target(${POT_FILE} ALL
+    COMMAND ${INTLTOOL_EXTRACT} --update --type=gettext/ini
+        --srcdir=${CMAKE_SOURCE_DIR} ${DESKTOP_FILE}.in.in
     COMMAND ${GETTEXT_XGETTEXT_EXECUTABLE} -o ${POT_FILE}
         -D ${CMAKE_CURRENT_SOURCE_DIR}
         --from-code=UTF-8

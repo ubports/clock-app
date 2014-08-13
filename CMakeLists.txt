@@ -56,7 +56,21 @@ install(FILES "${APP_HARDCODE}.json" DESTINATION ${DATA_DIR})
 file(GLOB_RECURSE I18N_SRC_FILES
     RELATIVE ${CMAKE_CURRENT_SOURCE_DIR}/po
     app/**.qml backend/**.cpp backend/**.h)
+list(APPEND I18N_SRC_FILES ${DESKTOP_FILE}.in.in.h)
 list(SORT I18N_SRC_FILES)
+
+set(DESKTOP_FILE "app/${APP_HARDCODE}.desktop")
+#configure_file(${DESKTOP_FILE}.in ${CMAKE_CURRENT_BINARY_DIR}/${DESKTOP_FILE})
+
+configure_file(${DESKTOP_FILE}.in.in ${DESKTOP_FILE}.in)
+
+add_custom_target(${DESKTOP_FILE} ALL
+    COMMENT "Merging translations into ${DESKTOP_FILE}"
+    COMMAND LC_ALL=C ${INTLTOOL_MERGE} -d -u ${CMAKE_SOURCE_DIR}/po ${DESKTOP_FILE}.in ${DESKTOP_FILE}
+)
+
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/${DESKTOP_FILE}
+    DESTINATION ${DESKTOP_DIR})
 
 add_subdirectory(app)
 add_subdirectory(backend)
