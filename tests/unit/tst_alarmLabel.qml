@@ -40,6 +40,7 @@ MainView {
         function cleanup() {
             clearTextField(alarmLabel)
             typeString("Alarm")
+            alarmLabelPage.alarm.message = "Alarm"
         }
 
         function clearTextField(textfield) {
@@ -58,6 +59,10 @@ MainView {
                     ]
         }
 
+        /*
+         Test to check if the back header button is enabled/disabled correctly
+         for different alarm label scenarios.
+        */
         function test_backButtonEnabled(data) {
             compare(alarmLabel.text, "Alarm", "Default alarm label is not Alarm")
             compare(backButton.enabled, true, "Back header button is not enabled by default")
@@ -67,6 +72,15 @@ MainView {
 
             compare(alarmLabel.text, data.string, "Alarm label is not what was type in the textfield")
             compare(backButton.enabled, data.enableStatus, "Back Button enable status is not as expected")
+        }
+
+        /*
+         Test to check if the alarm label text is set to the alarm message
+         when the page is loaded.
+        */
+        function test_alarmLabelIsSameAsAlarmMessage() {
+            alarmLabelPage.alarm.message = "Random Alarm Label"
+            compare(alarmLabel.text, "Random Alarm Label", "Alarm label set is not the same as alarm message")
         }
     }
 }
