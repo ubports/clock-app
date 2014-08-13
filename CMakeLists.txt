@@ -53,8 +53,14 @@ endif()
 install(DIRECTORY "app/graphics" DESTINATION ${DATA_DIR})
 install(FILES "${APP_HARDCODE}.json" DESTINATION ${DATA_DIR})
 
+file(GLOB_RECURSE I18N_SRC_FILES
+    RELATIVE ${CMAKE_CURRENT_SOURCE_DIR}
+    app/**.qml backend/**.cpp backend/**.h)
+list(SORT I18N_SRC_FILES)
+
 add_subdirectory(app)
 add_subdirectory(backend)
+add_subdirectory(po)
 
 add_custom_target("autopilot" chmod +x ${CMAKE_SOURCE_DIR}/app/tests/autopilot/run
                     COMMAND ${CMAKE_SOURCE_DIR}/app/tests/autopilot/run
