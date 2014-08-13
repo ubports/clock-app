@@ -4,15 +4,20 @@
     "framework": "ubuntu-sdk-14.10-dev2",
     "architecture": "all",
     "title": "Clock Reboot",
+    "icon": "clock@30.png",
     "hooks": {
         "ubuntu-clock-app": {
             "apparmor": "ubuntu-clock-app.json",
-            "desktop": "ubuntu-clock-app.desktop"
+            "desktop": "share/applications/ubuntu-clock-app.desktop"
         }
     },
-    "version": "0.1",
+    "version": "3.0.@BZR_REVNO@",
     "maintainer": "Ubuntu App Cats <ubuntu-touch-coreapps@lists.launchpad.net>",
     "x-test": {
         "autopilot": "ubuntu_clock_app"
+    },
+    "x-source": {
+        "vcs-bzr": "@BZR_SOURCE@",
+        "vcs-bzr-revno": "@BZR_REVNO@"
     }
 }
