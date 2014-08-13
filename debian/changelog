@@ -3,6 +3,7 @@ ubuntu-clock-app (3.1) utopic; urgency=medium
   [Nekhelesh Ramananthan]
   * Alarm name label no longer accepts predictive text and empty
     strings. (LP: #1355414)
+  * Synced the fast scroll component with upstream changes
   * Updated inner clock texture as requested by design
 
  -- Nekhelesh Ramananthan <krnekhelesh@gmail.com>  Wed, 13 Aug 2014 15:46:12 +0200
