@@ -46,8 +46,7 @@ Item {
             var backButton = findChild(header, "customBackButton")
 
             compare(backButton.enabled, true, "Back Button is enabled by default due to placeholder alarm label")
-
-            tryCompare(alarmLabel, "text", "Alarm", 0, "Default alarm label")
+            compare(alarmLabel.text, "Alarm", "Default alarm label")
 
             // Get textfield focus by clicking once
             mouseClick(alarmLabel, alarmLabel.width - units.gu(2), alarmLabel.height/2)
@@ -55,8 +54,7 @@ Item {
             // Click on the clear button shown on the right
             mouseClick(alarmLabel, alarmLabel.width - units.gu(2), alarmLabel.height/2)
 
-            tryCompare(alarmLabel, "text", "", 0, "Alarm label is empty")
-
+            compare(alarmLabel.text, "", "Alarm label is empty")
             compare(backButton.enabled, false, "Back Button is disabled since alarm label is empty")
         }
     }
