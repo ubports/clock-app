@@ -20,150 +20,127 @@ import QtQuick 2.0
 import Ubuntu.Components 1.1
 import Ubuntu.Components.ListItems 1.0 as ListItem
 import "../components"
+import "../upstreamcomponents"
 import "../components/Utils.js" as Utils
 
-Flickable {
-    id: alarmListFlickable
-    objectName: "alarmListFlickable"
+MultipleSelectionListView {
+    id: alarmListView
+    objectName: "alarmListView"
 
-    // Property to set the model of the saved alarm list
-    property var model
+    property var _currentSwipedItem: null
 
-    /*
-      Property to set the minimum drag distance before activating the add
-      alarm signal
-    */
-    property int _minThreshold: addAlarmButton.maxThreshold + units.gu(2)
+    function _updateSwipeState(item)
+    {
+        if (item.swipping) {
+            return
+        }
+
+        if (item.swipeState !== "Normal") {
+            if (alarmListView._currentSwipedItem !== item) {
+                if (alarmListView._currentSwipedItem) {
+                    alarmListView._currentSwipedItem.resetSwipe()
+                }
+                alarmListView._currentSwipedItem = item
+            }
+        } else if (item.swipeState !== "Normal"
+                   && alarmListView._currentSwipedItem === item) {
+            alarmListView._currentSwipedItem = null
+        }
+    }
 
     clip: true
     anchors.fill: parent
-    contentHeight: alarmList.height
 
     AlarmUtils {
         id: alarmUtils
     }
 
-    PullToAdd {
-        id: addAlarmButton
-        objectName: "addAlarmButton"
+    listDelegate: AlarmDelegate {
+        id: alarmDelegate
+        objectName: "alarm" + index
 
-        anchors {
-            top: parent.top
-            topMargin: -labelHeight - units.gu(3)
-            horizontalCenter: parent.horizontalCenter
+        property var removalAnimation
+
+        function remove() {
+            removalAnimation.start()
         }
 
-        leftLabel: i18n.tr("Add")
-        rightLabel: i18n.tr("Alarm")
-    }
+        selectionMode: alarmListView.isInSelectionMode
+        selected: alarmListView.isSelected(alarmDelegate)
 
-    Column {
-        id: alarmList
-        objectName: 'alarmList'
-        anchors.fill: parent
+        onSwippingChanged: {
+            _updateSwipeState(alarmDelegate)
+        }
 
-        Repeater {
-            id: alarmRepeater
-            objectName: "alarmListRepeater"
+        onSwipeStateChanged: {
+            _updateSwipeState(alarmDelegate)
+        }
 
-            property var _currentSwipedItem: null
-
-            function _updateSwipeState(item)
-            {
-                if (item.swipping) {
-                    return
-                }
-
-                if (item.swipeState !== "Normal") {
-                    if (alarmRepeater._currentSwipedItem !== item) {
-                        if (alarmRepeater._currentSwipedItem) {
-                            alarmRepeater._currentSwipedItem.resetSwipe()
-                        }
-                        alarmRepeater._currentSwipedItem = item
-                    }
-                } else if (item.swipeState !== "Normal"
-                           && alarmRepeater._currentSwipedItem === item) {
-                    alarmRepeater._currentSwipedItem = null
-                }
+        leftSideAction: Action {
+            iconName: "delete"
+            text: i18n.tr("Delete")
+            onTriggered: {
+                alarmDelegate.remove()
             }
+        }
 
-            model: alarmListFlickable.model
-
-            delegate: AlarmDelegate {
-                id: alarmDelegate
-                objectName: "alarm" + index
-
-                property var removalAnimation
-
-                function remove() {
-                    removalAnimation.start()
-                }
-
-                onSwippingChanged: {
-                    alarmRepeater._updateSwipeState(alarmDelegate)
-                }
-
-                onSwipeStateChanged: {
-                    alarmRepeater._updateSwipeState(alarmDelegate)
-                }
-
-                leftSideAction: Action {
-                    iconName: "delete"
-                    text: i18n.tr("Delete")
-                    onTriggered: {
-                        alarmDelegate.remove()
-                    }
-                }
-
-                ListView.onRemove: ScriptAction {
-                    script: {
-                        if (alarmRepeater._currentSwipedItem
-                                === alarmDelegate) {
-                            alarmRepeater._currentSwipedItem = null
-                        }
-                    }
-                }
-
-                removalAnimation: SequentialAnimation {
-                    alwaysRunToEnd: true
-
-                    PropertyAction {
-                        target: alarmDelegate
-                        property: "ListView.delayRemove"
-                        value: true
-                    }
-
-                    UbuntuNumberAnimation {
-                        target: alarmDelegate
-                        property: "height"
-                        to: 0
-                    }
-
-                    PropertyAction {
-                        target: alarmDelegate
-                        property: "ListView.delayRemove"
-                        value: false
-                    }
-
-                    ScriptAction {
-                        script: {
-                            var alarm = alarmModel.get(index)
-                            alarm.cancel()
-                        }
-                    }
+        ListView.onRemove: ScriptAction {
+            script: {
+                if (_currentSwipedItem
+                        === alarmDelegate) {
+                    _currentSwipedItem = null
                 }
             }
         }
-    }
 
-    onDragEnded: {
-        if(contentY < _minThreshold)
-            mainStack.push(Qt.resolvedUrl("EditAlarmPage.qml"))
-    }
+        removalAnimation: SequentialAnimation {
+            alwaysRunToEnd: true
 
-    onContentYChanged: {
-        if(contentY < 0 && atYBeginning) {
-            addAlarmButton.dragPosition = contentY.toFixed(0)
+            PropertyAction {
+                target: alarmDelegate
+                property: "ListView.delayRemove"
+                value: true
+            }
+
+            UbuntuNumberAnimation {
+                target: alarmDelegate
+                property: "height"
+                to: 0
+            }
+
+            PropertyAction {
+                target: alarmDelegate
+                property: "ListView.delayRemove"
+                value: false
+            }
+
+            ScriptAction {
+                script: {
+                    var alarm = alarmModel.get(index)
+                    alarm.cancel()
+                }
+            }
+        }
+
+        onItemClicked: {
+            if(alarmListView.isInSelectionMode) {
+                if(!alarmListView.selectItem(alarmDelegate)) {
+                    alarmListView.deselectItem(alarmDelegate)
+                }
+                return
+            }
+
+            else {
+                mainStack.push(Qt.resolvedUrl("EditAlarmPage.qml"),
+                               {"isNewAlarm": false, "alarmIndex": index})
+            }
+        }
+
+        onItemPressAndHold: {
+            if (!alarmListView.isInSelectionMode) {
+                alarmListView.startSelection()
+                alarmListView.selectItem(alarmDelegate)
+            }
         }
     }
 }

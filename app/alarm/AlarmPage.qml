@@ -21,25 +21,84 @@ import Ubuntu.Components 1.1
 import "../components/Utils.js" as Utils
 
 Page {
-    title: "Alarms"
+    id: alarmPage
+
+    title: i18n.tr("Alarms")
     objectName: 'AlarmPage'
-
-    flickable: null
-
-    head.actions: Action {
-        objectName: "addAlarmAction"
-        iconName: "add"
-        text: i18n.tr("Alarm")
-        onTriggered: {
-            mainStack.push(Qt.resolvedUrl("EditAlarmPage.qml"))
-        }
-    }
 
     Component.onCompleted: Utils.log(debugMode, "Alarm Page loaded")
 
+    flickable: null
+
+    states: [
+        PageHeadState {
+            name: "default"
+            head: alarmPage.head
+            when: !alarmListView.isInSelectionMode
+            actions: [
+                Action {
+                    objectName: "addAlarmAction"
+                    iconName: "add"
+                    text: i18n.tr("Alarm")
+                    onTriggered: {
+                        mainStack.push(Qt.resolvedUrl("EditAlarmPage.qml"))
+                    }
+                }
+            ]
+        },
+
+        PageHeadState {
+            name: "selection"
+            head: alarmPage.head
+            when: alarmListView.isInSelectionMode
+            backAction: Action {
+                text: i18n.tr("Cancel selection")
+                iconName: "close"
+                onTriggered: {
+                    alarmListView.cancelSelection()
+                }
+            }
+
+            actions: [
+                Action {
+                    text: i18n.tr("Select All")
+                    iconName: "select"
+                    onTriggered: {
+                        if(alarmListView.selectedItems.count
+                                === alarmListView.count) {
+                            alarmListView.clearSelection()
+                        }
+                        else {
+                            alarmListView.selectAll()
+                        }
+                    }
+                },
+
+                Action {
+                    text: i18n.tr("Delete")
+                    iconName: "delete"
+                    onTriggered: {
+                        var items = alarmListView.selectedItems
+
+                        for(var i=0; i < items.count; i++) {
+                            var alarm = alarmModel.get(items.get(i).itemsIndex)
+                            alarm.cancel()
+                        }
+
+                        alarmListView.endSelection()
+                    }
+                }
+            ]
+
+            contents: Label {
+                text: ""
+            }
+        }
+    ]
+
     AlarmList{
-        id: listAlarm
-        model: alarmModel
+        id: alarmListView
+        listModel: alarmModel
         anchors.fill: parent
     }
 }

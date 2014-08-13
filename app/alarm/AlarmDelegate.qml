@@ -23,82 +23,73 @@ import "../upstreamcomponents"
 ListItemWithActions {
     id: root
 
-    height: units.gu(6)
     width: parent ? parent.width : 0
+    height: units.gu(6)
     color: "Transparent"
+    selectedColor: "Transparent"
 
-    Item {
-        id: delegate
+    Label {
+        id: alarmTime
+        objectName: "listAlarmTime" + index
 
-        anchors.fill: parent
+        anchors {
+            top: alarmDetailsColumn.top
+            left: parent.left
+        }
+
+        fontSize: "medium"
+        text: Qt.formatTime(date)
+    }
+
+    Column {
+        id: alarmDetailsColumn
+
+        anchors {
+            left: alarmTime.right
+            right: alarmStatus.left
+            verticalCenter: parent.verticalCenter
+            margins: units.gu(1)
+        }
 
         Label {
-            id: alarmTime
-            objectName: "listAlarmTime" + index
+            id: alarmLabel
+            objectName: "listAlarmLabel" + index
 
-            anchors {
-                top: alarmDetailsColumn.top
-                left: parent.left
-            }
-
+            text: message
             fontSize: "medium"
-            text: Qt.formatTime(date)
+            width: parent.width
+            elide: Text.ElideRight
+            color: UbuntuColors.midAubergine
         }
 
-        Column {
-            id: alarmDetailsColumn
+        Label {
+            id: alarmSubtitle
+            objectName: "listAlarmSubtitle" + index
 
-            anchors {
-                left: alarmTime.right
-                right: alarmStatus.left
-                verticalCenter: parent.verticalCenter
-                margins: units.gu(1)
-            }
+            fontSize: "xx-small"
+            width: parent.width
+            wrapMode: Text.WrapAtWordBoundaryOrAnywhere
+            text: alarmUtils.format_day_string(daysOfWeek)
+        }
+    }
 
-            Label {
-                id: alarmLabel
-                objectName: "listAlarmLabel" + index
+    Switch {
+        id: alarmStatus
+        objectName: "listAlarmStatus" + index
 
-                text: message
-                fontSize: "medium"
-                elide: Text.ElideRight
-                color: UbuntuColors.midAubergine
-            }
-
-            Label {
-                id: alarmSubtitle
-                objectName: "listAlarmSubtitle" + index
-
-                fontSize: "xx-small"
-                width: parent.width
-                wrapMode: Text.WrapAtWordBoundaryOrAnywhere
-                text: alarmUtils.format_day_string(daysOfWeek)
-            }
+        anchors {
+            right: parent.right
+            verticalCenter: parent.verticalCenter
         }
 
-        Switch {
-            id: alarmStatus
-            objectName: "listAlarmStatus" + index
+        checked: enabled
 
-            anchors {
-                right: parent.right
-                verticalCenter: parent.verticalCenter
-            }
-
-            checked: enabled
-
-            /*
+        /*
              #TODO: Add the ability to enable/disable alarms using the
              switch. At the moment it only shows the alarm status.
              This was postponed since a similar implementation in the
              old clock app caused it to loop. So if user clicks on the
              switch, it disables and then re-enables the alarm again.
             */
-        }
-    }
-
-    onItemClicked: {
-        mainStack.push(Qt.resolvedUrl("EditAlarmPage.qml"),
-                       {"isNewAlarm": false, "alarmIndex": index})
     }
 }

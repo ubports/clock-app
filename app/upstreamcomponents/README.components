@@ -24,3 +24,10 @@ ListItemWithActionsCheckBox.qml
 
 https://bazaar.launchpad.net/~phablet-team/address-book-app/trunk/view/head:/src/imports/Ubuntu/Contacts/ListItemWithActionsCheckBox.qml
 
+MultipleSelectionListView.qml
+
+https://bazaar.launchpad.net/~phablet-team/address-book-app/trunk/view/head:/src/imports/Ubuntu/Contacts/MultipleSelectionListView.qml
+
+MultipleSelectionVisualModel.qml
+
+https://bazaar.launchpad.net/~phablet-team/address-book-app/trunk/view/head:/src/imports/Ubuntu/Contacts/MultipleSelectionVisualModel.qml
