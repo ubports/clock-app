@@ -27,31 +27,46 @@ MainView {
         when: windowShown
 
         property var header
+        property var alarmLabel
+        property var backButton
 
         function initTestCase() {
             alarmLabelPage.visible = true
-            alarmLabelPageTest.header = findChild(mainView, "MainView_Header")
+            header = findChild(mainView, "MainView_Header")
+            alarmLabel = findChild(alarmLabelPage, "labelEntry")
+            backButton = findChild(header, "customBackButton")
         }
 
-        /*
-         Test to check if the back button is disabled when the alarm label is
-         an empty string.
-        */
-        function test_backButtonDisabledOnEmptyAlarmLabel() {
-            var alarmLabel = findChild(alarmLabelPage, "labelEntry")
-            var backButton = findChild(header, "customBackButton")
+        function cleanup() {
+            clearTextField(alarmLabel)
+            typeString("Alarm")
+        }
 
-            compare(backButton.enabled, true, "Back Button is enabled by default due to placeholder alarm label")
-            compare(alarmLabel.text, "Alarm", "Default alarm label")
-
+        function clearTextField(textfield) {
             // Get textfield focus by clicking once
-            mouseClick(alarmLabel, alarmLabel.width - units.gu(2), alarmLabel.height/2)
+            mouseClick(textfield, textfield.width - units.gu(2), textfield.height/2)
 
             // Click on the clear button shown on the right
-            mouseClick(alarmLabel, alarmLabel.width - units.gu(2), alarmLabel.height/2)
+            mouseClick(textfield, textfield.width - units.gu(2), textfield.height/2)
+        }
 
-            compare(alarmLabel.text, "", "Alarm label is empty")
-            compare(backButton.enabled, false, "Back Button is disabled since alarm label is empty")
+        function test_backButtonEnabled_data() {
+            return [
+                        {tag: "EmptyAlarmLabel",       string: "",           enableStatus: false},
+                        {tag: "BlankSpacesAlarmLabel", string: "   ",        enableStatus: false},
+                        {tag: "FilledAlarmLabel",      string: "Test Label", enableStatus: true}
+                    ]
+        }
+
+        function test_backButtonEnabled(data) {
+            compare(alarmLabel.text, "Alarm", "Default alarm label is not Alarm")
+            compare(backButton.enabled, true, "Back header button is not enabled by default")
+
+            clearTextField(alarmLabel)
+            typeString(data.string)
+
+            compare(alarmLabel.text, data.string, "Alarm label is not what was type in the textfield")
+            compare(backButton.enabled, data.enableStatus, "Back Button enable status is not as expected")
         }
     }
 }
