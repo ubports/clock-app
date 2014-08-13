@@ -1,5 +1,7 @@
 project(com.ubuntu.clock.devel C CXX)
 cmake_minimum_required(VERSION 2.8.9)
+find_program(INTLTOOL_MERGE intltool-merge)
+find_program(INTLTOOL_EXTRACT intltool-extract)
 
 set (UBUNTU_PROJECT_TYPE "ClickApp" CACHE INTERNAL "Tells QtCreator this is a Click application project")
 set (CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
@@ -21,6 +23,7 @@ set(APP_NAME                clock)
 set(APP_HARDCODE            ubuntu-clock-app)
 set(MAIN_QML                ${APP_HARDCODE}.qml)
 set(ICON                    clock-app@30.png)
+set(DESKTOP_FILE            "${APP_HARDCODE}.desktop")
 
 #set install paths
 if(${CLICK_MODE})
@@ -59,13 +62,10 @@ file(GLOB_RECURSE I18N_SRC_FILES
 list(APPEND I18N_SRC_FILES ${DESKTOP_FILE}.in.in.h)
 list(SORT I18N_SRC_FILES)
 
-set(DESKTOP_FILE "app/${APP_HARDCODE}.desktop")
-#configure_file(${DESKTOP_FILE}.in ${CMAKE_CURRENT_BINARY_DIR}/${DESKTOP_FILE})
-
 configure_file(${DESKTOP_FILE}.in.in ${DESKTOP_FILE}.in)
 
 add_custom_target(${DESKTOP_FILE} ALL
-    COMMENT "Merging translations into ${DESKTOP_FILE}"
+    COMMENT "Merging translations into ${DESKTOP_FILE}..."
     COMMAND LC_ALL=C ${INTLTOOL_MERGE} -d -u ${CMAKE_SOURCE_DIR}/po ${DESKTOP_FILE}.in ${DESKTOP_FILE}
 )
 

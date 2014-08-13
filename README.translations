@@ -1,6 +1,6 @@
 # Updating translations
 
-Translations for the Music app happen in [Launchpad Translations][] and
+Translations for the Clock app happen in [Launchpad Translations][] and
 are automatically committed daily on the trunk branch in the po/ folder.
 
 They are then built and installed as part of the package build, so that
@@ -12,12 +12,7 @@ messages in the code, make sure to follow these steps:
 
  1. Run click-buddy retaining the build directory:
     `click-buddy --dir . --no-clean`
- 2. Copy the .pot file from the <build dir> mentioned in the output to your
-    original source:
-    `cp <build dir>/po/*.pot po/`
- 3. Commit the generated .pot file:
-    `bzr commit -m"Updated translation template"`
- 4. Push the branch and send a merge proposal as usual
+ 2. Commit and push the branch and send a merge proposal as usual
 
 And that's it, once the branch lands Launchpad should take care of all the rest!
 
