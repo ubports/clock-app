@@ -9,7 +9,7 @@ Build-Depends: cmake,
                python3-minimal,
                qt5-default,
                qtbase5-dev,
-               qtdeclarative5-dev
+               qtdeclarative5-dev,
 Standards-Version: 3.9.5
 Section: misc
 Homepage: https://launchpad.net/ubuntu-clock-app
@@ -26,10 +26,10 @@ Depends: qmlscene,
          qtdeclarative5-xmllistmodel-plugin,
          suru-icon-theme | ubuntu-mobile-icons,
          ${misc:Depends},
-         ${shlibs:Depends}
+         ${shlibs:Depends},
 Description: Clock application
- Ubuntu Core Clock application which provides Stopwatch, Timer, Alarm and 
- Clock functionalities.
+ Ubuntu Core Clock application which provides Alarm, Clock and
+ World Clock functionalities.
 
 Package: ubuntu-clock-app-autopilot
 Architecture: all
@@ -38,6 +38,6 @@ Depends: libautopilot-qt,
          ubuntu-clock-app (>= ${source:Version}),
          ubuntu-ui-toolkit-autopilot,
          ${misc:Depends},
-         ${python3:Depends}
+         ${python3:Depends},
 Description: Autopilot tests for Ubuntu Clock Application
  This package contains autopilot tests for the Ubuntu Clock application.
