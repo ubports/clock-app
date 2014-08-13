@@ -30,6 +30,34 @@ from autopilot.platform import model
 class TestAlarm(ClockAppTestCase):
 
     """Tests the alarm page features"""
+    scenarios = [
+        ('random',
+            {'alarm_name': 'Random days Alarm Test',
+             'days': ['Tuesday', 'Wednesday', 'Friday', 'Sunday'],
+             'expected_recurrence': 'Tuesday, Wednesday, Friday, Sunday',
+             'expected_time': '06:10:00',
+             'enabled_value': True,
+             'test_sound_name': 'Bliss'
+             }),
+
+        ('weekday',
+            {'alarm_name': 'Weekday Alarm Test',
+             'days': ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+             'expected_recurrence': 'Weekdays',
+             'expected_time': '06:10:00',
+             'enabled_value': True,
+             'test_sound_name': 'Bliss'
+             }),
+
+        ('weekend',
+            {'alarm_name': 'Weekend Alarm Test',
+             'days': ['Saturday', 'Sunday'],
+             'expected_recurrence': 'Weekends',
+             'expected_time': '06:10:00',
+             'enabled_value': True,
+             'test_sound_name': 'Bliss'
+             })
+    ]
 
     def setUp(self):
         """ This is needed to wait for the application to start.
@@ -50,28 +78,19 @@ class TestAlarm(ClockAppTestCase):
     @unittest.skipIf(model() != 'Desktop',
                      "datepicker does not work correctly on device")
     def test_add_recurring_type_alarm_must_add_to_alarm_list(self):
-        """Test to check if a single type alarm is saved properly
+        """Test to check if alarms are saved properly
 
-        This test saves a single type alarm and verifies if it is added to the
-        alarm list in the alarm page.
+        This test saves some random days, weekends and weekdays types of alarm
+        and verifies if they are added to the alarm list in the alarm page.
 
         """
-        tomorrow = datetime.datetime.now() + datetime.timedelta(days=1)
         time_to_set = datetime.time(6, 10, 0)
-        test_alarm_name = 'Single Test'
-        # TODO this will be affected by the locale. --elopio - 2014-02-27
-        expected_alarm_name = test_alarm_name
-        expected_recurrence = tomorrow.strftime('%A')
-        expected_enabled_value = True
-        expected_time = "06:10:00"
-        test_sound_name = "Bliss"
         expected_alarm_info = (
-            expected_alarm_name, expected_recurrence, expected_enabled_value,
-            expected_time)
+            self.alarm_name, self.expected_recurrence, self.enabled_value,
+            self.expected_time)
 
-        tomorrow_day = tomorrow.strftime('%A')
         self.page.add_single_alarm(
-            test_alarm_name, tomorrow_day, time_to_set, test_sound_name)
+            self.alarm_name, self.days, time_to_set, self.test_sound_name)
 
         alarmlistPage = self.main_view.get_AlarmList()
         saved_alarms = alarmlistPage.get_saved_alarms()

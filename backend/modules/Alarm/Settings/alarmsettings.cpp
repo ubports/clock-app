@@ -65,6 +65,16 @@ void AlarmSettings::onSettingsChanged(const QString &interface,
             emit durationChanged();
         }
     }
+
+    it = properties.find("HapticFeedback");
+
+    if (it != properties.end()) {
+        const QString vibration = it.value().toString();
+        if (m_vibration != vibration) {
+            m_vibration = vibration;
+            emit vibrationChanged();
+        }
+    }
 }
 
 void AlarmSettings::refreshProperties()
@@ -87,6 +97,7 @@ void AlarmSettings::refreshProperties()
 
     m_volume = map["DefaultVolume"].toInt();
     m_duration = map["Duration"].toInt();
+    m_vibration = map["HapticFeedback"].toString();
 }
 
 void AlarmSettings::setDBusProperty(const QString &name, const QVariant &value)
@@ -111,6 +122,11 @@ int AlarmSettings::volume() const
 int AlarmSettings::duration() const
 {
     return m_duration;
+}
+
+QString AlarmSettings::vibration() const
+{
+    return m_vibration;
 }
 
 void AlarmSettings::setVolume(int volume)
@@ -139,4 +155,18 @@ void AlarmSettings::setDuration(int duration)
     emit durationChanged();
 
     setDBusProperty("Duration", QVariant(m_duration));
+}
+
+void AlarmSettings::setVibration(QString vibration)
+{
+    if(m_vibration == vibration) {
+        // Don't send the vibration mode over dbus if it is the same one already
+        return;
+    }
+
+    // Change the property and let qml know about it
+    m_vibration = vibration;
+    emit vibrationChanged();
+
+    setDBusProperty("HapticFeedback", QVariant(m_vibration));
 }

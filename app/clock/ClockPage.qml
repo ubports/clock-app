@@ -20,6 +20,7 @@ import QtQuick 2.0
 import U1db 1.0 as U1db
 import Ubuntu.Components 1.1
 import "../components"
+import "../upstreamcomponents"
 import "../worldclock"
 import "../components/Utils.js" as Utils
 
@@ -48,7 +49,7 @@ PageWithBottomEdge {
         anchors.fill: parent
         contentWidth: parent.width
         contentHeight: clock.height + date.height + locationRow.height
-                       + worldCityColumn.height + units.gu(20)
+                       + worldCityColumn.height + units.gu(14)
 
         PullToAdd {
             id: addCityButton
@@ -137,7 +138,7 @@ PageWithBottomEdge {
 
             Label {
                 id: location
-                objectName: "location" + index
+                objectName: "location"
                 text: "Location"
                 fontSize: "medium"
                 anchors.verticalCenter: locationIcon.verticalCenter
@@ -149,6 +150,8 @@ PageWithBottomEdge {
             id: worldCityColumn
             objectName: "worldCityColumn"
             opacity: settingsIcon.opacity
+            anchors.top: locationRow.bottom
+            anchors.topMargin: units.gu(4)
         }
 
         onDragEnded: {

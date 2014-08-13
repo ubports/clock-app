@@ -20,142 +20,127 @@ import QtQuick 2.0
 import Ubuntu.Components 1.1
 import Ubuntu.Components.ListItems 1.0 as ListItem
 import "../components"
+import "../upstreamcomponents"
 import "../components/Utils.js" as Utils
 
-Flickable {
-    id: alarmListFlickable
-    objectName: "alarmListFlickable"
+MultipleSelectionListView {
+    id: alarmListView
+    objectName: "alarmListView"
 
-    // Property to set the model of the saved alarm list
-    property var model
+    property var _currentSwipedItem: null
 
-    /*
-      Property to set the minimum drag distance before activating the add
-      alarm signal
-    */
-    property int _minThreshold: addAlarmButton.maxThreshold + units.gu(2)
+    function _updateSwipeState(item)
+    {
+        if (item.swipping) {
+            return
+        }
+
+        if (item.swipeState !== "Normal") {
+            if (alarmListView._currentSwipedItem !== item) {
+                if (alarmListView._currentSwipedItem) {
+                    alarmListView._currentSwipedItem.resetSwipe()
+                }
+                alarmListView._currentSwipedItem = item
+            }
+        } else if (item.swipeState !== "Normal"
+                   && alarmListView._currentSwipedItem === item) {
+            alarmListView._currentSwipedItem = null
+        }
+    }
 
     clip: true
     anchors.fill: parent
-    contentHeight: alarmList.height
 
     AlarmUtils {
         id: alarmUtils
     }
 
-    PullToAdd {
-        id: addAlarmButton
-        objectName: "addAlarmButton"
+    listDelegate: AlarmDelegate {
+        id: alarmDelegate
+        objectName: "alarm" + index
 
-        anchors {
-            top: parent.top
-            topMargin: -labelHeight - units.gu(3)
-            horizontalCenter: parent.horizontalCenter
+        property var removalAnimation
+
+        function remove() {
+            removalAnimation.start()
         }
 
-        leftLabel: i18n.tr("Add")
-        rightLabel: i18n.tr("Alarm")
-    }
+        selectionMode: alarmListView.isInSelectionMode
+        selected: alarmListView.isSelected(alarmDelegate)
 
-    Column {
-        id: alarmList
-        objectName: 'alarmList'
-        anchors.fill: parent
+        onSwippingChanged: {
+            _updateSwipeState(alarmDelegate)
+        }
 
-        Repeater {
-            model: alarmListFlickable.model
-            objectName: "alarmListRepeater"
-            ListItem.Base {
-                objectName: "alarm" + index
+        onSwipeStateChanged: {
+            _updateSwipeState(alarmDelegate)
+        }
 
-                Label {
-                    id: alarmTime
-                    objectName: "listAlarmTime" + index
+        leftSideAction: Action {
+            iconName: "delete"
+            text: i18n.tr("Delete")
+            onTriggered: {
+                alarmDelegate.remove()
+            }
+        }
 
-                    anchors {
-                        top: alarmDetailsColumn.top
-                        left: parent.left
-                        leftMargin: units.gu(0)
-                    }
-
-                    fontSize: "medium"
-                    text: Qt.formatTime(date)
+        ListView.onRemove: ScriptAction {
+            script: {
+                if (_currentSwipedItem
+                        === alarmDelegate) {
+                    _currentSwipedItem = null
                 }
+            }
+        }
 
-                Column {
-                    id: alarmDetailsColumn
+        removalAnimation: SequentialAnimation {
+            alwaysRunToEnd: true
 
-                    anchors {
-                        left: alarmTime.right
-                        right: alarmStatus.left
-                        verticalCenter: parent.verticalCenter
-                        margins: units.gu(1)
-                    }
+            PropertyAction {
+                target: alarmDelegate
+                property: "ListView.delayRemove"
+                value: true
+            }
 
-                    Label {
-                        id: alarmLabel
-                        objectName: "listAlarmLabel" + index
+            UbuntuNumberAnimation {
+                target: alarmDelegate
+                property: "height"
+                to: 0
+            }
 
-                        text: message
-                        fontSize: "medium"
-                        elide: Text.ElideRight
-                        color: UbuntuColors.midAubergine
-                    }
+            PropertyAction {
+                target: alarmDelegate
+                property: "ListView.delayRemove"
+                value: false
+            }
 
-                    Label {
-                        id: alarmSubtitle
-                        objectName: "listAlarmSubtitle" + index
-
-                        fontSize: "xx-small"
-                        width: parent.width
-                        wrapMode: Text.WrapAtWordBoundaryOrAnywhere
-                        text: alarmUtils.format_day_string(daysOfWeek)
-                    }
-                }
-
-                Switch {
-                    id: alarmStatus
-                    objectName: "listAlarmStatus" + index
-
-                    anchors {
-                        right: parent.right
-                        verticalCenter: parent.verticalCenter
-                    }
-
-                    checked: enabled
-
-                    /*
-                      #TODO: Add the ability to enable/disable alarms using the
-                      switch. At the moment it only shows the alarm status.
-                      This was postponed since a similar implementation in the
-                      old clock app caused it to loop. So if user clicks on the
-                      switch, it disables and then re-enables the alarm again.
-                    */
-                }
-
-                removable: true
-                confirmRemoval: true
-
-                onItemRemoved: {
+            ScriptAction {
+                script: {
                     var alarm = alarmModel.get(index)
                     alarm.cancel()
                 }
-
-                onClicked: mainStack.push(Qt.resolvedUrl("EditAlarmPage.qml"),
-                                          {"isNewAlarm": false,
-                                              "alarmIndex": index})
             }
         }
-    }
 
-    onDragEnded: {
-        if(contentY < _minThreshold)
-            mainStack.push(Qt.resolvedUrl("EditAlarmPage.qml"))
-    }
+        onItemClicked: {
+            if(alarmListView.isInSelectionMode) {
+                if(!alarmListView.selectItem(alarmDelegate)) {
+                    alarmListView.deselectItem(alarmDelegate)
+                }
+                return
+            }
 
-    onContentYChanged: {
-        if(contentY < 0 && atYBeginning) {
-            addAlarmButton.dragPosition = contentY.toFixed(0)
+            else {
+                mainStack.push(Qt.resolvedUrl("EditAlarmPage.qml"),
+                               {"isNewAlarm": false, "alarmIndex": index})
+            }
+        }
+
+        onItemPressAndHold: {
+            if (!alarmListView.isInSelectionMode) {
+                alarmListView.startSelection()
+                alarmListView.selectItem(alarmDelegate)
+            }
         }
     }
 }

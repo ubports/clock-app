@@ -1,0 +1,33 @@
+# Upstream Components
+
+This folder houses components that were taken from upstream applications like the Contacts App, Address Book etc. It is important to keep these files synced with upstream regularly. These components will be used by the clock app until they are made available in the Ubuntu SDK.
+
+#### Links
+
+PageWithBottomEdge.qml
+
+https://bazaar.launchpad.net/~phablet-team/address-book-app/trunk/view/head:/src/imports/Ubuntu/Contacts/PageWithBottomEdge.qml
+
+FastScroll.js
+
+https://bazaar.launchpad.net/~phablet-team/address-book-app/trunk/view/head:/src/imports/Ubuntu/Contacts/FastScroll.js
+
+FastScroll.qml
+
+https://bazaar.launchpad.net/~phablet-team/address-book-app/trunk/view/head:/src/imports/Ubuntu/Contacts/FastScroll.qml
+
+ListItemWithActions.qml
+
+https://bazaar.launchpad.net/~phablet-team/address-book-app/trunk/view/head:/src/imports/Ubuntu/Contacts/ListItemWithActions.qml
+
+ListItemWithActionsCheckBox.qml
+
+https://bazaar.launchpad.net/~phablet-team/address-book-app/trunk/view/head:/src/imports/Ubuntu/Contacts/ListItemWithActionsCheckBox.qml
+
+MultipleSelectionListView.qml
+
+https://bazaar.launchpad.net/~phablet-team/address-book-app/trunk/view/head:/src/imports/Ubuntu/Contacts/MultipleSelectionListView.qml
+
+MultipleSelectionVisualModel.qml
+
+https://bazaar.launchpad.net/~phablet-team/address-book-app/trunk/view/head:/src/imports/Ubuntu/Contacts/MultipleSelectionVisualModel.qml

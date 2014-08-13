@@ -1,3 +1,5 @@
+# -#- Mode: Python; coding: utf-8; indent-tabs-mode: nil; tab-width: 4 -#-
+#
 # Copyright (C) 2014 Canonical Ltd
 #
 # This file is part of Ubuntu Clock App
@@ -17,6 +19,7 @@
 import logging
 
 from autopilot import logging as autopilot_logging
+from autopilot.introspection import dbus
 
 from ubuntuuitoolkit import pickers
 import ubuntuuitoolkit
@@ -47,8 +50,8 @@ class MainView(ubuntuuitoolkit.MainView):
         :return: the Alarm Page.
 
         """
-        clockPage = self.wait_select_single(ClockPage)
-        clockPage.drag_bottomEdge_up()
+        clockPage = self.open_clock()
+        clockPage.reveal_bottom_edge_page()
         self.get_header().visible.wait_for(True)
         return self.wait_select_single(Page11)
 
@@ -68,44 +71,45 @@ class Page(ubuntuuitoolkit.UbuntuUIToolkitCustomProxyObjectBase):
         self.main_view = self.get_root_instance().select_single(MainView)
 
 
-class ClockPage(Page):
+class PageWithBottomEdge(MainView):
+    """
+    An emulator class that makes it easy to interact with the bottom edge
+    swipe page
+    """
+    def __init__(self, *args):
+        super(PageWithBottomEdge, self).__init__(*args)
 
+    def reveal_bottom_edge_page(self):
+        """Bring the bottom edge page to the screen"""
+        self.bottomEdgePageLoaded.wait_for(True)
+        try:
+            action_item = self.wait_select_single(objectName='bottomEdgeTip')
+            start_x = (action_item.globalRect.x +
+                       (action_item.globalRect.width * 0.5))
+            start_y = (action_item.globalRect.y +
+                       (action_item.height * 0.5))
+            stop_y = start_y - (self.height * 0.7)
+            self.pointing_device.drag(start_x, start_y,
+                                      start_x, stop_y, rate=2)
+            self.isReady.wait_for(True)
+        except dbus.StateNotFoundError:
+            logger.error('BottomEdge element not found.')
+            raise
+
+
+class ClockPage(PageWithBottomEdge):
     """Autopilot helper for the Clock page."""
-
-    @autopilot_logging.log_action(logger.info)
-    def drag_bottomEdge_up(self):
-        """Function to drag the bottom edge up."""
-        self._click_bottomEdge()
-
-        x, y, w, h = self.globalRect
-        start_x = stop_x = x + (w / 2)
-        start_y = y + (h - 1)
-
-        stop_y = start_y - h
-        self.pointing_device.drag(start_x, start_y, stop_x, stop_y)
-
-        self._wait_for_ClockPage_to_close()
-
-    def _click_bottomEdge(self):
-        """Function to click on the bottom edge."""
-        bottomEdge = self.wait_select_single(
-            'QQuickItem', objectName='bottomEdgeTip')
-        self.pointing_device.click_object(bottomEdge)
-
-    def _wait_for_ClockPage_to_close(self):
-        self.isCollapsed.wait_for(False)
 
 
 class Page11(Page):
-
     """Autopilot helper for the Alarm page."""
 
     @autopilot_logging.log_action(logger.info)
-    def add_single_alarm(self, name, day, time_to_set, test_sound_name):
+    def add_single_alarm(self, name, days, time_to_set, test_sound_name):
         """Add a single type alarm
 
         :param name: name of alarm
-        :param day: day on which the alarm should be triggered
+        :param days: days on which the alarm should be triggered
         :param time_to_set: time to set alarm to
         :param test_sound_name: sound to set in alarm
 
@@ -117,7 +121,7 @@ class Page11(Page):
         edit_alarm_page.set_alarm_time(time_to_set)
 
         alarm_repeat_page = edit_alarm_page.open_alarmRepeat_page()
-        alarm_repeat_page.set_single_alarm_day(day)
+        alarm_repeat_page.set_alarm_days(days)
         self._click_header_backButton()
 
         alarm_label_page = edit_alarm_page.open_alarmLabel_page()
@@ -167,7 +171,6 @@ class Page11(Page):
 
 
 class EditAlarmPage(Page):
-
     """Autopilot helper for the Add Alarm page."""
 
     @autopilot_logging.log_action(logger.info)
@@ -230,24 +233,24 @@ class EditAlarmPage(Page):
 
 
 class AlarmRepeat(Page):
-
     """Autopilot helper for the  AlarmRepeat page."""
 
     @autopilot_logging.log_action(logger.info)
-    def set_single_alarm_day(self, day):
-        """Set the alarm day of a single type alarm.
+    def set_alarm_days(self, days):
+        """Set the alarm days of the alarm.
 
-        :param day: single day on which alarm is triggered
+        :param days: days on which alarm is triggered
 
         """
         self.unselect_selected_days()
         index = 0
-        for index in range(self._get_num_of_days()):
-            if self.wait_select_single(
-                    'Label', objectName='alarmDay{}'.format(index))\
-                    .text == day:
-                self._select_single_alarm_day(index)
-                break
+        for index in range(len(days)):
+            for index2 in range(self._get_num_of_days()):
+                if self.wait_select_single(
+                        'Label', objectName='alarmDay{}'.format(index2)).text\
+                        == days[index]:
+                    self._select_single_alarm_day(index2)
+                    break
 
     def _get_num_of_days(self):
         return int(self.wait_select_single(
@@ -273,7 +276,6 @@ class AlarmRepeat(Page):
 
 
 class AlarmSound(Page):
-
     """Autopilot helper for the  AlarmSound page."""
 
     @autopilot_logging.log_action(logger.info)
@@ -306,7 +308,6 @@ class AlarmSound(Page):
 
 
 class AlarmLable(object):
-
     """Autopilot helper for the  AlarmLabel page."""
 
     def __init__(self, proxy_object):
@@ -337,7 +338,6 @@ class AlarmLable(object):
 
 
 class AlarmList(object):
-
     """Autopilot helper for the  AlarmList."""
 
     def __init__(self, proxy_object):
@@ -347,7 +347,7 @@ class AlarmList(object):
     @classmethod
     def select(cls, main_view):
         proxy_object = main_view.wait_select_single(
-            objectName='alarmListFlickable')
+            'AlarmList', objectName='alarmListView')
         proxy_object.visible.wait_for(True)
         return cls(proxy_object)
 
@@ -357,8 +357,7 @@ class AlarmList(object):
 
     def _get_saved_alarms_list(self):
         """Return the saved alarm list"""
-        return self.proxy_object.wait_select_single(
-            'QQuickRepeater', objectName='alarmListRepeater')
+        return self.proxy_object
 
     def get_saved_alarms(self):
         """Return a list with the information of the saved alarms.
@@ -386,10 +385,27 @@ class AlarmList(object):
         """Delete an alarm at the specified index."""
         old_alarm_count = self.get_num_of_alarms()
         alarm = self.proxy_object.wait_select_single(
-            'Base', objectName='alarm{}'.format(index))
+            objectName='alarm{}'.format(index))
+
         alarm.swipe_to_delete()
         alarm.confirm_removal()
         try:
             self._get_saved_alarms_list().count.wait_for(old_alarm_count - 1)
         except AssertionError:
             raise ClockEmulatorException('Error deleting alarm.')
+
+
+class ListItemWithActions(
+        ubuntuuitoolkit.UbuntuUIToolkitCustomProxyObjectBase):
+
+    def swipe_to_delete(self):
+        x, y, width, height = self.globalRect
+        start_x = x + (width * 0.2)
+        stop_x = x + (width * 0.8)
+        start_y = stop_y = y + (height // 2)
+
+        self.pointing_device.drag(start_x, start_y, stop_x, stop_y)
+
+    def confirm_removal(self):
+        deleteButton = self.wait_select_single(name='delete')
+        self.pointing_device.click_object(deleteButton)

@@ -21,6 +21,7 @@ import Timezone 1.0
 import Ubuntu.Components 1.1
 import Ubuntu.Components.ListItems 1.0 as ListItem
 import "../components"
+import "../upstreamcomponents"
 
 /*
   Page to display a list of cities from which the user can choose a city to add
@@ -36,6 +37,7 @@ Page {
 
     title: i18n.tr("Select a city")
     visible: false
+    flickable: null
 
     state: "default"
     states: [
@@ -129,9 +131,18 @@ Page {
                         )
         }
 
+        function getSectionText(index) {
+            return sortedTimeZoneModel.get(index).city.substring(0,1)
+        }
+
         anchors.fill: parent
+        anchors.rightMargin: fastScroll.showing ? fastScroll.width - units.gu(1)
+                                                : 0
 
         model: sortedTimeZoneModel
+        currentIndex: -1
+
+        clip: true
 
         section.property: "city"
         section.criteria: ViewSection.FirstCharacter
@@ -169,6 +180,26 @@ Page {
                 cityList.addWorldCity(city, country, timezoneID)
                 mainStack.pop()
             }
+        }
+
+        Behavior on anchors.rightMargin {
+            UbuntuNumberAnimation {}
+        }
+    }
+
+    FastScroll {
+        id: fastScroll
+
+        listView: cityList
+
+        enabled: (cityList.contentHeight > (cityList.height * 2)) &&
+                 (cityList.height >= minimumHeight)
+
+        anchors {
+            top: cityList.top
+            topMargin: units.gu(1.5)
+            bottom: cityList.bottom
+            right: parent.right
         }
     }
 }

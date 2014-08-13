@@ -17,6 +17,7 @@
  */
 
 import QtQuick 2.0
+import DateTime 1.0
 import Ubuntu.Components 1.1
 import Qt.labs.folderlistmodel 2.1
 import Ubuntu.Components.Pickers 1.0
@@ -240,6 +241,26 @@ Page {
 
             clip: true
             mode: "Hours|Minutes"
+            date: {
+                if(isNewAlarm) {
+                    return new Date
+                            (
+                                currentTime.localDateString.split(":")[0],
+                                currentTime.localDateString.split(":")[1]-1,
+                                currentTime.localDateString.split(":")[2],
+                                currentTime.localTimeString.split(":")[0],
+                                Math.ceil(Math.abs(currentTime.localTimeString
+                                                   .split(":")[1]/5))*5,
+                                0,
+                                0
+                            )
+                }
+            }
+
+            DateTime {
+                id: currentTime
+                updateInterval: 0
+            }
         }
 
         SubtitledListItem {
