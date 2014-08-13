@@ -2,7 +2,6 @@ project(com.ubuntu.clock.devel C CXX)
 cmake_minimum_required(VERSION 2.8.9)
 
 set (UBUNTU_PROJECT_TYPE "ClickApp" CACHE INTERNAL "Tells QtCreator this is a Click application project")
-set (CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -fno-permissive -pedantic -Wall -Wextra")
 
 find_package(Qt5Core)
@@ -20,38 +19,50 @@ option(CLICK_MODE "Build as a click package" on)
 set(APP_NAME                clock)
 set(APP_HARDCODE            ubuntu-clock-app)
 set(MAIN_QML                ${APP_HARDCODE}.qml)
-set(ICON                    clock-app@30.png)
+set(ICON                    clock-app)
+SET(AUTOPILOT_DIR           ubuntu_clock_app)
+
+# Standard install paths 
+include(GNUInstallDirs) 
 
 #set install paths
-if(${CLICK_MODE})
-  set(CMAKE_INSTALL_PREFIX /)
-  set(DATA_DIR /)
-  set(DESKTOP_DIR ${DATA_DIR})
-  set(UBUNTU-CLOCK-APP_DIR    "share/qml/ubuntu-clock-app")
-  set(ICON "${UBUNTU-CLOCK-APP_DIR}/${ICON}")
+if(CLICK_MODE)
+  set(CMAKE_INSTALL_PREFIX "/")
+  set(UBUNTU-CLOCK_APP_DIR    "${CMAKE_INSTALL_DATADIR}/qml")
 
-  execute_process(
-      COMMAND dpkg-architecture -qDEB_HOST_MULTIARCH
-      OUTPUT_VARIABLE ARCH_TRIPLET
-      OUTPUT_STRIP_TRAILING_WHITESPACE
-  )
-  set(QT_IMPORTS_DIR "lib/${ARCH_TRIPLET}")
-else()
-  set(DATA_DIR "share/clockapp")
-  set(DESKTOP_DIR ${DATA_DIR})
-  set(ICON "${DATA_DIR}/${ICON}")
-  set(UBUNTU-CLOCK-APP_DIR    "share/ubuntu-clock-app/qml")
-  include(GNUInstallDirs)
   set(QT_IMPORTS_DIR "${CMAKE_INSTALL_LIBDIR}")
-endif()
-
-set(EXEC "qmlscene $@ ${UBUNTU-CLOCK-APP_DIR}/${MAIN_QML}")
+  set(EXEC "qmlscene $@ ${UBUNTU-CLOCK_APP_DIR}/${MAIN_QML}")
+  set(MODULE_PATH ${QT_IMPORTS_DIR})
+  if(NOT BZR_REVNO)
+    execute_process( 
+      COMMAND bzr revno
+              OUTPUT_VARIABLE BZR_REVNO 
+              WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+              OUTPUT_STRIP_TRAILING_WHITESPACE 
+      )
+  endif(NOT BZR_REVNO)
+  if(NOT BZR_SOURCE)
+    set(BZR_SOURCE lp:${APP_HARDCODE}/reboot)
+    message("-- Setting BZR_SOURCE to ${BZR_SOURCE}")
+  endif(NOT BZR_SOURCE)
+else(CLICK_MODE)
+  set(UBUNTU-CLOCK_APP_DIR "${CMAKE_INSTALL_DATADIR}/ubuntu-clock-app")
+  execute_process( 
+    COMMAND qmake -query QT_INSTALL_QML 
+            OUTPUT_VARIABLE QT_IMPORTS_DIR 
+            OUTPUT_STRIP_TRAILING_WHITESPACE 
+    )
+set(MODULE_PATH ${QT_IMPORTS_DIR}/ClockApp)
+endif(CLICK_MODE)
 
 if(${CLICK_MODE})
-  install(FILES manifest.json DESTINATION ${CMAKE_INSTALL_PREFIX})
+  message("-- Configuring manifest.json")
+  configure_file(manifest.json manifest.json)
+  install(FILES ${CMAKE_CURRENT_BINARY_DIR}/manifest.json DESTINATION ${CMAKE_INSTALL_PREFIX})
+  install(FILES "${APP_HARDCODE}.json" DESTINATION ${CMAKE_INSTALL_PREFIX})
+else(CLICK_MODE)
+  set(EXEC "qmlscene $@ -I ${MODULE_PATH}  ${CMAKE_INSTALL_PREFIX}/${UBUNTU-CLOCK_APP_DIR}/${MAIN_QML}")
 endif()
-install(DIRECTORY "app/graphics" DESTINATION ${DATA_DIR})
-install(FILES "${APP_HARDCODE}.json" DESTINATION ${DATA_DIR})
 
 file(GLOB_RECURSE I18N_SRC_FILES
     RELATIVE ${CMAKE_CURRENT_SOURCE_DIR}/po
@@ -61,16 +72,19 @@ list(SORT I18N_SRC_FILES)
 add_subdirectory(app)
 add_subdirectory(backend)
 add_subdirectory(po)
+if(NOT CLICK_MODE)
+  add_subdirectory(tests)
+endif(NOT CLICK_MODE)
 
-add_custom_target("autopilot" chmod +x ${CMAKE_SOURCE_DIR}/app/tests/autopilot/run
-                    COMMAND ${CMAKE_SOURCE_DIR}/app/tests/autopilot/run
+add_custom_target("autopilot" chmod +x ${CMAKE_SOURCE_DIR}/tests/autopilot/run
+                    COMMAND ${CMAKE_SOURCE_DIR}/tests/autopilot/run
                     DEPENDS timezone timezone-qmldir alarmsettings alarmsettings-qmldir datetime datetime-qmldir
                     WORKING_DIRECTORY ./app)
 
 enable_testing()
 add_test(NAME basic
   WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/app
-  COMMAND /usr/bin/qmltestrunner -input ${CMAKE_SOURCE_DIR}/app/tests/unit -import ${CMAKE_BINARY_DIR}/backend
+  COMMAND /usr/bin/qmltestrunner -input ${CMAKE_SOURCE_DIR}/tests/unit -import ${CMAKE_BINARY_DIR}/backend
 )
 
 add_custom_target("run" /usr/bin/qmlscene -I ${CMAKE_BINARY_DIR}/backend  ${CMAKE_SOURCE_DIR}/app/ubuntu-clock-app.qml

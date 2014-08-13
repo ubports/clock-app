@@ -19,6 +19,7 @@
 import os.path
 import os
 import shutil
+import glob
 import logging
 import fixtures
 
@@ -41,13 +42,15 @@ class ClockAppTestCase(base.UbuntuUIToolkitAppTestCase):
     """
 
     local_location = os.path.dirname(os.path.dirname(os.getcwd()))
-    local_location_qml = os.path.join(
-        local_location, 'app/ubuntu-clock-app.qml')
+    local_location_qml = os.path.join(local_location,
+                                      'app/ubuntu-clock-app.qml')
     local_location_backend = os.path.join(local_location, 'builddir/backend')
-    installed_location_backend = \
-        '/usr/share/ubuntu-clock-app/builddir/backend'
+    installed_location_backend = ""
+    if glob.glob('/usr/lib/*/qt5/qml/ClockApp'):
+        installed_location_backend = \
+            glob.glob('/usr/lib/*/qt5/qml/ClockApp')[0]
     installed_location_qml = \
-        '/usr/share/ubuntu-clock-app/app/ubuntu-clock-app.qml'
+        '/usr/share/ubuntu-clock-app/ubuntu-clock-app.qml'
 
     # note this directory could change to com.ubuntu.clock at some point
     sqlite_dir = os.path.expanduser(
