@@ -13,7 +13,7 @@ Build-Depends: cmake,
 Standards-Version: 3.9.5
 Section: misc
 Homepage: https://launchpad.net/ubuntu-clock-app
-Vcs-Bzr: https://code.launchpad.net/~ubuntu-clock-dev/ubuntu-clock-app/trunk
+Vcs-Bzr: https://code.launchpad.net/~ubuntu-clock-dev/ubuntu-clock-app/utopic-3.0
 XS-Testsuite: autopkgtest
 
 Package: ubuntu-clock-app
@@ -28,8 +28,8 @@ Depends: qmlscene,
          ${misc:Depends},
          ${shlibs:Depends}
 Description: Clock application
- Ubuntu Core Clock application which provides Stopwatch, Timer, Alarm and 
- Clock functionalities.
+ Ubuntu Core Clock application which provides Alarm, World Clock and Clock
+ functionalities.
 
 Package: ubuntu-clock-app-autopilot
 Architecture: all
