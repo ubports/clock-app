@@ -1,4 +1,4 @@
-ubuntu-clock-app (1.2) utopic; urgency=medium
+ubuntu-clock-app (3.0) utopic; urgency=medium
 
   [ Daniel Holbach ]
   * Fix debhelper-but-no-misc-depends ubuntu-clock-app-autopilot.
@@ -41,6 +41,136 @@ ubuntu-clock-app (1.2) utopic; urgency=medium
     cases.
 
  -- Daniel Holbach <daniel.holbach@ubuntu.com>  Fri, 01 Aug 2014 09:16:35 +0200
+
+ubuntu-clock-app (2.9) utopic; urgency=medium
+
+  [Nekhelesh Ramananthan]
+  * Added multiselect mode for alarms list as per design (LP: #1349882)
+  * Fixed a small portion of the listitem behind left behind after
+    deleting it. (LP: #1354617)
+  * Added vibration settings option for alarms (LP: #1350017)
+  
+  [Michael Zanetti]
+  * Improve the performance of the world city list by creating QTimeZone
+    objects only once as they are really slow to create. (LP: #1350433)
+  
+  [Nicholas Skaggs]
+  * Tweak AP setup and launching
+  
+ -- Nekhelesh Ramananthan <krnekhelesh@gmail.com>  Mon, 11 Aug 2014 16:20:00 +0200
+
+ubuntu-clock-app (2.8) utopic; urgency=medium
+
+  [Nekhelesh Ramananthan]
+  * Implemented custom swipe delete for list items (LP: #1349881)
+  * Synced bottom edge component with upstream code
+  * Added fast scroll to the world city page (LP: #1349877)
+  * Implemented the world clock UI in the main clock page
+  * Added settings option to change system time in the clock app.
+  
+  [Carla Sella]
+  * Setup autopilot infrastructure and added alarm test
+  * Added objectNames required for the AP tests
+  * Expanded alarm tests using scenarios to cover different days
+
+ -- Nekhelesh Ramananthan <krnekhelesh@gmail.com>  Fri, 08 Aug 2014 21:05:12 +0200
+
+ubuntu-clock-app (2.7) utopic; urgency=medium
+
+  [Nekhelesh Ramananthan]
+  * Expanded base TimeZoneModel to also take a u1db query model
+  * Added more cities to the local world city list
+  * Improved the accuracy of the clock hour hand by taking into account the 
+    minutes as well.
+  * Improved minute and second hand accuracy
+  * Improved the clock hands movement. It is now more smoother.
+  * Added a delete alarm button in the edit alarm page as per design
+  * Encapsulated the settings icon into an abstract button to provide haptic
+    feedback when pressed.
+  
+  [Victor Thompson]
+  * Resolve build warning related to unused variable in the AlarmSettings plugin
+
+ -- Nekhelesh Ramananthan <krnekhelesh@gmail.com>  Mon, 04 Aug 2014 11:23:30 +0200
+
+ubuntu-clock-app (2.6) utopic; urgency=medium
+
+  [Nekhelesh Ramananthan]
+  * Clock mode is now saved in u1db to remember the user preferences
+  * Added support for alarm setting options like alarm duration and volume
+  * Updated license headers
+  * Added support to listen to Dbus changes to the alarm settings and update
+    UI automatically.
+    
+  [Victor Thompson]
+  * Update digital time every second instead of every 60 seconds
+
+ -- Nekhelesh Ramananthan <krnekhelesh@gmail.com>  Wed, 30 Jul 2014 10:10:23 +0200
+ 
+ubuntu-clock-app (2.5) utopic; urgency=medium
+
+  [Nekhelesh Ramananthan]
+  * Added a page to select world cities.
+  * World cities are filtered as the user types using the SDK SortFilterModel
+  * Added a XML file with a list of popular cities
+  
+  [Victor Thompson]
+  * Center the plus icon in PullToAdd.qml
+  * Use the ok icon instead of save in the edit alarm page
+
+ -- Nekhelesh Ramananthan <krnekhelesh@gmail.com>  Thu, 24 Jul 2014 15:20:15 +0200
+ 
+ubuntu-clock-app (2.4) utopic; urgency=medium
+
+  [Nekhelesh Ramananthan]
+  * Fixed some issues that were noticed while running on the device for the first time
+  * Removed AddCityButton.qml since we use the pulltoadd component now
+  * Pulltoadd animation is now more reliable since it uses grid units instead of pixels
+  * Transition to the new headers API
+  * Removed the redundant back button definition in the alarm page since it is provided
+    by the pagestack automatically.
+  * Implemented Analog mode and allowed for switching between different modes.
+
+ -- Nekhelesh Ramananthan <krnekhelesh@gmail.com>  Thu, 17 Jul 2014 20:32:15 +0200
+
+ubuntu-clock-app (2.3) utopic; urgency=medium
+
+  [Nekhelesh Ramananthan]
+  * Updated framework version to ubuntu-sdk-14.10-dev2
+  * Fix apparmor issue with regards to reading the ringtone folder (LP: #1340326)
+
+ -- Nekhelesh Ramananthan <krnekhelesh@gmail.com>  Sat, 12 Jul 2014 14:00:00 +0200
+
+ubuntu-clock-app (2.2) utopic; urgency=medium
+
+  [Nekhelesh Ramananthan]
+  * Split labels to allow for a different color time divider.
+  * Added support for 12-hour time display.
+  * Fixed CMakeList.txt for apparmor file
+  * Returned the clock time in the proper user locale
+  * Added support to edit saved alarms
+
+ -- Nekhelesh Ramananthan <krnekhelesh@gmail.com>  Thu, 10 Jul 2014 14:00:00 +0200
+
+ubuntu-clock-app (2.1) utopic; urgency=medium
+
+  [Nekhelesh Ramananthan]
+  * Added support for creating new alarms
+  * Added bottom edge for alarms
+  * Added tug down add city animation
+  * Updated the font size of several UI elements according to design.
+
+ -- Nekhelesh Ramananthan <krnekhelesh@gmail.com>  Thu, 03 Jul 2014 10:00:00 +0200
+ 
+ubuntu-clock-app (2.0) utopic; urgency=medium
+
+  [Nekhelesh Ramananthan]
+  * First release of the clock app reboot
+  * Implemented Digital Mode (LP: #1267146)
+  * Fixed scrollable lists on scrollable pages (LP: #1227418)
+  * Added developer guidelines  
+
+ -- Nekhelesh Ramananthan <krnekhelesh@gmail.com>  Thu, 26 Jun 2014 18:57:25 +0200
 
 ubuntu-clock-app (1.1) raring; urgency=medium
 
