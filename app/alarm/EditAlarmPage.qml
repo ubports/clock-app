@@ -175,11 +175,6 @@ Page {
     FolderListModel {
         id: soundModel
 
-        /*
-          #TODO: Add ubuntu-touch-sounds package as a dependency in the debian
-          control file. It is not present by default in Trusty 14.04.
-        */
-
         showDirs: false
         nameFilters: [ "*.ogg", "*.mp3" ]
         folder: "/usr/share/sounds/ubuntu/ringtones"
