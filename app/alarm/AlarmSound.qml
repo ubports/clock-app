@@ -61,7 +61,7 @@ Page {
 
                 model: soundModel
 
-                ListItem.Base {
+                ListItem.Standard {
                     id: _alarmSoundDelegate
 
                     property alias isChecked: _soundStatus.checked
@@ -74,6 +74,7 @@ Page {
 
                         anchors {
                             left: parent.left
+                            leftMargin: units.gu(2)
                             verticalCenter: parent.verticalCenter
                         }
 
@@ -82,14 +83,9 @@ Page {
                         text: fileBaseName
                     }
 
-                    CheckBox {
+                    control: CheckBox {
                         id: _soundStatus
                         objectName: "soundStatus" + index
-
-                        anchors {
-                            right: parent.right
-                            verticalCenter: parent.verticalCenter
-                        }
 
                         checked: alarmSound.subText === _soundName.text ? true
                                                                         : false
@@ -105,19 +101,6 @@ Page {
                                         _alarmSounds.itemAt(i).isChecked = false
                                     }
                                 }
-                            }
-                        }
-                    }
-
-                    onClicked: {
-                        alarmSound.subText = _soundName.text
-                        alarm.sound = fileURL
-
-                        // Ensures only one alarm sound is selected
-                        for(var i=0; i<soundModel.count; i++) {
-                            if(_alarmSounds.itemAt(i).isChecked &&
-                                    i !== index) {
-                                _alarmSounds.itemAt(i).isChecked = false
                             }
                         }
                     }
