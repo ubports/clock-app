@@ -65,20 +65,25 @@ MainView {
                 if(today === currentDayLabel.text) {
                     compare(currentDaySwitch.checked, true, "Today's Switch is not checked by default")
                 }
+
                 else {
                     compare(currentDaySwitch.checked, false, "Switch for days other than today are checked incorrectly")
                 }
             }
         }
 
+        /*
+         Test to enable all switches and check if the alarm object has been
+         updated correctly
+        */
         function test_switchStatusUpdatesAlarmObject() {
+            waitForRendering(alarmRepeatPage);
+
             for(var i=0; i<repeater.count; i++) {
                 var dayListItem = findChild(alarmRepeatPage, "alarmDayHolder"+i)
                 var currentDaySwitch = findChild(alarmRepeatPage, "daySwitch"+i)
 
                 if(!currentDaySwitch.checked) {
-                    // #FIXME: Without this wait, it fails when running ctest -V
-                    wait(2000)
                     mouseClick(dayListItem, dayListItem.width/2, dayListItem.height/2)
                 }
             }
