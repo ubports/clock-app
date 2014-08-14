@@ -282,7 +282,7 @@ Page {
             onClicked: mainStack.push(Qt.resolvedUrl("AlarmSound.qml"), {
                                           "alarmSound": _alarmSound,
                                           "alarm": _alarm,
-                                          "_soundModel": soundModel
+                                          "soundModel": soundModel
                                       })
         }
     }
