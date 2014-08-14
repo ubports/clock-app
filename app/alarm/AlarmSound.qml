@@ -29,15 +29,26 @@ Page {
 
     // Property to set the alarm sound in the edit alarm page
     property var alarmSound
+
+    // Property to store the alarm object
     property var alarm
-    property var _soundModel
+
+    // Property to set the alarm sound model in the edit alarm page
+    property var soundModel
+
+    head.backAction: Action {
+        iconName: "back"
+        onTriggered: {
+            pop()
+        }
+    }
 
     Flickable {
         id: _pageFlickable
 
         clip: true
         anchors.fill: parent
-        contentHeight: _soundModel.count * units.gu(7)
+        contentHeight: soundModel.count * units.gu(7)
 
         Column {
             id: _alarmSoundColumn
@@ -48,7 +59,7 @@ Page {
                 id: _alarmSounds
                 objectName: "alarmSounds"
 
-                model: _soundModel
+                model: soundModel
 
                 ListItem.Base {
                     id: _alarmSoundDelegate
@@ -88,7 +99,7 @@ Page {
                                 alarm.sound = fileURL
 
                                 // Ensures only one alarm sound is selected
-                                for(var i=0; i<_soundModel.count; i++) {
+                                for(var i=0; i<soundModel.count; i++) {
                                     if(_alarmSounds.itemAt(i).isChecked &&
                                             i !== index) {
                                         _alarmSounds.itemAt(i).isChecked = false
@@ -103,24 +114,13 @@ Page {
                         alarm.sound = fileURL
 
                         // Ensures only one alarm sound is selected
-                        for(var i=0; i<_soundModel.count; i++) {
+                        for(var i=0; i<soundModel.count; i++) {
                             if(_alarmSounds.itemAt(i).isChecked &&
                                     i !== index) {
                                 _alarmSounds.itemAt(i).isChecked = false
                             }
                         }
                     }
-                }
-            }
-        }
-    }
-
-    tools: ToolbarItems {
-        back: Button {
-            action: Action {
-                iconName: "back"
-                onTriggered: {
-                    mainStack.pop()
                 }
             }
         }

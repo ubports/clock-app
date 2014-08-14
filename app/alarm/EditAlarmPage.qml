@@ -78,8 +78,6 @@ Page {
           _alarm.sound, _alarm.message and _alarm.daysOfWeek have been set in
           the respective individual pages already.
         */
-
-        console.log("Alarm sound being saved: " + _alarm.sound)
         _alarm.date = alarmTime
         _alarm.type = Alarm.Repeating
         _alarm.enabled = true
@@ -120,11 +118,6 @@ Page {
         tempAlarm.type = Alarm.Repeating
         tempAlarm.enabled = _alarm.enabled
         tempAlarm.sound = _alarm.sound
-
-        /*
-          #FIXME: Sometimes the clock app crashes due to this code. Cause not
-          known yet! This has been reported at http://pad.lv/1337405.
-        */
         tempAlarm.daysOfWeek = _alarm.daysOfWeek
 
         tempAlarm.save()
