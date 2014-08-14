@@ -77,6 +77,8 @@ ListItemWithActions {
         id: alarmStatus
         objectName: "listAlarmStatus" + index
 
+        property bool tempStatus: false
+
         anchors {
             right: parent.right
             verticalCenter: parent.verticalCenter
@@ -84,12 +86,25 @@ ListItemWithActions {
 
         checked: enabled
 
-        /*
-             #TODO: Add the ability to enable/disable alarms using the
-             switch. At the moment it only shows the alarm status.
-             This was postponed since a similar implementation in the
-             old clock app caused it to loop. So if user clicks on the
-             switch, it disables and then re-enables the alarm again.
-            */
+        Timer {
+            id: waitTimer
+            interval: 5000
+            repeat: false
+            onTriggered: {
+                console.log("binding to alarm status")
+                alarmStatus.checked = Qt.binding(function() { return enabled })
+            }
+        }
+
+        onClicked: {
+            console.log("Binding to temp variable.")
+            checked = Qt.binding(function() { return tempStatus })
+
+            waitTimer.restart()
+
+            var _tempAlarm = alarmModel.get(index)
+            _tempAlarm.enabled = checked
+            _tempAlarm.save()
+        }
     }
 }
