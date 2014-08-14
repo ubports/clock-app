@@ -5,6 +5,7 @@ ubuntu-clock-app (3.1) utopic; urgency=medium
     strings. (LP: #1355414)
   * Synced the fast scroll component with upstream changes
   * Updated inner clock texture as requested by design
+  * Added QML unit tests for alarm label and alarm repeat pages
 
  -- Nekhelesh Ramananthan <krnekhelesh@gmail.com>  Wed, 13 Aug 2014 15:46:12 +0200
 
