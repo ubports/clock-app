@@ -229,8 +229,9 @@ class EditAlarmPage(Page):
 
         """
         try:
-            self.wait_select_single("SubtitledListItem",
-            objectName="alarmSound").subText.wait_for(test_sound_name)
+            self.wait_select_single(
+                "SubtitledListItem", objectName="alarmSound").subText.wait_for(
+                    test_sound_name)
         except AssertionError:
             raise ClockEmulatorException('Error! Incorrect alarm sound')
 
