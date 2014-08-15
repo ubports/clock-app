@@ -226,15 +226,37 @@ Page {
             }
         }
 
-        delegate: SubtitledListItem {
-            text: city
-            subText: country
+        delegate: ListItem.Base {
             showDivider: false
+
+            Column {
+                id: worldCityDelegateColumn
+
+                anchors {
+                    left: parent.left
+                    right: _localTime.left
+                    rightMargin: units.gu(1)
+                    verticalCenter: parent.verticalCenter
+                }
+
+                Label {
+                    text: city
+                    width: parent.width
+                    elide: Text.ElideRight
+                    color: UbuntuColors.midAubergine
+                }
+
+                Label {
+                    text: country
+                    fontSize: "xx-small"
+                    width: parent.width
+                    elide: Text.ElideRight
+                }
+            }
 
             Label {
                 id: _localTime
                 text: localTime
-                fontSize: "medium"
                 anchors {
                     right: parent.right
                     verticalCenter: parent.verticalCenter
