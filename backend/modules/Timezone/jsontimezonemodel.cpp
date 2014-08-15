@@ -91,30 +91,24 @@ void JsonTimeZoneModel::networkReplyFinished(QNetworkReply *reply)
     foreach (const QVariant &entry, timezoneData.toList()) {
         TimeZone tz;
 
-        tz.cityName = entry.toMap().value("name").toString();
+        auto data = entry.toMap();
+        auto admin1 = data.value("admin1").toString();
+        auto admin2 = data.value("admin2").toString();
+        auto country = data.value("country").toString();
 
-        if(!entry.toMap().value("admin1").toString().isEmpty() &&
-                !entry.toMap().value("admin2").toString().isEmpty()) {
-            tz.country = entry.toMap().value("admin2").toString() + ", "
-                    + entry.toMap().value("admin1").toString() + ", "
-                    + entry.toMap().value("country").toString();
+        tz.cityName = data.value("name").toString();
+
+        if (!admin1.isEmpty() && !admin2.isEmpty()) {
+            tz.country = QString("%1, %2, %3").arg(admin2).arg(admin1).arg(country);
+        } else if (!admin1.isEmpty()) {
+            tz.country = QString("%1, %2").arg(admin1).arg(country);
+        } else if (!admin2.isEmpty()) {
+            tz.country = QString("%1, %2").arg(admin2).arg(country);
+        } else {
+            tz.country = country;
         }
 
-        else if(!entry.toMap().value("admin1").toString().isEmpty()) {
-            tz.country = entry.toMap().value("admin1").toString() + ", "
-                    + entry.toMap().value("country").toString();
-        }
-
-        else if(!entry.toMap().value("admin2").toString().isEmpty()) {
-            tz.country = entry.toMap().value("admin2").toString() + ", "
-                    + entry.toMap().value("country").toString();
-        }
-
-        else {
-            tz.country = entry.toMap().value("country").toString();
-        }
-
-        tz.timeZone = QTimeZone(entry.toMap().value("timezone").toString().toLatin1());
+        tz.timeZone = QTimeZone(data.value("timezone").toString().toLatin1());
 
         m_timeZones.append(tz);
     }
