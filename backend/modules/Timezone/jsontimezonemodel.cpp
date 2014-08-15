@@ -92,7 +92,18 @@ void JsonTimeZoneModel::networkReplyFinished(QNetworkReply *reply)
         TimeZone tz;
 
         tz.cityName = entry.toMap().value("name").toString();
-        tz.country = entry.toMap().value("country").toString();
+
+        if(entry.toMap().value("admin1").toString() != "") {
+            tz.country = entry.toMap().value("admin1").toString() + ", " + entry.toMap().value("country").toString();
+        }
+
+        else if(entry.toMap().value("admin2").toString() != "") {
+            tz.country = entry.toMap().value("admin2").toString() + ", " + entry.toMap().value("country").toString();
+        }
+        else {
+            tz.country = entry.toMap().value("country").toString();
+        }
+
         tz.timeZone = QTimeZone(entry.toMap().value("timezone").toString().toLatin1());
 
         m_timeZones.append(tz);
