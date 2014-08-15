@@ -147,7 +147,8 @@ Page {
     Label {
         id: onlineStateLabel
         visible: jsonTimeZoneModel.loading ||
-                 (!jsonTimeZoneModel.loading && sortedTimeZoneModel.count === 0)
+                 (!jsonTimeZoneModel.loading && sortedTimeZoneModel.count === 0) &&
+                 isOnlineMode
         text: {
             if(jsonTimeZoneModel.loading)
                 return i18n.tr("Searching for a city")
@@ -164,7 +165,7 @@ Page {
     }
 
     ActivityIndicator {
-        running: jsonTimeZoneModel.loading
+        running: jsonTimeZoneModel.loading && isOnlineMode
         anchors {
             top: onlineStateLabel.bottom
             topMargin: units.gu(3)
