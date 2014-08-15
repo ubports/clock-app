@@ -93,13 +93,23 @@ void JsonTimeZoneModel::networkReplyFinished(QNetworkReply *reply)
 
         tz.cityName = entry.toMap().value("name").toString();
 
-        if(entry.toMap().value("admin1").toString() != "") {
-            tz.country = entry.toMap().value("admin1").toString() + ", " + entry.toMap().value("country").toString();
+        if(!entry.toMap().value("admin1").toString().isEmpty() &&
+                !entry.toMap().value("admin2").toString().isEmpty()) {
+            tz.country = entry.toMap().value("admin2").toString() + ", "
+                    + entry.toMap().value("admin1").toString() + ", "
+                    + entry.toMap().value("country").toString();
         }
 
-        else if(entry.toMap().value("admin2").toString() != "") {
-            tz.country = entry.toMap().value("admin2").toString() + ", " + entry.toMap().value("country").toString();
+        else if(!entry.toMap().value("admin1").toString().isEmpty()) {
+            tz.country = entry.toMap().value("admin1").toString() + ", "
+                    + entry.toMap().value("country").toString();
         }
+
+        else if(!entry.toMap().value("admin2").toString().isEmpty()) {
+            tz.country = entry.toMap().value("admin2").toString() + ", "
+                    + entry.toMap().value("country").toString();
+        }
+
         else {
             tz.country = entry.toMap().value("country").toString();
         }

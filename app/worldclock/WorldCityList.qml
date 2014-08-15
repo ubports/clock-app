@@ -264,7 +264,14 @@ Page {
             }
 
             onClicked: {
-                cityList.addWorldCity(city, country, timezoneID)
+                var tempCountry = country.split(",")
+                if(tempCountry.length > 2) {
+                    cityList.addWorldCity(city, tempCountry[1] + ","
+                                          + tempCountry[2], timezoneID)
+                } else {
+                    cityList.addWorldCity(city, country, timezoneID)
+                }
+
                 mainStack.pop()
             }
         }
