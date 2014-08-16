@@ -64,12 +64,13 @@ Page {
 
         function title(index) {
             if (title["text"] === undefined) {
+		// TRANSLATORS: this refers to either 10, 20, 30 or 60 minutes
                 title.text =
                         [
-                            i18n.tr("%1 minute", "%1 minutes", 10).arg(10),
-                            i18n.tr("%1 minute", "%1 minutes", 20).arg(20),
-                            i18n.tr("%1 minute", "%1 minutes", 30).arg(30),
-                            i18n.tr("%1 minute", "%1 minutes", 60).arg(60)
+                            i18n.tr("%1 minutes").arg(10),
+                            i18n.tr("%1 minutes").arg(20),
+                            i18n.tr("%1 minutes").arg(30),
+                            i18n.tr("%1 minutes").arg(60)
                         ]
             }
             return title.text[index]

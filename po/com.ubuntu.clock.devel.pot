@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-08-13 08:37+0200\n"
+"POT-Creation-Date: 2014-08-16 11:23+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,7 +16,6 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
 #: ../app/alarm/AlarmLabel.qml:27 ../app/alarm/AlarmLabel.qml:43
 #: ../app/alarm/EditAlarmPage.qml:220
@@ -52,32 +51,26 @@ msgstr ""
 msgid "Settings"
 msgstr ""
 
-#: ../app/alarm/AlarmSettingsPage.qml:69 ../app/alarm/AlarmSettingsPage.qml:70
-#: ../app/alarm/AlarmSettingsPage.qml:71 ../app/alarm/AlarmSettingsPage.qml:72
-#, qt-format
-msgid "%1 minute"
-msgid_plural "%1 minutes"
-msgstr[0] ""
-msgstr[1] ""
-
-#: ../app/alarm/AlarmSettingsPage.qml:92
-msgid "Alarm volume"
-msgstr ""
-
-#: ../app/alarm/AlarmSettingsPage.qml:134
-msgid "Silence after"
-msgstr ""
-
-#: ../app/alarm/AlarmSettingsPage.qml:135
+#: ../app/alarm/AlarmSettingsPage.qml:70 ../app/alarm/AlarmSettingsPage.qml:71
+#: ../app/alarm/AlarmSettingsPage.qml:72 ../app/alarm/AlarmSettingsPage.qml:73
+#: ../app/alarm/AlarmSettingsPage.qml:136
 #, qt-format
 msgid "%1 minutes"
 msgstr ""
 
-#: ../app/alarm/AlarmSettingsPage.qml:176
+#: ../app/alarm/AlarmSettingsPage.qml:93
+msgid "Alarm volume"
+msgstr ""
+
+#: ../app/alarm/AlarmSettingsPage.qml:135
+msgid "Silence after"
+msgstr ""
+
+#: ../app/alarm/AlarmSettingsPage.qml:177
 msgid "Vibration"
 msgstr ""
 
-#: ../app/alarm/AlarmSettingsPage.qml:205
+#: ../app/alarm/AlarmSettingsPage.qml:206
 msgid "Change time and date"
 msgstr ""
 
