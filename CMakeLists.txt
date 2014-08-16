@@ -64,8 +64,14 @@ else(CLICK_MODE)
   set(EXEC "qmlscene $@ -I ${MODULE_PATH}  ${CMAKE_INSTALL_PREFIX}/${UBUNTU-CLOCK_APP_DIR}/${MAIN_QML}")
 endif()
 
+file(GLOB_RECURSE I18N_SRC_FILES
+    RELATIVE ${CMAKE_CURRENT_SOURCE_DIR}/po
+    *.qml *.js)
+list(SORT I18N_SRC_FILES)
+
 add_subdirectory(app)
 add_subdirectory(backend)
+add_subdirectory(po)
 if(NOT CLICK_MODE)
   add_subdirectory(tests)
 endif(NOT CLICK_MODE)
