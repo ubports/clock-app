@@ -5,6 +5,9 @@ ubuntu-clock-app (3.1) utopic; urgency=medium
     strings. (LP: #1355414)
   * Updated inner clock texture as requested by design
 
+  [David Planella]
+  * Added internationalization support (LP: #1354522)
+
  -- Nekhelesh Ramananthan <krnekhelesh@gmail.com>  Wed, 13 Aug 2014 15:46:12 +0200
 
 ubuntu-clock-app (3.0-0ubuntu1) utopic; urgency=medium
