@@ -129,7 +129,6 @@ Page {
     JsonTimeZoneModel {
         id: jsonTimeZoneModel
         updateInterval: 60000
-        onStatusChanged: console.log("Status:" + status)
     }
 
     XmlTimeZoneModel {
