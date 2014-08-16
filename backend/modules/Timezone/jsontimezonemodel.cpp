@@ -50,7 +50,6 @@ void JsonTimeZoneModel::setSource(const QUrl &source)
     emit sourceChanged();
 
     setStatus(TimeZoneModel::Loading);
-    emit statusChanged();
 
     // Start the retrieval process
     loadTimeZonesFromJson();
@@ -117,7 +116,6 @@ void JsonTimeZoneModel::networkReplyFinished(QNetworkReply *reply)
     }
 
     setStatus(TimeZoneModel::Ready);
-    emit statusChanged();
 
     // Let QML know model is reusable again
     endResetModel();
