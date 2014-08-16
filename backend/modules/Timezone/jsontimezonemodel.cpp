@@ -24,8 +24,7 @@
 #include "jsontimezonemodel.h"
 
 JsonTimeZoneModel::JsonTimeZoneModel(QObject *parent):
-    TimeZoneModel(parent),
-    m_loading(false)
+    TimeZoneModel(parent)
 {
     m_nam = new QNetworkAccessManager(this);
     connect(m_nam,
@@ -39,11 +38,6 @@ QUrl JsonTimeZoneModel::source() const
     return m_source;
 }
 
-bool JsonTimeZoneModel::loading() const
-{
-    return m_loading;
-}
-
 void JsonTimeZoneModel::setSource(const QUrl &source)
 {
     if (m_source == source) {
@@ -55,8 +49,8 @@ void JsonTimeZoneModel::setSource(const QUrl &source)
     m_source = source;
     emit sourceChanged();
 
-    m_loading = true;
-    emit loadingChanged();
+    setStatus(TimeZoneModel::Loading);
+    emit statusChanged();
 
     // Start the retrieval process
     loadTimeZonesFromJson();
@@ -73,6 +67,15 @@ void JsonTimeZoneModel::loadTimeZonesFromJson()
 
 void JsonTimeZoneModel::networkReplyFinished(QNetworkReply *reply)
 {
+    if(reply->error() != QNetworkReply::NoError) {
+        qDebug() << "[LOG] Network error: " << reply->errorString();
+
+        setStatus(TimeZoneModel::Error);
+        emit statusChanged();
+
+        return;
+    }
+
     QByteArray data = reply->readAll();
 
     QJsonDocument jsonDoc = QJsonDocument::fromJson(data);
@@ -113,8 +116,8 @@ void JsonTimeZoneModel::networkReplyFinished(QNetworkReply *reply)
         m_timeZones.append(tz);
     }
 
-    m_loading = false;
-    emit loadingChanged();
+    setStatus(TimeZoneModel::Ready);
+    emit statusChanged();
 
     // Let QML know model is reusable again
     endResetModel();

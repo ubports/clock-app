@@ -26,7 +26,7 @@ TimeZoneModel::TimeZoneModel(QObject *parent):
     QAbstractListModel(parent)
 {
     // By Default set status to ready. Any further operations will change it.
-    m_status = TimeZoneModel.Ready;
+    m_status = TimeZoneModel::Ready;
 
     m_updateTimer.setInterval(0);
     connect(&m_updateTimer, &QTimer::timeout, this, &TimeZoneModel::update);

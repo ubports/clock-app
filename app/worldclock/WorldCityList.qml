@@ -127,6 +127,7 @@ Page {
     JsonTimeZoneModel {
         id: jsonTimeZoneModel
         updateInterval: 60000
+        onStatusChanged: console.log("Status:" + status)
     }
 
     XmlTimeZoneModel {
@@ -146,26 +147,50 @@ Page {
 
     Label {
         id: onlineStateLabel
-        visible: jsonTimeZoneModel.loading ||
-                 (!jsonTimeZoneModel.loading && sortedTimeZoneModel.count === 0) &&
-                 isOnlineMode
+        visible: text != ""
         text: {
-            if(jsonTimeZoneModel.loading)
-                return i18n.tr("Searching for a city")
-            else if(!jsonTimeZoneModel.loading && isOnlineMode && sortedTimeZoneModel.count === 0)
-                return i18n.tr("No City Found")
-            else
+            if (isOnlineMode) {
+                if(jsonTimeZoneModel.status === JsonTimeZoneModel.Loading) {
+                    return i18n.tr("Searching for a city")
+                }
+
+                else if(jsonTimeZoneModel.status === JsonTimeZoneModel.Ready
+                        && sortedTimeZoneModel.count === 0) {
+                    return i18n.tr("No City Found")
+                }
+
+                else if(jsonTimeZoneModel.status === JsonTimeZoneModel.Error) {
+                    return i18n.tr("<b>%1</b> %2")
+                    .arg("Unable to connect.")
+                    .arg("Please check your network connection and try again")
+                }
+
+                else {
+                    return ""
+                }
+            }
+
+            else {
                 return ""
+            }
         }
+
+        width: parent.width
+        wrapMode: Text.WordWrap
+        horizontalAlignment: Text.AlignHCenter
+
         anchors {
-            horizontalCenter: parent.horizontalCenter
+            left: parent.left
+            right: parent.right
+            margins: units.gu(2)
             top: parent.top
             topMargin: units.gu(4)
         }
     }
 
     ActivityIndicator {
-        running: jsonTimeZoneModel.loading && isOnlineMode
+        running: jsonTimeZoneModel.status === JsonTimeZoneModel.Loading
+                 && isOnlineMode
         anchors {
             top: onlineStateLabel.bottom
             topMargin: units.gu(3)
