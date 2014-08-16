@@ -7,6 +7,7 @@ ubuntu-clock-app (3.1) utopic; urgency=medium
   * Updated inner clock texture as requested by design
   * Added json backend to search cities online
   * Added UI support for searching cities online from geoname-lookup.ubuntu.com
+  * Improved error handling of jsontimezone model.
 
   [David Planella]
   * Added internationalization support (LP: #1354522)
