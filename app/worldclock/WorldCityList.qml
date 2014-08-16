@@ -97,8 +97,10 @@ Page {
                         }
 
                         if(isOnlineMode) {
-                            var url = "http://geoname-lookup.ubuntu.com/?query="
-                                    + searchField.text
+                            var url = String("%1%2%3")
+                            .arg("http://geoname-lookup.ubuntu.com/?query=")
+                            .arg(searchField.text)
+                            .arg("&app=com.ubuntu.clock.devel&version=3.0")
                             console.log("Online URL: " + url)
                             jsonTimeZoneModel.source = Qt.resolvedUrl(url)
                         }
