@@ -147,6 +147,8 @@ ListItemWithActions {
                     day = i18n.tr("Yesterday")
                 }
 
+                // TRANSLATORS: this indicates if the time in a world clock
+                // is behind or ahead of the time at the current location
                 var isBehind = model.timeTo > 0 ? i18n.tr("behind")
                                                 : i18n.tr("ahead")
 
@@ -155,7 +157,9 @@ ListItemWithActions {
                 var hour = timediff[0]
 
                 if(hour > 0 &&  minute > 0) {
-                    return ("%1\n%2hr%3min %4")
+                    // TRANSLATORS: the first argument is a day, followed by hour, minute and the
+                    // translation for either 'behind' or 'ahead'
+                    return (i18n.tr("%1\n%2 h %3 m %4"))
                     .arg(day)
                     .arg(hour)
                     .arg(minute)
@@ -163,14 +167,18 @@ ListItemWithActions {
                 }
 
                 else if(hour > 0 && minute === 0) {
-                    return ("%1\n%2hr %3")
+                    // TRANSLATORS: the first argument is a day, followed by hour and the
+                    // translation for either 'behind' or 'ahead'
+                    return (i18n.tr("%1\n%2 h %3"))
                     .arg(day)
                     .arg(hour)
                     .arg(isBehind)
                 }
 
                 else if(hour === 0 && minute > 0) {
-                    return ("%1\n%2min %3")
+                    // TRANSLATORS: the first argument is a day, followed by minute and the
+                    // translation for either 'behind' or 'ahead'
+                    return ("%1\n%2 m %3")
                     .arg(day)
                     .arg(minute)
                     .arg(isBehind)
