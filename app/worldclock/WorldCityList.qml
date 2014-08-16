@@ -159,7 +159,8 @@ Page {
                     return i18n.tr("No City Found")
                 }
 
-                else if(jsonTimeZoneModel.status === JsonTimeZoneModel.Error) {
+                else if(jsonTimeZoneModel.status === JsonTimeZoneModel.Error
+                        && sortedTimeZoneModel.count === 0) {
                     return i18n.tr("<b>%1</b> %2")
                     .arg("Unable to connect.")
                     .arg("Please check your network connection and try again")
