@@ -70,7 +70,6 @@ void JsonTimeZoneModel::networkReplyFinished(QNetworkReply *reply)
         qDebug() << "[LOG] Network error: " << reply->errorString();
 
         setStatus(TimeZoneModel::Error);
-        emit statusChanged();
 
         return;
     }
