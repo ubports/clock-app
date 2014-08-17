@@ -51,6 +51,7 @@ ListItemWithActions {
 
             Label {
                 id: cityNameText
+                objectName: "cityNameText"
                 fontSize: "medium"
                 text: model.city
                 color: UbuntuColors.midAubergine

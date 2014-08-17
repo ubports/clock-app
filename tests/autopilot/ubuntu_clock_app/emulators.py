@@ -59,6 +59,10 @@ class MainView(ubuntuuitoolkit.MainView):
         """ Get the AlarmList object. """
         return AlarmList.select(self)
 
+    @autopilot_logging.log_action(logger.info)
+    def get_worldCityList(self):
+        """ Return the World City List page """
+        return self.wait_select_single("Page11", objectName="worldCityList")
 
 class Page(ubuntuuitoolkit.UbuntuUIToolkitCustomProxyObjectBase):
 
@@ -100,6 +104,31 @@ class PageWithBottomEdge(MainView):
 class ClockPage(PageWithBottomEdge):
     """Autopilot helper for the Clock page."""
 
+    @autopilot_logging.log_action(logger.info)
+    def swipe_to_open_worldCityList(self):
+        """Swipe to reveal WorldCityList"""
+
+        action_item = self.wait_select_single(
+            "PullToAdd", objectName="addCityButton")
+        clock = self.wait_select_single("Clock", objectName="clock")
+
+        start_x = (action_item.globalRect.x +
+                  (action_item.globalRect.width * 0.5))
+        start_y = (action_item.globalRect.y +
+                  (clock.globalRect.y * 0.5))
+        stop_y = start_y + (self.height * 0.7)
+
+        self.pointing_device.drag(start_x, start_y, start_x, stop_y)
+        self.wait_select_single("PullToAdd").visible.wait_for(False)
+
+    def get_num_of_saved_cities(self):
+        """Return the number of saved world cities"""
+        return int(self._get_saved_world_city_list().count)
+
+    def _get_saved_world_city_list(self):
+        """Return the saved world city listview object"""
+        return self.wait_select_single(
+            "QQuickRepeater", objectName='userWorldCityRepeater')
 
 class Page11(Page):
     """Autopilot helper for the Alarm page."""
@@ -168,6 +197,23 @@ class Page11(Page):
                 count.wait_for(count + 1)
         except AssertionError:
             raise ClockEmulatorException('Error creating alarm.')
+
+    #----- WorldCityList page -------
+
+    @autopilot_logging.log_action(logger.info)
+    def add_world_city(self, city_Name):
+        """Add world city
+
+        :param city_Name: world city name to add
+
+        """
+        cityList = self.wait_select_single("QQuickListView",
+            objectName="cityList")
+        for index in range(int(cityList.count)):
+            if cityList.wait_select_single(ojbectName="worldCityItem{}".format(index)).text == city_Name:
+                cityList.click_element("worldCityItem{}".format(index),
+                direction=None)
+                break
 
 
 class EditAlarmPage(Page):

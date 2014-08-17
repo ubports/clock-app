@@ -34,6 +34,7 @@ import "../upstreamcomponents"
 
 Page {
     id: worldCityList
+    objectName: "worldCityList"
 
     title: i18n.tr("Select a city")
     visible: false
@@ -114,6 +115,7 @@ Page {
 
     ListView {
         id: cityList
+        objectName: "cityList"
 
         function addWorldCity(city, country, timezone) {
             console.log("[LOG]: Adding city to U1db Database")
@@ -165,6 +167,7 @@ Page {
             text: city
             subText: country
             showDivider: false
+            objectName: "worldCityItem" + index
 
             Label {
                 id: _localTime
