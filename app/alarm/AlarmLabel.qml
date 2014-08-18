@@ -50,7 +50,9 @@ Page {
             width: parent.width
             inputMethodHints: Qt.ImhNoPredictiveText
 
-            onTextChanged:  ( backAction.enabled = !!text.trim() )
+            onTextChanged: {
+                backAction.enabled = !!text.trim()
+            }
         }
     }
 
