@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-08-16 09:36+0200\n"
+"POT-Creation-Date: 2014-08-18 15:47+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../app/alarm/AlarmLabel.qml:27 ../app/alarm/AlarmLabel.qml:43
-#: ../app/alarm/EditAlarmPage.qml:220
+#: ../app/alarm/EditAlarmPage.qml:268
 msgid "Label"
 msgstr ""
 
@@ -31,7 +31,7 @@ msgstr ""
 msgid "Alarms"
 msgstr ""
 
-#: ../app/alarm/AlarmPage.qml:42 ../app/alarm/EditAlarmPage.qml:53
+#: ../app/alarm/AlarmPage.qml:42 ../app/alarm/EditAlarmPage.qml:54
 msgid "Alarm"
 msgstr ""
 
@@ -43,7 +43,7 @@ msgstr ""
 msgid "Select All"
 msgstr ""
 
-#: ../app/alarm/AlarmRepeat.qml:28 ../app/alarm/EditAlarmPage.qml:210
+#: ../app/alarm/AlarmRepeat.qml:28 ../app/alarm/EditAlarmPage.qml:258
 msgid "Repeat"
 msgstr ""
 
@@ -74,7 +74,7 @@ msgstr ""
 msgid "Change time and date"
 msgstr ""
 
-#: ../app/alarm/AlarmSound.qml:27
+#: ../app/alarm/AlarmSound.qml:26 ../app/alarm/EditAlarmPage.qml:281
 msgid "Sound"
 msgstr ""
 
@@ -90,19 +90,15 @@ msgstr ""
 msgid "Daily"
 msgstr ""
 
-#: ../app/alarm/EditAlarmPage.qml:39
+#: ../app/alarm/EditAlarmPage.qml:40
 msgid "New alarm"
 msgstr ""
 
-#: ../app/alarm/EditAlarmPage.qml:39
+#: ../app/alarm/EditAlarmPage.qml:40
 msgid "Edit alarm"
 msgstr ""
 
-#: ../app/alarm/EditAlarmPage.qml:233
-msgid "Sound (disabled)"
-msgstr ""
-
-#: ../app/alarm/EditAlarmPage.qml:255
+#: ../app/alarm/EditAlarmPage.qml:305
 msgid "Delete alarm"
 msgstr ""
 
@@ -110,39 +106,39 @@ msgstr ""
 msgid "Add"
 msgstr ""
 
-#: ../app/clock/ClockPage.qml:65 ../app/worldclock/WorldCityList.qml:50
+#: ../app/clock/ClockPage.qml:65 ../app/worldclock/WorldCityList.qml:52
 msgid "City"
 msgstr ""
 
-#: ../app/ubuntu-clock-app.qml:102
+#: ../app/ubuntu-clock-app.qml:103
 msgid "Next Alarm in .."
 msgstr ""
 
-#: ../app/worldclock/UserWorldCityDelegate.qml:136
+#: ../app/worldclock/UserWorldCityDelegate.qml:139
 msgid "Today"
 msgstr ""
 
-#: ../app/worldclock/UserWorldCityDelegate.qml:140
+#: ../app/worldclock/UserWorldCityDelegate.qml:143
 msgid "Tomorrow"
 msgstr ""
 
-#: ../app/worldclock/UserWorldCityDelegate.qml:144
+#: ../app/worldclock/UserWorldCityDelegate.qml:147
 msgid "Yesterday"
 msgstr ""
 
 #. TRANSLATORS: this indicates if the time in a world clock
 #. is behind or ahead of the time at the current location
-#: ../app/worldclock/UserWorldCityDelegate.qml:149
+#: ../app/worldclock/UserWorldCityDelegate.qml:152
 msgid "behind"
 msgstr ""
 
-#: ../app/worldclock/UserWorldCityDelegate.qml:150
+#: ../app/worldclock/UserWorldCityDelegate.qml:153
 msgid "ahead"
 msgstr ""
 
 #. TRANSLATORS: the first argument is a day, followed by hour, minute and the
 #. translation for either 'behind' or 'ahead'
-#: ../app/worldclock/UserWorldCityDelegate.qml:159
+#: ../app/worldclock/UserWorldCityDelegate.qml:162
 #, qt-format
 msgid ""
 "%1\n"
@@ -151,21 +147,42 @@ msgstr ""
 
 #. TRANSLATORS: the first argument is a day, followed by hour and the
 #. translation for either 'behind' or 'ahead'
-#: ../app/worldclock/UserWorldCityDelegate.qml:169
+#: ../app/worldclock/UserWorldCityDelegate.qml:172
 #, qt-format
 msgid ""
 "%1\n"
 "%2 h %3"
 msgstr ""
 
-#: ../app/worldclock/UserWorldCityDelegate.qml:185
+#: ../app/worldclock/UserWorldCityDelegate.qml:188
 msgid "No Time Difference"
 msgstr ""
 
-#: ../app/worldclock/WorldCityList.qml:38
+#: ../app/worldclock/WorldCityList.qml:40
 msgid "Select a city"
 msgstr ""
 
-#: ../app/worldclock/WorldCityList.qml:64
+#: ../app/worldclock/WorldCityList.qml:66
 msgid "Back"
+msgstr ""
+
+#: ../app/worldclock/WorldCityList.qml:78
+msgid "Search..."
+msgstr ""
+
+#: ../app/worldclock/WorldCityList.qml:155
+msgid "Searching for a city"
+msgstr ""
+
+#: ../app/worldclock/WorldCityList.qml:160
+msgid "No City Found"
+msgstr ""
+
+#. TRANSLATORS: the first argument is a string "Unable to
+#. connect." in bold letters. Second argument is the rest of
+#. the string "Please check your network connection and try
+#. again".
+#: ../app/worldclock/WorldCityList.qml:169
+#, qt-format
+msgid "<b>%1</b> %2"
 msgstr ""

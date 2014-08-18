@@ -162,6 +162,10 @@ Page {
 
                 else if(jsonTimeZoneModel.status === JsonTimeZoneModel.Error
                         && sortedTimeZoneModel.count === 0) {
+                    // TRANSLATORS: the first argument is a string "Unable to
+                    // connect." in bold letters. Second argument is the rest of
+                    // the string "Please check your network connection and try
+                    // again".
                     return i18n.tr("<b>%1</b> %2")
                     .arg("Unable to connect.")
                     .arg("Please check your network connection and try again")
