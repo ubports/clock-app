@@ -46,21 +46,23 @@ ListItemWithActions {
 
             anchors {
                 left: parent.left
+                right: localTimeVisual.left
+                rightMargin: units.gu(1)
                 verticalCenter: parent.verticalCenter
             }
 
             Label {
-                id: cityNameText
-                objectName: "cityNameText"
-                fontSize: "medium"
                 text: model.city
+                width: parent.width
+                elide: Text.ElideRight
                 color: UbuntuColors.midAubergine
             }
 
             Label {
-                id: countryNameText
                 text: model.country
                 fontSize: "xx-small"
+                width: parent.width
+                elide: Text.ElideRight
             }
         }
 
