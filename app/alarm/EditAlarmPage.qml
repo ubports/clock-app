@@ -19,6 +19,7 @@
 import QtQuick 2.0
 import DateTime 1.0
 import Ubuntu.Components 1.1
+import Qt.labs.folderlistmodel 2.1
 import Ubuntu.Components.Pickers 1.0
 import Ubuntu.Components.ListItems 1.0 as ListItem
 import "../components"
@@ -73,7 +74,10 @@ Page {
         var alarmTime = new Date()
         alarmTime.setHours(_timePicker.hours, _timePicker.minutes, 0)
 
-        _alarm.message = _alarmLabel.subText
+        /*
+          _alarm.sound, _alarm.message and _alarm.daysOfWeek have been set in
+          the respective individual pages already.
+        */
         _alarm.date = alarmTime
         _alarm.type = Alarm.Repeating
         _alarm.enabled = true
@@ -89,6 +93,7 @@ Page {
         _alarm.daysOfWeek = tempAlarm.daysOfWeek
         _alarm.enabled = tempAlarm.enabled
         _alarm.date = tempAlarm.date
+        _alarm.sound = tempAlarm.sound
     }
 
     // Function to delete a saved alarm
@@ -112,11 +117,7 @@ Page {
         tempAlarm.date = alarmTime
         tempAlarm.type = Alarm.Repeating
         tempAlarm.enabled = _alarm.enabled
-
-        /*
-          #FIXME: Sometimes the clock app crashes due to this code. Cause not
-          known yet! This has been reported at http://pad.lv/1337405.
-        */
+        tempAlarm.sound = _alarm.sound
         tempAlarm.daysOfWeek = _alarm.daysOfWeek
 
         tempAlarm.save()
@@ -137,6 +138,22 @@ Page {
         }
     }
 
+    function getSoundName(chosenSoundPath) {
+        for(var i=0; i<soundModel.count; i++) {
+            if(chosenSoundPath === Qt.resolvedUrl(soundModel.get(i, "filePath"))) {
+                return soundModel.get(i, "fileBaseName")
+            }
+        }
+    }
+
+    function getSoundPath(chosenSoundName) {
+        for(var i=0; i<soundModel.count; i++) {
+            if(chosenSoundName === soundModel.get(i, "fileBaseName")) {
+                return soundModel.get(i, "filePath")
+            }
+        }
+    }
+
     Alarm {
         id: _alarm
         onStatusChanged: {
@@ -152,6 +169,37 @@ Page {
         }
         onDateChanged: {
             _timePicker.date = _alarm.date
+        }
+    }
+
+    FolderListModel {
+        id: soundModel
+
+        showDirs: false
+        nameFilters: [ "*.ogg", "*.mp3" ]
+        folder: "/usr/share/sounds/ubuntu/ringtones"
+
+        onCountChanged: {
+            if(count > 0) {
+                /*
+                  When folder model is completely loaded, proceed to perform
+                  the following operations,
+
+                  if new alarm, then set the sound name as "Suru arpeggio" and
+                  retrieve the sound path from the folder model to assign to
+                  the alarm model sound property.
+
+                  If it is a saved alarm, get the sound path from the alarm
+                  object and retrieve the sound name from the folder model.
+                */
+                if(isNewAlarm) {
+                    _alarm.sound = getSoundPath(_alarmSound._soundName)
+                    _alarmSound.subText = _alarmSound._soundName
+                }
+                else {
+                    _alarmSound.subText = getSoundName(_alarm.sound.toString())
+                }
+            }
         }
     }
 
@@ -226,14 +274,16 @@ Page {
         SubtitledListItem {
             id: _alarmSound
             objectName: "alarmSound"
-            /*
-              #TODO: Add support for choosing new alarm sound when indicator-
-              datetime supports custom alarm sounds
-            */
-            text: i18n.tr("Sound (disabled)")
-            subText: "Suru arpeggio"
-            onClicked: mainStack.push(Qt.resolvedUrl("AlarmSound.qml"),
-                                      {"alarmSound": _alarmSound})
+
+            // Default Alarm Sound for new alarms
+            property string _soundName: "Suru arpeggio"
+
+            text: i18n.tr("Sound")
+            onClicked: mainStack.push(Qt.resolvedUrl("AlarmSound.qml"), {
+                                          "alarmSound": _alarmSound,
+                                          "alarm": _alarm,
+                                          "soundModel": soundModel
+                                      })
         }
     }
 
