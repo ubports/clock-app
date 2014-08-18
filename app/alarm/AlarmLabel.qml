@@ -50,23 +50,7 @@ Page {
             width: parent.width
             inputMethodHints: Qt.ImhNoPredictiveText
 
-            onTextChanged:  {
-                backAction.enabled = false
-
-                // If string is empty, reject it immediately
-                if(text === "") {
-                    backAction.enabled = false
-                    return
-                }
-
-                // Check if strings contain only blank spaces. If yes reject.
-                for (var i=0; i < text.length; i++) {
-                    if(text[i] !== " ") {
-                        backAction.enabled = true
-                        return
-                    }
-                }
-            }
+            onTextChanged:  ( backAction.enabled = !!text.trim() )
         }
     }
 
