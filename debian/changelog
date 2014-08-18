@@ -5,6 +5,7 @@ ubuntu-clock-app (3.1) utopic; urgency=medium
     strings. (LP: #1355414)
   * Synced the fast scroll component with upstream changes
   * Updated inner clock texture as requested by design
+  * Added support for custom alarm sounds as per the design spec.
 
   [David Planella]
   * Added internationalization support (LP: #1354522)
