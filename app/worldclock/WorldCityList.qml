@@ -271,6 +271,7 @@ Page {
 
                 Label {
                     text: city
+                    objectName: "cityNameText"
                     width: parent.width
                     elide: Text.ElideRight
                     color: UbuntuColors.midAubergine

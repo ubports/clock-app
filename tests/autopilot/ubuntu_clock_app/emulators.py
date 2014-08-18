@@ -62,7 +62,8 @@ class MainView(ubuntuuitoolkit.MainView):
     @autopilot_logging.log_action(logger.info)
     def get_worldCityList(self):
         """ Return the World City List page """
-        return self.wait_select_single("Page11", objectName="worldCityList")
+        return self.wait_select_single("WorldCityList",
+                                       objectName="worldCityList")
 
 
 class Page(ubuntuuitoolkit.UbuntuUIToolkitCustomProxyObjectBase):
@@ -134,20 +135,35 @@ class ClockPage(PageWithBottomEdge):
     def delete_added_world_city(self, city_Name):
         """ Delete added world city """
         old_cities_count = self.get_num_of_saved_cities()
-
         for index in range(old_cities_count):
-            city = self.proxy_object.wait_select_single(
-                objectName='userWorldCityItem{}'.format(index))
-            if self.wait_select_single(objectName='userWorldCityItem{}'.\
-                    format(index)).wait_select_single("Label",
-                    objectName="cityNameText").text == city_Name:
-                city.swipe_to_delete()
-                city.confirm_removal()
+            if self.wait_select_single(
+                objectName='userWorldCityItem{}'.format(index)).\
+                wait_select_single("Label", objectName="userCityNameText").\
+                    text == city_Name:
+                self._delete_userWorldCityItem(index)
         try:
-            self._get_saved_world_city_list().count.wait_for\
-                (old_cities_count - 1)
+            self._get_saved_world_city_list().count.wait_for(
+                old_cities_count - 1)
         except AssertionError:
             raise ClockEmulatorException('Error deleting city.')
+
+    def _delete_userWorldCityItem(self, index):
+        cityItem = self.wait_select_single(
+            objectName='userWorldCityItem{}'.format(index))
+        self._swipe_to_delete(cityItem)
+        self._confirm_removal(cityItem)
+
+    def _swipe_to_delete(self, cityItem):
+        x, y, width, height = cityItem.globalRect
+        start_x = x + (width * 0.2)
+        stop_x = x + (width * 0.8)
+        start_y = stop_y = y + (height // 2)
+
+        self.pointing_device.drag(start_x, start_y, stop_x, stop_y)
+
+    def _confirm_removal(self, cityItem):
+        deleteButton = cityItem.wait_select_single(name='delete')
+        self.pointing_device.click_object(deleteButton)
 
 
 class Page11(Page):
@@ -218,7 +234,10 @@ class Page11(Page):
         except AssertionError:
             raise ClockEmulatorException('Error creating alarm.')
 
-    """------------ WorldCityList page ------------ """
+
+class WorldCityList(Page):
+    """Autopilot helper for World City List page."""
+
     @autopilot_logging.log_action(logger.info)
     def add_world_city(self, city_Name):
         """Add world city
@@ -230,8 +249,9 @@ class Page11(Page):
                                            objectName="cityList")
 
         for index in range(int(cityList.count)):
-            if cityList.wait_select_single(objectName="worldCityItem{}".
-                                           format(index)).text == city_Name:
+            if cityList.wait_select_single(
+                objectName="worldCityItem{}".format(index)).wait_select_single(
+                    "Label", objectName="cityNameText").text == city_Name:
                 cityList.click_element("worldCityItem{}".format(index),
                                        direction=None)
                 break

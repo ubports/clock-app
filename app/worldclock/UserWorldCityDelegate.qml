@@ -53,6 +53,7 @@ ListItemWithActions {
 
             Label {
                 text: model.city
+                objectName: "userCityNameText"
                 width: parent.width
                 elide: Text.ElideRight
                 color: UbuntuColors.midAubergine
