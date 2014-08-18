@@ -51,10 +51,12 @@ class TestClock(ClockAppTestCase):
         old_city_count = self.page.get_num_of_saved_cities()
 
         self.page.swipe_to_open_worldCityList()
-        worldCityList=self.main_view.get_worldCityList()
+        worldCityList = self.main_view.get_worldCityList()
         worldCityList.add_world_city(city_Name)
 
-        ## Confirm that the city has been added
-        #self.assertThat(
-            #self.page.get_num_of_saved_cities,
-            #Eventually(Equals(old_city_count + 1)))
+        # Confirm that the city has been added
+        self.assertThat(
+            self.page.get_num_of_saved_cities,
+            Eventually(Equals(old_city_count + 1)))
+
+        self.page.delete_added_world_city(city_Name)

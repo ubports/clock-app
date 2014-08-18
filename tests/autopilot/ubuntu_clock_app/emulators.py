@@ -64,6 +64,7 @@ class MainView(ubuntuuitoolkit.MainView):
         """ Return the World City List page """
         return self.wait_select_single("Page11", objectName="worldCityList")
 
+
 class Page(ubuntuuitoolkit.UbuntuUIToolkitCustomProxyObjectBase):
 
     """Autopilot helper for Pages."""
@@ -113,13 +114,12 @@ class ClockPage(PageWithBottomEdge):
         clock = self.wait_select_single("Clock", objectName="clock")
 
         start_x = (action_item.globalRect.x +
-                  (action_item.globalRect.width * 0.5))
+                   (action_item.globalRect.width * 0.5))
         start_y = (action_item.globalRect.y +
-                  (clock.globalRect.y * 0.5))
+                   (clock.globalRect.y * 0.5))
         stop_y = start_y + (self.height * 0.7)
 
         self.pointing_device.drag(start_x, start_y, start_x, stop_y)
-        self.wait_select_single("PullToAdd").visible.wait_for(False)
 
     def get_num_of_saved_cities(self):
         """Return the number of saved world cities"""
@@ -129,6 +129,26 @@ class ClockPage(PageWithBottomEdge):
         """Return the saved world city listview object"""
         return self.wait_select_single(
             "QQuickRepeater", objectName='userWorldCityRepeater')
+
+    @autopilot_logging.log_action(logger.info)
+    def delete_added_world_city(self, city_Name):
+        """ Delete added world city """
+        old_cities_count = self.get_num_of_saved_cities()
+
+        for index in range(old_cities_count):
+            city = self.proxy_object.wait_select_single(
+                objectName='userWorldCityItem{}'.format(index))
+            if self.wait_select_single(objectName='userWorldCityItem{}'.\
+                    format(index)).wait_select_single("Label",
+                    objectName="cityNameText").text == city_Name:
+                city.swipe_to_delete()
+                city.confirm_removal()
+        try:
+            self._get_saved_world_city_list().count.wait_for\
+                (old_cities_count - 1)
+        except AssertionError:
+            raise ClockEmulatorException('Error deleting city.')
+
 
 class Page11(Page):
     """Autopilot helper for the Alarm page."""
@@ -198,8 +218,7 @@ class Page11(Page):
         except AssertionError:
             raise ClockEmulatorException('Error creating alarm.')
 
-    #----- WorldCityList page -------
-
+    """------------ WorldCityList page ------------ """
     @autopilot_logging.log_action(logger.info)
     def add_world_city(self, city_Name):
         """Add world city
@@ -208,11 +227,13 @@ class Page11(Page):
 
         """
         cityList = self.wait_select_single("QQuickListView",
-            objectName="cityList")
+                                           objectName="cityList")
+
         for index in range(int(cityList.count)):
-            if cityList.wait_select_single(ojbectName="worldCityItem{}".format(index)).text == city_Name:
+            if cityList.wait_select_single(objectName="worldCityItem{}".
+                                           format(index)).text == city_Name:
                 cityList.click_element("worldCityItem{}".format(index),
-                direction=None)
+                                       direction=None)
                 break
 
 
