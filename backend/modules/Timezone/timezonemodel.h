@@ -39,6 +39,14 @@ class TimeZoneModel: public QAbstractListModel
                WRITE setUpdateInterval
                NOTIFY updateIntervalChanged)
 
+    // Macro to register the Status enum to the meta-object system
+    Q_ENUMS(Status)
+
+    // Property to determine the status of the timezone object
+    Q_PROPERTY(Status status
+               READ status
+               NOTIFY statusChanged)
+
 public:
     enum Roles {
         RoleCityName,
@@ -47,6 +55,13 @@ public:
         RoleTimeString,
         RoleDaysTo,
         RoleTimeTo,
+    };
+
+    // ENUM list for different status (Loading, Error, Ready)
+    enum Status {
+        Loading,
+        Error,
+        Ready,
     };
 
     /*
@@ -78,6 +93,9 @@ signals:
     // Signal to notify the updateInterval change to QML
     void updateIntervalChanged();
 
+    // Signal to notify the timezonemodel status change to QML
+    void statusChanged();
+
 public slots:
     /*
      Public slot called internally by m_updateTimer and also from QML to
@@ -104,6 +122,15 @@ protected:
 
     // Keep a list of TimeZone objects, holding all our timeZones.
     QList<TimeZone> m_timeZones;
+
+    // Private property to keep track of the status of the timezonemodel
+    Status m_status;
+
+    // Function to set the status of the timezonemodel
+    void setStatus(Status status);
+
+    // Getter function for the status property
+    Status status() const;
 };
 
 #endif
