@@ -49,6 +49,7 @@ Page {
             head: worldCityList.head
             actions: [
                 Action {
+                    objectName: "searchButton"
                     iconName: "search"
                     text: i18n.tr("City")
                     onTriggered: {
@@ -74,6 +75,7 @@ Page {
 
             contents: TextField {
                 id: searchField
+                objectName: "searchField"
 
                 inputMethodHints: Qt.ImhNoPredictiveText
                 placeholderText: i18n.tr("Search...")
@@ -279,6 +281,7 @@ Page {
 
                 Label {
                     text: country
+                    objectName: "countryNameText"
                     fontSize: "xx-small"
                     width: parent.width
                     elide: Text.ElideRight

@@ -61,6 +61,7 @@ ListItemWithActions {
 
             Label {
                 text: model.country
+                objectName: "userCountryNameText"
                 fontSize: "xx-small"
                 width: parent.width
                 elide: Text.ElideRight

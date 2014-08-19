@@ -25,6 +25,7 @@ from ubuntuuitoolkit import pickers
 import ubuntuuitoolkit
 
 logger = logging.getLogger(__name__)
+from time import sleep
 
 
 class ClockEmulatorException(ubuntuuitoolkit.ToolkitException):
@@ -132,15 +133,21 @@ class ClockPage(PageWithBottomEdge):
             "QQuickRepeater", objectName='userWorldCityRepeater')
 
     @autopilot_logging.log_action(logger.info)
-    def delete_added_world_city(self, city_Name):
-        """ Delete added world city """
+    def delete_added_world_city(self, city_Name, country_Name):
+        """ Delete added world city from user world city list """
         old_cities_count = self.get_num_of_saved_cities()
+        index = 0
         for index in range(old_cities_count):
             if self.wait_select_single(
                 objectName='userWorldCityItem{}'.format(index)).\
                 wait_select_single("Label", objectName="userCityNameText").\
                     text == city_Name:
-                self._delete_userWorldCityItem(index)
+                if self.wait_select_single(
+                    objectName='userWorldCityItem{}'.format(index)).\
+                    wait_select_single(
+                    "Label", objectName="userCountryNameText").\
+                        text == country_Name:
+                    self._delete_userWorldCityItem(index)
 
     # commenting the followin lines as deleting a world city when there is only
     # one in the user world city list does not decrease counter to 0 but leaves
@@ -244,22 +251,49 @@ class WorldCityList(Page):
     """Autopilot helper for World City List page."""
 
     @autopilot_logging.log_action(logger.info)
-    def add_world_city(self, city_Name):
-        """Add world city
+    def add_world_city_from_list(self, city_Name, country_Name):
+        """Add world city from list
 
         :param city_Name: world city name to add
-
+        :param country_Name: country city name belongs to (same city name could
+         be found in more countries)
         """
+        self.wait_select_single("ActivityIndicator").running.wait_for(False)
         cityList = self.wait_select_single("QQuickListView",
                                            objectName="cityList")
-
+        # had to put a sleep here otherwise cityList.count is 0 and
+        # for instruction is skipped
+        sleep(5)
+        index = 0
         for index in range(int(cityList.count)):
             if cityList.wait_select_single(
                 objectName="worldCityItem{}".format(index)).wait_select_single(
                     "Label", objectName="cityNameText").text == city_Name:
-                cityList.click_element("worldCityItem{}".format(index),
-                                       direction=None)
-                break
+                if cityList.wait_select_single(
+                    objectName="worldCityItem{}".format(index)).\
+                    wait_select_single("Label", objectName="countryNameText").\
+                        text == country_Name:
+                    cityList.click_element(
+                        "worldCityItem{}".format(index), direction=None)
+                    break
+
+    @autopilot_logging.log_action(logger.info)
+    def search_world_city_(self, city_Name, country_Name):
+        """Add world city by searching the world city name
+
+        :param city_Name: world city name to add
+
+        """
+        header = self.main_view.get_header()
+        header.click_action_button("searchButton")
+        self._search_world_city(city_Name, country_Name)
+
+    def _search_world_city(self, city_Name, country_Name):
+        header = self.main_view.get_header()
+        searchTextfield = header.wait_select_single(
+            "TextField", objectName='searchField')
+        searchTextfield.visible.wait_for(True)
+        searchTextfield.write(city_Name)
 
 
 class EditAlarmPage(Page):
