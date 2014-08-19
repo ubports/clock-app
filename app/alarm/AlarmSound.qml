@@ -44,7 +44,7 @@ Page {
         }
     }
 
-    MediaPlayer {
+    Audio {
         id: previewAlarmSound
     }
 
