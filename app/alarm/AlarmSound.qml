@@ -17,7 +17,7 @@
  */
 
 import QtQuick 2.0
-import QtMultimedia 5.0
+//import QtMultimedia 5.0
 import Ubuntu.Components 1.1
 import Ubuntu.Components.ListItems 1.0 as ListItem
 
@@ -44,9 +44,9 @@ Page {
         }
     }
 
-    Audio {
-        id: previewAlarmSound
-    }
+//    Audio {
+//        id: previewAlarmSound
+//    }
 
     Flickable {
         id: _pageFlickable
@@ -96,8 +96,8 @@ Page {
                                                                         : false
                         onClicked: {
                             if (checked) {
-                                previewAlarmSound.source = fileURL
-                                previewAlarmSound.play()
+//                                previewAlarmSound.source = fileURL
+//                                previewAlarmSound.play()
 
                                 alarmSound.subText = _soundName.text
                                 alarm.sound = fileURL
