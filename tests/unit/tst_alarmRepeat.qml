@@ -94,7 +94,7 @@ MainView {
         /*
          Test to check if the switches are properly toggled based on the alarm
          days of week. This is required when editing an alarm where the switch
-         should properly show the days selected.
+         should properly show the days previously selected by the user.
         */
         function test_alarmObjectSetsSwitchStatus() {
             _alarm.daysOfWeek = 96 // Enabled saturday and sunday
