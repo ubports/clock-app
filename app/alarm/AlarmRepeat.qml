@@ -81,6 +81,9 @@ Page {
             model: daysModel
 
             ListItem.Standard {
+                id: _alarmDayHolder
+                objectName: "alarmDayHolder" + index
+
                 Label {
                     id: _alarmDay
                     objectName: 'alarmDay' + index
