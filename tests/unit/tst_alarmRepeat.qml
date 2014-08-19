@@ -90,5 +90,28 @@ MainView {
 
             compare(alarmRepeatPage.alarm.daysOfWeek, 127, "Alarm Object daysOfWeek value is incorrect w.r.t to the UI")
         }
+
+        /*
+         Test to check if the switches are properly toggled based on the alarm
+         days of week. This is required when editing an alarm where the switch
+         should properly show the days selected.
+        */
+        function test_alarmObjectSetsSwitchStatus() {
+            _alarm.daysOfWeek = 96 // Enabled saturday and sunday
+
+            for(var i=0; i<repeater.count; i++) {
+                var currentDayLabel = findChild(alarmRepeatPage, "alarmDay"+i)
+                var currentDaySwitch = findChild(alarmRepeatPage, "daySwitch"+i)
+
+                if(currentDayLabel.text === Qt.locale().standaloneDayName(6, Locale.LongFormat) ||
+                        currentDayLabel.text === Qt.locale().standaloneDayName(0, Locale.LongFormat)) {
+                    compare(currentDaySwitch.checked, true, "Switches in the alarm daysOfWeek are not enabled!")
+                }
+
+                else {
+                    compare(currentDaySwitch.checked, false, "Switches other than those set in the alarm dayOfWeek are enabled")
+                }
+            }
+        }
     }
 }
