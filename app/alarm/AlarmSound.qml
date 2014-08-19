@@ -44,7 +44,7 @@ Page {
         }
     }
 
-    Audio {
+    MediaPlayer {
         id: previewAlarmSound
     }
 
@@ -96,8 +96,8 @@ Page {
                                                                         : false
                         onClicked: {
                             if (checked) {
-//                                previewAlarmSound.source = fileURL
-//                                previewAlarmSound.play()
+                                previewAlarmSound.source = fileURL
+                                previewAlarmSound.play()
 
                                 alarmSound.subText = _soundName.text
                                 alarm.sound = fileURL
