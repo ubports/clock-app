@@ -25,7 +25,6 @@ from ubuntuuitoolkit import pickers
 import ubuntuuitoolkit
 
 logger = logging.getLogger(__name__)
-from time import sleep
 
 
 class ClockEmulatorException(ubuntuuitoolkit.ToolkitException):
@@ -261,10 +260,9 @@ class WorldCityList(Page):
         self.wait_select_single("ActivityIndicator").running.wait_for(False)
         cityList = self.wait_select_single("QQuickListView",
                                            objectName="cityList")
-        # had to put a sleep here otherwise cityList.count is 0 and
-        # for instruction is skipped
-        sleep(5)
-        index = 0
+
+        cityList.count.wait_for(int(cityList.count) > 0)
+
         for index in range(int(cityList.count)):
             if cityList.wait_select_single(
                 objectName="worldCityItem{}".format(index)).wait_select_single(
