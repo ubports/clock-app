@@ -13,6 +13,10 @@ ubuntu-clock-app (3.1) utopic; urgency=medium
   * Added support to play alarm sound preview when selecting them in the alarm
     sound page. (LP: #1355410)
 
+  [Zsombor Egri]
+  * Fixed alarm status toggle being reverted immediately (LP: #1272337)
+  * Deleting an alarm causing the others to activate (if they were disabled) (LP: #1358315)
+
   [David Planella]
   * Added internationalization support (LP: #1354522)
 
