@@ -1,0 +1,45 @@
+Source: ubuntu-clock-app
+Priority: extra
+Maintainer: Ubuntu App Cats <ubuntu-touch-coreapps@lists.launchpad.net>
+Build-Depends: cmake,
+               debhelper (>= 9),
+               gettext,
+               intltool,
+               python3 | python3-all | python3-dev | python3-all-dev,
+               python3-minimal,
+               qt5-default,
+               qtbase5-dev,
+               qtdeclarative5-dev,
+Standards-Version: 3.9.5
+Section: misc
+Homepage: https://launchpad.net/ubuntu-clock-app
+Vcs-Bzr: https://code.launchpad.net/~ubuntu-clock-dev/ubuntu-clock-app/utopic-3.0
+XS-Testsuite: autopkgtest
+
+Package: ubuntu-clock-app
+Architecture: any
+Depends: qmlscene,
+         qtdeclarative5-localstorage-plugin,
+         qtdeclarative5-qtquick2-plugin,
+         qtdeclarative5-u1db1.0,
+         qtdeclarative5-ubuntu-ui-toolkit-plugin | qt-components-ubuntu,
+         qtdeclarative5-xmllistmodel-plugin,
+          qtdeclarative5-qtmultimedia-plugin,
+         ubuntu-touch-sounds,
+         suru-icon-theme | ubuntu-mobile-icons,
+         ${misc:Depends},
+         ${shlibs:Depends},
+Description: Clock application
+ Ubuntu Core Clock application which provides Alarm, Clock and
+ World Clock functionalities.
+
+Package: ubuntu-clock-app-autopilot
+Architecture: all
+Depends: libautopilot-qt,
+         libqt5test5,
+         ubuntu-clock-app (>= ${source:Version}),
+         ubuntu-ui-toolkit-autopilot,
+         ${misc:Depends},
+         ${python3:Depends},
+Description: Autopilot tests for Ubuntu Clock Application
+ This package contains autopilot tests for the Ubuntu Clock application.

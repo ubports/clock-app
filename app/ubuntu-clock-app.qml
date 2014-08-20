@@ -56,6 +56,7 @@ MainView {
     backgroundColor: "#F5F5F5"
 
     useDeprecatedToolbar: false
+    anchorToKeyboard: true
 
     Background {}
 

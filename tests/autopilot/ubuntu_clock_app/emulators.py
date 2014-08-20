@@ -228,8 +228,12 @@ class EditAlarmPage(Page):
         :param test_sound_name = new sound name
 
         """
-        self.wait_select_single("SubtitledListItem", objectName="alarmSound")\
-            .subText == test_sound_name
+        try:
+            self.wait_select_single(
+                "SubtitledListItem", objectName="alarmSound").subText.wait_for(
+                    test_sound_name)
+        except AssertionError:
+            raise ClockEmulatorException('Error! Incorrect alarm sound')
 
 
 class AlarmRepeat(Page):
@@ -395,7 +399,8 @@ class AlarmList(object):
             raise ClockEmulatorException('Error deleting alarm.')
 
 
-class ListItemWithActions(ubuntuuitoolkit.UbuntuUIToolkitCustomProxyObjectBase):
+class ListItemWithActions(
+        ubuntuuitoolkit.UbuntuUIToolkitCustomProxyObjectBase):
 
     def swipe_to_delete(self):
         x, y, width, height = self.globalRect
