@@ -52,7 +52,6 @@ class ClockAppTestCase(base.UbuntuUIToolkitAppTestCase):
     installed_location_qml = \
         '/usr/share/ubuntu-clock-app/ubuntu-clock-app.qml'
 
-    # note this directory could change to com.ubuntu.clock at some point
     sqlite_dir = os.path.expanduser(
         "~/.local/share/com.ubuntu.clock")
     backup_dir = sqlite_dir + ".backup"
