@@ -77,8 +77,6 @@ ListItemWithActions {
         id: alarmStatus
         objectName: "listAlarmStatus" + index
 
-        property bool tempStatus: false
-
         anchors {
             right: parent.right
             verticalCenter: parent.verticalCenter
