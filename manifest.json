@@ -8,7 +8,8 @@
     "hooks": {
         "ubuntu-clock-app": {
             "apparmor": "ubuntu-clock-app.json",
-            "desktop": "share/applications/ubuntu-clock-app.desktop"
+            "desktop": "share/applications/ubuntu-clock-app.desktop",
+            "urls": "share/url-dispatcher/urls/com.ubuntu.clock_clock.url-dispatcher"
         }
     },
     "version": "3.1.@BZR_REVNO@",

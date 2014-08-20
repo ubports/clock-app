@@ -30,7 +30,6 @@ include(GNUInstallDirs)
 if(CLICK_MODE)
   set(CMAKE_INSTALL_PREFIX "/")
   set(UBUNTU-CLOCK_APP_DIR    "${CMAKE_INSTALL_DATADIR}/qml")
-  set(URLS_DIR ${CMAKE_INSTALL_DATADIR})
 
   set(QT_IMPORTS_DIR "${CMAKE_INSTALL_LIBDIR}")
   set(EXEC "qmlscene $@ ${UBUNTU-CLOCK_APP_DIR}/${MAIN_QML}")
@@ -49,7 +48,6 @@ if(CLICK_MODE)
   endif(NOT BZR_SOURCE)
 else(CLICK_MODE)
   set(UBUNTU-CLOCK_APP_DIR "${CMAKE_INSTALL_DATADIR}/ubuntu-clock-app")
-  set(URLS_DIR "${CMAKE_INSTALL_DATADIR}/url-dispatcher/urls")
   execute_process( 
     COMMAND qmake -query QT_INSTALL_QML 
             OUTPUT_VARIABLE QT_IMPORTS_DIR 
@@ -67,7 +65,7 @@ else(CLICK_MODE)
   set(EXEC "qmlscene $@ -I ${MODULE_PATH}  ${CMAKE_INSTALL_PREFIX}/${UBUNTU-CLOCK_APP_DIR}/${MAIN_QML}")
 endif()
 
-install(FILES ${URLS_FILE} DESTINATION ${URLS_DIR})
+install(FILES ${URLS_FILE} DESTINATION "${CMAKE_INSTALL_DATADIR}/url-dispatcher/urls")
 
 file(GLOB_RECURSE I18N_SRC_FILES
     RELATIVE ${CMAKE_CURRENT_SOURCE_DIR}/po
