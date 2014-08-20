@@ -1,6 +1,6 @@
 if(NOT "${CMAKE_CURRENT_SOURCE_DIR}" STREQUAL "${CMAKE_CURRENT_BINARY_DIR}")
-file(GLOB QML_JS_FILES *.qml *.js)
-add_custom_target(ubuntu-clock-app_QMlFiles ALL SOURCES ${QML_JS_FILES})
+  file(GLOB QML_JS_FILES *.qml *.js)
+  add_custom_target(ubuntu-clock-app_QMlFiles ALL SOURCES ${QML_JS_FILES})
 endif(NOT "${CMAKE_CURRENT_SOURCE_DIR}" STREQUAL "${CMAKE_CURRENT_BINARY_DIR}")
 
 
