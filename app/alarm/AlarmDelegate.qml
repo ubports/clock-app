@@ -94,7 +94,7 @@ ListItemWithActions {
             onStatusChanged: {
                 /*
                  Update switch value only when the alarm save() operation
-                 is complete to avoid a looping issue
+                 is complete to avoid switching it back.
                 */
                 if (model.status === Alarm.Ready) {
                     alarmStatus.checked = model.enabled;
