@@ -1,4 +1,4 @@
-project(com.ubuntu.clock.devel C CXX)
+project(com.ubuntu.clock C CXX)
 cmake_minimum_required(VERSION 2.8.9)
 
 set (UBUNTU_PROJECT_TYPE "ClickApp" CACHE INTERNAL "Tells QtCreator this is a Click application project")
