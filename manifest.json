@@ -6,7 +6,7 @@
     "title": "Clock",
     "icon": "clock@30.png",
     "hooks": {
-        "ubuntu-clock-app": {
+        "clock": {
             "apparmor": "ubuntu-clock-app.json",
             "desktop": "share/applications/ubuntu-clock-app.desktop",
             "urls": "share/url-dispatcher/urls/com.ubuntu.clock_clock.url-dispatcher"
