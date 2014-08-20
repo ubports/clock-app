@@ -12,6 +12,8 @@ ubuntu-clock-app (3.1) utopic; urgency=medium
   * Improved error handling of jsontimezone model.
   * Added support to play alarm sound preview when selecting them in the alarm
     sound page. (LP: #1355410)
+  * Changed project name and neccessary support variables from com.ubuntu.devel
+    to com.ubuntu.clock in the CMakeList.txt, manifest.json and autopilot files.
 
   [Zsombor Egri]
   * Fixed alarm status toggle being reverted immediately (LP: #1272337)
