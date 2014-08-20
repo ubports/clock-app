@@ -54,7 +54,7 @@ class ClockAppTestCase(base.UbuntuUIToolkitAppTestCase):
 
     # note this directory could change to com.ubuntu.clock at some point
     sqlite_dir = os.path.expanduser(
-        "~/.local/share/com.ubuntu.clock.devel")
+        "~/.local/share/com.ubuntu.clock")
     backup_dir = sqlite_dir + ".backup"
 
     def setUp(self):
