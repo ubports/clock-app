@@ -84,27 +84,30 @@ ListItemWithActions {
             verticalCenter: parent.verticalCenter
         }
 
-        checked: enabled
-
-        Timer {
-            id: waitTimer
-            interval: 5000
-            repeat: false
-            onTriggered: {
-                console.log("binding to alarm status")
-                alarmStatus.checked = Qt.binding(function() { return enabled })
+        onCheckedChanged: {
+            if (checked !== model.enabled) {
+                model.enabled = checked
+                model.save()
             }
         }
 
-        onClicked: {
-            console.log("Binding to temp variable.")
-            checked = Qt.binding(function() { return tempStatus })
-
-            waitTimer.restart()
-
-            var _tempAlarm = alarmModel.get(index)
-            _tempAlarm.enabled = checked
-            _tempAlarm.save()
+        Connections {
+            target: model
+            onStatusChanged: {
+                /*
+                 Update switch value only when the alarm save() operation
+                 is complete to avoid a looping issue
+                */
+                if (model.status === Alarm.Ready) {
+                    alarmStatus.checked = model.enabled;
+                }
+            }
         }
+
+        /*
+         Assign switch value only once at startup. After this, the switch will
+         be updated after the alarm save() operations only.
+        */
+        Component.onCompleted: alarmStatus.checked = model.enabled
     }
 }
