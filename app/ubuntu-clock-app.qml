@@ -75,6 +75,14 @@ MainView {
         defaults: { "digitalMode": false }
     }
 
+    U1db.Document {
+        id: userLocationDocument
+        create: true
+        database: clockDB
+        docId: "userLocationDocument"
+        defaults: { "lat": 0.0, "long": 0.0, "location": "null" }
+    }
+
     AlarmModel {
         id: alarmModel
         Component.onCompleted: Utils.log(debugMode, "Alarm Database loaded")

@@ -18,7 +18,8 @@
 
 import QtQuick 2.0
 import U1db 1.0 as U1db
-import Location 1.0
+import Location 1.0 as UserLocation
+import QtPositioning 5.2
 import Ubuntu.Components 1.1
 import "../components"
 import "../upstreamcomponents"
@@ -42,12 +43,48 @@ PageWithBottomEdge {
 
     Component.onCompleted: Utils.log(debugMode, "Clock Page loaded")
 
-    Location {
+    PositionSource {
+        id: geoposition
+        active: true
+        updateInterval: 1000
+        Component.onCompleted: {
+            console.log("Location source available: " + valid)
+        }
+
+        onPositionChanged: {
+            var coord = geoposition.position.coordinate
+
+            console.log("Location obtained via geoposition: " + coord)
+
+            if (coord.longitude === userLocationDocument.contents.long ||
+                    coord.latitude === userLocationDocument.contents.lat) {
+                console.log("Same location as the last known location.")
+                return;
+            }
+
+            else {
+                console.log("New Location detected")
+                userLocation.source = String("%1%2%3%4%5")
+                .arg("http://api.geonames.org/findNearbyPlaceNameJSON?lat=")
+                .arg(coord.latitude)
+                .arg("&lng=")
+                .arg(coord.longitude)
+                .arg("&username=krnekhelesh&style=full")
+            }
+        }
+    }
+
+    UserLocation.Location {
         id: userLocation
-        source: "http://api.geonames.org/findNearbyPlaceNameJSON?lat=55.93&lng=-3.24&username=krnekhelesh&style=full"
         onLocationChanged: {
             location.text = userLocation.location
             console.log("Location:" + userLocation.location)
+            var locationData = JSON.parse
+                    (JSON.stringify(userLocationDocument.contents))
+            locationData.lat = geoposition.position.coordinate.latitude
+            locationData.long = geoposition.position.coordinate.longitude
+            locationData.location = userLocation.location
+            userLocationDocument.contents = locationData
         }
     }
 
@@ -149,10 +186,19 @@ PageWithBottomEdge {
             Label {
                 id: location
                 objectName: "location"
-                text: "Location"
                 fontSize: "medium"
                 anchors.verticalCenter: locationIcon.verticalCenter
                 color: UbuntuColors.midAubergine
+
+                text: {
+                    if (userLocationDocument.contents.location === "null") {
+                        return i18n.tr("Retrieving location...")
+                    }
+
+                    else {
+                        return userLocationDocument.contents.location
+                    }
+                }
             }
         }
 
