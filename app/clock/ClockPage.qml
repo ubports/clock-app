@@ -18,6 +18,7 @@
 
 import QtQuick 2.0
 import U1db 1.0 as U1db
+import Location 1.0
 import Ubuntu.Components 1.1
 import "../components"
 import "../upstreamcomponents"
@@ -40,6 +41,15 @@ PageWithBottomEdge {
     flickable: null
 
     Component.onCompleted: Utils.log(debugMode, "Clock Page loaded")
+
+    Location {
+        id: userLocation
+        source: "http://api.geonames.org/findNearbyPlaceNameJSON?lat=55.93&lng=-3.24&username=krnekhelesh&style=full"
+        onLocationChanged: {
+            location.text = userLocation.location
+            console.log("Location:" + userLocation.location)
+        }
+    }
 
     Flickable {
         id: _flickable
