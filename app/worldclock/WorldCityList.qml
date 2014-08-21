@@ -162,9 +162,9 @@ Page {
 
                 else if(jsonTimeZoneModel.status === JsonTimeZoneModel.Error
                         && sortedTimeZoneModel.count === 0) {
-                    return i18n.tr("<b>%1</b> %2")
-                    .arg("Unable to connect.")
-                    .arg("Please check your network connection and try again")
+                    return String("<b>%1</b> %2")
+                    .arg(i18n.tr("Unable to connect."))
+                    .arg(i18n.tr("Please check your network connection and try again"))
                 }
 
                 else {
