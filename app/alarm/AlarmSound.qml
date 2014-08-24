@@ -72,7 +72,6 @@ Page {
                     property alias isChecked: _soundStatus.checked
 
                     height: units.gu(7)
-                    selected: isChecked
 
                     Label {
                         id: _soundName
