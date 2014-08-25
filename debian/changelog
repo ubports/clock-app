@@ -14,6 +14,8 @@ ubuntu-clock-app (3.1) utopic; urgency=medium
     sound page. (LP: #1355410)
   * Changed project name and neccessary support variables from com.ubuntu.devel
     to com.ubuntu.clock in the CMakeList.txt, manifest.json and autopilot files.
+  * Fixed tapping an alarm sound that is already selected toggles it
+    incorrectly (LP: #1360677)
   * Updated QtQuick library imports to v2.3
 
   [Zsombor Egri]
