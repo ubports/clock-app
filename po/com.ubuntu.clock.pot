@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-08-18 16:15+0200\n"
+"POT-Creation-Date: 2014-08-26 16:06+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../app/alarm/AlarmLabel.qml:27 ../app/alarm/AlarmLabel.qml:43
+#: ../app/alarm/AlarmLabel.qml:30 ../app/alarm/AlarmLabel.qml:52
 #: ../app/alarm/EditAlarmPage.qml:268
 msgid "Label"
 msgstr ""
@@ -74,7 +74,7 @@ msgstr ""
 msgid "Change time and date"
 msgstr ""
 
-#: ../app/alarm/AlarmSound.qml:26 ../app/alarm/EditAlarmPage.qml:281
+#: ../app/alarm/AlarmSound.qml:27 ../app/alarm/EditAlarmPage.qml:281
 msgid "Sound"
 msgstr ""
 
