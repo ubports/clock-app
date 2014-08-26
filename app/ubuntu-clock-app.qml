@@ -100,7 +100,7 @@ MainView {
               #TODO: The bottom edge title should reflect the time to the next
               alarm. For instance it should read "Next alarm in 9h23m".
             */
-            bottomEdgeTitle: i18n.tr("Next Alarm in ..")
+            bottomEdgeTitle: i18n.tr("Alarms")
             bottomEdgePageComponent: AlarmPage {}
         }
     }
