@@ -17,6 +17,7 @@ ubuntu-clock-app (3.1) utopic; urgency=medium
   * Fixed tapping an alarm sound that is already selected toggles it
     incorrectly (LP: #1360677)
   * Updated QtQuick library imports to v2.3
+  * Switched bzr branch to lp:ubuntu-clock-app
 
   [Zsombor Egri]
   * Fixed alarm status toggle being reverted immediately (LP: #1272337)
