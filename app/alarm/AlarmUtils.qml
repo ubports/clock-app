@@ -29,7 +29,11 @@ QtObject {
     function format_day_string(value) {
         var occurs = _get_day(value)
 
-        if (value === _get_weekdays()) {
+        if (value === 0) {
+            return i18n.tr("Never")
+        }
+
+        else if (value === _get_weekdays()) {
             return i18n.tr("Weekdays")
         }
 

@@ -75,11 +75,20 @@ Page {
         alarmTime.setHours(_timePicker.hours, _timePicker.minutes, 0)
 
         /*
-          _alarm.sound, _alarm.message and _alarm.daysOfWeek have been set in
+          _alarm.sound and _alarm.message have been set in
           the respective individual pages already.
         */
+
+        if(_alarm.daysOfWeek === 0) {
+            _alarm.type = Alarm.OneTime
+            _alarm.daysOfWeek = Alarm.AutoDetect
+        }
+
+        else {
+            _alarm.type = Alarm.Repeating
+        }
+
         _alarm.date = alarmTime
-        _alarm.type = Alarm.Repeating
         _alarm.enabled = true
         _alarm.save()
     }
@@ -94,6 +103,10 @@ Page {
         _alarm.enabled = tempAlarm.enabled
         _alarm.date = tempAlarm.date
         _alarm.sound = tempAlarm.sound
+
+        if (_alarm.type === Alarm.OneTime) {
+            _alarm.daysOfWeek = 0
+        }
     }
 
     // Function to delete a saved alarm
@@ -113,9 +126,18 @@ Page {
         var alarmTime = new Date()
         alarmTime.setHours(_timePicker.hours, _timePicker.minutes, 0)
 
+        if(_alarm.daysOfWeek === 0) {
+            _alarm.type = Alarm.OneTime
+            _alarm.daysOfWeek = Alarm.AutoDetect
+        }
+
+        else {
+            _alarm.type = Alarm.Repeating
+        }
+
         tempAlarm.message = _alarm.message
         tempAlarm.date = alarmTime
-        tempAlarm.type = Alarm.Repeating
+        tempAlarm.type = _alarm.type
         tempAlarm.enabled = _alarm.enabled
         tempAlarm.sound = _alarm.sound
         tempAlarm.daysOfWeek = _alarm.daysOfWeek
@@ -156,6 +178,13 @@ Page {
 
     Alarm {
         id: _alarm
+
+        Component.onCompleted: {
+            if(isNewAlarm) {
+                _alarm.daysOfWeek = 0
+            }
+        }
+
         onStatusChanged: {
             if (status !== Alarm.Ready)
                 return;
@@ -164,9 +193,11 @@ Page {
                 mainStack.pop();
             }
         }
+
         onDaysOfWeekChanged: {
             _alarmRepeat.subText = alarmUtils.format_day_string(_alarm.daysOfWeek)
         }
+
         onDateChanged: {
             _timePicker.date = _alarm.date
         }
