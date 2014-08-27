@@ -16,7 +16,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import QtQuick 2.0
+import QtQuick 2.3
 import Timezone 1.0
 import Ubuntu.Components 1.1
 import Ubuntu.Components.ListItems 1.0 as ListItem
@@ -162,9 +162,9 @@ Page {
 
                 else if(jsonTimeZoneModel.status === JsonTimeZoneModel.Error
                         && sortedTimeZoneModel.count === 0) {
-                    return i18n.tr("<b>%1</b> %2")
-                    .arg("Unable to connect.")
-                    .arg("Please check your network connection and try again")
+                    return String("<b>%1</b> %2")
+                    .arg(i18n.tr("Unable to connect."))
+                    .arg(i18n.tr("Please check your network connection and try again"))
                 }
 
                 else {

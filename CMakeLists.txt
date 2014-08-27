@@ -1,4 +1,4 @@
-project(com.ubuntu.clock.devel C CXX)
+project(com.ubuntu.clock C CXX)
 cmake_minimum_required(VERSION 2.8.9)
 
 set (UBUNTU_PROJECT_TYPE "ClickApp" CACHE INTERNAL "Tells QtCreator this is a Click application project")
@@ -21,6 +21,7 @@ set(APP_HARDCODE            ubuntu-clock-app)
 set(MAIN_QML                ${APP_HARDCODE}.qml)
 set(ICON                    clock-app)
 SET(AUTOPILOT_DIR           ubuntu_clock_app)
+set(URLS_FILE               "${PROJECT_NAME}_${APP_NAME}.url-dispatcher")
 
 # Standard install paths 
 include(GNUInstallDirs) 
@@ -42,7 +43,7 @@ if(CLICK_MODE)
       )
   endif(NOT BZR_REVNO)
   if(NOT BZR_SOURCE)
-    set(BZR_SOURCE lp:${APP_HARDCODE}/reboot)
+    set(BZR_SOURCE lp:${APP_HARDCODE})
     message("-- Setting BZR_SOURCE to ${BZR_SOURCE}")
   endif(NOT BZR_SOURCE)
 else(CLICK_MODE)
@@ -63,6 +64,8 @@ if(${CLICK_MODE})
 else(CLICK_MODE)
   set(EXEC "qmlscene $@ -I ${MODULE_PATH}  ${CMAKE_INSTALL_PREFIX}/${UBUNTU-CLOCK_APP_DIR}/${MAIN_QML}")
 endif()
+
+install(FILES ${URLS_FILE} DESTINATION "${CMAKE_INSTALL_DATADIR}/url-dispatcher/urls")
 
 file(GLOB_RECURSE I18N_SRC_FILES
     RELATIVE ${CMAKE_CURRENT_SOURCE_DIR}/po

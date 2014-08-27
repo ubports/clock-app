@@ -16,18 +16,27 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import QtQuick 2.0
+import QtQuick 2.3
 import Ubuntu.Components 1.1
 
 Page {
     id: _alarmLabelPage
     objectName: "alarmLabelPage"
 
+    // Property to set the alarm label in the edit alarm page
+    property var alarm
+
     visible: false
     title: i18n.tr("Label")
 
-    // Property to set the alarm label in the edit alarm page
-    property var alarm
+    head.backAction: Action {
+        id: backAction
+        iconName: "back"
+        onTriggered: {
+            alarm.message = _labelEntry.text
+            pop()
+        }
+    }
 
     Column {
         id: _labelColumn
@@ -46,25 +55,13 @@ Page {
         TextField {
             id: _labelEntry
             objectName: "labelEntry"
+
             text: alarm.message
             width: parent.width
             inputMethodHints: Qt.ImhNoPredictiveText
 
             onTextChanged: {
                 backAction.enabled = !!text.trim()
-            }
-        }
-    }
-
-    tools: ToolbarItems {
-        back: Button {
-            action: Action {
-                id: backAction
-                iconName: "back"
-                onTriggered: {
-                    alarm.message = _labelEntry.text
-                    mainStack.pop()
-                }
             }
         }
     }

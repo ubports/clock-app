@@ -16,7 +16,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import QtQuick 2.0
+import QtQuick 2.3
+import QtMultimedia 5.0
 import Ubuntu.Components 1.1
 import Ubuntu.Components.ListItems 1.0 as ListItem
 
@@ -41,6 +42,10 @@ Page {
         onTriggered: {
             pop()
         }
+    }
+
+    Audio {
+        id: previewAlarmSound
     }
 
     Flickable {
@@ -90,6 +95,9 @@ Page {
                         checked: alarmSound.subText === _soundName.text ? true
                                                                         : false
                         onClicked: {
+                            previewAlarmSound.source = fileURL
+                            previewAlarmSound.play()
+
                             if (checked) {
                                 alarmSound.subText = _soundName.text
                                 alarm.sound = fileURL
@@ -101,6 +109,10 @@ Page {
                                         _alarmSounds.itemAt(i).isChecked = false
                                     }
                                 }
+                            }
+
+                            else {
+                                checked = !checked
                             }
                         }
                     }

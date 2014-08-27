@@ -5,10 +5,24 @@ ubuntu-clock-app (3.1) utopic; urgency=medium
     strings. (LP: #1355414)
   * Synced the fast scroll component with upstream changes
   * Updated inner clock texture as requested by design
+  * Added QML unit tests for alarm label and alarm repeat pages
   * Added json backend to search cities online
   * Added support for custom alarm sounds as per the design spec.
   * Added UI support for searching cities online from geoname-lookup.ubuntu.com
   * Improved error handling of jsontimezone model.
+  * Added support to play alarm sound preview when selecting them in the alarm
+    sound page. (LP: #1355410)
+  * Changed project name and neccessary support variables from com.ubuntu.devel
+    to com.ubuntu.clock in the CMakeList.txt, manifest.json and autopilot files.
+  * Fixed tapping an alarm sound that is already selected toggles it
+    incorrectly (LP: #1360677)
+  * Updated QtQuick library imports to v2.3
+  * Switched bzr branch to lp:ubuntu-clock-app
+  * Updated pot file name
+
+  [Zsombor Egri]
+  * Fixed alarm status toggle being reverted immediately (LP: #1272337)
+  * Deleting an alarm causing the others to activate (if they were disabled) (LP: #1358315)
 
   [David Planella]
   * Added internationalization support (LP: #1354522)

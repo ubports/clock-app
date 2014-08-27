@@ -16,7 +16,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import QtQuick 2.0
+import QtQuick 2.3
 import Ubuntu.Components 1.1
 import Ubuntu.Components.ListItems 1.0 as ListItem
 
@@ -81,6 +81,9 @@ Page {
             model: daysModel
 
             ListItem.Standard {
+                id: _alarmDayHolder
+                objectName: "alarmDayHolder" + index
+
                 Label {
                     id: _alarmDay
                     objectName: 'alarmDay' + index

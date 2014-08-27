@@ -16,7 +16,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import QtQuick 2.0
+import QtQuick 2.3
 import Ubuntu.Components 1.1
 import "../upstreamcomponents"
 
@@ -84,14 +84,30 @@ ListItemWithActions {
             verticalCenter: parent.verticalCenter
         }
 
-        checked: enabled
+        onCheckedChanged: {
+            if (checked !== model.enabled) {
+                model.enabled = checked
+                model.save()
+            }
+        }
+
+        Connections {
+            target: model
+            onStatusChanged: {
+                /*
+                 Update switch value only when the alarm save() operation
+                 is complete to avoid switching it back.
+                */
+                if (model.status === Alarm.Ready) {
+                    alarmStatus.checked = model.enabled;
+                }
+            }
+        }
 
         /*
-             #TODO: Add the ability to enable/disable alarms using the
-             switch. At the moment it only shows the alarm status.
-             This was postponed since a similar implementation in the
-             old clock app caused it to loop. So if user clicks on the
-             switch, it disables and then re-enables the alarm again.
-            */
+         Assign switch value only once at startup. After this, the switch will
+         be updated after the alarm save() operations only.
+        */
+        Component.onCompleted: alarmStatus.checked = model.enabled
     }
 }
