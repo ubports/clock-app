@@ -170,9 +170,6 @@ PageWithBottomEdge {
             opacity: settingsIcon.opacity
             spacing: units.gu(1)
 
-            // TODO: Remove this once user location finding is implemented
-            visible: false
-
             anchors {
                 top: date.bottom
                 topMargin: units.gu(1)
