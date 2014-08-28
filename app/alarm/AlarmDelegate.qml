@@ -70,8 +70,7 @@ ListItemWithActions {
             width: parent.width
             visible: type === Alarm.Repeating
             wrapMode: Text.WrapAtWordBoundaryOrAnywhere
-            text: type === Alarm.Repeating ? alarmUtils.format_day_string(daysOfWeek)
-                                           : ""
+            text: alarmUtils.format_day_string(daysOfWeek, type)
         }
     }
 

@@ -26,14 +26,15 @@ QtObject {
     id: alarmUtils
 
     // Function to format the alarm days accordingly to their occurance
-    function format_day_string(value) {
-        var occurs = _get_day(value)
-
-        if (value === 0) {
+    function format_day_string(value, type) {
+        console.log("Value:" + value)
+        if (type === Alarm.OneTime) {
             return i18n.tr("Never")
         }
 
-        else if (value === _get_weekdays()) {
+        var occurs = _get_day(value)
+
+        if (value === _get_weekdays()) {
             return i18n.tr("Weekdays")
         }
 
