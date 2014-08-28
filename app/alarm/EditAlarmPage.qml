@@ -49,6 +49,7 @@ Page {
         }
 
         actions: Action {
+            id: saveAlarmButton
             iconName: "ok"
             objectName: "saveAlarmAction"
             text: i18n.tr("Alarm")
@@ -153,6 +154,13 @@ Page {
         }
     }
 
+    function validateDate(date) {
+        if (date < new Date() && _alarm.type === Alarm.OneTime)
+            saveAlarmButton.enabled = false
+        else
+            saveAlarmButton.enabled = true
+    }
+
     Alarm {
         id: _alarm
 
@@ -173,6 +181,7 @@ Page {
 
         onTypeChanged: {
             _alarmRepeat.subText = alarmUtils.format_day_string(_alarm.daysOfWeek, type)
+            validateDate(date)
         }
 
         onDaysOfWeekChanged: {
@@ -260,6 +269,10 @@ Page {
             DateTime {
                 id: currentTime
                 updateInterval: 0
+            }
+
+            onDateChanged: {
+                validateDate(date)
             }
         }
 
