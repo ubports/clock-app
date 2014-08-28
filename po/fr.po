@@ -1,4 +1,4 @@
-# Galician translation for ubuntu-clock-app
+# French translation for ubuntu-clock-app
 # Copyright (c) 2014 Rosetta Contributors and Canonical Ltd 2014
 # This file is distributed under the same license as the ubuntu-clock-app package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2014.
@@ -8,9 +8,9 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2014-08-26 16:06+0200\n"
-"PO-Revision-Date: 2014-08-27 03:49+0000\n"
-"Last-Translator: Marcos Lans <Unknown>\n"
-"Language-Team: Galician <gl@li.org>\n"
+"PO-Revision-Date: 2014-08-27 19:26+0000\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: French <fr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -20,121 +20,121 @@ msgstr ""
 #: ../app/alarm/AlarmLabel.qml:30 ../app/alarm/AlarmLabel.qml:52
 #: ../app/alarm/EditAlarmPage.qml:268
 msgid "Label"
-msgstr "Etiqueta"
+msgstr ""
 
 #: ../app/alarm/AlarmList.qml:81 ../app/alarm/AlarmPage.qml:78
 #: ../app/worldclock/UserWorldCityList.qml:103
 msgid "Delete"
-msgstr "Eliminar"
+msgstr ""
 
 #: ../app/alarm/AlarmPage.qml:26
 msgid "Alarms"
-msgstr "Alarmas"
+msgstr "Alarmes"
 
 #: ../app/alarm/AlarmPage.qml:42 ../app/alarm/EditAlarmPage.qml:54
 msgid "Alarm"
-msgstr "Alarma"
+msgstr "Alarme"
 
 #: ../app/alarm/AlarmPage.qml:55
 msgid "Cancel selection"
-msgstr "Cancelar selección"
+msgstr ""
 
 #: ../app/alarm/AlarmPage.qml:64
 msgid "Select All"
-msgstr "Selecionar todo"
+msgstr ""
 
 #: ../app/alarm/AlarmRepeat.qml:28 ../app/alarm/EditAlarmPage.qml:258
 msgid "Repeat"
-msgstr "Repetición"
+msgstr ""
 
 #: ../app/alarm/AlarmSettingsPage.qml:29
 msgid "Settings"
-msgstr "Axustes"
+msgstr "Paramètres"
 
 #: ../app/alarm/AlarmSettingsPage.qml:70 ../app/alarm/AlarmSettingsPage.qml:71
 #: ../app/alarm/AlarmSettingsPage.qml:72 ../app/alarm/AlarmSettingsPage.qml:73
 #: ../app/alarm/AlarmSettingsPage.qml:136
 #, qt-format
 msgid "%1 minutes"
-msgstr "%1 minutos"
+msgstr ""
 
 #: ../app/alarm/AlarmSettingsPage.qml:93
 msgid "Alarm volume"
-msgstr "Volume da alarma"
+msgstr ""
 
 #: ../app/alarm/AlarmSettingsPage.qml:135
 msgid "Silence after"
-msgstr "Silenciar despois de"
+msgstr ""
 
 #: ../app/alarm/AlarmSettingsPage.qml:177
 msgid "Vibration"
-msgstr "Vibración"
+msgstr ""
 
 #: ../app/alarm/AlarmSettingsPage.qml:206
 msgid "Change time and date"
-msgstr "Cambiar hora e data"
+msgstr ""
 
 #: ../app/alarm/AlarmSound.qml:27 ../app/alarm/EditAlarmPage.qml:281
 msgid "Sound"
-msgstr "Son"
+msgstr ""
 
 #: ../app/alarm/AlarmUtils.qml:33
 msgid "Weekdays"
-msgstr "Días da semana"
+msgstr ""
 
 #: ../app/alarm/AlarmUtils.qml:37
 msgid "Weekends"
-msgstr "Fins de semana"
+msgstr ""
 
 #: ../app/alarm/AlarmUtils.qml:41
 msgid "Daily"
-msgstr "Diariamente"
+msgstr "Tous les jours"
 
 #: ../app/alarm/EditAlarmPage.qml:40
 msgid "New alarm"
-msgstr "Nova alarma"
+msgstr ""
 
 #: ../app/alarm/EditAlarmPage.qml:40
 msgid "Edit alarm"
-msgstr "Editar a alarma"
+msgstr ""
 
 #: ../app/alarm/EditAlarmPage.qml:305
 msgid "Delete alarm"
-msgstr "Eliminar a alarma"
+msgstr ""
 
 #: ../app/clock/ClockPage.qml:64
 msgid "Add"
-msgstr "Engadir"
+msgstr ""
 
 #: ../app/clock/ClockPage.qml:65 ../app/worldclock/WorldCityList.qml:52
 msgid "City"
-msgstr "Cidade"
+msgstr ""
 
 #: ../app/ubuntu-clock-app.qml:103
 msgid "Next Alarm in .."
-msgstr "Próxima alarma en .."
+msgstr ""
 
 #: ../app/worldclock/UserWorldCityDelegate.qml:139
 msgid "Today"
-msgstr "Hoxe"
+msgstr ""
 
 #: ../app/worldclock/UserWorldCityDelegate.qml:143
 msgid "Tomorrow"
-msgstr "Mañá"
+msgstr ""
 
 #: ../app/worldclock/UserWorldCityDelegate.qml:147
 msgid "Yesterday"
-msgstr "Onte"
+msgstr ""
 
 #. TRANSLATORS: this indicates if the time in a world clock
 #. is behind or ahead of the time at the current location
 #: ../app/worldclock/UserWorldCityDelegate.qml:152
 msgid "behind"
-msgstr "de atraso"
+msgstr ""
 
 #: ../app/worldclock/UserWorldCityDelegate.qml:153
 msgid "ahead"
-msgstr "de adianto"
+msgstr ""
 
 #. TRANSLATORS: the first argument is a day, followed by hour, minute and the
 #. translation for either 'behind' or 'ahead'
@@ -144,8 +144,6 @@ msgid ""
 "%1\n"
 "%2 h %3 m %4"
 msgstr ""
-"%1\n"
-"%2 h %3 m %4"
 
 #. TRANSLATORS: the first argument is a day, followed by hour and the
 #. translation for either 'behind' or 'ahead'
@@ -155,37 +153,35 @@ msgid ""
 "%1\n"
 "%2 h %3"
 msgstr ""
-"%1\n"
-"%2 h %3"
 
 #: ../app/worldclock/UserWorldCityDelegate.qml:188
 msgid "No Time Difference"
-msgstr "Non hai diferenza horaria"
+msgstr ""
 
 #: ../app/worldclock/WorldCityList.qml:40
 msgid "Select a city"
-msgstr "Seleccionar cidade"
+msgstr ""
 
 #: ../app/worldclock/WorldCityList.qml:66
 msgid "Back"
-msgstr "Volver"
+msgstr ""
 
 #: ../app/worldclock/WorldCityList.qml:78
 msgid "Search..."
-msgstr "Buscar..."
+msgstr ""
 
 #: ../app/worldclock/WorldCityList.qml:155
 msgid "Searching for a city"
-msgstr "Buscando a cidade"
+msgstr ""
 
 #: ../app/worldclock/WorldCityList.qml:160
 msgid "No City Found"
-msgstr "Non se encontrou a cidade"
+msgstr ""
 
 #: ../app/worldclock/WorldCityList.qml:166
 msgid "Unable to connect."
-msgstr "Non é posíbel conectar."
+msgstr ""
 
 #: ../app/worldclock/WorldCityList.qml:167
 msgid "Please check your network connection and try again"
-msgstr "Comprobe a conexión de rede e ténteo de novo"
+msgstr ""
