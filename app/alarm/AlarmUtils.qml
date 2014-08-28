@@ -27,7 +27,6 @@ QtObject {
 
     // Function to format the alarm days accordingly to their occurance
     function format_day_string(value, type) {
-        console.log("Value:" + value)
         if (type === Alarm.OneTime) {
             return i18n.tr("Never")
         }

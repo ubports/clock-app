@@ -33,7 +33,7 @@ Page {
     /*
      By Default, the alarm is set to Today. However if it is a one-time alarm,
      this should be set to none, since this page shows the days the alarm
-     repeats on and a one-time alarm doesn't repeat on any day. While exiting
+     repeats on and a one-time alarm shoudn't repeat on any day. While exiting
      the page, if the alarm is still a one-time alarm, then the alarm is set
      back to its original value (Today).
     */
@@ -117,7 +117,8 @@ Page {
 
                 control: Switch {
                     objectName: 'daySwitch' + index
-                    checked: (alarm.daysOfWeek & flag) == flag && alarm.type === Alarm.Repeating
+                    checked: (alarm.daysOfWeek & flag) == flag
+                             && alarm.type === Alarm.Repeating
                     onCheckedChanged: {
                         if (checked) {
                             alarm.daysOfWeek |= flag
