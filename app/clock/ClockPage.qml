@@ -45,21 +45,40 @@ PageWithBottomEdge {
 
     PositionSource {
         id: geoposition
-        active: true
+        active: false
         updateInterval: 1000
         Component.onCompleted: {
             console.log("Location source available: " + valid)
         }
 
+        onSourceErrorChanged: {
+            console.log("Error: " + sourceError)
+        }
+
         onPositionChanged: {
             var coord = geoposition.position.coordinate
 
-            console.log("Location obtained via geoposition: " + coord)
+            console.log("Location obtained via geoposition: " + coord.longitude + "," + coord.latitude)
+            if(!position.longitudeValid || !position.latitudeValid) {
+                return
+            }
 
-            if (coord.longitude === userLocationDocument.contents.long ||
-                    coord.latitude === userLocationDocument.contents.lat) {
-                console.log("Same location as the last known location.")
-                return;
+            var shortLong = coord.longitude.toString().slice(
+                        0, Math.min(coord.longitude.toString().length, 7))
+            var shortLat = coord.latitude.toString().slice(
+                        0, Math.min(coord.longitude.toString().length, 6))
+
+            console.log("Location obtained via geoposition: " + shortLong + "," + shortLat)
+            console.log("Location from u1db: " + userLocationDocument.contents.long + ", " + userLocationDocument.contents.lat)
+            console.log("Position validity: " + position.latitudeValid + ":" + position.longitudeValid)
+            console.log("Location source validity: " + geoposition.valid)
+
+            if (shortLong === userLocationDocument.contents.long ||
+                    shortLat === userLocationDocument.contents.lat) {
+                console.log("Same location as the last known location. Stopping GPS")
+                if(geoposition.active)
+                    geoposition.stop()
+                return
             }
 
             else {
@@ -74,6 +93,17 @@ PageWithBottomEdge {
         }
     }
 
+    Connections {
+        target: clockApp
+        onApplicationStateChanged: {
+            if(applicationState) {
+                console.log("Resuming from Suspend. Starting GPS.")
+                if(!geoposition.active)
+                    geoposition.start()
+            }
+        }
+    }
+
     UserLocation.Location {
         id: userLocation
         onLocationChanged: {
@@ -81,10 +111,14 @@ PageWithBottomEdge {
             console.log("Location:" + userLocation.location)
             var locationData = JSON.parse
                     (JSON.stringify(userLocationDocument.contents))
-            locationData.lat = geoposition.position.coordinate.latitude
-            locationData.long = geoposition.position.coordinate.longitude
+            locationData.lat = geoposition.position.coordinate.latitude.toString().slice(0, Math.min(geoposition.position.coordinate.longitude.toString().length, 6))
+            locationData.long = geoposition.position.coordinate.longitude.toString().slice(0, Math.min(geoposition.position.coordinate.longitude.toString().length, 7))
             locationData.location = userLocation.location
             userLocationDocument.contents = locationData
+            console.log("Stopping GPS.")
+            if(geoposition.active)
+                geoposition.stop()
+
         }
     }
 
@@ -191,7 +225,7 @@ PageWithBottomEdge {
                 color: UbuntuColors.midAubergine
 
                 text: {
-                    if (userLocationDocument.contents.location === "null") {
+                    if (userLocationDocument.contents.location === "Null") {
                         return i18n.tr("Retrieving location...")
                     }
 

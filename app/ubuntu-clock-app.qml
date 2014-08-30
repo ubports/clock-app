@@ -80,7 +80,7 @@ MainView {
         create: true
         database: clockDB
         docId: "userLocationDocument"
-        defaults: { "lat": 0.0, "long": 0.0, "location": "null" }
+        defaults: { "lat": "NaN", "long": "Nan", "location": "Null" }
     }
 
     AlarmModel {
