@@ -19,6 +19,7 @@ ubuntu-clock-app (3.1) utopic; urgency=medium
   * Updated QtQuick library imports to v2.3
   * Switched bzr branch to lp:ubuntu-clock-app
   * Updated pot file name
+  * Added support for user location retrieval using GPS (LP: #1323198)
 
   [Zsombor Egri]
   * Fixed alarm status toggle being reverted immediately (LP: #1272337)
