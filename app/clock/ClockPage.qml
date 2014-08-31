@@ -105,8 +105,8 @@ PageWithBottomEdge {
         target: clockApp
         onApplicationStateChanged: {
             if(applicationState
-                    && Math.abs(clock.analogTime - geoposition.lastUpdate) > 60000) {
-                console.log("Resuming from Suspend. Starting GPS. Time Diff: " + Math.abs(clock.analogTime - geoposition.lastUpdate)/1000)
+                    && Math.abs(clock.analogTime - geoposition.lastUpdate) > 1800000) {
+                console.log("Resuming from suspend. Starting GPS...")
                 if(!geoposition.active)
                     geoposition.start()
             }
