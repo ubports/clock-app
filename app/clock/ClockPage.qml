@@ -46,27 +46,15 @@ PageWithBottomEdge {
     PositionSource {
         id: geoposition
 
+        // Property to store the time of the last GPS location update
         property var lastUpdate
 
         active: true
         updateInterval: 1000
 
-        Component.onCompleted: {
-            console.log("Location source available on startup: " + valid)
-        }
-
-        onValidChanged: {
-            console.log("Location source changed: " + valid)
-        }
-
-        onSourceErrorChanged: {
-            console.log("Error: " + sourceError)
-        }
-
         onPositionChanged: {
             var coord = geoposition.position.coordinate
 
-            console.log("Location obtained via geoposition: " + coord.longitude + "," + coord.latitude)
             if(!position.longitudeValid || !position.latitudeValid) {
                 return
             }
@@ -76,21 +64,14 @@ PageWithBottomEdge {
             var shortLat = coord.latitude.toString().slice(
                         0, Math.min(coord.longitude.toString().length, 6))
 
-            console.log("Location obtained via geoposition: " + shortLong + "," + shortLat)
-            console.log("Location from u1db: " + userLocationDocument.contents.long + ", " + userLocationDocument.contents.lat)
-            console.log("Position validity: " + position.latitudeValid + ":" + position.longitudeValid)
-            console.log("Location source validity: " + geoposition.valid)
-
             if (shortLong === userLocationDocument.contents.long ||
                     shortLat === userLocationDocument.contents.lat) {
-                console.log("Same location as the last known location. Stopping GPS")
                 if(geoposition.active)
                     geoposition.stop()
                 return
             }
 
             else {
-                console.log("New Location detected")
                 userLocation.source = String("%1%2%3%4%5")
                 .arg("http://api.geonames.org/findNearbyPlaceNameJSON?lat=")
                 .arg(coord.latitude)
@@ -106,14 +87,12 @@ PageWithBottomEdge {
         onApplicationStateChanged: {
             if(applicationState
                     && Math.abs(clock.analogTime - geoposition.lastUpdate) > 1800000) {
-                console.log("Resuming from suspend. Starting GPS...")
                 if(!geoposition.active)
                     geoposition.start()
             }
 
             else if (!applicationState) {
                 geoposition.lastUpdate = clock.analogTime
-                console.log("App being suspended. Last Update: " + Qt.formatTime(geoposition.lastUpdate))
             }
         }
     }
@@ -122,14 +101,12 @@ PageWithBottomEdge {
         id: userLocation
         onLocationChanged: {
             location.text = userLocation.location
-            console.log("Location:" + userLocation.location)
             var locationData = JSON.parse
                     (JSON.stringify(userLocationDocument.contents))
             locationData.lat = geoposition.position.coordinate.latitude.toString().slice(0, Math.min(geoposition.position.coordinate.longitude.toString().length, 6))
             locationData.long = geoposition.position.coordinate.longitude.toString().slice(0, Math.min(geoposition.position.coordinate.longitude.toString().length, 7))
             locationData.location = userLocation.location
             userLocationDocument.contents = locationData
-            console.log("Stopping GPS.")
             if(geoposition.active)
                 geoposition.stop()
 
