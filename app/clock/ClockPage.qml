@@ -45,10 +45,18 @@ PageWithBottomEdge {
 
     PositionSource {
         id: geoposition
-        active: false
+
+        property var lastUpdate
+
+        active: true
         updateInterval: 1000
+
         Component.onCompleted: {
-            console.log("Location source available: " + valid)
+            console.log("Location source available on startup: " + valid)
+        }
+
+        onValidChanged: {
+            console.log("Location source changed: " + valid)
         }
 
         onSourceErrorChanged: {
@@ -96,10 +104,16 @@ PageWithBottomEdge {
     Connections {
         target: clockApp
         onApplicationStateChanged: {
-            if(applicationState) {
-                console.log("Resuming from Suspend. Starting GPS.")
+            if(applicationState
+                    && Math.abs(clock.analogTime - geoposition.lastUpdate) > 60000) {
+                console.log("Resuming from Suspend. Starting GPS. Time Diff: " + Math.abs(clock.analogTime - geoposition.lastUpdate)/1000)
                 if(!geoposition.active)
                     geoposition.start()
+            }
+
+            else if (!applicationState) {
+                geoposition.lastUpdate = clock.analogTime
+                console.log("App being suspended. Last Update: " + Qt.formatTime(geoposition.lastUpdate))
             }
         }
     }
@@ -175,6 +189,10 @@ PageWithBottomEdge {
         MainClock {
             id: clock
             objectName: "clock"
+
+            Component.onCompleted: {
+                geoposition.lastUpdate = analogTime
+            }
 
             anchors {
                 verticalCenter: parent.top
