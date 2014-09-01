@@ -50,6 +50,19 @@ QtObject {
         }
     }
 
+    // Function return the alarm dayOfWeek according to the day provided
+    function get_alarm_day(day) {
+        switch(day) {
+        case 0: return Alarm.Sunday
+        case 1: return Alarm.Monday
+        case 2: return Alarm.Tuesday
+        case 3: return Alarm.Wednesday
+        case 4: return Alarm.Thursday
+        case 5: return Alarm.Friday
+        case 6: return Alarm.Saturday
+        }
+    }
+
     /*
       INTERNAL FUNCTIONS
     */
