@@ -11,7 +11,7 @@ Column {
     Rectangle {
         height: units.gu(7)
         width: parent.width
-        color:"#F5F5F5"
+        color: Theme.palette.normal.background
         
         Icon {
             id: backIcon
