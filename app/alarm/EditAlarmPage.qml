@@ -115,6 +115,8 @@ Page {
         var alarmTime = new Date()
         alarmTime.setHours(_timePicker.hours, _timePicker.minutes, 0)
 
+        validateDate(alarmTime)
+
         tempAlarm.message = _alarm.message
         tempAlarm.date = alarmTime
         tempAlarm.type = _alarm.type
@@ -156,18 +158,6 @@ Page {
         }
     }
 
-    function getAlarmDay(day) {
-        switch(day) {
-        case 0: return Alarm.Sunday
-        case 1: return Alarm.Monday
-        case 2: return Alarm.Tuesday
-        case 3: return Alarm.Wednesday
-        case 4: return Alarm.Thursday
-        case 5: return Alarm.Friday
-        case 6: return Alarm.Saturday
-        }
-    }
-
     function validateDate(date) {
         if (_alarm.type === Alarm.OneTime) {
             _alarm.daysOfWeek = Alarm.AutoDetect
@@ -175,7 +165,7 @@ Page {
             if (date < new Date()) {
                 var tomorrow = new Date()
                 tomorrow.setDate(tomorrow.getDate() + 1)
-                _alarm.daysOfWeek = getAlarmDay(tomorrow.getDay())
+                _alarm.daysOfWeek = alarmUtils.get_alarm_day(tomorrow.getDay())
             }
         }
     }
