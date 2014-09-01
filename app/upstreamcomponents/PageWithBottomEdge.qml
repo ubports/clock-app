@@ -158,7 +158,7 @@ Page {
             left: parent.left
             right: parent.right
         }
-        y: (-fakeHeader.height * bottomEdge.y) / page.height
+        y: ((-fakeHeader.height * bottomEdge.y) / page.height) + units.gu(1.1)
         z: bgVisual.z + 1
 
         Behavior on y {

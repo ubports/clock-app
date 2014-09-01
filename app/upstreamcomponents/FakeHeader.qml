@@ -1,7 +1,23 @@
+/*
+ * Copyright (C) 2014 Canonical Ltd
+ *
+ * This file is part of Ubuntu Clock App
+ *
+ * Ubuntu Clock App is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 3 as
+ * published by the Free Software Foundation.
+ *
+ * Ubuntu Clock App is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
 import QtQuick 2.3
 import Ubuntu.Components 1.1
-import Ubuntu.Components.ListItems 1.0 as ListItem
-import "../components/Utils.js" as Utils
 
 Column {
     id: fakeHeader
@@ -12,36 +28,6 @@ Column {
         height: units.gu(7)
         width: parent.width
         color: Theme.palette.normal.background
-        
-        Icon {
-            id: backIcon
-            name: "back"
-            width: units.gu(2.5)
-            color: "#5D5D5D"
-            height: width
-            anchors.left: parent.left
-            anchors.leftMargin: units.gu(2.2)
-            anchors.verticalCenter: parent.verticalCenter
-        }
-        
-        Label {
-            text: "Alarms"
-            fontSize: "x-large"
-            anchors.left: backIcon.right
-            anchors.leftMargin: units.gu(1.25)
-            anchors.verticalCenter: parent.verticalCenter
-        }
-        
-        Icon {
-            id: addIcon
-            name: "add"
-            width: units.gu(2.5)
-            height: width
-            color: "#5D5D5D"
-            anchors.right: parent.right
-            anchors.rightMargin: units.gu(2.3)
-            anchors.verticalCenter: parent.verticalCenter
-        }
     }
     
     Rectangle {
