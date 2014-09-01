@@ -159,7 +159,7 @@ Page {
             right: parent.right
         }
         y: -units.gu(9)
-        z: 1000
+        z: bgVisual.z + 1
 
         Behavior on y {
             UbuntuNumberAnimation {
