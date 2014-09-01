@@ -75,6 +75,8 @@ Page {
         var alarmTime = new Date()
         alarmTime.setHours(_timePicker.hours, _timePicker.minutes, 0)
 
+        validateDate(alarmTime)
+
         /*
           _alarm.sound, _alarm.daysOfWeek and _alarm.message have been set in
           the respective individual pages already.
@@ -154,11 +156,28 @@ Page {
         }
     }
 
+    function getAlarmDay(day) {
+        switch(day) {
+        case 0: return Alarm.Sunday
+        case 1: return Alarm.Monday
+        case 2: return Alarm.Tuesday
+        case 3: return Alarm.Wednesday
+        case 4: return Alarm.Thursday
+        case 5: return Alarm.Friday
+        case 6: return Alarm.Saturday
+        }
+    }
+
     function validateDate(date) {
-        if (date < new Date() && _alarm.type === Alarm.OneTime)
-            saveAlarmButton.enabled = false
-        else
-            saveAlarmButton.enabled = true
+        if (_alarm.type === Alarm.OneTime) {
+            _alarm.daysOfWeek = Alarm.AutoDetect
+
+            if (date < new Date()) {
+                var tomorrow = new Date()
+                tomorrow.setDate(tomorrow.getDate() + 1)
+                _alarm.daysOfWeek = getAlarmDay(tomorrow.getDay())
+            }
+        }
     }
 
     Alarm {
@@ -181,7 +200,6 @@ Page {
 
         onTypeChanged: {
             _alarmRepeat.subText = alarmUtils.format_day_string(_alarm.daysOfWeek, type)
-            validateDate(date)
         }
 
         onDaysOfWeekChanged: {
@@ -262,17 +280,13 @@ Page {
                                                    .split(":")[1]/5))*5,
                                 0,
                                 0
-                            )
+                                )
                 }
             }
 
             DateTime {
                 id: currentTime
                 updateInterval: 0
-            }
-
-            onDateChanged: {
-                validateDate(date)
             }
         }
 
