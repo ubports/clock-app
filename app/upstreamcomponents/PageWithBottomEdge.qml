@@ -151,6 +151,22 @@ Page {
         onTriggered: tip.hiden = true
     }
 
+    FakeHeader {
+        id: fakeHeader
+
+        anchors {
+            left: parent.left
+            right: parent.rigth
+        }
+        y: -height
+
+        Behavior on y {
+            UbuntuNumberAnimation {
+                duration: UbuntuAnimation.SnapDuration
+            }
+        }
+    }
+
     Rectangle {
         id: bottomEdge
         objectName: "bottomEdge"
@@ -270,6 +286,10 @@ Page {
                     y: bottomEdge.height
                 }
                 PropertyChanges {
+                    target: fakeHeader
+                    y: -fakeHeader.height
+                }
+                PropertyChanges {
                     target: tip
                     opacity: 1.0
                 }
@@ -283,6 +303,10 @@ Page {
                 PropertyChanges {
                     target: bottomEdge
                     y: bottomEdge.pageStartY
+                }
+                PropertyChanges {
+                    target: fakeHeader
+                    y: 0
                 }
                 PropertyChanges {
                     target: hideIndicator
@@ -311,10 +335,17 @@ Page {
             Transition {
                 to: "expanded"
                 SequentialAnimation {
-                    UbuntuNumberAnimation {
-                        target: bottomEdge
-                        property: "y"
-                        duration: UbuntuAnimation.SlowDuration
+                    ParallelAnimation {
+                        UbuntuNumberAnimation {
+                            target: bottomEdge
+                            property: "y"
+                            duration: UbuntuAnimation.SlowDuration
+                        }
+                        UbuntuNumberAnimation {
+                            target: fakeHeader
+                            property: "y"
+                            duration: UbuntuAnimation.SlowDuration
+                        }
                     }
                     ScriptAction {
                         script: page._pushPage()
@@ -333,10 +364,17 @@ Page {
                             edgeLoader.item.active = false
                         }
                     }
-                    UbuntuNumberAnimation {
-                        target: bottomEdge
-                        property: "y"
-                        duration: UbuntuAnimation.SlowDuration
+                    ParallelAnimation {
+                        UbuntuNumberAnimation {
+                            target: bottomEdge
+                            property: "y"
+                            duration: UbuntuAnimation.SlowDuration
+                        }
+                        UbuntuNumberAnimation {
+                            target: fakeHeader
+                            property: "y"
+                            duration: UbuntuAnimation.SlowDuration
+                        }
                     }
                     ScriptAction {
                         script: {
