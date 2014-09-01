@@ -77,7 +77,7 @@ Page {
     property bool reloadBottomEdgePage: true
 
     readonly property alias bottomEdgePage: edgeLoader.item
-    readonly property bool isReady: ((bottomEdge.y === 0) && bottomEdgePageLoaded && edgeLoader.item.active)
+    readonly property bool isReady: ((bottomEdge.y === fakeHeader.height) && bottomEdgePageLoaded && edgeLoader.item.active)
     readonly property bool isCollapsed: (bottomEdge.y === page.height)
     readonly property bool bottomEdgePageLoaded: (edgeLoader.status == Loader.Ready)
 
@@ -156,9 +156,10 @@ Page {
 
         anchors {
             left: parent.left
-            right: parent.rigth
+            right: parent.right
         }
-        y: -height
+        y: -units.gu(9)
+        z: 1000
 
         Behavior on y {
             UbuntuNumberAnimation {
@@ -172,7 +173,7 @@ Page {
         objectName: "bottomEdge"
 
         readonly property int tipHeight: units.gu(3)
-        readonly property int pageStartY: 0
+        readonly property int pageStartY: fakeHeader.height
 
         z: 1
         color: Theme.palette.normal.background

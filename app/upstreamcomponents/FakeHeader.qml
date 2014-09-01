@@ -6,9 +6,12 @@ import "../components/Utils.js" as Utils
 Column {
     id: fakeHeader
 
-    Item {
+    height: units.gu(9)
+
+    Rectangle {
         height: units.gu(7)
         width: parent.width
+        color:"#F5F5F5"
         
         Icon {
             id: backIcon
@@ -17,7 +20,7 @@ Column {
             color: "#5D5D5D"
             height: width
             anchors.left: parent.left
-            anchors.leftMargin: units.gu(2.5)
+            anchors.leftMargin: units.gu(2.2)
             anchors.verticalCenter: parent.verticalCenter
         }
         
@@ -25,7 +28,7 @@ Column {
             text: "Alarms"
             fontSize: "x-large"
             anchors.left: backIcon.right
-            anchors.leftMargin: units.gu(1.5)
+            anchors.leftMargin: units.gu(1.25)
             anchors.verticalCenter: parent.verticalCenter
         }
         
@@ -36,14 +39,13 @@ Column {
             height: width
             color: "#5D5D5D"
             anchors.right: parent.right
-            anchors.rightMargin: units.gu(2.5)
+            anchors.rightMargin: units.gu(2.3)
             anchors.verticalCenter: parent.verticalCenter
         }
     }
     
     Rectangle {
-        opacity: 0.2
-        color: "black"
+        color: "#C9C9C9"
         height: units.gu(2)
         anchors.left: parent.left
         anchors.right: parent.right
