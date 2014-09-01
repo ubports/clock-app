@@ -18,15 +18,12 @@
 
 import QtQuick 2.3
 import Ubuntu.Components 1.1
-import "../components/Utils.js" as Utils
 
 Page {
     id: alarmPage
 
     title: i18n.tr("Alarms")
     objectName: 'AlarmPage'
-
-    Component.onCompleted: Utils.log(debugMode, "Alarm Page loaded")
 
     flickable: null
 

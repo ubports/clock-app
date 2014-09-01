@@ -24,7 +24,6 @@ import Ubuntu.Components 1.1
 import "../components"
 import "../upstreamcomponents"
 import "../worldclock"
-import "../components/Utils.js" as Utils
 
 PageWithBottomEdge {
     id: _clockPage
@@ -41,42 +40,40 @@ PageWithBottomEdge {
 
     flickable: null
 
-    Component.onCompleted: Utils.log(debugMode, "Clock Page loaded")
-
     PositionSource {
         id: geoposition
 
         // Property to store the time of the last GPS location update
         property var lastUpdate
 
+        readonly property real userLongitude: position.coordinate.longitude.
+        toString().slice(0, Math.min(position.coordinate.longitude.toString().length, 7))
+
+        readonly property real userLatitude: position.coordinate.latitude.
+        toString().slice(0, Math.min(position.coordinate.longitude.toString().length, 6))
+
         active: true
         updateInterval: 1000
 
         onPositionChanged: {
-            var coord = geoposition.position.coordinate
-
             if(!position.longitudeValid || !position.latitudeValid) {
                 return
             }
 
-            var shortLong = coord.longitude.toString().slice(
-                        0, Math.min(coord.longitude.toString().length, 7))
-            var shortLat = coord.latitude.toString().slice(
-                        0, Math.min(coord.longitude.toString().length, 6))
-
-            if (shortLong === userLocationDocument.contents.long ||
-                    shortLat === userLocationDocument.contents.lat) {
-                if(geoposition.active)
+            if (userLongitude === userLocationDocument.contents.long ||
+                    userLatitude === userLocationDocument.contents.lat) {
+                if (geoposition.active) {
                     geoposition.stop()
+                }
                 return
             }
 
             else {
                 userLocation.source = String("%1%2%3%4%5")
                 .arg("http://api.geonames.org/findNearbyPlaceNameJSON?lat=")
-                .arg(coord.latitude)
+                .arg(position.coordinate.latitude)
                 .arg("&lng=")
-                .arg(coord.longitude)
+                .arg(position.coordinate.longitude)
                 .arg("&username=krnekhelesh&style=full")
             }
         }
@@ -100,15 +97,16 @@ PageWithBottomEdge {
     UserLocation.Location {
         id: userLocation
         onLocationChanged: {
-            location.text = userLocation.location
             var locationData = JSON.parse
                     (JSON.stringify(userLocationDocument.contents))
             locationData.lat = geoposition.position.coordinate.latitude.toString().slice(0, Math.min(geoposition.position.coordinate.longitude.toString().length, 6))
             locationData.long = geoposition.position.coordinate.longitude.toString().slice(0, Math.min(geoposition.position.coordinate.longitude.toString().length, 7))
             locationData.location = userLocation.location
             userLocationDocument.contents = locationData
-            if(geoposition.active)
+
+            if(geoposition.active) {
                 geoposition.stop()
+            }
 
         }
     }
