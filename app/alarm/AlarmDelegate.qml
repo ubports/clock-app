@@ -91,6 +91,30 @@ ListItemWithActions {
             }
         }
 
+        Component {
+            id: _internalTimerComponent
+            Timer {
+                running: false
+                interval: 5000
+                repeat: false
+                onTriggered: {
+                    alarmSubtitle.text = alarmUtils.format_day_string(daysOfWeek)
+                    _internalTimerLoader.sourceComponent = undefined
+                }
+            }
+        }
+
+        Loader {
+            id: _internalTimerLoader
+            asynchronous: true
+
+            onStatusChanged: {
+                if(status === Loader.Ready) {
+                    _internalTimerLoader.item.restart()
+                }
+            }
+        }
+
         Connections {
             target: model
             onStatusChanged: {
@@ -100,6 +124,31 @@ ListItemWithActions {
                 */
                 if (model.status === Alarm.Ready) {
                     alarmStatus.checked = model.enabled;
+
+                    if(alarmStatus.checked) {
+                        var timeObject = alarmUtils.get_time_to_next_alarm(model.date - new Date())
+                        var alarmETA
+
+                        // TRANSLATORS: the first argument is the number of days,
+                        // followed by hour and minute
+                        if(timeObject.days) {
+                            alarmETA = i18n.tr("in %1d %1h %2m")
+                            .arg(timeObject.days)
+                            .arg(timeObject.hours)
+                            .arg(timeObject.minutes)
+                        }
+
+                        // TRANSLATORS: the first argument is the number of
+                        // hours followed by the minutes
+                        else {
+                            alarmETA = i18n.tr("in %1h %2m")
+                            .arg(timeObject.hours)
+                            .arg(timeObject.minutes)
+                        }
+
+                        alarmSubtitle.text = alarmETA
+                        _internalTimerLoader.sourceComponent = _internalTimerComponent
+                    }
                 }
             }
         }
