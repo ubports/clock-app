@@ -165,7 +165,7 @@ ListItemWithActions {
                 else if(hour === 0 && minute > 0) {
                     // TRANSLATORS: the first argument is minute, followed by the
                     // translation for either 'behind' or 'ahead'
-                    return ("%1 m %2")
+                    return (i18n.tr("%1 m %2"))
                     .arg(minute)
                     .arg(isBehind)
                 }
