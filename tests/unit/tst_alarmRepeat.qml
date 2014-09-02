@@ -51,8 +51,8 @@ MainView {
 
         function cleanup() {
             alarmRepeatPageLoader.sourceComponent = undefined
-            _alarm.daysOfWeek = Alarm.AutoDetect
-            _alarm.type = Alarm.OneTime
+            _alarm.reset()
+            tryCompare(_alarm, "status", Alarm.Ready)
         }
 
         /*
@@ -81,6 +81,15 @@ MainView {
         */
         function test_alarmTypeSwitch() {
             waitForRendering(alarmRepeatPageLoader.item);
+
+            // TEST FAILS HERE //
+            // Alarm should be one-time by default. By the test before this
+            // changed the value and the alarm.reset() in the cleanup doesn't
+            // seem to do its job.
+
+            // test_alarmObjectSetsSwitchStatus() is run before this test. And in
+            // that test I set the alarm type to repeating. However the cleanup
+            // should reset back to one-time when calling the alarm.reset() function.
 
             tryCompare(_alarm, "type", Alarm.OneTime, 3000, "Alarm type is not OneTime by default")
 
