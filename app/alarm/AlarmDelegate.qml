@@ -44,6 +44,8 @@ ListItemWithActions {
     Column {
         id: alarmDetailsColumn
 
+        opacity: model.enabled ? 1.0 : 0.8
+
         anchors {
             left: alarmTime.right
             right: alarmStatus.left
