@@ -24,11 +24,31 @@ Page {
     id: _alarmRepeatPage
     objectName: "alarmRepeatPage"
 
+    // Property to set the alarm days of the week in the edit alarm page
+    property var alarm
+
     visible: false
     title: i18n.tr("Repeat")
 
-    // Property to set the alarm days of the week in the edit alarm page
-    property var alarm
+    head.actions: [
+        Action {
+            text: i18n.tr("Select All")
+            iconName: "select"
+            onTriggered: {
+                if (alarm.daysOfWeek !== 127) {
+                    for (var i=0; i<_alarmDays.count; i++) {
+                        _alarmDays.itemAt(i).isChecked = true
+                    }
+                }
+
+                else {
+                    for (var i=0; i<_alarmDays.count; i++) {
+                        _alarmDays.itemAt(i).isChecked = false
+                    }
+                }
+            }
+        }
+    ]
 
     ListModel {
         id: daysModel
@@ -84,6 +104,8 @@ Page {
                 id: _alarmDayHolder
                 objectName: "alarmDayHolder" + index
 
+                property alias isChecked: daySwitch.checked
+
                 Label {
                     id: _alarmDay
                     objectName: 'alarmDay' + index
@@ -98,7 +120,8 @@ Page {
                     text: Qt.locale().standaloneDayName(day, Locale.LongFormat)
                 }
 
-                control: Switch {
+                control: CheckBox {
+                    id: daySwitch
                     objectName: 'daySwitch' + index
                     checked: (alarm.daysOfWeek & flag) == flag
                     onCheckedChanged: {
