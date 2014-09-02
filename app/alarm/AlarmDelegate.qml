@@ -130,7 +130,7 @@ ListItemWithActions {
                         var alarmETA
 
                         // TRANSLATORS: the first argument is the number of days,
-                        // followed by hour and minute
+                        // followed by hour and minute (eg. in 1d 20h 3m)
                         if(timeObject.days) {
                             alarmETA = i18n.tr("in %1d %1h %2m")
                             .arg(timeObject.days)
@@ -139,10 +139,17 @@ ListItemWithActions {
                         }
 
                         // TRANSLATORS: the first argument is the number of
-                        // hours followed by the minutes
-                        else {
+                        // hours followed by the minutes (eg. in 4h 3m)
+                        else if (timeObject.hours) {
                             alarmETA = i18n.tr("in %1h %2m")
                             .arg(timeObject.hours)
+                            .arg(timeObject.minutes)
+                        }
+
+                        // TRANSLATORS: the argument is the number of
+                        // minutes to the alarm (eg. in 3m)
+                        else {
+                            alarmETA = i18n.tr("in %1m")
                             .arg(timeObject.minutes)
                         }
 
