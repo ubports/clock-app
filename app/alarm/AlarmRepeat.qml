@@ -24,11 +24,28 @@ Page {
     id: _alarmRepeatPage
     objectName: "alarmRepeatPage"
 
+    // Property to set the alarm days of the week in the edit alarm page
+    property var alarm
+
     visible: false
     title: i18n.tr("Repeat")
 
-    // Property to set the alarm days of the week in the edit alarm page
-    property var alarm
+    /*
+     By Default, the alarm is set to Today. However if it is a one-time alarm,
+     this should be set to none, since this page shows the days the alarm
+     repeats on and a one-time alarm shoudn't repeat on any day. While exiting
+     the page, if the alarm is still a one-time alarm, then the alarm is set
+     back to its original value (Today).
+    */
+    Component.onCompleted: {
+        if (alarm.type === Alarm.OneTime)
+            alarm.daysOfWeek = 0
+    }
+
+    Component.onDestruction: {
+        if (alarm.type === Alarm.OneTime)
+            alarm.daysOfWeek = Alarm.AutoDetect
+    }
 
     ListModel {
         id: daysModel
@@ -101,13 +118,18 @@ Page {
                 control: Switch {
                     objectName: 'daySwitch' + index
                     checked: (alarm.daysOfWeek & flag) == flag
+                             && alarm.type === Alarm.Repeating
                     onCheckedChanged: {
                         if (checked) {
                             alarm.daysOfWeek |= flag
+                        } else {
+                            alarm.daysOfWeek &= ~flag
                         }
 
-                        else {
-                            alarm.daysOfWeek &= ~flag
+                        if (alarm.daysOfWeek > 0) {
+                            alarm.type = Alarm.Repeating
+                        } else {
+                            alarm.type = Alarm.OneTime
                         }
                     }
                 }

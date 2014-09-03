@@ -26,7 +26,11 @@ QtObject {
     id: alarmUtils
 
     // Function to format the alarm days accordingly to their occurance
-    function format_day_string(value) {
+    function format_day_string(value, type) {
+        if (type === Alarm.OneTime) {
+            return i18n.tr("Never")
+        }
+
         var occurs = _get_day(value)
 
         if (value === _get_weekdays()) {
@@ -60,6 +64,19 @@ QtObject {
             days : days_in_offset,
             hours : hours_in_offset,
             minutes : minutes_in_offset
+        }
+    }
+
+    // Function return the alarm dayOfWeek according to the day provided
+    function get_alarm_day(day) {
+        switch(day) {
+        case 0: return Alarm.Sunday
+        case 1: return Alarm.Monday
+        case 2: return Alarm.Tuesday
+        case 3: return Alarm.Wednesday
+        case 4: return Alarm.Thursday
+        case 5: return Alarm.Friday
+        case 6: return Alarm.Saturday
         }
     }
 
