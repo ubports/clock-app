@@ -19,6 +19,7 @@ ubuntu-clock-app (3.1) utopic; urgency=medium
   * Updated QtQuick library imports to v2.3
   * Switched bzr branch to lp:ubuntu-clock-app
   * Updated pot file name
+  * Enabled one-time alarms in the UI (LP: #1358320)
   * Fixed the transition animation to alarms to be more smoother (LP: #1362081)
 
   [Zsombor Egri]
