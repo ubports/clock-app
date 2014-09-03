@@ -70,7 +70,7 @@ ListItemWithActions {
 
             fontSize: "xx-small"
             width: parent.width
-            visible: type === Alarm.Repeating
+            visible: type === Alarm.Repeating || _internalTimerLoader.sourceComponent != undefined
             wrapMode: Text.WrapAtWordBoundaryOrAnywhere
             text: alarmUtils.format_day_string(daysOfWeek, type)
         }
