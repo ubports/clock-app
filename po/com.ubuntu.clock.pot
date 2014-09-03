@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-08-26 16:06+0200\n"
+"POT-Creation-Date: 2014-09-02 17:11+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,6 +16,21 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+#: ../app/alarm/AlarmDelegate.qml:135
+#, qt-format
+msgid "in %1d %1h %2m"
+msgstr ""
+
+#: ../app/alarm/AlarmDelegate.qml:144
+#, qt-format
+msgid "in %1h %2m"
+msgstr ""
+
+#: ../app/alarm/AlarmDelegate.qml:152
+#, c-format, qt-format
+msgid "in %1m"
+msgstr ""
 
 #: ../app/alarm/AlarmLabel.qml:30 ../app/alarm/AlarmLabel.qml:52
 #: ../app/alarm/EditAlarmPage.qml:268
@@ -27,7 +42,7 @@ msgstr ""
 msgid "Delete"
 msgstr ""
 
-#: ../app/alarm/AlarmPage.qml:26
+#: ../app/alarm/AlarmPage.qml:26 ../app/ubuntu-clock-app.qml:103
 msgid "Alarms"
 msgstr ""
 
@@ -108,10 +123,6 @@ msgstr ""
 
 #: ../app/clock/ClockPage.qml:65 ../app/worldclock/WorldCityList.qml:52
 msgid "City"
-msgstr ""
-
-#: ../app/ubuntu-clock-app.qml:103
-msgid "Next Alarm in .."
 msgstr ""
 
 #: ../app/worldclock/UserWorldCityDelegate.qml:139

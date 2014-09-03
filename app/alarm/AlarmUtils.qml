@@ -50,6 +50,23 @@ QtObject {
         }
     }
 
+    function get_time_to_next_alarm ( datetime_offset ) {
+        // increase by a minute, so we could make a nicer time
+        // to the next alarm, otherwise a minute always missing
+        // which makes it look odd
+        datetime_offset += 60000;
+
+        var days_in_offset = Math.floor( datetime_offset / ( 3600000 * 24 ) );
+        var hours_in_offset = Math.floor( datetime_offset / 3600000 % 24 );
+        var minutes_in_offset = Math.floor( datetime_offset / 60000 % 60 );
+
+        return {
+            days : days_in_offset,
+            hours : hours_in_offset,
+            minutes : minutes_in_offset
+        }
+    }
+
     // Function return the alarm dayOfWeek according to the day provided
     function get_alarm_day(day) {
         switch(day) {
