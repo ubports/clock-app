@@ -20,6 +20,7 @@ ubuntu-clock-app (3.1) utopic; urgency=medium
   * Switched bzr branch to lp:ubuntu-clock-app
   * Updated pot file name
   * Enabled one-time alarms in the UI (LP: #1358320)
+  * Fixed the transition animation to alarms to be more smoother (LP: #1362081)
 
   [Zsombor Egri]
   * Fixed alarm status toggle being reverted immediately (LP: #1272337)
