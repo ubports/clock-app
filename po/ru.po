@@ -1,151 +1,140 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR Canonical Ltd.
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Russian translation for ubuntu-clock-app
+# Copyright (c) 2014 Rosetta Contributors and Canonical Ltd 2014
+# This file is distributed under the same license as the ubuntu-clock-app package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2014.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-09-02 17:11+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"Project-Id-Version: ubuntu-clock-app\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2014-08-26 16:06+0200\n"
+"PO-Revision-Date: 2014-09-02 09:22+0000\n"
+"Last-Translator: Jay ZDLin <Unknown>\n"
+"Language-Team: Russian <ru@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-
-#: ../app/alarm/AlarmDelegate.qml:135
-#, qt-format
-msgid "in %1d %1h %2m"
-msgstr ""
-
-#: ../app/alarm/AlarmDelegate.qml:144
-#, qt-format
-msgid "in %1h %2m"
-msgstr ""
-
-#: ../app/alarm/AlarmDelegate.qml:152
-#, c-format, qt-format
-msgid "in %1m"
-msgstr ""
+"X-Launchpad-Export-Date: 2014-09-03 07:27+0000\n"
+"X-Generator: Launchpad (build 17196)\n"
 
 #: ../app/alarm/AlarmLabel.qml:30 ../app/alarm/AlarmLabel.qml:52
 #: ../app/alarm/EditAlarmPage.qml:268
 msgid "Label"
-msgstr ""
+msgstr "Метка"
 
 #: ../app/alarm/AlarmList.qml:81 ../app/alarm/AlarmPage.qml:78
 #: ../app/worldclock/UserWorldCityList.qml:103
 msgid "Delete"
-msgstr ""
+msgstr "Удалить"
 
-#: ../app/alarm/AlarmPage.qml:26 ../app/ubuntu-clock-app.qml:103
+#: ../app/alarm/AlarmPage.qml:26
 msgid "Alarms"
-msgstr ""
+msgstr "Будильники"
 
 #: ../app/alarm/AlarmPage.qml:42 ../app/alarm/EditAlarmPage.qml:54
 msgid "Alarm"
-msgstr ""
+msgstr "Будильник"
 
 #: ../app/alarm/AlarmPage.qml:55
 msgid "Cancel selection"
-msgstr ""
+msgstr "Отменить выбор"
 
 #: ../app/alarm/AlarmPage.qml:64
 msgid "Select All"
-msgstr ""
+msgstr "Выбрать всё"
 
 #: ../app/alarm/AlarmRepeat.qml:28 ../app/alarm/EditAlarmPage.qml:258
 msgid "Repeat"
-msgstr ""
+msgstr "Повторять"
 
 #: ../app/alarm/AlarmSettingsPage.qml:29
 msgid "Settings"
-msgstr ""
+msgstr "Настройки"
 
 #: ../app/alarm/AlarmSettingsPage.qml:70 ../app/alarm/AlarmSettingsPage.qml:71
 #: ../app/alarm/AlarmSettingsPage.qml:72 ../app/alarm/AlarmSettingsPage.qml:73
 #: ../app/alarm/AlarmSettingsPage.qml:136
 #, qt-format
 msgid "%1 minutes"
-msgstr ""
+msgstr "%1 мин"
 
 #: ../app/alarm/AlarmSettingsPage.qml:93
 msgid "Alarm volume"
-msgstr ""
+msgstr "Громкость будильника"
 
 #: ../app/alarm/AlarmSettingsPage.qml:135
 msgid "Silence after"
-msgstr ""
+msgstr "Заглушать после"
 
 #: ../app/alarm/AlarmSettingsPage.qml:177
 msgid "Vibration"
-msgstr ""
+msgstr "Вибро"
 
 #: ../app/alarm/AlarmSettingsPage.qml:206
 msgid "Change time and date"
-msgstr ""
+msgstr "Изменить время и дату"
 
 #: ../app/alarm/AlarmSound.qml:27 ../app/alarm/EditAlarmPage.qml:281
 msgid "Sound"
-msgstr ""
+msgstr "Мелодия"
 
 #: ../app/alarm/AlarmUtils.qml:33
 msgid "Weekdays"
-msgstr ""
+msgstr "Будни"
 
 #: ../app/alarm/AlarmUtils.qml:37
 msgid "Weekends"
-msgstr ""
+msgstr "Выходные"
 
 #: ../app/alarm/AlarmUtils.qml:41
 msgid "Daily"
-msgstr ""
+msgstr "Ежедневно"
 
 #: ../app/alarm/EditAlarmPage.qml:40
 msgid "New alarm"
-msgstr ""
+msgstr "Новый будильник"
 
 #: ../app/alarm/EditAlarmPage.qml:40
 msgid "Edit alarm"
-msgstr ""
+msgstr "Редактировать будильник"
 
 #: ../app/alarm/EditAlarmPage.qml:305
 msgid "Delete alarm"
-msgstr ""
+msgstr "Удалить будильник"
 
 #: ../app/clock/ClockPage.qml:64
 msgid "Add"
-msgstr ""
+msgstr "Добавить"
 
 #: ../app/clock/ClockPage.qml:65 ../app/worldclock/WorldCityList.qml:52
 msgid "City"
-msgstr ""
+msgstr "Город"
+
+#: ../app/ubuntu-clock-app.qml:103
+msgid "Next Alarm in .."
+msgstr "Следующий будильник в .."
 
 #: ../app/worldclock/UserWorldCityDelegate.qml:139
 msgid "Today"
-msgstr ""
+msgstr "Сегодня"
 
 #: ../app/worldclock/UserWorldCityDelegate.qml:143
 msgid "Tomorrow"
-msgstr ""
+msgstr "Завтра"
 
 #: ../app/worldclock/UserWorldCityDelegate.qml:147
 msgid "Yesterday"
-msgstr ""
+msgstr "Вчера"
 
 #. TRANSLATORS: this indicates if the time in a world clock
 #. is behind or ahead of the time at the current location
 #: ../app/worldclock/UserWorldCityDelegate.qml:152
 msgid "behind"
-msgstr ""
+msgstr "меньше"
 
 #: ../app/worldclock/UserWorldCityDelegate.qml:153
 msgid "ahead"
-msgstr ""
+msgstr "больше"
 
 #. TRANSLATORS: the first argument is a day, followed by hour, minute and the
 #. translation for either 'behind' or 'ahead'
@@ -155,6 +144,8 @@ msgid ""
 "%1\n"
 "%2 h %3 m %4"
 msgstr ""
+"на %1\n"
+"%2 ч %3 мин %4"
 
 #. TRANSLATORS: the first argument is a day, followed by hour and the
 #. translation for either 'behind' or 'ahead'
@@ -164,35 +155,37 @@ msgid ""
 "%1\n"
 "%2 h %3"
 msgstr ""
+"на %1\n"
+"%2 ч %3"
 
 #: ../app/worldclock/UserWorldCityDelegate.qml:188
 msgid "No Time Difference"
-msgstr ""
+msgstr "Одинаковый часовой пояс"
 
 #: ../app/worldclock/WorldCityList.qml:40
 msgid "Select a city"
-msgstr ""
+msgstr "Выберите город"
 
 #: ../app/worldclock/WorldCityList.qml:66
 msgid "Back"
-msgstr ""
+msgstr "Назад"
 
 #: ../app/worldclock/WorldCityList.qml:78
 msgid "Search..."
-msgstr ""
+msgstr "Поиск..."
 
 #: ../app/worldclock/WorldCityList.qml:155
 msgid "Searching for a city"
-msgstr ""
+msgstr "Поиск города"
 
 #: ../app/worldclock/WorldCityList.qml:160
 msgid "No City Found"
-msgstr ""
+msgstr "Город не найден"
 
 #: ../app/worldclock/WorldCityList.qml:166
 msgid "Unable to connect."
-msgstr ""
+msgstr "Не удалось подключиться."
 
 #: ../app/worldclock/WorldCityList.qml:167
 msgid "Please check your network connection and try again"
-msgstr ""
+msgstr "Проверьте наличие сети и попробуйте ещё раз"
