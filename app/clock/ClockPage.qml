@@ -43,7 +43,8 @@ PageWithBottomEdge {
         anchors.fill: parent
         contentWidth: parent.width
         contentHeight: clock.height + date.height + locationRow.height
-                       + worldCityColumn.height + addWorldCityButton.height + units.gu(16)
+                       + worldCityColumn.height + addWorldCityButton.height
+                       + units.gu(16)
 
         AbstractButton {
             id: settingsIcon
