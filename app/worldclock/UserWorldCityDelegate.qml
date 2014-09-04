@@ -148,7 +148,7 @@ ListItemWithActions {
                     // TRANSLATORS: the first argument is hour, followed by
                     // minute, and the translation for either 'behind' or
                     // 'ahead'
-                    return (i18n.tr("%1 h %2 m %3"))
+                    return (i18n.tr("%1h %2m %3"))
                     .arg(hour)
                     .arg(minute)
                     .arg(isBehind)
@@ -157,7 +157,7 @@ ListItemWithActions {
                 else if(hour > 0 && minute === 0) {
                     // TRANSLATORS: the first argument is hour, followed by the
                     // translation for either 'behind' or 'ahead'
-                    return (i18n.tr("%1 h %2"))
+                    return (i18n.tr("%1h %2"))
                     .arg(hour)
                     .arg(isBehind)
                 }
@@ -165,7 +165,7 @@ ListItemWithActions {
                 else if(hour === 0 && minute > 0) {
                     // TRANSLATORS: the first argument is minute, followed by the
                     // translation for either 'behind' or 'ahead'
-                    return (i18n.tr("%1 m %2"))
+                    return (i18n.tr("%1m %2"))
                     .arg(minute)
                     .arg(isBehind)
                 }
