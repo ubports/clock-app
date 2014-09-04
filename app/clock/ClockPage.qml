@@ -54,7 +54,7 @@ PageWithBottomEdge {
                 mainStack.push(Qt.resolvedUrl("../alarm/AlarmSettingsPage.qml"))
             }
 
-            width: units.gu(3)
+            width: units.gu(5)
             height: width
             opacity: 0
 
@@ -65,8 +65,16 @@ PageWithBottomEdge {
                 rightMargin: units.gu(2)
             }
 
-            Icon {
+            Rectangle {
+                visible: settingsIcon.pressed
                 anchors.fill: parent
+                color: Theme.palette.selected.background
+            }
+
+            Icon {
+                width: units.gu(3)
+                height: width
+                anchors.centerIn: parent
                 name: "settings"
                 color: "Grey"
             }
