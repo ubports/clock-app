@@ -53,7 +53,6 @@ public:
         RoleCountryName,
         RoleTimeZoneId,
         RoleTimeString,
-        RoleDaysTo,
         RoleTimeTo,
     };
 

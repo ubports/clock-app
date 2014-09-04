@@ -1,6 +1,6 @@
 # Updating translations
 
-Translations for the Music app happen in [Launchpad Translations][] and
+Translations for the Clock app happen in [Launchpad Translations][] and
 are automatically committed daily on the trunk branch in the po/ folder.
 
 They are then built and installed as part of the package build, so that

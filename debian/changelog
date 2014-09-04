@@ -19,10 +19,13 @@ ubuntu-clock-app (3.1) utopic; urgency=medium
   * Updated QtQuick library imports to v2.3
   * Switched bzr branch to lp:ubuntu-clock-app
   * Updated pot file name
+  * Added header shortcut to select/deselect all alarm repeat options (LP: #1362089)
   * Added visual tweaks (80% opacity for disabled alarms) and show time to 
     next alarm when enabling an alarm.
   * Enabled one-time alarms in the UI (LP: #1358320)
   * Fixed the transition animation to alarms to be more smoother (LP: #1362081)
+  * Added utc as a city (LP: #1362763)
+  * Increase size of alarm volume listitem and simplified alarm duration list model.
   * Added pressed visual state to the settings button (LP: #1364553)
   * Fixed no UI hint being show to add cities (LP: #1362263)
   * Fixed add world city being triggered accidentally (LP: #1359180)
@@ -33,6 +36,10 @@ ubuntu-clock-app (3.1) utopic; urgency=medium
 
   [David Planella]
   * Added internationalization support (LP: #1354522)
+
+  [Riccardo Padovani]
+  * Removed 'Today/Tomorow/Yesterday' text string from world clock, replaced
+    'No time difference' with 'Same time' (LP: #1362093)
 
  -- Nekhelesh Ramananthan <krnekhelesh@gmail.com>  Wed, 13 Aug 2014 15:46:12 +0200
 
