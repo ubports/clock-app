@@ -43,7 +43,7 @@ PageWithBottomEdge {
         anchors.fill: parent
         contentWidth: parent.width
         contentHeight: clock.height + date.height + locationRow.height
-                       + worldCityColumn.height + addWorldCityButton.height + units.gu(14)
+                       + worldCityColumn.height + addWorldCityButton.height + units.gu(16)
 
         AbstractButton {
             id: settingsIcon
@@ -132,16 +132,23 @@ PageWithBottomEdge {
         UserWorldCityList {
             id: worldCityColumn
             objectName: "worldCityColumn"
+
             opacity: settingsIcon.opacity
-            anchors.top: locationRow.bottom
-            anchors.topMargin: units.gu(4)
+            anchors {
+                top: locationRow.bottom
+                topMargin: units.gu(4)
+            }
         }
 
         AddWorldCityButton {
             id: addWorldCityButton
+
             opacity: settingsIcon.opacity
-            anchors.horizontalCenter: parent.horizontalCenter
-            anchors.top: worldCityColumn.bottom
+            anchors {
+                top: worldCityColumn.bottom
+                topMargin: units.gu(1)
+                horizontalCenter: parent.horizontalCenter
+            }
         }
 
         ParallelAnimation {
