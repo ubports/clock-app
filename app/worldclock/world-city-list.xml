@@ -1316,6 +1316,11 @@
 		<countryName>Mongolia</countryName>
 	</City>
 	<City>
+		<cityName>UTC</cityName>
+		<timezoneID>UTC</timezoneID>
+		<countryName>UTC</countryName>
+	</City>
+	<City>
 		<cityName>Vancouver</cityName>
 		<timezoneID>America/Vancouver</timezoneID>
 		<countryName>Canada</countryName>
