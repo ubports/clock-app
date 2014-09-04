@@ -30,6 +30,35 @@ Page {
     visible: false
     title: i18n.tr("Repeat")
 
+    head.actions: [
+        Action {
+            text: i18n.tr("Select All")
+
+            iconSource: {
+                if(alarm.daysOfWeek === 0)
+                    return Qt.resolvedUrl("../graphics/select-none.svg")
+                else if(alarm.daysOfWeek === 127)
+                    return Qt.resolvedUrl("../graphics/select.svg")
+                else
+                    return Qt.resolvedUrl("../graphics/select-undefined.svg")
+            }
+
+            onTriggered: {
+                if (alarm.daysOfWeek === 0) {
+                    for (var i=0; i<_alarmDays.count; i++) {
+                        _alarmDays.itemAt(i).isChecked = true
+                    }
+                }
+
+                else {
+                    for (var i=0; i<_alarmDays.count; i++) {
+                        _alarmDays.itemAt(i).isChecked = false
+                    }
+                }
+            }
+        }
+    ]
+
     /*
      By Default, the alarm is set to Today. However if it is a one-time alarm,
      this should be set to none, since this page shows the days the alarm
@@ -101,6 +130,8 @@ Page {
                 id: _alarmDayHolder
                 objectName: "alarmDayHolder" + index
 
+                property alias isChecked: daySwitch.checked
+
                 Label {
                     id: _alarmDay
                     objectName: 'alarmDay' + index
@@ -115,8 +146,15 @@ Page {
                     text: Qt.locale().standaloneDayName(day, Locale.LongFormat)
                 }
 
-                control: Switch {
+                control: CheckBox {
+                    id: daySwitch
                     objectName: 'daySwitch' + index
+
+                    anchors {
+                        right: parent.right
+                        rightMargin: units.gu(-0.2)
+                    }
+
                     checked: (alarm.daysOfWeek & flag) == flag
                              && alarm.type === Alarm.Repeating
                     onCheckedChanged: {
