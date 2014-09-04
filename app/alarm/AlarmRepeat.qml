@@ -149,6 +149,12 @@ Page {
                 control: CheckBox {
                     id: daySwitch
                     objectName: 'daySwitch' + index
+
+                    anchors {
+                        right: parent.right
+                        rightMargin: units.gu(-0.2)
+                    }
+
                     checked: (alarm.daysOfWeek & flag) == flag
                              && alarm.type === Alarm.Repeating
                     onCheckedChanged: {
