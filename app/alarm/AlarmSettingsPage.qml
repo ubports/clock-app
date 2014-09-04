@@ -64,7 +64,7 @@ Page {
 
         function title(index) {
             if (title["text"] === undefined) {
-		// TRANSLATORS: this refers to either 10, 20, 30 or 60 minutes
+                // TRANSLATORS: this refers to either 10, 20, 30 or 60 minutes
                 title.text =
                         [
                             i18n.tr("%1 minutes").arg(10),
@@ -83,29 +83,25 @@ Page {
         anchors.fill: parent
 
         ListItem.Base {
-            Column {
+            height: 2 * implicitHeight
+
+            Label {
+                color: UbuntuColors.midAubergine
+                text: i18n.tr("Alarm volume")
+                anchors.top: parent.top
+                anchors.topMargin: units.gu(1)
+            }
+
+            Slider {
+                anchors.centerIn: parent
                 width: parent.width
-                height: childrenRect.height
-                anchors.verticalCenter: parent.verticalCenter
 
-                Label {
-                    color: UbuntuColors.midAubergine
-                    text: i18n.tr("Alarm volume")
-                }
+                minimumValue: 1
+                maximumValue: 100
+                value: alarmSettings.volume
 
-                Slider {
-                    id: _volumeSlider
-
-                    height: units.gu(2)
-                    width: parent.width
-
-                    minimumValue: 1
-                    maximumValue: 100
-                    value: alarmSettings.volume
-
-                    onValueChanged: {
-                        alarmSettings.volume = formatValue(value)
-                    }
+                onValueChanged: {
+                    alarmSettings.volume = formatValue(value)
                 }
             }
         }
@@ -220,7 +216,7 @@ Page {
                             localTimeSource.localTimeString.split(":")[1],
                             localTimeSource.localTimeString.split(":")[2],
                             localTimeSource.localTimeString.split(":")[3]
-                        )
+                            )
                 return localTime.toLocaleString()
             }
 
