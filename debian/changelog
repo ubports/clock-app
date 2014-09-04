@@ -23,7 +23,7 @@ ubuntu-clock-app (3.1) utopic; urgency=medium
     next alarm when enabling an alarm.
   * Enabled one-time alarms in the UI (LP: #1358320)
   * Fixed the transition animation to alarms to be more smoother (LP: #1362081)
-  * Added a press state to the settings button (LP: #1364553)
+  * Added pressed visual state to the settings button (LP: #1364553)
 
   [Zsombor Egri]
   * Fixed alarm status toggle being reverted immediately (LP: #1272337)
