@@ -33,9 +33,18 @@ Page {
     head.actions: [
         Action {
             text: i18n.tr("Select All")
-            iconName: "select"
+
+            iconSource: {
+                if(alarm.daysOfWeek === 0)
+                    return Qt.resolvedUrl("../graphics/select-none.svg")
+                else if(alarm.daysOfWeek === 127)
+                    return Qt.resolvedUrl("../graphics/select.svg")
+                else
+                    return Qt.resolvedUrl("../graphics/select-undefined.svg")
+            }
+
             onTriggered: {
-                if (alarm.daysOfWeek !== 127) {
+                if (alarm.daysOfWeek === 0) {
                     for (var i=0; i<_alarmDays.count; i++) {
                         _alarmDays.itemAt(i).isChecked = true
                     }
