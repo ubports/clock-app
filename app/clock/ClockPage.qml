@@ -28,12 +28,6 @@ PageWithBottomEdge {
     id: _clockPage
     objectName: "clockPage"
 
-    /*
-      Property to set the minimum drag distance before activating the add
-      city signal
-    */
-    property int _minThreshold: addCityButton.maxThreshold + units.gu(2)
-
     // Property to keep track of the clock mode
     property alias isDigital: clock.isDigital
 
@@ -49,21 +43,7 @@ PageWithBottomEdge {
         anchors.fill: parent
         contentWidth: parent.width
         contentHeight: clock.height + date.height + locationRow.height
-                       + worldCityColumn.height + units.gu(14)
-
-        PullToAdd {
-            id: addCityButton
-            objectName: "addCityButton"
-
-            anchors {
-                top: parent.top
-                topMargin: -labelHeight - units.gu(3)
-                horizontalCenter: parent.horizontalCenter
-            }
-
-            leftLabel: i18n.tr("Add")
-            rightLabel: i18n.tr("City")
-        }
+                       + worldCityColumn.height + addWorldCityButton.height + units.gu(14)
 
         AbstractButton {
             id: settingsIcon
@@ -157,16 +137,11 @@ PageWithBottomEdge {
             anchors.topMargin: units.gu(4)
         }
 
-        onDragEnded: {
-            if(contentY < _minThreshold) {
-                mainStack.push(Qt.resolvedUrl("../worldclock/WorldCityList.qml"))
-            }
-        }
-
-        onContentYChanged: {
-            if(contentY < 0 && atYBeginning) {
-                addCityButton.dragPosition = contentY.toFixed(0)
-            }
+        AddWorldCityButton {
+            id: addWorldCityButton
+            opacity: settingsIcon.opacity
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.top: worldCityColumn.bottom
         }
 
         ParallelAnimation {
