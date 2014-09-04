@@ -27,6 +27,8 @@ ubuntu-clock-app (3.1) utopic; urgency=medium
   * Added utc as a city (LP: #1362763)
   * Increase size of alarm volume listitem and simplified alarm duration list model.
   * Added pressed visual state to the settings button (LP: #1364553)
+  * Fixed no UI hint being show to add cities (LP: #1362263)
+  * Fixed add world city being triggered accidentally (LP: #1359180)
 
   [Zsombor Egri]
   * Fixed alarm status toggle being reverted immediately (LP: #1272337)
