@@ -18,7 +18,6 @@
 
 import QtQuick 2.3
 import Ubuntu.Components 1.1
-import DateTime 1.0
 
 ClockCircle {
     id: _innerCircleAnalog
