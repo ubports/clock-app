@@ -33,17 +33,6 @@ ClockCircle {
         _animationTimer.start()
     }
 
-    Connections {
-        onApplicationStateChanged: {
-            secondTimeSource.update()
-        }
-    }
-    DateTime {
-        id: secondTimeSource
-        updateInterval: 1000
-        onLocalTimeStringChanged: secondHandAnimation.start()
-    }
-
     width: units.gu(0)
 
     Timer {
@@ -88,15 +77,7 @@ ClockCircle {
         visible: showSeconds
         source: "../graphics/Second_Hand.png"
         fillMode: Image.PreserveAspectFit
-
-        NumberAnimation {
-            id: secondHandAnimation
-            target: secondHand;
-            to: analogTime.getSeconds() * 6
-            property: "rotation";
-            duration: 100;
-            easing.type: "Linear"
-        }
+        rotation: analogTime.getSeconds() * 6
     }
 
     Image {
