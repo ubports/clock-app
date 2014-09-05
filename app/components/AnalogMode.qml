@@ -18,6 +18,7 @@
 
 import QtQuick 2.3
 import Ubuntu.Components 1.1
+import DateTime 1.0
 
 ClockCircle {
     id: _innerCircleAnalog
@@ -30,6 +31,17 @@ ClockCircle {
 
     function startAnimation() {
         _animationTimer.start()
+    }
+
+    Connections {
+        onApplicationStateChanged: {
+            secondTimeSource.update()
+        }
+    }
+    DateTime {
+        id: secondTimeSource
+        updateInterval: 1000
+        onLocalTimeStringChanged: secondHandAnimation.start()
     }
 
     width: units.gu(0)
@@ -76,8 +88,15 @@ ClockCircle {
         visible: showSeconds
         source: "../graphics/Second_Hand.png"
         fillMode: Image.PreserveAspectFit
-        rotation: visible ? ((360 * ((analogTime.getSeconds() * 1000) +
-                           analogTime.getMilliseconds())) / 60000) : 0
+
+        NumberAnimation {
+            id: secondHandAnimation
+            target: secondHand;
+            to: analogTime.getSeconds() * 6
+            property: "rotation";
+            duration: 100;
+            easing.type: "Linear"
+        }
     }
 
     Image {
