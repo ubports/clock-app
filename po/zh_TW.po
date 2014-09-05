@@ -7,15 +7,30 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2014-08-26 16:06+0200\n"
+"POT-Creation-Date: 2014-09-02 17:11+0200\n"
 "PO-Revision-Date: 2014-08-29 11:04+0000\n"
 "Last-Translator: Walter Cheuk <wwycheuk@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <zh_TW@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-08-30 08:35+0000\n"
-"X-Generator: Launchpad (build 17176)\n"
+"X-Launchpad-Export-Date: 2014-09-05 01:11+0000\n"
+"X-Generator: Launchpad (build 17196)\n"
+
+#: ../app/alarm/AlarmDelegate.qml:135
+#, qt-format
+msgid "in %1d %1h %2m"
+msgstr ""
+
+#: ../app/alarm/AlarmDelegate.qml:144
+#, qt-format
+msgid "in %1h %2m"
+msgstr ""
+
+#: ../app/alarm/AlarmDelegate.qml:152
+#, c-format, qt-format
+msgid "in %1m"
+msgstr ""
 
 #: ../app/alarm/AlarmLabel.qml:30 ../app/alarm/AlarmLabel.qml:52
 #: ../app/alarm/EditAlarmPage.qml:268
@@ -27,7 +42,7 @@ msgstr "標籤"
 msgid "Delete"
 msgstr "刪除"
 
-#: ../app/alarm/AlarmPage.qml:26
+#: ../app/alarm/AlarmPage.qml:26 ../app/ubuntu-clock-app.qml:103
 msgid "Alarms"
 msgstr "鬧鐘"
 
@@ -110,57 +125,41 @@ msgstr "加入"
 msgid "City"
 msgstr "城市"
 
-#: ../app/ubuntu-clock-app.qml:103
-msgid "Next Alarm in .."
-msgstr "下個鬧鐘會在 .."
-
-#: ../app/worldclock/UserWorldCityDelegate.qml:139
-msgid "Today"
-msgstr "今日"
-
-#: ../app/worldclock/UserWorldCityDelegate.qml:143
-msgid "Tomorrow"
-msgstr "明日"
-
-#: ../app/worldclock/UserWorldCityDelegate.qml:147
-msgid "Yesterday"
-msgstr "昨日"
-
 #. TRANSLATORS: this indicates if the time in a world clock
 #. is behind or ahead of the time at the current location
-#: ../app/worldclock/UserWorldCityDelegate.qml:152
+#: ../app/worldclock/UserWorldCityDelegate.qml:140
 msgid "behind"
 msgstr "遲"
 
-#: ../app/worldclock/UserWorldCityDelegate.qml:153
+#: ../app/worldclock/UserWorldCityDelegate.qml:141
 msgid "ahead"
 msgstr "早"
 
-#. TRANSLATORS: the first argument is a day, followed by hour, minute and the
-#. translation for either 'behind' or 'ahead'
-#: ../app/worldclock/UserWorldCityDelegate.qml:162
+#. TRANSLATORS: the first argument is hour, followed by
+#. minute, and the translation for either 'behind' or
+#. 'ahead'
+#: ../app/worldclock/UserWorldCityDelegate.qml:151
 #, qt-format
-msgid ""
-"%1\n"
-"%2 h %3 m %4"
+msgid "%1 h %2 m %3"
 msgstr ""
-"%1\n"
-"%4 %2 小時 %3 分鐘"
 
-#. TRANSLATORS: the first argument is a day, followed by hour and the
+#. TRANSLATORS: the first argument is hour, followed by the
 #. translation for either 'behind' or 'ahead'
-#: ../app/worldclock/UserWorldCityDelegate.qml:172
+#: ../app/worldclock/UserWorldCityDelegate.qml:160
 #, qt-format
-msgid ""
-"%1\n"
-"%2 h %3"
+msgid "%1 h %2"
 msgstr ""
-"%1\n"
-"%3 %2 小時"
 
-#: ../app/worldclock/UserWorldCityDelegate.qml:188
-msgid "No Time Difference"
-msgstr "無時差"
+#. TRANSLATORS: the first argument is minute, followed by the
+#. translation for either 'behind' or 'ahead'
+#: ../app/worldclock/UserWorldCityDelegate.qml:168
+#, qt-format
+msgid "%1 m %2"
+msgstr ""
+
+#: ../app/worldclock/UserWorldCityDelegate.qml:174
+msgid "Same time"
+msgstr ""
 
 #: ../app/worldclock/WorldCityList.qml:40
 msgid "Select a city"
