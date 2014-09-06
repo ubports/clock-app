@@ -190,18 +190,18 @@ ClockCircle {
             }
         }
 
-        PropertyAnimation {
+        UbuntuNumberAnimation {
             target: bottomShadow
             property: "opacity"
-            duration: 333
+            duration: 166
             from: 1
             to: 0
         }
 
-        PropertyAnimation {
+        UbuntuNumberAnimation {
             target: upperShadow
             property: "opacity"
-            duration: 333
+            duration: 166
             from: 0
             to: 1
         }
