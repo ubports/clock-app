@@ -104,25 +104,33 @@ Page {
 
     Item {
         visible: alarmModel.count === 0
-        anchors.fill: parent
+		anchors.verticalCenter: parent.verticalCenter
+		width: parent.width
+		height: childrenRect.height
 
         Icon {
+			id: noAlarmIcon
             name: "alarm-clock"
             anchors.horizontalCenter: parent.horizontalCenter
-            anchors.verticalCenter: parent.verticalCenter
-
-            height: Math.min(parent.height, parent.width) / 1.5
+            height: units.gu(10)
             width: height
-
             color: UbuntuColors.warmGrey
-            opacity: .25
         }
 
         Label {
-            text: i18n.tr("No alarms have been saved")
+			id: noAlarmLabel
+            text: i18n.tr("No saved alarms")
+            anchors.top: noAlarmIcon.bottom
             anchors.horizontalCenter: parent.horizontalCenter
-            anchors.verticalCenter: parent.verticalCenter
             fontSize: "x-large"
+			font.bold: true
+        }
+
+        Label {
+            text: i18n.tr("Tap the plus icon to add an alarm.")
+			anchors.top: noAlarmLabel.bottom
+            anchors.horizontalCenter: parent.horizontalCenter
+            fontSize: "large"
         }
     }
 }
