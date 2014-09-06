@@ -96,9 +96,33 @@ Page {
         }
     ]
 
-    AlarmList{
+    AlarmList {
         id: alarmListView
         listModel: alarmModel
         anchors.fill: parent
+    }
+
+    Item {
+        visible: alarmModel.count === 0
+        anchors.fill: parent
+
+        Icon {
+            name: "alarm-clock"
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.verticalCenter: parent.verticalCenter
+
+            height: Math.min(parent.height, parent.width) / 1.5
+            width: height
+
+            color: UbuntuColors.warmGrey
+            opacity: .25
+        }
+
+        Label {
+            text: i18n.tr("No alarms have been saved")
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.verticalCenter: parent.verticalCenter
+            fontSize: "x-large"
+        }
     }
 }
