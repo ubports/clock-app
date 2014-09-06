@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-09-05 21:53-0400\n"
+"POT-Creation-Date: 2014-09-05 22:29-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -59,7 +59,11 @@ msgid "Select All"
 msgstr ""
 
 #: ../app/alarm/AlarmPage.qml:122
-msgid "No alarms have been saved"
+msgid "No saved alarms"
+msgstr ""
+
+#: ../app/alarm/AlarmPage.qml:130
+msgid "Tap the plus icon to add an alarm."
 msgstr ""
 
 #: ../app/alarm/AlarmRepeat.qml:31 ../app/alarm/EditAlarmPage.qml:287
