@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2014-09-02 17:11+0200\n"
-"PO-Revision-Date: 2014-09-04 19:51+0000\n"
+"PO-Revision-Date: 2014-09-05 21:10+0000\n"
 "Last-Translator: Marcos Lans <Unknown>\n"
 "Language-Team: Galician <gl@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-09-05 08:20+0000\n"
+"X-Launchpad-Export-Date: 2014-09-06 08:25+0000\n"
 "X-Generator: Launchpad (build 17196)\n"
 
 #: ../app/alarm/AlarmDelegate.qml:135
@@ -141,25 +141,25 @@ msgstr "de adianto"
 #: ../app/worldclock/UserWorldCityDelegate.qml:151
 #, qt-format
 msgid "%1 h %2 m %3"
-msgstr ""
+msgstr "%1 h %2 m %3"
 
 #. TRANSLATORS: the first argument is hour, followed by the
 #. translation for either 'behind' or 'ahead'
 #: ../app/worldclock/UserWorldCityDelegate.qml:160
 #, qt-format
 msgid "%1 h %2"
-msgstr ""
+msgstr "%1 h %2"
 
 #. TRANSLATORS: the first argument is minute, followed by the
 #. translation for either 'behind' or 'ahead'
 #: ../app/worldclock/UserWorldCityDelegate.qml:168
 #, qt-format
 msgid "%1 m %2"
-msgstr ""
+msgstr "%1 m %2"
 
 #: ../app/worldclock/UserWorldCityDelegate.qml:174
 msgid "Same time"
-msgstr ""
+msgstr "A mesma hora"
 
 #: ../app/worldclock/WorldCityList.qml:40
 msgid "Select a city"
