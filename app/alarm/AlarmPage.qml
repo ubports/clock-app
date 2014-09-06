@@ -104,12 +104,12 @@ Page {
 
     Item {
         visible: alarmModel.count === 0
-		anchors.verticalCenter: parent.verticalCenter
-		width: parent.width
-		height: childrenRect.height
+        anchors.verticalCenter: parent.verticalCenter
+        width: parent.width
+        height: childrenRect.height
 
         Icon {
-			id: noAlarmIcon
+            id: noAlarmIcon
             name: "alarm-clock"
             anchors.horizontalCenter: parent.horizontalCenter
             height: units.gu(10)
@@ -118,7 +118,7 @@ Page {
         }
 
         Label {
-			id: noAlarmLabel
+            id: noAlarmLabel
             text: i18n.tr("No saved alarms")
             anchors.top: noAlarmIcon.bottom
             anchors.horizontalCenter: parent.horizontalCenter
@@ -128,7 +128,7 @@ Page {
 
         Label {
             text: i18n.tr("Tap the plus icon to add an alarm.")
-			anchors.top: noAlarmLabel.bottom
+            anchors.top: noAlarmLabel.bottom
             anchors.horizontalCenter: parent.horizontalCenter
             fontSize: "large"
         }
