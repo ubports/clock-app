@@ -123,7 +123,7 @@ Page {
             anchors.top: noAlarmIcon.bottom
             anchors.horizontalCenter: parent.horizontalCenter
             fontSize: "x-large"
-			font.bold: true
+            font.bold: true
         }
 
         Label {
