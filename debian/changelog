@@ -29,6 +29,7 @@ ubuntu-clock-app (3.1) utopic; urgency=medium
   * Added pressed visual state to the settings button (LP: #1364553)
   * Fixed no UI hint being show to add cities (LP: #1362263)
   * Fixed add world city being triggered accidentally (LP: #1359180)
+  * Added alarm snooze settings (LP: #1354400)
 
   [Zsombor Egri]
   * Fixed alarm status toggle being reverted immediately (LP: #1272337)
