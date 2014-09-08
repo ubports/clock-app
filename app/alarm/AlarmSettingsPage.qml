@@ -46,34 +46,13 @@ Page {
 
     ListModel {
         id: durationModel
-        ListElement {
-            duration: 10
-        }
+        Component.onCompleted: initialise()
 
-        ListElement {
-            duration: 20
-        }
-
-        ListElement {
-            duration: 30
-        }
-
-        ListElement {
-            duration: 60
-        }
-
-        function title(index) {
-            if (title["text"] === undefined) {
-		// TRANSLATORS: this refers to either 10, 20, 30 or 60 minutes
-                title.text =
-                        [
-                            i18n.tr("%1 minutes").arg(10),
-                            i18n.tr("%1 minutes").arg(20),
-                            i18n.tr("%1 minutes").arg(30),
-                            i18n.tr("%1 minutes").arg(60)
-                        ]
-            }
-            return title.text[index]
+        function initialise() {
+            durationModel.append({ "duration": 10, "text": i18n.tr("%1 minutes").arg(10) })
+            durationModel.append({ "duration": 20, "text": i18n.tr("%1 minutes").arg(20) })
+            durationModel.append({ "duration": 30, "text": i18n.tr("%1 minutes").arg(30) })
+            durationModel.append({ "duration": 60, "text": i18n.tr("%1 minutes").arg(60) })
         }
     }
 
@@ -83,29 +62,25 @@ Page {
         anchors.fill: parent
 
         ListItem.Base {
-            Column {
+            height: 2 * implicitHeight
+
+            Label {
+                color: UbuntuColors.midAubergine
+                text: i18n.tr("Alarm volume")
+                anchors.top: parent.top
+                anchors.topMargin: units.gu(1)
+            }
+
+            Slider {
+                anchors.centerIn: parent
                 width: parent.width
-                height: childrenRect.height
-                anchors.verticalCenter: parent.verticalCenter
 
-                Label {
-                    color: UbuntuColors.midAubergine
-                    text: i18n.tr("Alarm volume")
-                }
+                minimumValue: 1
+                maximumValue: 100
+                value: alarmSettings.volume
 
-                Slider {
-                    id: _volumeSlider
-
-                    height: units.gu(2)
-                    width: parent.width
-
-                    minimumValue: 1
-                    maximumValue: 100
-                    value: alarmSettings.volume
-
-                    onValueChanged: {
-                        alarmSettings.volume = formatValue(value)
-                    }
+                onValueChanged: {
+                    alarmSettings.volume = formatValue(value)
                 }
             }
         }
@@ -162,7 +137,7 @@ Page {
                     width: parent.width
                     height: units.gu(24)
                     delegate: ListItem.Standard {
-                        text: _resultsList.model.title(index)
+                        text: model.text
                         onClicked: {
                             alarmSettings.duration = duration
                             _alarmDuration.expanded = false
@@ -220,7 +195,7 @@ Page {
                             localTimeSource.localTimeString.split(":")[1],
                             localTimeSource.localTimeString.split(":")[2],
                             localTimeSource.localTimeString.split(":")[3]
-                        )
+                            )
                 return localTime.toLocaleString()
             }
 

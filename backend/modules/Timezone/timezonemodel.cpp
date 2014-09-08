@@ -86,8 +86,6 @@ QVariant TimeZoneModel::data(const QModelIndex &index, int role) const
          is fixed, we will have to return a string.
         */
         return worldCityTime.toString("hh:mm");
-    case RoleDaysTo:
-        return currentDateTime.daysTo(worldCityTime);
     case RoleTimeTo:
         /*
          FIXME: Workaround for currentDateTime.secsTo(worldCityTime) which returns
@@ -110,7 +108,6 @@ QHash<int, QByteArray> TimeZoneModel::roleNames() const
     roles.insert(RoleCountryName, "country");
     roles.insert(RoleTimeZoneId, "timezoneID");
     roles.insert(RoleTimeString, "localTime");
-    roles.insert(RoleDaysTo, "daysTo");
     roles.insert(RoleTimeTo, "timeTo");
     return roles;
 }
@@ -148,7 +145,7 @@ void TimeZoneModel::update()
     QModelIndex startIndex = index(0);
     QModelIndex endIndex = index(m_timeZones.count() - 1);
     QVector<int> roles;
-    roles << RoleTimeString << RoleDaysTo << RoleTimeTo;
+    roles << RoleTimeString << RoleTimeTo;
     emit dataChanged(startIndex, endIndex, roles);
 }
 
