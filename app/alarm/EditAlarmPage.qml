@@ -173,6 +173,12 @@ Page {
     Alarm {
         id: _alarm
 
+        Component.onCompleted: {
+            if (isNewAlarm) {
+                _alarm.message = i18n.tr("Alarm")
+            }
+        }
+
         onErrorChanged: {
             if (error !== Alarm.NoError) {
                 Utils.log(debugMode, "Error saving alarm, code: " + error)
