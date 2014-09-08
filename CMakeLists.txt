@@ -1,7 +1,7 @@
 project(com.ubuntu.clock C CXX)
 cmake_minimum_required(VERSION 2.8.9)
 
-set (UBUNTU_PROJECT_TYPE "ClickApp" CACHE INTERNAL "Tells QtCreator this is a Click application project")
+set (UBUNTU_MANIFEST_PATH "manifest.json.in" CACHE INTERNAL "Relative path to the manifest file")
 set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -fno-permissive -pedantic -Wall -Wextra")
 
 find_package(Qt5Core)
@@ -53,12 +53,19 @@ else(CLICK_MODE)
             OUTPUT_VARIABLE QT_IMPORTS_DIR 
             OUTPUT_STRIP_TRAILING_WHITESPACE 
     )
-set(MODULE_PATH ${QT_IMPORTS_DIR}/ClockApp)
+  set(MODULE_PATH ${QT_IMPORTS_DIR}/ClockApp)
 endif(CLICK_MODE)
 
 if(${CLICK_MODE})
   message("-- Configuring manifest.json")
-  configure_file(manifest.json manifest.json)
+ 
+  execute_process(
+    COMMAND dpkg-architecture -qDEB_HOST_ARCH
+    OUTPUT_VARIABLE CLICK_ARCH
+    OUTPUT_STRIP_TRAILING_WHITESPACE
+  )
+
+  configure_file(${UBUNTU_MANIFEST_PATH} ${CMAKE_CURRENT_BINARY_DIR}/manifest.json)
   install(FILES ${CMAKE_CURRENT_BINARY_DIR}/manifest.json DESTINATION ${CMAKE_INSTALL_PREFIX})
   install(FILES "${APP_HARDCODE}.json" DESTINATION ${CMAKE_INSTALL_PREFIX})
 else(CLICK_MODE)
