@@ -30,6 +30,8 @@ ubuntu-clock-app (3.1) utopic; urgency=medium
   * Fixed no UI hint being show to add cities (LP: #1362263)
   * Fixed add world city being triggered accidentally (LP: #1359180)
   * Fixed clock mode animations being too slow (LP: #1365440)
+  * Added alarm snooze settings (LP: #1354400)
+  * Fixed default alarm label not being translatable (LP: #1365012)
 
   [Zsombor Egri]
   * Fixed alarm status toggle being reverted immediately (LP: #1272337)
