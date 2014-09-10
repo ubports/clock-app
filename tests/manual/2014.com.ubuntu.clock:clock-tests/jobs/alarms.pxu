@@ -1,0 +1,85 @@
+id: alarm/trigger-alarm
+plugin: manual
+_summary: Test to check if an alarm is triggered correctly
+_description:
+    PURPOSE:
+        This test checks if an alarm is triggered at the correct time by the datetime indicator
+    STEPS:
+        1. Open the clock app.
+        2. Swipe the bottom edge to open the alarms page.
+        3. Create a new alarm to ring in the next few minutes
+        4. Save the alarm.
+    VERIFICATION:
+       	Did the alarm ring at the correct time?
+estimated_duration: 120        
+
+id: alarm/edit-alarm-sound
+plugin: manual
+depends: alarm/trigger-alarm
+_summary: Test to check if an alarm updated rings with the sound chosen by the user
+_description:
+    PURPOSE:
+        This test checks if the alarm which is updated rings with the alarm sound selected 
+        by the user as this functionality regressed in the past.
+    STEPS:
+        1. Open the clock app.
+        2. Swipe up the bottom edge to open the alarms page.
+        3. Create a new alarm to ring in the next few minutes.
+        4. Edit the alarm you just created and change the alarm sound.
+        5. Save the alarm.
+    VERIFICATION:
+        Did the alarm ring with the alarm sound you chose when you edited it?
+estimated_duration: 120
+
+id: alarm/silence-setting
+plugin: manual
+depends: alarm/trigger-alarm
+_summary: Test the alarm silence after setting
+_description:
+    PURPOSE:
+        This test checks if the alarm silence after setting is obeyed
+    STEPS:
+        1. Open the clock app.
+        2. Click the settings icon to open the settings page.
+        3. Set the silence after setting to 10 minutes.
+        4. Close the settings page.
+        5. Create an alarm to ring in the next minute.
+    VERIFICATION:
+        Did the alarm ring for 10 minutes with no user interaction and then automatically turn off?
+estimated_duration: 660
+
+id: alarm/vibration-setting
+plugin: manual
+depends: alarm/trigger-alarm
+_summary: Test the alarm vibration setting option
+_description:
+    PURPOSE:
+        This test checks if the alarm vibration settings enables/disables the alarm vibration
+    STEPS:
+        1. Open the clock app.
+        2. Click the settings icon to open the settings page.
+        3. Toggle off the alarm vibration setting.
+        4. Close the settings page.
+        5. Create an alarm to ring in the next minute
+    VERIFICATION:
+        Did the alarm ring with no vibration (haptic feedback)?
+estimated_duration: 120
+
+id: alarm/snooze-setting
+plugin: manual
+depends: alarm/trigger-alarm
+_summary: Test the alarm snooze setting options
+_description:
+    PURPOSE:
+        This test checks if the alarm snooze settings works as expected.
+    STEPS:
+        1. Open the clock app
+        2. Click the setting icon to open the settings page
+      	3. Change the snooze setting to N minutes.
+      	4. Close the settings page
+      	5. Swipe from the bottom to open the alarms page.
+      	6. Create an alarm to ring in the next minute
+      	7. When it rings, press snooze
+    VERIFICATION:
+        Did the alarm ring again after the snooze duration you set in the settings page?
+estimated_duration: 360
