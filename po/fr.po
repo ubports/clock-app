@@ -7,33 +7,33 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2014-09-02 17:11+0200\n"
+"POT-Creation-Date: 2014-09-09 00:21+0200\n"
 "PO-Revision-Date: 2014-08-31 17:37+0000\n"
 "Last-Translator: cm-t arudy <cm-t@ubuntu-fr.org>\n"
 "Language-Team: French <fr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-09-05 08:19+0000\n"
+"X-Launchpad-Export-Date: 2014-09-10 08:12+0000\n"
 "X-Generator: Launchpad (build 17196)\n"
 
-#: ../app/alarm/AlarmDelegate.qml:135
+#: ../app/alarm/AlarmDelegate.qml:136
 #, qt-format
 msgid "in %1d %1h %2m"
 msgstr ""
 
-#: ../app/alarm/AlarmDelegate.qml:144
+#: ../app/alarm/AlarmDelegate.qml:145
 #, qt-format
 msgid "in %1h %2m"
 msgstr ""
 
-#: ../app/alarm/AlarmDelegate.qml:152
+#: ../app/alarm/AlarmDelegate.qml:153
 #, c-format, qt-format
 msgid "in %1m"
 msgstr ""
 
 #: ../app/alarm/AlarmLabel.qml:30 ../app/alarm/AlarmLabel.qml:52
-#: ../app/alarm/EditAlarmPage.qml:268
+#: ../app/alarm/EditAlarmPage.qml:303
 msgid "Label"
 msgstr "Étiquette"
 
@@ -46,7 +46,8 @@ msgstr "Supprimer"
 msgid "Alarms"
 msgstr "Alarmes"
 
-#: ../app/alarm/AlarmPage.qml:42 ../app/alarm/EditAlarmPage.qml:54
+#: ../app/alarm/AlarmPage.qml:42 ../app/alarm/EditAlarmPage.qml:55
+#: ../app/alarm/EditAlarmPage.qml:178
 msgid "Alarm"
 msgstr "Alarme"
 
@@ -54,11 +55,11 @@ msgstr "Alarme"
 msgid "Cancel selection"
 msgstr "Annuler la sélection"
 
-#: ../app/alarm/AlarmPage.qml:64
+#: ../app/alarm/AlarmPage.qml:64 ../app/alarm/AlarmRepeat.qml:35
 msgid "Select All"
 msgstr "Tout sélectionner"
 
-#: ../app/alarm/AlarmRepeat.qml:28 ../app/alarm/EditAlarmPage.qml:258
+#: ../app/alarm/AlarmRepeat.qml:31 ../app/alarm/EditAlarmPage.qml:293
 msgid "Repeat"
 msgstr "Répétition"
 
@@ -66,9 +67,12 @@ msgstr "Répétition"
 msgid "Settings"
 msgstr "Paramètres"
 
-#: ../app/alarm/AlarmSettingsPage.qml:70 ../app/alarm/AlarmSettingsPage.qml:71
-#: ../app/alarm/AlarmSettingsPage.qml:72 ../app/alarm/AlarmSettingsPage.qml:73
-#: ../app/alarm/AlarmSettingsPage.qml:136
+#: ../app/alarm/AlarmSettingsPage.qml:53 ../app/alarm/AlarmSettingsPage.qml:54
+#: ../app/alarm/AlarmSettingsPage.qml:55 ../app/alarm/AlarmSettingsPage.qml:56
+#: ../app/alarm/AlarmSettingsPage.qml:65 ../app/alarm/AlarmSettingsPage.qml:66
+#: ../app/alarm/AlarmSettingsPage.qml:67 ../app/alarm/AlarmSettingsPage.qml:68
+#: ../app/alarm/AlarmSettingsPage.qml:135
+#: ../app/alarm/AlarmSettingsPage.qml:198
 #, qt-format
 msgid "%1 minutes"
 msgstr "%1 minutes"
@@ -77,31 +81,39 @@ msgstr "%1 minutes"
 msgid "Alarm volume"
 msgstr "Volume de l'alarme"
 
-#: ../app/alarm/AlarmSettingsPage.qml:135
+#: ../app/alarm/AlarmSettingsPage.qml:134
 msgid "Silence after"
 msgstr "Silence après"
 
-#: ../app/alarm/AlarmSettingsPage.qml:177
+#: ../app/alarm/AlarmSettingsPage.qml:197
+msgid "Snooze for"
+msgstr ""
+
+#: ../app/alarm/AlarmSettingsPage.qml:241
 msgid "Vibration"
 msgstr "Vibration"
 
-#: ../app/alarm/AlarmSettingsPage.qml:206
+#: ../app/alarm/AlarmSettingsPage.qml:270
 msgid "Change time and date"
 msgstr "Changer l'heure et la date"
 
-#: ../app/alarm/AlarmSound.qml:27 ../app/alarm/EditAlarmPage.qml:281
+#: ../app/alarm/AlarmSound.qml:27 ../app/alarm/EditAlarmPage.qml:316
 msgid "Sound"
 msgstr "Son"
 
-#: ../app/alarm/AlarmUtils.qml:33
-msgid "Weekdays"
+#: ../app/alarm/AlarmUtils.qml:31
+msgid "Never"
 msgstr ""
 
 #: ../app/alarm/AlarmUtils.qml:37
+msgid "Weekdays"
+msgstr ""
+
+#: ../app/alarm/AlarmUtils.qml:41
 msgid "Weekends"
 msgstr "Les weekends"
 
-#: ../app/alarm/AlarmUtils.qml:41
+#: ../app/alarm/AlarmUtils.qml:45
 msgid "Daily"
 msgstr "Tous les jours"
 
@@ -113,15 +125,16 @@ msgstr "Nouvelle alarme"
 msgid "Edit alarm"
 msgstr "Modifier l'alarme"
 
-#: ../app/alarm/EditAlarmPage.qml:305
+#: ../app/alarm/EditAlarmPage.qml:340
 msgid "Delete alarm"
 msgstr "Supprimer l'alarme"
 
-#: ../app/clock/ClockPage.qml:64
+#: ../app/worldclock/AddWorldCityButton.qml:36
 msgid "Add"
 msgstr "Ajouter"
 
-#: ../app/clock/ClockPage.qml:65 ../app/worldclock/WorldCityList.qml:52
+#: ../app/worldclock/AddWorldCityButton.qml:62
+#: ../app/worldclock/WorldCityList.qml:52
 msgid "City"
 msgstr "Ville"
 
@@ -140,21 +153,21 @@ msgstr "d'avance"
 #. 'ahead'
 #: ../app/worldclock/UserWorldCityDelegate.qml:151
 #, qt-format
-msgid "%1 h %2 m %3"
+msgid "%1h %2m %3"
 msgstr ""
 
 #. TRANSLATORS: the first argument is hour, followed by the
 #. translation for either 'behind' or 'ahead'
 #: ../app/worldclock/UserWorldCityDelegate.qml:160
 #, qt-format
-msgid "%1 h %2"
+msgid "%1h %2"
 msgstr ""
 
 #. TRANSLATORS: the first argument is minute, followed by the
 #. translation for either 'behind' or 'ahead'
 #: ../app/worldclock/UserWorldCityDelegate.qml:168
 #, qt-format
-msgid "%1 m %2"
+msgid "%1m %2"
 msgstr ""
 
 #: ../app/worldclock/UserWorldCityDelegate.qml:174
