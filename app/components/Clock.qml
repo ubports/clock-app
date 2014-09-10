@@ -16,7 +16,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import QtQuick 2.0
+import QtQuick 2.3
 import Ubuntu.Components 1.1
 import "Utils.js" as Utils
 
@@ -190,18 +190,18 @@ ClockCircle {
             }
         }
 
-        PropertyAnimation {
+        UbuntuNumberAnimation {
             target: bottomShadow
             property: "opacity"
-            duration: 333
+            duration: 166
             from: 1
             to: 0
         }
 
-        PropertyAnimation {
+        UbuntuNumberAnimation {
             target: upperShadow
             property: "opacity"
-            duration: 333
+            duration: 166
             from: 0
             to: 1
         }

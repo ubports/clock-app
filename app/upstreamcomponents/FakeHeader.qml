@@ -19,26 +19,21 @@
 import QtQuick 2.3
 import Ubuntu.Components 1.1
 
-Item {
-    id: _shadowContainer
+Column {
+    id: fakeHeader
 
-    clip: true
-    height: width/2
-
-    opacity: 0
+    height: units.gu(9)
 
     Rectangle {
-        id: _shadow
-
-        width: _shadowContainer.width
-        height: width
-        radius: width/2
-
-        anchors {
-            top: parent.top
-            horizontalCenter: parent.horizontalCenter
-        }
-
-        color: Qt.rgba(0,0,0,0.2)
+        height: units.gu(7)
+        width: parent.width
+        color: Theme.palette.normal.background
+    }
+    
+    Rectangle {
+        color: "#C9C9C9"
+        height: units.gu(2)
+        anchors.left: parent.left
+        anchors.right: parent.right
     }
 }

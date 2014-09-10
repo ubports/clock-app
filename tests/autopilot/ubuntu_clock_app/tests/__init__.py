@@ -52,9 +52,8 @@ class ClockAppTestCase(base.UbuntuUIToolkitAppTestCase):
     installed_location_qml = \
         '/usr/share/ubuntu-clock-app/ubuntu-clock-app.qml'
 
-    # note this directory could change to com.ubuntu.clock at some point
     sqlite_dir = os.path.expanduser(
-        "~/.local/share/com.ubuntu.clock.devel")
+        "~/.local/share/com.ubuntu.clock")
     backup_dir = sqlite_dir + ".backup"
 
     def setUp(self):
@@ -101,7 +100,7 @@ class ClockAppTestCase(base.UbuntuUIToolkitAppTestCase):
     @autopilot_logging.log_action(logger.info)
     def launch_test_click(self):
         self.app = self.launch_click_package(
-            "com.ubuntu.clock.devel",
+            "com.ubuntu.clock",
             emulator_base=toolkit_emulators.UbuntuUIToolkitEmulatorBase)
 
     def temp_move_sqlite_db(self):

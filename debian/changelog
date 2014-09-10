@@ -12,6 +12,26 @@ ubuntu-clock-app (3.1) utopic; urgency=medium
   * Improved error handling of jsontimezone model.
   * Added support to play alarm sound preview when selecting them in the alarm
     sound page. (LP: #1355410)
+  * Changed project name and neccessary support variables from com.ubuntu.devel
+    to com.ubuntu.clock in the CMakeList.txt, manifest.json and autopilot files.
+  * Fixed tapping an alarm sound that is already selected toggles it
+    incorrectly (LP: #1360677)
+  * Updated QtQuick library imports to v2.3
+  * Switched bzr branch to lp:ubuntu-clock-app
+  * Updated pot file name
+  * Added header shortcut to select/deselect all alarm repeat options (LP: #1362089)
+  * Added visual tweaks (80% opacity for disabled alarms) and show time to 
+    next alarm when enabling an alarm.
+  * Enabled one-time alarms in the UI (LP: #1358320)
+  * Fixed the transition animation to alarms to be more smoother (LP: #1362081)
+  * Added utc as a city (LP: #1362763)
+  * Increase size of alarm volume listitem and simplified alarm duration list model.
+  * Added pressed visual state to the settings button (LP: #1364553)
+  * Fixed no UI hint being show to add cities (LP: #1362263)
+  * Fixed add world city being triggered accidentally (LP: #1359180)
+  * Fixed clock mode animations being too slow (LP: #1365440)
+  * Added alarm snooze settings (LP: #1354400)
+  * Fixed default alarm label not being translatable (LP: #1365012)
 
   [Zsombor Egri]
   * Fixed alarm status toggle being reverted immediately (LP: #1272337)
@@ -19,6 +39,10 @@ ubuntu-clock-app (3.1) utopic; urgency=medium
 
   [David Planella]
   * Added internationalization support (LP: #1354522)
+
+  [Riccardo Padovani]
+  * Removed 'Today/Tomorow/Yesterday' text string from world clock, replaced
+    'No time difference' with 'Same time' (LP: #1362093)
 
  -- Nekhelesh Ramananthan <krnekhelesh@gmail.com>  Wed, 13 Aug 2014 15:46:12 +0200
 
