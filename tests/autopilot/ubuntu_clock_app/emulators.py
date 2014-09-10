@@ -25,7 +25,7 @@ from ubuntuuitoolkit import pickers
 import ubuntuuitoolkit
 
 logger = logging.getLogger(__name__)
-
+from time import sleep
 
 class ClockEmulatorException(ubuntuuitoolkit.ToolkitException):
 
@@ -107,20 +107,13 @@ class ClockPage(PageWithBottomEdge):
     """Autopilot helper for the Clock page."""
 
     @autopilot_logging.log_action(logger.info)
-    def swipe_to_open_worldCityList(self):
+    def click_addCity_to_open_worldCityList(self):
         """Swipe to reveal WorldCityList"""
 
-        action_item = self.wait_select_single(
-            "PullToAdd", objectName="addCityButton")
+        addWorldCityButton = self.wait_select_single(
+            "AbstractButton", objectName="addWorldCityButton")
+        self.pointing_device.click_object(addWorldCityButton)
         clock = self.wait_select_single("Clock", objectName="clock")
-
-        start_x = (action_item.globalRect.x +
-                   (action_item.globalRect.width * 0.5))
-        start_y = (action_item.globalRect.y +
-                   (clock.globalRect.y * 0.5))
-        stop_y = start_y + (self.height * 0.7)
-
-        self.pointing_device.drag(start_x, start_y, start_x, stop_y)
 
     def get_num_of_saved_cities(self):
         """Return the number of saved world cities"""
@@ -261,7 +254,9 @@ class WorldCityList(Page):
         cityList = self.wait_select_single("QQuickListView",
                                            objectName="cityList")
 
-        cityList.count.wait_for(int(cityList.count) > 0)
+        #sleep just for debuggin dbus.Int32 error
+        sleep(5)
+        cityList.count.wait_for(cityList.count > 0)
 
         for index in range(int(cityList.count)):
             if cityList.wait_select_single(

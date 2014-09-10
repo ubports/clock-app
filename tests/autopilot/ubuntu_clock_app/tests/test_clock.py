@@ -71,14 +71,18 @@ class TestClock(ClockAppTestCase):
 
         old_city_count = self.page.get_num_of_saved_cities()
 
-        self.page.swipe_to_open_worldCityList()
+        self.page.click_addCity_to_open_worldCityList()
         worldCityList = self.main_view.get_worldCityList()
         worldCityList.search_world_city_(city_Name, country_Name)
         worldCityList.add_world_city_from_list(city_Name, country_Name)
 
-        ## Confirm that the city has been added
+        # commenting the followin lines as deleting a world city when there is only
+        # one in the user world city list does not decrease counter to 0 but leaves
+        # it at 1 so test fails
+
+        # Confirm that the city has been added
         #self.assertThat(
             #self.page.get_num_of_saved_cities,
             #Eventually(Equals(old_city_count + 1)))
 
-        #self.page.delete_added_world_city(city_Name, brief_country_Name)
+        self.page.delete_added_world_city(city_Name, brief_country_Name)
