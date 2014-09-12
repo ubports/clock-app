@@ -114,7 +114,6 @@ class ClockPage(PageWithBottomEdge):
         addWorldCityButton = self.wait_select_single(
             "AbstractButton", objectName="addWorldCityButton")
         self.pointing_device.click_object(addWorldCityButton)
-        clock = self.wait_select_single("Clock", objectName="clock")
 
     def get_num_of_saved_cities(self):
         """Return the number of saved world cities"""
@@ -143,21 +142,20 @@ class ClockPage(PageWithBottomEdge):
                     self._delete_userWorldCityItem(index)
 
     # FIXME -----------------------------------------------------------------
-    # Commenting the following lines as deleting a world city when there is only
-    # one in the user world city list does not decrease counter to 0 but leaves
-    # it at 1 so the test fails
+    # Commenting the following lines as deleting a world city when there is
+    # only one in the user world city list does not decrease counter to 0 but
+    # leaves it at 1 so the test fails
     # Reported bug #1368393
     # Discovered that deleting world city clock deletes the city from the clock
     # app, but if you look with autopilot vis the world city is still there
     # added a comment to bug #1368393
-
-        #try:
-            #self._get_saved_world_city_list().count.wait_for(
-                #old_cities_count - 1)
-        #except AssertionError:
-            #raise ClockEmulatorException('Error deleting city.')
-    #--------------------------------------------------------------------------
-
+    #
+    #    try:
+    #        self._get_saved_world_city_list().count.wait_for(
+    #            old_cities_count - 1)
+    #    except AssertionError:
+    #        raise ClockEmulatorException('Error deleting city.')
+    # -------------------------------------------------------------------------
 
     def _delete_userWorldCityItem(self, index):
         cityItem = self.wait_select_single(
