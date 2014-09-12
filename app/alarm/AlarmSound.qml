@@ -46,6 +46,7 @@ Page {
 
     Audio {
         id: previewAlarmSound
+        audioRole: MediaPlayer.alert
     }
 
     Flickable {

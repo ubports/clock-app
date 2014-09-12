@@ -173,6 +173,17 @@ Page {
     Alarm {
         id: _alarm
 
+        Component.onCompleted: {
+            /*
+             Sets the alarm name manually to "Alarm" to ensure that it is
+             translatable instead of using the default name set by the SDK
+             Alarms API.
+            */
+            if (isNewAlarm) {
+                _alarm.message = i18n.tr("Alarm")
+            }
+        }
+
         onErrorChanged: {
             if (error !== Alarm.NoError) {
                 Utils.log(debugMode, "Error saving alarm, code: " + error)
