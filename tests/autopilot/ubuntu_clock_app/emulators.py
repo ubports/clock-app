@@ -20,12 +20,13 @@ import logging
 
 from autopilot import logging as autopilot_logging
 from autopilot.introspection import dbus
+from testtools.matchers import GreaterThan
 
 from ubuntuuitoolkit import pickers
 import ubuntuuitoolkit
 
 logger = logging.getLogger(__name__)
-from time import sleep
+
 
 class ClockEmulatorException(ubuntuuitoolkit.ToolkitException):
 
@@ -141,15 +142,22 @@ class ClockPage(PageWithBottomEdge):
                         text == country_Name:
                     self._delete_userWorldCityItem(index)
 
-    # commenting the followin lines as deleting a world city when there is only
+    # FIXME -----------------------------------------------------------------
+    # Commenting the following lines as deleting a world city when there is only
     # one in the user world city list does not decrease counter to 0 but leaves
-    # it at 1 so test fails
+    # it at 1 so the test fails
+    # Reported bug #1368393
+    # Discovered that deleting world city clock deletes the city from the clock
+    # app, but if you look with autopilot vis the world city is still there
+    # added a comment to bug #1368393
 
         #try:
             #self._get_saved_world_city_list().count.wait_for(
                 #old_cities_count - 1)
         #except AssertionError:
             #raise ClockEmulatorException('Error deleting city.')
+    #--------------------------------------------------------------------------
+
 
     def _delete_userWorldCityItem(self, index):
         cityItem = self.wait_select_single(
@@ -254,9 +262,7 @@ class WorldCityList(Page):
         cityList = self.wait_select_single("QQuickListView",
                                            objectName="cityList")
 
-        #sleep just for debuggin dbus.Int32 error
-        sleep(5)
-        cityList.count.wait_for(cityList.count > 0)
+        cityList.count.wait_for(GreaterThan(0))
 
         for index in range(int(cityList.count)):
             if cityList.wait_select_single(
