@@ -1,85 +1,138 @@
 id: alarm/trigger-alarm
 plugin: manual
-_summary: Test to check if an alarm is triggered correctly
+_summary: Trigger alarm test 
+estimated_duration: 120
 _description:
-    PURPOSE:
-        This test checks if an alarm is triggered at the correct time by the datetime indicator
-    STEPS:
-        1. Open the clock app.
-        2. Swipe the bottom edge to open the alarms page.
-        3. Create a new alarm to ring in the next few minutes
-        4. Save the alarm.
-    VERIFICATION:
-       	Did the alarm ring at the correct time?
-estimated_duration: 120        
+    This test checks if an alarm is triggered at the correct time by the datetime indicator.
+    1. Launch the clock app.
+        Clock app opens showing the current local time.
+    2. Swipe the bottom edge to open the alarms page.
+        Alarms page should appear showing a list of alarm. If empty then you should see a
+        message being displayed that "No saved alarms".
+    3. Press the plus icon to create a new alarm. Change the alarm time to ring in the next
+       minute. Do not change any other options. Save Alarm.
+        The saved alarm should be displayed in the alarms page.
+    4. Wait for the alarm to ring.
+        The alarm should ring (with haptic feedback) at the time set in the previous step and 
+        should show a notification with the buttons "Snooze" and "Ok".
+    5. Press "Ok" to dismiss the alarm.
+        The alarm should be dismissed.
 
 id: alarm/edit-alarm-sound
 plugin: manual
 depends: alarm/trigger-alarm
-_summary: Test to check if an alarm updated rings with the sound chosen by the user
-_description:
-    PURPOSE:
-        This test checks if the alarm which is updated rings with the alarm sound selected 
-        by the user as this functionality regressed in the past.
-    STEPS:
-        1. Open the clock app.
-        2. Swipe up the bottom edge to open the alarms page.
-        3. Create a new alarm to ring in the next few minutes.
-        4. Edit the alarm you just created and change the alarm sound.
-        5. Save the alarm.
-    VERIFICATION:
-        Did the alarm ring with the alarm sound you chose when you edited it?
+_summary: Edit alarm sound test
 estimated_duration: 120
+_description:
+    This test checks if an updated alarm rings with the alarm sound selected by the user
+    as this functionality has regressed in the past.
+    1. Launch the clock app.
+        Clock app opens showing the current local time.
+    2. Swipe the bottom edge to open the alarms page.
+        Alarms page should appear showing a list of alarm. If empty then you should see a
+        message being displayed that "No saved alarms".
+    3. Press the plus icon to create a new alarm. Change the alarm time to ring in the next
+       minute. Do not change any other options. Save Alarm.
+        The saved alarm should be displayed in the alarms page.
+    4. Press the saved alarm to edit it.
+        The edit alarm page should be visible with the values set in the previous step.
+    5. Press the "Alarm Sound" list item to change the alarm sound.
+        The Sound page should be visible on pressing the "Alarm Sound" list item.
+    6. Choose a different alarm sound by pressing on any alarm sound.
+        On pressing any alarm sound, you should be able to hear a preview of the alarm sound
+        and also the checkbox is ticked to indicate it has been selected.
+    7. Press the back button and then save the alarm.
+        You should be taken back to the alarms page after you save the alarm.
+    8. Wait for the alarm to ring.
+        The alarm should ring (with haptic feedback) at the time set in the previous step and 
+        should show a notification with the buttons "Snooze" and "Ok".
+    9. Press "Ok" to dismiss the alarm.
+        The alarm should be dismissed.
 
 id: alarm/silence-setting
 plugin: manual
 depends: alarm/trigger-alarm
-_summary: Test the alarm silence after setting
-_description:
-    PURPOSE:
-        This test checks if the alarm silence after setting is obeyed
-    STEPS:
-        1. Open the clock app.
-        2. Click the settings icon to open the settings page.
-        3. Set the silence after setting to 10 minutes.
-        4. Close the settings page.
-        5. Create an alarm to ring in the next minute.
-    VERIFICATION:
-        Did the alarm ring for 10 minutes with no user interaction and then automatically turn off?
+_summary: Alarm Silence after setting test
 estimated_duration: 660
+_description:
+    This test checks if the alarm's "silence after" setting is obeyed.
+    1. Launch the clock app.
+        Clock app opens showing the current local time. 
+    2. Click the settings icon shown in the top right.
+        The settings page is visible showing the alarm settings.
+    3. Set the silence after setting to 10 minutes.
+        The alarm silence after setting should read "10 minutes" to indicate
+        it has been set.
+    4. Press the back button.
+        The settings page is closed and you are returned to the main clock page.
+    5. Swipe the bottom edge to open the alarms page.
+        Alarms page should appear showing a list of alarm. If empty then you should see a
+        message being displayed that "No saved alarms".
+    6. Press the plus icon to create a new alarm. Change the alarm time to ring in the next
+       minute. Do not change any other options. Save Alarm.
+        The saved alarm should be displayed in the alarms page. 
+    7. Wait for the alarm to ring.
+        The alarm should ring (with haptic feedback) at the time set in the previous step and 
+        should show a notification with the buttons "Snooze" and "Ok".
+    8. Allow the alarm to keep ringing.
+        The alarm should keep ringing and be silenced automatically by the phone only after
+        the duration set in step three.
 
 id: alarm/vibration-setting
 plugin: manual
 depends: alarm/trigger-alarm
-_summary: Test the alarm vibration setting option
-_description:
-    PURPOSE:
-        This test checks if the alarm vibration settings enables/disables the alarm vibration
-    STEPS:
-        1. Open the clock app.
-        2. Click the settings icon to open the settings page.
-        3. Toggle off the alarm vibration setting.
-        4. Close the settings page.
-        5. Create an alarm to ring in the next minute
-    VERIFICATION:
-        Did the alarm ring with no vibration (haptic feedback)?
+_summary: Alarm vibration setting test
 estimated_duration: 120
+_description:
+    This test checks if the alarm vibration settings enables/disables the alarm vibration.
+    1. Launch the clock app.
+        Clock app opens showing the current local time. 
+    2. Click the settings icon shown in the top right.
+        The settings page is visible showing the alarm settings.
+    3. Toggle the alarm vibration settings to off position.
+        The switch is discoloured to indicate that it has been disabled.
+    4. Press the back button.
+        The settings page is closed and you are returned to the main clock page.
+    5. Swipe the bottom edge to open the alarms page.
+        Alarms page should appear showing a list of alarm. If empty then you should see a
+        message being displayed that "No saved alarms".
+    6. Press the plus icon to create a new alarm. Change the alarm time to ring in the next
+       minute. Do not change any other options. Save Alarm.
+        The saved alarm should be displayed in the alarms page. 
+    7. Wait for the alarm to ring.
+        Wait for the alarm to ring.
+        The alarm should ring at the time set in the previous step and should show a
+        notification with the buttons "Snooze" and "Ok". However there should be no
+        vibration when the alarm rings.
 
 id: alarm/snooze-setting
 plugin: manual
 depends: alarm/trigger-alarm
+estimated_duration: 360
 _summary: Test the alarm snooze setting options
 _description:
-    PURPOSE:
-        This test checks if the alarm snooze settings works as expected.
-    STEPS:
-        1. Open the clock app
-        2. Click the setting icon to open the settings page
-      	3. Change the snooze setting to N minutes.
-      	4. Close the settings page
-      	5. Swipe from the bottom to open the alarms page.
-      	6. Create an alarm to ring in the next minute
-      	7. When it rings, press snooze
-    VERIFICATION:
-        Did the alarm ring again after the snooze duration you set in the settings page?
-estimated_duration: 360
+    This test checks if the alarm snooze settings works as expected.
+    1. Launch the clock app.
+        Clock app opens showing the current local time. 
+    2. Click the settings icon shown in the top right.
+        The settings page is visible showing the alarm settings.
+    3. Set the snooze duration to 2 minutes.
+        The alarm snooze duration setting should read "2 minutes" to indicate
+        it has been set.
+    4. Press the back button.
+        The settings page is closed and you are returned to the main clock page.
+    5. Swipe the bottom edge to open the alarms page.
+        Alarms page should appear showing a list of alarm. If empty then you should see a
+        message being displayed that "No saved alarms".
+    6. Press the plus icon to create a new alarm. Change the alarm time to ring in the next
+       minute. Do not change any other options. Save Alarm.
+        The saved alarm should be displayed in the alarms page. 
+    7. Wait for the alarm to ring.
+        The alarm should ring (with haptic feedback) at the time set in the previous step and 
+        should show a notification with the buttons "Snooze" and "Ok".
+    8. Press the "Snooze" button.
+        The alarm should be snoozed.
+    9. Wait for 2 minutes.
+        The alarm should ring again (with haptic feedback). Note that if an alarm is set to ring
+        originally at 10:00:00 and you snooze it the first time at 10:01:30, it should ring the next
+        time at 10:03:30 and not at 10:02:00.

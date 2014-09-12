@@ -1,15 +1,24 @@
 id: setting/timezone-change
 plugin: manual
 _summary: Test to check if system timezone change is also done in the clock app
-_description:
-    PURPOSE:
-        Test to check if system timezone change also updates the time in the clock app
-    STEPS:
-        1. Open the clock app.
-        2. Click on the settings icon to open the settings page.
-        3. Press the "Change time and date" setting.
-        4. This should take you to the system-settings-app where you can change the timezone
-        5. Once you change the timezone, return to the clock app
-    VERIFICATION:
-        Does the clock app show the correct time after the timezone change?
 estimated_duration: 60
+_description:
+    Test to check if system timezone change also updates the time in the clock app.
+    1. Launch the clock app.
+        Clock app opens showing the current local time. 
+    2. Click the settings icon shown in the top right.
+        The settings page is visible showing the alarm settings.
+    3. Press the "Change time and date" settings option.
+        The system settings app should be opened with the "Time & Date" page
+        shown.
+    4. Change the timezone.
+        The time shown in the top panel should reflect the new timezone to
+        confirm that it has been changed.
+    5. Return back to the clock app with switch right to left gesture.
+        The time shown below the "Change time and date" settings also shows
+        the new timezone time.
+    6. Press the back button.
+        The main clock page is shown and the main clock also shows the new
+        timezone time.
+    
+
