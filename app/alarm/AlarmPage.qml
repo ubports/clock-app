@@ -18,6 +18,8 @@
 
 import QtQuick 2.3
 import Ubuntu.Components 1.1
+
+import "../components"
 import "../components/Utils.js" as Utils
 
 Page {
@@ -102,35 +104,12 @@ Page {
         anchors.fill: parent
     }
 
-    Item {
+    EmptyState {
         visible: alarmModel.count === 0
         anchors.verticalCenter: parent.verticalCenter
-        width: parent.width
-        height: childrenRect.height
 
-        Icon {
-            id: noAlarmIcon
-            name: "alarm-clock"
-            anchors.horizontalCenter: parent.horizontalCenter
-            height: units.gu(10)
-            width: height
-            color: UbuntuColors.warmGrey
-        }
-
-        Label {
-            id: noAlarmLabel
-            text: i18n.tr("No saved alarms")
-            anchors.top: noAlarmIcon.bottom
-            anchors.horizontalCenter: parent.horizontalCenter
-            fontSize: "x-large"
-            font.bold: true
-        }
-
-        Label {
-            text: i18n.tr("Tap the plus icon to add an alarm.")
-            anchors.top: noAlarmLabel.bottom
-            anchors.horizontalCenter: parent.horizontalCenter
-            fontSize: "large"
-        }
+        iconName: "alarm-clock"
+        title: i18n.tr("No saved alarms")
+        subTitle: i18n.tr("Tap the + icon to add an alarm")
     }
 }
