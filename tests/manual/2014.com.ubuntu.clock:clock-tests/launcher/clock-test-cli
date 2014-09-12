@@ -1,0 +1,13 @@
+#!/usr/bin/env checkbox-launcher
+
+[welcome]
+text= Welcome to Clock App Manual Tests!
+    This application will guide you through some manual test suites which
+    confirm the workings of the clock app and its interaction with the system.
+    The test suites are split into various groups based on their functionality
+    like alarm, settings etc.
+
+[suite]
+whitelist_filter = clock-app-.*
+whitelist_selection=.*
+skip_test_selection = True
