@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-09-12 11:37-0400\n"
+"POT-Creation-Date: 2014-09-12 15:22-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -33,7 +33,7 @@ msgid "in %1m"
 msgstr ""
 
 #: ../app/alarm/AlarmLabel.qml:30 ../app/alarm/AlarmLabel.qml:52
-#: ../app/alarm/EditAlarmPage.qml:297
+#: ../app/alarm/EditAlarmPage.qml:308
 msgid "Label"
 msgstr ""
 
@@ -47,6 +47,7 @@ msgid "Alarms"
 msgstr ""
 
 #: ../app/alarm/AlarmPage.qml:44 ../app/alarm/EditAlarmPage.qml:55
+#: ../app/alarm/EditAlarmPage.qml:183
 msgid "Alarm"
 msgstr ""
 
@@ -66,7 +67,7 @@ msgstr ""
 msgid "Tap the + icon to add an alarm"
 msgstr ""
 
-#: ../app/alarm/AlarmRepeat.qml:31 ../app/alarm/EditAlarmPage.qml:287
+#: ../app/alarm/AlarmRepeat.qml:31 ../app/alarm/EditAlarmPage.qml:298
 msgid "Repeat"
 msgstr ""
 
@@ -74,30 +75,37 @@ msgstr ""
 msgid "Settings"
 msgstr ""
 
-#: ../app/alarm/AlarmSettingsPage.qml:52 ../app/alarm/AlarmSettingsPage.qml:53
-#: ../app/alarm/AlarmSettingsPage.qml:54 ../app/alarm/AlarmSettingsPage.qml:55
-#: ../app/alarm/AlarmSettingsPage.qml:111
+#: ../app/alarm/AlarmSettingsPage.qml:53 ../app/alarm/AlarmSettingsPage.qml:54
+#: ../app/alarm/AlarmSettingsPage.qml:55 ../app/alarm/AlarmSettingsPage.qml:56
+#: ../app/alarm/AlarmSettingsPage.qml:65 ../app/alarm/AlarmSettingsPage.qml:66
+#: ../app/alarm/AlarmSettingsPage.qml:67 ../app/alarm/AlarmSettingsPage.qml:68
+#: ../app/alarm/AlarmSettingsPage.qml:135
+#: ../app/alarm/AlarmSettingsPage.qml:198
 #, qt-format
 msgid "%1 minutes"
 msgstr ""
 
-#: ../app/alarm/AlarmSettingsPage.qml:69
+#: ../app/alarm/AlarmSettingsPage.qml:93
 msgid "Alarm volume"
 msgstr ""
 
-#: ../app/alarm/AlarmSettingsPage.qml:110
+#: ../app/alarm/AlarmSettingsPage.qml:134
 msgid "Silence after"
 msgstr ""
 
-#: ../app/alarm/AlarmSettingsPage.qml:152
+#: ../app/alarm/AlarmSettingsPage.qml:197
+msgid "Snooze for"
+msgstr ""
+
+#: ../app/alarm/AlarmSettingsPage.qml:241
 msgid "Vibration"
 msgstr ""
 
-#: ../app/alarm/AlarmSettingsPage.qml:181
+#: ../app/alarm/AlarmSettingsPage.qml:270
 msgid "Change time and date"
 msgstr ""
 
-#: ../app/alarm/AlarmSound.qml:27 ../app/alarm/EditAlarmPage.qml:310
+#: ../app/alarm/AlarmSound.qml:27 ../app/alarm/EditAlarmPage.qml:321
 msgid "Sound"
 msgstr ""
 
@@ -125,7 +133,7 @@ msgstr ""
 msgid "Edit alarm"
 msgstr ""
 
-#: ../app/alarm/EditAlarmPage.qml:334
+#: ../app/alarm/EditAlarmPage.qml:345
 msgid "Delete alarm"
 msgstr ""
 
