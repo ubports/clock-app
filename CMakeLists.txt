@@ -15,6 +15,9 @@ set(CMAKE_AUTOMOC ON)
 
 option(INSTALL_TESTS "Install the tests on make install" on)
 option(CLICK_MODE "Build as a click package" on)
+option(USE_XVFB "Use XVFB to run qml tests" on)
+
+enable_testing()
 
 set(APP_NAME                clock)
 set(APP_HARDCODE            ubuntu-clock-app)
@@ -23,8 +26,8 @@ set(ICON                    clock-app)
 SET(AUTOPILOT_DIR           ubuntu_clock_app)
 set(URLS_FILE               "${PROJECT_NAME}_${APP_NAME}.url-dispatcher")
 
-# Standard install paths 
-include(GNUInstallDirs) 
+# Standard install paths
+include(GNUInstallDirs)
 
 #set install paths
 if(CLICK_MODE)
@@ -35,11 +38,11 @@ if(CLICK_MODE)
   set(EXEC "qmlscene $@ ${UBUNTU-CLOCK_APP_DIR}/${MAIN_QML}")
   set(MODULE_PATH ${QT_IMPORTS_DIR})
   if(NOT BZR_REVNO)
-    execute_process( 
+    execute_process(
       COMMAND bzr revno
-              OUTPUT_VARIABLE BZR_REVNO 
+              OUTPUT_VARIABLE BZR_REVNO
               WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
-              OUTPUT_STRIP_TRAILING_WHITESPACE 
+              OUTPUT_STRIP_TRAILING_WHITESPACE
       )
   endif(NOT BZR_REVNO)
   if(NOT BZR_SOURCE)
@@ -48,17 +51,17 @@ if(CLICK_MODE)
   endif(NOT BZR_SOURCE)
 else(CLICK_MODE)
   set(UBUNTU-CLOCK_APP_DIR "${CMAKE_INSTALL_DATADIR}/ubuntu-clock-app")
-  execute_process( 
-    COMMAND qmake -query QT_INSTALL_QML 
-            OUTPUT_VARIABLE QT_IMPORTS_DIR 
-            OUTPUT_STRIP_TRAILING_WHITESPACE 
+  execute_process(
+    COMMAND qmake -query QT_INSTALL_QML
+            OUTPUT_VARIABLE QT_IMPORTS_DIR
+            OUTPUT_STRIP_TRAILING_WHITESPACE
     )
   set(MODULE_PATH ${QT_IMPORTS_DIR}/ClockApp)
 endif(CLICK_MODE)
 
 if(${CLICK_MODE})
   message("-- Configuring manifest.json")
- 
+
   execute_process(
     COMMAND dpkg-architecture -qDEB_HOST_ARCH
     OUTPUT_VARIABLE CLICK_ARCH
@@ -82,20 +85,12 @@ list(SORT I18N_SRC_FILES)
 add_subdirectory(app)
 add_subdirectory(backend)
 add_subdirectory(po)
-if(NOT CLICK_MODE)
-  add_subdirectory(tests)
-endif(NOT CLICK_MODE)
+add_subdirectory(tests)
 
 add_custom_target("autopilot" chmod +x ${CMAKE_SOURCE_DIR}/tests/autopilot/run
                     COMMAND ${CMAKE_SOURCE_DIR}/tests/autopilot/run
                     DEPENDS timezone timezone-qmldir alarmsettings alarmsettings-qmldir datetime datetime-qmldir
                     WORKING_DIRECTORY ./app)
-
-enable_testing()
-add_test(NAME basic
-  WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/app
-  COMMAND /usr/bin/qmltestrunner -input ${CMAKE_SOURCE_DIR}/tests/unit -import ${CMAKE_BINARY_DIR}/backend
-)
 
 add_custom_target("run" /usr/bin/qmlscene -I ${CMAKE_BINARY_DIR}/backend  ${CMAKE_SOURCE_DIR}/app/ubuntu-clock-app.qml
                     DEPENDS timezone timezone-qmldir alarmsettings alarmsettings-qmldir datetime datetime-qmldir
