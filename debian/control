@@ -11,6 +11,7 @@ Build-Depends: cmake,
                qt5-default,
                qtbase5-dev,
                qtdeclarative5-dev,
+               qtdeclarative5-dev-tools,
                xvfb,
 Standards-Version: 3.9.5
 Section: misc
