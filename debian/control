@@ -12,6 +12,7 @@ Build-Depends: cmake,
                qtbase5-dev,
                qtdeclarative5-dev,
                qtdeclarative5-dev-tools,
+               qtdeclarative5-ubuntu-ui-toolkit-plugin,
                xvfb,
 Standards-Version: 3.9.5
 Section: misc
