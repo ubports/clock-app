@@ -40,26 +40,17 @@ Page {
     title: isNewAlarm ? i18n.tr("New alarm") : i18n.tr("Edit alarm")
     visible: false
 
-    head {
-        backAction: Action {
-            iconName: "close"
-            onTriggered: {
-                mainStack.pop()
+    head.actions: Action {
+        id: saveAlarmButton
+        iconName: "ok"
+        objectName: "saveAlarmAction"
+        text: i18n.tr("Alarm")
+        onTriggered: {
+            if(isNewAlarm) {
+                saveNewAlarm()
             }
-        }
-
-        actions: Action {
-            id: saveAlarmButton
-            iconName: "ok"
-            objectName: "saveAlarmAction"
-            text: i18n.tr("Alarm")
-            onTriggered: {
-                if(isNewAlarm) {
-                    saveNewAlarm()
-                }
-                else {
-                    updateAlarm()
-                }
+            else {
+                updateAlarm()
             }
         }
     }
