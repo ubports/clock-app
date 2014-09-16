@@ -74,10 +74,10 @@ Flipable {
     }
 
     transitions: Transition {
-        NumberAnimation {
+        UbuntuNumberAnimation {
             target: rotation
             property: "angle"
-            duration: 666
+            duration: 333
         }
     }
 }

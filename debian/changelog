@@ -29,7 +29,9 @@ ubuntu-clock-app (3.1) utopic; urgency=medium
   * Added pressed visual state to the settings button (LP: #1364553)
   * Fixed no UI hint being show to add cities (LP: #1362263)
   * Fixed add world city being triggered accidentally (LP: #1359180)
+  * Fixed clock mode animations being too slow (LP: #1365440)
   * Added alarm snooze settings (LP: #1354400)
+  * Fixed default alarm label not being translatable (LP: #1365012)
 
   [Zsombor Egri]
   * Fixed alarm status toggle being reverted immediately (LP: #1272337)
@@ -41,6 +43,9 @@ ubuntu-clock-app (3.1) utopic; urgency=medium
   [Riccardo Padovani]
   * Removed 'Today/Tomorow/Yesterday' text string from world clock, replaced
     'No time difference' with 'Same time' (LP: #1362093)
+
+  [Dennis O'Flaherty]
+  * Show a message to the user when the alarm list is empty (LP: #1364555)
 
  -- Nekhelesh Ramananthan <krnekhelesh@gmail.com>  Wed, 13 Aug 2014 15:46:12 +0200
 
