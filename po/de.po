@@ -7,14 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2014-09-09 00:21+0200\n"
+"POT-Creation-Date: 2014-09-12 15:22-0400\n"
 "PO-Revision-Date: 2014-09-04 02:02+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: German <de@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-09-10 08:12+0000\n"
+"X-Launchpad-Export-Date: 2014-09-13 08:44+0000\n"
 "X-Generator: Launchpad (build 17196)\n"
 
 #: ../app/alarm/AlarmDelegate.qml:136
@@ -33,33 +33,41 @@ msgid "in %1m"
 msgstr ""
 
 #: ../app/alarm/AlarmLabel.qml:30 ../app/alarm/AlarmLabel.qml:52
-#: ../app/alarm/EditAlarmPage.qml:303
+#: ../app/alarm/EditAlarmPage.qml:308
 msgid "Label"
 msgstr ""
 
-#: ../app/alarm/AlarmList.qml:81 ../app/alarm/AlarmPage.qml:78
+#: ../app/alarm/AlarmList.qml:81 ../app/alarm/AlarmPage.qml:80
 #: ../app/worldclock/UserWorldCityList.qml:103
 msgid "Delete"
 msgstr ""
 
-#: ../app/alarm/AlarmPage.qml:26 ../app/ubuntu-clock-app.qml:103
+#: ../app/alarm/AlarmPage.qml:28 ../app/ubuntu-clock-app.qml:103
 msgid "Alarms"
 msgstr "Alarme"
 
-#: ../app/alarm/AlarmPage.qml:42 ../app/alarm/EditAlarmPage.qml:55
-#: ../app/alarm/EditAlarmPage.qml:178
+#: ../app/alarm/AlarmPage.qml:44 ../app/alarm/EditAlarmPage.qml:55
+#: ../app/alarm/EditAlarmPage.qml:183
 msgid "Alarm"
 msgstr "Alarm"
 
-#: ../app/alarm/AlarmPage.qml:55
+#: ../app/alarm/AlarmPage.qml:57
 msgid "Cancel selection"
 msgstr ""
 
-#: ../app/alarm/AlarmPage.qml:64 ../app/alarm/AlarmRepeat.qml:35
+#: ../app/alarm/AlarmPage.qml:66 ../app/alarm/AlarmRepeat.qml:35
 msgid "Select All"
 msgstr ""
 
-#: ../app/alarm/AlarmRepeat.qml:31 ../app/alarm/EditAlarmPage.qml:293
+#: ../app/alarm/AlarmPage.qml:112
+msgid "No saved alarms"
+msgstr ""
+
+#: ../app/alarm/AlarmPage.qml:113
+msgid "Tap the + icon to add an alarm"
+msgstr ""
+
+#: ../app/alarm/AlarmRepeat.qml:31 ../app/alarm/EditAlarmPage.qml:298
 msgid "Repeat"
 msgstr ""
 
@@ -97,7 +105,7 @@ msgstr ""
 msgid "Change time and date"
 msgstr ""
 
-#: ../app/alarm/AlarmSound.qml:27 ../app/alarm/EditAlarmPage.qml:316
+#: ../app/alarm/AlarmSound.qml:27 ../app/alarm/EditAlarmPage.qml:321
 msgid "Sound"
 msgstr ""
 
@@ -125,7 +133,7 @@ msgstr ""
 msgid "Edit alarm"
 msgstr ""
 
-#: ../app/alarm/EditAlarmPage.qml:340
+#: ../app/alarm/EditAlarmPage.qml:345
 msgid "Delete alarm"
 msgstr ""
 

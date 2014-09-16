@@ -44,6 +44,9 @@ ubuntu-clock-app (3.1) utopic; urgency=medium
   * Removed 'Today/Tomorow/Yesterday' text string from world clock, replaced
     'No time difference' with 'Same time' (LP: #1362093)
 
+  [Dennis O'Flaherty]
+  * Show a message to the user when the alarm list is empty (LP: #1364555)
+
  -- Nekhelesh Ramananthan <krnekhelesh@gmail.com>  Wed, 13 Aug 2014 15:46:12 +0200
 
 ubuntu-clock-app (3.0-0ubuntu1) utopic; urgency=medium
