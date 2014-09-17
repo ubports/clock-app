@@ -83,27 +83,27 @@ Page {
                     anchors.verticalCenter: parent.verticalCenter
 
                     text: {
-                        if(alarmListView.selectedItems.count === 0)
-                            return i18n.tr("Select All")
-                        else
+                        if(alarmListView.selectedItems.count === alarmListView.count)
                             return i18n.tr("Select None")
+                        else
+                            return i18n.tr("Select All")
                     }
 
                     iconSource: {
                         if(alarmListView.selectedItems.count === 0)
-                            return Qt.resolvedUrl("../graphics/select-none.svg")
+                            return Qt.resolvedUrl("../graphics/select.svg")
                         else if(alarmListView.selectedItems.count
                                 === alarmListView.count)
-                            return Qt.resolvedUrl("../graphics/select.svg")
+                            return Qt.resolvedUrl("../graphics/select-none.svg")
                         else
                             return Qt.resolvedUrl("../graphics/select-undefined.svg")
                     }
 
                     onTriggered: {
-                        if(alarmListView.selectedItems.count === 0)
-                            alarmListView.selectAll()
-                        else
+                        if(alarmListView.selectedItems.count === alarmListView.count)
                             alarmListView.clearSelection()
+                        else
+                            alarmListView.selectAll()
                     }
                 }
 

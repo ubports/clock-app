@@ -36,23 +36,23 @@ Page {
 
             iconSource: {
                 if(alarm.daysOfWeek === 0)
-                    return Qt.resolvedUrl("../graphics/select-none.svg")
-                else if(alarm.daysOfWeek === 127)
                     return Qt.resolvedUrl("../graphics/select.svg")
+                else if(alarm.daysOfWeek === 127)
+                    return Qt.resolvedUrl("../graphics/select-none.svg")
                 else
                     return Qt.resolvedUrl("../graphics/select-undefined.svg")
             }
 
             onTriggered: {
-                if (alarm.daysOfWeek === 0) {
+                if (alarm.daysOfWeek === 127) {
                     for (var i=0; i<_alarmDays.count; i++) {
-                        _alarmDays.itemAt(i).isChecked = true
+                        _alarmDays.itemAt(i).isChecked = false
                     }
                 }
 
                 else {
                     for (var i=0; i<_alarmDays.count; i++) {
-                        _alarmDays.itemAt(i).isChecked = false
+                        _alarmDays.itemAt(i).isChecked = true
                     }
                 }
             }
