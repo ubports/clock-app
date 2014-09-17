@@ -49,6 +49,18 @@ PageWithBottomEdge {
         active: true
         updateInterval: 1000
 
+        onSourceErrorChanged: {
+            if(sourceError === PositionSource.AccessError) {
+                console.log("[Source Error]: Do not have permissions to access location service")
+            } else if(sourceError === PositionSource.ClosedError) {
+                console.log("[Source Error]: Location services have been disabled")
+            } else if(sourceError === PositionSource.NoError) {
+                console.log("[Source Error]: No Error! Everything is fine ;)")
+            } else if(sourceError === PositionSource.UnknownSourceError) {
+                console.log("[Source Error]: Unknown Error")
+            }
+        }
+
         onPositionChanged: {
             if(!position.longitudeValid || !position.latitudeValid) {
                 return
@@ -76,6 +88,16 @@ PageWithBottomEdge {
     Connections {
         target: clockApp
         onApplicationStateChanged: {
+            if(geoposition.sourceError === PositionSource.AccessError) {
+                console.log("[Source Error]: Do not have permissions to access location service")
+            } else if(geoposition.sourceError === PositionSource.ClosedError) {
+                console.log("[Source Error]: Location services have been disabled")
+            } else if(geoposition.sourceError === PositionSource.NoError) {
+                console.log("[Source Error]: No Error! Everything is fine ;)")
+            } else if(geoposition.sourceError === PositionSource.UnknownSourceError) {
+                console.log("[Source Error]: Unknown Error")
+            }
+
             if(applicationState
                     && Math.abs(clock.analogTime - geoposition.lastUpdate) > 1800000) {
                 if(!geoposition.active)
