@@ -18,6 +18,7 @@
 
 import QtQuick 2.3
 import Ubuntu.Components 1.1
+import "../components"
 
 Page {
     id: alarmPage
@@ -93,9 +94,18 @@ Page {
         }
     ]
 
-    AlarmList{
+    AlarmList {
         id: alarmListView
         listModel: alarmModel
         anchors.fill: parent
+    }
+
+    EmptyState {
+        visible: alarmModel.count === 0
+        anchors.verticalCenter: parent.verticalCenter
+
+        iconName: "alarm-clock"
+        title: i18n.tr("No saved alarms")
+        subTitle: i18n.tr("Tap the + icon to add an alarm")
     }
 }

@@ -40,26 +40,17 @@ Page {
     title: isNewAlarm ? i18n.tr("New alarm") : i18n.tr("Edit alarm")
     visible: false
 
-    head {
-        backAction: Action {
-            iconName: "close"
-            onTriggered: {
-                mainStack.pop()
+    head.actions: Action {
+        id: saveAlarmButton
+        iconName: "ok"
+        objectName: "saveAlarmAction"
+        text: i18n.tr("Alarm")
+        onTriggered: {
+            if(isNewAlarm) {
+                saveNewAlarm()
             }
-        }
-
-        actions: Action {
-            id: saveAlarmButton
-            iconName: "ok"
-            objectName: "saveAlarmAction"
-            text: i18n.tr("Alarm")
-            onTriggered: {
-                if(isNewAlarm) {
-                    saveNewAlarm()
-                }
-                else {
-                    updateAlarm()
-                }
+            else {
+                updateAlarm()
             }
         }
     }
@@ -172,6 +163,17 @@ Page {
 
     Alarm {
         id: _alarm
+
+        Component.onCompleted: {
+            /*
+             Sets the alarm name manually to "Alarm" to ensure that it is
+             translatable instead of using the default name set by the SDK
+             Alarms API.
+            */
+            if (isNewAlarm) {
+                _alarm.message = i18n.tr("Alarm")
+            }
+        }
 
         onErrorChanged: {
             if (error !== Alarm.NoError) {

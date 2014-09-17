@@ -23,8 +23,8 @@ set(ICON                    clock-app)
 SET(AUTOPILOT_DIR           ubuntu_clock_app)
 set(URLS_FILE               "${PROJECT_NAME}_${APP_NAME}.url-dispatcher")
 
-# Standard install paths 
-include(GNUInstallDirs) 
+# Standard install paths
+include(GNUInstallDirs)
 
 #set install paths
 if(CLICK_MODE)
@@ -35,11 +35,11 @@ if(CLICK_MODE)
   set(EXEC "qmlscene $@ ${UBUNTU-CLOCK_APP_DIR}/${MAIN_QML}")
   set(MODULE_PATH ${QT_IMPORTS_DIR})
   if(NOT BZR_REVNO)
-    execute_process( 
+    execute_process(
       COMMAND bzr revno
-              OUTPUT_VARIABLE BZR_REVNO 
+              OUTPUT_VARIABLE BZR_REVNO
               WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
-              OUTPUT_STRIP_TRAILING_WHITESPACE 
+              OUTPUT_STRIP_TRAILING_WHITESPACE
       )
   endif(NOT BZR_REVNO)
   if(NOT BZR_SOURCE)
@@ -48,17 +48,17 @@ if(CLICK_MODE)
   endif(NOT BZR_SOURCE)
 else(CLICK_MODE)
   set(UBUNTU-CLOCK_APP_DIR "${CMAKE_INSTALL_DATADIR}/ubuntu-clock-app")
-  execute_process( 
-    COMMAND qmake -query QT_INSTALL_QML 
-            OUTPUT_VARIABLE QT_IMPORTS_DIR 
-            OUTPUT_STRIP_TRAILING_WHITESPACE 
+  execute_process(
+    COMMAND qmake -query QT_INSTALL_QML
+            OUTPUT_VARIABLE QT_IMPORTS_DIR
+            OUTPUT_STRIP_TRAILING_WHITESPACE
     )
   set(MODULE_PATH ${QT_IMPORTS_DIR}/ClockApp)
 endif(CLICK_MODE)
 
 if(${CLICK_MODE})
   message("-- Configuring manifest.json")
- 
+
   execute_process(
     COMMAND dpkg-architecture -qDEB_HOST_ARCH
     OUTPUT_VARIABLE CLICK_ARCH
