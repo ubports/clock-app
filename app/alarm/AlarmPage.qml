@@ -37,6 +37,7 @@ Page {
             name: "default"
             head: alarmPage.head
             when: !alarmListView.isInSelectionMode
+
             actions: [
                 Action {
                     objectName: "addAlarmAction"
@@ -53,32 +54,66 @@ Page {
             name: "selection"
             head: alarmPage.head
             when: alarmListView.isInSelectionMode
+
             backAction: Action {
                 text: i18n.tr("Cancel selection")
-                iconName: "close"
-                onTriggered: {
-                    alarmListView.cancelSelection()
-                }
+                iconName: "back"
+                visible: false
             }
 
-            actions: [
-                Action {
-                    text: i18n.tr("Select All")
-                    iconName: "select"
-                    onTriggered: {
-                        if(alarmListView.selectedItems.count
-                                === alarmListView.count) {
-                            alarmListView.clearSelection()
-                        }
-                        else {
-                            alarmListView.selectAll()
-                        }
-                    }
-                },
+            contents: Item {
+                anchors.fill: parent ? parent : null
+                anchors.leftMargin: units.gu(-1)
+                HeaderButton {
+                    id: backButton
+                    iconName: "back"
+                    text: "Back"
+                    anchors.left: parent.left
+                    anchors.verticalCenter: parent.verticalCenter
 
-                Action {
-                    text: i18n.tr("Delete")
+                    onTriggered: {
+                        alarmListView.cancelSelection()
+                    }
+                }
+
+                HeaderButton {
+                    id: selectButton
+                    anchors.right: deleteButton.left
+                    anchors.rightMargin: units.gu(1)
+                    anchors.verticalCenter: parent.verticalCenter
+
+                    text: {
+                        if(alarmListView.selectedItems.count === 0)
+                            return i18n.tr("Select All")
+                        else
+                            return i18n.tr("Select None")
+                    }
+
+                    iconSource: {
+                        if(alarmListView.selectedItems.count === 0)
+                            return Qt.resolvedUrl("../graphics/select-none.svg")
+                        else if(alarmListView.selectedItems.count
+                                === alarmListView.count)
+                            return Qt.resolvedUrl("../graphics/select.svg")
+                        else
+                            return Qt.resolvedUrl("../graphics/select-undefined.svg")
+                    }
+
+                    onTriggered: {
+                        if(alarmListView.selectedItems.count === 0)
+                            alarmListView.selectAll()
+                        else
+                            alarmListView.clearSelection()
+                    }
+                }
+
+                HeaderButton {
+                    id: deleteButton
                     iconName: "delete"
+                    text: "Delete"
+                    anchors.right: parent.right
+                    anchors.verticalCenter: parent.verticalCenter
+                    enabled: alarmListView.selectedItems.count !== 0
                     onTriggered: {
                         var items = alarmListView.selectedItems
 
@@ -90,10 +125,6 @@ Page {
                         alarmListView.endSelection()
                     }
                 }
-            ]
-
-            contents: Label {
-                text: ""
             }
         }
     ]
