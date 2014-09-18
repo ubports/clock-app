@@ -91,7 +91,7 @@ add_custom_target(${DESKTOP_FILE} ALL
 )
 
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/${DESKTOP_FILE}
-	DESTINATION ${CMAKE_INSTALL_DATADIR})
+        DESTINATION ${CMAKE_INSTALL_DATADIR}/applications)
 
 add_subdirectory(app)
 add_subdirectory(backend)
