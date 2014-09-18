@@ -13,17 +13,22 @@ Install the following autopilot packages required to run the tests,
 $ sudo apt-get install python-autopilot libautopilot-qt ubuntu-ui-toolkit-autopilot python3-autopilot-vis
 
 
-#### Running tests on the desktop
+## Running tests on the desktop
 
 Using terminal:
 
-1.  Branch the clock app code,
+*  Branch the clock app code,
     $ bzr branch lp:ubuntu-clock-app/reboot
+    
+*  Build the clock app,
+    $ mkdir builddir && cd builddir
+    $ cmake .. && make
+    $ cd ..
 
-2.  Navigate to the tests/autopilot directory.
-    $ cd ubuntu-clock-app/reboot/tests/autopilot
+*  Navigate to the tests/autopilot directory.
+    $ cd reboot/tests/autopilot
 
-3.  run all tests.
+*  run all tests.
     $ autopilot3 run -vv ubuntu_clock_app
 
     to list all tests:
@@ -37,7 +42,7 @@ Using terminal:
     $ autopilot3 vis
 
 
-#### Running tests on device or emulator:
+## Running tests on device or emulator:
 
 Using autopkg:
 

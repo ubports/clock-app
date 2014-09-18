@@ -66,6 +66,16 @@ void AlarmSettings::onSettingsChanged(const QString &interface,
         }
     }
 
+    it = properties.find("SnoozeDuration");
+
+    if (it != properties.end()) {
+        const int snoozeDuration = it.value().toInt();
+        if (m_snoozeDuration != snoozeDuration) {
+            m_snoozeDuration = snoozeDuration;
+            emit snoozeDurationChanged();
+        }
+    }
+
     it = properties.find("HapticFeedback");
 
     if (it != properties.end()) {
@@ -97,6 +107,7 @@ void AlarmSettings::refreshProperties()
 
     m_volume = map["DefaultVolume"].toInt();
     m_duration = map["Duration"].toInt();
+    m_snoozeDuration = map["SnoozeDuration"].toInt();
     m_vibration = map["HapticFeedback"].toString();
 }
 
@@ -122,6 +133,11 @@ int AlarmSettings::volume() const
 int AlarmSettings::duration() const
 {
     return m_duration;
+}
+
+int AlarmSettings::snoozeDuration() const
+{
+    return m_snoozeDuration;
 }
 
 QString AlarmSettings::vibration() const
@@ -155,6 +171,20 @@ void AlarmSettings::setDuration(int duration)
     emit durationChanged();
 
     setDBusProperty("Duration", QVariant(m_duration));
+}
+
+void AlarmSettings::setSnoozeDuration(int snoozeDuration)
+{
+    if(m_snoozeDuration == snoozeDuration) {
+        // Don't send the snooze duration over dbus if it is the same one already
+        return;
+    }
+
+    // Change the property and let qml know about it
+    m_snoozeDuration = snoozeDuration;
+    emit snoozeDurationChanged();
+
+    setDBusProperty("SnoozeDuration", QVariant(m_snoozeDuration));
 }
 
 void AlarmSettings::setVibration(QString vibration)

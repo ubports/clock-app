@@ -16,9 +16,9 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import QtQuick 2.0
+import QtQuick 2.3
+import QtMultimedia 5.0
 import Ubuntu.Components 1.1
-import Qt.labs.folderlistmodel 2.1
 import Ubuntu.Components.ListItems 1.0 as ListItem
 
 Page {
@@ -31,11 +31,22 @@ Page {
     // Property to set the alarm sound in the edit alarm page
     property var alarmSound
 
-    FolderListModel {
-        id: _soundModel
-        showDirs: false
-        nameFilters: [ "*.ogg", "*.mp3" ]
-        folder: "/usr/share/sounds/ubuntu/ringtones"
+    // Property to store the alarm object
+    property var alarm
+
+    // Property to set the alarm sound model in the edit alarm page
+    property var soundModel
+
+    head.backAction: Action {
+        iconName: "back"
+        onTriggered: {
+            pop()
+        }
+    }
+
+    Audio {
+        id: previewAlarmSound
+        audioRole: MediaPlayer.alert
     }
 
     Flickable {
@@ -43,7 +54,7 @@ Page {
 
         clip: true
         anchors.fill: parent
-        contentHeight: _soundModel.count * units.gu(7)
+        contentHeight: soundModel.count * units.gu(7)
 
         Column {
             id: _alarmSoundColumn
@@ -54,9 +65,9 @@ Page {
                 id: _alarmSounds
                 objectName: "alarmSounds"
 
-                model: _soundModel
+                model: soundModel
 
-                ListItem.Base {
+                ListItem.Standard {
                     id: _alarmSoundDelegate
 
                     property alias isChecked: _soundStatus.checked
@@ -69,6 +80,7 @@ Page {
 
                         anchors {
                             left: parent.left
+                            leftMargin: units.gu(2)
                             verticalCenter: parent.verticalCenter
                         }
 
@@ -77,42 +89,34 @@ Page {
                         text: fileBaseName
                     }
 
-                    CheckBox {
+                    control: CheckBox {
                         id: _soundStatus
                         objectName: "soundStatus" + index
 
-                        anchors {
-                            right: parent.right
-                            verticalCenter: parent.verticalCenter
-                        }
-
-                        checked: alarmSound.subText === _soundName.text ? true :
-                                                                         false
+                        checked: alarmSound.subText === _soundName.text ? true
+                                                                        : false
                         onClicked: {
+                            previewAlarmSound.source = fileURL
+                            previewAlarmSound.play()
+
                             if (checked) {
                                 alarmSound.subText = _soundName.text
+                                alarm.sound = fileURL
 
                                 // Ensures only one alarm sound is selected
-                                for(var i=0; i<_soundModel.count; i++) {
+                                for(var i=0; i<soundModel.count; i++) {
                                     if(_alarmSounds.itemAt(i).isChecked &&
                                             i !== index) {
                                         _alarmSounds.itemAt(i).isChecked = false
                                     }
                                 }
                             }
+
+                            else {
+                                checked = !checked
+                            }
                         }
                     }
-                }
-            }
-        }
-    }
-
-    tools: ToolbarItems {
-        back: Button {
-            action: Action {
-                iconName: "back"
-                onTriggered: {
-                    mainStack.pop()
                 }
             }
         }

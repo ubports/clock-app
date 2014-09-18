@@ -16,7 +16,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import QtQuick 2.0
+import QtQuick 2.3
 import Timezone 1.0
 import Ubuntu.Components 1.1
 import Ubuntu.Components.ListItems 1.0 as ListItem
@@ -34,6 +34,8 @@ import "../upstreamcomponents"
 
 Page {
     id: worldCityList
+
+    property bool isOnlineMode: false
 
     title: i18n.tr("Select a city")
     visible: false
@@ -65,6 +67,7 @@ Page {
                 onTriggered: {
                     searchField.text = ""
                     worldCityList.state = "default"
+                    isOnlineMode = false
                 }
             }
 
@@ -72,6 +75,7 @@ Page {
                 id: searchField
 
                 inputMethodHints: Qt.ImhNoPredictiveText
+                placeholderText: i18n.tr("Search...")
 
                 anchors {
                     left: parent ? parent.left : undefined
@@ -79,9 +83,32 @@ Page {
                     rightMargin: units.gu(2)
                 }
 
+                Timer {
+                    id: search_timer
+                    interval: isOnlineMode ? 1 : 500
+                    repeat: false
+                    onTriggered:  {
+                        isOnlineMode = false
+                        console.log("Search string: " + searchField.text)
+
+                        if(!isOnlineMode && sortedTimeZoneModel.count === 0) {
+                            console.log("Enabling online mode")
+                            isOnlineMode = true
+                        }
+
+                        if(isOnlineMode) {
+                            var url = String("%1%2%3")
+                            .arg("http://geoname-lookup.ubuntu.com/?query=")
+                            .arg(searchField.text)
+                            .arg("&app=com.ubuntu.clock.devel&version=3.0")
+                            console.log("Online URL: " + url)
+                            jsonTimeZoneModel.source = Qt.resolvedUrl(url)
+                        }
+                    }
+                }
+
                 onTextChanged: {
-                    sortedTimeZoneModel.filter.property = "city"
-                    sortedTimeZoneModel.filter.pattern = RegExp(searchField.text, "gi")
+                    search_timer.restart()
                 }
             }
         }
@@ -95,21 +122,82 @@ Page {
               from suspend instead of waiting for the next minute to update.
             */
             if(applicationState)
-                timeZoneModel.update()
+                xmlTimeZoneModel.update()
         }
     }
 
+    JsonTimeZoneModel {
+        id: jsonTimeZoneModel
+        updateInterval: 60000
+    }
+
     XmlTimeZoneModel {
-        id: timeZoneModel
+        id: xmlTimeZoneModel
         updateInterval: 60000
         source: Qt.resolvedUrl("world-city-list.xml")
     }
 
     SortFilterModel {
         id: sortedTimeZoneModel
-        model: timeZoneModel
+        model: isOnlineMode ? jsonTimeZoneModel : xmlTimeZoneModel
         sort.property: "city"
         sort.order: Qt.AscendingOrder
+        filter.property: "city"
+        filter.pattern: RegExp(searchField.text, "gi")
+    }
+
+    Label {
+        id: onlineStateLabel
+        visible: text != ""
+        text: {
+            if (isOnlineMode) {
+                if(jsonTimeZoneModel.status === JsonTimeZoneModel.Loading) {
+                    return i18n.tr("Searching for a city")
+                }
+
+                else if(jsonTimeZoneModel.status === JsonTimeZoneModel.Ready
+                        && sortedTimeZoneModel.count === 0) {
+                    return i18n.tr("No City Found")
+                }
+
+                else if(jsonTimeZoneModel.status === JsonTimeZoneModel.Error
+                        && sortedTimeZoneModel.count === 0) {
+                    return String("<b>%1</b> %2")
+                    .arg(i18n.tr("Unable to connect."))
+                    .arg(i18n.tr("Please check your network connection and try again"))
+                }
+
+                else {
+                    return ""
+                }
+            }
+
+            else {
+                return ""
+            }
+        }
+
+        width: parent.width
+        wrapMode: Text.WordWrap
+        horizontalAlignment: Text.AlignHCenter
+
+        anchors {
+            left: parent.left
+            right: parent.right
+            margins: units.gu(2)
+            top: parent.top
+            topMargin: units.gu(4)
+        }
+    }
+
+    ActivityIndicator {
+        running: jsonTimeZoneModel.status === JsonTimeZoneModel.Loading
+                 && isOnlineMode
+        anchors {
+            top: onlineStateLabel.bottom
+            topMargin: units.gu(3)
+            horizontalCenter: parent.horizontalCenter
+        }
     }
 
     ListView {
@@ -133,6 +221,10 @@ Page {
 
         function getSectionText(index) {
             return sortedTimeZoneModel.get(index).city.substring(0,1)
+        }
+
+        onFlickStarted: {
+            Qt.inputMethod.hide()
         }
 
         anchors.fill: parent
@@ -161,15 +253,37 @@ Page {
             }
         }
 
-        delegate: SubtitledListItem {
-            text: city
-            subText: country
+        delegate: ListItem.Base {
             showDivider: false
+
+            Column {
+                id: worldCityDelegateColumn
+
+                anchors {
+                    left: parent.left
+                    right: _localTime.left
+                    rightMargin: units.gu(1)
+                    verticalCenter: parent.verticalCenter
+                }
+
+                Label {
+                    text: city
+                    width: parent.width
+                    elide: Text.ElideRight
+                    color: UbuntuColors.midAubergine
+                }
+
+                Label {
+                    text: country
+                    fontSize: "xx-small"
+                    width: parent.width
+                    elide: Text.ElideRight
+                }
+            }
 
             Label {
                 id: _localTime
                 text: localTime
-                fontSize: "medium"
                 anchors {
                     right: parent.right
                     verticalCenter: parent.verticalCenter
@@ -177,7 +291,14 @@ Page {
             }
 
             onClicked: {
-                cityList.addWorldCity(city, country, timezoneID)
+                var tempCountry = country.split(",")
+                if(tempCountry.length > 2) {
+                    cityList.addWorldCity(city, tempCountry[1] + ","
+                                          + tempCountry[2], timezoneID)
+                } else {
+                    cityList.addWorldCity(city, country, timezoneID)
+                }
+
                 mainStack.pop()
             }
         }

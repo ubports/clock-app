@@ -24,8 +24,7 @@
 #include "jsontimezonemodel.h"
 
 JsonTimeZoneModel::JsonTimeZoneModel(QObject *parent):
-    TimeZoneModel(parent),
-    m_loading(false)
+    TimeZoneModel(parent)
 {
     m_nam = new QNetworkAccessManager(this);
     connect(m_nam,
@@ -39,11 +38,6 @@ QUrl JsonTimeZoneModel::source() const
     return m_source;
 }
 
-bool JsonTimeZoneModel::loading() const
-{
-    return m_loading;
-}
-
 void JsonTimeZoneModel::setSource(const QUrl &source)
 {
     if (m_source == source) {
@@ -55,8 +49,7 @@ void JsonTimeZoneModel::setSource(const QUrl &source)
     m_source = source;
     emit sourceChanged();
 
-    m_loading = true;
-    emit loadingChanged();
+    setStatus(TimeZoneModel::Loading);
 
     // Start the retrieval process
     loadTimeZonesFromJson();
@@ -73,6 +66,14 @@ void JsonTimeZoneModel::loadTimeZonesFromJson()
 
 void JsonTimeZoneModel::networkReplyFinished(QNetworkReply *reply)
 {
+    if(reply->error() != QNetworkReply::NoError) {
+        qDebug() << "[LOG] Network error: " << reply->errorString();
+
+        setStatus(TimeZoneModel::Error);
+
+        return;
+    }
+
     QByteArray data = reply->readAll();
 
     QJsonDocument jsonDoc = QJsonDocument::fromJson(data);
@@ -91,15 +92,29 @@ void JsonTimeZoneModel::networkReplyFinished(QNetworkReply *reply)
     foreach (const QVariant &entry, timezoneData.toList()) {
         TimeZone tz;
 
-        tz.cityName = entry.toMap().value("name").toString();
-        tz.country = entry.toMap().value("country").toString();
-        tz.timeZone = QTimeZone(entry.toMap().value("timezone").toString().toLatin1());
+        auto data = entry.toMap();
+        auto admin1 = data.value("admin1").toString();
+        auto admin2 = data.value("admin2").toString();
+        auto country = data.value("country").toString();
+
+        tz.cityName = data.value("name").toString();
+
+        if (!admin1.isEmpty() && !admin2.isEmpty()) {
+            tz.country = QString("%1, %2, %3").arg(admin2).arg(admin1).arg(country);
+        } else if (!admin1.isEmpty()) {
+            tz.country = QString("%1, %2").arg(admin1).arg(country);
+        } else if (!admin2.isEmpty()) {
+            tz.country = QString("%1, %2").arg(admin2).arg(country);
+        } else {
+            tz.country = country;
+        }
+
+        tz.timeZone = QTimeZone(data.value("timezone").toString().toLatin1());
 
         m_timeZones.append(tz);
     }
 
-    m_loading = false;
-    emit loadingChanged();
+    setStatus(TimeZoneModel::Ready);
 
     // Let QML know model is reusable again
     endResetModel();

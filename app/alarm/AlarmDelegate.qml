@@ -16,7 +16,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import QtQuick 2.0
+import QtQuick 2.3
 import Ubuntu.Components 1.1
 import "../upstreamcomponents"
 
@@ -44,6 +44,8 @@ ListItemWithActions {
     Column {
         id: alarmDetailsColumn
 
+        opacity: model.enabled ? 1.0 : 0.8
+
         anchors {
             left: alarmTime.right
             right: alarmStatus.left
@@ -68,8 +70,9 @@ ListItemWithActions {
 
             fontSize: "xx-small"
             width: parent.width
+            visible: type === Alarm.Repeating || _internalTimerLoader.sourceComponent != undefined
             wrapMode: Text.WrapAtWordBoundaryOrAnywhere
-            text: alarmUtils.format_day_string(daysOfWeek)
+            text: alarmUtils.format_day_string(daysOfWeek, type)
         }
     }
 
@@ -82,14 +85,86 @@ ListItemWithActions {
             verticalCenter: parent.verticalCenter
         }
 
-        checked: enabled
+        onCheckedChanged: {
+            if (checked !== model.enabled) {
+                model.enabled = checked
+                model.save()
+            }
+        }
+
+        Component {
+            id: _internalTimerComponent
+            Timer {
+                running: false
+                interval: 5000
+                repeat: false
+                onTriggered: {
+                    alarmSubtitle.text = alarmUtils.format_day_string(daysOfWeek)
+                    _internalTimerLoader.sourceComponent = undefined
+                }
+            }
+        }
+
+        Loader {
+            id: _internalTimerLoader
+            asynchronous: true
+
+            onStatusChanged: {
+                if(status === Loader.Ready) {
+                    _internalTimerLoader.item.restart()
+                }
+            }
+        }
+
+        Connections {
+            target: model
+            onStatusChanged: {
+                /*
+                 Update switch value only when the alarm save() operation
+                 is complete to avoid switching it back.
+                */
+                if (model.status === Alarm.Ready) {
+                    alarmStatus.checked = model.enabled;
+
+                    if(alarmStatus.checked) {
+                        var timeObject = alarmUtils.get_time_to_next_alarm(model.date - new Date())
+                        var alarmETA
+
+                        // TRANSLATORS: the first argument is the number of days,
+                        // followed by hour and minute (eg. in 1d 20h 3m)
+                        if(timeObject.days) {
+                            alarmETA = i18n.tr("in %1d %1h %2m")
+                            .arg(timeObject.days)
+                            .arg(timeObject.hours)
+                            .arg(timeObject.minutes)
+                        }
+
+                        // TRANSLATORS: the first argument is the number of
+                        // hours followed by the minutes (eg. in 4h 3m)
+                        else if (timeObject.hours) {
+                            alarmETA = i18n.tr("in %1h %2m")
+                            .arg(timeObject.hours)
+                            .arg(timeObject.minutes)
+                        }
+
+                        // TRANSLATORS: the argument is the number of
+                        // minutes to the alarm (eg. in 3m)
+                        else {
+                            alarmETA = i18n.tr("in %1m")
+                            .arg(timeObject.minutes)
+                        }
+
+                        alarmSubtitle.text = alarmETA
+                        _internalTimerLoader.sourceComponent = _internalTimerComponent
+                    }
+                }
+            }
+        }
 
         /*
-             #TODO: Add the ability to enable/disable alarms using the
-             switch. At the moment it only shows the alarm status.
-             This was postponed since a similar implementation in the
-             old clock app caused it to loop. So if user clicks on the
-             switch, it disables and then re-enables the alarm again.
-            */
+         Assign switch value only once at startup. After this, the switch will
+         be updated after the alarm save() operations only.
+        */
+        Component.onCompleted: alarmStatus.checked = model.enabled
     }
 }

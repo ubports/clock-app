@@ -1,17 +1,18 @@
 {
-    "name": "com.ubuntu.clock.devel",
+    "name": "com.ubuntu.clock",
     "description": "A sophisticated clock app for Ubuntu Touch",
     "framework": "ubuntu-sdk-14.10-dev2",
-    "architecture": "all",
-    "title": "Clock Reboot",
+    "architecture": "@CLICK_ARCH@",
+    "title": "Clock",
     "icon": "clock@30.png",
     "hooks": {
-        "ubuntu-clock-app": {
+        "clock": {
             "apparmor": "ubuntu-clock-app.json",
-            "desktop": "share/applications/ubuntu-clock-app.desktop"
+            "desktop": "share/applications/ubuntu-clock-app.desktop",
+            "urls": "share/url-dispatcher/urls/com.ubuntu.clock_clock.url-dispatcher"
         }
     },
-    "version": "3.0.@BZR_REVNO@",
+    "version": "3.1.@BZR_REVNO@",
     "maintainer": "Ubuntu App Cats <ubuntu-touch-coreapps@lists.launchpad.net>",
     "x-test": {
         "autopilot": "ubuntu_clock_app"

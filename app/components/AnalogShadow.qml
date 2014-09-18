@@ -16,7 +16,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import QtQuick 2.0
+import QtQuick 2.3
 import Ubuntu.Components 1.1
 
 Flipable {
@@ -74,10 +74,10 @@ Flipable {
     }
 
     transitions: Transition {
-        NumberAnimation {
+        UbuntuNumberAnimation {
             target: rotation
             property: "angle"
-            duration: 666
+            duration: 333
         }
     }
 }

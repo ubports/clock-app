@@ -34,19 +34,11 @@ class JsonTimeZoneModel : public TimeZoneModel
                WRITE setSource
                NOTIFY sourceChanged)
 
-    // Property to indicate the loading status of the json request
-    Q_PROPERTY(bool loading
-               READ loading
-               NOTIFY loadingChanged)
-
 public:
     JsonTimeZoneModel(QObject *parent = 0);
 
     // Function to read the json document source
     QUrl source() const;
-
-    // Function to read the loading status of the json request
-    bool loading() const;
 
     // Function to set the source
     void setSource(const QUrl &source);
@@ -55,9 +47,6 @@ signals:
     // Signal to notify the change of the source to QML
     void sourceChanged();
 
-    // Signal to notify the change of the loading indication to QML
-    void loadingChanged();
-
 private slots:
     // Function to process the json document when a reply is received
     void networkReplyFinished(QNetworkReply *reply);
@@ -65,9 +54,6 @@ private slots:
 private:
     // Private copy of the source received from QML
     QUrl m_source;
-
-    // Private copy of the loading status
-    bool m_loading;
 
     // Network access manager to request data from the online source
     QNetworkAccessManager *m_nam;

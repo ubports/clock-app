@@ -77,7 +77,7 @@ Page {
     property bool reloadBottomEdgePage: true
 
     readonly property alias bottomEdgePage: edgeLoader.item
-    readonly property bool isReady: ((bottomEdge.y === 0) && bottomEdgePageLoaded && edgeLoader.item.active)
+    readonly property bool isReady: ((bottomEdge.y === fakeHeader.height) && bottomEdgePageLoaded && edgeLoader.item.active)
     readonly property bool isCollapsed: (bottomEdge.y === page.height)
     readonly property bool bottomEdgePageLoaded: (edgeLoader.status == Loader.Ready)
 
@@ -151,12 +151,29 @@ Page {
         onTriggered: tip.hiden = true
     }
 
+    FakeHeader {
+        id: fakeHeader
+
+        anchors {
+            left: parent.left
+            right: parent.right
+        }
+        y: -fakeHeader.height + (fakeHeader.height * (page.height - bottomEdge.y)) / (page.height - fakeHeader.height)
+        z: bgVisual.z + 1
+
+        Behavior on y {
+            UbuntuNumberAnimation {
+                duration: UbuntuAnimation.SnapDuration
+            }
+        }
+    }
+
     Rectangle {
         id: bottomEdge
         objectName: "bottomEdge"
 
         readonly property int tipHeight: units.gu(3)
-        readonly property int pageStartY: 0
+        readonly property int pageStartY: fakeHeader.height
 
         z: 1
         color: Theme.palette.normal.background
@@ -270,6 +287,10 @@ Page {
                     y: bottomEdge.height
                 }
                 PropertyChanges {
+                    target: fakeHeader
+                    y: -fakeHeader.height
+                }
+                PropertyChanges {
                     target: tip
                     opacity: 1.0
                 }
@@ -283,6 +304,10 @@ Page {
                 PropertyChanges {
                     target: bottomEdge
                     y: bottomEdge.pageStartY
+                }
+                PropertyChanges {
+                    target: fakeHeader
+                    y: 0
                 }
                 PropertyChanges {
                     target: hideIndicator
@@ -311,10 +336,17 @@ Page {
             Transition {
                 to: "expanded"
                 SequentialAnimation {
-                    UbuntuNumberAnimation {
-                        target: bottomEdge
-                        property: "y"
-                        duration: UbuntuAnimation.SlowDuration
+                    ParallelAnimation {
+                        UbuntuNumberAnimation {
+                            target: bottomEdge
+                            property: "y"
+                            duration: UbuntuAnimation.SlowDuration
+                        }
+                        UbuntuNumberAnimation {
+                            target: fakeHeader
+                            property: "y"
+                            duration: UbuntuAnimation.SlowDuration
+                        }
                     }
                     ScriptAction {
                         script: page._pushPage()
@@ -333,10 +365,17 @@ Page {
                             edgeLoader.item.active = false
                         }
                     }
-                    UbuntuNumberAnimation {
-                        target: bottomEdge
-                        property: "y"
-                        duration: UbuntuAnimation.SlowDuration
+                    ParallelAnimation {
+                        UbuntuNumberAnimation {
+                            target: bottomEdge
+                            property: "y"
+                            duration: UbuntuAnimation.SlowDuration
+                        }
+                        UbuntuNumberAnimation {
+                            target: fakeHeader
+                            property: "y"
+                            duration: UbuntuAnimation.SlowDuration
+                        }
                     }
                     ScriptAction {
                         script: {

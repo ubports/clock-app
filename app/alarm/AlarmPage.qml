@@ -16,8 +16,10 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import QtQuick 2.0
+import QtQuick 2.3
 import Ubuntu.Components 1.1
+
+import "../components"
 import "../components/Utils.js" as Utils
 
 Page {
@@ -96,9 +98,18 @@ Page {
         }
     ]
 
-    AlarmList{
+    AlarmList {
         id: alarmListView
         listModel: alarmModel
         anchors.fill: parent
+    }
+
+    EmptyState {
+        visible: alarmModel.count === 0
+        anchors.verticalCenter: parent.verticalCenter
+
+        iconName: "alarm-clock"
+        title: i18n.tr("No saved alarms")
+        subTitle: i18n.tr("Tap the + icon to add an alarm")
     }
 }
