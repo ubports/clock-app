@@ -35,12 +35,10 @@ Page {
             text: i18n.tr("Select All")
 
             iconSource: {
-                if(alarm.daysOfWeek === 0)
-                    return Qt.resolvedUrl("../graphics/select.svg")
-                else if(alarm.daysOfWeek === 127)
+                if(alarm.daysOfWeek === 127)
                     return Qt.resolvedUrl("../graphics/select-none.svg")
                 else
-                    return Qt.resolvedUrl("../graphics/select-undefined.svg")
+                    return Qt.resolvedUrl("../graphics/select.svg")
             }
 
             onTriggered: {

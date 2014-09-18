@@ -90,13 +90,10 @@ Page {
                     }
 
                     iconSource: {
-                        if(alarmListView.selectedItems.count === 0)
-                            return Qt.resolvedUrl("../graphics/select.svg")
-                        else if(alarmListView.selectedItems.count
-                                === alarmListView.count)
+                        if(alarmListView.selectedItems.count === alarmListView.count)
                             return Qt.resolvedUrl("../graphics/select-none.svg")
                         else
-                            return Qt.resolvedUrl("../graphics/select-undefined.svg")
+                            return Qt.resolvedUrl("../graphics/select.svg")
                     }
 
                     onTriggered: {
