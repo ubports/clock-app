@@ -1,8 +1,8 @@
 [Desktop Entry]
 Version=1.0
-Name=Clock
-Comment=A sophisticated clock app that provides world clock and alarm functionality.
-Keywords=time;alarm;alert;clock;world;
+_Name=Clock
+_Comment=A sophisticated clock app that provides world clock and alarm functionality.
+_Keywords=time;alarm;alert;clock;world;
 Exec=@EXEC@
 Icon=@ICON@
 Terminal=false

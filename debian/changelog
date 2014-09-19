@@ -48,6 +48,10 @@ ubuntu-clock-app (3.1) utopic; urgency=medium
   [Dennis O'Flaherty]
   * Show a message to the user when the alarm list is empty (LP: #1364555)
 
+  [Stefano Verzegnassi]
+  * Fixed wrong alignment of "Add city" button when the application is not
+    localized in English. (LP: #1371229)
+
  -- Nekhelesh Ramananthan <krnekhelesh@gmail.com>  Wed, 13 Aug 2014 15:46:12 +0200
 
 ubuntu-clock-app (3.0-0ubuntu1) utopic; urgency=medium
