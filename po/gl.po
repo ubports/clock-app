@@ -7,14 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2014-09-12 15:22-0400\n"
+"POT-Creation-Date: 2014-09-18 08:09+0200\n"
 "PO-Revision-Date: 2014-09-13 18:24+0000\n"
 "Last-Translator: Marcos Lans <Unknown>\n"
 "Language-Team: Galician <gl@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-09-14 08:33+0000\n"
+"X-Launchpad-Export-Date: 2014-09-20 06:41+0000\n"
 "X-Generator: Launchpad (build 17196)\n"
 
 #: ../app/alarm/AlarmDelegate.qml:136
@@ -33,7 +33,7 @@ msgid "in %1m"
 msgstr "en %1m"
 
 #: ../app/alarm/AlarmLabel.qml:30 ../app/alarm/AlarmLabel.qml:52
-#: ../app/alarm/EditAlarmPage.qml:308
+#: ../app/alarm/EditAlarmPage.qml:299
 msgid "Label"
 msgstr "Etiqueta"
 
@@ -46,8 +46,8 @@ msgstr "Eliminar"
 msgid "Alarms"
 msgstr "Alarmas"
 
-#: ../app/alarm/AlarmPage.qml:44 ../app/alarm/EditAlarmPage.qml:55
-#: ../app/alarm/EditAlarmPage.qml:183
+#: ../app/alarm/AlarmPage.qml:44 ../app/alarm/EditAlarmPage.qml:47
+#: ../app/alarm/EditAlarmPage.qml:174
 msgid "Alarm"
 msgstr "Alarma"
 
@@ -67,7 +67,7 @@ msgstr "Non hai alarmas gardadas"
 msgid "Tap the + icon to add an alarm"
 msgstr "Tocar a icona + engade unha alarma"
 
-#: ../app/alarm/AlarmRepeat.qml:31 ../app/alarm/EditAlarmPage.qml:298
+#: ../app/alarm/AlarmRepeat.qml:31 ../app/alarm/EditAlarmPage.qml:289
 msgid "Repeat"
 msgstr "Repetición"
 
@@ -105,7 +105,7 @@ msgstr "Vibración"
 msgid "Change time and date"
 msgstr "Cambiar hora e data"
 
-#: ../app/alarm/AlarmSound.qml:27 ../app/alarm/EditAlarmPage.qml:321
+#: ../app/alarm/AlarmSound.qml:27 ../app/alarm/EditAlarmPage.qml:312
 msgid "Sound"
 msgstr "Son"
 
@@ -133,7 +133,7 @@ msgstr "Nova alarma"
 msgid "Edit alarm"
 msgstr "Editar a alarma"
 
-#: ../app/alarm/EditAlarmPage.qml:345
+#: ../app/alarm/EditAlarmPage.qml:336
 msgid "Delete alarm"
 msgstr "Eliminar a alarma"
 
@@ -209,3 +209,16 @@ msgstr "Non é posíbel conectar."
 #: ../app/worldclock/WorldCityList.qml:167
 msgid "Please check your network connection and try again"
 msgstr "Comprobe a conexión de rede e ténteo de novo"
+
+#: ubuntu-clock-app.desktop.in.in.h:1
+msgid "Clock"
+msgstr "Reloxo"
+
+#: ubuntu-clock-app.desktop.in.in.h:2
+msgid ""
+"A sophisticated clock app that provides world clock and alarm functionality."
+msgstr ""
+
+#: ubuntu-clock-app.desktop.in.in.h:3
+msgid "time;alarm;alert;clock;world;"
+msgstr ""

@@ -7,14 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2014-09-12 15:22-0400\n"
+"POT-Creation-Date: 2014-09-18 08:09+0200\n"
 "PO-Revision-Date: 2014-08-29 11:04+0000\n"
 "Last-Translator: Walter Cheuk <wwycheuk@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <zh_TW@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-09-13 08:44+0000\n"
+"X-Launchpad-Export-Date: 2014-09-20 06:41+0000\n"
 "X-Generator: Launchpad (build 17196)\n"
 
 #: ../app/alarm/AlarmDelegate.qml:136
@@ -33,7 +33,7 @@ msgid "in %1m"
 msgstr ""
 
 #: ../app/alarm/AlarmLabel.qml:30 ../app/alarm/AlarmLabel.qml:52
-#: ../app/alarm/EditAlarmPage.qml:308
+#: ../app/alarm/EditAlarmPage.qml:299
 msgid "Label"
 msgstr "標籤"
 
@@ -46,8 +46,8 @@ msgstr "刪除"
 msgid "Alarms"
 msgstr "鬧鐘"
 
-#: ../app/alarm/AlarmPage.qml:44 ../app/alarm/EditAlarmPage.qml:55
-#: ../app/alarm/EditAlarmPage.qml:183
+#: ../app/alarm/AlarmPage.qml:44 ../app/alarm/EditAlarmPage.qml:47
+#: ../app/alarm/EditAlarmPage.qml:174
 msgid "Alarm"
 msgstr "鬧鐘"
 
@@ -67,7 +67,7 @@ msgstr ""
 msgid "Tap the + icon to add an alarm"
 msgstr ""
 
-#: ../app/alarm/AlarmRepeat.qml:31 ../app/alarm/EditAlarmPage.qml:298
+#: ../app/alarm/AlarmRepeat.qml:31 ../app/alarm/EditAlarmPage.qml:289
 msgid "Repeat"
 msgstr "重複"
 
@@ -105,7 +105,7 @@ msgstr "震動"
 msgid "Change time and date"
 msgstr "變更時間和日期"
 
-#: ../app/alarm/AlarmSound.qml:27 ../app/alarm/EditAlarmPage.qml:321
+#: ../app/alarm/AlarmSound.qml:27 ../app/alarm/EditAlarmPage.qml:312
 msgid "Sound"
 msgstr "聲音"
 
@@ -133,7 +133,7 @@ msgstr "新增鬧鐘"
 msgid "Edit alarm"
 msgstr "編輯鬧鐘"
 
-#: ../app/alarm/EditAlarmPage.qml:345
+#: ../app/alarm/EditAlarmPage.qml:336
 msgid "Delete alarm"
 msgstr "刪除鬧鐘"
 
@@ -209,3 +209,16 @@ msgstr "無法連線。"
 #: ../app/worldclock/WorldCityList.qml:167
 msgid "Please check your network connection and try again"
 msgstr "請檢查網路然後再試一次"
+
+#: ubuntu-clock-app.desktop.in.in.h:1
+msgid "Clock"
+msgstr "時鐘"
+
+#: ubuntu-clock-app.desktop.in.in.h:2
+msgid ""
+"A sophisticated clock app that provides world clock and alarm functionality."
+msgstr ""
+
+#: ubuntu-clock-app.desktop.in.in.h:3
+msgid "time;alarm;alert;clock;world;"
+msgstr ""
