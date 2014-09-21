@@ -50,14 +50,9 @@ PageWithBottomEdge {
         updateInterval: 1000
 
         onSourceErrorChanged: {
-            if(sourceError === PositionSource.AccessError) {
-                console.log("[Source Error]: Do not have permissions to access location service")
-            } else if(sourceError === PositionSource.ClosedError) {
-                console.log("[Source Error]: Location services have been disabled")
-            } else if(sourceError === PositionSource.NoError) {
-                console.log("[Source Error]: No Error! Everything is fine ;)")
-            } else if(sourceError === PositionSource.UnknownSourceError) {
-                console.log("[Source Error]: Unknown Error")
+            if (sourceError !== PositionSource.NoError) {
+                console.log("[Source Error]: Location Service Error")
+                geoposition.stop()
             }
         }
 
@@ -88,16 +83,6 @@ PageWithBottomEdge {
     Connections {
         target: clockApp
         onApplicationStateChanged: {
-            if(geoposition.sourceError === PositionSource.AccessError) {
-                console.log("[Source Error]: Do not have permissions to access location service")
-            } else if(geoposition.sourceError === PositionSource.ClosedError) {
-                console.log("[Source Error]: Location services have been disabled")
-            } else if(geoposition.sourceError === PositionSource.NoError) {
-                console.log("[Source Error]: No Error! Everything is fine ;)")
-            } else if(geoposition.sourceError === PositionSource.UnknownSourceError) {
-                console.log("[Source Error]: Unknown Error")
-            }
-
             if(applicationState
                     && Math.abs(clock.analogTime - geoposition.lastUpdate) > 1800000) {
                 if(!geoposition.active)
@@ -230,7 +215,11 @@ PageWithBottomEdge {
 
                 text: {
                     if (userLocationDocument.contents.location === "Null") {
-                        return i18n.tr("Retrieving location...")
+                        if(geoposition.sourceError !== PositionSource.NoError) {
+                            return i18n.tr("Location Service Error!")
+                        } else {
+                            return i18n.tr("Retrieving location...")
+                        }
                     }
 
                     else {
