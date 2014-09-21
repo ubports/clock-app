@@ -111,7 +111,7 @@ Page {
         tempAlarm.message = _alarm.message
         tempAlarm.date = alarmTime
         tempAlarm.type = _alarm.type
-        tempAlarm.enabled = _alarm.enabled
+        tempAlarm.enabled = true
         tempAlarm.sound = _alarm.sound
         tempAlarm.daysOfWeek = _alarm.daysOfWeek
 
