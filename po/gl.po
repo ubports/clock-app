@@ -7,14 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2014-09-18 08:09+0200\n"
+"POT-Creation-Date: 2014-09-20 02:34-0700\n"
 "PO-Revision-Date: 2014-09-13 18:24+0000\n"
 "Last-Translator: Marcos Lans <Unknown>\n"
 "Language-Team: Galician <gl@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-09-20 06:41+0000\n"
+"X-Launchpad-Export-Date: 2014-09-21 07:21+0000\n"
 "X-Generator: Launchpad (build 17196)\n"
 
 #: ../app/alarm/AlarmDelegate.qml:136
@@ -37,7 +37,7 @@ msgstr "en %1m"
 msgid "Label"
 msgstr "Etiqueta"
 
-#: ../app/alarm/AlarmList.qml:81 ../app/alarm/AlarmPage.qml:80
+#: ../app/alarm/AlarmList.qml:81 ../app/alarm/AlarmPage.qml:125
 #: ../app/worldclock/UserWorldCityList.qml:103
 msgid "Delete"
 msgstr "Eliminar"
@@ -46,24 +46,28 @@ msgstr "Eliminar"
 msgid "Alarms"
 msgstr "Alarmas"
 
-#: ../app/alarm/AlarmPage.qml:44 ../app/alarm/EditAlarmPage.qml:47
+#: ../app/alarm/AlarmPage.qml:45 ../app/alarm/EditAlarmPage.qml:47
 #: ../app/alarm/EditAlarmPage.qml:174
 msgid "Alarm"
 msgstr "Alarma"
 
-#: ../app/alarm/AlarmPage.qml:57
-msgid "Cancel selection"
-msgstr "Cancelar selección"
+#: ../app/alarm/AlarmPage.qml:75 ../app/worldclock/WorldCityList.qml:66
+msgid "Back"
+msgstr "Volver"
 
-#: ../app/alarm/AlarmPage.qml:66 ../app/alarm/AlarmRepeat.qml:35
+#: ../app/alarm/AlarmPage.qml:93
+msgid "Select None"
+msgstr ""
+
+#: ../app/alarm/AlarmPage.qml:95 ../app/alarm/AlarmRepeat.qml:35
 msgid "Select All"
 msgstr "Selecionar todo"
 
-#: ../app/alarm/AlarmPage.qml:112
+#: ../app/alarm/AlarmPage.qml:154
 msgid "No saved alarms"
 msgstr "Non hai alarmas gardadas"
 
-#: ../app/alarm/AlarmPage.qml:113
+#: ../app/alarm/AlarmPage.qml:155
 msgid "Tap the + icon to add an alarm"
 msgstr "Tocar a icona + engade unha alarma"
 
@@ -137,11 +141,11 @@ msgstr "Editar a alarma"
 msgid "Delete alarm"
 msgstr "Eliminar a alarma"
 
-#: ../app/worldclock/AddWorldCityButton.qml:36
+#: ../app/worldclock/AddWorldCityButton.qml:30
 msgid "Add"
 msgstr "Engadir"
 
-#: ../app/worldclock/AddWorldCityButton.qml:62
+#: ../app/worldclock/AddWorldCityButton.qml:61
 #: ../app/worldclock/WorldCityList.qml:52
 msgid "City"
 msgstr "Cidade"
@@ -185,10 +189,6 @@ msgstr "A mesma hora"
 #: ../app/worldclock/WorldCityList.qml:40
 msgid "Select a city"
 msgstr "Seleccionar cidade"
-
-#: ../app/worldclock/WorldCityList.qml:66
-msgid "Back"
-msgstr "Volver"
 
 #: ../app/worldclock/WorldCityList.qml:78
 msgid "Search..."
