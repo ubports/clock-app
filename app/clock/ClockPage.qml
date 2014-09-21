@@ -43,16 +43,15 @@ PageWithBottomEdge {
         // Property to store the time of the last GPS location update
         property var lastUpdate
 
-        readonly property real userLongitude: position.coordinate.longitude.
-        toString().slice(0, Math.min(position.coordinate.longitude.toString().length, 7))
+        readonly property real userLongitude: position.coordinate.longitude
 
-        readonly property real userLatitude: position.coordinate.latitude.
-        toString().slice(0, Math.min(position.coordinate.longitude.toString().length, 6))
+        readonly property real userLatitude: position.coordinate.latitude
 
         active: true
         updateInterval: 1000
 
         onSourceErrorChanged: {
+            // Stop querying user location if location service is not available
             if (sourceError !== PositionSource.NoError) {
                 console.log("[Source Error]: Location Service Error")
                 geoposition.stop()
@@ -86,6 +85,10 @@ PageWithBottomEdge {
     Connections {
         target: clockApp
         onApplicationStateChanged: {
+            /*
+             If Clock App is brought from background after more than 30 mins,
+             query the user location to ensure it is up to date.
+            */
             if(applicationState
                     && Math.abs(clock.analogTime - geoposition.lastUpdate) > 1800000) {
                 if(!geoposition.active)
@@ -104,12 +107,8 @@ PageWithBottomEdge {
             var locationData = JSON.parse
                     (JSON.stringify(userLocationDocument.contents))
 
-            locationData.lat = geoposition.position.coordinate.latitude
-            .toString().slice(0, Math.min(geoposition.position.coordinate.longitude.toString().length, 6))
-
-            locationData.long = geoposition.position.coordinate.longitude
-            .toString().slice(0, Math.min(geoposition.position.coordinate.longitude.toString().length, 7))
-
+            locationData.lat = geoposition.userLatitude
+            locationData.long = geoposition.userLongitude
             locationData.location = userLocation.location
 
             userLocationDocument.contents = locationData
