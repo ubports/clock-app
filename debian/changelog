@@ -33,6 +33,7 @@ ubuntu-clock-app (3.1) utopic; urgency=medium
   * Added alarm snooze settings (LP: #1354400)
   * Fixed default alarm label not being translatable (LP: #1365012)
   * Improved multiselect mode behavior and appearance (LP: #1370146)
+  * Automatically focus textfield (LP: #1372089)
 
   [Zsombor Egri]
   * Fixed alarm status toggle being reverted immediately (LP: #1272337)
