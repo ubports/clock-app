@@ -258,7 +258,6 @@ PageWithBottomEdge {
             anchors {
                 top: worldCityColumn.bottom
                 topMargin: units.gu(1)
-                horizontalCenter: parent.horizontalCenter
             }
         }
 

@@ -7,14 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2014-09-12 15:22-0400\n"
+"POT-Creation-Date: 2014-09-20 02:34-0700\n"
 "PO-Revision-Date: 2014-09-10 06:50+0000\n"
 "Last-Translator: Fohanno Thierry <thierry.fohanno@ofis-bzh.org>\n"
 "Language-Team: Breton <br@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-09-13 08:44+0000\n"
+"X-Launchpad-Export-Date: 2014-09-21 07:21+0000\n"
 "X-Generator: Launchpad (build 17196)\n"
 
 #: ../app/alarm/AlarmDelegate.qml:136
@@ -33,11 +33,11 @@ msgid "in %1m"
 msgstr "e %1m"
 
 #: ../app/alarm/AlarmLabel.qml:30 ../app/alarm/AlarmLabel.qml:52
-#: ../app/alarm/EditAlarmPage.qml:308
+#: ../app/alarm/EditAlarmPage.qml:299
 msgid "Label"
 msgstr "Label"
 
-#: ../app/alarm/AlarmList.qml:81 ../app/alarm/AlarmPage.qml:80
+#: ../app/alarm/AlarmList.qml:81 ../app/alarm/AlarmPage.qml:125
 #: ../app/worldclock/UserWorldCityList.qml:103
 msgid "Delete"
 msgstr "Diverkañ"
@@ -46,28 +46,32 @@ msgstr "Diverkañ"
 msgid "Alarms"
 msgstr "Alarmoù"
 
-#: ../app/alarm/AlarmPage.qml:44 ../app/alarm/EditAlarmPage.qml:55
-#: ../app/alarm/EditAlarmPage.qml:183
+#: ../app/alarm/AlarmPage.qml:45 ../app/alarm/EditAlarmPage.qml:47
+#: ../app/alarm/EditAlarmPage.qml:174
 msgid "Alarm"
 msgstr "Alarm"
 
-#: ../app/alarm/AlarmPage.qml:57
-msgid "Cancel selection"
-msgstr "Nullañ an diuzadur"
+#: ../app/alarm/AlarmPage.qml:75 ../app/worldclock/WorldCityList.qml:66
+msgid "Back"
+msgstr "Distreiñ"
 
-#: ../app/alarm/AlarmPage.qml:66 ../app/alarm/AlarmRepeat.qml:35
+#: ../app/alarm/AlarmPage.qml:93
+msgid "Select None"
+msgstr ""
+
+#: ../app/alarm/AlarmPage.qml:95 ../app/alarm/AlarmRepeat.qml:35
 msgid "Select All"
 msgstr "Diuzañ pep tra"
 
-#: ../app/alarm/AlarmPage.qml:112
+#: ../app/alarm/AlarmPage.qml:154
 msgid "No saved alarms"
 msgstr ""
 
-#: ../app/alarm/AlarmPage.qml:113
+#: ../app/alarm/AlarmPage.qml:155
 msgid "Tap the + icon to add an alarm"
 msgstr ""
 
-#: ../app/alarm/AlarmRepeat.qml:31 ../app/alarm/EditAlarmPage.qml:298
+#: ../app/alarm/AlarmRepeat.qml:31 ../app/alarm/EditAlarmPage.qml:289
 msgid "Repeat"
 msgstr "Adober"
 
@@ -105,7 +109,7 @@ msgstr "Daskren"
 msgid "Change time and date"
 msgstr "Cheñch an eur hag an deiziad"
 
-#: ../app/alarm/AlarmSound.qml:27 ../app/alarm/EditAlarmPage.qml:321
+#: ../app/alarm/AlarmSound.qml:27 ../app/alarm/EditAlarmPage.qml:312
 msgid "Sound"
 msgstr "Son"
 
@@ -133,15 +137,15 @@ msgstr "Alarm nevez"
 msgid "Edit alarm"
 msgstr "Aozañ an alarm"
 
-#: ../app/alarm/EditAlarmPage.qml:345
+#: ../app/alarm/EditAlarmPage.qml:336
 msgid "Delete alarm"
 msgstr "Diverkañ an alarm"
 
-#: ../app/worldclock/AddWorldCityButton.qml:36
+#: ../app/worldclock/AddWorldCityButton.qml:30
 msgid "Add"
 msgstr "Ouzhpennañ"
 
-#: ../app/worldclock/AddWorldCityButton.qml:62
+#: ../app/worldclock/AddWorldCityButton.qml:61
 #: ../app/worldclock/WorldCityList.qml:52
 msgid "City"
 msgstr "Kêr"
@@ -186,10 +190,6 @@ msgstr "Memes eur"
 msgid "Select a city"
 msgstr "Diuzañ ur gêr"
 
-#: ../app/worldclock/WorldCityList.qml:66
-msgid "Back"
-msgstr "Distreiñ"
-
 #: ../app/worldclock/WorldCityList.qml:78
 msgid "Search..."
 msgstr "Klask..."
@@ -209,3 +209,16 @@ msgstr "Ne c'haller ket kevreañ."
 #: ../app/worldclock/WorldCityList.qml:167
 msgid "Please check your network connection and try again"
 msgstr "Gwiriit ho kevreadur ouzh ar rouedad, mar plij, hag esaeit en-dro"
+
+#: ubuntu-clock-app.desktop.in.in.h:1
+msgid "Clock"
+msgstr "Eurier"
+
+#: ubuntu-clock-app.desktop.in.in.h:2
+msgid ""
+"A sophisticated clock app that provides world clock and alarm functionality."
+msgstr ""
+
+#: ubuntu-clock-app.desktop.in.in.h:3
+msgid "time;alarm;alert;clock;world;"
+msgstr ""
