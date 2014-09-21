@@ -65,6 +65,7 @@ Page {
                 iconName: "back"
                 text: i18n.tr("Back")
                 onTriggered: {
+                    cityList.forceActiveFocus()
                     searchField.text = ""
                     worldCityList.state = "default"
                     isOnlineMode = false
@@ -224,7 +225,7 @@ Page {
         }
 
         onFlickStarted: {
-            Qt.inputMethod.hide()
+            forceActiveFocus()
         }
 
         anchors.fill: parent
