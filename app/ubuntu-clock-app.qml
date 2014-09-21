@@ -22,6 +22,7 @@ import Ubuntu.Components 1.1
 import "clock"
 import "alarm"
 import "components"
+import "components/Utils.js" as Utils
 
 MainView {
     id: clockApp
@@ -84,6 +85,7 @@ MainView {
 
     AlarmModel {
         id: alarmModel
+        Component.onCompleted: Utils.log(debugMode, "Alarm Database loaded")
     }
 
     PageStack {

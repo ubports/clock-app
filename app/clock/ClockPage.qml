@@ -18,12 +18,13 @@
 
 import QtQuick 2.3
 import U1db 1.0 as U1db
-import Location 1.0 as UserLocation
 import QtPositioning 5.2
 import Ubuntu.Components 1.1
+import Location 1.0 as UserLocation
 import "../components"
 import "../upstreamcomponents"
 import "../worldclock"
+import "../components/Utils.js" as Utils
 
 PageWithBottomEdge {
     id: _clockPage
@@ -33,6 +34,8 @@ PageWithBottomEdge {
     property alias isDigital: clock.isDigital
 
     flickable: null
+
+    Component.onCompleted: Utils.log(debugMode, "Clock Page loaded")
 
     PositionSource {
         id: geoposition
@@ -100,11 +103,21 @@ PageWithBottomEdge {
         onLocationChanged: {
             var locationData = JSON.parse
                     (JSON.stringify(userLocationDocument.contents))
-            locationData.lat = geoposition.position.coordinate.latitude.toString().slice(0, Math.min(geoposition.position.coordinate.longitude.toString().length, 6))
-            locationData.long = geoposition.position.coordinate.longitude.toString().slice(0, Math.min(geoposition.position.coordinate.longitude.toString().length, 7))
+
+            locationData.lat = geoposition.position.coordinate.latitude
+            .toString().slice(0, Math.min(geoposition.position.coordinate.longitude.toString().length, 6))
+
+            locationData.long = geoposition.position.coordinate.longitude
+            .toString().slice(0, Math.min(geoposition.position.coordinate.longitude.toString().length, 7))
+
             locationData.location = userLocation.location
+
             userLocationDocument.contents = locationData
 
+            /*
+             Stop querying the user coordinates once the user location has been
+             determined and saved to disk
+           */
             if(geoposition.active) {
                 geoposition.stop()
             }
