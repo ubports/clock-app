@@ -45,7 +45,15 @@ MainView {
             mouseClick(textfield, textfield.width - units.gu(2), textfield.height/2)
         }
 
-        function test_03_backButtonEnabled_data() {
+        /*
+         Test to check if the alarm label has focus true by default to ensure
+         that the OSK is shown when the opens the alarm label page.
+        */
+        function test_01_alarmLabelHasFocus() {
+            compare(alarmLabel.focus, true, "Alarm Label does not have focus by default")
+        }
+
+        function test_backButtonEnabled_data() {
             return [
                         {tag: "EmptyAlarmLabel",       string: "",           enableStatus: false},
                         {tag: "BlankSpacesAlarmLabel", string: "   ",        enableStatus: false},
@@ -57,7 +65,7 @@ MainView {
          Test to check if the back header button is enabled/disabled correctly
          for different alarm label scenarios.
         */
-        function test_03_backButtonEnabled(data) {
+        function test_backButtonEnabled(data) {
             compare(alarmLabel.text, "Alarm", "Default alarm label is not Alarm")
             compare(backButton.enabled, true, "Back header button is not enabled by default")
 
@@ -74,18 +82,10 @@ MainView {
          Test to check if the alarm label text is set to the alarm message
          when the page is loaded.
         */
-        function test_02_alarmLabelIsSameAsAlarmMessage() {
+        function test_alarmLabelIsSameAsAlarmMessage() {
             _alarm.message = "Random Alarm Label"
             compare(alarmLabel.text, "Random Alarm Label", "Alarm label set is not the same as alarm message")
             _alarm.reset()
-        }
-
-        /*
-         Test to check if the alarm label has focus true by default to ensure
-         that the OSK is shown when the opens the alarm label page.
-        */
-        function test_01_alarmLabelHasFocus() {
-            compare(alarmLabel.focus, true, "Alarm Label does not have focus by default")
         }
     }
 }
