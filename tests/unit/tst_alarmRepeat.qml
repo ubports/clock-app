@@ -44,6 +44,7 @@ MainView {
         function init() {
             alarmRepeatPageLoader.sourceComponent = alarmRepeatPage
             alarmRepeatPageLoader.item.visible = true
+            spy.target = alarmRepeatPageLoader.item.Component
             header = findChild(mainView, "MainView_Header")
             backButton = findChild(header, "customBackButton")
             repeater = findChild(alarmRepeatPageLoader.item, "alarmDays")
@@ -51,11 +52,17 @@ MainView {
 
         function cleanup() {
             alarmRepeatPageLoader.sourceComponent = undefined
+            spy.wait()
+            tryCompare(spy, "count", 1)
             _alarm.reset()
-            // TEST FAILS HERE!
-            // _alarm.reset() is supposed to reset Alarm to OneTime. Not sure why it doesn't
-            tryCompare(_alarm, "type", Alarm.OneTime, 5000, "Alarm Type is not one time by default")
             tryCompare(_alarm, "status", Alarm.Ready)
+            spy.clear()
+            spy.target = undefined
+        }
+
+        SignalSpy {
+            id: spy
+            signalName: "destruction"
         }
 
         /*
@@ -84,15 +91,6 @@ MainView {
         */
         function test_alarmTypeSwitch() {
             waitForRendering(alarmRepeatPageLoader.item);
-
-            // TEST FAILS HERE //
-            // Alarm should be one-time by default. By the test before this
-            // changed the value and the alarm.reset() in the cleanup doesn't
-            // seem to do its job.
-
-            // test_alarmObjectSetsSwitchStatus() is run before this test. And in
-            // that test I set the alarm type to repeating. However the cleanup
-            // should reset back to one-time when calling the alarm.reset() function.
 
             tryCompare(_alarm, "type", Alarm.OneTime, 3000, "Alarm type is not OneTime by default")
 
