@@ -52,6 +52,9 @@ MainView {
         function cleanup() {
             alarmRepeatPageLoader.sourceComponent = undefined
             _alarm.reset()
+            // TEST FAILS HERE!
+            // _alarm.reset() is supposed to reset Alarm to OneTime. Not sure why it doesn't
+            tryCompare(_alarm, "type", Alarm.OneTime, 5000, "Alarm Type is not one time by default")
             tryCompare(_alarm, "status", Alarm.Ready)
         }
 
