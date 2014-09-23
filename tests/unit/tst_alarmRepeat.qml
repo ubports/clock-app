@@ -70,7 +70,7 @@ MainView {
          default an alarm is an one-time alarm and in the repeat page none of
          the days must be checked
         */
-        function test_allSwitchesAreUncheckedByDefault() {
+        function test_01_allSwitchesAreUncheckedByDefault() {
             waitForRendering(alarmRepeatPageLoader.item);
 
             tryCompare(_alarm, "daysOfWeek", 0, 3000, "Alarm days of weeks is not 0 by default")
@@ -89,7 +89,7 @@ MainView {
          should become a repeating alarm. if no switches are enabled then
          it should be a one time alarm.
         */
-        function test_alarmTypeSwitch() {
+        function test_02_alarmTypeSwitch() {
             waitForRendering(alarmRepeatPageLoader.item);
 
             tryCompare(_alarm, "type", Alarm.OneTime, 3000, "Alarm type is not OneTime by default")
@@ -107,7 +107,7 @@ MainView {
          Test to enable all switches and check if the alarm object has been
          updated correctly
         */
-        function test_switchStatusUpdatesAlarmObject() {
+        function test_03_switchStatusUpdatesAlarmObject() {
             waitForRendering(alarmRepeatPageLoader.item);
 
             for(var i=0; i<repeater.count; i++) {
@@ -127,7 +127,7 @@ MainView {
          days of week. This is required when editing an alarm where the switch
          should properly show the days previously selected by the user.
         */
-        function test_alarmObjectSetsSwitchStatus() {
+        function test_04_alarmObjectSetsSwitchStatus() {
             _alarm.type = Alarm.Repeating
             _alarm.daysOfWeek = 96 // Enabled saturday and sunday
 
