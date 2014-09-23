@@ -8,7 +8,7 @@
     "hooks": {
         "clock": {
             "apparmor": "ubuntu-clock-app.json",
-            "desktop": "share/applications/ubuntu-clock-app.desktop",
+            "desktop": "@CMAKE_INSTALL_DATADIR@/applications/ubuntu-clock-app.desktop",
             "urls": "share/url-dispatcher/urls/com.ubuntu.clock_clock.url-dispatcher"
         }
     },

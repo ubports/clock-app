@@ -1,5 +1,7 @@
 project(com.ubuntu.clock C CXX)
 cmake_minimum_required(VERSION 2.8.9)
+find_program(INTLTOOL_MERGE intltool-merge)
+find_program(INTLTOOL_EXTRACT intltool-extract)
 
 set (UBUNTU_MANIFEST_PATH "manifest.json.in" CACHE INTERNAL "Relative path to the manifest file")
 set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -fno-permissive -pedantic -Wall -Wextra")
@@ -19,15 +21,16 @@ option(USE_XVFB "Use XVFB to run qml tests" on)
 
 enable_testing()
 
+# Standard install paths 
+include(GNUInstallDirs) 
+
 set(APP_NAME                clock)
 set(APP_HARDCODE            ubuntu-clock-app)
 set(MAIN_QML                ${APP_HARDCODE}.qml)
+set(DESKTOP_FILE            "${APP_HARDCODE}.desktop")
 set(ICON                    clock-app)
 SET(AUTOPILOT_DIR           ubuntu_clock_app)
 set(URLS_FILE               "${PROJECT_NAME}_${APP_NAME}.url-dispatcher")
-
-# Standard install paths
-include(GNUInstallDirs)
 
 #set install paths
 if(CLICK_MODE)
@@ -80,7 +83,18 @@ install(FILES ${URLS_FILE} DESTINATION "${CMAKE_INSTALL_DATADIR}/url-dispatcher/
 file(GLOB_RECURSE I18N_SRC_FILES
     RELATIVE ${CMAKE_CURRENT_SOURCE_DIR}/po
     *.qml *.js)
+list(APPEND I18N_SRC_FILES ${DESKTOP_FILE}.in.in.h)
 list(SORT I18N_SRC_FILES)
+
+configure_file(${DESKTOP_FILE}.in.in ${DESKTOP_FILE}.in)
+
+add_custom_target(${DESKTOP_FILE} ALL
+    COMMENT "Merging translations into ${DESKTOP_FILE}..."
+    COMMAND LC_ALL=C ${INTLTOOL_MERGE} -d -u ${CMAKE_SOURCE_DIR}/po ${DESKTOP_FILE}.in ${DESKTOP_FILE}
+)
+
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/${DESKTOP_FILE}
+        DESTINATION ${CMAKE_INSTALL_DATADIR}/applications)
 
 add_subdirectory(app)
 add_subdirectory(backend)
