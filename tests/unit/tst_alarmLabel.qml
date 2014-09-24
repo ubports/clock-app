@@ -37,18 +37,20 @@ MainView {
             backButton = findChild(header, "customBackButton")
         }
 
-        function cleanup() {
-            clearTextField(alarmLabel)
-            typeString("Alarm")
-            alarmLabelPage.alarm.message = "Alarm"
-        }
-
         function clearTextField(textfield) {
             // Get textfield focus by clicking once
             mouseClick(textfield, textfield.width - units.gu(2), textfield.height/2)
 
             // Click on the clear button shown on the right
             mouseClick(textfield, textfield.width - units.gu(2), textfield.height/2)
+        }
+
+        /*
+         Test to check if the alarm label has focus true by default to ensure
+         that the OSK is shown when the opens the alarm label page.
+        */
+        function test_01_alarmLabelHasFocus() {
+            compare(alarmLabel.focus, true, "Alarm Label does not have focus by default")
         }
 
         function test_backButtonEnabled_data() {
@@ -72,6 +74,8 @@ MainView {
 
             compare(alarmLabel.text, data.string, "Alarm label is not what was type in the textfield")
             compare(backButton.enabled, data.enableStatus, "Back Button enable status is not as expected")
+
+            alarmLabel.text = _alarm.message
         }
 
         /*
@@ -79,8 +83,9 @@ MainView {
          when the page is loaded.
         */
         function test_alarmLabelIsSameAsAlarmMessage() {
-            alarmLabelPage.alarm.message = "Random Alarm Label"
+            _alarm.message = "Random Alarm Label"
             compare(alarmLabel.text, "Random Alarm Label", "Alarm label set is not the same as alarm message")
+            _alarm.reset()
         }
     }
 }
