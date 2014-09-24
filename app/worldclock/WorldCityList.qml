@@ -241,16 +241,7 @@ Page {
         section.labelPositioning: ViewSection.InlineLabels
 
         section.delegate: ListItem.Header {
-            anchors.margins: units.gu(2)
-            Label {
-                /*
-                  Ideally we wouldn't need this label inside a listitem header,
-                  however the default header text is indented right 2 gu which
-                  doesn't match design spec.
-                */
-                text: section
-                anchors.verticalCenter: parent.verticalCenter
-            }
+            text: section
         }
 
         delegate: ListItem.Base {
