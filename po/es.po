@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2014-09-20 02:34-0700\n"
-"PO-Revision-Date: 2014-09-14 02:44+0000\n"
+"PO-Revision-Date: 2014-09-22 15:54+0000\n"
 "Last-Translator: Víctor R. Ruiz <Unknown>\n"
 "Language-Team: Spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-09-21 07:21+0000\n"
+"X-Launchpad-Export-Date: 2014-09-23 07:24+0000\n"
 "X-Generator: Launchpad (build 17196)\n"
 
 #: ../app/alarm/AlarmDelegate.qml:136
@@ -57,7 +57,7 @@ msgstr "Atrás"
 
 #: ../app/alarm/AlarmPage.qml:93
 msgid "Select None"
-msgstr ""
+msgstr "Cancelar la selección"
 
 #: ../app/alarm/AlarmPage.qml:95 ../app/alarm/AlarmRepeat.qml:35
 msgid "Select All"
@@ -218,7 +218,8 @@ msgstr "Reloj"
 msgid ""
 "A sophisticated clock app that provides world clock and alarm functionality."
 msgstr ""
+"Una aplicación sofisticada de reloj con funciones de reloj mundial y alarma."
 
 #: ubuntu-clock-app.desktop.in.in.h:3
 msgid "time;alarm;alert;clock;world;"
-msgstr ""
+msgstr "hora;alarma;alerta;reloj;mundo;"

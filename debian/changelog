@@ -34,6 +34,7 @@ ubuntu-clock-app (3.1) utopic; urgency=medium
   * Fixed default alarm label not being translatable (LP: #1365012)
   * Improved multiselect mode behavior and appearance (LP: #1370146)
   * Enabled alarms automatically after updating it (LP: #1372090)
+  * Automatically focus textfield (LP: #1372089)
 
   [Zsombor Egri]
   * Fixed alarm status toggle being reverted immediately (LP: #1272337)
