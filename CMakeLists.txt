@@ -17,6 +17,9 @@ set(CMAKE_AUTOMOC ON)
 
 option(INSTALL_TESTS "Install the tests on make install" on)
 option(CLICK_MODE "Build as a click package" on)
+option(USE_XVFB "Use XVFB to run qml tests" on)
+
+enable_testing()
 
 # Standard install paths 
 include(GNUInstallDirs) 
@@ -96,20 +99,12 @@ install(FILES ${CMAKE_CURRENT_BINARY_DIR}/${DESKTOP_FILE}
 add_subdirectory(app)
 add_subdirectory(backend)
 add_subdirectory(po)
-if(NOT CLICK_MODE)
-  add_subdirectory(tests)
-endif(NOT CLICK_MODE)
+add_subdirectory(tests)
 
 add_custom_target("autopilot" chmod +x ${CMAKE_SOURCE_DIR}/tests/autopilot/run
                     COMMAND ${CMAKE_SOURCE_DIR}/tests/autopilot/run
                     DEPENDS timezone timezone-qmldir alarmsettings alarmsettings-qmldir datetime datetime-qmldir
                     WORKING_DIRECTORY ./app)
-
-enable_testing()
-add_test(NAME basic
-  WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/app
-  COMMAND /usr/bin/qmltestrunner -input ${CMAKE_SOURCE_DIR}/tests/unit -import ${CMAKE_BINARY_DIR}/backend
-)
 
 add_custom_target("run" /usr/bin/qmlscene -I ${CMAKE_BINARY_DIR}/backend  ${CMAKE_SOURCE_DIR}/app/ubuntu-clock-app.qml
                     DEPENDS timezone timezone-qmldir alarmsettings alarmsettings-qmldir datetime datetime-qmldir
