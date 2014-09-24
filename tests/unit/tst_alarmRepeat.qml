@@ -44,6 +44,7 @@ MainView {
         function init() {
             alarmRepeatPageLoader.sourceComponent = alarmRepeatPage
             alarmRepeatPageLoader.item.visible = true
+            spy.target = alarmRepeatPageLoader.item.Component
             header = findChild(mainView, "MainView_Header")
             backButton = findChild(header, "customBackButton")
             repeater = findChild(alarmRepeatPageLoader.item, "alarmDays")
@@ -51,8 +52,17 @@ MainView {
 
         function cleanup() {
             alarmRepeatPageLoader.sourceComponent = undefined
+            spy.wait()
+            tryCompare(spy, "count", 1)
             _alarm.reset()
             tryCompare(_alarm, "status", Alarm.Ready)
+            spy.clear()
+            spy.target = undefined
+        }
+
+        SignalSpy {
+            id: spy
+            signalName: "destruction"
         }
 
         /*
@@ -60,7 +70,7 @@ MainView {
          default an alarm is an one-time alarm and in the repeat page none of
          the days must be checked
         */
-        function test_allSwitchesAreUncheckedByDefault() {
+        function test_01_allSwitchesAreUncheckedByDefault() {
             waitForRendering(alarmRepeatPageLoader.item);
 
             tryCompare(_alarm, "daysOfWeek", 0, 3000, "Alarm days of weeks is not 0 by default")
@@ -81,15 +91,6 @@ MainView {
         */
         function test_alarmTypeSwitch() {
             waitForRendering(alarmRepeatPageLoader.item);
-
-            // TEST FAILS HERE //
-            // Alarm should be one-time by default. By the test before this
-            // changed the value and the alarm.reset() in the cleanup doesn't
-            // seem to do its job.
-
-            // test_alarmObjectSetsSwitchStatus() is run before this test. And in
-            // that test I set the alarm type to repeating. However the cleanup
-            // should reset back to one-time when calling the alarm.reset() function.
 
             tryCompare(_alarm, "type", Alarm.OneTime, 3000, "Alarm type is not OneTime by default")
 
