@@ -33,6 +33,8 @@ ubuntu-clock-app (3.1) utopic; urgency=medium
   * Added alarm snooze settings (LP: #1354400)
   * Fixed default alarm label not being translatable (LP: #1365012)
   * Improved multiselect mode behavior and appearance (LP: #1370146)
+  * Removed custom listitem header used in the world city page and fixed listitem
+    anchors in the alarm settings page.
   * Enabled alarms automatically after updating it (LP: #1372090)
   * Automatically focus textfield (LP: #1372089)
 

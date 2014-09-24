@@ -115,7 +115,6 @@ Page {
                 anchors {
                     left: parent.left
                     right: parent.right
-                    margins: units.gu(-2)
                 }
 
                 collapseOnClick: true
@@ -123,7 +122,12 @@ Page {
 
                 Column {
                     id: _contentColumn
-                    width: parent.width
+
+                    anchors {
+                        left: parent.left
+                        right: parent.right
+                        margins: units.gu(-2)
+                    }
 
                     Item {
                         width: parent.width
@@ -178,7 +182,6 @@ Page {
                 anchors {
                     left: parent.left
                     right: parent.right
-                    margins: units.gu(-2)
                 }
 
                 collapseOnClick: true
@@ -186,7 +189,12 @@ Page {
 
                 Column {
                     id: _snoozeContentColumn
-                    width: parent.width
+
+                    anchors {
+                        left: parent.left
+                        right: parent.right
+                        margins: units.gu(-2)
+                    }
 
                     Item {
                         width: parent.width
