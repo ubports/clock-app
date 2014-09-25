@@ -87,22 +87,10 @@ MainView {
             mouseClick(soundList, centerOf(soundList).x, centerOf(soundList).y)
         }
 
-        function _getAlarmRepeatPage() {
-            var alarmRepeatPage = findChild(pageStack, "alarmRepeatPage")
-            waitForRendering(alarmRepeatPage)
-            return alarmRepeatPage
-        }
-
-        function _getAlarmLabelPage() {
-            var alarmLabelPage = findChild(pageStack, "alarmLabelPage")
-            waitForRendering(alarmLabelPage)
-            return alarmLabelPage
-        }
-
-        function _getAlarmSoundPage() {
-            var alarmSoundPage = findChild(pageStack, "alarmSoundPage")
-            waitForRendering(alarmSoundPage)
-            return alarmSoundPage
+        function _getPage(objectName) {
+            var page = findChild(pageStack, objectName)
+            waitForRendering(page)
+            return page
         }
 
         function _waitPickerMoving(picker) {
@@ -200,21 +188,21 @@ MainView {
             var date = _setAlarmTime(alarmTimePicker, time)
 
             _pressAlarmRepeatOption(addAlarmPage)
-            var alarmRepeatPage = _getAlarmRepeatPage()
+            var alarmRepeatPage = _getPage("alarmRepeatPage")
             _setAlarmRepeatDays(alarmRepeatPage, repeat)
             _pressBackButton()
 
             waitForRendering(addAlarmPage)
 
             _pressAlarmLabelOption(addAlarmPage)
-            var alarmLabelPage = _getAlarmLabelPage()
+            var alarmLabelPage = _getPage("alarmLabelPage")
             _setAlarmLabel(alarmLabelPage, label)
             _pressBackButton()
 
             waitForRendering(addAlarmPage)
 
             _pressAlarmSoundOption(addAlarmPage)
-            var alarmSoundPage = _getAlarmSoundPage()
+            var alarmSoundPage = _getPage("alarmSoundPage")
             _setAlarmSound(alarmSoundPage)
             _pressBackButton()
 
