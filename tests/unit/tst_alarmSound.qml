@@ -103,10 +103,10 @@ MainView {
 
             // Click on some random alarm sounds
             var secondSwitch = findChild(alarmSoundPage, "soundStatus"+2)
-            mouseClick(secondSwitch, secondSwitch.width/2, secondSwitch.height/2)
+            mouseClick(secondSwitch, centerOf(secondSwitch).x, centerOf(secondSwitch).y)
 
             var fourthSwitch = findChild(alarmSoundPage, "soundStatus"+2)
-            mouseClick(fourthSwitch, fourthSwitch.width/2, fourthSwitch.height/2)
+            mouseClick(fourthSwitch, centerOf(fourthSwitch.width).x, centerOf(fourthSwitch.height).y)
 
             // Check if only that alarm sound is check while the rest is disabled
             for(var i=0; i<repeater.count; i++) {
@@ -129,7 +129,7 @@ MainView {
                 var alarmSoundSwitch = findChild(alarmSoundPage, "soundStatus"+i)
 
                 if(alarmSoundSwitch.checked) {
-                    mouseClick(alarmSoundSwitch, alarmSoundSwitch.width/2, alarmSoundSwitch.height/2)
+                    mouseClick(alarmSoundSwitch, centerOf(alarmSoundSwitch).x, centerOf(alarmSoundSwitch.height).y)
                     compare(alarmSoundSwitch.checked, true, "Clicking on the only selected alarm sound disabled it")
                     break;
                 }

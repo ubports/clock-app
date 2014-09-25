@@ -122,7 +122,7 @@ MainView {
 
         function _setAlarmSound(alarmSoundPage) {
             var secondSwitch = findChild(alarmSoundPage, "soundStatus"+2)
-            mouseClick(secondSwitch, secondSwitch.width/2, secondSwitch.height/2)
+            mouseClick(secondSwitch, centerOf(secondSwitch).x, centerOf(secondSwitch).y)
         }
 
         function findAlarm(label, repeat, time, status) {

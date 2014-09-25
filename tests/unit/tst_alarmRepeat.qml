@@ -133,7 +133,7 @@ MainView {
                 var currentDaySwitch = findChild(alarmRepeatPageLoader.item, "daySwitch"+i)
 
                 if(!currentDaySwitch.checked) {
-                    mouseClick(dayListItem, dayListItem.width/2, dayListItem.height/2)
+                    mouseClick(dayListItem, centerOf(dayListItem).x, centerOf(dayListItem).y)
                 }
             }
 
