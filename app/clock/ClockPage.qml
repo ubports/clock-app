@@ -131,7 +131,7 @@ PageWithBottomEdge {
             Label {
                 id: location
                 objectName: "location"
-                text: "Location"
+                text: i18n.tr("Location")
                 fontSize: "medium"
                 anchors.verticalCenter: locationIcon.verticalCenter
                 color: UbuntuColors.midAubergine
