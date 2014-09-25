@@ -72,19 +72,9 @@ MainView {
             mouseClick(backButton, centerOf(backButton).x, centerOf(backButton).y)
         }
 
-        function _pressAlarmRepeatOption(addAlarmPage) {
-            var repeatListItem = findChild(addAlarmPage, "alarmRepeat")
-            mouseClick(repeatListItem, centerOf(repeatListItem).x, centerOf(repeatListItem).y)
-        }
-
-        function _pressAlarmLabelOption(addAlarmPage) {
-            var labelListItem = findChild(addAlarmPage, "alarmLabel")
-            mouseClick(labelListItem, centerOf(labelListItem).x, centerOf(labelListItem).y)
-        }
-
-        function _pressAlarmSoundOption(addAlarmPage) {
-            var soundList = findChild(addAlarmPage, "alarmSound")
-            mouseClick(soundList, centerOf(soundList).x, centerOf(soundList).y)
+        function _pressListItem(objectName, page) {
+            var listitem = findChild(page, objectName)
+            mouseClick(listitem, centerOf(listitem).x, centerOf(listitem).y)
         }
 
         function _getPage(objectName) {
@@ -187,21 +177,21 @@ MainView {
             var alarmTimePicker = findChild(pageStack, "alarmTime")
             var date = _setAlarmTime(alarmTimePicker, time)
 
-            _pressAlarmRepeatOption(addAlarmPage)
+            _pressListItem(addAlarmPage, "alarmRepeat")
             var alarmRepeatPage = _getPage("alarmRepeatPage")
             _setAlarmRepeatDays(alarmRepeatPage, repeat)
             _pressBackButton()
 
             waitForRendering(addAlarmPage)
 
-            _pressAlarmLabelOption(addAlarmPage)
+            _pressListItem(addAlarmPage, "alarmLabel")
             var alarmLabelPage = _getPage("alarmLabelPage")
             _setAlarmLabel(alarmLabelPage, label)
             _pressBackButton()
 
             waitForRendering(addAlarmPage)
 
-            _pressAlarmSoundOption(addAlarmPage)
+            _pressListItem(addAlarmPage, "alarmSound")
             var alarmSoundPage = _getPage("alarmSoundPage")
             _setAlarmSound(alarmSoundPage)
             _pressBackButton()
