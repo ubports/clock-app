@@ -23,12 +23,10 @@ XS-Testsuite: autopkgtest
 Package: ubuntu-clock-app
 Architecture: any
 Depends: qmlscene,
-         qtdeclarative5-localstorage-plugin,
-         qtdeclarative5-qtquick2-plugin,
          qtdeclarative5-u1db1.0,
          qtdeclarative5-ubuntu-ui-toolkit-plugin | qt-components-ubuntu,
          qtdeclarative5-xmllistmodel-plugin,
-          qtdeclarative5-qtmultimedia-plugin,
+         qtdeclarative5-qtmultimedia-plugin,
          ubuntu-touch-sounds,
          suru-icon-theme | ubuntu-mobile-icons,
          ${misc:Depends},
