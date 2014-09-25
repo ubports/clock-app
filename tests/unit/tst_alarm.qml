@@ -83,14 +83,14 @@ MainView {
             return page
         }
 
-        function _waitPickerMoving(picker) {
+        function _waitForPickerToStopMoving(picker) {
             waitForRendering(picker);
             tryCompareFunction(function(){return picker.moving}, false);
         }
 
         function _setAlarmTime(picker, time) {
             picker.date = time
-            _waitPickerMoving(picker)
+            _waitForPickerToStopMoving(picker)
             return picker.date
         }
 
