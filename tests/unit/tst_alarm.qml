@@ -72,7 +72,7 @@ MainView {
             mouseClick(backButton, centerOf(backButton).x, centerOf(backButton).y)
         }
 
-        function _pressListItem(objectName, page) {
+        function _pressListItem(page, objectName) {
             var listitem = findChild(page, objectName)
             mouseClick(listitem, centerOf(listitem).x, centerOf(listitem).y)
         }
