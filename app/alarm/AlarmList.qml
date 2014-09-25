@@ -131,7 +131,7 @@ MultipleSelectionListView {
             }
 
             else {
-                mainStack.push(Qt.resolvedUrl("EditAlarmPage.qml"),
+                pageStack.push(Qt.resolvedUrl("EditAlarmPage.qml"),
                                {"isNewAlarm": false, "alarmIndex": index})
             }
         }

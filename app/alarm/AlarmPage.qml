@@ -44,7 +44,7 @@ Page {
                     iconName: "add"
                     text: i18n.tr("Alarm")
                     onTriggered: {
-                        mainStack.push(Qt.resolvedUrl("EditAlarmPage.qml"))
+                        pageStack.push(Qt.resolvedUrl("EditAlarmPage.qml"))
                     }
                 }
             ]
