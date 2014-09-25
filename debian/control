@@ -10,12 +10,16 @@ Build-Depends: cmake,
                ubuntu-touch-sounds,
          	   suru-icon-theme | ubuntu-mobile-icons,
                qml-module-qttest,
+               qtdeclarative5-u1db1.0,
+               qtdeclarative5-qtmultimedia-plugin,
                qt5-default,
                qtbase5-dev,
                qtdeclarative5-dev,
                qtdeclarative5-dev-tools,
                qtdeclarative5-ubuntu-ui-toolkit-plugin,
                xvfb,
+               ${misc:Depends},
+         	   ${shlibs:Depends},
 Standards-Version: 3.9.5
 Section: misc
 Homepage: https://launchpad.net/ubuntu-clock-app
