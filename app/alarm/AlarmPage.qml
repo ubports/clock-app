@@ -54,28 +54,17 @@ Page {
             when: alarmListView.isInSelectionMode
 
             backAction: Action {
-                visible: false
+                iconName: "back"
+                text: i18n.tr("Back")
+                onTriggered: {
+                    alarmListView.cancelSelection()
+                }
             }
 
             contents: Item {
-                anchors.fill: parent ? parent : null
-                anchors.leftMargin: units.gu(-1)
-
-                HeaderButton {
-                    id: backButton
-
-                    anchors {
-                        left: parent.left
-                        verticalCenter: parent.verticalCenter
-                    }
-
-                    iconName: "back"
-                    text: i18n.tr("Back")
-
-                    onTriggered: {
-                        alarmListView.cancelSelection()
-                    }
-                }
+                anchors.right: parent ? parent.right: undefined
+                height: parent ? parent.height : undefined
+                width: childrenRect.width
 
                 HeaderButton {
                     id: selectButton
@@ -83,7 +72,6 @@ Page {
                     anchors {
                         right: deleteButton.left
                         rightMargin: units.gu(1)
-                        verticalCenter: parent.verticalCenter
                     }
 
                     text: {
@@ -114,10 +102,7 @@ Page {
                 HeaderButton {
                     id: deleteButton
 
-                    anchors {
-                        right: parent.right
-                        verticalCenter: parent.verticalCenter
-                    }
+                    anchors.right: parent.right
 
                     iconName: "delete"
                     text: i18n.tr("Delete")
