@@ -34,6 +34,7 @@ import "../upstreamcomponents"
 
 Page {
     id: worldCityList
+    objectName: "worldCityList"
 
     property bool isOnlineMode: false
 
@@ -48,6 +49,7 @@ Page {
             head: worldCityList.head
             actions: [
                 Action {
+                    objectName: "searchButton"
                     iconName: "search"
                     text: i18n.tr("City")
                     onTriggered: {
@@ -74,6 +76,7 @@ Page {
 
             contents: TextField {
                 id: searchField
+                objectName: "searchField"
 
                 inputMethodHints: Qt.ImhNoPredictiveText
                 placeholderText: i18n.tr("Search...")
@@ -203,6 +206,7 @@ Page {
 
     ListView {
         id: cityList
+        objectName: "cityList"
 
         function addWorldCity(city, country, timezone) {
             console.log("[LOG]: Adding city to U1db Database")
@@ -247,6 +251,7 @@ Page {
 
         delegate: ListItem.Base {
             showDivider: false
+            objectName: "worldCityItem" + index
 
             Column {
                 id: worldCityDelegateColumn
@@ -260,6 +265,7 @@ Page {
 
                 Label {
                     text: city
+                    objectName: "cityNameText"
                     width: parent.width
                     elide: Text.ElideRight
                     color: UbuntuColors.midAubergine
@@ -267,6 +273,7 @@ Page {
 
                 Label {
                     text: country
+                    objectName: "countryNameText"
                     fontSize: "xx-small"
                     width: parent.width
                     elide: Text.ElideRight

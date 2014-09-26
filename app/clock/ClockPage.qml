@@ -151,6 +151,7 @@ PageWithBottomEdge {
 
         AddWorldCityButton {
             id: addWorldCityButton
+            objectName: "addWorldCityButton"
 
             opacity: settingsIcon.opacity
             anchors {
