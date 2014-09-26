@@ -21,14 +21,14 @@ option(USE_XVFB "Use XVFB to run qml tests" on)
 
 enable_testing()
 
-# Standard install paths 
-include(GNUInstallDirs) 
+# Standard install paths
+include(GNUInstallDirs)
 
 set(APP_NAME                clock)
 set(APP_HARDCODE            ubuntu-clock-app)
 set(MAIN_QML                ${APP_HARDCODE}.qml)
 set(DESKTOP_FILE            "${APP_HARDCODE}.desktop")
-set(ICON                    clock-app)
+set(ICON                    clock-app@30.png)
 SET(AUTOPILOT_DIR           ubuntu_clock_app)
 set(URLS_FILE               "${PROJECT_NAME}_${APP_NAME}.url-dispatcher")
 
