@@ -23,6 +23,8 @@ endmacro()
 if(QMLTESTRUNNER_BIN AND XVFB_RUN_BIN)
     declare_qml_test("AlarmLabel" tst_alarmLabel.qml)
     declare_qml_test("AlarmRepeat" tst_alarmRepeat.qml)
+    declare_qml_test("Alarm" tst_alarm.qml)
+    declare_qml_test("AlarmSound" tst_alarmSound.qml)
 else()
     if (NOT QMLTESTRUNNER_BIN)
         message(WARNING "Qml tests disabled: qmltestrunner not found")
@@ -34,5 +36,7 @@ endif()
 set(QML_TST_FILES
     tst_alarmLabel.qml
     tst_alarmRepeat.qml
+    tst_alarm.qml
+    tst_alarmSound.qml
 )
 add_custom_target(tst_QmlFiles ALL SOURCES ${QML_TST_FILES})

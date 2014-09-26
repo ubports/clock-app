@@ -37,6 +37,7 @@ ubuntu-clock-app (3.1) utopic; urgency=medium
     anchors in the alarm settings page.
   * Enabled alarms automatically after updating it (LP: #1372090)
   * Automatically focus textfield (LP: #1372089)
+  * Added alarm feature qml tests and alarm sound unit tests
 
   [Zsombor Egri]
   * Fixed alarm status toggle being reverted immediately (LP: #1272337)
@@ -55,6 +56,9 @@ ubuntu-clock-app (3.1) utopic; urgency=medium
   [Stefano Verzegnassi]
   * Fixed wrong alignment of "Add city" button when the application is not
     localized in English. (LP: #1371229)
+
+  [Leo Arias]
+  * Fixed CMake and debian/control to run the qml tests during a deb package build
 
  -- Nekhelesh Ramananthan <krnekhelesh@gmail.com>  Wed, 13 Aug 2014 15:46:12 +0200
 

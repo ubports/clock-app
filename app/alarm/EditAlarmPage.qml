@@ -95,7 +95,7 @@ Page {
         tempAlarm.cancel()
 
         if(validateAlarm(tempAlarm)) {
-            mainStack.pop()
+            pageStack.pop()
         }
     }
 
@@ -118,7 +118,7 @@ Page {
         tempAlarm.save()
 
         if(validateAlarm(tempAlarm)) {
-            mainStack.pop()
+            pageStack.pop()
         }
     }
 
@@ -186,7 +186,7 @@ Page {
                 return;
             if ((operation > Alarm.NoOperation) &&
                     (operation < Alarm.Reseting)) {
-                mainStack.pop();
+                pageStack.pop();
             }
         }
 
@@ -246,6 +246,7 @@ Page {
 
         DatePicker {
             id: _timePicker
+            objectName: "alarmTime"
 
             /*
               #FIXME: DatePicker does not respect the user's locale. The bug
@@ -288,7 +289,7 @@ Page {
 
             text: i18n.tr("Repeat")
             subText: alarmUtils.format_day_string(_alarm.daysOfWeek, _alarm.type)
-            onClicked: mainStack.push(Qt.resolvedUrl("AlarmRepeat.qml"),
+            onClicked: pageStack.push(Qt.resolvedUrl("AlarmRepeat.qml"),
                                       {"alarm": _alarm})
         }
 
@@ -298,7 +299,7 @@ Page {
 
             text: i18n.tr("Label")
             subText: _alarm.message
-            onClicked: mainStack.push(Qt.resolvedUrl("AlarmLabel.qml"),
+            onClicked: pageStack.push(Qt.resolvedUrl("AlarmLabel.qml"),
                                       {"alarm": _alarm})
         }
 
@@ -310,7 +311,7 @@ Page {
             property string _soundName: "Suru arpeggio"
 
             text: i18n.tr("Sound")
-            onClicked: mainStack.push(Qt.resolvedUrl("AlarmSound.qml"), {
+            onClicked: pageStack.push(Qt.resolvedUrl("AlarmSound.qml"), {
                                           "alarmSound": _alarmSound,
                                           "alarm": _alarm,
                                           "soundModel": soundModel

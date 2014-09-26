@@ -18,9 +18,7 @@
 
 import QtQuick 2.3
 import Ubuntu.Components 1.1
-
 import "../components"
-import "../components/Utils.js" as Utils
 
 Page {
     id: alarmPage
@@ -28,7 +26,7 @@ Page {
     title: i18n.tr("Alarms")
     objectName: 'AlarmPage'
 
-    Component.onCompleted: Utils.log(debugMode, "Alarm Page loaded")
+    Component.onCompleted: console.log("Alarm Page loaded")
 
     flickable: null
 
@@ -44,7 +42,7 @@ Page {
                     iconName: "add"
                     text: i18n.tr("Alarm")
                     onTriggered: {
-                        mainStack.push(Qt.resolvedUrl("EditAlarmPage.qml"))
+                        pageStack.push(Qt.resolvedUrl("EditAlarmPage.qml"))
                     }
                 }
             ]

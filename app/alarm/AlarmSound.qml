@@ -23,6 +23,7 @@ import Ubuntu.Components.ListItems 1.0 as ListItem
 
 Page {
     id: _alarmSoundPage
+    objectName: "alarmSoundPage"
 
     title: i18n.tr("Sound")
     flickable: _pageFlickable
