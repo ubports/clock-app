@@ -7,32 +7,32 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2014-09-20 02:34-0700\n"
-"PO-Revision-Date: 2014-09-24 13:58+0000\n"
+"POT-Creation-Date: 2014-09-25 11:41+0200\n"
+"PO-Revision-Date: 2014-09-25 12:59+0000\n"
 "Last-Translator: Richard Somlói <ricsipontaz@gmail.com>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-09-25 06:56+0000\n"
+"X-Launchpad-Export-Date: 2014-09-26 06:54+0000\n"
 "X-Generator: Launchpad (build 17196)\n"
 
 #: ../app/alarm/AlarmDelegate.qml:136
 #, qt-format
 msgid "in %1d %1h %2m"
-msgstr "%1nap %1 óra és %2 perc múlva"
+msgstr "%1 n %1 ó és %2 perc múlva"
 
 #: ../app/alarm/AlarmDelegate.qml:145
 #, qt-format
 msgid "in %1h %2m"
-msgstr "%1 óra és %2 perc múlva"
+msgstr "%1 ó és %2 perc múlva"
 
 #: ../app/alarm/AlarmDelegate.qml:153
 #, c-format, qt-format
 msgid "in %1m"
 msgstr "%1m múlva"
 
-#: ../app/alarm/AlarmLabel.qml:30 ../app/alarm/AlarmLabel.qml:52
+#: ../app/alarm/AlarmLabel.qml:30 ../app/alarm/AlarmLabel.qml:56
 #: ../app/alarm/EditAlarmPage.qml:299
 msgid "Label"
 msgstr "Címke"
@@ -83,8 +83,8 @@ msgstr "Beállítások"
 #: ../app/alarm/AlarmSettingsPage.qml:55 ../app/alarm/AlarmSettingsPage.qml:56
 #: ../app/alarm/AlarmSettingsPage.qml:65 ../app/alarm/AlarmSettingsPage.qml:66
 #: ../app/alarm/AlarmSettingsPage.qml:67 ../app/alarm/AlarmSettingsPage.qml:68
-#: ../app/alarm/AlarmSettingsPage.qml:135
-#: ../app/alarm/AlarmSettingsPage.qml:198
+#: ../app/alarm/AlarmSettingsPage.qml:139
+#: ../app/alarm/AlarmSettingsPage.qml:206
 #, qt-format
 msgid "%1 minutes"
 msgstr "%1 perc"
@@ -93,19 +93,19 @@ msgstr "%1 perc"
 msgid "Alarm volume"
 msgstr "Riasztás hangereje"
 
-#: ../app/alarm/AlarmSettingsPage.qml:134
+#: ../app/alarm/AlarmSettingsPage.qml:138
 msgid "Silence after"
 msgstr "Csendesedjen el ennyi idő után"
 
-#: ../app/alarm/AlarmSettingsPage.qml:197
+#: ../app/alarm/AlarmSettingsPage.qml:205
 msgid "Snooze for"
-msgstr "Szundi ideje"
+msgstr "Szundi hossza"
 
-#: ../app/alarm/AlarmSettingsPage.qml:241
+#: ../app/alarm/AlarmSettingsPage.qml:249
 msgid "Vibration"
 msgstr "Rezgés"
 
-#: ../app/alarm/AlarmSettingsPage.qml:270
+#: ../app/alarm/AlarmSettingsPage.qml:278
 msgid "Change time and date"
 msgstr "Dátum és idő módosítása"
 
@@ -135,11 +135,15 @@ msgstr "Új riasztás"
 
 #: ../app/alarm/EditAlarmPage.qml:40
 msgid "Edit alarm"
-msgstr "Riasztás szerkesztése"
+msgstr "Szerkesztés"
 
 #: ../app/alarm/EditAlarmPage.qml:336
 msgid "Delete alarm"
 msgstr "Riasztás törlése"
+
+#: ../app/clock/ClockPage.qml:134
+msgid "Location"
+msgstr "Helyszín"
 
 #: ../app/worldclock/AddWorldCityButton.qml:30
 msgid "Add"
@@ -154,11 +158,11 @@ msgstr "hozzáadása"
 #. is behind or ahead of the time at the current location
 #: ../app/worldclock/UserWorldCityDelegate.qml:140
 msgid "behind"
-msgstr "hátrébb"
+msgstr "több"
 
 #: ../app/worldclock/UserWorldCityDelegate.qml:141
 msgid "ahead"
-msgstr "előrébb"
+msgstr "kevesebb"
 
 #. TRANSLATORS: the first argument is hour, followed by
 #. minute, and the translation for either 'behind' or
@@ -166,21 +170,21 @@ msgstr "előrébb"
 #: ../app/worldclock/UserWorldCityDelegate.qml:151
 #, qt-format
 msgid "%1h %2m %3"
-msgstr "%1 órával és %2 perccel %3"
+msgstr "%1 ó és %2 perccel %3"
 
 #. TRANSLATORS: the first argument is hour, followed by the
 #. translation for either 'behind' or 'ahead'
 #: ../app/worldclock/UserWorldCityDelegate.qml:160
 #, qt-format
 msgid "%1h %2"
-msgstr "%1 órával és %2 perccel"
+msgstr "%1 órával %2"
 
 #. TRANSLATORS: the first argument is minute, followed by the
 #. translation for either 'behind' or 'ahead'
 #: ../app/worldclock/UserWorldCityDelegate.qml:168
 #, qt-format
 msgid "%1m %2"
-msgstr "%1 órával és %2 perccel"
+msgstr "%1 perccel %2"
 
 #: ../app/worldclock/UserWorldCityDelegate.qml:174
 msgid "Same time"
@@ -190,23 +194,23 @@ msgstr "Azonos időzóna"
 msgid "Select a city"
 msgstr "Város kiválasztása"
 
-#: ../app/worldclock/WorldCityList.qml:78
+#: ../app/worldclock/WorldCityList.qml:79
 msgid "Search..."
 msgstr "Keresés…"
 
-#: ../app/worldclock/WorldCityList.qml:155
+#: ../app/worldclock/WorldCityList.qml:156
 msgid "Searching for a city"
 msgstr "Városok keresése"
 
-#: ../app/worldclock/WorldCityList.qml:160
+#: ../app/worldclock/WorldCityList.qml:161
 msgid "No City Found"
-msgstr "Nincs találat"
+msgstr "Nem található ilyen város"
 
-#: ../app/worldclock/WorldCityList.qml:166
+#: ../app/worldclock/WorldCityList.qml:167
 msgid "Unable to connect."
 msgstr "A kapcsolat nem jött létre."
 
-#: ../app/worldclock/WorldCityList.qml:167
+#: ../app/worldclock/WorldCityList.qml:168
 msgid "Please check your network connection and try again"
 msgstr "Kérjük ellenőrizze a hálózati kapcsolatát és próbálja újra"
 

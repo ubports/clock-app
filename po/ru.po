@@ -7,14 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2014-09-20 02:34-0700\n"
+"POT-Creation-Date: 2014-09-25 11:41+0200\n"
 "PO-Revision-Date: 2014-09-02 09:22+0000\n"
 "Last-Translator: Jay ZDLin <Unknown>\n"
 "Language-Team: Russian <ru@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-09-21 07:21+0000\n"
+"X-Launchpad-Export-Date: 2014-09-26 06:54+0000\n"
 "X-Generator: Launchpad (build 17196)\n"
 
 #: ../app/alarm/AlarmDelegate.qml:136
@@ -32,7 +32,7 @@ msgstr ""
 msgid "in %1m"
 msgstr ""
 
-#: ../app/alarm/AlarmLabel.qml:30 ../app/alarm/AlarmLabel.qml:52
+#: ../app/alarm/AlarmLabel.qml:30 ../app/alarm/AlarmLabel.qml:56
 #: ../app/alarm/EditAlarmPage.qml:299
 msgid "Label"
 msgstr "Метка"
@@ -83,8 +83,8 @@ msgstr "Настройки"
 #: ../app/alarm/AlarmSettingsPage.qml:55 ../app/alarm/AlarmSettingsPage.qml:56
 #: ../app/alarm/AlarmSettingsPage.qml:65 ../app/alarm/AlarmSettingsPage.qml:66
 #: ../app/alarm/AlarmSettingsPage.qml:67 ../app/alarm/AlarmSettingsPage.qml:68
-#: ../app/alarm/AlarmSettingsPage.qml:135
-#: ../app/alarm/AlarmSettingsPage.qml:198
+#: ../app/alarm/AlarmSettingsPage.qml:139
+#: ../app/alarm/AlarmSettingsPage.qml:206
 #, qt-format
 msgid "%1 minutes"
 msgstr "%1 мин"
@@ -93,19 +93,19 @@ msgstr "%1 мин"
 msgid "Alarm volume"
 msgstr "Громкость будильника"
 
-#: ../app/alarm/AlarmSettingsPage.qml:134
+#: ../app/alarm/AlarmSettingsPage.qml:138
 msgid "Silence after"
 msgstr "Заглушать после"
 
-#: ../app/alarm/AlarmSettingsPage.qml:197
+#: ../app/alarm/AlarmSettingsPage.qml:205
 msgid "Snooze for"
 msgstr ""
 
-#: ../app/alarm/AlarmSettingsPage.qml:241
+#: ../app/alarm/AlarmSettingsPage.qml:249
 msgid "Vibration"
 msgstr "Вибро"
 
-#: ../app/alarm/AlarmSettingsPage.qml:270
+#: ../app/alarm/AlarmSettingsPage.qml:278
 msgid "Change time and date"
 msgstr "Изменить время и дату"
 
@@ -140,6 +140,10 @@ msgstr "Редактировать будильник"
 #: ../app/alarm/EditAlarmPage.qml:336
 msgid "Delete alarm"
 msgstr "Удалить будильник"
+
+#: ../app/clock/ClockPage.qml:134
+msgid "Location"
+msgstr ""
 
 #: ../app/worldclock/AddWorldCityButton.qml:30
 msgid "Add"
@@ -190,23 +194,23 @@ msgstr ""
 msgid "Select a city"
 msgstr "Выберите город"
 
-#: ../app/worldclock/WorldCityList.qml:78
+#: ../app/worldclock/WorldCityList.qml:79
 msgid "Search..."
 msgstr "Поиск..."
 
-#: ../app/worldclock/WorldCityList.qml:155
+#: ../app/worldclock/WorldCityList.qml:156
 msgid "Searching for a city"
 msgstr "Поиск города"
 
-#: ../app/worldclock/WorldCityList.qml:160
+#: ../app/worldclock/WorldCityList.qml:161
 msgid "No City Found"
 msgstr "Город не найден"
 
-#: ../app/worldclock/WorldCityList.qml:166
+#: ../app/worldclock/WorldCityList.qml:167
 msgid "Unable to connect."
 msgstr "Не удалось подключиться."
 
-#: ../app/worldclock/WorldCityList.qml:167
+#: ../app/worldclock/WorldCityList.qml:168
 msgid "Please check your network connection and try again"
 msgstr "Проверьте наличие сети и попробуйте ещё раз"
 
