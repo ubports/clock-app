@@ -1,7 +1,15 @@
 project(com.ubuntu.clock C CXX)
 cmake_minimum_required(VERSION 2.8.9)
+
 find_program(INTLTOOL_MERGE intltool-merge)
+if(NOT INTLTOOL_MERGE)
+    message(FATAL_ERROR "Could not find intltool-merge, please install the intltool package")
+endif()
+
 find_program(INTLTOOL_EXTRACT intltool-extract)
+if(NOT INTLTOOL_EXTRACT)
+    message(FATAL_ERROR "Could not find intltool-merge, please install the intltool package")
+endif()
 
 set (UBUNTU_MANIFEST_PATH "manifest.json.in" CACHE INTERNAL "Relative path to the manifest file")
 set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -fno-permissive -pedantic -Wall -Wextra")
