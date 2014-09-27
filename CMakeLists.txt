@@ -8,7 +8,7 @@ endif()
 
 find_program(INTLTOOL_EXTRACT intltool-extract)
 if(NOT INTLTOOL_EXTRACT)
-    message(FATAL_ERROR "Could not find intltool-merge, please install the intltool package")
+    message(FATAL_ERROR "Could not find intltool-extract, please install the intltool package")
 endif()
 
 set (UBUNTU_MANIFEST_PATH "manifest.json.in" CACHE INTERNAL "Relative path to the manifest file")
