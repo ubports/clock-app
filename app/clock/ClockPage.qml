@@ -33,7 +33,16 @@ PageWithBottomEdge {
 
     flickable: null
 
-    Component.onCompleted: Utils.log(debugMode, "Clock Page loaded")
+    Component.onCompleted: {
+        Utils.log(debugMode, "Clock Page loaded")
+        bottomEdgeTimer.start()
+    }
+
+    Timer {
+        id: bottomEdgeTimer
+        interval: 100
+        onTriggered: _clockPage.giveFocus()
+    }
 
     Flickable {
         id: _flickable

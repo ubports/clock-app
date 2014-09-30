@@ -87,6 +87,9 @@ Page {
     signal bottomEdgeReleased()
     signal bottomEdgeDismissed()
 
+    function giveFocus() {
+        tip.forceActiveFocus()
+    }
 
     function showBottomEdgePage(source, properties)
     {
