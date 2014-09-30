@@ -101,7 +101,6 @@ MainView {
               alarm. For instance it should read "Next alarm in 9h23m".
             */
             bottomEdgeTitle: i18n.tr("Alarms")
-            bottomEdgePageComponent: AlarmPage {}
         }
     }
 }
