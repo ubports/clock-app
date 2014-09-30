@@ -62,7 +62,7 @@
 
 */
 
-import QtQuick 2.3
+import QtQuick 2.2
 import Ubuntu.Components 1.1
 
 Page {
@@ -155,8 +155,14 @@ Page {
             horizontalCenter: bottomEdge.horizontalCenter
             bottomMargin: hiden ? - height + units.gu(1) : -units.gu(1)
             Behavior on bottomMargin {
-                UbuntuNumberAnimation {
-                    duration: UbuntuAnimation.SnapDuration
+                SequentialAnimation {
+                    // wait some msecs in case of the focus change again, to avoid flickering
+                    PauseAnimation {
+                        duration: 300
+                    }
+                    UbuntuNumberAnimation {
+                        duration: UbuntuAnimation.SnapDuration
+                    }
                 }
             }
         }
@@ -205,6 +211,9 @@ Page {
     MouseArea {
         id: mouseArea
 
+        property real previousY: -1
+        property string dragDirection: "None"
+
         preventStealing: true
         drag {
             axis: Drag.YAxis
@@ -224,15 +233,30 @@ Page {
 
         onReleased: {
             page.bottomEdgeReleased()
-            if (bottomEdge.y < (page.height - bottomEdgeExpandThreshold - bottomEdge.tipHeight)) {
+            if ((dragDirection === "BottomToTop") &&
+                    bottomEdge.y < (page.height - bottomEdgeExpandThreshold - bottomEdge.tipHeight)) {
                 bottomEdge.state = "expanded"
             } else {
                 bottomEdge.state = "collapsed"
-                bottomEdge.y = bottomEdge.height
             }
+            previousY = -1
+            dragDirection = "None"
         }
 
-        onPressed: tip.forceActiveFocus()
+        onPressed: {
+            previousY = mouse.y
+            tip.forceActiveFocus()
+        }
+
+        onMouseYChanged: {
+            var yOffset = previousY - mouseY
+            // skip if was a small move
+            if (Math.abs(yOffset) <= units.gu(2)) {
+                return
+            }
+            previousY = mouseY
+            dragDirection = yOffset > 0 ? "BottomToTop" : "TopToBottom"
+        }
     }
 
     FakeHeader {
@@ -281,10 +305,6 @@ Page {
                 PropertyChanges {
                     target: fakeHeader
                     y: -fakeHeader.height
-                }
-                PropertyChanges {
-                    target: tip
-                    opacity: 1.0
                 }
             },
             State {
