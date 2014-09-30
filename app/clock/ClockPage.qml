@@ -40,6 +40,10 @@ PageWithBottomEdge {
 
         Component.onCompleted: otherElementsStartUpAnimation.start()
 
+        onFlickStarted: {
+            forceActiveFocus()
+        }
+
         anchors.fill: parent
         contentWidth: parent.width
         contentHeight: clock.height + date.height + locationRow.height
