@@ -32,6 +32,12 @@ ubuntu-clock-app (3.1) utopic; urgency=medium
   * Fixed clock mode animations being too slow (LP: #1365440)
   * Added alarm snooze settings (LP: #1354400)
   * Fixed default alarm label not being translatable (LP: #1365012)
+  * Improved multiselect mode behavior and appearance (LP: #1370146)
+  * Removed custom listitem header used in the world city page and fixed listitem
+    anchors in the alarm settings page.
+  * Enabled alarms automatically after updating it (LP: #1372090)
+  * Automatically focus textfield (LP: #1372089)
+  * Added alarm feature qml tests and alarm sound unit tests
 
   [Zsombor Egri]
   * Fixed alarm status toggle being reverted immediately (LP: #1272337)
@@ -46,6 +52,13 @@ ubuntu-clock-app (3.1) utopic; urgency=medium
 
   [Dennis O'Flaherty]
   * Show a message to the user when the alarm list is empty (LP: #1364555)
+
+  [Stefano Verzegnassi]
+  * Fixed wrong alignment of "Add city" button when the application is not
+    localized in English. (LP: #1371229)
+
+  [Leo Arias]
+  * Fixed CMake and debian/control to run the qml tests during a deb package build
 
  -- Nekhelesh Ramananthan <krnekhelesh@gmail.com>  Wed, 13 Aug 2014 15:46:12 +0200
 

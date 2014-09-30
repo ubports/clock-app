@@ -1,4 +1,4 @@
-# Chinese (Simplified) translation for ubuntu-clock-app
+# Czech translation for ubuntu-clock-app
 # Copyright (c) 2014 Rosetta Contributors and Canonical Ltd 2014
 # This file is distributed under the same license as the ubuntu-clock-app package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2014.
@@ -8,9 +8,9 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2014-09-25 11:41+0200\n"
-"PO-Revision-Date: 2014-08-27 14:54+0000\n"
+"PO-Revision-Date: 2014-09-21 18:17+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: Chinese (Simplified) <zh_CN@li.org>\n"
+"Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -44,12 +44,12 @@ msgstr ""
 
 #: ../app/alarm/AlarmPage.qml:28 ../app/ubuntu-clock-app.qml:103
 msgid "Alarms"
-msgstr "闹钟"
+msgstr "Budíky"
 
 #: ../app/alarm/AlarmPage.qml:45 ../app/alarm/EditAlarmPage.qml:47
 #: ../app/alarm/EditAlarmPage.qml:174
 msgid "Alarm"
-msgstr "闹钟"
+msgstr "Budík"
 
 #: ../app/alarm/AlarmPage.qml:75 ../app/worldclock/WorldCityList.qml:66
 msgid "Back"
@@ -77,7 +77,7 @@ msgstr ""
 
 #: ../app/alarm/AlarmSettingsPage.qml:29
 msgid "Settings"
-msgstr "设置"
+msgstr "Nastavení"
 
 #: ../app/alarm/AlarmSettingsPage.qml:53 ../app/alarm/AlarmSettingsPage.qml:54
 #: ../app/alarm/AlarmSettingsPage.qml:55 ../app/alarm/AlarmSettingsPage.qml:56
@@ -127,7 +127,7 @@ msgstr ""
 
 #: ../app/alarm/AlarmUtils.qml:45
 msgid "Daily"
-msgstr "每天"
+msgstr "Denně"
 
 #: ../app/alarm/EditAlarmPage.qml:40
 msgid "New alarm"
@@ -216,7 +216,7 @@ msgstr ""
 
 #: ubuntu-clock-app.desktop.in.in.h:1
 msgid "Clock"
-msgstr "时钟"
+msgstr "Hodiny"
 
 #: ubuntu-clock-app.desktop.in.in.h:2
 msgid ""

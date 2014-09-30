@@ -38,6 +38,10 @@ Page {
         }
     }
 
+    Component.onCompleted: {
+        _labelEntry.forceActiveFocus()
+    }
+
     Column {
         id: _labelColumn
 

@@ -40,26 +40,17 @@ Page {
     title: isNewAlarm ? i18n.tr("New alarm") : i18n.tr("Edit alarm")
     visible: false
 
-    head {
-        backAction: Action {
-            iconName: "close"
-            onTriggered: {
-                mainStack.pop()
+    head.actions: Action {
+        id: saveAlarmButton
+        iconName: "ok"
+        objectName: "saveAlarmAction"
+        text: i18n.tr("Alarm")
+        onTriggered: {
+            if(isNewAlarm) {
+                saveNewAlarm()
             }
-        }
-
-        actions: Action {
-            id: saveAlarmButton
-            iconName: "ok"
-            objectName: "saveAlarmAction"
-            text: i18n.tr("Alarm")
-            onTriggered: {
-                if(isNewAlarm) {
-                    saveNewAlarm()
-                }
-                else {
-                    updateAlarm()
-                }
+            else {
+                updateAlarm()
             }
         }
     }
@@ -104,7 +95,7 @@ Page {
         tempAlarm.cancel()
 
         if(validateAlarm(tempAlarm)) {
-            mainStack.pop()
+            pageStack.pop()
         }
     }
 
@@ -120,14 +111,14 @@ Page {
         tempAlarm.message = _alarm.message
         tempAlarm.date = alarmTime
         tempAlarm.type = _alarm.type
-        tempAlarm.enabled = _alarm.enabled
+        tempAlarm.enabled = true
         tempAlarm.sound = _alarm.sound
         tempAlarm.daysOfWeek = _alarm.daysOfWeek
 
         tempAlarm.save()
 
         if(validateAlarm(tempAlarm)) {
-            mainStack.pop()
+            pageStack.pop()
         }
     }
 
@@ -195,7 +186,7 @@ Page {
                 return;
             if ((operation > Alarm.NoOperation) &&
                     (operation < Alarm.Reseting)) {
-                mainStack.pop();
+                pageStack.pop();
             }
         }
 
@@ -255,6 +246,7 @@ Page {
 
         DatePicker {
             id: _timePicker
+            objectName: "alarmTime"
 
             /*
               #FIXME: DatePicker does not respect the user's locale. The bug
@@ -297,7 +289,7 @@ Page {
 
             text: i18n.tr("Repeat")
             subText: alarmUtils.format_day_string(_alarm.daysOfWeek, _alarm.type)
-            onClicked: mainStack.push(Qt.resolvedUrl("AlarmRepeat.qml"),
+            onClicked: pageStack.push(Qt.resolvedUrl("AlarmRepeat.qml"),
                                       {"alarm": _alarm})
         }
 
@@ -307,7 +299,7 @@ Page {
 
             text: i18n.tr("Label")
             subText: _alarm.message
-            onClicked: mainStack.push(Qt.resolvedUrl("AlarmLabel.qml"),
+            onClicked: pageStack.push(Qt.resolvedUrl("AlarmLabel.qml"),
                                       {"alarm": _alarm})
         }
 
@@ -319,7 +311,7 @@ Page {
             property string _soundName: "Suru arpeggio"
 
             text: i18n.tr("Sound")
-            onClicked: mainStack.push(Qt.resolvedUrl("AlarmSound.qml"), {
+            onClicked: pageStack.push(Qt.resolvedUrl("AlarmSound.qml"), {
                                           "alarmSound": _alarmSound,
                                           "alarm": _alarm,
                                           "soundModel": soundModel
