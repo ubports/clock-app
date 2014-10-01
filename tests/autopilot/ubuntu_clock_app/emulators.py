@@ -91,6 +91,7 @@ class PageWithBottomEdge(MainView):
         self.bottomEdgePageLoaded.wait_for(True)
         try:
             action_item = self.wait_select_single(objectName='bottomEdgeTip')
+            action_item.hiden.wait_for(False)
             action_item.enabled.wait_for(True)
             start_x = (action_item.globalRect.x +
                        (action_item.globalRect.width * 0.5))
