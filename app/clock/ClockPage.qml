@@ -22,7 +22,6 @@ import Ubuntu.Components 1.1
 import "../components"
 import "../upstreamcomponents"
 import "../worldclock"
-import "../components/Utils.js" as Utils
 
 PageWithBottomEdge {
     id: _clockPage
@@ -31,10 +30,13 @@ PageWithBottomEdge {
     // Property to keep track of the clock mode
     property alias isDigital: clock.isDigital
 
+    // Property to keep track of the clock time
+    property alias clockTime: clock.analogTime
+
     flickable: null
 
     Component.onCompleted: {
-        Utils.log(debugMode, "Clock Page loaded")
+        console.log("[LOG] Clock Page loaded")
         _clockPage.setBottomEdgePage(Qt.resolvedUrl("../alarm/AlarmPage.qml"), {})
     }
 
