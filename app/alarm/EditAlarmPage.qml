@@ -23,7 +23,6 @@ import Qt.labs.folderlistmodel 2.1
 import Ubuntu.Components.Pickers 1.0
 import Ubuntu.Components.ListItems 1.0 as ListItem
 import "../components"
-import "../components/Utils.js" as Utils
 
 Page {
     id: _addAlarmPage
@@ -177,7 +176,7 @@ Page {
 
         onErrorChanged: {
             if (error !== Alarm.NoError) {
-                Utils.log(debugMode, "Error saving alarm, code: " + error)
+                console.log("[LOG]: Error saving alarm, code: " + error)
             }
         }
 

@@ -21,7 +21,6 @@ import Ubuntu.Components 1.1
 import Ubuntu.Components.ListItems 1.0 as ListItem
 import "../components"
 import "../upstreamcomponents"
-import "../components/Utils.js" as Utils
 
 MultipleSelectionListView {
     id: alarmListView
