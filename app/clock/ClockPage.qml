@@ -36,7 +36,7 @@ PageWithBottomEdge {
     flickable: null
 
     Component.onCompleted: {
-        console.log("[LOG] Clock Page loaded")
+        console.log("[LOG]: Clock Page loaded")
         _clockPage.setBottomEdgePage(Qt.resolvedUrl("../alarm/AlarmPage.qml"), {})
     }
 
