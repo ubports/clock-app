@@ -84,31 +84,6 @@ MainView {
     DateTime {
         id: localTimeSource
         updateInterval: clockModeDocument.contents.digitalMode ? 1000 : 10
-
-        /*
-         Create a new Date() object and pass the date, month, year, hour, minute
-         and second received from the DateTime plugin manually to ensure the
-         timezone info is set correctly.
-
-         Javascript Month is 0-11 while QDateTime month is 1-12. Hence the -1
-         is required.
-        */
-
-        /*
-          FIXME: When the upstream QT bug at
-          https://bugreports.qt-project.org/browse/QTBUG-40275 is fixed it will be
-          possible to receive a datetime object directly instead of using this hack.
-        */
-        property var time: new Date
-                           (
-                               localTimeSource.localDateString.split(":")[0],
-                               localTimeSource.localDateString.split(":")[1]-1,
-                               localTimeSource.localDateString.split(":")[2],
-                               localTimeSource.localTimeString.split(":")[0],
-                               localTimeSource.localTimeString.split(":")[1],
-                               localTimeSource.localTimeString.split(":")[2],
-                               localTimeSource.localTimeString.split(":")[3]
-                           )
     }
 
     onApplicationStateChanged: {
@@ -131,7 +106,31 @@ MainView {
               title: "Clock"
             */
 
-            clockTime: localTimeSource.time
+            /*
+             Create a new Date() object and pass the date, month, year, hour, minute
+             and second received from the DateTime plugin manually to ensure the
+             timezone info is set correctly.
+
+             Javascript Month is 0-11 while QDateTime month is 1-12. Hence the -1
+             is required.
+            */
+
+            /*
+              FIXME: When the upstream QT bug at
+              https://bugreports.qt-project.org/browse/QTBUG-40275 is fixed it will be
+              possible to receive a datetime object directly instead of using this hack.
+            */
+
+            clockTime: new Date
+                       (
+                           localTimeSource.localDateString.split(":")[0],
+                           localTimeSource.localDateString.split(":")[1]-1,
+                           localTimeSource.localDateString.split(":")[2],
+                           localTimeSource.localTimeString.split(":")[0],
+                           localTimeSource.localTimeString.split(":")[1],
+                           localTimeSource.localTimeString.split(":")[2],
+                           localTimeSource.localTimeString.split(":")[3]
+                       )
 
             /*
               #TODO: The bottom edge title should reflect the time to the next
