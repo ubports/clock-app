@@ -137,7 +137,9 @@ MainView {
                 }
             }
 
-            compare(alarmRepeatPageLoader.item.alarm.daysOfWeek, 127, "Alarm Object daysOfWeek value is incorrect w.r.t to the UI")
+            var dailyDaysOfWeek = Alarm.Monday | Alarm.Tuesday | Alarm.Wednesday | Alarm.Thursday | Alarm.Friday | Alarm.Saturday | Alarm.Sunday
+
+            compare(alarmRepeatPageLoader.item.alarm.daysOfWeek, dailyDaysOfWeek, "Alarm Object daysOfWeek value is incorrect w.r.t to the UI")
         }
 
         /*
@@ -147,7 +149,7 @@ MainView {
         */
         function test_alarmObjectSetsSwitchStatus() {
             _alarm.type = Alarm.Repeating
-            _alarm.daysOfWeek = 96 // Enabled saturday and sunday
+            _alarm.daysOfWeek = Alarm.Saturday | Alarm.Sunday
 
             for(var i=0; i<repeater.count; i++) {
                 var currentDayLabel = findChild(alarmRepeatPageLoader.item, "alarmDay"+i)
