@@ -16,6 +16,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+import QtQuick 2.3
 import QtTest 1.0
 import Ubuntu.Components 1.1
 import "../../app/alarm"
@@ -24,8 +25,52 @@ TestCase {
     id: alarmUtilsTest
     name: "AlarmUtilsLibrary"
 
+    property var futureTime: new Date()
+    property var currentTime: new Date()
+
     AlarmUtils {
         id: alarmUtils
+    }
+
+    ListModel {
+        id: mockAlarmDatabase
+    }
+
+    function initTestCase() {
+        /*
+         Here the alarm database is mocked by creating 2 alarms in the future.
+         The alarm list is as follows,
+
+         Alarm1, currentTime+2hrs, not enabled
+         Alarm2, currentTime+7hrs, enabled
+        */
+        futureTime.setHours((futureTime.getHours() + 2))
+        mockAlarmDatabase.append({"name": "Alarm1", "date": futureTime, "enabled": false})
+        futureTime.setHours((futureTime.getHours() + 5))
+        mockAlarmDatabase.append({"name": "Alarm2", "date": futureTime, "enabled": true})
+    }
+
+    /*
+     This test checks if the the bottom edge title is set correctly according
+     to the active alarms in the alarm database.
+    */
+    function test_bottomEdgeTitle() {
+        var result
+
+        // Check if active alarm is correctly picked out amongst disabled alarms
+        result = alarmUtils.set_bottom_edge_title(mockAlarmDatabase, currentTime)
+        compare(result, "Next Alarm in 7h 1m", "Bottom edge title is incorrect")
+
+        // Check if "No active alarms" is returned when there are no active alarms
+        mockAlarmDatabase.set(1, {"enabled": false})
+        result = alarmUtils.set_bottom_edge_title(mockAlarmDatabase, currentTime)
+        compare(result, "No active alarms", "Bottom edge title is not correctly set when there are no enabled alarms")
+
+        // Check if the immediate active alarm is returned when there are several active alarms
+        mockAlarmDatabase.set(1, {"enabled": true})
+        mockAlarmDatabase.set(0, {"enabled": true})
+        result = alarmUtils.set_bottom_edge_title(mockAlarmDatabase, currentTime)
+        compare(result, "Next Alarm in 2h 1m", "Bottom edge title is not correctly set to the next immediate active alarm where there are multiple active alarms.")
     }
 
     /*
