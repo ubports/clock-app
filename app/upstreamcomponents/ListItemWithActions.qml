@@ -34,63 +34,80 @@ Item {
     property alias internalAnchors: mainContents.anchors
     default property alias contents: mainContents.children
 
-    readonly property double actionWidth: units.gu(5)
+    readonly property double actionWidth: units.gu(4)
     readonly property double leftActionWidth: units.gu(10)
     readonly property double actionThreshold: actionWidth * 0.4
     readonly property double threshold: 0.4
     readonly property string swipeState: main.x == 0 ? "Normal" : main.x > 0 ? "LeftToRight" : "RightToLeft"
     readonly property alias swipping: mainItemMoving.running
+    readonly property bool _showActions: mouseArea.pressed || swipeState != "Normal" || swipping
+
+    /* internal */
+    property var _visibleRightSideActions: filterVisibleActions(rightSideActions)
 
     signal itemClicked(var mouse)
     signal itemPressAndHold(var mouse)
 
-    function returnToBoundsRTL()
+    function returnToBoundsRTL(direction)
     {
         var actionFullWidth = actionWidth + units.gu(2)
-        var xOffset = Math.abs(main.x)
-        var index = Math.min(Math.floor(xOffset / actionFullWidth), rightSideActions.length)
 
-        if (index < 1) {
-            main.x = 0
-        } else if (index === rightSideActions.length) {
-            main.x = -rightActionsView.width
-        } else {
-            main.x = -(actionFullWidth * index)
+        // go back to normal state if swipping reverse
+        if (direction === "LTR") {
+            updatePosition(0)
+            return
+        } else if (!triggerActionOnMouseRelease) {
+            updatePosition(-rightActionsView.width + units.gu(2))
+            return
         }
+
+        var xOffset = Math.abs(main.x)
+        var index = Math.min(Math.floor(xOffset / actionFullWidth), _visibleRightSideActions.length)
+        var newX = 0
+      if (index === _visibleRightSideActions.length) {
+            newX = -(rightActionsView.width - units.gu(2))
+        } else if (index >= 1) {
+            newX = -(actionFullWidth * index)
+        }
+        updatePosition(newX)
     }
 
-    function returnToBoundsLTR()
+    function returnToBoundsLTR(direction)
     {
         var finalX = leftActionWidth
-        if (main.x > (finalX * root.threshold))
-            main.x = finalX
-        else
-            main.x = 0
+        if ((direction === "RTL") || (main.x <= (finalX * root.threshold)))
+            finalX = 0
+        updatePosition(finalX)
     }
 
-    function returnToBounds()
+    function returnToBounds(direction)
     {
         if (main.x < 0) {
-            returnToBoundsRTL()
+            returnToBoundsRTL(direction)
         } else if (main.x > 0) {
-            returnToBoundsLTR()
+            returnToBoundsLTR(direction)
+        } else {
+            updatePosition(0)
         }
     }
 
-    function contains(item, point)
+    function contains(item, point, marginX)
     {
-        return (point.x >= item.x) && (point.x <= (item.x + item.width)) && (point.y >= item.y) && (point.y <= (item.y + item.height));
+        var itemStartX = item.x - marginX
+        var itemEndX = item.x + item.width + marginX
+        return (point.x >= itemStartX) && (point.x <= itemEndX) &&
+               (point.y >= item.y) && (point.y <= (item.y + item.height));
     }
 
     function getActionAt(point)
     {
-        if (contains(leftActionView, point)) {
+        if (contains(leftActionView, point, 0)) {
             return leftSideAction
-        } else if (contains(rightActionsView, point)) {
+        } else if (contains(rightActionsView, point, 0)) {
             var newPoint = root.mapToItem(rightActionsView, point.x, point.y)
             for (var i = 0; i < rightActionsRepeater.count; i++) {
                 var child = rightActionsRepeater.itemAt(i)
-                if (contains(child, newPoint)) {
+                if (contains(child, newPoint, units.gu(1))) {
                     return i
                 }
             }
@@ -100,15 +117,16 @@ Item {
 
     function updateActiveAction()
     {
-        if ((main.x <= -root.actionWidth) &&
-            (main.x > -rightActionsView.width)) {
+        if (triggerActionOnMouseRelease &&
+            (main.x <= -(root.actionWidth + units.gu(2))) &&
+            (main.x > -(rightActionsView.width - units.gu(2)))) {
             var actionFullWidth = actionWidth + units.gu(2)
             var xOffset = Math.abs(main.x)
-            var index = Math.min(Math.floor(xOffset / actionFullWidth), rightSideActions.length)
+            var index = Math.min(Math.floor(xOffset / actionFullWidth), _visibleRightSideActions.length)
             index = index - 1
             if (index > -1) {
                 root.activeItem = rightActionsRepeater.itemAt(index)
-                root.activeAction = root.rightSideActions[index]
+                root.activeAction = root._visibleRightSideActions[index]
             }
         } else {
             root.activeAction = null
@@ -117,7 +135,29 @@ Item {
 
     function resetSwipe()
     {
-        main.x = 0
+        updatePosition(0)
+    }
+
+    function filterVisibleActions(actions)
+    {
+        var visibleActions = []
+        for(var i = 0; i < actions.length; i++) {
+            var action = actions[i]
+            if (action.visible) {
+                visibleActions.push(action)
+            }
+        }
+        return visibleActions
+    }
+
+    function updatePosition(pos)
+    {
+        if (!root.triggerActionOnMouseRelease && (pos !== 0)) {
+            mouseArea.state = pos > 0 ? "RightToLeft" : "LeftToRight"
+        } else {
+            mouseArea.state = ""
+        }
+        main.x = pos
     }
 
     states: [
@@ -153,45 +193,49 @@ Item {
         }
         width: root.leftActionWidth + actionThreshold
         visible: leftSideAction
-        color: "red"
+        color: UbuntuColors.red
 
         Icon {
             anchors {
                 centerIn: parent
                 horizontalCenterOffset: actionThreshold / 2
             }
-            name: leftSideAction ? leftSideAction.iconName : ""
+            name: leftSideAction && _showActions ? leftSideAction.iconName : ""
             color: Theme.palette.selected.field
             height: units.gu(3)
             width: units.gu(3)
         }
     }
 
-    Item {
+    Rectangle {
        id: rightActionsView
 
        anchors {
            top: main.top
            left: main.right
-           leftMargin: units.gu(1)
            bottom: main.bottom
        }
-       visible: rightSideActions.length > 0
-       width: rightActionsRepeater.count > 0 ? rightActionsRepeater.count * (root.actionWidth + units.gu(2)) + actionThreshold : 0
+       visible: _visibleRightSideActions.length > 0
+       width: rightActionsRepeater.count > 0 ? rightActionsRepeater.count * (root.actionWidth + units.gu(2)) + root.actionThreshold + units.gu(2) : 0
+       color: "white"
        Row {
-           anchors.fill: parent
+           anchors{
+               top: parent.top
+               left: parent.left
+               leftMargin: units.gu(2)
+               right: parent.right
+               rightMargin: units.gu(2)
+               bottom: parent.bottom
+           }
            spacing: units.gu(2)
            Repeater {
                id: rightActionsRepeater
 
-               model: rightSideActions
+               model: _showActions ? _visibleRightSideActions : []
                Item {
                    property alias image: img
 
-                   anchors {
-                       top: parent.top
-                       bottom: parent.bottom
-                   }
+                   height: rightActionsView.height
                    width: root.actionWidth
 
                    Icon {
@@ -200,10 +244,10 @@ Item {
                        anchors.centerIn: parent
                        width: units.gu(3)
                        height: units.gu(3)
-                       name: iconName
-                       color: root.activeAction === modelData || !root.triggerActionOnMouseRelease ? UbuntuColors.lightAubergine : Theme.palette.selected.background
+                       name: modelData.iconName
+                       color: root.activeAction === modelData ? UbuntuColors.lightAubergine : UbuntuColors.lightGrey
                    }
-               }
+              }
            }
        }
     }
@@ -262,7 +306,6 @@ Item {
             }
         }
         Behavior on color {
-            enabled: (root.color != root.selectedColor)
            ColorAnimation {}
         }
     }
@@ -302,7 +345,10 @@ Item {
             value: 1.0
         }
         ScriptAction {
-            script: root.activeAction.triggered(root)
+            script: {
+                root.activeAction.triggered(root)
+                mouseArea.state = ""
+            }
         }
         PauseAnimation {
             duration: 500
@@ -318,24 +364,59 @@ Item {
     MouseArea {
         id: mouseArea
 
-        property bool locked: root.locked || ((root.leftSideAction === null) && (root.rightSideActions.count === 0))
+        property bool locked: root.locked || ((root.leftSideAction === null) && (root._visibleRightSideActions.count === 0))
         property bool manual: false
+        property string direction: "None"
+        property real lastX: -1
 
         anchors.fill: parent
         drag {
             target: locked ? null : main
             axis: Drag.XAxis
-            minimumX: rightActionsView.visible ? -(rightActionsView.width + root.actionThreshold) : 0
+            minimumX: rightActionsView.visible ? -(rightActionsView.width) : 0
             maximumX: leftActionView.visible ? leftActionView.width : 0
+            threshold: root.actionThreshold
+        }
+
+        states: [
+            State {
+                name: "LeftToRight"
+                PropertyChanges {
+                    target: mouseArea
+                    drag.maximumX: 0
+                }
+            },
+            State {
+                name: "RightToLeft"
+                PropertyChanges {
+                    target: mouseArea
+                    drag.minimumX: 0
+                }
+            }
+        ]
+
+        onMouseXChanged: {
+            var offset = (lastX - mouseX)
+            if (Math.abs(offset) <= root.actionThreshold) {
+                return
+            }
+            lastX = mouseX
+            direction = offset > 0 ? "RTL" : "LTR";
+        }
+
+        onPressed: {
+            lastX = mouse.x
         }
 
         onReleased: {
             if (root.triggerActionOnMouseRelease && root.activeAction) {
                 triggerAction.start()
             } else {
-                root.returnToBounds()
+                root.returnToBounds(direction)
                 root.activeAction = null
             }
+            lastX = -1
+            direction = "None"
         }
         onClicked: {
             if (main.x === 0) {
@@ -349,7 +430,7 @@ Item {
                 var actionIndex = getActionAt(Qt.point(mouse.x, mouse.y))
                 if (actionIndex !== -1) {
                     root.activeItem = rightActionsRepeater.itemAt(actionIndex)
-                    root.activeAction = root.rightSideActions[actionIndex]
+                    root.activeAction = root._visibleRightSideActions[actionIndex]
                     triggerAction.start()
                     return
                 }
