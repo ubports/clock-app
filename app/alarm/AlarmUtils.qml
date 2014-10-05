@@ -50,6 +50,31 @@ QtObject {
         }
     }
 
+    // Function to set the bottom edge title with "Next Active in..."
+    function set_bottom_edge_title(alarmModel, clockTime) {
+        var bottom_edge_title = i18n.tr("No active alarms")
+
+        /*
+         Check if alarm model received is valid and has saved alarms and only
+         then proceed to find the next active alarm.
+        */
+        if (alarmModel && alarmModel.count) {
+            var activeAlarmDate = _get_next_active_alarm(alarmModel, clockTime)
+
+            // Return immediately if there are no active alarms found
+            if (!activeAlarmDate)  {
+                return bottom_edge_title
+            }
+        }
+
+        else {
+            return bottom_edge_title
+        }
+
+        bottom_edge_title = i18n.tr("Next Alarm %1").arg(get_time_to_next_alarm(activeAlarmDate - clockTime))
+        return bottom_edge_title
+    }
+
     // Function to format the time to next alarm into a string
     function get_time_to_next_alarm(totalTime) {
         if(totalTime < 0) {
@@ -102,6 +127,27 @@ QtObject {
     /*
       INTERNAL FUNCTIONS
     */
+
+    /*
+     Function to get the next active alarm. This function ignores alarms in the
+     past and also iteratively looks through every alarm since the alarm model
+     does not always list the active alarms in chronological order.
+    */
+    function _get_next_active_alarm(alarmModel, clockTime) {
+        var activeAlarmDate = undefined
+
+        for (var i=0; i<alarmModel.count; i++) {
+            var currentAlarm = alarmModel.get(i)
+            if (currentAlarm.enabled && currentAlarm.date > clockTime) {
+                if (activeAlarmDate === undefined ||
+                        currentAlarm.date < activeAlarmDate) {
+                    activeAlarmDate = currentAlarm.date
+                }
+            }
+        }
+
+        return activeAlarmDate
+    }
 
     // Function to split time (in ms) into days, hours and minutes
     function _split_time(totalTime) {

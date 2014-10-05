@@ -23,6 +23,8 @@ import "../components"
 Page {
     id: alarmPage
 
+    property var alarmModel
+
     title: i18n.tr("Alarms")
     objectName: 'AlarmPage'
 

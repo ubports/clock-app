@@ -51,10 +51,6 @@ MultipleSelectionListView {
     clip: true
     anchors.fill: parent
 
-    AlarmUtils {
-        id: alarmUtils
-    }
-
     listDelegate: AlarmDelegate {
         id: alarmDelegate
         objectName: "alarm" + index

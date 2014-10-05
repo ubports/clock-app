@@ -17,8 +17,8 @@
  */
 
 import QtQuick 2.3
-import U1db 1.0 as U1db
 import Ubuntu.Components 1.1
+import "../alarm"
 import "../components"
 import "../upstreamcomponents"
 import "../worldclock"
@@ -33,11 +33,18 @@ PageWithBottomEdge {
     // Property to keep track of the clock time
     property alias clockTime: clock.analogTime
 
+    property var alarmModel
+
     flickable: null
+    bottomEdgeTitle: alarmUtils.set_bottom_edge_title(alarmModel, clockTime)
 
     Component.onCompleted: {
         console.log("[LOG]: Clock Page loaded")
-        _clockPage.setBottomEdgePage(Qt.resolvedUrl("../alarm/AlarmPage.qml"), {})
+        _clockPage.setBottomEdgePage(Qt.resolvedUrl("../alarm/AlarmPage.qml"), { alarmModel: alarmModel })
+    }
+
+    AlarmUtils {
+        id: alarmUtils
     }
 
     Flickable {
