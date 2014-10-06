@@ -52,25 +52,33 @@ TestCase {
 
     /*
      This test checks if the the bottom edge title is set correctly according
-     to the active alarms in the alarm database.
+     to the active alarms amongst other disabled alarms.
     */
-    function test_bottomEdgeTitle() {
-        var result
-
-        // Check if active alarm is correctly picked out amongst disabled alarms
-        result = alarmUtils.set_bottom_edge_title(mockAlarmDatabase, currentTime)
+    function test_bottomEdgeTitleMustDisplayActiveAlarm() {
+        var result = alarmUtils.set_bottom_edge_title(mockAlarmDatabase, currentTime)
         compare(result, "Next Alarm in 7h 1m", "Bottom edge title is incorrect")
+    }
 
-        // Check if "No active alarms" is returned when there are no active alarms
+    /*
+     This test checks if the bottom edge title is correctly set to "No Active
+     Alarms" where there are no enabled alarms"
+    */
+    function test_bottomEdgeTitleMustDisplayNoActiveAlarm() {
         mockAlarmDatabase.set(1, {"enabled": false})
-        result = alarmUtils.set_bottom_edge_title(mockAlarmDatabase, currentTime)
+        var result = alarmUtils.set_bottom_edge_title(mockAlarmDatabase, currentTime)
         compare(result, "No active alarms", "Bottom edge title is not correctly set when there are no enabled alarms")
-
-        // Check if the immediate active alarm is returned when there are several active alarms
         mockAlarmDatabase.set(1, {"enabled": true})
+    }
+
+    /*
+     This test checks if the bottom edge title is correctly set with the next
+     immediate active alarm amongst several active alarms"
+    */
+    function test_bottomEdgeTitleMustDisplayNextActiveAlarm() {
         mockAlarmDatabase.set(0, {"enabled": true})
-        result = alarmUtils.set_bottom_edge_title(mockAlarmDatabase, currentTime)
+        var result = alarmUtils.set_bottom_edge_title(mockAlarmDatabase, currentTime)
         compare(result, "Next Alarm in 2h 1m", "Bottom edge title is not correctly set to the next immediate active alarm where there are multiple active alarms.")
+        mockAlarmDatabase.set(0, {"enabled": false})
     }
 
     /*
