@@ -53,6 +53,7 @@ ListItemWithActions {
 
             Label {
                 text: model.city
+                objectName: "userCityNameText"
                 width: parent.width
                 elide: Text.ElideRight
                 color: UbuntuColors.midAubergine
@@ -60,6 +61,7 @@ ListItemWithActions {
 
             Label {
                 text: model.country
+                objectName: "userCountryNameText"
                 fontSize: "xx-small"
                 width: parent.width
                 elide: Text.ElideRight
@@ -135,18 +137,6 @@ ListItemWithActions {
             text: {
                 var day;
 
-                if(model.daysTo === 0) {
-                    day = i18n.tr("Today")
-                }
-
-                else if(model.daysTo === 1) {
-                    day = i18n.tr("Tomorrow")
-                }
-
-                else if(model.daysTo === -1) {
-                    day = i18n.tr("Yesterday")
-                }
-
                 // TRANSLATORS: this indicates if the time in a world clock
                 // is behind or ahead of the time at the current location
                 var isBehind = model.timeTo > 0 ? i18n.tr("behind")
@@ -157,35 +147,33 @@ ListItemWithActions {
                 var hour = timediff[0]
 
                 if(hour > 0 &&  minute > 0) {
-                    // TRANSLATORS: the first argument is a day, followed by hour, minute and the
-                    // translation for either 'behind' or 'ahead'
-                    return (i18n.tr("%1\n%2 h %3 m %4"))
-                    .arg(day)
+                    // TRANSLATORS: the first argument is hour, followed by
+                    // minute, and the translation for either 'behind' or
+                    // 'ahead'
+                    return (i18n.tr("%1h %2m %3"))
                     .arg(hour)
                     .arg(minute)
                     .arg(isBehind)
                 }
 
                 else if(hour > 0 && minute === 0) {
-                    // TRANSLATORS: the first argument is a day, followed by hour and the
+                    // TRANSLATORS: the first argument is hour, followed by the
                     // translation for either 'behind' or 'ahead'
-                    return (i18n.tr("%1\n%2 h %3"))
-                    .arg(day)
+                    return (i18n.tr("%1h %2"))
                     .arg(hour)
                     .arg(isBehind)
                 }
 
                 else if(hour === 0 && minute > 0) {
-                    // TRANSLATORS: the first argument is a day, followed by minute and the
+                    // TRANSLATORS: the first argument is minute, followed by the
                     // translation for either 'behind' or 'ahead'
-                    return ("%1\n%2 m %3")
-                    .arg(day)
+                    return (i18n.tr("%1m %2"))
                     .arg(minute)
                     .arg(isBehind)
                 }
 
                 else {
-                    return i18n.tr("No Time Difference")
+                    return i18n.tr("Same time")
                 }
             }
         }

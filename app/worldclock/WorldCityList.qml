@@ -34,6 +34,7 @@ import "../upstreamcomponents"
 
 Page {
     id: worldCityList
+    objectName: "worldCityList"
 
     property bool isOnlineMode: false
 
@@ -48,6 +49,7 @@ Page {
             head: worldCityList.head
             actions: [
                 Action {
+                    objectName: "searchButton"
                     iconName: "search"
                     text: i18n.tr("City")
                     onTriggered: {
@@ -65,6 +67,7 @@ Page {
                 iconName: "back"
                 text: i18n.tr("Back")
                 onTriggered: {
+                    cityList.forceActiveFocus()
                     searchField.text = ""
                     worldCityList.state = "default"
                     isOnlineMode = false
@@ -73,6 +76,7 @@ Page {
 
             contents: TextField {
                 id: searchField
+                objectName: "searchField"
 
                 inputMethodHints: Qt.ImhNoPredictiveText
                 placeholderText: i18n.tr("Search...")
@@ -202,6 +206,7 @@ Page {
 
     ListView {
         id: cityList
+        objectName: "cityList"
 
         function addWorldCity(city, country, timezone) {
             console.log("[LOG]: Adding city to U1db Database")
@@ -224,7 +229,7 @@ Page {
         }
 
         onFlickStarted: {
-            Qt.inputMethod.hide()
+            forceActiveFocus()
         }
 
         anchors.fill: parent
@@ -241,20 +246,12 @@ Page {
         section.labelPositioning: ViewSection.InlineLabels
 
         section.delegate: ListItem.Header {
-            anchors.margins: units.gu(2)
-            Label {
-                /*
-                  Ideally we wouldn't need this label inside a listitem header,
-                  however the default header text is indented right 2 gu which
-                  doesn't match design spec.
-                */
-                text: section
-                anchors.verticalCenter: parent.verticalCenter
-            }
+            text: section
         }
 
         delegate: ListItem.Base {
             showDivider: false
+            objectName: "worldCityItem" + index
 
             Column {
                 id: worldCityDelegateColumn
@@ -268,6 +265,7 @@ Page {
 
                 Label {
                     text: city
+                    objectName: "cityNameText"
                     width: parent.width
                     elide: Text.ElideRight
                     color: UbuntuColors.midAubergine
@@ -275,6 +273,7 @@ Page {
 
                 Label {
                     text: country
+                    objectName: "countryNameText"
                     fontSize: "xx-small"
                     width: parent.width
                     elide: Text.ElideRight

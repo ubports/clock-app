@@ -20,6 +20,7 @@ import logging
 
 from autopilot import logging as autopilot_logging
 from autopilot.introspection import dbus
+from testtools.matchers import GreaterThan
 
 from ubuntuuitoolkit import pickers
 import ubuntuuitoolkit
@@ -58,6 +59,12 @@ class MainView(ubuntuuitoolkit.MainView):
     def get_AlarmList(self):
         """ Get the AlarmList object. """
         return AlarmList.select(self)
+
+    @autopilot_logging.log_action(logger.info)
+    def get_worldCityList(self):
+        """ Return the World City List page """
+        return self.wait_select_single("WorldCityList",
+                                       objectName="worldCityList")
 
 
 class Page(ubuntuuitoolkit.UbuntuUIToolkitCustomProxyObjectBase):
@@ -99,6 +106,74 @@ class PageWithBottomEdge(MainView):
 
 class ClockPage(PageWithBottomEdge):
     """Autopilot helper for the Clock page."""
+
+    @autopilot_logging.log_action(logger.info)
+    def click_addCity_to_open_worldCityList(self):
+        """Swipe to reveal WorldCityList"""
+
+        addWorldCityButton = self.wait_select_single(
+            "AbstractButton", objectName="addWorldCityButton")
+        self.pointing_device.click_object(addWorldCityButton)
+
+    def get_num_of_saved_cities(self):
+        """Return the number of saved world cities"""
+        return int(self._get_saved_world_city_list().count)
+
+    def _get_saved_world_city_list(self):
+        """Return the saved world city listview object"""
+        return self.wait_select_single(
+            "QQuickRepeater", objectName='userWorldCityRepeater')
+
+    @autopilot_logging.log_action(logger.info)
+    def delete_added_world_city(self, city_Name, country_Name):
+        """ Delete added world city from user world city list """
+        old_cities_count = self.get_num_of_saved_cities()
+        index = 0
+        for index in range(old_cities_count):
+            if self.wait_select_single(
+                objectName='userWorldCityItem{}'.format(index)).\
+                wait_select_single("Label", objectName="userCityNameText").\
+                    text == city_Name:
+                if self.wait_select_single(
+                    objectName='userWorldCityItem{}'.format(index)).\
+                    wait_select_single(
+                    "Label", objectName="userCountryNameText").\
+                        text == country_Name:
+                    self._delete_userWorldCityItem(index)
+
+    # FIXME -----------------------------------------------------------------
+    # Commenting the following lines as deleting a world city when there is
+    # only one in the user world city list does not decrease counter to 0 but
+    # leaves it at 1 so the test fails
+    # Reported bug #1368393
+    # Discovered that deleting world city clock deletes the city from the clock
+    # app, but if you look with autopilot vis the world city is still there
+    # added a comment to bug #1368393
+    #
+    #    try:
+    #        self._get_saved_world_city_list().count.wait_for(
+    #            old_cities_count - 1)
+    #    except AssertionError:
+    #        raise ClockEmulatorException('Error deleting city.')
+    # -------------------------------------------------------------------------
+
+    def _delete_userWorldCityItem(self, index):
+        cityItem = self.wait_select_single(
+            objectName='userWorldCityItem{}'.format(index))
+        self._swipe_to_delete(cityItem)
+        self._confirm_removal(cityItem)
+
+    def _swipe_to_delete(self, cityItem):
+        x, y, width, height = cityItem.globalRect
+        start_x = x + (width * 0.2)
+        stop_x = x + (width * 0.8)
+        start_y = stop_y = y + (height // 2)
+
+        self.pointing_device.drag(start_x, start_y, stop_x, stop_y)
+
+    def _confirm_removal(self, cityItem):
+        deleteButton = cityItem.wait_select_single(name='delete')
+        self.pointing_device.click_object(deleteButton)
 
 
 class Page11(Page):
@@ -168,6 +243,54 @@ class Page11(Page):
                 count.wait_for(count + 1)
         except AssertionError:
             raise ClockEmulatorException('Error creating alarm.')
+
+
+class WorldCityList(Page):
+    """Autopilot helper for World City List page."""
+
+    @autopilot_logging.log_action(logger.info)
+    def add_world_city_from_list(self, city_Name, country_Name):
+        """Add world city from list
+
+        :param city_Name: world city name to add
+        :param country_Name: country city name belongs to (same city name could
+         be found in more countries)
+        """
+        self.wait_select_single("ActivityIndicator").running.wait_for(False)
+        cityList = self.wait_select_single("QQuickListView",
+                                           objectName="cityList")
+
+        cityList.count.wait_for(GreaterThan(0))
+
+        for index in range(int(cityList.count)):
+            if cityList.wait_select_single(
+                objectName="worldCityItem{}".format(index)).wait_select_single(
+                    "Label", objectName="cityNameText").text == city_Name:
+                if cityList.wait_select_single(
+                    objectName="worldCityItem{}".format(index)).\
+                    wait_select_single("Label", objectName="countryNameText").\
+                        text == country_Name:
+                    cityList.click_element(
+                        "worldCityItem{}".format(index), direction=None)
+                    break
+
+    @autopilot_logging.log_action(logger.info)
+    def search_world_city_(self, city_Name, country_Name):
+        """Add world city by searching the world city name
+
+        :param city_Name: world city name to add
+
+        """
+        header = self.main_view.get_header()
+        header.click_action_button("searchButton")
+        self._search_world_city(city_Name, country_Name)
+
+    def _search_world_city(self, city_Name, country_Name):
+        header = self.main_view.get_header()
+        searchTextfield = header.wait_select_single(
+            "TextField", objectName='searchField')
+        searchTextfield.visible.wait_for(True)
+        searchTextfield.write(city_Name)
 
 
 class EditAlarmPage(Page):

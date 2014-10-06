@@ -1,4 +1,4 @@
-file(GLOB GRAPHICS_FILES *.png *.jpg)
+file(GLOB GRAPHICS_FILES *.png *.jpg *.svg)
 
 # make the files visible in the qtcreator tree
 if(NOT "${CMAKE_CURRENT_SOURCE_DIR}" STREQUAL "${CMAKE_CURRENT_BINARY_DIR}")

@@ -38,6 +38,12 @@ class AlarmSettings: public QObject
                 WRITE setDuration
                 NOTIFY durationChanged)
 
+    // Property to control the snooze duration
+    Q_PROPERTY(int snoozeDuration
+               READ snoozeDuration
+               WRITE setSnoozeDuration
+               NOTIFY snoozeDurationChanged)
+
     // Property to control the haptic feedback mode
     Q_PROPERTY(QString vibration
                READ vibration
@@ -53,6 +59,9 @@ public:
     // Function to return the alarm duration
     int duration() const;
 
+    // Function to return the snooze duration
+    int snoozeDuration() const;
+
     // Function to return the alarm haptic mode
     QString vibration() const;
 
@@ -61,6 +70,9 @@ public:
 
     // Function to set the alarm duration
     void setDuration(int duration);
+
+    // Function to set the snooze duration
+    void setSnoozeDuration(int snoozeDuration);
 
     // Function to set the alarm haptic mode
     void setVibration(QString vibration);
@@ -72,6 +84,9 @@ signals:
     // Signal to notify the duration change to QML
     void durationChanged();
 
+    // Signal to notify the snooze duration change to QML
+    void snoozeDurationChanged();
+
     // Signal to notify the vibration mode change to QML
     void vibrationChanged();
 
@@ -81,6 +96,9 @@ private:
 
     // Keep a store of the alarm duration
     int m_duration;
+
+    // Keep a store of the alarm snooze duration
+    int m_snoozeDuration;
 
     // Keep a store of the alarm haptic mode
     QString m_vibration;

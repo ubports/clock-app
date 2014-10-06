@@ -5,17 +5,10 @@ endif(NOT "${CMAKE_CURRENT_SOURCE_DIR}" STREQUAL "${CMAKE_CURRENT_BINARY_DIR}")
 
 
 if(CLICK_MODE)
-  set(ICON "${ICON}@30.png")
+  set(ICON ${ICON})
   install(FILES ${ICON} DESTINATION ${CMAKE_INSTALL_PREFIX})
 endif(CLICK_MODE)
 
-# substitute variables in the desktop file
-set(DESKTOP_FILE "ubuntu-clock-app.desktop")
-message("-- Configuring ubuntu-clock-app.desktop.in")
-configure_file(${DESKTOP_FILE}.in ${CMAKE_CURRENT_BINARY_DIR}/${DESKTOP_FILE})
-
-install(FILES ${CMAKE_CURRENT_BINARY_DIR}/${DESKTOP_FILE} 
-    DESTINATION ${CMAKE_INSTALL_DATADIR}/applications)
 install(FILES ${MAIN_QML} DESTINATION ${UBUNTU-CLOCK_APP_DIR})
 
 add_subdirectory(clock)

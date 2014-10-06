@@ -24,11 +24,55 @@ Page {
     id: _alarmRepeatPage
     objectName: "alarmRepeatPage"
 
+    // Property to set the alarm days of the week in the edit alarm page
+    property var alarm
+
     visible: false
     title: i18n.tr("Repeat")
 
-    // Property to set the alarm days of the week in the edit alarm page
-    property var alarm
+    head.actions: [
+        Action {
+            text: i18n.tr("Select All")
+
+            iconSource: {
+                if(alarm.daysOfWeek === 127)
+                    return Qt.resolvedUrl("../graphics/select-none.svg")
+                else
+                    return Qt.resolvedUrl("../graphics/select.svg")
+            }
+
+            onTriggered: {
+                if (alarm.daysOfWeek === 127) {
+                    for (var i=0; i<_alarmDays.count; i++) {
+                        _alarmDays.itemAt(i).isChecked = false
+                    }
+                }
+
+                else {
+                    for (var i=0; i<_alarmDays.count; i++) {
+                        _alarmDays.itemAt(i).isChecked = true
+                    }
+                }
+            }
+        }
+    ]
+
+    /*
+     By Default, the alarm is set to Today. However if it is a one-time alarm,
+     this should be set to none, since this page shows the days the alarm
+     repeats on and a one-time alarm shoudn't repeat on any day. While exiting
+     the page, if the alarm is still a one-time alarm, then the alarm is set
+     back to its original value (Today).
+    */
+    Component.onCompleted: {
+        if (alarm.type === Alarm.OneTime)
+            alarm.daysOfWeek = 0
+    }
+
+    Component.onDestruction: {
+        if (alarm.type === Alarm.OneTime)
+            alarm.daysOfWeek = Alarm.AutoDetect
+    }
 
     ListModel {
         id: daysModel
@@ -84,6 +128,8 @@ Page {
                 id: _alarmDayHolder
                 objectName: "alarmDayHolder" + index
 
+                property alias isChecked: daySwitch.checked
+
                 Label {
                     id: _alarmDay
                     objectName: 'alarmDay' + index
@@ -98,16 +144,28 @@ Page {
                     text: Qt.locale().standaloneDayName(day, Locale.LongFormat)
                 }
 
-                control: Switch {
+                control: CheckBox {
+                    id: daySwitch
                     objectName: 'daySwitch' + index
+
+                    anchors {
+                        right: parent.right
+                        rightMargin: units.gu(-0.2)
+                    }
+
                     checked: (alarm.daysOfWeek & flag) == flag
+                             && alarm.type === Alarm.Repeating
                     onCheckedChanged: {
                         if (checked) {
                             alarm.daysOfWeek |= flag
+                        } else {
+                            alarm.daysOfWeek &= ~flag
                         }
 
-                        else {
-                            alarm.daysOfWeek &= ~flag
+                        if (alarm.daysOfWeek > 0) {
+                            alarm.type = Alarm.Repeating
+                        } else {
+                            alarm.type = Alarm.OneTime
                         }
                     }
                 }

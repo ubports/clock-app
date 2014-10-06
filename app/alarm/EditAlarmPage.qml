@@ -40,25 +40,17 @@ Page {
     title: isNewAlarm ? i18n.tr("New alarm") : i18n.tr("Edit alarm")
     visible: false
 
-    head {
-        backAction: Action {
-            iconName: "close"
-            onTriggered: {
-                mainStack.pop()
+    head.actions: Action {
+        id: saveAlarmButton
+        iconName: "ok"
+        objectName: "saveAlarmAction"
+        text: i18n.tr("Alarm")
+        onTriggered: {
+            if(isNewAlarm) {
+                saveNewAlarm()
             }
-        }
-
-        actions: Action {
-            iconName: "ok"
-            objectName: "saveAlarmAction"
-            text: i18n.tr("Alarm")
-            onTriggered: {
-                if(isNewAlarm) {
-                    saveNewAlarm()
-                }
-                else {
-                    updateAlarm()
-                }
+            else {
+                updateAlarm()
             }
         }
     }
@@ -74,12 +66,13 @@ Page {
         var alarmTime = new Date()
         alarmTime.setHours(_timePicker.hours, _timePicker.minutes, 0)
 
+        validateDate(alarmTime)
+
         /*
-          _alarm.sound, _alarm.message and _alarm.daysOfWeek have been set in
+          _alarm.sound, _alarm.daysOfWeek and _alarm.message have been set in
           the respective individual pages already.
         */
         _alarm.date = alarmTime
-        _alarm.type = Alarm.Repeating
         _alarm.enabled = true
         _alarm.save()
     }
@@ -102,7 +95,7 @@ Page {
         tempAlarm.cancel()
 
         if(validateAlarm(tempAlarm)) {
-            mainStack.pop()
+            pageStack.pop()
         }
     }
 
@@ -113,17 +106,19 @@ Page {
         var alarmTime = new Date()
         alarmTime.setHours(_timePicker.hours, _timePicker.minutes, 0)
 
+        validateDate(alarmTime)
+
         tempAlarm.message = _alarm.message
         tempAlarm.date = alarmTime
-        tempAlarm.type = Alarm.Repeating
-        tempAlarm.enabled = _alarm.enabled
+        tempAlarm.type = _alarm.type
+        tempAlarm.enabled = true
         tempAlarm.sound = _alarm.sound
         tempAlarm.daysOfWeek = _alarm.daysOfWeek
 
         tempAlarm.save()
 
         if(validateAlarm(tempAlarm)) {
-            mainStack.pop()
+            pageStack.pop()
         }
     }
 
@@ -154,19 +149,55 @@ Page {
         }
     }
 
+    function validateDate(date) {
+        if (_alarm.type === Alarm.OneTime) {
+            _alarm.daysOfWeek = Alarm.AutoDetect
+
+            if (date < new Date()) {
+                var tomorrow = new Date()
+                tomorrow.setDate(tomorrow.getDate() + 1)
+                _alarm.daysOfWeek = alarmUtils.get_alarm_day(tomorrow.getDay())
+            }
+        }
+    }
+
     Alarm {
         id: _alarm
+
+        Component.onCompleted: {
+            /*
+             Sets the alarm name manually to "Alarm" to ensure that it is
+             translatable instead of using the default name set by the SDK
+             Alarms API.
+            */
+            if (isNewAlarm) {
+                _alarm.message = i18n.tr("Alarm")
+            }
+        }
+
+        onErrorChanged: {
+            if (error !== Alarm.NoError) {
+                Utils.log(debugMode, "Error saving alarm, code: " + error)
+            }
+        }
+
         onStatusChanged: {
             if (status !== Alarm.Ready)
                 return;
             if ((operation > Alarm.NoOperation) &&
                     (operation < Alarm.Reseting)) {
-                mainStack.pop();
+                pageStack.pop();
             }
         }
-        onDaysOfWeekChanged: {
-            _alarmRepeat.subText = alarmUtils.format_day_string(_alarm.daysOfWeek)
+
+        onTypeChanged: {
+            _alarmRepeat.subText = alarmUtils.format_day_string(_alarm.daysOfWeek, type)
         }
+
+        onDaysOfWeekChanged: {
+            _alarmRepeat.subText = alarmUtils.format_day_string(_alarm.daysOfWeek, type)
+        }
+
         onDateChanged: {
             _timePicker.date = _alarm.date
         }
@@ -215,6 +246,7 @@ Page {
 
         DatePicker {
             id: _timePicker
+            objectName: "alarmTime"
 
             /*
               #FIXME: DatePicker does not respect the user's locale. The bug
@@ -241,7 +273,7 @@ Page {
                                                    .split(":")[1]/5))*5,
                                 0,
                                 0
-                            )
+                                )
                 }
             }
 
@@ -256,8 +288,8 @@ Page {
             objectName: "alarmRepeat"
 
             text: i18n.tr("Repeat")
-            subText: alarmUtils.format_day_string(_alarm.daysOfWeek)
-            onClicked: mainStack.push(Qt.resolvedUrl("AlarmRepeat.qml"),
+            subText: alarmUtils.format_day_string(_alarm.daysOfWeek, _alarm.type)
+            onClicked: pageStack.push(Qt.resolvedUrl("AlarmRepeat.qml"),
                                       {"alarm": _alarm})
         }
 
@@ -267,7 +299,7 @@ Page {
 
             text: i18n.tr("Label")
             subText: _alarm.message
-            onClicked: mainStack.push(Qt.resolvedUrl("AlarmLabel.qml"),
+            onClicked: pageStack.push(Qt.resolvedUrl("AlarmLabel.qml"),
                                       {"alarm": _alarm})
         }
 
@@ -279,7 +311,7 @@ Page {
             property string _soundName: "Suru arpeggio"
 
             text: i18n.tr("Sound")
-            onClicked: mainStack.push(Qt.resolvedUrl("AlarmSound.qml"), {
+            onClicked: pageStack.push(Qt.resolvedUrl("AlarmSound.qml"), {
                                           "alarmSound": _alarmSound,
                                           "alarm": _alarm,
                                           "soundModel": soundModel

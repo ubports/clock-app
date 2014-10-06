@@ -7,43 +7,71 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2014-08-26 16:06+0200\n"
-"PO-Revision-Date: 2014-08-27 15:11+0000\n"
+"POT-Creation-Date: 2014-09-25 11:41+0200\n"
+"PO-Revision-Date: 2014-09-08 05:52+0000\n"
 "Last-Translator: David Planella <david.planella@ubuntu.com>\n"
 "Language-Team: Catalan <ca@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-08-28 06:34+0000\n"
-"X-Generator: Launchpad (build 17174)\n"
+"X-Launchpad-Export-Date: 2014-09-26 06:54+0000\n"
+"X-Generator: Launchpad (build 17196)\n"
 
-#: ../app/alarm/AlarmLabel.qml:30 ../app/alarm/AlarmLabel.qml:52
-#: ../app/alarm/EditAlarmPage.qml:268
+#: ../app/alarm/AlarmDelegate.qml:136
+#, qt-format
+msgid "in %1d %1h %2m"
+msgstr "en %1 d %1 h %2 m"
+
+#: ../app/alarm/AlarmDelegate.qml:145
+#, qt-format
+msgid "in %1h %2m"
+msgstr "en %1 h %2 m"
+
+#: ../app/alarm/AlarmDelegate.qml:153
+#, c-format, qt-format
+msgid "in %1m"
+msgstr ""
+
+#: ../app/alarm/AlarmLabel.qml:30 ../app/alarm/AlarmLabel.qml:56
+#: ../app/alarm/EditAlarmPage.qml:299
 msgid "Label"
 msgstr "Nom"
 
-#: ../app/alarm/AlarmList.qml:81 ../app/alarm/AlarmPage.qml:78
+#: ../app/alarm/AlarmList.qml:81 ../app/alarm/AlarmPage.qml:125
 #: ../app/worldclock/UserWorldCityList.qml:103
 msgid "Delete"
 msgstr "Suprimeix"
 
-#: ../app/alarm/AlarmPage.qml:26
+#: ../app/alarm/AlarmPage.qml:28 ../app/ubuntu-clock-app.qml:103
 msgid "Alarms"
 msgstr "Alarmes"
 
-#: ../app/alarm/AlarmPage.qml:42 ../app/alarm/EditAlarmPage.qml:54
+#: ../app/alarm/AlarmPage.qml:45 ../app/alarm/EditAlarmPage.qml:47
+#: ../app/alarm/EditAlarmPage.qml:174
 msgid "Alarm"
 msgstr "Alarma"
 
-#: ../app/alarm/AlarmPage.qml:55
-msgid "Cancel selection"
-msgstr "Cancel·la la selecció"
+#: ../app/alarm/AlarmPage.qml:75 ../app/worldclock/WorldCityList.qml:66
+msgid "Back"
+msgstr "Enrere"
 
-#: ../app/alarm/AlarmPage.qml:64
+#: ../app/alarm/AlarmPage.qml:93
+msgid "Select None"
+msgstr ""
+
+#: ../app/alarm/AlarmPage.qml:95 ../app/alarm/AlarmRepeat.qml:35
 msgid "Select All"
 msgstr "Selecciona-ho tot"
 
-#: ../app/alarm/AlarmRepeat.qml:28 ../app/alarm/EditAlarmPage.qml:258
+#: ../app/alarm/AlarmPage.qml:154
+msgid "No saved alarms"
+msgstr ""
+
+#: ../app/alarm/AlarmPage.qml:155
+msgid "Tap the + icon to add an alarm"
+msgstr ""
+
+#: ../app/alarm/AlarmRepeat.qml:31 ../app/alarm/EditAlarmPage.qml:289
 msgid "Repeat"
 msgstr "Repetició"
 
@@ -51,9 +79,12 @@ msgstr "Repetició"
 msgid "Settings"
 msgstr "Paràmetres"
 
-#: ../app/alarm/AlarmSettingsPage.qml:70 ../app/alarm/AlarmSettingsPage.qml:71
-#: ../app/alarm/AlarmSettingsPage.qml:72 ../app/alarm/AlarmSettingsPage.qml:73
-#: ../app/alarm/AlarmSettingsPage.qml:136
+#: ../app/alarm/AlarmSettingsPage.qml:53 ../app/alarm/AlarmSettingsPage.qml:54
+#: ../app/alarm/AlarmSettingsPage.qml:55 ../app/alarm/AlarmSettingsPage.qml:56
+#: ../app/alarm/AlarmSettingsPage.qml:65 ../app/alarm/AlarmSettingsPage.qml:66
+#: ../app/alarm/AlarmSettingsPage.qml:67 ../app/alarm/AlarmSettingsPage.qml:68
+#: ../app/alarm/AlarmSettingsPage.qml:139
+#: ../app/alarm/AlarmSettingsPage.qml:206
 #, qt-format
 msgid "%1 minutes"
 msgstr "%1 minuts"
@@ -62,31 +93,39 @@ msgstr "%1 minuts"
 msgid "Alarm volume"
 msgstr "Volum de les alarmes"
 
-#: ../app/alarm/AlarmSettingsPage.qml:135
+#: ../app/alarm/AlarmSettingsPage.qml:138
 msgid "Silence after"
 msgstr "En silenci després de"
 
-#: ../app/alarm/AlarmSettingsPage.qml:177
+#: ../app/alarm/AlarmSettingsPage.qml:205
+msgid "Snooze for"
+msgstr ""
+
+#: ../app/alarm/AlarmSettingsPage.qml:249
 msgid "Vibration"
 msgstr "Vibració"
 
-#: ../app/alarm/AlarmSettingsPage.qml:206
+#: ../app/alarm/AlarmSettingsPage.qml:278
 msgid "Change time and date"
 msgstr "Canvia la data i l'hora"
 
-#: ../app/alarm/AlarmSound.qml:27 ../app/alarm/EditAlarmPage.qml:281
+#: ../app/alarm/AlarmSound.qml:27 ../app/alarm/EditAlarmPage.qml:312
 msgid "Sound"
 msgstr "So"
 
-#: ../app/alarm/AlarmUtils.qml:33
+#: ../app/alarm/AlarmUtils.qml:31
+msgid "Never"
+msgstr ""
+
+#: ../app/alarm/AlarmUtils.qml:37
 msgid "Weekdays"
 msgstr "Dies laborables"
 
-#: ../app/alarm/AlarmUtils.qml:37
+#: ../app/alarm/AlarmUtils.qml:41
 msgid "Weekends"
 msgstr "Caps de setmana"
 
-#: ../app/alarm/AlarmUtils.qml:41
+#: ../app/alarm/AlarmUtils.qml:45
 msgid "Daily"
 msgstr "Cada dia"
 
@@ -98,94 +137,92 @@ msgstr "Alarma nova"
 msgid "Edit alarm"
 msgstr "Edita l'alarma"
 
-#: ../app/alarm/EditAlarmPage.qml:305
+#: ../app/alarm/EditAlarmPage.qml:336
 msgid "Delete alarm"
 msgstr "Suprimeix l'alarma"
 
-#: ../app/clock/ClockPage.qml:64
+#: ../app/clock/ClockPage.qml:134
+msgid "Location"
+msgstr ""
+
+#: ../app/worldclock/AddWorldCityButton.qml:30
 msgid "Add"
 msgstr "Afegeix"
 
-#: ../app/clock/ClockPage.qml:65 ../app/worldclock/WorldCityList.qml:52
+#: ../app/worldclock/AddWorldCityButton.qml:61
+#: ../app/worldclock/WorldCityList.qml:52
 msgid "City"
 msgstr "Ciutat"
 
-#: ../app/ubuntu-clock-app.qml:103
-msgid "Next Alarm in .."
-msgstr "Alarma següent en ..."
-
-#: ../app/worldclock/UserWorldCityDelegate.qml:139
-msgid "Today"
-msgstr "Avui"
-
-#: ../app/worldclock/UserWorldCityDelegate.qml:143
-msgid "Tomorrow"
-msgstr "Demà"
-
-#: ../app/worldclock/UserWorldCityDelegate.qml:147
-msgid "Yesterday"
-msgstr "Ahir"
-
 #. TRANSLATORS: this indicates if the time in a world clock
 #. is behind or ahead of the time at the current location
-#: ../app/worldclock/UserWorldCityDelegate.qml:152
+#: ../app/worldclock/UserWorldCityDelegate.qml:140
 msgid "behind"
 msgstr "menys"
 
-#: ../app/worldclock/UserWorldCityDelegate.qml:153
+#: ../app/worldclock/UserWorldCityDelegate.qml:141
 msgid "ahead"
 msgstr "més"
 
-#. TRANSLATORS: the first argument is a day, followed by hour, minute and the
-#. translation for either 'behind' or 'ahead'
-#: ../app/worldclock/UserWorldCityDelegate.qml:162
+#. TRANSLATORS: the first argument is hour, followed by
+#. minute, and the translation for either 'behind' or
+#. 'ahead'
+#: ../app/worldclock/UserWorldCityDelegate.qml:151
 #, qt-format
-msgid ""
-"%1\n"
-"%2 h %3 m %4"
+msgid "%1h %2m %3"
 msgstr ""
-"%1\n"
-"%2 h %3 m %4"
 
-#. TRANSLATORS: the first argument is a day, followed by hour and the
+#. TRANSLATORS: the first argument is hour, followed by the
 #. translation for either 'behind' or 'ahead'
-#: ../app/worldclock/UserWorldCityDelegate.qml:172
+#: ../app/worldclock/UserWorldCityDelegate.qml:160
 #, qt-format
-msgid ""
-"%1\n"
-"%2 h %3"
+msgid "%1h %2"
 msgstr ""
-"%1\n"
-"%2 h %3"
 
-#: ../app/worldclock/UserWorldCityDelegate.qml:188
-msgid "No Time Difference"
-msgstr "Sense diferència horària"
+#. TRANSLATORS: the first argument is minute, followed by the
+#. translation for either 'behind' or 'ahead'
+#: ../app/worldclock/UserWorldCityDelegate.qml:168
+#, qt-format
+msgid "%1m %2"
+msgstr ""
+
+#: ../app/worldclock/UserWorldCityDelegate.qml:174
+msgid "Same time"
+msgstr "A la mateixa hora"
 
 #: ../app/worldclock/WorldCityList.qml:40
 msgid "Select a city"
 msgstr "Seleccioneu una ciutat"
 
-#: ../app/worldclock/WorldCityList.qml:66
-msgid "Back"
-msgstr "Enrere"
-
-#: ../app/worldclock/WorldCityList.qml:78
+#: ../app/worldclock/WorldCityList.qml:79
 msgid "Search..."
 msgstr "Cerca..."
 
-#: ../app/worldclock/WorldCityList.qml:155
+#: ../app/worldclock/WorldCityList.qml:156
 msgid "Searching for a city"
 msgstr "S'està cercant la ciutat"
 
-#: ../app/worldclock/WorldCityList.qml:160
+#: ../app/worldclock/WorldCityList.qml:161
 msgid "No City Found"
 msgstr "No s'ha trobat la ciutat"
 
-#: ../app/worldclock/WorldCityList.qml:166
+#: ../app/worldclock/WorldCityList.qml:167
 msgid "Unable to connect."
 msgstr "No s'ha pogut connectar."
 
-#: ../app/worldclock/WorldCityList.qml:167
+#: ../app/worldclock/WorldCityList.qml:168
 msgid "Please check your network connection and try again"
 msgstr "Comproveu la connexió de xarxa i torneu-ho a provar"
+
+#: ubuntu-clock-app.desktop.in.in.h:1
+msgid "Clock"
+msgstr "Rellotge"
+
+#: ubuntu-clock-app.desktop.in.in.h:2
+msgid ""
+"A sophisticated clock app that provides world clock and alarm functionality."
+msgstr ""
+
+#: ubuntu-clock-app.desktop.in.in.h:3
+msgid "time;alarm;alert;clock;world;"
+msgstr ""
