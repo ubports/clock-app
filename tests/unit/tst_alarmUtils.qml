@@ -45,19 +45,31 @@ TestCase {
      milliseconds and writtens a user readable string e.g "in 2d 15h 10m" after
      correct calculation.
     */
-    function test_timeStringNextAlarm() {
-        var timeInMilliseconds, result
-
-        timeInMilliseconds = 440100000; // 5 days, 2 hrs, 16 mins
-        result = alarmUtils.get_time_to_next_alarm(timeInMilliseconds)
+    function test_timeToNextAlarmStringMustShowAll() {
+        var timeInMilliseconds = 440100000; // 5 days, 2 hrs, 16 mins
+        var result = alarmUtils.get_time_to_next_alarm(timeInMilliseconds)
         compare(result, "in 5d 2h 16m", "Time to next alarm string is incorrect")
+    }
 
-        timeInMilliseconds = 36000000 // 10 hours, 1 min
-        result = alarmUtils.get_time_to_next_alarm(timeInMilliseconds)
+    /*
+     This test checks if the get_time_to_next_alarm() function takes a time in
+     milliseconds and writtens a user readable string without days e.g "in 15h 10m"
+     after correct calculation.
+    */
+    function test_timeToNextAlarmStringMustNotShowDays() {
+        var timeInMilliseconds = 36000000 // 10 hours, 1 min
+        var result = alarmUtils.get_time_to_next_alarm(timeInMilliseconds)
         compare(result, "in 10h 1m", "Time to next alarm string is incorrect")
+    }
 
-        timeInMilliseconds = 1080000 // 19 mins
-        result = alarmUtils.get_time_to_next_alarm(timeInMilliseconds)
+    /*
+     This test checks if the get_time_to_next_alarm() function takes a time in
+     milliseconds and writtens a user readable string with only mins e.g "in 10m"
+     after correct calculation.
+    */
+    function test_timeToNextAlarmStringMustOnlyShowMinutes() {
+        var timeInMilliseconds = 1080000 // 19 mins
+        var result = alarmUtils.get_time_to_next_alarm(timeInMilliseconds)
         compare(result, "in 19m", "Time to next alarm string is incorrect")
     }
 
@@ -72,35 +84,57 @@ TestCase {
     }
 
     /*
-     This test checks if the format_day_string() function which is used to display
-     a formatted string of the days the alarm rings on works as expected.
+     This test checks if the format_day_string() returns "Never" if a one-time
+     alarm is passed to it for the alarm recurrence string.
     */
-    function test_alarmRecurrenceString() {
-        var alarmType, alarmDaysOfWeek, result
-
-        alarmType = Alarm.OneTime
-        alarmDaysOfWeek = Alarm.AutoDetect
-        result = alarmUtils.format_day_string(alarmDaysOfWeek, alarmType)
+    function test_alarmRecurrenceStringMustShowNever() {
+        var alarmType = Alarm.OneTime
+        var alarmDaysOfWeek = Alarm.AutoDetect
+        var result = alarmUtils.format_day_string(alarmDaysOfWeek, alarmType)
         compare(result, "Never", "OneTime Alarm is shown as a repeating alarm")
+    }
 
-        alarmType = Alarm.Repeating
-        alarmDaysOfWeek = Alarm.Monday | Alarm.Tuesday
-        result = alarmUtils.format_day_string(alarmDaysOfWeek, alarmType)
+    /*
+     This test checks if the format_day_string() returns the alarm days if the
+     alarms days passed if it doesn't fit other formats like Weekdays, Weekends etc.
+    */
+    function test_alarmRecurrenceStringMustShowAlarmDays() {
+        var alarmType = Alarm.Repeating
+        var alarmDaysOfWeek = Alarm.Monday | Alarm.Tuesday
+        var result = alarmUtils.format_day_string(alarmDaysOfWeek, alarmType)
         compare(result, "Monday, Tuesday", "Repeating alarm days of week is not formatted correctly")
+    }
 
-        alarmType = Alarm.Repeating
-        alarmDaysOfWeek = Alarm.Monday | Alarm.Tuesday | Alarm.Wednesday | Alarm.Thursday | Alarm.Friday
-        result = alarmUtils.format_day_string(alarmDaysOfWeek, alarmType)
+    /*
+     This test checks if the format_day_string() returns "Weekdays" if all week days (Mon-Fri)
+     of a week are selected.
+    */
+    function test_alarmRecurrenceStringMustShowWeekdays() {
+        var alarmType = Alarm.Repeating
+        var alarmDaysOfWeek = Alarm.Monday | Alarm.Tuesday | Alarm.Wednesday | Alarm.Thursday | Alarm.Friday
+        var result = alarmUtils.format_day_string(alarmDaysOfWeek, alarmType)
         compare(result, "Weekdays", "Repeating alarm days of week is not formatted correctly")
+    }
 
-        alarmType = Alarm.Repeating
-        alarmDaysOfWeek = Alarm.Saturday | Alarm.Sunday
-        result = alarmUtils.format_day_string(alarmDaysOfWeek, alarmType)
+    /*
+     This test checks if the format_day_string() returns "Weekends" (Sat-Sun) if the
+     weekends of a week are selected.
+    */
+    function test_alarmRecurrenceStringMustShowWeekends() {
+        var alarmType = Alarm.Repeating
+        var alarmDaysOfWeek = Alarm.Saturday | Alarm.Sunday
+        var result = alarmUtils.format_day_string(alarmDaysOfWeek, alarmType)
         compare(result, "Weekends", "Repeating alarm days of week is not formatted correctly")
+    }
 
-        alarmType = Alarm.Repeating
-        alarmDaysOfWeek = Alarm.Monday | Alarm.Tuesday | Alarm.Wednesday | Alarm.Thursday | Alarm.Friday | Alarm.Saturday | Alarm.Sunday
-        result = alarmUtils.format_day_string(alarmDaysOfWeek, alarmType)
+    /*
+     This test checks if the format_day_string() returns "Days" if all days
+     of a week are selected.
+    */
+    function test_alarmRecurrenceStringMustShowDaily() {
+        var alarmType = Alarm.Repeating
+        var alarmDaysOfWeek = Alarm.Monday | Alarm.Tuesday | Alarm.Wednesday | Alarm.Thursday | Alarm.Friday | Alarm.Saturday | Alarm.Sunday
+        var result = alarmUtils.format_day_string(alarmDaysOfWeek, alarmType)
         compare(result, "Daily", "Repeating alarm days of week is not formatted correctly")
     }
 }
