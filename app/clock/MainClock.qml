@@ -39,7 +39,7 @@ Clock {
 
     DateTime {
         id: localTimeSource
-        updateInterval: isDigital ? 1000 : 10
+        updateInterval: 1000
     }
 
     /*
