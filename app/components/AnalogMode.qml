@@ -76,8 +76,7 @@ ClockCircle {
         visible: showSeconds
         source: "../graphics/Second_Hand.png"
         fillMode: Image.PreserveAspectFit
-        rotation: visible ? ((360 * ((analogTime.getSeconds() * 1000) +
-                           analogTime.getMilliseconds())) / 60000) : 0
+        rotation: visible ? analogTime.getSeconds() * 6 : 0
     }
 
     Image {

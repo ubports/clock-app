@@ -7,14 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2014-09-25 11:41+0200\n"
+"POT-Creation-Date: 2014-10-07 01:01-0700\n"
 "PO-Revision-Date: 2014-09-21 18:17+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-09-26 06:54+0000\n"
+"X-Launchpad-Export-Date: 2014-10-08 08:25+0000\n"
 "X-Generator: Launchpad (build 17196)\n"
 
 #: ../app/alarm/AlarmDelegate.qml:136
@@ -33,45 +33,45 @@ msgid "in %1m"
 msgstr ""
 
 #: ../app/alarm/AlarmLabel.qml:30 ../app/alarm/AlarmLabel.qml:56
-#: ../app/alarm/EditAlarmPage.qml:299
+#: ../app/alarm/EditAlarmPage.qml:300
 msgid "Label"
 msgstr ""
 
-#: ../app/alarm/AlarmList.qml:81 ../app/alarm/AlarmPage.qml:125
+#: ../app/alarm/AlarmList.qml:81 ../app/alarm/AlarmPage.qml:108
 #: ../app/worldclock/UserWorldCityList.qml:103
 msgid "Delete"
 msgstr ""
 
-#: ../app/alarm/AlarmPage.qml:28 ../app/ubuntu-clock-app.qml:103
+#: ../app/alarm/AlarmPage.qml:26 ../app/ubuntu-clock-app.qml:103
 msgid "Alarms"
 msgstr "Budíky"
 
-#: ../app/alarm/AlarmPage.qml:45 ../app/alarm/EditAlarmPage.qml:47
+#: ../app/alarm/AlarmPage.qml:43 ../app/alarm/EditAlarmPage.qml:47
 #: ../app/alarm/EditAlarmPage.qml:174
 msgid "Alarm"
 msgstr "Budík"
 
-#: ../app/alarm/AlarmPage.qml:75 ../app/worldclock/WorldCityList.qml:66
+#: ../app/alarm/AlarmPage.qml:58 ../app/worldclock/WorldCityList.qml:68
 msgid "Back"
 msgstr ""
 
-#: ../app/alarm/AlarmPage.qml:93
+#: ../app/alarm/AlarmPage.qml:79
 msgid "Select None"
 msgstr ""
 
-#: ../app/alarm/AlarmPage.qml:95 ../app/alarm/AlarmRepeat.qml:35
+#: ../app/alarm/AlarmPage.qml:81 ../app/alarm/AlarmRepeat.qml:35
 msgid "Select All"
 msgstr ""
 
-#: ../app/alarm/AlarmPage.qml:154
+#: ../app/alarm/AlarmPage.qml:137
 msgid "No saved alarms"
 msgstr ""
 
-#: ../app/alarm/AlarmPage.qml:155
+#: ../app/alarm/AlarmPage.qml:138
 msgid "Tap the + icon to add an alarm"
 msgstr ""
 
-#: ../app/alarm/AlarmRepeat.qml:31 ../app/alarm/EditAlarmPage.qml:289
+#: ../app/alarm/AlarmRepeat.qml:31 ../app/alarm/EditAlarmPage.qml:290
 msgid "Repeat"
 msgstr ""
 
@@ -109,7 +109,7 @@ msgstr ""
 msgid "Change time and date"
 msgstr ""
 
-#: ../app/alarm/AlarmSound.qml:27 ../app/alarm/EditAlarmPage.qml:312
+#: ../app/alarm/AlarmSound.qml:28 ../app/alarm/EditAlarmPage.qml:313
 msgid "Sound"
 msgstr ""
 
@@ -137,7 +137,7 @@ msgstr ""
 msgid "Edit alarm"
 msgstr ""
 
-#: ../app/alarm/EditAlarmPage.qml:336
+#: ../app/alarm/EditAlarmPage.qml:337
 msgid "Delete alarm"
 msgstr ""
 
@@ -150,67 +150,67 @@ msgid "Add"
 msgstr ""
 
 #: ../app/worldclock/AddWorldCityButton.qml:61
-#: ../app/worldclock/WorldCityList.qml:52
+#: ../app/worldclock/WorldCityList.qml:54
 msgid "City"
 msgstr ""
 
 #. TRANSLATORS: this indicates if the time in a world clock
 #. is behind or ahead of the time at the current location
-#: ../app/worldclock/UserWorldCityDelegate.qml:140
+#: ../app/worldclock/UserWorldCityDelegate.qml:142
 msgid "behind"
 msgstr ""
 
-#: ../app/worldclock/UserWorldCityDelegate.qml:141
+#: ../app/worldclock/UserWorldCityDelegate.qml:143
 msgid "ahead"
 msgstr ""
 
 #. TRANSLATORS: the first argument is hour, followed by
 #. minute, and the translation for either 'behind' or
 #. 'ahead'
-#: ../app/worldclock/UserWorldCityDelegate.qml:151
+#: ../app/worldclock/UserWorldCityDelegate.qml:153
 #, qt-format
 msgid "%1h %2m %3"
 msgstr ""
 
 #. TRANSLATORS: the first argument is hour, followed by the
 #. translation for either 'behind' or 'ahead'
-#: ../app/worldclock/UserWorldCityDelegate.qml:160
+#: ../app/worldclock/UserWorldCityDelegate.qml:162
 #, qt-format
 msgid "%1h %2"
 msgstr ""
 
 #. TRANSLATORS: the first argument is minute, followed by the
 #. translation for either 'behind' or 'ahead'
-#: ../app/worldclock/UserWorldCityDelegate.qml:168
+#: ../app/worldclock/UserWorldCityDelegate.qml:170
 #, qt-format
 msgid "%1m %2"
 msgstr ""
 
-#: ../app/worldclock/UserWorldCityDelegate.qml:174
+#: ../app/worldclock/UserWorldCityDelegate.qml:176
 msgid "Same time"
 msgstr ""
 
-#: ../app/worldclock/WorldCityList.qml:40
+#: ../app/worldclock/WorldCityList.qml:41
 msgid "Select a city"
 msgstr ""
 
-#: ../app/worldclock/WorldCityList.qml:79
+#: ../app/worldclock/WorldCityList.qml:82
 msgid "Search..."
 msgstr ""
 
-#: ../app/worldclock/WorldCityList.qml:156
+#: ../app/worldclock/WorldCityList.qml:159
 msgid "Searching for a city"
 msgstr ""
 
-#: ../app/worldclock/WorldCityList.qml:161
+#: ../app/worldclock/WorldCityList.qml:164
 msgid "No City Found"
 msgstr ""
 
-#: ../app/worldclock/WorldCityList.qml:167
+#: ../app/worldclock/WorldCityList.qml:170
 msgid "Unable to connect."
 msgstr ""
 
-#: ../app/worldclock/WorldCityList.qml:168
+#: ../app/worldclock/WorldCityList.qml:171
 msgid "Please check your network connection and try again"
 msgstr ""
 
