@@ -23,6 +23,8 @@ import "../upstreamcomponents"
 ListItemWithActions {
     id: root
 
+    property var localTime
+
     width: parent ? parent.width : 0
     height: units.gu(6)
     color: "Transparent"
@@ -39,6 +41,7 @@ ListItemWithActions {
 
         fontSize: "medium"
         text: Qt.formatTime(date)
+        opacity: model.enabled ? 1.0 : 0.8
     }
 
     Column {
@@ -70,9 +73,11 @@ ListItemWithActions {
 
             fontSize: "xx-small"
             width: parent.width
-            visible: type === Alarm.Repeating || _internalTimerLoader.sourceComponent != undefined
+            visible: !(type === Alarm.OneTime && !model.enabled)
             wrapMode: Text.WrapAtWordBoundaryOrAnywhere
-            text: alarmUtils.format_day_string(daysOfWeek, type)
+            text: type === Alarm.Repeating ? alarmUtils.format_day_string(daysOfWeek, type)
+                                           : model.enabled ? alarmUtils.get_time_to_next_alarm(model.date - localTime)
+                                                           : "Alarm Disabled"
         }
     }
 
@@ -126,35 +131,8 @@ ListItemWithActions {
                 if (model.status === Alarm.Ready) {
                     alarmStatus.checked = model.enabled;
 
-                    if(alarmStatus.checked) {
-                        var timeObject = alarmUtils.get_time_to_next_alarm(model.date - new Date())
-                        var alarmETA
-
-                        // TRANSLATORS: the first argument is the number of days,
-                        // followed by hour and minute (eg. in 1d 20h 3m)
-                        if(timeObject.days) {
-                            alarmETA = i18n.tr("in %1d %1h %2m")
-                            .arg(timeObject.days)
-                            .arg(timeObject.hours)
-                            .arg(timeObject.minutes)
-                        }
-
-                        // TRANSLATORS: the first argument is the number of
-                        // hours followed by the minutes (eg. in 4h 3m)
-                        else if (timeObject.hours) {
-                            alarmETA = i18n.tr("in %1h %2m")
-                            .arg(timeObject.hours)
-                            .arg(timeObject.minutes)
-                        }
-
-                        // TRANSLATORS: the argument is the number of
-                        // minutes to the alarm (eg. in 3m)
-                        else {
-                            alarmETA = i18n.tr("in %1m")
-                            .arg(timeObject.minutes)
-                        }
-
-                        alarmSubtitle.text = alarmETA
+                    if(alarmStatus.checked && type === Alarm.Repeating) {
+                        alarmSubtitle.text = alarmUtils.get_time_to_next_alarm(model.date - localTime)
                         _internalTimerLoader.sourceComponent = _internalTimerComponent
                     }
                 }

@@ -50,21 +50,40 @@ QtObject {
         }
     }
 
-    function get_time_to_next_alarm ( datetime_offset ) {
-        // increase by a minute, so we could make a nicer time
-        // to the next alarm, otherwise a minute always missing
-        // which makes it look odd
-        datetime_offset += 60000;
-
-        var days_in_offset = Math.floor( datetime_offset / ( 3600000 * 24 ) );
-        var hours_in_offset = Math.floor( datetime_offset / 3600000 % 24 );
-        var minutes_in_offset = Math.floor( datetime_offset / 60000 % 60 );
-
-        return {
-            days : days_in_offset,
-            hours : hours_in_offset,
-            minutes : minutes_in_offset
+    // Function to format the time to next alarm into a string
+    function get_time_to_next_alarm(totalTime) {
+        if(totalTime < 0) {
+            return i18n.tr("Alarm Passed")
         }
+
+        var timeObject = _split_time(totalTime);
+        var alarmETA
+
+        // TRANSLATORS: the first argument is the number of days,
+        // followed by hour and minute (eg. in 1d 20h 3m)
+        if(timeObject.days) {
+            alarmETA = i18n.tr("in %1d %2h %3m")
+            .arg(timeObject.days)
+            .arg(timeObject.hours)
+            .arg(timeObject.minutes)
+        }
+
+        // TRANSLATORS: the first argument is the number of
+        // hours followed by the minutes (eg. in 4h 3m)
+        else if (timeObject.hours) {
+            alarmETA = i18n.tr("in %1h %2m")
+            .arg(timeObject.hours)
+            .arg(timeObject.minutes)
+        }
+
+        // TRANSLATORS: the argument is the number of
+        // minutes to the alarm (eg. in 3m)
+        else {
+            alarmETA = i18n.tr("in %1m")
+            .arg(timeObject.minutes)
+        }
+
+        return alarmETA;
     }
 
     // Function return the alarm dayOfWeek according to the day provided
@@ -83,6 +102,24 @@ QtObject {
     /*
       INTERNAL FUNCTIONS
     */
+
+    // Function to split time (in ms) into days, hours and minutes
+    function _split_time(totalTime) {
+        // increase by a minute, so we could make a nicer time
+        // to the next alarm, otherwise a minute always missing
+        // which makes it look odd
+        totalTime += 60000;
+
+        var days_in_offset = Math.floor(totalTime / ( 3600000 * 24));
+        var hours_in_offset = Math.floor(totalTime / 3600000 % 24);
+        var minutes_in_offset = Math.floor(totalTime / 60000 % 60);
+
+        return {
+            days : days_in_offset,
+            hours : hours_in_offset,
+            minutes : minutes_in_offset
+        }
+    }
 
     // Function to determine the locale's weekdays value
     function _get_weekdays() {

@@ -127,6 +127,7 @@ Page {
         id: alarmListView
         listModel: alarmModel
         anchors.fill: parent
+        localTime: clockTime
     }
 
     EmptyState {

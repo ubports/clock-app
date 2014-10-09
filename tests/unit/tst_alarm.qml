@@ -18,6 +18,7 @@
 
 import QtQuick 2.3
 import QtTest 1.0
+import DateTime 1.0
 import Ubuntu.Test 1.0
 import Ubuntu.Components 1.1
 import "../../app/alarm"
@@ -29,8 +30,24 @@ MainView {
     height: units.gu(70)
     useDeprecatedToolbar: false
 
+    property var clockTime: new Date
+                            (
+                                localTimeSource.localDateString.split(":")[0],
+                                localTimeSource.localDateString.split(":")[1]-1,
+                                localTimeSource.localDateString.split(":")[2],
+                                localTimeSource.localTimeString.split(":")[0],
+                                localTimeSource.localTimeString.split(":")[1],
+                                localTimeSource.localTimeString.split(":")[2],
+                                localTimeSource.localTimeString.split(":")[3]
+                            )
+
     AlarmModel {
         id: alarmModel
+    }
+
+    DateTime {
+        id: localTimeSource
+        updateInterval: 1000
     }
 
     PageStack {

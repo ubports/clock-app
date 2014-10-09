@@ -27,6 +27,7 @@ MultipleSelectionListView {
     objectName: "alarmListView"
 
     property var _currentSwipedItem: null
+    property var localTime
 
     function _updateSwipeState(item)
     {
@@ -59,6 +60,7 @@ MultipleSelectionListView {
         objectName: "alarm" + index
 
         property var removalAnimation
+        localTime: alarmListView.localTime
 
         function remove() {
             removalAnimation.start()
