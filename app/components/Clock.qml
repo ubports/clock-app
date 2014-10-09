@@ -148,6 +148,7 @@ ClockCircle {
             enabled: isMainClock
             anchors.fill: parent
             onClicked: {
+                forceActiveFocus()
                 clockFlipAnimation.start()
             }
         }

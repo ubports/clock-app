@@ -33,12 +33,19 @@ PageWithBottomEdge {
 
     flickable: null
 
-    Component.onCompleted: Utils.log(debugMode, "Clock Page loaded")
+    Component.onCompleted: {
+        Utils.log(debugMode, "Clock Page loaded")
+        _clockPage.setBottomEdgePage(Qt.resolvedUrl("../alarm/AlarmPage.qml"), {})
+    }
 
     Flickable {
         id: _flickable
 
         Component.onCompleted: otherElementsStartUpAnimation.start()
+
+        onFlickStarted: {
+            forceActiveFocus()
+        }
 
         anchors.fill: parent
         contentWidth: parent.width

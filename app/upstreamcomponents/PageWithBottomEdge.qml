@@ -62,7 +62,7 @@
 
 */
 
-import QtQuick 2.3
+import QtQuick 2.2
 import Ubuntu.Components 1.1
 
 Page {
@@ -71,7 +71,7 @@ Page {
     property alias bottomEdgePageComponent: edgeLoader.sourceComponent
     property alias bottomEdgePageSource: edgeLoader.source
     property alias bottomEdgeTitle: tipLabel.text
-    property alias bottomEdgeEnabled: bottomEdge.visible
+    property bool bottomEdgeEnabled: true
     property int bottomEdgeExpandThreshold: page.height * 0.2
     property int bottomEdgeExposedArea: bottomEdge.state !== "expanded" ? (page.height - bottomEdge.y - bottomEdge.tipHeight) : _areaWhenExpanded
     property bool reloadBottomEdgePage: true
@@ -86,7 +86,6 @@ Page {
 
     signal bottomEdgeReleased()
     signal bottomEdgeDismissed()
-
 
     function showBottomEdgePage(source, properties)
     {
@@ -142,13 +141,123 @@ Page {
         z: 1
     }
 
-    Timer {
-        id: hideIndicator
+    UbuntuShape {
+        id: tip
+        objectName: "bottomEdgeTip"
 
-        interval: 3000
-        running: true
-        repeat: false
-        onTriggered: tip.hiden = true
+        property bool hiden: (activeFocus === false) ||
+                             ((bottomEdge.y - units.gu(1)) < tip.y)
+
+        enabled: mouseArea.enabled
+        visible: page.bottomEdgeEnabled
+        anchors {
+            bottom: parent.bottom
+            horizontalCenter: bottomEdge.horizontalCenter
+            bottomMargin: hiden ? - height + units.gu(1) : -units.gu(1)
+            Behavior on bottomMargin {
+                SequentialAnimation {
+                    // wait some msecs in case of the focus change again, to avoid flickering
+                    PauseAnimation {
+                        duration: 300
+                    }
+                    UbuntuNumberAnimation {
+                        duration: UbuntuAnimation.SnapDuration
+                    }
+                }
+            }
+        }
+
+        z: 1
+        width: tipLabel.paintedWidth + units.gu(6)
+        height: bottomEdge.tipHeight + units.gu(1)
+        color: Theme.palette.normal.overlay
+        Label {
+            id: tipLabel
+
+            anchors {
+                top: parent.top
+                left: parent.left
+                right: parent.right
+            }
+            height: bottomEdge.tipHeight
+            verticalAlignment: Text.AlignVCenter
+            horizontalAlignment: Text.AlignHCenter
+            opacity: tip.hiden ? 0.0 : 1.0
+            Behavior on opacity {
+                UbuntuNumberAnimation {
+                    duration: UbuntuAnimation.SnapDuration
+                }
+            }
+        }
+    }
+
+    Rectangle {
+        id: shadow
+
+        anchors {
+            left: parent.left
+            right: parent.right
+            bottom: parent.bottom
+        }
+        height: units.gu(1)
+        z: 1
+        opacity: 0.0
+        gradient: Gradient {
+            GradientStop { position: 0.0; color: "transparent" }
+            GradientStop { position: 1.0; color: Qt.rgba(0, 0, 0, 0.2) }
+        }
+    }
+
+    MouseArea {
+        id: mouseArea
+
+        property real previousY: -1
+        property string dragDirection: "None"
+
+        preventStealing: true
+        drag {
+            axis: Drag.YAxis
+            target: bottomEdge
+            minimumY: bottomEdge.pageStartY
+            maximumY: page.height
+        }
+        enabled: edgeLoader.status == Loader.Ready
+        visible: page.bottomEdgeEnabled
+
+        anchors {
+            left: parent.left
+            right: parent.right
+            bottom: parent.bottom
+        }
+        height: bottomEdge.tipHeight
+        z: 1
+
+        onReleased: {
+            page.bottomEdgeReleased()
+            if ((dragDirection === "BottomToTop") &&
+                    bottomEdge.y < (page.height - bottomEdgeExpandThreshold - bottomEdge.tipHeight)) {
+                bottomEdge.state = "expanded"
+            } else {
+                bottomEdge.state = "collapsed"
+            }
+            previousY = -1
+            dragDirection = "None"
+        }
+
+        onPressed: {
+            previousY = mouse.y
+            tip.forceActiveFocus()
+        }
+
+        onMouseYChanged: {
+            var yOffset = previousY - mouseY
+            // skip if was a small move
+            if (Math.abs(yOffset) <= units.gu(2)) {
+                return
+            }
+            previousY = mouseY
+            dragDirection = yOffset > 0 ? "BottomToTop" : "TopToBottom"
+        }
     }
 
     FakeHeader {
@@ -177,7 +286,7 @@ Page {
 
         z: 1
         color: Theme.palette.normal.background
-        parent: page
+        clip: true
         anchors {
             left: parent.left
             right: parent.right
@@ -185,99 +294,7 @@ Page {
         height: page.height
         y: height
 
-        UbuntuShape {
-            id: tip
-            objectName: "bottomEdgeTip"
-
-            property bool hiden: false
-
-            readonly property double visiblePosition: (page.height - bottomEdge.y) < units.gu(1) ? -bottomEdge.tipHeight + (page.height - bottomEdge.y) : 0
-            readonly property double invisiblePosition: (page.height - bottomEdge.y) < units.gu(1) ? -units.gu(1) : 0
-
-            z: -1
-            anchors.horizontalCenter: parent.horizontalCenter
-            y: hiden ? invisiblePosition : visiblePosition
-
-            width: tipLabel.paintedWidth + units.gu(6)
-            height: bottomEdge.tipHeight + units.gu(1)
-            color: Theme.palette.normal.overlay
-            Label {
-                id: tipLabel
-
-                anchors {
-                    top: parent.top
-                    left: parent.left
-                    right: parent.right
-                }
-                height: bottomEdge.tipHeight
-                verticalAlignment: Text.AlignVCenter
-                horizontalAlignment: Text.AlignHCenter
-                opacity: tip.hiden ? 0.0 : 1.0
-                Behavior on opacity {
-                    UbuntuNumberAnimation {
-                        duration: UbuntuAnimation.SnapDuration
-                    }
-                }
-            }
-            Behavior on y {
-                UbuntuNumberAnimation {
-                    duration: UbuntuAnimation.SnapDuration
-                }
-            }
-        }
-
-        Rectangle {
-            id: shadow
-
-            anchors {
-                left: parent.left
-                right: parent.right
-            }
-            height: units.gu(1)
-            y: -height
-            z: -2
-            opacity: 0.0
-            gradient: Gradient {
-                GradientStop { position: 0.0; color: "transparent" }
-                GradientStop { position: 1.0; color: Qt.rgba(0, 0, 0, 0.2) }
-            }
-        }
-
-        MouseArea {
-            id: mouseArea
-
-            preventStealing: true
-            drag {
-                axis: Drag.YAxis
-                target: bottomEdge
-                minimumY: bottomEdge.pageStartY
-                maximumY: page.height
-                threshold: 100
-            }
-
-            anchors {
-                left: parent.left
-                right: parent.right
-            }
-            height: bottomEdge.tipHeight
-            y: -height
-
-            onReleased: {
-                page.bottomEdgeReleased()
-                if (bottomEdge.y < (page.height - bottomEdgeExpandThreshold - bottomEdge.tipHeight)) {
-                    bottomEdge.state = "expanded"
-                } else {
-                    bottomEdge.state = "collapsed"
-                    bottomEdge.y = bottomEdge.height
-                }
-            }
-
-            onClicked: {
-                tip.hiden = false
-                hideIndicator.restart()
-            }
-        }
-
+        visible: !page.isCollapsed
         state: "collapsed"
         states: [
             State {
@@ -290,14 +307,6 @@ Page {
                     target: fakeHeader
                     y: -fakeHeader.height
                 }
-                PropertyChanges {
-                    target: tip
-                    opacity: 1.0
-                }
-                PropertyChanges {
-                    target: hideIndicator
-                    running: true
-                }
             },
             State {
                 name: "expanded"
@@ -309,10 +318,6 @@ Page {
                     target: fakeHeader
                     y: 0
                 }
-                PropertyChanges {
-                    target: hideIndicator
-                    running: false
-                }
             },
             State {
                 name: "floating"
@@ -321,14 +326,6 @@ Page {
                     target: shadow
                     opacity: 1.0
                 }
-                PropertyChanges {
-                    target: hideIndicator
-                    running: false
-                }
-                PropertyChanges {
-                    target: tip
-                    hiden: false
-                }
             }
         ]
 
@@ -336,17 +333,34 @@ Page {
             Transition {
                 to: "expanded"
                 SequentialAnimation {
+                    alwaysRunToEnd: true
                     ParallelAnimation {
-                        UbuntuNumberAnimation {
+                        SmoothedAnimation {
                             target: bottomEdge
                             property: "y"
-                            duration: UbuntuAnimation.SlowDuration
+                            duration: UbuntuAnimation.FastDuration
+                            easing.type: Easing.Linear
                         }
-                        UbuntuNumberAnimation {
+                        SmoothedAnimation {
                             target: fakeHeader
                             property: "y"
-                            duration: UbuntuAnimation.SlowDuration
+                            duration: UbuntuAnimation.FastDuration
+                            easing.type: Easing.Linear
                         }
+                    }
+                    SmoothedAnimation {
+                        target: edgeLoader
+                        property: "anchors.topMargin"
+                        to: - units.gu(4)
+                        duration: UbuntuAnimation.FastDuration
+                        easing.type: Easing.Linear
+                    }
+                    SmoothedAnimation {
+                        target: edgeLoader
+                        property: "anchors.topMargin"
+                        to: 0
+                        duration: UbuntuAnimation.FastDuration
+                        easing: UbuntuAnimation.StandardEasing
                     }
                     ScriptAction {
                         script: page._pushPage()
@@ -357,6 +371,8 @@ Page {
                 from: "expanded"
                 to: "collapsed"
                 SequentialAnimation {
+                    alwaysRunToEnd: true
+
                     ScriptAction {
                         script: {
                             Qt.inputMethod.hide()
@@ -366,12 +382,12 @@ Page {
                         }
                     }
                     ParallelAnimation {
-                        UbuntuNumberAnimation {
+                        SmoothedAnimation {
                             target: bottomEdge
                             property: "y"
                             duration: UbuntuAnimation.SlowDuration
                         }
-                        UbuntuNumberAnimation {
+                        SmoothedAnimation {
                             target: fakeHeader
                             property: "y"
                             duration: UbuntuAnimation.SlowDuration
@@ -382,14 +398,14 @@ Page {
                             // destroy current bottom page
                             if (page.reloadBottomEdgePage) {
                                 edgeLoader.active = false
+                            } else {
+                                tip.forceActiveFocus()
                             }
 
                             // notify
                             page.bottomEdgeDismissed()
 
                             edgeLoader.active = true
-                            tip.hiden = false
-                            hideIndicator.restart()
                         }
                     }
                 }
@@ -404,30 +420,23 @@ Page {
             }
         ]
 
-        Item {
+        Loader {
+            id: edgeLoader
+
+            asynchronous: true
             anchors.fill: parent
-            clip: true
+            //WORKAROUND: The SDK move the page contents down to allocate space for the header we need to avoid that during the page dragging
+            Binding {
+                target: edgeLoader.status === Loader.Ready ? edgeLoader : null
+                property: "anchors.topMargin"
+                value:  edgeLoader.item && edgeLoader.item.flickable ? edgeLoader.item.flickable.contentY : 0
+                when: !page.isReady
+            }
 
-            Loader {
-                id: edgeLoader
-
-                z: 1
-                active: true
-                asynchronous: true
-                anchors.fill: parent
-
-                //WORKAROUND: The SDK move the page contents down to allocate space for the header we need to avoid that during the page dragging
-                Binding {
-                    target: edgeLoader.status === Loader.Ready ? edgeLoader : null
-                    property: "anchors.topMargin"
-                    value:  edgeLoader.item && edgeLoader.item.flickable ? edgeLoader.item.flickable.contentY : 0
-                    when: !page.isReady
-                }
-
-                onLoaded: {
-                    if (page.isReady && edgeLoader.item.active !== true) {
-                        page._pushPage()
-                    }
+            onLoaded: {
+                tip.forceActiveFocus()
+                if (page.isReady && edgeLoader.item.active !== true) {
+                    page._pushPage()
                 }
             }
         }
