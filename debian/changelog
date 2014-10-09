@@ -5,6 +5,7 @@ ubuntu-clock-app (3.2) utopic; urgency=medium
     the bottom edge action. (LP: #1357945)
   * Moved DateTime object to ubuntu-clock-app.qml so that it can be used in multiple
     places and avoid the need to duplicate the object.
+  * Removed Unused Utils library.
 
   [Akiva Shammai Avraham]
   * Improved the analog clock performance by updating the clock hands every second
