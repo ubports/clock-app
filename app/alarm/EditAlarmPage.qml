@@ -124,7 +124,7 @@ Page {
     // Function to validate if the alarm was saved properly
     function validateAlarm(alarmObject) {
         if (alarmObject.error !== Alarm.NoError) {
-            Utils.log(debugMode, "Error saving alarm, code: " + alarmObject.error)
+            console.log("[ERROR]: Error saving alarm, code: " + alarmObject.error)
             return false
         }
         else {
