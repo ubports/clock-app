@@ -6,6 +6,8 @@ ubuntu-clock-app (3.2) utopic; urgency=medium
   * Moved DateTime object to ubuntu-clock-app.qml so that it can be used in multiple
     places and avoid the need to duplicate the object.
   * Removed Unused Utils library.
+  * Design tweak to always show the remaining time to an alarm for one-time alarms
+    only. (LP: #1377538)
 
   [Akiva Shammai Avraham]
   * Improved the analog clock performance by updating the clock hands every second
