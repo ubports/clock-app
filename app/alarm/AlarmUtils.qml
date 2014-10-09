@@ -58,17 +58,15 @@ QtObject {
          Check if alarm model received is valid and has saved alarms and only
          then proceed to find the next active alarm.
         */
-        if (alarmModel && alarmModel.count) {
-            var activeAlarmDate = _get_next_active_alarm(alarmModel, clockTime)
-
-            // Return immediately if there are no active alarms found
-            if (!activeAlarmDate)  {
-                return bottom_edge_title
-            }
+        if (!alarmModel || !alarmModel.count) {
+            return bottom_edge_title
         }
 
-        else {
-            return bottom_edge_title
+        var activeAlarmDate = _get_next_active_alarm(alarmModel, clockTime)
+
+        // Return immediately if there are no active alarms found
+        if (!activeAlarmDate)  {
+          return bottom_edge_title
         }
 
         bottom_edge_title = i18n.tr("Next Alarm %1").arg(get_time_to_next_alarm(activeAlarmDate - clockTime))
