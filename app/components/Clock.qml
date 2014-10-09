@@ -18,7 +18,6 @@
 
 import QtQuick 2.3
 import Ubuntu.Components 1.1
-import "Utils.js" as Utils
 
 /*
  Generic clock component which has a digital and analog mode. A flip animation

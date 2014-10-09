@@ -26,7 +26,7 @@ Page {
     title: i18n.tr("Alarms")
     objectName: 'AlarmPage'
 
-    Component.onCompleted: console.log("Alarm Page loaded")
+    Component.onCompleted: console.log("[LOG]: Alarm Page loaded")
 
     flickable: null
 

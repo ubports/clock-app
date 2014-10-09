@@ -23,16 +23,12 @@ import Ubuntu.Components 1.1
 import "clock"
 import "alarm"
 import "components"
-import "components/Utils.js" as Utils
 
 MainView {
     id: clockApp
 
     // Property to store the state of an application (active or suspended)
     property bool applicationState: Qt.application.active
-
-    // Property to enable/disable the debug mode to show more console output
-    property bool debugMode: true
 
     // objectName for functional testing purposes (autopilot-qt5)
     objectName: "clock"
@@ -78,7 +74,7 @@ MainView {
 
     AlarmModel {
         id: alarmModel
-        Component.onCompleted: Utils.log(debugMode, "Alarm Database loaded")
+        Component.onCompleted: console.log("[LOG]: Alarm Database loaded")
     }
 
     DateTime {

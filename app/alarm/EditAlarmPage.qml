@@ -23,7 +23,6 @@ import Qt.labs.folderlistmodel 2.1
 import Ubuntu.Components.Pickers 1.0
 import Ubuntu.Components.ListItems 1.0 as ListItem
 import "../components"
-import "../components/Utils.js" as Utils
 
 Page {
     id: _addAlarmPage
@@ -125,7 +124,7 @@ Page {
     // Function to validate if the alarm was saved properly
     function validateAlarm(alarmObject) {
         if (alarmObject.error !== Alarm.NoError) {
-            Utils.log(debugMode, "Error saving alarm, code: " + alarmObject.error)
+            console.log("[ERROR]: Error saving alarm, code: " + alarmObject.error)
             return false
         }
         else {
@@ -177,7 +176,7 @@ Page {
 
         onErrorChanged: {
             if (error !== Alarm.NoError) {
-                Utils.log(debugMode, "Error saving alarm, code: " + error)
+                console.log("[LOG]: Error saving alarm, code: " + error)
             }
         }
 
