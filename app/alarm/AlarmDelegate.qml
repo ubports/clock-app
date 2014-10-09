@@ -73,9 +73,11 @@ ListItemWithActions {
 
             fontSize: "xx-small"
             width: parent.width
+            visible: !(type === Alarm.OneTime && !model.enabled)
             wrapMode: Text.WrapAtWordBoundaryOrAnywhere
             text: type === Alarm.Repeating ? alarmUtils.format_day_string(daysOfWeek, type)
-                                           : alarmUtils.get_time_to_next_alarm(model.date - localTime)
+                                           : model.enabled ? alarmUtils.get_time_to_next_alarm(model.date - localTime)
+                                                           : "Alarm Disabled"
         }
     }
 

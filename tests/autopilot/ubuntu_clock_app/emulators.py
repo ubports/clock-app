@@ -538,3 +538,9 @@ class ListItemWithActions(
     def confirm_removal(self):
         deleteButton = self.wait_select_single(name='delete')
         self.pointing_device.click_object(deleteButton)
+
+
+class AlarmDelegate(ListItemWithActions):
+
+    def __init__(self, *args):
+        super(AlarmDelegate, self).__init__(*args)

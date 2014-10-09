@@ -45,6 +45,10 @@ MainView {
         id: alarmModel
     }
 
+    AlarmUtils {
+        id: alarmUtils
+    }
+
     DateTime {
         id: localTimeSource
         updateInterval: 1000
@@ -57,6 +61,7 @@ MainView {
 
     AlarmPage {
         id: alarmPage
+        alarmModel: alarmModel
     }
 
     UbuntuTestCase {

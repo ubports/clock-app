@@ -78,7 +78,7 @@ MainView {
 
     DateTime {
         id: localTimeSource
-        updateInterval: clockModeDocument.contents.digitalMode ? 1000 : 10
+        updateInterval: 1000
     }
 
     onApplicationStateChanged: {

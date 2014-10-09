@@ -1,3 +1,21 @@
+ubuntu-clock-app (3.2) utopic; urgency=medium
+
+  [Nekhelesh Ramananthan]
+  * Fixed bottom edge hint timeout which made it possible for new users to not notice
+    the bottom edge action. (LP: #1357945)
+  * Moved DateTime object to ubuntu-clock-app.qml so that it can be used in multiple
+    places and avoid the need to duplicate the object.
+  * Removed Unused Utils library.
+  * Design tweak to always show the remaining time to an alarm for one-time alarms
+    only. (LP: #1377538)
+  * Tweaked bottom edge to show the time to the next active alarm (LP: #1290793)
+
+  [Akiva Shammai Avraham]
+  * Improved the analog clock performance by updating the clock hands every second
+    rather than every 10 milliseconds. (LP: #1363968)
+
+ -- Nekhelesh Ramananthan <krnekhelesh@gmail.com>  Thu, 09 Oct 2014 18:22:31 +0200
+
 ubuntu-clock-app (3.1) utopic; urgency=medium
 
   [Nekhelesh Ramananthan]
