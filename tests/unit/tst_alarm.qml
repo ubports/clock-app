@@ -174,6 +174,21 @@ MainView {
             }
         }
 
+        function _swipeToDeleteItem(item)
+        {
+            var startX = item.threshold
+            var startY = item.height / 2
+            var endX = item.width
+            var endY = startY
+            mousePress(item, startX, startY)
+            mouseMoveSlowly(item,
+                            startX, startY,
+                            endX - startX, endY - startY,
+                            10, 100)
+            mouseRelease(item, endX, endY)
+            mouseClick(item, startX, startY)
+        }
+
         function _deleteAlarm(label, repeat, time, status) {
             var alarmsList = findChild(alarmPage, "alarmListView")
             var oldCount = alarmsList.count
@@ -182,9 +197,7 @@ MainView {
             var alarmObject = findChild(alarmsList, "alarm"+index)
 
             if (index !== -1) {
-                mouseDrag(alarmObject, alarmObject.width/4, alarmObject.height/2, units.gu(10), 0)
-                mouseRelease(alarmObject, alarmObject.width/4+units.gu(10), alarmObject.height/2)
-                mouseClick(alarmObject, units.gu(5), alarmObject.height/2)
+                _swipeToDeleteItem(alarmObject)
             }
 
             tryCompare(alarmsList, "count", oldCount-1, 10000, "Alarm count did not decrease after deleting the alarm")
