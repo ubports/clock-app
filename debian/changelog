@@ -9,6 +9,7 @@ ubuntu-clock-app (3.2) utopic; urgency=medium
   * Design tweak to always show the remaining time to an alarm for one-time alarms
     only. (LP: #1377538)
   * Tweaked bottom edge to show the time to the next active alarm (LP: #1290793)
+  * Synced ListItemWithActions with upstream
 
   [Akiva Shammai Avraham]
   * Improved the analog clock performance by updating the clock hands every second
