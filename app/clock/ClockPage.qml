@@ -40,7 +40,7 @@ PageWithBottomEdge {
 
     Component.onCompleted: {
         console.log("[LOG]: Clock Page loaded")
-        _clockPage.setBottomEdgePage(Qt.resolvedUrl("../alarm/AlarmPage.qml"), { alarmModel: alarmModel })
+        _clockPage.setBottomEdgePage(Qt.resolvedUrl("../alarm/AlarmPage.qml"), {})
     }
 
     AlarmUtils {
