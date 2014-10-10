@@ -90,7 +90,7 @@ MainView {
 
             Loader {
                 id: alarmModelLoader
-                asynchronous: true
+                asynchronous: false
             }
 
             /*
@@ -117,6 +117,7 @@ MainView {
             */
 
             alarmModel: alarmModelLoader.item
+            bottomEdgeEnabled: alarmModelLoader.status === Loader.Ready
             clockTime: new Date
                        (
                            localTimeSource.localDateString.split(":")[0],

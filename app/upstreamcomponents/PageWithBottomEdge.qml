@@ -148,6 +148,8 @@ Page {
         property bool hiden: (activeFocus === false) ||
                              ((bottomEdge.y - units.gu(1)) < tip.y)
 
+        property bool isAnimating: true
+
         enabled: mouseArea.enabled
         visible: page.bottomEdgeEnabled
         anchors {
@@ -162,6 +164,9 @@ Page {
                     }
                     UbuntuNumberAnimation {
                         duration: UbuntuAnimation.SnapDuration
+                    }
+                    ScriptAction {
+                        script: tip.isAnimating = false
                     }
                 }
             }
