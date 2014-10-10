@@ -26,6 +26,7 @@ import Ubuntu.Components 1.1
 Image {
     id: _background
 
+    asynchronous: true
     anchors.fill: parent
     source: "../graphics/Background_Texture.jpg"
 }
