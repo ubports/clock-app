@@ -21,7 +21,6 @@ import DateTime 1.0
 import U1db 1.0 as U1db
 import Ubuntu.Components 1.1
 import "clock"
-import "alarm"
 import "components"
 
 MainView {
@@ -117,6 +116,7 @@ MainView {
               possible to receive a datetime object directly instead of using this hack.
             */
 
+            alarmModel: alarmModel
             clockTime: new Date
                        (
                            localTimeSource.localDateString.split(":")[0],
@@ -127,12 +127,6 @@ MainView {
                            localTimeSource.localTimeString.split(":")[2],
                            localTimeSource.localTimeString.split(":")[3]
                        )
-
-            /*
-              #TODO: The bottom edge title should reflect the time to the next
-              alarm. For instance it should read "Next alarm in 9h23m".
-            */
-            bottomEdgeTitle: i18n.tr("Alarms")
         }
     }
 }
