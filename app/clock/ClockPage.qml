@@ -31,7 +31,7 @@ PageWithBottomEdge {
     property alias isDigital: clock.isDigital
 
     // Property to keep track of the clock time
-    property alias clockTime: clock.analogTime
+    property var clockTime: new Date()
 
     property var alarmModel
 
@@ -99,6 +99,8 @@ PageWithBottomEdge {
         MainClock {
             id: clock
             objectName: "clock"
+
+            analogTime: clockTime
 
             anchors {
                 verticalCenter: parent.top
