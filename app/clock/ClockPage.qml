@@ -31,7 +31,7 @@ PageWithBottomEdge {
     property alias isDigital: clock.isDigital
 
     // Property to keep track of the clock time
-    property alias clockTime: new Date()
+    property var clockTime: new Date()
 
     property var alarmModel
 
