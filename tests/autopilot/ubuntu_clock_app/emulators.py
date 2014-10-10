@@ -77,6 +77,7 @@ class Page(ubuntuuitoolkit.UbuntuUIToolkitCustomProxyObjectBase):
         # --elopio - 2014-01-31
         self.main_view = self.get_root_instance().select_single(MainView)
 
+
 class PageWithBottomEdge(MainView):
     """
     An emulator class that makes it easy to interact with the bottom edge
