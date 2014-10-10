@@ -7,14 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2014-10-07 01:01-0700\n"
+"POT-Creation-Date: 2014-10-09 12:00+0200\n"
 "PO-Revision-Date: 2014-09-04 07:13+0000\n"
 "Last-Translator: Claudio Arseni <claudio.arseni@gmail.com>\n"
 "Language-Team: Italian <it@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-10-08 08:25+0000\n"
+"X-Launchpad-Export-Date: 2014-10-10 05:47+0000\n"
 "X-Generator: Launchpad (build 17196)\n"
 
 #: ../app/alarm/AlarmDelegate.qml:136
@@ -42,7 +42,7 @@ msgstr "Etichetta"
 msgid "Delete"
 msgstr "Elimina"
 
-#: ../app/alarm/AlarmPage.qml:26 ../app/ubuntu-clock-app.qml:103
+#: ../app/alarm/AlarmPage.qml:26 ../app/ubuntu-clock-app.qml:139
 msgid "Alarms"
 msgstr "Allarmi"
 
@@ -141,7 +141,7 @@ msgstr "Modifica allarme"
 msgid "Delete alarm"
 msgstr "Elimina allarme"
 
-#: ../app/clock/ClockPage.qml:134
+#: ../app/clock/ClockPage.qml:143
 msgid "Location"
 msgstr ""
 
