@@ -37,6 +37,12 @@ Page {
     objectName: "worldCityList"
 
     property bool isOnlineMode: false
+    property alias jsonTimeZoneModel: jsonTimeZoneModelLoader.item
+    property alias xmlTimeZoneModel: xmlTimeZoneModelLoader.item
+
+    Component.onCompleted: {
+        xmlTimeZoneModelLoader.sourceComponent = xmlTimeZoneModelComponent
+    }
 
     title: i18n.tr("Select a city")
     visible: false
@@ -54,6 +60,7 @@ Page {
                     text: i18n.tr("City")
                     onTriggered: {
                         worldCityList.state = "search"
+                        jsonTimeZoneModelLoader.sourceComponent = jsonTimeZoneModelComponent
                         searchField.forceActiveFocus()
                     }
                 }
@@ -71,6 +78,7 @@ Page {
                     searchField.text = ""
                     worldCityList.state = "default"
                     isOnlineMode = false
+                    jsonTimeZoneModelLoader.sourceComponent = undefined
                 }
             }
 
@@ -106,7 +114,9 @@ Page {
                             .arg(searchField.text)
                             .arg("&app=com.ubuntu.clock&version=3.2.x")
                             console.log("Online URL: " + url)
-                            jsonTimeZoneModel.source = Qt.resolvedUrl(url)
+                            if (jsonTimeZoneModelLoader.status === Loader.Ready) {
+                                jsonTimeZoneModel.source = Qt.resolvedUrl(url)
+                            }
                         }
                     }
                 }
@@ -130,20 +140,40 @@ Page {
         }
     }
 
-    JsonTimeZoneModel {
-        id: jsonTimeZoneModel
-        updateInterval: 60000
+    Loader {
+        id: jsonTimeZoneModelLoader
+        asynchronous: true
     }
 
-    XmlTimeZoneModel {
-        id: xmlTimeZoneModel
-        updateInterval: 60000
-        source: Qt.resolvedUrl("world-city-list.xml")
+    Component {
+        id: jsonTimeZoneModelComponent
+        JsonTimeZoneModel {
+            updateInterval: 60000
+        }
+    }
+
+    Loader {
+        id: xmlTimeZoneModelLoader
+        asynchronous: true
+    }
+
+    Component {
+        id: xmlTimeZoneModelComponent
+        XmlTimeZoneModel {
+            updateInterval: 60000
+            source: Qt.resolvedUrl("world-city-list.xml")
+        }
     }
 
     SortFilterModel {
         id: sortedTimeZoneModel
-        model: isOnlineMode ? jsonTimeZoneModel : xmlTimeZoneModel
+        model: {
+            if (isOnlineMode) {
+                return jsonTimeZoneModelLoader.status === Loader.Ready ? jsonTimeZoneModel : undefined
+            } else {
+                return xmlTimeZoneModelLoader.status === Loader.Ready ? xmlTimeZoneModel : undefined
+            }
+        }
         sort.property: "city"
         sort.order: Qt.AscendingOrder
         filter.property: "city"
@@ -195,8 +225,13 @@ Page {
     }
 
     ActivityIndicator {
-        running: jsonTimeZoneModel.status === JsonTimeZoneModel.Loading
-                 && isOnlineMode
+        running: {
+            if (jsonTimeZoneModelLoader.status === Loader.Ready && isOnlineMode) {
+                return jsonTimeZoneModel.status === JsonTimeZoneModel.Loading
+            } else {
+                return false
+            }
+        }
         anchors {
             top: onlineStateLabel.bottom
             topMargin: units.gu(3)
