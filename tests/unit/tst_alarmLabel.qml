@@ -38,6 +38,10 @@ MainView {
         alarm: _alarm
     }
 
+    Utils {
+        id: utils
+    }
+
     UbuntuTestCase {
         id: alarmLabelPageTest
         name: "AlarmLabelPage"
@@ -53,14 +57,6 @@ MainView {
             header = findChild(mainView, "MainView_Header")
             alarmLabel = findChild(alarmLabelPage, "labelEntry")
             backButton = findChild(header, "customBackButton")
-        }
-
-        function clearTextField(textfield) {
-            // Get textfield focus by clicking once
-            mouseClick(textfield, textfield.width - units.gu(2), textfield.height/2)
-
-            // Click on the clear button shown on the right
-            mouseClick(textfield, textfield.width - units.gu(2), textfield.height/2)
         }
 
         /*
@@ -87,7 +83,7 @@ MainView {
             compare(alarmLabel.text, "Alarm", "Default alarm label is not Alarm")
             compare(backButton.enabled, true, "Back header button is not enabled by default")
 
-            clearTextField(alarmLabel)
+            utils.clearTextField(alarmLabel)
             typeString(data.string)
 
             compare(alarmLabel.text, data.string, "Alarm label is not what was type in the textfield")

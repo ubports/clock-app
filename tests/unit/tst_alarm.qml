@@ -119,8 +119,7 @@ MainView {
 
         function _setAlarmLabel(alarmLabelPage, label) {
             var alarmLabel = findChild(alarmLabelPage, "labelEntry")
-            mouseClick(alarmLabel, alarmLabel.width - units.gu(2), centerOf(alarmLabel).y)
-            mouseClick(alarmLabel, alarmLabel.width - units.gu(2), centerOf(alarmLabel).y)
+            utils.clearTextField(alarmLabel)
             typeString(label)
         }
 

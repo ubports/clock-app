@@ -78,4 +78,12 @@ UbuntuTestCase {
         mouseRelease(item, endX, endY)
         mouseClick(item, startX, startY)
     }
+
+    function clearTextField(textfield) {
+        // Get textfield focus by clicking once
+        mouseClick(textfield, textfield.width - units.gu(2), centerOf(textfield).y)
+
+        // Click on the clear button shown on the right
+        mouseClick(textfield, textfield.width - units.gu(2), centerOf(textfield).y)
+    }
 }
