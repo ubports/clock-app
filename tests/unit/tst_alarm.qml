@@ -181,9 +181,11 @@ MainView {
             var addAlarmPage = findChild(pageStack, "AddAlarmPage")
             waitForRendering(addAlarmPage)
 
+            // Set the alarm time
             var alarmTimePicker = findChild(pageStack, "alarmTime")
             _setAlarmTime(alarmTimePicker, time)
 
+            // Set the alarm repeat options
             _pressListItem(addAlarmPage, "alarmRepeat")
             var alarmRepeatPage = utils.getPage(pageStack, "alarmRepeatPage")
             _setAlarmRepeatDays(alarmRepeatPage, repeat)
@@ -191,6 +193,7 @@ MainView {
 
             waitForRendering(addAlarmPage)
 
+            // Set the alarm label
             _pressListItem(addAlarmPage, "alarmLabel")
             var alarmLabelPage = utils.getPage(pageStack, "alarmLabelPage")
             _setAlarmLabel(alarmLabelPage, label)
@@ -198,6 +201,7 @@ MainView {
 
             waitForRendering(addAlarmPage)
 
+            // Set the alarm sound
             _pressListItem(addAlarmPage, "alarmSound")
             var alarmSoundPage = utils.getPage(pageStack, "alarmSoundPage")
             _setAlarmSound(alarmSoundPage)
