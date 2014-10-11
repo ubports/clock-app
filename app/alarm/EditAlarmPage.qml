@@ -37,6 +37,9 @@ Page {
     // Temporary alarm used to read saved alarm and modify them
     property var tempAlarm
 
+    // Property to store the alarm model
+    property var alarmModel
+
     title: isNewAlarm ? i18n.tr("New alarm") : i18n.tr("Edit alarm")
     visible: false
 
