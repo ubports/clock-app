@@ -12,7 +12,8 @@ ubuntu-clock-app (3.2) utopic; urgency=medium
   * Synced ListItemWithActions with upstream
   * Delayed loading of AlarmModel to improve app startup time (LP: #1362140)
   * Fixed alarm page header width warning and corrected icon spacing.
-  * Added edit alarm qml tests
+  * Added edit alarm qml tests and added a library helper which contains commonly
+    used test functions to avoid code duplication in future tests.
 
   [Akiva Shammai Avraham]
   * Improved the analog clock performance by updating the clock hands every second
