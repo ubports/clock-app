@@ -63,6 +63,10 @@ MainView {
         id: alarmPage
     }
 
+    Utils {
+        id: utils
+    }
+
     UbuntuTestCase {
         id: alarmTest
         name: "AlarmTest"
@@ -79,29 +83,9 @@ MainView {
 
         // *************  Helper Functions ************
 
-        function _pressAddAlarmHeaderButton() {
-            var addButton = findChild(header, "addAlarmAction" + "_header_button")
-            mouseClick(addButton, centerOf(addButton).x, centerOf(addButton).y)
-        }
-
-        function _pressSaveAlarmHeaderButton() {
-            var saveButton = findChild(alarmTest.header, "saveAlarmAction" + "_header_button")
-            mouseClick(saveButton, centerOf(saveButton).x, centerOf(saveButton).y)
-        }
-
-        function _pressBackButton() {
-            mouseClick(backButton, centerOf(backButton).x, centerOf(backButton).y)
-        }
-
         function _pressListItem(page, objectName) {
             var listitem = findChild(page, objectName)
             mouseClick(listitem, centerOf(listitem).x, centerOf(listitem).y)
-        }
-
-        function _getPage(objectName) {
-            var page = findChild(pageStack, objectName)
-            waitForRendering(page)
-            return page
         }
 
         function _waitForPickerToStopMoving(picker) {
@@ -178,21 +162,6 @@ MainView {
             compare(listitem.subText, expectedValue, message)
         }
 
-        function _swipeToDeleteItem(item)
-        {
-            var startX = item.threshold
-            var startY = item.height / 2
-            var endX = item.width
-            var endY = startY
-            mousePress(item, startX, startY)
-            mouseMoveSlowly(item,
-                            startX, startY,
-                            endX - startX, endY - startY,
-                            10, 100)
-            mouseRelease(item, endX, endY)
-            mouseClick(item, startX, startY)
-        }
-
         function _deleteAlarm(label, repeat, time, status) {
             var alarmsList = findChild(alarmPage, "alarmListView")
             var oldCount = alarmsList.count
@@ -201,14 +170,14 @@ MainView {
             var alarmObject = findChild(alarmsList, "alarm"+index)
 
             if (index !== -1) {
-                _swipeToDeleteItem(alarmObject)
+                utils.swipeToDeleteItem(alarmObject)
             }
 
             tryCompare(alarmsList, "count", oldCount-1, 10000, "Alarm count did not decrease after deleting the alarm")
         }
 
         function _setAlarm(label, repeat, time) {
-            _pressAddAlarmHeaderButton()
+            utils.pressHeaderButton(header, "addAlarmAction")
 
             var addAlarmPage = findChild(pageStack, "AddAlarmPage")
             waitForRendering(addAlarmPage)
@@ -217,27 +186,27 @@ MainView {
             var date = _setAlarmTime(alarmTimePicker, time)
 
             _pressListItem(addAlarmPage, "alarmRepeat")
-            var alarmRepeatPage = _getPage("alarmRepeatPage")
+            var alarmRepeatPage = utils.getPage(pageStack, "alarmRepeatPage")
             _setAlarmRepeatDays(alarmRepeatPage, repeat)
-            _pressBackButton()
+            utils.pressButton(backButton)
 
             waitForRendering(addAlarmPage)
 
             _pressListItem(addAlarmPage, "alarmLabel")
-            var alarmLabelPage = _getPage("alarmLabelPage")
+            var alarmLabelPage = utils.getPage(pageStack, "alarmLabelPage")
             _setAlarmLabel(alarmLabelPage, label)
-            _pressBackButton()
+            utils.pressButton(backButton)
 
             waitForRendering(addAlarmPage)
 
             _pressListItem(addAlarmPage, "alarmSound")
-            var alarmSoundPage = _getPage("alarmSoundPage")
+            var alarmSoundPage = utils.getPage(pageStack, "alarmSoundPage")
             _setAlarmSound(alarmSoundPage)
-            _pressBackButton()
+            utils.pressButton(backButton)
 
             waitForRendering(addAlarmPage)
 
-            _pressSaveAlarmHeaderButton()
+            utils.pressHeaderButton(header, "saveAlarmAction")
 
             waitForRendering(alarmPage)
         }
@@ -265,29 +234,29 @@ MainView {
 
             _confirmListItemValue(addAlarmPage, "alarmRepeat", oldrepeat, "Alarm repeat options read from the saved alarm is incorrect")
             _pressListItem(addAlarmPage, "alarmRepeat")
-            var alarmRepeatPage = _getPage("alarmRepeatPage")
+            var alarmRepeatPage = utils.getPage(pageStack, "alarmRepeatPage")
             _setAlarmRepeatDays(alarmRepeatPage, newrepeat)
-            _pressBackButton()
+            utils.pressButton(backButton)
 
             waitForRendering(addAlarmPage)
 
             _confirmListItemValue(addAlarmPage, "alarmLabel", oldlabel, "Alarm name read from the saved alarm is incorrect")
             _pressListItem(addAlarmPage, "alarmLabel")
-            var alarmLabelPage = _getPage("alarmLabelPage")
+            var alarmLabelPage = utils.getPage(pageStack, "alarmLabelPage")
             _setAlarmLabel(alarmLabelPage, newlabel)
-            _pressBackButton()
+            utils.pressButton(backButton)
 
             waitForRendering(addAlarmPage)
 
             _confirmListItemValue(addAlarmPage, "alarmSound", "Celestial", "Alarm sound read from the saved alarm is incorrect")
             _pressListItem(addAlarmPage, "alarmSound")
-            var alarmSoundPage = _getPage("alarmSoundPage")
+            var alarmSoundPage = utils.getPage(pageStack, "alarmSoundPage")
             _setAlarmSound(alarmSoundPage)
-            _pressBackButton()
+            utils.pressButton(backButton)
 
             waitForRendering(addAlarmPage)
 
-            _pressSaveAlarmHeaderButton()
+            utils.pressHeaderButton(header, "saveAlarmAction")
 
             waitForRendering(alarmPage)
         }
