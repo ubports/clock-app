@@ -175,13 +175,21 @@ Page {
 
     SortFilterModel {
         id: sortedTimeZoneModel
+
         model: {
-            if (isOnlineMode) {
-                return jsonTimeZoneModelLoader.status === Loader.Ready ? jsonTimeZoneModel : undefined
-            } else {
-                return xmlTimeZoneModelLoader.status === Loader.Ready ? xmlTimeZoneModel : undefined
+            if (isOnlineMode && jsonTimeZoneModelLoader.status === Loader.Ready) {
+                return jsonTimeZoneModel
+            }
+
+            else  if (xmlTimeZoneModelLoader.status === Loader.Ready) {
+                return xmlTimeZoneModel
+            }
+
+            else {
+                return undefined
             }
         }
+
         sort.property: "city"
         sort.order: Qt.AscendingOrder
         filter.property: "city"
