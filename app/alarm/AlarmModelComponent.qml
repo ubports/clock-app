@@ -19,14 +19,7 @@
 import QtQuick 2.3
 import Ubuntu.Components 1.1
 
-/*
-  Component to set the background of the app
-  */
-
-Image {
-    id: _background
-
-    asynchronous: true
-    anchors.fill: parent
-    source: "../graphics/Background_Texture.jpg"
+AlarmModel {
+    id: alarmModel
+    Component.onCompleted: console.log("[LOG]: Alarm Database loaded")
 }

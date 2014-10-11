@@ -23,8 +23,6 @@ import "../components"
 Page {
     id: alarmPage
 
-    property var alarmModel
-
     title: i18n.tr("Alarms")
     objectName: 'AlarmPage'
 
@@ -133,7 +131,7 @@ Page {
     }
 
     EmptyState {
-        visible: alarmModel.count === 0
+        visible: alarmModel ? alarmModel.count === 0 : true
         anchors.verticalCenter: parent.verticalCenter
 
         iconName: "alarm-clock"

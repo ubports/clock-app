@@ -28,6 +28,8 @@ ClockCircle {
     // Property to show/hide the seconds hand
     property bool showSeconds
 
+    signal animationComplete()
+
     function startAnimation() {
         _animationTimer.start()
     }
@@ -90,12 +92,20 @@ ClockCircle {
         source: "../graphics/Knob.png"
     }
 
-    PropertyAnimation {
+    SequentialAnimation {
         id: _innerCircleAnimation
-        target: _innerCircleAnalog
-        property: "width"
-        from: units.gu(0)
-        to: maxWidth
-        duration: 900
+
+        PropertyAnimation {
+            target: _innerCircleAnalog
+            property: "width"
+            from: units.gu(0)
+            to: maxWidth
+            duration: 900
+        }
+
+        // Fire signal that the animation is complete.
+        ScriptAction {
+            script: animationComplete()
+        }
     }
 }

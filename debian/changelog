@@ -10,6 +10,7 @@ ubuntu-clock-app (3.2) utopic; urgency=medium
     only. (LP: #1377538)
   * Tweaked bottom edge to show the time to the next active alarm (LP: #1290793)
   * Synced ListItemWithActions with upstream
+  * Delayed loading of AlarmModel to improve app startup time (LP: #1362140)
   * Fixed alarm page header width warning and corrected icon spacing.
 
   [Akiva Shammai Avraham]

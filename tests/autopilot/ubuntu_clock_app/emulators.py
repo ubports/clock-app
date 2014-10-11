@@ -54,7 +54,7 @@ class MainView(ubuntuuitoolkit.MainView):
         clockPage = self.open_clock()
         clockPage.reveal_bottom_edge_page()
         self.get_header().visible.wait_for(True)
-        return self.wait_select_single(AlarmPage)
+        return self.wait_select_single(Page11)
 
     def get_AlarmList(self):
         """ Get the AlarmList object. """
@@ -93,6 +93,7 @@ class PageWithBottomEdge(MainView):
             action_item = self.wait_select_single(objectName='bottomEdgeTip')
             action_item.hiden.wait_for(False)
             action_item.enabled.wait_for(True)
+            action_item.isAnimating.wait_for(False)
             start_x = (action_item.globalRect.x +
                        (action_item.globalRect.width * 0.5))
             start_y = (action_item.globalRect.y +
@@ -178,7 +179,7 @@ class ClockPage(PageWithBottomEdge):
         self.pointing_device.click_object(deleteButton)
 
 
-class AlarmPage(Page):
+class Page11(Page):
     """Autopilot helper for the Alarm page."""
 
     @autopilot_logging.log_action(logger.info)

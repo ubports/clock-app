@@ -89,4 +89,22 @@ Clock {
             }
         }
     }
+
+    /*
+     Only when the startup animation is complete, proceed to load the
+     alarm model
+    */
+    Connections {
+        target: digitalModeLoader.item
+        onAnimationComplete: {
+            alarmModelLoader.source = Qt.resolvedUrl("../alarm/AlarmModelComponent.qml")
+        }
+    }
+
+    Connections {
+        target: analogModeLoader.item
+        onAnimationComplete: {
+            alarmModelLoader.source = Qt.resolvedUrl("../alarm/AlarmModelComponent.qml")
+        }
+    }
 }

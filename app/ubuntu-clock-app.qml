@@ -71,11 +71,6 @@ MainView {
         defaults: { "digitalMode": false }
     }
 
-    AlarmModel {
-        id: alarmModel
-        Component.onCompleted: console.log("[LOG]: Alarm Database loaded")
-    }
-
     DateTime {
         id: localTimeSource
         updateInterval: 1000
@@ -92,6 +87,11 @@ MainView {
 
         ClockPage {
             id: clockPage
+
+            Loader {
+                id: alarmModelLoader
+                asynchronous: false
+            }
 
             /*
               #FIXME: When the SDK support hiding the header, then enable the
@@ -116,7 +116,8 @@ MainView {
               possible to receive a datetime object directly instead of using this hack.
             */
 
-            alarmModel: alarmModel
+            alarmModel: alarmModelLoader.item
+            bottomEdgeEnabled: alarmModelLoader.status === Loader.Ready
             clockTime: new Date
                        (
                            localTimeSource.localDateString.split(":")[0],

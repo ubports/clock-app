@@ -34,6 +34,7 @@ Page {
     // Property to store the index of the alarm to be edited
     property int alarmIndex
 
+    // Temporary alarm used to read saved alarm and modify them
     property var tempAlarm
 
     title: isNewAlarm ? i18n.tr("New alarm") : i18n.tr("Edit alarm")

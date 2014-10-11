@@ -33,6 +33,8 @@ ClockCircle {
     property int maxTimeFontSize
     property int maxPeriodFontSize
 
+    signal animationComplete()
+
     function startAnimation() {
         _animationTimer.start()
     }
@@ -94,31 +96,38 @@ ClockCircle {
         }
     }
 
-    ParallelAnimation {
+    SequentialAnimation {
         id: _innerCircleAnimation
 
-        PropertyAnimation {
-            target: _innerCircle
-            property: "width"
-            from: units.gu(0)
-            to: maxWidth
-            duration: 900
+        ParallelAnimation {
+            PropertyAnimation {
+                target: _innerCircle
+                property: "width"
+                from: units.gu(0)
+                to: maxWidth
+                duration: 900
+            }
+
+            PropertyAnimation {
+                target: _digitalTime
+                property: "font.pixelSize"
+                from: units.dp(1)
+                to: maxTimeFontSize
+                duration: 900
+            }
+
+            PropertyAnimation {
+                target: _digitalTimePeriod
+                property: "font.pixelSize"
+                from: units.dp(1)
+                to: maxPeriodFontSize
+                duration: 900
+            }
         }
 
-        PropertyAnimation {
-            target: _digitalTime
-            property: "font.pixelSize"
-            from: units.dp(1)
-            to: maxTimeFontSize
-            duration: 900
-        }
-
-        PropertyAnimation {
-            target: _digitalTimePeriod
-            property: "font.pixelSize"
-            from: units.dp(1)
-            to: maxPeriodFontSize
-            duration: 900
+        // Fire signal that the animation is complete.
+        ScriptAction {
+            script: animationComplete()
         }
     }
 }

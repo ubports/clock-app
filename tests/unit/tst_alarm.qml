@@ -61,7 +61,6 @@ MainView {
 
     AlarmPage {
         id: alarmPage
-        alarmModel: alarmModel
     }
 
     UbuntuTestCase {
