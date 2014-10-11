@@ -173,6 +173,11 @@ MainView {
             }
         }
 
+        function _confirmListItemValue(page, objectName, expectedValue, message) {
+            var listitem = findChild(page, objectName)
+            compare(listitem.subText, expectedValue, message)
+        }
+
         function _swipeToDeleteItem(item)
         {
             var startX = item.threshold
@@ -237,9 +242,59 @@ MainView {
             waitForRendering(alarmPage)
         }
 
+        function _editAlarm(oldlabel, oldrepeat, oldtime, status, newlabel, newrepeat, newtime) {
+            // Find the index of the alarm which needs to be edited
+            var alarmIndex = findAlarm(oldlabel, oldrepeat, oldtime, status)
+
+            if (alarmIndex === -1) {
+                fail("Cannot find saved alarm to edit")
+            }
+
+            // Press the alarm to be edited
+            var alarmsList = findChild(alarmPage, "alarmListView")
+            var alarmObject = findChild(alarmsList, "alarm"+alarmIndex)
+            mouseClick(alarmObject, centerOf(alarmObject).x, centerOf(alarmObject).y)
+
+            // Proceed to verify the alarm read is correct and then set new values
+            var addAlarmPage = findChild(pageStack, "AddAlarmPage")
+            waitForRendering(addAlarmPage)
+
+            var alarmTimePicker = findChild(pageStack, "alarmTime")
+            compare(Qt.formatTime(alarmTimePicker.date), oldtime, "Time read from the saved alarm is incorrect")
+            var date = _setAlarmTime(alarmTimePicker, newtime)
+
+            _confirmListItemValue(addAlarmPage, "alarmRepeat", oldrepeat, "Alarm repeat options read from the saved alarm is incorrect")
+            _pressListItem(addAlarmPage, "alarmRepeat")
+            var alarmRepeatPage = _getPage("alarmRepeatPage")
+            _setAlarmRepeatDays(alarmRepeatPage, newrepeat)
+            _pressBackButton()
+
+            waitForRendering(addAlarmPage)
+
+            _confirmListItemValue(addAlarmPage, "alarmLabel", oldlabel, "Alarm name read from the saved alarm is incorrect")
+            _pressListItem(addAlarmPage, "alarmLabel")
+            var alarmLabelPage = _getPage("alarmLabelPage")
+            _setAlarmLabel(alarmLabelPage, newlabel)
+            _pressBackButton()
+
+            waitForRendering(addAlarmPage)
+
+            _confirmListItemValue(addAlarmPage, "alarmSound", "Celestial", "Alarm sound read from the saved alarm is incorrect")
+            _pressListItem(addAlarmPage, "alarmSound")
+            var alarmSoundPage = _getPage("alarmSoundPage")
+            _setAlarmSound(alarmSoundPage)
+            _pressBackButton()
+
+            waitForRendering(addAlarmPage)
+
+            _pressSaveAlarmHeaderButton()
+
+            waitForRendering(alarmPage)
+        }
+
         // *************  Test Functions ************
 
-        function test_createAlarm_data() {
+        function test_01_createAlarm_data() {
             return [
                         {tag: "Weekday Alarms",   name: "Weekday Alarm",    repeat: [0,1,2,3,4], repeatLabel: "Weekdays"},
                         {tag: "Weekend Alarms",   name: "Weekend Alarm",    repeat: [5,6],       repeatLabel: "Weekends"},
@@ -248,7 +303,7 @@ MainView {
         }
 
         // Test to check if creating an alarm works as expected
-        function test_createAlarm(data) {
+        function test_01_createAlarm(data) {
             var date = new Date()
             date.setHours((date.getHours() + 10) % 24)
             date.setMinutes((date.getMinutes() + 40) % 60)
@@ -262,6 +317,38 @@ MainView {
              then we need to delete alarms to cleanup after the tests.
             */
             _deleteAlarm(data.name, data.repeatLabel, Qt.formatTime(date), true)
+        }
+
+        // Test to check if editing an alarm and saving it works as expected
+        function test_02_editAlarm() {
+            var date = new Date()
+            date.setHours((date.getHours() + 10) % 24)
+            date.setMinutes((date.getMinutes() + 40) % 60)
+            date.setSeconds(0)
+
+            _setAlarm("Test Edit Alarm", [0,1,2,3,4], date)
+
+            var newDate = new Date()
+            newDate.setHours((newDate.getHours() + 5) % 24)
+            newDate.setMinutes((newDate.getMinutes() + 15) % 60)
+            newDate.setSeconds(0)
+
+            _editAlarm("Test Edit Alarm", "Weekdays", Qt.formatTime(date), true, "Alarm Edited", [5,6], newDate)
+
+            /*
+             #NOTE: This wait is required since as per the design after an alarm is edited and saved
+             it shows the remaining time to that alarm and then after 5 secs shows the alarm
+             frequency. Hence we need to wait for 5 seconds before confirming alarm creation.
+            */
+            wait(6000)
+
+            _confirmAlarmCreation("Alarm Edited", "Weekends", Qt.formatTime(newDate), true)
+
+            /*
+             #FIXME: This won't be required once we mock up alarm data. Until
+             then we need to delete alarms to cleanup after the tests.
+            */
+            _deleteAlarm("Alarm Edited", "Weekends", Qt.formatTime(newDate), true)
         }
     }
 }
