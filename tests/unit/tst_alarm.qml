@@ -96,7 +96,6 @@ MainView {
         function _setAlarmTime(picker, time) {
             picker.date = time
             _waitForPickerToStopMoving(picker)
-            return picker.date
         }
 
         function _setAlarmRepeatDays(alarmRepeatPage, days) {
@@ -183,7 +182,7 @@ MainView {
             waitForRendering(addAlarmPage)
 
             var alarmTimePicker = findChild(pageStack, "alarmTime")
-            var date = _setAlarmTime(alarmTimePicker, time)
+            _setAlarmTime(alarmTimePicker, time)
 
             _pressListItem(addAlarmPage, "alarmRepeat")
             var alarmRepeatPage = utils.getPage(pageStack, "alarmRepeatPage")
@@ -230,7 +229,7 @@ MainView {
 
             var alarmTimePicker = findChild(pageStack, "alarmTime")
             compare(Qt.formatTime(alarmTimePicker.date), oldtime, "Time read from the saved alarm is incorrect")
-            var date = _setAlarmTime(alarmTimePicker, newtime)
+            _setAlarmTime(alarmTimePicker, newtime)
 
             _confirmListItemValue(addAlarmPage, "alarmRepeat", oldrepeat, "Alarm repeat options read from the saved alarm is incorrect")
             _pressListItem(addAlarmPage, "alarmRepeat")
