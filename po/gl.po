@@ -7,71 +7,56 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2014-10-09 12:00+0200\n"
+"POT-Creation-Date: 2014-10-10 16:52+0200\n"
 "PO-Revision-Date: 2014-09-26 18:35+0000\n"
 "Last-Translator: Marcos Lans <Unknown>\n"
 "Language-Team: Galician <gl@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-10-10 05:47+0000\n"
+"X-Launchpad-Export-Date: 2014-10-11 05:16+0000\n"
 "X-Generator: Launchpad (build 17196)\n"
 
-#: ../app/alarm/AlarmDelegate.qml:136
-#, qt-format
-msgid "in %1d %1h %2m"
-msgstr "en %1d %1h %2m"
-
-#: ../app/alarm/AlarmDelegate.qml:145
-#, qt-format
-msgid "in %1h %2m"
-msgstr "en %1h %2m"
-
-#: ../app/alarm/AlarmDelegate.qml:153
-#, c-format, qt-format
-msgid "in %1m"
-msgstr "en %1m"
-
 #: ../app/alarm/AlarmLabel.qml:30 ../app/alarm/AlarmLabel.qml:56
-#: ../app/alarm/EditAlarmPage.qml:300
+#: ../app/alarm/EditAlarmPage.qml:299
 msgid "Label"
 msgstr "Etiqueta"
 
-#: ../app/alarm/AlarmList.qml:81 ../app/alarm/AlarmPage.qml:108
-#: ../app/worldclock/UserWorldCityList.qml:103
+#: ../app/alarm/AlarmList.qml:78 ../app/alarm/AlarmPage.qml:110
+#: ../app/worldclock/UserWorldCityList.qml:101
 msgid "Delete"
 msgstr "Eliminar"
 
-#: ../app/alarm/AlarmPage.qml:26 ../app/ubuntu-clock-app.qml:139
+#: ../app/alarm/AlarmPage.qml:28
 msgid "Alarms"
 msgstr "Alarmas"
 
-#: ../app/alarm/AlarmPage.qml:43 ../app/alarm/EditAlarmPage.qml:47
-#: ../app/alarm/EditAlarmPage.qml:174
+#: ../app/alarm/AlarmPage.qml:45 ../app/alarm/EditAlarmPage.qml:46
+#: ../app/alarm/EditAlarmPage.qml:173
 msgid "Alarm"
 msgstr "Alarma"
 
-#: ../app/alarm/AlarmPage.qml:58 ../app/worldclock/WorldCityList.qml:68
+#: ../app/alarm/AlarmPage.qml:60 ../app/worldclock/WorldCityList.qml:68
 msgid "Back"
 msgstr "Volver"
 
-#: ../app/alarm/AlarmPage.qml:79
+#: ../app/alarm/AlarmPage.qml:81
 msgid "Select None"
 msgstr "Non seleccionar nada"
 
-#: ../app/alarm/AlarmPage.qml:81 ../app/alarm/AlarmRepeat.qml:35
+#: ../app/alarm/AlarmPage.qml:83 ../app/alarm/AlarmRepeat.qml:35
 msgid "Select All"
 msgstr "Selecionar todo"
 
-#: ../app/alarm/AlarmPage.qml:137
+#: ../app/alarm/AlarmPage.qml:140
 msgid "No saved alarms"
 msgstr "Non hai alarmas gardadas"
 
-#: ../app/alarm/AlarmPage.qml:138
+#: ../app/alarm/AlarmPage.qml:141
 msgid "Tap the + icon to add an alarm"
 msgstr "Tocar a icona + engade unha alarma"
 
-#: ../app/alarm/AlarmRepeat.qml:31 ../app/alarm/EditAlarmPage.qml:290
+#: ../app/alarm/AlarmRepeat.qml:31 ../app/alarm/EditAlarmPage.qml:289
 msgid "Repeat"
 msgstr "Repetición"
 
@@ -109,7 +94,7 @@ msgstr "Vibración"
 msgid "Change time and date"
 msgstr "Cambiar hora e data"
 
-#: ../app/alarm/AlarmSound.qml:28 ../app/alarm/EditAlarmPage.qml:313
+#: ../app/alarm/AlarmSound.qml:28 ../app/alarm/EditAlarmPage.qml:312
 msgid "Sound"
 msgstr "Son"
 
@@ -129,19 +114,47 @@ msgstr "Fins de semana"
 msgid "Daily"
 msgstr "Diariamente"
 
-#: ../app/alarm/EditAlarmPage.qml:40
+#: ../app/alarm/AlarmUtils.qml:55
+msgid "No active alarms"
+msgstr ""
+
+#: ../app/alarm/AlarmUtils.qml:72
+#, qt-format
+msgid "Next Alarm %1"
+msgstr ""
+
+#: ../app/alarm/AlarmUtils.qml:79
+msgid "Alarm Passed"
+msgstr ""
+
+#: ../app/alarm/AlarmUtils.qml:88
+#, qt-format
+msgid "in %1d %2h %3m"
+msgstr ""
+
+#: ../app/alarm/AlarmUtils.qml:97
+#, qt-format
+msgid "in %1h %2m"
+msgstr "en %1h %2m"
+
+#: ../app/alarm/AlarmUtils.qml:105
+#, c-format, qt-format
+msgid "in %1m"
+msgstr "en %1m"
+
+#: ../app/alarm/EditAlarmPage.qml:39
 msgid "New alarm"
 msgstr "Nova alarma"
 
-#: ../app/alarm/EditAlarmPage.qml:40
+#: ../app/alarm/EditAlarmPage.qml:39
 msgid "Edit alarm"
 msgstr "Editar a alarma"
 
-#: ../app/alarm/EditAlarmPage.qml:337
+#: ../app/alarm/EditAlarmPage.qml:336
 msgid "Delete alarm"
 msgstr "Eliminar a alarma"
 
-#: ../app/clock/ClockPage.qml:143
+#: ../app/clock/ClockPage.qml:152
 msgid "Location"
 msgstr "Localización"
 

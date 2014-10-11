@@ -64,7 +64,6 @@ Page {
             contents: Item {
                 anchors.right: parent ? parent.right: undefined
                 height: parent ? parent.height : undefined
-                width: childrenRect.width
 
                 HeaderButton {
                     id: selectButton
@@ -103,6 +102,7 @@ Page {
                     id: deleteButton
 
                     anchors.right: parent.right
+                    anchors.rightMargin: units.gu(2)
 
                     iconName: "delete"
                     text: i18n.tr("Delete")
