@@ -41,6 +41,10 @@ Page {
     property alias xmlTimeZoneModel: xmlTimeZoneModelLoader.item
 
     Component.onCompleted: {
+        /*
+         Load the XML Model *only* after the page has loaded to improve
+         the loading time preception of the user.
+       */
         xmlTimeZoneModelLoader.sourceComponent = xmlTimeZoneModelComponent
     }
 
@@ -140,6 +144,10 @@ Page {
         }
     }
 
+    /*
+     Loader to allow for dynamic loading/unloading of the json model only when
+     necessary.
+    */
     Loader {
         id: jsonTimeZoneModelLoader
         asynchronous: true
