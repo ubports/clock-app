@@ -37,10 +37,12 @@ MockClockApp {
         property var header
         property var backButton
         property var clockPage
+        property var pageStack
 
         function initTestCase() {
             header = findChild(clockApp, "MainView_Header")
             backButton = findChild(header, "customBackButton")
+            pageStack = findChild(clockApp, "pageStack")
             clockPage = findChild(clockApp, "clockPage")
         }
 
@@ -142,7 +144,6 @@ MockClockApp {
          and saved to the user world city list.
         */
         function test_addCityAlreadyPresentInWorldCityList() {
-            var pageStack = findChild(clockApp, "pageStack")
             var clockPage = utils.getPage(pageStack, "clockPage")
 
             _pressAddWorldCityButton()
@@ -159,5 +160,9 @@ MockClockApp {
             // Clean up after the test by deleting the city which was added during the test
             _deleteWorldCity("Amsterdam", "Netherlands")
         }
+
+//        function test_addCityBySearchingOnline() {
+
+//        }
     }
 }
