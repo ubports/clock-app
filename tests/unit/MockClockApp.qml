@@ -29,7 +29,7 @@ import "../../app/clock"
 */
 
 MainView {
-    id: mainView
+    id: clockApp
 
     // Property to store the state of an application (active or suspended)
     property bool applicationState: Qt.application.active

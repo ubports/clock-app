@@ -52,11 +52,18 @@ MockClockApp {
         }
 
         function _findWorldCity(cityList, type, cityName, countryName) {
+            /*
+             The list view for the user world city list and the available world
+             city list have the same structure with some minor object name
+             changes. The 'objectPrefix' varible is used to handle that.
+            */
             var objectPrefix = type === "user" ? "user" : "default"
+
             for(var i=0; i<=cityList.count; i++) {
                 var cityListItem = findChild(clockApp, objectPrefix+"WorldCityItem"+i)
                 var city = findChild(cityListItem, objectPrefix+"CityNameText")
                 var country = findChild(cityListItem, objectPrefix+"CountryNameText")
+
                 if (city.text === cityName && country.text === countryName) {
                     return i
                 }
@@ -67,36 +74,61 @@ MockClockApp {
 
         function _confirmWorldCityAddition(cityName, countryName) {
             var cityList = findChild(clockApp, "userWorldCityRepeater")
+
+            /*
+             Confirm that at least one world city is saved before proceeding
+             to check if that's the city added during the test.
+            */
             tryCompareFunction(function() { return cityList.count > 0}, true)
 
             var cityIndex = _findWorldCity(cityList, "user", cityName, countryName)
 
             if (cityIndex === -1) {
-                fail("Couldn't locate city to confirm world city addition")
+                // If city couldn't be found in the saved city list, fail the test
+                fail("City added during the test cannot be found in the user world city list!")
             }
         }
 
         function _deleteWorldCity(cityName, countryName) {
             var cityList = findChild(clockApp, "userWorldCityRepeater")
+
+            /*
+             Confirm that at least one world city is saved before proceeding
+             to delete the city added during the test.
+            */
             tryCompareFunction(function() { return cityList.count > 0}, true)
 
+            var oldCount = cityList.count
             var cityIndex = _findWorldCity(cityList, "user", cityName, countryName)
 
             if (cityIndex === -1) {
-                fail("Couldn't locate city to confirm world city addition")
-            } else {
+                fail("City added during the test cannot be found in the user world city list!")
+            }
+            else {
                 var cityListItem = findChild(clockApp, "userWorldCityItem"+cityIndex)
                 utils.swipeToDeleteItem(cityListItem)
             }
 
-            //tryCompare(cityList, "count", 0, 5000, "city list count did not decrease")
+            /*
+             #FIXME: Commented out the following line as deleting a world city
+             when there is only one world city does not decrease the count to 0
+             but leaves it as 1 causing the test to fail. This has been reported
+             in bug #1368393. (Also fails in Autopilot)
+
+             tryCompare(cityList, "count", oldCount-1, 5000, "city list count did not decrease")
+
+             The wait() call below is to ensure that the world city is deleted properly
+             which wouldn't be required if could do the count decrease check mentioned above.
+            */
+
+            wait(1000)
         }
 
         function _addCityFromLocalList(cityList, type, cityName, countryName) {
             var cityIndex = _findWorldCity(cityList, type, cityName, countryName)
 
             if (cityIndex === -1) {
-                fail("City cannot be found in the local city list")
+                fail("City cannot be found in the local world city list")
             }
 
             var cityListItem = findChild(cityList, "defaultWorldCityItem"+cityIndex)
@@ -105,7 +137,11 @@ MockClockApp {
 
         // *********** Test Functions *************
 
-        function test_addLocalWorldCity() {
+        /*
+         Test to check if a city listed in the world city list can be added
+         and saved to the user world city list.
+        */
+        function test_addCityAvailableInWorldCityList() {
             var pageStack = findChild(clockApp, "pageStack")
             var clockPage = utils.getPage(pageStack, "clockPage")
 
@@ -118,11 +154,9 @@ MockClockApp {
             tryCompareFunction(function() { return cityList.count > 0}, true)
 
             _addCityFromLocalList(cityList, "default", "Amsterdam", "Netherlands")
-
-            waitForRendering(clockPage)
-
             _confirmWorldCityAddition("Amsterdam", "Netherlands")
 
+            // Clean up after the test by deleting the city which was added during the test
             _deleteWorldCity("Amsterdam", "Netherlands")
         }
     }
