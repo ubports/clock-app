@@ -61,7 +61,7 @@ MockClockApp {
             */
             var objectPrefix = type === "user" ? "user" : "default"
 
-            for(var i=0; i<=cityList.count; i++) {
+            for(var i=0; i<cityList.count; i++) {
                 var cityListItem = findChild(clockApp, objectPrefix+"WorldCityItem"+i)
                 var city = findChild(cityListItem, objectPrefix+"CityNameText")
                 var country = findChild(cityListItem, objectPrefix+"CountryNameText")
@@ -126,8 +126,14 @@ MockClockApp {
             wait(1000)
         }
 
-        function _addCityFromLocalList(cityList, type, cityName, countryName) {
-            var cityIndex = _findWorldCity(cityList, type, cityName, countryName)
+        function _addCityFromList(cityName, countryName) {
+            var worldCityPage = utils.getPage(pageStack, "worldCityList")
+            var cityList = findChild(worldCityPage, "cityList")
+
+            // Wait for the list to be populated with results
+            tryCompareFunction(function() { return cityList.count > 0}, true)
+
+            var cityIndex = _findWorldCity(cityList, "default", cityName, countryName)
 
             if (cityIndex === -1) {
                 fail("City cannot be found in the local world city list")
@@ -137,11 +143,19 @@ MockClockApp {
             mouseClick(cityListItem, centerOf(cityListItem).x, centerOf(cityListItem).y)
         }
 
+        function _addCityBySearchingOnline(cityName, countryName) {
+            utils.pressHeaderButton(header, "searchButton")
+            var searchField = findChild(clockApp, "searchField")
+            tryCompare(searchField, "visible", true, 5000, "Search field is not visible")
+            typeString(cityName)
+            _addCityFromList(cityName, countryName)
+        }
+
         // *********** Test Functions *************
 
         /*
-         Test to check if a city listed in the world city list can be added
-         and saved to the user world city list.
+         Test to check if a city found in the world city list can be added
+         to the user world city list.
         */
         function test_addCityAlreadyPresentInWorldCityList() {
             var clockPage = utils.getPage(pageStack, "clockPage")
@@ -151,18 +165,30 @@ MockClockApp {
             var worldCityPage = utils.getPage(pageStack, "worldCityList")
             waitForRendering(worldCityPage)
 
-            var cityList = findChild(worldCityPage, "cityList")
-            tryCompareFunction(function() { return cityList.count > 0}, true)
-
-            _addCityFromLocalList(cityList, "default", "Amsterdam", "Netherlands")
+            _addCityFromList("Amsterdam", "Netherlands")
             _confirmWorldCityAddition("Amsterdam", "Netherlands")
 
             // Clean up after the test by deleting the city which was added during the test
             _deleteWorldCity("Amsterdam", "Netherlands")
         }
 
-//        function test_addCityBySearchingOnline() {
+        /*
+         Test to check if a city now found in the world city list can be added
+         by searcing it online and then adding it from the results returned.
+        */
+        function test_addCityBySearchingOnline() {
+            var clockPage = utils.getPage(pageStack, "clockPage")
 
-//        }
+            _pressAddWorldCityButton()
+
+            var worldCityPage = utils.getPage(pageStack, "worldCityList")
+            waitForRendering(worldCityPage)
+
+            _addCityBySearchingOnline("Venice", "Provincia di Venezia, Veneto, Italy")
+            _confirmWorldCityAddition("Venice", " Veneto, Italy")
+
+            // Clean up after the test by deleting the city which was added during the test
+            _deleteWorldCity("Venice", " Veneto, Italy")
+        }
     }
 }
