@@ -141,7 +141,7 @@ MockClockApp {
          Test to check if a city listed in the world city list can be added
          and saved to the user world city list.
         */
-        function test_addCityAvailableInWorldCityList() {
+        function test_addCityAlreadyPresentInWorldCityList() {
             var pageStack = findChild(clockApp, "pageStack")
             var clockPage = utils.getPage(pageStack, "clockPage")
 
