@@ -251,7 +251,7 @@ Page {
 
         delegate: ListItem.Base {
             showDivider: false
-            objectName: "worldCityItem" + index
+            objectName: "defaultWorldCityItem" + index
 
             Column {
                 id: worldCityDelegateColumn
@@ -265,7 +265,7 @@ Page {
 
                 Label {
                     text: city
-                    objectName: "cityNameText"
+                    objectName: "defaultCityNameText"
                     width: parent.width
                     elide: Text.ElideRight
                     color: UbuntuColors.midAubergine
@@ -273,7 +273,7 @@ Page {
 
                 Label {
                     text: country
-                    objectName: "countryNameText"
+                    objectName: "defaultCountryNameText"
                     fontSize: "xx-small"
                     width: parent.width
                     elide: Text.ElideRight

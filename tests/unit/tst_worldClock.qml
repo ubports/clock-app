@@ -22,7 +22,108 @@ import Ubuntu.Test 1.0
 import Ubuntu.Components 1.1
 
 MockClockApp {
-    id: fakeClockApp
+    id: clockApp
 
-    Component.onCompleted: console.log("FAKE CLOCK APP :)")
+    Utils {
+        id: utils
+    }
+
+    UbuntuTestCase {
+        id: worldClockFeatureTest
+        name: "WorldClockFeatureTest"
+
+        when: windowShown
+
+        property var header
+        property var backButton
+        property var clockPage
+
+        function initTestCase() {
+            header = findChild(clockApp, "MainView_Header")
+            backButton = findChild(header, "customBackButton")
+            clockPage = findChild(clockApp, "clockPage")
+        }
+
+        // *********** Helper Functions ************
+
+        function _pressAddWorldCityButton() {
+            var addWorldCityButton = findChild(clockApp, "addWorldCityButton")
+            utils.pressButton(addWorldCityButton)
+        }
+
+        function _findWorldCity(cityList, type, cityName, countryName) {
+            var objectPrefix = type === "user" ? "user" : "default"
+            for(var i=0; i<=cityList.count; i++) {
+                var cityListItem = findChild(clockApp, objectPrefix+"WorldCityItem"+i)
+                var city = findChild(cityListItem, objectPrefix+"CityNameText")
+                var country = findChild(cityListItem, objectPrefix+"CountryNameText")
+                if (city.text === cityName && country.text === countryName) {
+                    return i
+                }
+            }
+
+            return -1;
+        }
+
+        function _confirmWorldCityAddition(cityName, countryName) {
+            var cityList = findChild(clockApp, "userWorldCityRepeater")
+            tryCompareFunction(function() { return cityList.count > 0}, true)
+
+            var cityIndex = _findWorldCity(cityList, "user", cityName, countryName)
+
+            if (cityIndex === -1) {
+                fail("Couldn't locate city to confirm world city addition")
+            }
+        }
+
+        function _deleteWorldCity(cityName, countryName) {
+            var cityList = findChild(clockApp, "userWorldCityRepeater")
+            tryCompareFunction(function() { return cityList.count > 0}, true)
+
+            var cityIndex = _findWorldCity(cityList, "user", cityName, countryName)
+
+            if (cityIndex === -1) {
+                fail("Couldn't locate city to confirm world city addition")
+            } else {
+                var cityListItem = findChild(clockApp, "userWorldCityItem"+cityIndex)
+                utils.swipeToDeleteItem(cityListItem)
+            }
+
+            //tryCompare(cityList, "count", 0, 5000, "city list count did not decrease")
+        }
+
+        function _addCityFromLocalList(cityList, type, cityName, countryName) {
+            var cityIndex = _findWorldCity(cityList, type, cityName, countryName)
+
+            if (cityIndex === -1) {
+                fail("City cannot be found in the local city list")
+            }
+
+            var cityListItem = findChild(cityList, "defaultWorldCityItem"+cityIndex)
+            mouseClick(cityListItem, centerOf(cityListItem).x, centerOf(cityListItem).y)
+        }
+
+        // *********** Test Functions *************
+
+        function test_addLocalWorldCity() {
+            var pageStack = findChild(clockApp, "pageStack")
+            var clockPage = utils.getPage(pageStack, "clockPage")
+
+            _pressAddWorldCityButton()
+
+            var worldCityPage = utils.getPage(pageStack, "worldCityList")
+            waitForRendering(worldCityPage)
+
+            var cityList = findChild(worldCityPage, "cityList")
+            tryCompareFunction(function() { return cityList.count > 0}, true)
+
+            _addCityFromLocalList(cityList, "default", "Amsterdam", "Netherlands")
+
+            waitForRendering(clockPage)
+
+            _confirmWorldCityAddition("Amsterdam", "Netherlands")
+
+            _deleteWorldCity("Amsterdam", "Netherlands")
+        }
+    }
 }

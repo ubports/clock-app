@@ -59,6 +59,7 @@ MainView {
 
     PageStack {
         id: mainStack
+        objectName: "pageStack"
 
         Component.onCompleted: push(clockPage)
 

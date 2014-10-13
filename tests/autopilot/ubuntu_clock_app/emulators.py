@@ -268,13 +268,16 @@ class WorldCityList(Page):
         for index in range(int(cityList.count)):
             if cityList.wait_select_single(
                 objectName="worldCityItem{}".format(index)).wait_select_single(
-                    "Label", objectName="cityNameText").text == city_Name:
+                    "Label",
+                    objectName="defaultCityNameText").text == city_Name:
                 if cityList.wait_select_single(
-                    objectName="worldCityItem{}".format(index)).\
-                    wait_select_single("Label", objectName="countryNameText").\
+                    objectName="defaultWorldCityItem{}".format(index)).\
+                    wait_select_single(
+                        "Label",
+                        objectName="defaultCountryNameText").\
                         text == country_Name:
                     cityList.click_element(
-                        "worldCityItem{}".format(index), direction=None)
+                        "defaultWorldCityItem{}".format(index), direction=None)
                     break
 
     @autopilot_logging.log_action(logger.info)
