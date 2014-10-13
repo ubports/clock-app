@@ -267,7 +267,8 @@ class WorldCityList(Page):
 
         for index in range(int(cityList.count)):
             if cityList.wait_select_single(
-                objectName="worldCityItem{}".format(index)).wait_select_single(
+                objectName="defaultWorldCityItem{}".format(index)).\
+                wait_select_single(
                     "Label",
                     objectName="defaultCityNameText").text == city_Name:
                 if cityList.wait_select_single(
