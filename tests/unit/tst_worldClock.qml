@@ -70,7 +70,7 @@ MockClockApp {
             return -1;
         }
 
-        function _confirmWorldCityAddition(cityName, countryName) {
+        function _assertWorldCityAddition(cityName, countryName) {
             var cityList = findChild(clockApp, "userWorldCityRepeater")
 
             /*
@@ -162,7 +162,7 @@ MockClockApp {
             waitForRendering(worldCityPage)
 
             _addCityFromList("Amsterdam", "Netherlands")
-            _confirmWorldCityAddition("Amsterdam", "Netherlands")
+            _assertWorldCityAddition("Amsterdam", "Netherlands")
 
             // Clean up after the test by deleting the city which was added during the test
             _deleteWorldCity("Amsterdam", "Netherlands")
@@ -181,7 +181,7 @@ MockClockApp {
             waitForRendering(worldCityPage)
 
             _addCityBySearchingOnline("Venice", "Provincia di Venezia, Veneto, Italy")
-            _confirmWorldCityAddition("Venice", " Veneto, Italy")
+            _assertWorldCityAddition("Venice", " Veneto, Italy")
 
             // Clean up after the test by deleting the city which was added during the test
             _deleteWorldCity("Venice", " Veneto, Italy")
