@@ -171,6 +171,11 @@ MockClockApp {
             var worldCityPage = getPage(pageStack, "worldCityList")
             waitForRendering(worldCityPage)
 
+            /*
+             #TODO: Jenkins machine may run in a confined environment with no
+             access to internet to run this function. Ideally we should mock
+             the data given to this function.
+            */
             _addCityBySearchingOnline("Venice", "Provincia di Venezia, Veneto, Italy")
             _assertWorldCityAddition("Venice", " Veneto, Italy")
 
