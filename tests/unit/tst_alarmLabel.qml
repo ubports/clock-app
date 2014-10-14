@@ -16,9 +16,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import QtQuick 2.0
-import QtTest 1.0
-import Ubuntu.Test 1.0
+import QtQuick 2.3
 import Ubuntu.Components 1.1
 import "../../app/alarm"
 
@@ -38,11 +36,7 @@ MainView {
         alarm: _alarm
     }
 
-    Utils {
-        id: utils
-    }
-
-    UbuntuTestCase {
+    ClockTestCase {
         id: alarmLabelPageTest
         name: "AlarmLabelPage"
 
@@ -83,7 +77,7 @@ MainView {
             compare(alarmLabel.text, "Alarm", "Default alarm label is not Alarm")
             compare(backButton.enabled, true, "Back header button is not enabled by default")
 
-            utils.clearTextField(alarmLabel)
+            clearTextField(alarmLabel)
             typeString(data.string)
 
             compare(alarmLabel.text, data.string, "Alarm label is not what was type in the textfield")

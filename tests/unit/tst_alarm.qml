@@ -17,9 +17,7 @@
  */
 
 import QtQuick 2.3
-import QtTest 1.0
 import DateTime 1.0
-import Ubuntu.Test 1.0
 import Ubuntu.Components 1.1
 import "../../app/alarm"
 
@@ -63,11 +61,7 @@ MainView {
         id: alarmPage
     }
 
-    Utils {
-        id: utils
-    }
-
-    UbuntuTestCase {
+    ClockTestCase {
         id: alarmTest
         name: "AlarmTest"
 
@@ -119,7 +113,7 @@ MainView {
 
         function _setAlarmLabel(alarmLabelPage, label) {
             var alarmLabel = findChild(alarmLabelPage, "labelEntry")
-            utils.clearTextField(alarmLabel)
+            clearTextField(alarmLabel)
             typeString(label)
         }
 
@@ -149,13 +143,13 @@ MainView {
             return -1;
         }
 
-        function _confirmAlarmCreation(label, repeat, time, status) {
+        function _assertAlarmCreation(label, repeat, time, status) {
             if (findAlarm(label, repeat, time, status) === -1) {
                 fail("No Alarm found with the specified characteristics")
             }
         }
 
-        function _confirmListItemValue(page, objectName, expectedValue, message) {
+        function _assertListItemValue(page, objectName, expectedValue, message) {
             var listitem = findChild(page, objectName)
             compare(listitem.subText, expectedValue, message)
         }
@@ -168,14 +162,14 @@ MainView {
             var alarmObject = findChild(alarmsList, "alarm"+index)
 
             if (index !== -1) {
-                utils.swipeToDeleteItem(alarmObject)
+                swipeToDeleteItem(alarmObject)
             }
 
             tryCompare(alarmsList, "count", oldCount-1, 10000, "Alarm count did not decrease after deleting the alarm")
         }
 
         function _setAlarm(label, repeat, time) {
-            utils.pressHeaderButton(header, "addAlarmAction")
+            pressHeaderButton(header, "addAlarmAction")
 
             var addAlarmPage = findChild(pageStack, "AddAlarmPage")
             waitForRendering(addAlarmPage)
@@ -186,29 +180,29 @@ MainView {
 
             // Set the alarm repeat options
             _pressListItem(addAlarmPage, "alarmRepeat")
-            var alarmRepeatPage = utils.getPage(pageStack, "alarmRepeatPage")
+            var alarmRepeatPage = getPage(pageStack, "alarmRepeatPage")
             _setAlarmRepeatDays(alarmRepeatPage, repeat)
-            utils.pressButton(backButton)
+            pressButton(backButton)
 
             waitForRendering(addAlarmPage)
 
             // Set the alarm label
             _pressListItem(addAlarmPage, "alarmLabel")
-            var alarmLabelPage = utils.getPage(pageStack, "alarmLabelPage")
+            var alarmLabelPage = getPage(pageStack, "alarmLabelPage")
             _setAlarmLabel(alarmLabelPage, label)
-            utils.pressButton(backButton)
+            pressButton(backButton)
 
             waitForRendering(addAlarmPage)
 
             // Set the alarm sound
             _pressListItem(addAlarmPage, "alarmSound")
-            var alarmSoundPage = utils.getPage(pageStack, "alarmSoundPage")
+            var alarmSoundPage = getPage(pageStack, "alarmSoundPage")
             _setAlarmSound(alarmSoundPage)
-            utils.pressButton(backButton)
+            pressButton(backButton)
 
             waitForRendering(addAlarmPage)
 
-            utils.pressHeaderButton(header, "saveAlarmAction")
+            pressHeaderButton(header, "saveAlarmAction")
 
             waitForRendering(alarmPage)
         }
@@ -226,7 +220,11 @@ MainView {
             var alarmObject = findChild(alarmsList, "alarm"+alarmIndex)
             mouseClick(alarmObject, centerOf(alarmObject).x, centerOf(alarmObject).y)
 
-            // Proceed to verify the alarm read is correct and then set new values
+            /*
+             Proceed to verify the alarm read is correct and then set new values.
+             The values are verified after the alarm is read from the alarm model
+             to prevent regressions like http://pad.lv/1338697 in the future.
+            */
             var addAlarmPage = findChild(pageStack, "AddAlarmPage")
             waitForRendering(addAlarmPage)
 
@@ -234,31 +232,31 @@ MainView {
             compare(Qt.formatTime(alarmTimePicker.date), oldtime, "Time read from the saved alarm is incorrect")
             _setAlarmTime(alarmTimePicker, newtime)
 
-            _confirmListItemValue(addAlarmPage, "alarmRepeat", oldrepeat, "Alarm repeat options read from the saved alarm is incorrect")
+            _assertListItemValue(addAlarmPage, "alarmRepeat", oldrepeat, "Alarm repeat options read from the saved alarm is incorrect")
             _pressListItem(addAlarmPage, "alarmRepeat")
-            var alarmRepeatPage = utils.getPage(pageStack, "alarmRepeatPage")
+            var alarmRepeatPage = getPage(pageStack, "alarmRepeatPage")
             _setAlarmRepeatDays(alarmRepeatPage, newrepeat)
-            utils.pressButton(backButton)
+            pressButton(backButton)
 
             waitForRendering(addAlarmPage)
 
-            _confirmListItemValue(addAlarmPage, "alarmLabel", oldlabel, "Alarm name read from the saved alarm is incorrect")
+            _assertListItemValue(addAlarmPage, "alarmLabel", oldlabel, "Alarm name read from the saved alarm is incorrect")
             _pressListItem(addAlarmPage, "alarmLabel")
-            var alarmLabelPage = utils.getPage(pageStack, "alarmLabelPage")
+            var alarmLabelPage = getPage(pageStack, "alarmLabelPage")
             _setAlarmLabel(alarmLabelPage, newlabel)
-            utils.pressButton(backButton)
+            pressButton(backButton)
 
             waitForRendering(addAlarmPage)
 
-            _confirmListItemValue(addAlarmPage, "alarmSound", "Celestial", "Alarm sound read from the saved alarm is incorrect")
+            _assertListItemValue(addAlarmPage, "alarmSound", "Celestial", "Alarm sound read from the saved alarm is incorrect")
             _pressListItem(addAlarmPage, "alarmSound")
-            var alarmSoundPage = utils.getPage(pageStack, "alarmSoundPage")
+            var alarmSoundPage = getPage(pageStack, "alarmSoundPage")
             _setAlarmSound(alarmSoundPage)
-            utils.pressButton(backButton)
+            pressButton(backButton)
 
             waitForRendering(addAlarmPage)
 
-            utils.pressHeaderButton(header, "saveAlarmAction")
+            pressHeaderButton(header, "saveAlarmAction")
 
             waitForRendering(alarmPage)
         }
@@ -281,7 +279,7 @@ MainView {
             date.setSeconds(0)
 
             _setAlarm(data.name, data.repeat, date)
-            _confirmAlarmCreation(data.name, data.repeatLabel, Qt.formatTime(date), true)
+            _assertAlarmCreation(data.name, data.repeatLabel, Qt.formatTime(date), true)
 
             /*
              #FIXME: This won't be required once we mock up alarm data. Until
@@ -313,7 +311,7 @@ MainView {
             */
             wait(6000)
 
-            _confirmAlarmCreation("Alarm Edited", "Weekends", Qt.formatTime(newDate), true)
+            _assertAlarmCreation("Alarm Edited", "Weekends", Qt.formatTime(newDate), true)
 
             /*
              #FIXME: This won't be required once we mock up alarm data. Until

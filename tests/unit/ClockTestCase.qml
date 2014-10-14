@@ -25,10 +25,6 @@ import Ubuntu.Test 1.0
  buttons and helps reduce code duplication.
 
  Usage:
-        Utils {
-            id: testUtils
-        }
-
         UbuntuTestCase {
             id: sampleTest
             name: "SampleTest"
@@ -41,7 +37,7 @@ import Ubuntu.Test 1.0
             }
 
             function test_something() {
-              testUtils._pressHeaderButton(header, "addAlarmAction")
+               pressHeaderButton(header, "addAlarmAction")
             }
        }
 */
@@ -80,10 +76,16 @@ UbuntuTestCase {
     }
 
     function clearTextField(textfield) {
-        // Get textfield focus by clicking once
-        mouseClick(textfield, textfield.width - units.gu(2), centerOf(textfield).y)
-
-        // Click on the clear button shown on the right
-        mouseClick(textfield, textfield.width - units.gu(2), centerOf(textfield).y)
+        var clearButton = findChild(textfield, "clear_button")
+        /*
+         This check is required since if the textfield is read-only or does
+         not have input focus then the clearButton may not be shown resulting
+         in the text field not being cleared.
+        */
+        if (clearButton.visible) {
+            pressButton(clearButton)
+        } else {
+            console.log("Clear Button not visible. Hence textfield cannot be cleared.")
+        }
     }
 }
