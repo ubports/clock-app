@@ -133,16 +133,15 @@ class ClockPage(PageWithBottomEdge):
         old_cities_count = self.get_num_of_saved_cities()
         index = 0
         for index in range(old_cities_count):
-            if self.wait_select_single(
-                objectName='userWorldCityItem{}'.format(index)).\
-                wait_select_single("Label", objectName="userCityNameText").\
-                    text == city_Name:
-                if self.wait_select_single(
-                    objectName='userWorldCityItem{}'.format(index)).\
-                    wait_select_single(
-                    "Label", objectName="userCountryNameText").\
-                        text == country_Name:
-                    self._delete_userWorldCityItem(index)
+            world_city_item = self.wait_select_single(
+                objectName='userWorldCityItem{}'.format(index))
+            city_name_label = world_city_item.wait_select_single(
+                'Label', objectName='userCityNameText')
+            country_name_label = world_city_item.wait_select_single(
+                'Label', objectName='userCountryNameText')
+            if (city_name_label.text == city_Name and
+                    country_name_label.text == country_Name):
+                self._delete_userWorldCityItem(index)
 
     # FIXME -----------------------------------------------------------------
     # Commenting the following lines as deleting a world city when there is
@@ -266,20 +265,17 @@ class WorldCityList(Page):
         cityList.count.wait_for(GreaterThan(0))
 
         for index in range(int(cityList.count)):
-            if cityList.wait_select_single(
-                objectName="defaultWorldCityItem{}".format(index)).\
-                wait_select_single(
-                    "Label",
-                    objectName="defaultCityNameText").text == city_Name:
-                if cityList.wait_select_single(
-                    objectName="defaultWorldCityItem{}".format(index)).\
-                    wait_select_single(
-                        "Label",
-                        objectName="defaultCountryNameText").\
-                        text == country_Name:
-                    cityList.click_element(
-                        "defaultWorldCityItem{}".format(index), direction=None)
-                    break
+            world_city_item = self.wait_select_single(
+                objectName='defaultWorldCityItem{}'.format(index))
+            city_name_label = world_city_item.wait_select_single(
+                'Label', objectName='defaultCityNameText')
+            country_name_label = world_city_item.wait_select_single(
+                'Label', objectName='defaultCountryNameText')
+            if (city_name_label.text == city_Name and
+                    country_name_label.text == country_Name):
+                cityList.click_element(
+                    'defaultWorldCityItem{}'.format(index), direction=None)
+                break
 
     @autopilot_logging.log_action(logger.info)
     def search_world_city_(self, city_Name, country_Name):
