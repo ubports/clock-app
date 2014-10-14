@@ -143,13 +143,13 @@ MainView {
             return -1;
         }
 
-        function _confirmAlarmCreation(label, repeat, time, status) {
+        function _assertAlarmCreation(label, repeat, time, status) {
             if (findAlarm(label, repeat, time, status) === -1) {
                 fail("No Alarm found with the specified characteristics")
             }
         }
 
-        function _confirmListItemValue(page, objectName, expectedValue, message) {
+        function _assertListItemValue(page, objectName, expectedValue, message) {
             var listitem = findChild(page, objectName)
             compare(listitem.subText, expectedValue, message)
         }
@@ -228,7 +228,7 @@ MainView {
             compare(Qt.formatTime(alarmTimePicker.date), oldtime, "Time read from the saved alarm is incorrect")
             _setAlarmTime(alarmTimePicker, newtime)
 
-            _confirmListItemValue(addAlarmPage, "alarmRepeat", oldrepeat, "Alarm repeat options read from the saved alarm is incorrect")
+            _assertListItemValue(addAlarmPage, "alarmRepeat", oldrepeat, "Alarm repeat options read from the saved alarm is incorrect")
             _pressListItem(addAlarmPage, "alarmRepeat")
             var alarmRepeatPage = getPage(pageStack, "alarmRepeatPage")
             _setAlarmRepeatDays(alarmRepeatPage, newrepeat)
@@ -236,7 +236,7 @@ MainView {
 
             waitForRendering(addAlarmPage)
 
-            _confirmListItemValue(addAlarmPage, "alarmLabel", oldlabel, "Alarm name read from the saved alarm is incorrect")
+            _assertListItemValue(addAlarmPage, "alarmLabel", oldlabel, "Alarm name read from the saved alarm is incorrect")
             _pressListItem(addAlarmPage, "alarmLabel")
             var alarmLabelPage = getPage(pageStack, "alarmLabelPage")
             _setAlarmLabel(alarmLabelPage, newlabel)
@@ -244,7 +244,7 @@ MainView {
 
             waitForRendering(addAlarmPage)
 
-            _confirmListItemValue(addAlarmPage, "alarmSound", "Celestial", "Alarm sound read from the saved alarm is incorrect")
+            _assertListItemValue(addAlarmPage, "alarmSound", "Celestial", "Alarm sound read from the saved alarm is incorrect")
             _pressListItem(addAlarmPage, "alarmSound")
             var alarmSoundPage = getPage(pageStack, "alarmSoundPage")
             _setAlarmSound(alarmSoundPage)
@@ -275,7 +275,7 @@ MainView {
             date.setSeconds(0)
 
             _setAlarm(data.name, data.repeat, date)
-            _confirmAlarmCreation(data.name, data.repeatLabel, Qt.formatTime(date), true)
+            _assertAlarmCreation(data.name, data.repeatLabel, Qt.formatTime(date), true)
 
             /*
              #FIXME: This won't be required once we mock up alarm data. Until
@@ -307,7 +307,7 @@ MainView {
             */
             wait(6000)
 
-            _confirmAlarmCreation("Alarm Edited", "Weekends", Qt.formatTime(newDate), true)
+            _assertAlarmCreation("Alarm Edited", "Weekends", Qt.formatTime(newDate), true)
 
             /*
              #FIXME: This won't be required once we mock up alarm data. Until
