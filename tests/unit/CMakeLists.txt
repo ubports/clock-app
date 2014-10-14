@@ -44,7 +44,7 @@ set(QML_TST_FILES
 add_custom_target(tst_QmlFiles ALL SOURCES ${QML_TST_FILES})
 
 set(QML_TST_UTILS
-    Utils.qml
+    ClockTestCase.qml
 )
 
 add_custom_target(tst_Utils ALL SOURCES ${QML_TST_UTILS})

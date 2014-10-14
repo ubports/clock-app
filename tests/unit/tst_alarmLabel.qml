@@ -38,11 +38,7 @@ MainView {
         alarm: _alarm
     }
 
-    Utils {
-        id: utils
-    }
-
-    UbuntuTestCase {
+    ClockTestCase {
         id: alarmLabelPageTest
         name: "AlarmLabelPage"
 
@@ -83,7 +79,7 @@ MainView {
             compare(alarmLabel.text, "Alarm", "Default alarm label is not Alarm")
             compare(backButton.enabled, true, "Back header button is not enabled by default")
 
-            utils.clearTextField(alarmLabel)
+            clearTextField(alarmLabel)
             typeString(data.string)
 
             compare(alarmLabel.text, data.string, "Alarm label is not what was type in the textfield")

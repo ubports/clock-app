@@ -63,11 +63,7 @@ MainView {
         id: alarmPage
     }
 
-    Utils {
-        id: utils
-    }
-
-    UbuntuTestCase {
+    ClockTestCase {
         id: alarmTest
         name: "AlarmTest"
 
@@ -119,7 +115,7 @@ MainView {
 
         function _setAlarmLabel(alarmLabelPage, label) {
             var alarmLabel = findChild(alarmLabelPage, "labelEntry")
-            utils.clearTextField(alarmLabel)
+            clearTextField(alarmLabel)
             typeString(label)
         }
 
@@ -168,14 +164,14 @@ MainView {
             var alarmObject = findChild(alarmsList, "alarm"+index)
 
             if (index !== -1) {
-                utils.swipeToDeleteItem(alarmObject)
+                swipeToDeleteItem(alarmObject)
             }
 
             tryCompare(alarmsList, "count", oldCount-1, 10000, "Alarm count did not decrease after deleting the alarm")
         }
 
         function _setAlarm(label, repeat, time) {
-            utils.pressHeaderButton(header, "addAlarmAction")
+            pressHeaderButton(header, "addAlarmAction")
 
             var addAlarmPage = findChild(pageStack, "AddAlarmPage")
             waitForRendering(addAlarmPage)
@@ -186,29 +182,29 @@ MainView {
 
             // Set the alarm repeat options
             _pressListItem(addAlarmPage, "alarmRepeat")
-            var alarmRepeatPage = utils.getPage(pageStack, "alarmRepeatPage")
+            var alarmRepeatPage = getPage(pageStack, "alarmRepeatPage")
             _setAlarmRepeatDays(alarmRepeatPage, repeat)
-            utils.pressButton(backButton)
+            pressButton(backButton)
 
             waitForRendering(addAlarmPage)
 
             // Set the alarm label
             _pressListItem(addAlarmPage, "alarmLabel")
-            var alarmLabelPage = utils.getPage(pageStack, "alarmLabelPage")
+            var alarmLabelPage = getPage(pageStack, "alarmLabelPage")
             _setAlarmLabel(alarmLabelPage, label)
-            utils.pressButton(backButton)
+            pressButton(backButton)
 
             waitForRendering(addAlarmPage)
 
             // Set the alarm sound
             _pressListItem(addAlarmPage, "alarmSound")
-            var alarmSoundPage = utils.getPage(pageStack, "alarmSoundPage")
+            var alarmSoundPage = getPage(pageStack, "alarmSoundPage")
             _setAlarmSound(alarmSoundPage)
-            utils.pressButton(backButton)
+            pressButton(backButton)
 
             waitForRendering(addAlarmPage)
 
-            utils.pressHeaderButton(header, "saveAlarmAction")
+            pressHeaderButton(header, "saveAlarmAction")
 
             waitForRendering(alarmPage)
         }
@@ -236,29 +232,29 @@ MainView {
 
             _confirmListItemValue(addAlarmPage, "alarmRepeat", oldrepeat, "Alarm repeat options read from the saved alarm is incorrect")
             _pressListItem(addAlarmPage, "alarmRepeat")
-            var alarmRepeatPage = utils.getPage(pageStack, "alarmRepeatPage")
+            var alarmRepeatPage = getPage(pageStack, "alarmRepeatPage")
             _setAlarmRepeatDays(alarmRepeatPage, newrepeat)
-            utils.pressButton(backButton)
+            pressButton(backButton)
 
             waitForRendering(addAlarmPage)
 
             _confirmListItemValue(addAlarmPage, "alarmLabel", oldlabel, "Alarm name read from the saved alarm is incorrect")
             _pressListItem(addAlarmPage, "alarmLabel")
-            var alarmLabelPage = utils.getPage(pageStack, "alarmLabelPage")
+            var alarmLabelPage = getPage(pageStack, "alarmLabelPage")
             _setAlarmLabel(alarmLabelPage, newlabel)
-            utils.pressButton(backButton)
+            pressButton(backButton)
 
             waitForRendering(addAlarmPage)
 
             _confirmListItemValue(addAlarmPage, "alarmSound", "Celestial", "Alarm sound read from the saved alarm is incorrect")
             _pressListItem(addAlarmPage, "alarmSound")
-            var alarmSoundPage = utils.getPage(pageStack, "alarmSoundPage")
+            var alarmSoundPage = getPage(pageStack, "alarmSoundPage")
             _setAlarmSound(alarmSoundPage)
-            utils.pressButton(backButton)
+            pressButton(backButton)
 
             waitForRendering(addAlarmPage)
 
-            utils.pressHeaderButton(header, "saveAlarmAction")
+            pressHeaderButton(header, "saveAlarmAction")
 
             waitForRendering(alarmPage)
         }
