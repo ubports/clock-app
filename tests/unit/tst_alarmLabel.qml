@@ -16,9 +16,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import QtQuick 2.0
-import QtTest 1.0
-import Ubuntu.Test 1.0
+import QtQuick 2.3
 import Ubuntu.Components 1.1
 import "../../app/alarm"
 
@@ -38,7 +36,7 @@ MainView {
         alarm: _alarm
     }
 
-    UbuntuTestCase {
+    ClockTestCase {
         id: alarmLabelPageTest
         name: "AlarmLabelPage"
 
@@ -53,14 +51,6 @@ MainView {
             header = findChild(mainView, "MainView_Header")
             alarmLabel = findChild(alarmLabelPage, "labelEntry")
             backButton = findChild(header, "customBackButton")
-        }
-
-        function clearTextField(textfield) {
-            // Get textfield focus by clicking once
-            mouseClick(textfield, textfield.width - units.gu(2), textfield.height/2)
-
-            // Click on the clear button shown on the right
-            mouseClick(textfield, textfield.width - units.gu(2), textfield.height/2)
         }
 
         /*
