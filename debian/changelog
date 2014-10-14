@@ -15,6 +15,8 @@ ubuntu-clock-app (3.2) utopic; urgency=medium
   * Added edit alarm qml tests and added a library helper which contains commonly
     used test functions to avoid code duplication in future tests.
   * Added world clock feature qml tests
+  * Delayed loading of xmltimezone model until add world city page is loaded and
+    dynamically load/unload the jsontimezone model only when necessary.
 
   [Akiva Shammai Avraham]
   * Improved the analog clock performance by updating the clock hands every second

@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2014-10-10 16:52+0200\n"
-"PO-Revision-Date: 2014-09-30 09:01+0000\n"
+"PO-Revision-Date: 2014-10-11 18:03+0000\n"
 "Last-Translator: Richard Somlói <ricsipontaz@gmail.com>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-10-11 05:16+0000\n"
+"X-Launchpad-Export-Date: 2014-10-12 07:17+0000\n"
 "X-Generator: Launchpad (build 17196)\n"
 
 #: ../app/alarm/AlarmLabel.qml:30 ../app/alarm/AlarmLabel.qml:56
@@ -116,26 +116,26 @@ msgstr "Naponta"
 
 #: ../app/alarm/AlarmUtils.qml:55
 msgid "No active alarms"
-msgstr ""
+msgstr "Nincs aktív riasztás"
 
 #: ../app/alarm/AlarmUtils.qml:72
 #, qt-format
 msgid "Next Alarm %1"
-msgstr ""
+msgstr "Következő riasztás: %1"
 
 #: ../app/alarm/AlarmUtils.qml:79
 msgid "Alarm Passed"
-msgstr ""
+msgstr "A riasztás elmúlt"
 
 #: ../app/alarm/AlarmUtils.qml:88
 #, qt-format
 msgid "in %1d %2h %3m"
-msgstr ""
+msgstr "%1n, %2ó és %3p múlva"
 
 #: ../app/alarm/AlarmUtils.qml:97
 #, qt-format
 msgid "in %1h %2m"
-msgstr "%1 ó és %2 perc múlva"
+msgstr "%1ó és %2p múlva"
 
 #: ../app/alarm/AlarmUtils.qml:105
 #, c-format, qt-format
@@ -171,11 +171,11 @@ msgstr "hozzáadása"
 #. is behind or ahead of the time at the current location
 #: ../app/worldclock/UserWorldCityDelegate.qml:142
 msgid "behind"
-msgstr "több"
+msgstr "Mínusz"
 
 #: ../app/worldclock/UserWorldCityDelegate.qml:143
 msgid "ahead"
-msgstr "kevesebb"
+msgstr "Plusz"
 
 #. TRANSLATORS: the first argument is hour, followed by
 #. minute, and the translation for either 'behind' or
@@ -183,21 +183,21 @@ msgstr "kevesebb"
 #: ../app/worldclock/UserWorldCityDelegate.qml:153
 #, qt-format
 msgid "%1h %2m %3"
-msgstr "%1 ó és %2 perccel %3"
+msgstr "%3 %1 óra %2 perc"
 
 #. TRANSLATORS: the first argument is hour, followed by the
 #. translation for either 'behind' or 'ahead'
 #: ../app/worldclock/UserWorldCityDelegate.qml:162
 #, qt-format
 msgid "%1h %2"
-msgstr "%1 órával %2"
+msgstr "%2 %1 óra"
 
 #. TRANSLATORS: the first argument is minute, followed by the
 #. translation for either 'behind' or 'ahead'
 #: ../app/worldclock/UserWorldCityDelegate.qml:170
 #, qt-format
 msgid "%1m %2"
-msgstr "%1 perccel %2"
+msgstr "%2 %1 perc"
 
 #: ../app/worldclock/UserWorldCityDelegate.qml:176
 msgid "Same time"
