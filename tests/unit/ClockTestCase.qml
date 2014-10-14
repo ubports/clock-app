@@ -27,7 +27,7 @@ import Ubuntu.Test 1.0
  as when time permits.
 
  Usage:
-        UbuntuTestCase {
+        ClockTestCase {
             id: sampleTest
             name: "SampleTest"
 
