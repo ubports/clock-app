@@ -24,11 +24,7 @@ import Ubuntu.Components 1.1
 MockClockApp {
     id: clockApp
 
-    Utils {
-        id: utils
-    }
-
-    UbuntuTestCase {
+    ClockTestCase {
         id: worldClockFeatureTest
         name: "WorldClockFeatureTest"
 
@@ -50,7 +46,7 @@ MockClockApp {
 
         function _pressAddWorldCityButton() {
             var addWorldCityButton = findChild(clockApp, "addWorldCityButton")
-            utils.pressButton(addWorldCityButton)
+            pressButton(addWorldCityButton)
         }
 
         function _findWorldCity(cityList, type, cityName, countryName) {
@@ -108,7 +104,7 @@ MockClockApp {
             }
             else {
                 var cityListItem = findChild(clockApp, "userWorldCityItem"+cityIndex)
-                utils.swipeToDeleteItem(cityListItem)
+                swipeToDeleteItem(cityListItem)
             }
 
             /*
@@ -127,7 +123,7 @@ MockClockApp {
         }
 
         function _addCityFromList(cityName, countryName) {
-            var worldCityPage = utils.getPage(pageStack, "worldCityList")
+            var worldCityPage = getPage(pageStack, "worldCityList")
             var cityList = findChild(worldCityPage, "cityList")
 
             // Wait for the list to be populated with results
@@ -144,7 +140,7 @@ MockClockApp {
         }
 
         function _addCityBySearchingOnline(cityName, countryName) {
-            utils.pressHeaderButton(header, "searchButton")
+            pressHeaderButton(header, "searchButton")
             var searchField = findChild(clockApp, "searchField")
             tryCompare(searchField, "visible", true, 5000, "Search field is not visible")
             typeString(cityName)
@@ -158,11 +154,11 @@ MockClockApp {
          to the user world city list.
         */
         function test_addCityAlreadyPresentInWorldCityList() {
-            var clockPage = utils.getPage(pageStack, "clockPage")
+            var clockPage = getPage(pageStack, "clockPage")
 
             _pressAddWorldCityButton()
 
-            var worldCityPage = utils.getPage(pageStack, "worldCityList")
+            var worldCityPage = getPage(pageStack, "worldCityList")
             waitForRendering(worldCityPage)
 
             _addCityFromList("Amsterdam", "Netherlands")
@@ -177,11 +173,11 @@ MockClockApp {
          by searcing it online and then adding it from the results returned.
         */
         function test_addCityBySearchingOnline() {
-            var clockPage = utils.getPage(pageStack, "clockPage")
+            var clockPage = getPage(pageStack, "clockPage")
 
             _pressAddWorldCityButton()
 
-            var worldCityPage = utils.getPage(pageStack, "worldCityList")
+            var worldCityPage = getPage(pageStack, "worldCityList")
             waitForRendering(worldCityPage)
 
             _addCityBySearchingOnline("Venice", "Provincia di Venezia, Veneto, Italy")
