@@ -220,7 +220,11 @@ MainView {
             var alarmObject = findChild(alarmsList, "alarm"+alarmIndex)
             mouseClick(alarmObject, centerOf(alarmObject).x, centerOf(alarmObject).y)
 
-            // Proceed to verify the alarm read is correct and then set new values
+            /*
+             Proceed to verify the alarm read is correct and then set new values.
+             The values are verified after the alarm is read from the alarm model
+             to prevent regressions like http://pad.lv/1338697 in the future.
+            */
             var addAlarmPage = findChild(pageStack, "AddAlarmPage")
             waitForRendering(addAlarmPage)
 
