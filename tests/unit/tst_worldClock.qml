@@ -44,7 +44,7 @@ MockClockApp {
 
         // *********** Helper Functions ************
 
-        function _pressAddWorldCityButton() {
+        function pressAddWorldCityButton() {
             var addWorldCityButton = findChild(clockApp, "addWorldCityButton")
             pressButton(addWorldCityButton)
         }
@@ -70,13 +70,21 @@ MockClockApp {
             return -1;
         }
 
-        function _assertWorldCityAddition(cityName, countryName) {
+        function findUserWorldCity(cityList, cityName, countryName) {
+            return _findWorldCity(cityList, "user", cityName, countryName)
+        }
+
+        function findDefaultWorldCity(cityList, cityName, countryName) {
+            return _findWorldCity(cityList, "default", cityName, countryName)
+        }
+
+        function assertWorldCityAddition(cityName, countryName) {
             var cityList = findChild(clockApp, "userWorldCityRepeater")
 
             // Wait for the user list to be populated with results
             tryCompareFunction(function() { return cityList.count > 0}, true)
 
-            var cityIndex = _findWorldCity(cityList, "user", cityName, countryName)
+            var cityIndex = findUserWorldCity(cityList, cityName, countryName)
 
             if (cityIndex === -1) {
                 // If city couldn't be found in the saved city list, fail the test
@@ -84,11 +92,11 @@ MockClockApp {
             }
         }
 
-        function _deleteWorldCity(cityName, countryName) {
+        function deleteWorldCity(cityName, countryName) {
             var cityList = findChild(clockApp, "userWorldCityRepeater")
 
             var oldCount = cityList.count
-            var cityIndex = _findWorldCity(cityList, "user", cityName, countryName)
+            var cityIndex = findUserWorldCity(cityList, cityName, countryName)
 
             if (cityIndex === -1) {
                 fail("City added during the test cannot be found in the user world city list!")
@@ -113,14 +121,14 @@ MockClockApp {
             wait(1000)
         }
 
-        function _addCityFromList(cityName, countryName) {
+        function addCityFromList(cityName, countryName) {
             var worldCityPage = getPage(pageStack, "worldCityList")
             var cityList = findChild(worldCityPage, "cityList")
 
             // Wait for the list to be populated with results
             tryCompareFunction(function() { return cityList.count > 0}, true)
 
-            var cityIndex = _findWorldCity(cityList, "default", cityName, countryName)
+            var cityIndex = findDefaultWorldCity(cityList, cityName, countryName)
 
             if (cityIndex === -1) {
                 fail("City cannot be found in the local world city list")
@@ -130,12 +138,12 @@ MockClockApp {
             mouseClick(cityListItem, centerOf(cityListItem).x, centerOf(cityListItem).y)
         }
 
-        function _addCityBySearchingOnline(cityName, countryName) {
+        function addCityBySearchingOnline(cityName, countryName) {
             pressHeaderButton(header, "searchButton")
             var searchField = findChild(clockApp, "searchField")
             tryCompare(searchField, "visible", true, 5000, "Search field is not visible")
             typeString(cityName)
-            _addCityFromList(cityName, countryName)
+            addCityFromList(cityName, countryName)
         }
 
         // *********** Test Functions *************
@@ -147,16 +155,16 @@ MockClockApp {
         function test_addCityAlreadyPresentInWorldCityList() {
             var clockPage = getPage(pageStack, "clockPage")
 
-            _pressAddWorldCityButton()
+            pressAddWorldCityButton()
 
             var worldCityPage = getPage(pageStack, "worldCityList")
             waitForRendering(worldCityPage)
 
-            _addCityFromList("Amsterdam", "Netherlands")
-            _assertWorldCityAddition("Amsterdam", "Netherlands")
+            addCityFromList("Amsterdam", "Netherlands")
+            assertWorldCityAddition("Amsterdam", "Netherlands")
 
             // Clean up after the test by deleting the city which was added during the test
-            _deleteWorldCity("Amsterdam", "Netherlands")
+            deleteWorldCity("Amsterdam", "Netherlands")
         }
 
         /*
@@ -166,7 +174,7 @@ MockClockApp {
         function test_addCityBySearchingOnline() {
             var clockPage = getPage(pageStack, "clockPage")
 
-            _pressAddWorldCityButton()
+            pressAddWorldCityButton()
 
             var worldCityPage = getPage(pageStack, "worldCityList")
             waitForRendering(worldCityPage)
@@ -176,11 +184,11 @@ MockClockApp {
              access to internet to run this function. Ideally we should mock
              the data given to this function.
             */
-            _addCityBySearchingOnline("Venice", "Provincia di Venezia, Veneto, Italy")
-            _assertWorldCityAddition("Venice", " Veneto, Italy")
+            addCityBySearchingOnline("Venice", "Provincia di Venezia, Veneto, Italy")
+            assertWorldCityAddition("Venice", " Veneto, Italy")
 
             // Clean up after the test by deleting the city which was added during the test
-            _deleteWorldCity("Venice", " Veneto, Italy")
+            deleteWorldCity("Venice", " Veneto, Italy")
         }
     }
 }
