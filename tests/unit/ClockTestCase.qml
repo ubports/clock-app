@@ -25,10 +25,6 @@ import Ubuntu.Test 1.0
  buttons and helps reduce code duplication.
 
  Usage:
-        Utils {
-            id: testUtils
-        }
-
         UbuntuTestCase {
             id: sampleTest
             name: "SampleTest"
@@ -41,7 +37,7 @@ import Ubuntu.Test 1.0
             }
 
             function test_something() {
-              testUtils._pressHeaderButton(header, "addAlarmAction")
+               pressHeaderButton(header, "addAlarmAction")
             }
        }
 */
