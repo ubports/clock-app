@@ -73,10 +73,7 @@ MockClockApp {
         function _assertWorldCityAddition(cityName, countryName) {
             var cityList = findChild(clockApp, "userWorldCityRepeater")
 
-            /*
-             Confirm that at least one world city is saved before proceeding
-             to check if that's the city added during the test.
-            */
+            // Wait for the user list to be populated with results
             tryCompareFunction(function() { return cityList.count > 0}, true)
 
             var cityIndex = _findWorldCity(cityList, "user", cityName, countryName)
@@ -89,12 +86,6 @@ MockClockApp {
 
         function _deleteWorldCity(cityName, countryName) {
             var cityList = findChild(clockApp, "userWorldCityRepeater")
-
-            /*
-             Confirm that at least one world city is saved before proceeding
-             to delete the city added during the test.
-            */
-            tryCompareFunction(function() { return cityList.count > 0}, true)
 
             var oldCount = cityList.count
             var cityIndex = _findWorldCity(cityList, "user", cityName, countryName)
