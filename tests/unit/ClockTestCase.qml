@@ -21,11 +21,13 @@ import QtQuick 2.3
 import Ubuntu.Test 1.0
 
 /*
- Utils.qml includes a set of commonly used test functions like pressing header
- buttons and helps reduce code duplication.
+ ClockTestCase extends UbuntuTestCase with a set of commonly used test functions
+ like pressing header buttons and help reduce code duplication. Ideally several
+ of these functions can be pushed upstream into the Ubuntu SDK. That should happen
+ as when time permits.
 
  Usage:
-        UbuntuTestCase {
+        ClockTestCase {
             id: sampleTest
             name: "SampleTest"
 
