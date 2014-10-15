@@ -17,6 +17,8 @@ ubuntu-clock-app (3.2) utopic; urgency=medium
   * Added world clock feature qml tests
   * Delayed loading of xmltimezone model until add world city page is loaded and
     dynamically load/unload the jsontimezone model only when necessary.
+  * Removed hardcoded delete alarm button size and let it adapt to the label size
+    dynamically (LP: #1381429)
 
   [Akiva Shammai Avraham]
   * Improved the analog clock performance by updating the clock hands every second
