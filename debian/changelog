@@ -21,6 +21,7 @@ ubuntu-clock-app (3.2) utopic; urgency=medium
     dynamically (LP: #1381429)
   * Replaced ListItem.Base with ListItem.Empty throughout the clock app to reduce
     creation time (performance).
+  * Customised splash screen (white background) (LP: #1377638)
 
   [Akiva Shammai Avraham]
   * Improved the analog clock performance by updating the clock hands every second
