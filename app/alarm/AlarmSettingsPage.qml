@@ -85,19 +85,27 @@ Page {
                 right: parent.right
             }
 
-            ListItem.Base {
+            ListItem.Empty {
                 height: 2 * implicitHeight
 
                 Label {
                     color: UbuntuColors.midAubergine
                     text: i18n.tr("Alarm volume")
-                    anchors.top: parent.top
-                    anchors.topMargin: units.gu(1)
+                    anchors {
+                        left: parent.left
+                        leftMargin: units.gu(2)
+                        top: parent.top
+                        topMargin: units.gu(1)
+                    }
                 }
 
                 Slider {
-                    anchors.centerIn: parent
-                    width: parent.width
+                    anchors {
+                        left: parent.left
+                        right: parent.right
+                        margins: units.gu(2)
+                        verticalCenter: parent.verticalCenter
+                    }
 
                     minimumValue: 1
                     maximumValue: 100
@@ -145,8 +153,8 @@ Page {
                                 width: units.gu(2)
                                 height: width
                                 anchors.right: parent.right
+                                anchors.rightMargin: units.gu(2)
                                 anchors.verticalCenter: parent.verticalCenter
-
                                 name: "go-down"
                                 color: "Grey"
                                 rotation: _alarmDuration.expanded ? 180 : 0
@@ -212,8 +220,8 @@ Page {
                                 width: units.gu(2)
                                 height: width
                                 anchors.right: parent.right
+                                anchors.rightMargin: units.gu(2)
                                 anchors.verticalCenter: parent.verticalCenter
-
                                 name: "go-down"
                                 color: "Grey"
                                 rotation: _alarmSnooze.expanded ? 180 : 0
@@ -244,11 +252,15 @@ Page {
                 }
             }
 
-            ListItem.Base {
+            ListItem.Empty {
                 Label {
                     text: i18n.tr("Vibration")
                     color: UbuntuColors.midAubergine
-                    anchors.verticalCenter: parent.verticalCenter
+                    anchors {
+                        left: parent.left
+                        leftMargin: units.gu(2)
+                        verticalCenter: parent.verticalCenter
+                    }
                 }
 
                 Switch {
@@ -256,6 +268,7 @@ Page {
 
                     anchors {
                         right: parent.right
+                        rightMargin: units.gu(2)
                         verticalCenter: parent.verticalCenter
                     }
 
