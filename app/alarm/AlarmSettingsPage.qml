@@ -155,6 +155,7 @@ Page {
                                 anchors.right: parent.right
                                 anchors.rightMargin: units.gu(2)
                                 anchors.verticalCenter: parent.verticalCenter
+
                                 name: "go-down"
                                 color: "Grey"
                                 rotation: _alarmDuration.expanded ? 180 : 0
@@ -222,6 +223,7 @@ Page {
                                 anchors.right: parent.right
                                 anchors.rightMargin: units.gu(2)
                                 anchors.verticalCenter: parent.verticalCenter
+
                                 name: "go-down"
                                 color: "Grey"
                                 rotation: _alarmSnooze.expanded ? 180 : 0
