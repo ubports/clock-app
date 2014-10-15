@@ -300,7 +300,7 @@ Page {
             text: section
         }
 
-        delegate: ListItem.Base {
+        delegate: ListItem.Empty {
             showDivider: false
             objectName: "defaultWorldCityItem" + index
 
@@ -309,6 +309,7 @@ Page {
 
                 anchors {
                     left: parent.left
+                    leftMargin: units.gu(2)
                     right: _localTime.left
                     rightMargin: units.gu(1)
                     verticalCenter: parent.verticalCenter
@@ -336,6 +337,7 @@ Page {
                 text: localTime
                 anchors {
                     right: parent.right
+                    rightMargin: units.gu(2)
                     verticalCenter: parent.verticalCenter
                 }
             }

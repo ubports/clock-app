@@ -19,6 +19,8 @@ ubuntu-clock-app (3.2) utopic; urgency=medium
     dynamically load/unload the jsontimezone model only when necessary.
   * Removed hardcoded delete alarm button size and let it adapt to the label size
     dynamically (LP: #1381429)
+  * Replaced ListItem.Base with ListItem.Empty throughout the clock app to reduce
+    creation time (performance).
   * Customised splash screen (white background) (LP: #1377638)
 
   [Akiva Shammai Avraham]
