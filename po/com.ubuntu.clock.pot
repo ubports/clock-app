@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-10-15 11:44+0200\n"
+"POT-Creation-Date: 2014-10-15 11:48+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -150,8 +150,8 @@ msgstr ""
 msgid "Edit alarm"
 msgstr ""
 
-#: ../app/alarm/EditAlarmPage.qml:340
-msgid "Delete alarm (Really really long string)"
+#: ../app/alarm/EditAlarmPage.qml:339
+msgid "Delete alarm"
 msgstr ""
 
 #: ../app/clock/ClockPage.qml:152

@@ -331,8 +331,6 @@ Page {
             horizontalCenter: parent.horizontalCenter
         }
 
-        height: units.gu(4)
-
         visible: !isNewAlarm
 
         color: "Red"
