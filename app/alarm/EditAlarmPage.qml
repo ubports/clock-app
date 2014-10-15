@@ -331,7 +331,6 @@ Page {
             horizontalCenter: parent.horizontalCenter
         }
 
-        width: units.gu(17)
         height: units.gu(4)
 
         visible: !isNewAlarm
