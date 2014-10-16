@@ -61,67 +61,75 @@ Page {
                 }
             }
 
-            contents: Item {
-                anchors.right: parent ? parent.right: undefined
+            contents: Loader {
+                id: selectionStateLoader
+                active: alarmPage.state === "selection"
+                sourceComponent: selectionStateComponent
                 height: parent ? parent.height : undefined
-
-                HeaderButton {
-                    id: selectButton
-
-                    anchors {
-                        right: deleteButton.left
-                        rightMargin: units.gu(1)
-                    }
-
-                    text: {
-                        if(alarmListView.selectedItems.count === alarmListView.count) {
-                            return i18n.tr("Select None")
-                        } else {
-                            return i18n.tr("Select All")
-                        }
-                    }
-
-                    iconSource: {
-                        if(alarmListView.selectedItems.count === alarmListView.count) {
-                            return Qt.resolvedUrl("../graphics/select-none.svg")
-                        } else {
-                            return Qt.resolvedUrl("../graphics/select.svg")
-                        }
-                    }
-
-                    onTriggered: {
-                        if(alarmListView.selectedItems.count === alarmListView.count) {
-                            alarmListView.clearSelection()
-                        } else {
-                            alarmListView.selectAll()
-                        }
-                    }
-                }
-
-                HeaderButton {
-                    id: deleteButton
-
-                    anchors.right: parent.right
-                    anchors.rightMargin: units.gu(2)
-
-                    iconName: "delete"
-                    text: i18n.tr("Delete")
-                    enabled: alarmListView.selectedItems.count !== 0
-
-                    onTriggered: {
-                        var items = alarmListView.selectedItems
-
-                        for(var i=0; i < items.count; i++) {
-                            var alarm = alarmModel.get(items.get(i).itemsIndex)
-                            alarm.cancel()
-                        }
-
-                        alarmListView.endSelection()
-                    }
-                }
+                anchors.right: parent ? parent.right: undefined
             }
         }
     ]
+
+    Component {
+        id: selectionStateComponent
+        Item {
+            HeaderButton {
+                id: selectButton
+
+                anchors {
+                    right: deleteButton.left
+                    rightMargin: units.gu(1)
+                }
+
+                text: {
+                    if(alarmListView.selectedItems.count === alarmListView.count) {
+                        return i18n.tr("Select None")
+                    } else {
+                        return i18n.tr("Select All")
+                    }
+                }
+
+                iconSource: {
+                    if(alarmListView.selectedItems.count === alarmListView.count) {
+                        return Qt.resolvedUrl("../graphics/select-none.svg")
+                    } else {
+                        return Qt.resolvedUrl("../graphics/select.svg")
+                    }
+                }
+
+                onTriggered: {
+                    if(alarmListView.selectedItems.count === alarmListView.count) {
+                        alarmListView.clearSelection()
+                    } else {
+                        alarmListView.selectAll()
+                    }
+                }
+            }
+
+            HeaderButton {
+                id: deleteButton
+
+                anchors.right: parent.right
+                anchors.rightMargin: units.gu(2)
+
+                iconName: "delete"
+                text: i18n.tr("Delete")
+                enabled: alarmListView.selectedItems.count !== 0
+
+                onTriggered: {
+                    var items = alarmListView.selectedItems
+
+                    for(var i=0; i < items.count; i++) {
+                        var alarm = alarmModel.get(items.get(i).itemsIndex)
+                        alarm.cancel()
+                    }
+
+                    alarmListView.endSelection()
+                }
+            }
+        }
+    }
 
     AlarmList {
         id: alarmListView
