@@ -130,12 +130,17 @@ Page {
         localTime: clockTime
     }
 
-    EmptyState {
-        visible: alarmModel ? alarmModel.count === 0 : true
-        anchors.verticalCenter: parent.verticalCenter
-
-        iconName: "alarm-clock"
-        title: i18n.tr("No saved alarms")
-        subTitle: i18n.tr("Tap the + icon to add an alarm")
+    Loader {
+        id: emptyStateLoader
+        anchors.centerIn: parent
+        active: alarmModel ? alarmModel.count === 0 : true
+        Component.onCompleted: {
+            setSource(Qt.resolvedUrl("../components/EmptyState.qml"),
+                      {
+                          "iconName": "alarm-clock",
+                          "title": i18n.tr("No saved alarms"),
+                          "subTitle": i18n.tr("Tap the + icon to add an alarm")
+                      })
+        }
     }
 }
