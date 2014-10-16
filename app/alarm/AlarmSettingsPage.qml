@@ -28,7 +28,7 @@ Page {
 
     title: i18n.tr("Settings")
     visible: false
-    flickable: null
+    flickable: settingsPlugin
 
     Connections {
         target: clockApp
@@ -74,7 +74,6 @@ Page {
 
         contentHeight: _settingsColumn.height
         anchors.fill: parent
-        clip: true
 
         Column {
             id: _settingsColumn
@@ -169,11 +168,12 @@ Page {
 
                     ListView {
                         id: _resultsList
-                        clip: true
+
                         interactive: false
                         model: durationModel
                         width: parent.width
                         height: units.gu(24)
+
                         delegate: ListItem.Standard {
                             text: model.text
                             onClicked: {
@@ -237,7 +237,7 @@ Page {
 
                     ListView {
                         id: _snoozeResultsList
-                        clip: true
+
                         interactive: false
                         model: snoozeModel
                         width: parent.width
