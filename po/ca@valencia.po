@@ -14,7 +14,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-10-17 06:26+0000\n"
+"X-Launchpad-Export-Date: 2014-10-18 07:20+0000\n"
 "X-Generator: Launchpad (build 17196)\n"
 
 #: ../app/alarm/AlarmLabel.qml:30 ../app/alarm/AlarmLabel.qml:56
@@ -29,12 +29,12 @@ msgstr ""
 
 #: ../app/alarm/AlarmPage.qml:26
 msgid "Alarms"
-msgstr ""
+msgstr "Alarmes"
 
 #: ../app/alarm/AlarmPage.qml:43 ../app/alarm/EditAlarmPage.qml:50
 #: ../app/alarm/EditAlarmPage.qml:177
 msgid "Alarm"
-msgstr ""
+msgstr "Alarma"
 
 #: ../app/alarm/AlarmPage.qml:58 ../app/worldclock/WorldCityList.qml:79
 msgid "Back"
@@ -62,7 +62,7 @@ msgstr ""
 
 #: ../app/alarm/AlarmSettingsPage.qml:29
 msgid "Settings"
-msgstr ""
+msgstr "Paràmetres"
 
 #: ../app/alarm/AlarmSettingsPage.qml:53 ../app/alarm/AlarmSettingsPage.qml:54
 #: ../app/alarm/AlarmSettingsPage.qml:55 ../app/alarm/AlarmSettingsPage.qml:56
@@ -112,7 +112,7 @@ msgstr ""
 
 #: ../app/alarm/AlarmUtils.qml:45
 msgid "Daily"
-msgstr ""
+msgstr "Cada dia"
 
 #: ../app/alarm/AlarmUtils.qml:55
 msgid "No active alarms"
@@ -229,7 +229,7 @@ msgstr ""
 
 #: ubuntu-clock-app.desktop.in.in.h:1
 msgid "Clock"
-msgstr ""
+msgstr "Rellotge"
 
 #: ubuntu-clock-app.desktop.in.in.h:2
 msgid ""
