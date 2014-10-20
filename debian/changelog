@@ -23,6 +23,8 @@ ubuntu-clock-app (3.2) utopic; urgency=medium
     creation time (performance).
   * Dynamically load/unload the search mode in world city list and multiselect view in
     alarm page which reduces the creation time by a few ms.
+  * Unload the inner clock texture when not required. Inner clock texture smooth is
+    now set to false to improve startup animation.
   * Customised splash screen (white background) (LP: #1377638)
 
   [Akiva Shammai Avraham]

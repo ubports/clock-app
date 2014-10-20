@@ -78,13 +78,19 @@ Rectangle {
         }
     }
 
-    Image {
-        id: _innerBackground
-
-        visible: !isOuter
+    Loader {
+        id: _innerBackgroundLoader
         anchors.fill: parent
-        fillMode: Image.PreserveAspectFit
-        source: "../graphics/Inner_Clock_Texture.png"
+        sourceComponent: !isOuter ? _innerBackground : undefined
+    }
+
+    Component {
+        id: _innerBackground
+        Image {
+            smooth: false
+            fillMode: Image.PreserveAspectFit
+            source: "../graphics/Inner_Clock_Texture.png"
+        }
     }
 
     /*
