@@ -19,14 +19,20 @@
 import QtQuick 2.3
 import Ubuntu.Components 1.1
 
-Item {
+/*
+ Component which displays an empty state (approved by design). It offers an
+ icon, title and subtitle to describe the empty state.
+*/
 
+Item {
+    id: emptyState
+
+    // Public APIs
     property alias iconName: emptyIcon.name
     property alias title: emptyLabel.text
     property alias subTitle: emptySublabel.text
 
     height: childrenRect.height
-    width: parent.width
 
     Icon {
         id: emptyIcon

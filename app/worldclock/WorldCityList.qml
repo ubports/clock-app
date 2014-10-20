@@ -64,8 +64,9 @@ Page {
                     text: i18n.tr("City")
                     onTriggered: {
                         worldCityList.state = "search"
+                        searchComponentLoader.sourceComponent = searchComponent
                         jsonTimeZoneModelLoader.sourceComponent = jsonTimeZoneModelComponent
-                        searchField.forceActiveFocus()
+                        searchComponentLoader.item.forceActiveFocus()
                     }
                 }
             ]
@@ -79,58 +80,65 @@ Page {
                 text: i18n.tr("Back")
                 onTriggered: {
                     cityList.forceActiveFocus()
-                    searchField.text = ""
+                    searchComponentLoader.item.text = ""
                     worldCityList.state = "default"
                     isOnlineMode = false
+                    searchComponentLoader.sourceComponent = undefined
                     jsonTimeZoneModelLoader.sourceComponent = undefined
                 }
             }
 
-            contents: TextField {
-                id: searchField
-                objectName: "searchField"
-
-                inputMethodHints: Qt.ImhNoPredictiveText
-                placeholderText: i18n.tr("Search...")
-
+            contents: Loader {
+                id: searchComponentLoader
                 anchors {
                     left: parent ? parent.left : undefined
                     right: parent ? parent.right : undefined
                     rightMargin: units.gu(2)
                 }
-
-                Timer {
-                    id: search_timer
-                    interval: isOnlineMode ? 1 : 500
-                    repeat: false
-                    onTriggered:  {
-                        isOnlineMode = false
-                        console.log("Search string: " + searchField.text)
-
-                        if(!isOnlineMode && sortedTimeZoneModel.count === 0) {
-                            console.log("Enabling online mode")
-                            isOnlineMode = true
-                        }
-
-                        if(isOnlineMode) {
-                            var url = String("%1%2%3")
-                            .arg("http://geoname-lookup.ubuntu.com/?query=")
-                            .arg(searchField.text)
-                            .arg("&app=com.ubuntu.clock&version=3.2.x")
-                            console.log("Online URL: " + url)
-                            if (jsonTimeZoneModelLoader.status === Loader.Ready) {
-                                jsonTimeZoneModel.source = Qt.resolvedUrl(url)
-                            }
-                        }
-                    }
-                }
-
-                onTextChanged: {
-                    search_timer.restart()
-                }
             }
         }
     ]
+
+    Component {
+        id: searchComponent
+        TextField {
+            id: searchField
+            objectName: "searchField"
+
+            inputMethodHints: Qt.ImhNoPredictiveText
+            placeholderText: i18n.tr("Search...")
+
+            Timer {
+                id: search_timer
+                interval: isOnlineMode ? 1 : 500
+                repeat: false
+                onTriggered:  {
+                    isOnlineMode = false
+                    console.log("Search string: " + searchField.text)
+
+                    if(!isOnlineMode && sortedTimeZoneModel.count === 0) {
+                        console.log("Enabling online mode")
+                        isOnlineMode = true
+                    }
+
+                    if(isOnlineMode) {
+                        var url = String("%1%2%3")
+                        .arg("http://geoname-lookup.ubuntu.com/?query=")
+                        .arg(searchField.text)
+                        .arg("&app=com.ubuntu.clock&version=3.2.x")
+                        console.log("Online URL: " + url)
+                        if (jsonTimeZoneModelLoader.status === Loader.Ready) {
+                            jsonTimeZoneModel.source = Qt.resolvedUrl(url)
+                        }
+                    }
+                }
+            }
+
+            onTextChanged: {
+                search_timer.restart()
+            }
+        }
+    }
 
     Connections {
         target: clockApp
@@ -193,7 +201,8 @@ Page {
         sort.property: "city"
         sort.order: Qt.AscendingOrder
         filter.property: "city"
-        filter.pattern: RegExp(searchField.text, "gi")
+        filter.pattern: searchComponentLoader.status === Loader.Ready ? RegExp(searchComponentLoader.item.text, "gi")
+                                                                      : RegExp("", "gi")
     }
 
     Label {

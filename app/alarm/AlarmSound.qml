@@ -53,7 +53,6 @@ Page {
     Flickable {
         id: _pageFlickable
 
-        clip: true
         anchors.fill: parent
         contentHeight: soundModel.count * units.gu(7)
 

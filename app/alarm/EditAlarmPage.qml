@@ -262,7 +262,6 @@ Page {
                 margins: units.gu(-2)
             }
 
-            clip: true
             mode: "Hours|Minutes"
             date: {
                 if(isNewAlarm) {
