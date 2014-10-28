@@ -27,7 +27,7 @@ import Ubuntu.Components.ListItems 1.0 as ListItem
   #TODO: Revert to using the SDK Subtitled Component when they change the
   design to match the new clock app design.
  */
-ListItem.Base {
+ListItem.Empty {
     id: _subtitledContainer
 
     // Property to set the main text label
@@ -39,7 +39,12 @@ ListItem.Base {
     Column {
         id: _labelColumn
         
-        anchors.verticalCenter: parent.verticalCenter
+        anchors {
+            left: parent.left
+            right: parent.right
+            margins: units.gu(2)
+            verticalCenter: parent.verticalCenter
+        }
         
         Label {
             id: _mainText

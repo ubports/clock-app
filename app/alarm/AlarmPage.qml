@@ -18,9 +18,7 @@
 
 import QtQuick 2.3
 import Ubuntu.Components 1.1
-
 import "../components"
-import "../components/Utils.js" as Utils
 
 Page {
     id: alarmPage
@@ -28,7 +26,7 @@ Page {
     title: i18n.tr("Alarms")
     objectName: 'AlarmPage'
 
-    Component.onCompleted: Utils.log(debugMode, "Alarm Page loaded")
+    Component.onCompleted: console.log("[LOG]: Alarm Page loaded")
 
     flickable: null
 
@@ -44,7 +42,7 @@ Page {
                     iconName: "add"
                     text: i18n.tr("Alarm")
                     onTriggered: {
-                        mainStack.push(Qt.resolvedUrl("EditAlarmPage.qml"))
+                        pageStack.push(Qt.resolvedUrl("EditAlarmPage.qml"))
                     }
                 }
             ]
@@ -56,102 +54,101 @@ Page {
             when: alarmListView.isInSelectionMode
 
             backAction: Action {
-                visible: false
+                iconName: "back"
+                text: i18n.tr("Back")
+                onTriggered: {
+                    alarmListView.cancelSelection()
+                }
             }
 
-            contents: Item {
-                anchors.fill: parent ? parent : null
-                anchors.leftMargin: units.gu(-1)
-
-                HeaderButton {
-                    id: backButton
-
-                    anchors {
-                        left: parent.left
-                        verticalCenter: parent.verticalCenter
-                    }
-
-                    iconName: "back"
-                    text: i18n.tr("Back")
-
-                    onTriggered: {
-                        alarmListView.cancelSelection()
-                    }
-                }
-
-                HeaderButton {
-                    id: selectButton
-
-                    anchors {
-                        right: deleteButton.left
-                        rightMargin: units.gu(1)
-                        verticalCenter: parent.verticalCenter
-                    }
-
-                    text: {
-                        if(alarmListView.selectedItems.count === alarmListView.count) {
-                            return i18n.tr("Select None")
-                        } else {
-                            return i18n.tr("Select All")
-                        }
-                    }
-
-                    iconSource: {
-                        if(alarmListView.selectedItems.count === alarmListView.count) {
-                            return Qt.resolvedUrl("../graphics/select-none.svg")
-                        } else {
-                            return Qt.resolvedUrl("../graphics/select.svg")
-                        }
-                    }
-
-                    onTriggered: {
-                        if(alarmListView.selectedItems.count === alarmListView.count) {
-                            alarmListView.clearSelection()
-                        } else {
-                            alarmListView.selectAll()
-                        }
-                    }
-                }
-
-                HeaderButton {
-                    id: deleteButton
-
-                    anchors {
-                        right: parent.right
-                        verticalCenter: parent.verticalCenter
-                    }
-
-                    iconName: "delete"
-                    text: i18n.tr("Delete")
-                    enabled: alarmListView.selectedItems.count !== 0
-
-                    onTriggered: {
-                        var items = alarmListView.selectedItems
-
-                        for(var i=0; i < items.count; i++) {
-                            var alarm = alarmModel.get(items.get(i).itemsIndex)
-                            alarm.cancel()
-                        }
-
-                        alarmListView.endSelection()
-                    }
-                }
+            contents: Loader {
+                id: selectionStateLoader
+                active: alarmPage.state === "selection"
+                sourceComponent: selectionStateComponent
+                height: parent ? parent.height : undefined
+                anchors.right: parent ? parent.right: undefined
             }
         }
     ]
+
+    Component {
+        id: selectionStateComponent
+        Item {
+            HeaderButton {
+                id: selectButton
+
+                anchors {
+                    right: deleteButton.left
+                    rightMargin: units.gu(1)
+                }
+
+                text: {
+                    if(alarmListView.selectedItems.count === alarmListView.count) {
+                        return i18n.tr("Select None")
+                    } else {
+                        return i18n.tr("Select All")
+                    }
+                }
+
+                iconSource: {
+                    if(alarmListView.selectedItems.count === alarmListView.count) {
+                        return Qt.resolvedUrl("../graphics/select-none.svg")
+                    } else {
+                        return Qt.resolvedUrl("../graphics/select.svg")
+                    }
+                }
+
+                onTriggered: {
+                    if(alarmListView.selectedItems.count === alarmListView.count) {
+                        alarmListView.clearSelection()
+                    } else {
+                        alarmListView.selectAll()
+                    }
+                }
+            }
+
+            HeaderButton {
+                id: deleteButton
+
+                anchors.right: parent.right
+                anchors.rightMargin: units.gu(2)
+
+                iconName: "delete"
+                text: i18n.tr("Delete")
+                enabled: alarmListView.selectedItems.count !== 0
+
+                onTriggered: {
+                    var items = alarmListView.selectedItems
+
+                    for(var i=0; i < items.count; i++) {
+                        var alarm = alarmModel.get(items.get(i).itemsIndex)
+                        alarm.cancel()
+                    }
+
+                    alarmListView.endSelection()
+                }
+            }
+        }
+    }
 
     AlarmList {
         id: alarmListView
         listModel: alarmModel
         anchors.fill: parent
+        localTime: clockTime
     }
 
-    EmptyState {
-        visible: alarmModel.count === 0
-        anchors.verticalCenter: parent.verticalCenter
-
-        iconName: "alarm-clock"
-        title: i18n.tr("No saved alarms")
-        subTitle: i18n.tr("Tap the + icon to add an alarm")
+    Loader {
+        id: emptyStateLoader
+        anchors.centerIn: parent
+        active: alarmModel ? alarmModel.count === 0 : true
+        Component.onCompleted: {
+            setSource(Qt.resolvedUrl("../components/EmptyState.qml"),
+                      {
+                          "iconName": "alarm-clock",
+                          "title": i18n.tr("No saved alarms"),
+                          "subTitle": i18n.tr("Tap the + icon to add an alarm")
+                      })
+        }
     }
 }

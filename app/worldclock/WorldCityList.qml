@@ -34,8 +34,19 @@ import "../upstreamcomponents"
 
 Page {
     id: worldCityList
+    objectName: "worldCityList"
 
     property bool isOnlineMode: false
+    property alias jsonTimeZoneModel: jsonTimeZoneModelLoader.item
+    property alias xmlTimeZoneModel: xmlTimeZoneModelLoader.item
+
+    Component.onCompleted: {
+        /*
+         Load the XML Model *only* after the page has loaded to improve
+         the loading time preception of the user.
+       */
+        xmlTimeZoneModelLoader.sourceComponent = xmlTimeZoneModelComponent
+    }
 
     title: i18n.tr("Select a city")
     visible: false
@@ -48,11 +59,14 @@ Page {
             head: worldCityList.head
             actions: [
                 Action {
+                    objectName: "searchButton"
                     iconName: "search"
                     text: i18n.tr("City")
                     onTriggered: {
                         worldCityList.state = "search"
-                        searchField.forceActiveFocus()
+                        searchComponentLoader.sourceComponent = searchComponent
+                        jsonTimeZoneModelLoader.sourceComponent = jsonTimeZoneModelComponent
+                        searchComponentLoader.item.forceActiveFocus()
                     }
                 }
             ]
@@ -65,54 +79,66 @@ Page {
                 iconName: "back"
                 text: i18n.tr("Back")
                 onTriggered: {
-                    searchField.text = ""
+                    cityList.forceActiveFocus()
+                    searchComponentLoader.item.text = ""
                     worldCityList.state = "default"
                     isOnlineMode = false
+                    searchComponentLoader.sourceComponent = undefined
+                    jsonTimeZoneModelLoader.sourceComponent = undefined
                 }
             }
 
-            contents: TextField {
-                id: searchField
-
-                inputMethodHints: Qt.ImhNoPredictiveText
-                placeholderText: i18n.tr("Search...")
-
+            contents: Loader {
+                id: searchComponentLoader
                 anchors {
                     left: parent ? parent.left : undefined
                     right: parent ? parent.right : undefined
                     rightMargin: units.gu(2)
                 }
+            }
+        }
+    ]
 
-                Timer {
-                    id: search_timer
-                    interval: isOnlineMode ? 1 : 500
-                    repeat: false
-                    onTriggered:  {
-                        isOnlineMode = false
-                        console.log("Search string: " + searchField.text)
+    Component {
+        id: searchComponent
+        TextField {
+            id: searchField
+            objectName: "searchField"
 
-                        if(!isOnlineMode && sortedTimeZoneModel.count === 0) {
-                            console.log("Enabling online mode")
-                            isOnlineMode = true
-                        }
+            inputMethodHints: Qt.ImhNoPredictiveText
+            placeholderText: i18n.tr("Search...")
 
-                        if(isOnlineMode) {
-                            var url = String("%1%2%3")
-                            .arg("http://geoname-lookup.ubuntu.com/?query=")
-                            .arg(searchField.text)
-                            .arg("&app=com.ubuntu.clock.devel&version=3.0")
-                            console.log("Online URL: " + url)
+            Timer {
+                id: search_timer
+                interval: isOnlineMode ? 1 : 500
+                repeat: false
+                onTriggered:  {
+                    isOnlineMode = false
+                    console.log("Search string: " + searchField.text)
+
+                    if(!isOnlineMode && sortedTimeZoneModel.count === 0) {
+                        console.log("Enabling online mode")
+                        isOnlineMode = true
+                    }
+
+                    if(isOnlineMode) {
+                        var url = String("%1%2%3")
+                        .arg("http://geoname-lookup.ubuntu.com/?query=")
+                        .arg(searchField.text)
+                        .arg("&app=com.ubuntu.clock&version=3.2.x")
+                        console.log("Online URL: " + url)
+                        if (jsonTimeZoneModelLoader.status === Loader.Ready) {
                             jsonTimeZoneModel.source = Qt.resolvedUrl(url)
                         }
                     }
                 }
+            }
 
-                onTextChanged: {
-                    search_timer.restart()
-                }
+            onTextChanged: {
+                search_timer.restart()
             }
         }
-    ]
+    }
 
     Connections {
         target: clockApp
@@ -126,24 +152,57 @@ Page {
         }
     }
 
-    JsonTimeZoneModel {
-        id: jsonTimeZoneModel
-        updateInterval: 60000
+    /*
+     Loader to allow for dynamic loading/unloading of the json model only when
+     necessary.
+    */
+    Loader {
+        id: jsonTimeZoneModelLoader
+        asynchronous: true
     }
 
-    XmlTimeZoneModel {
-        id: xmlTimeZoneModel
-        updateInterval: 60000
-        source: Qt.resolvedUrl("world-city-list.xml")
+    Component {
+        id: jsonTimeZoneModelComponent
+        JsonTimeZoneModel {
+            updateInterval: 60000
+        }
+    }
+
+    Loader {
+        id: xmlTimeZoneModelLoader
+        asynchronous: true
+    }
+
+    Component {
+        id: xmlTimeZoneModelComponent
+        XmlTimeZoneModel {
+            updateInterval: 60000
+            source: Qt.resolvedUrl("world-city-list.xml")
+        }
     }
 
     SortFilterModel {
         id: sortedTimeZoneModel
-        model: isOnlineMode ? jsonTimeZoneModel : xmlTimeZoneModel
+
+        model: {
+            if (isOnlineMode && jsonTimeZoneModelLoader.status === Loader.Ready) {
+                return jsonTimeZoneModel
+            }
+
+            else  if (xmlTimeZoneModelLoader.status === Loader.Ready) {
+                return xmlTimeZoneModel
+            }
+
+            else {
+                return undefined
+            }
+        }
+
         sort.property: "city"
         sort.order: Qt.AscendingOrder
         filter.property: "city"
-        filter.pattern: RegExp(searchField.text, "gi")
+        filter.pattern: searchComponentLoader.status === Loader.Ready ? RegExp(searchComponentLoader.item.text, "gi")
+                                                                      : RegExp("", "gi")
     }
 
     Label {
@@ -191,8 +250,13 @@ Page {
     }
 
     ActivityIndicator {
-        running: jsonTimeZoneModel.status === JsonTimeZoneModel.Loading
-                 && isOnlineMode
+        running: {
+            if (jsonTimeZoneModelLoader.status === Loader.Ready && isOnlineMode) {
+                return jsonTimeZoneModel.status === JsonTimeZoneModel.Loading
+            } else {
+                return false
+            }
+        }
         anchors {
             top: onlineStateLabel.bottom
             topMargin: units.gu(3)
@@ -202,6 +266,7 @@ Page {
 
     ListView {
         id: cityList
+        objectName: "cityList"
 
         function addWorldCity(city, country, timezone) {
             console.log("[LOG]: Adding city to U1db Database")
@@ -224,7 +289,7 @@ Page {
         }
 
         onFlickStarted: {
-            Qt.inputMethod.hide()
+            forceActiveFocus()
         }
 
         anchors.fill: parent
@@ -241,26 +306,19 @@ Page {
         section.labelPositioning: ViewSection.InlineLabels
 
         section.delegate: ListItem.Header {
-            anchors.margins: units.gu(2)
-            Label {
-                /*
-                  Ideally we wouldn't need this label inside a listitem header,
-                  however the default header text is indented right 2 gu which
-                  doesn't match design spec.
-                */
-                text: section
-                anchors.verticalCenter: parent.verticalCenter
-            }
+            text: section
         }
 
-        delegate: ListItem.Base {
+        delegate: ListItem.Empty {
             showDivider: false
+            objectName: "defaultWorldCityItem" + index
 
             Column {
                 id: worldCityDelegateColumn
 
                 anchors {
                     left: parent.left
+                    leftMargin: units.gu(2)
                     right: _localTime.left
                     rightMargin: units.gu(1)
                     verticalCenter: parent.verticalCenter
@@ -268,6 +326,7 @@ Page {
 
                 Label {
                     text: city
+                    objectName: "defaultCityNameText"
                     width: parent.width
                     elide: Text.ElideRight
                     color: UbuntuColors.midAubergine
@@ -275,6 +334,7 @@ Page {
 
                 Label {
                     text: country
+                    objectName: "defaultCountryNameText"
                     fontSize: "xx-small"
                     width: parent.width
                     elide: Text.ElideRight
@@ -286,6 +346,7 @@ Page {
                 text: localTime
                 anchors {
                     right: parent.right
+                    rightMargin: units.gu(2)
                     verticalCenter: parent.verticalCenter
                 }
             }

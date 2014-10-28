@@ -16,10 +16,10 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-.pragma library
+import QtQuick 2.3
+import Ubuntu.Components 1.1
 
-function log (debugMode, message) {
-    if (debugMode) {
-        console.log("[LOG]" + message)
-    }
+AlarmModel {
+    id: alarmModel
+    Component.onCompleted: console.log("[LOG]: Alarm Database loaded")
 }

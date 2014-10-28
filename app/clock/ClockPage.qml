@@ -21,10 +21,10 @@ import U1db 1.0 as U1db
 import QtPositioning 5.2
 import Ubuntu.Components 1.1
 import Location 1.0 as UserLocation
+import "../alarm"
 import "../components"
 import "../upstreamcomponents"
 import "../worldclock"
-import "../components/Utils.js" as Utils
 
 PageWithBottomEdge {
     id: _clockPage
@@ -33,9 +33,22 @@ PageWithBottomEdge {
     // Property to keep track of the clock mode
     property alias isDigital: clock.isDigital
 
-    flickable: null
+    // Property to keep track of the clock time
+    property var clockTime: new Date()
 
-    Component.onCompleted: Utils.log(debugMode, "Clock Page loaded")
+    property var alarmModel
+
+    flickable: null
+    bottomEdgeTitle: alarmUtils.set_bottom_edge_title(alarmModel, clockTime)
+
+    Component.onCompleted: {
+        console.log("[LOG]: Clock Page loaded")
+        _clockPage.setBottomEdgePage(Qt.resolvedUrl("../alarm/AlarmPage.qml"), {})
+    }
+
+    AlarmUtils {
+        id: alarmUtils
+    }
 
     PositionSource {
         id: geoposition
@@ -129,6 +142,10 @@ PageWithBottomEdge {
 
         Component.onCompleted: otherElementsStartUpAnimation.start()
 
+        onFlickStarted: {
+            forceActiveFocus()
+        }
+
         anchors.fill: parent
         contentWidth: parent.width
         contentHeight: clock.height + date.height + locationRow.height
@@ -177,6 +194,8 @@ PageWithBottomEdge {
                 geoposition.lastUpdate = analogTime
             }
 
+            analogTime: clockTime
+
             anchors {
                 verticalCenter: parent.top
                 verticalCenterOffset: units.gu(20)
@@ -221,6 +240,7 @@ PageWithBottomEdge {
             Label {
                 id: location
                 objectName: "location"
+
                 fontSize: "medium"
                 anchors.verticalCenter: locationIcon.verticalCenter
                 color: UbuntuColors.midAubergine
@@ -254,6 +274,7 @@ PageWithBottomEdge {
 
         AddWorldCityButton {
             id: addWorldCityButton
+            objectName: "addWorldCityButton"
 
             opacity: settingsIcon.opacity
             anchors {

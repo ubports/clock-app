@@ -1,3 +1,39 @@
+ubuntu-clock-app (3.2) utopic; urgency=medium
+
+  [Nekhelesh Ramananthan]
+  * Fixed bottom edge hint timeout which made it possible for new users to not notice
+    the bottom edge action. (LP: #1357945)
+  * Moved DateTime object to ubuntu-clock-app.qml so that it can be used in multiple
+    places and avoid the need to duplicate the object.
+  * Removed Unused Utils library.
+  * Design tweak to always show the remaining time to an alarm for one-time alarms
+    only. (LP: #1377538)
+  * Tweaked bottom edge to show the time to the next active alarm (LP: #1290793)
+  * Synced ListItemWithActions with upstream
+  * Delayed loading of AlarmModel to improve app startup time (LP: #1362140)
+  * Fixed alarm page header width warning and corrected icon spacing.
+  * Added edit alarm qml tests and added a library helper which contains commonly
+    used test functions to avoid code duplication in future tests.
+  * Added world clock feature qml tests
+  * Delayed loading of xmltimezone model until add world city page is loaded and
+    dynamically load/unload the jsontimezone model only when necessary.
+  * Removed hardcoded delete alarm button size and let it adapt to the label size
+    dynamically (LP: #1381429)
+  * Replaced ListItem.Base with ListItem.Empty throughout the clock app to reduce
+    creation time (performance).
+  * Dynamically load/unload the search mode in world city list and multiselect view in
+    alarm page which reduces the creation time by a few ms.
+  * Unload the inner clock texture when not required. Inner clock texture smooth is
+    now set to false to improve startup animation.
+  * Customised splash screen (white background) (LP: #1377638)
+  * Added manual test to check disabling of alarms.
+
+  [Akiva Shammai Avraham]
+  * Improved the analog clock performance by updating the clock hands every second
+    rather than every 10 milliseconds. (LP: #1363968)
+
+ -- Nekhelesh Ramananthan <krnekhelesh@gmail.com>  Thu, 09 Oct 2014 18:22:31 +0200
+
 ubuntu-clock-app (3.1) utopic; urgency=medium
 
   [Nekhelesh Ramananthan]
@@ -34,6 +70,11 @@ ubuntu-clock-app (3.1) utopic; urgency=medium
   * Added alarm snooze settings (LP: #1354400)
   * Fixed default alarm label not being translatable (LP: #1365012)
   * Improved multiselect mode behavior and appearance (LP: #1370146)
+  * Removed custom listitem header used in the world city page and fixed listitem
+    anchors in the alarm settings page.
+  * Enabled alarms automatically after updating it (LP: #1372090)
+  * Automatically focus textfield (LP: #1372089)
+  * Added alarm feature qml tests and alarm sound unit tests
 
   [Zsombor Egri]
   * Fixed alarm status toggle being reverted immediately (LP: #1272337)
@@ -52,6 +93,9 @@ ubuntu-clock-app (3.1) utopic; urgency=medium
   [Stefano Verzegnassi]
   * Fixed wrong alignment of "Add city" button when the application is not
     localized in English. (LP: #1371229)
+
+  [Leo Arias]
+  * Fixed CMake and debian/control to run the qml tests during a deb package build
 
  -- Nekhelesh Ramananthan <krnekhelesh@gmail.com>  Wed, 13 Aug 2014 15:46:12 +0200
 

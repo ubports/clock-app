@@ -7,71 +7,56 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2014-09-20 02:34-0700\n"
-"PO-Revision-Date: 2014-09-14 02:44+0000\n"
-"Last-Translator: Víctor R. Ruiz <Unknown>\n"
+"POT-Creation-Date: 2014-10-15 11:52+0200\n"
+"PO-Revision-Date: 2014-10-20 05:15+0000\n"
+"Last-Translator: Adolfo Jayme <fitoschido@gmail.com>\n"
 "Language-Team: Spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-09-21 07:21+0000\n"
-"X-Generator: Launchpad (build 17196)\n"
+"X-Launchpad-Export-Date: 2014-10-21 07:50+0000\n"
+"X-Generator: Launchpad (build 17203)\n"
 
-#: ../app/alarm/AlarmDelegate.qml:136
-#, qt-format
-msgid "in %1d %1h %2m"
-msgstr "en %1d %1h %2m"
-
-#: ../app/alarm/AlarmDelegate.qml:145
-#, qt-format
-msgid "in %1h %2m"
-msgstr "en %1h %2m"
-
-#: ../app/alarm/AlarmDelegate.qml:153
-#, c-format, qt-format
-msgid "in %1m"
-msgstr "en %1m"
-
-#: ../app/alarm/AlarmLabel.qml:30 ../app/alarm/AlarmLabel.qml:52
-#: ../app/alarm/EditAlarmPage.qml:299
+#: ../app/alarm/AlarmLabel.qml:30 ../app/alarm/AlarmLabel.qml:56
+#: ../app/alarm/EditAlarmPage.qml:303
 msgid "Label"
 msgstr "Etiqueta"
 
-#: ../app/alarm/AlarmList.qml:81 ../app/alarm/AlarmPage.qml:125
-#: ../app/worldclock/UserWorldCityList.qml:103
+#: ../app/alarm/AlarmList.qml:78 ../app/alarm/AlarmPage.qml:108
+#: ../app/worldclock/UserWorldCityList.qml:101
 msgid "Delete"
 msgstr "Eliminar"
 
-#: ../app/alarm/AlarmPage.qml:28 ../app/ubuntu-clock-app.qml:103
+#: ../app/alarm/AlarmPage.qml:26
 msgid "Alarms"
 msgstr "Alarmas"
 
-#: ../app/alarm/AlarmPage.qml:45 ../app/alarm/EditAlarmPage.qml:47
-#: ../app/alarm/EditAlarmPage.qml:174
+#: ../app/alarm/AlarmPage.qml:43 ../app/alarm/EditAlarmPage.qml:50
+#: ../app/alarm/EditAlarmPage.qml:177
 msgid "Alarm"
 msgstr "Alarma"
 
-#: ../app/alarm/AlarmPage.qml:75 ../app/worldclock/WorldCityList.qml:66
+#: ../app/alarm/AlarmPage.qml:58 ../app/worldclock/WorldCityList.qml:79
 msgid "Back"
 msgstr "Atrás"
 
-#: ../app/alarm/AlarmPage.qml:93
+#: ../app/alarm/AlarmPage.qml:78
 msgid "Select None"
-msgstr ""
+msgstr "Cancelar la selección"
 
-#: ../app/alarm/AlarmPage.qml:95 ../app/alarm/AlarmRepeat.qml:35
+#: ../app/alarm/AlarmPage.qml:80 ../app/alarm/AlarmRepeat.qml:35
 msgid "Select All"
 msgstr "Seleccionar todo"
 
-#: ../app/alarm/AlarmPage.qml:154
+#: ../app/alarm/AlarmPage.qml:138
 msgid "No saved alarms"
 msgstr "No hay alarmas guardadas"
 
-#: ../app/alarm/AlarmPage.qml:155
+#: ../app/alarm/AlarmPage.qml:139
 msgid "Tap the + icon to add an alarm"
 msgstr "Para añadir una alarma toque el icono +"
 
-#: ../app/alarm/AlarmRepeat.qml:31 ../app/alarm/EditAlarmPage.qml:289
+#: ../app/alarm/AlarmRepeat.qml:31 ../app/alarm/EditAlarmPage.qml:293
 msgid "Repeat"
 msgstr "Repetir"
 
@@ -83,8 +68,8 @@ msgstr "Configuración"
 #: ../app/alarm/AlarmSettingsPage.qml:55 ../app/alarm/AlarmSettingsPage.qml:56
 #: ../app/alarm/AlarmSettingsPage.qml:65 ../app/alarm/AlarmSettingsPage.qml:66
 #: ../app/alarm/AlarmSettingsPage.qml:67 ../app/alarm/AlarmSettingsPage.qml:68
-#: ../app/alarm/AlarmSettingsPage.qml:135
-#: ../app/alarm/AlarmSettingsPage.qml:198
+#: ../app/alarm/AlarmSettingsPage.qml:139
+#: ../app/alarm/AlarmSettingsPage.qml:206
 #, qt-format
 msgid "%1 minutes"
 msgstr "%1 minutos"
@@ -93,23 +78,23 @@ msgstr "%1 minutos"
 msgid "Alarm volume"
 msgstr "Volumen de la alarma"
 
-#: ../app/alarm/AlarmSettingsPage.qml:134
+#: ../app/alarm/AlarmSettingsPage.qml:138
 msgid "Silence after"
 msgstr "Silencio tras"
 
-#: ../app/alarm/AlarmSettingsPage.qml:197
+#: ../app/alarm/AlarmSettingsPage.qml:205
 msgid "Snooze for"
 msgstr "Sonar durante"
 
-#: ../app/alarm/AlarmSettingsPage.qml:241
+#: ../app/alarm/AlarmSettingsPage.qml:249
 msgid "Vibration"
 msgstr "Vibración"
 
-#: ../app/alarm/AlarmSettingsPage.qml:270
+#: ../app/alarm/AlarmSettingsPage.qml:278
 msgid "Change time and date"
 msgstr "Cambiar fecha y hora"
 
-#: ../app/alarm/AlarmSound.qml:27 ../app/alarm/EditAlarmPage.qml:312
+#: ../app/alarm/AlarmSound.qml:28 ../app/alarm/EditAlarmPage.qml:316
 msgid "Sound"
 msgstr "Sonido"
 
@@ -129,84 +114,116 @@ msgstr "Fines de semana"
 msgid "Daily"
 msgstr "Diariamente"
 
-#: ../app/alarm/EditAlarmPage.qml:40
+#: ../app/alarm/AlarmUtils.qml:55
+msgid "No active alarms"
+msgstr "No hay alarmas activas"
+
+#: ../app/alarm/AlarmUtils.qml:72
+#, qt-format
+msgid "Next Alarm %1"
+msgstr "Próxima alarma %1"
+
+#: ../app/alarm/AlarmUtils.qml:79
+msgid "Alarm Passed"
+msgstr ""
+
+#: ../app/alarm/AlarmUtils.qml:88
+#, qt-format
+msgid "in %1d %2h %3m"
+msgstr "en %1d %2h %3m"
+
+#: ../app/alarm/AlarmUtils.qml:97
+#, qt-format
+msgid "in %1h %2m"
+msgstr "en %1h %2m"
+
+#: ../app/alarm/AlarmUtils.qml:105
+#, c-format, qt-format
+msgid "in %1m"
+msgstr "en %1m"
+
+#: ../app/alarm/EditAlarmPage.qml:43
 msgid "New alarm"
 msgstr "Nueva alarma"
 
-#: ../app/alarm/EditAlarmPage.qml:40
+#: ../app/alarm/EditAlarmPage.qml:43
 msgid "Edit alarm"
 msgstr "Editar alarma"
 
-#: ../app/alarm/EditAlarmPage.qml:336
+#: ../app/alarm/EditAlarmPage.qml:337
 msgid "Delete alarm"
 msgstr "Eliminar alarma"
+
+#: ../app/clock/ClockPage.qml:152
+msgid "Location"
+msgstr "Ubicación"
 
 #: ../app/worldclock/AddWorldCityButton.qml:30
 msgid "Add"
 msgstr "Añadir"
 
 #: ../app/worldclock/AddWorldCityButton.qml:61
-#: ../app/worldclock/WorldCityList.qml:52
+#: ../app/worldclock/WorldCityList.qml:64
 msgid "City"
 msgstr "Ciudad"
 
 #. TRANSLATORS: this indicates if the time in a world clock
 #. is behind or ahead of the time at the current location
-#: ../app/worldclock/UserWorldCityDelegate.qml:140
+#: ../app/worldclock/UserWorldCityDelegate.qml:142
 msgid "behind"
 msgstr "menos"
 
-#: ../app/worldclock/UserWorldCityDelegate.qml:141
+#: ../app/worldclock/UserWorldCityDelegate.qml:143
 msgid "ahead"
 msgstr "más"
 
 #. TRANSLATORS: the first argument is hour, followed by
 #. minute, and the translation for either 'behind' or
 #. 'ahead'
-#: ../app/worldclock/UserWorldCityDelegate.qml:151
+#: ../app/worldclock/UserWorldCityDelegate.qml:153
 #, qt-format
 msgid "%1h %2m %3"
 msgstr "%1h %2m %3"
 
 #. TRANSLATORS: the first argument is hour, followed by the
 #. translation for either 'behind' or 'ahead'
-#: ../app/worldclock/UserWorldCityDelegate.qml:160
+#: ../app/worldclock/UserWorldCityDelegate.qml:162
 #, qt-format
 msgid "%1h %2"
 msgstr "%1h %2"
 
 #. TRANSLATORS: the first argument is minute, followed by the
 #. translation for either 'behind' or 'ahead'
-#: ../app/worldclock/UserWorldCityDelegate.qml:168
+#: ../app/worldclock/UserWorldCityDelegate.qml:170
 #, qt-format
 msgid "%1m %2"
 msgstr "%1m %2"
 
-#: ../app/worldclock/UserWorldCityDelegate.qml:174
+#: ../app/worldclock/UserWorldCityDelegate.qml:176
 msgid "Same time"
 msgstr "Misma hora"
 
-#: ../app/worldclock/WorldCityList.qml:40
+#: ../app/worldclock/WorldCityList.qml:51
 msgid "Select a city"
 msgstr "Seleccione una ciudad"
 
-#: ../app/worldclock/WorldCityList.qml:78
+#: ../app/worldclock/WorldCityList.qml:94
 msgid "Search..."
 msgstr "Buscar…"
 
-#: ../app/worldclock/WorldCityList.qml:155
+#: ../app/worldclock/WorldCityList.qml:205
 msgid "Searching for a city"
 msgstr "Buscando una ciudad"
 
-#: ../app/worldclock/WorldCityList.qml:160
+#: ../app/worldclock/WorldCityList.qml:210
 msgid "No City Found"
 msgstr "No se encontró ninguna ciudad"
 
-#: ../app/worldclock/WorldCityList.qml:166
+#: ../app/worldclock/WorldCityList.qml:216
 msgid "Unable to connect."
 msgstr "No se pudo conectar."
 
-#: ../app/worldclock/WorldCityList.qml:167
+#: ../app/worldclock/WorldCityList.qml:217
 msgid "Please check your network connection and try again"
 msgstr "Compruebe la conexión a la red e inténtelo de nuevo"
 
@@ -218,7 +235,8 @@ msgstr "Reloj"
 msgid ""
 "A sophisticated clock app that provides world clock and alarm functionality."
 msgstr ""
+"Una aplicación sofisticada de reloj con funciones de reloj mundial y alarma."
 
 #: ubuntu-clock-app.desktop.in.in.h:3
 msgid "time;alarm;alert;clock;world;"
-msgstr ""
+msgstr "hora;alarma;alerta;reloj;mundo;"

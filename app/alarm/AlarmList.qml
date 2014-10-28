@@ -21,13 +21,13 @@ import Ubuntu.Components 1.1
 import Ubuntu.Components.ListItems 1.0 as ListItem
 import "../components"
 import "../upstreamcomponents"
-import "../components/Utils.js" as Utils
 
 MultipleSelectionListView {
     id: alarmListView
     objectName: "alarmListView"
 
     property var _currentSwipedItem: null
+    property var localTime
 
     function _updateSwipeState(item)
     {
@@ -51,15 +51,12 @@ MultipleSelectionListView {
     clip: true
     anchors.fill: parent
 
-    AlarmUtils {
-        id: alarmUtils
-    }
-
     listDelegate: AlarmDelegate {
         id: alarmDelegate
         objectName: "alarm" + index
 
         property var removalAnimation
+        localTime: alarmListView.localTime
 
         function remove() {
             removalAnimation.start()
@@ -131,8 +128,8 @@ MultipleSelectionListView {
             }
 
             else {
-                mainStack.push(Qt.resolvedUrl("EditAlarmPage.qml"),
-                               {"isNewAlarm": false, "alarmIndex": index})
+                pageStack.push(Qt.resolvedUrl("EditAlarmPage.qml"),
+                               {isNewAlarm: false, alarmIndex: index, alarmModel: alarmModel})
             }
         }
 

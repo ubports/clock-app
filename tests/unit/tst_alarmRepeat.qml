@@ -1,3 +1,21 @@
+/*
+ * Copyright (C) 2014 Canonical Ltd
+ *
+ * This file is part of Ubuntu Clock App
+ *
+ * Ubuntu Clock App is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 3 as
+ * published by the Free Software Foundation.
+ *
+ * Ubuntu Clock App is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
 import QtQuick 2.0
 import QtTest 1.0
 import Ubuntu.Test 1.0
@@ -44,6 +62,7 @@ MainView {
         function init() {
             alarmRepeatPageLoader.sourceComponent = alarmRepeatPage
             alarmRepeatPageLoader.item.visible = true
+            spy.target = alarmRepeatPageLoader.item.Component
             header = findChild(mainView, "MainView_Header")
             backButton = findChild(header, "customBackButton")
             repeater = findChild(alarmRepeatPageLoader.item, "alarmDays")
@@ -51,8 +70,17 @@ MainView {
 
         function cleanup() {
             alarmRepeatPageLoader.sourceComponent = undefined
+            spy.wait()
+            tryCompare(spy, "count", 1)
             _alarm.reset()
             tryCompare(_alarm, "status", Alarm.Ready)
+            spy.clear()
+            spy.target = undefined
+        }
+
+        SignalSpy {
+            id: spy
+            signalName: "destruction"
         }
 
         /*
@@ -60,7 +88,7 @@ MainView {
          default an alarm is an one-time alarm and in the repeat page none of
          the days must be checked
         */
-        function test_allSwitchesAreUncheckedByDefault() {
+        function test_01_allSwitchesAreUncheckedByDefault() {
             waitForRendering(alarmRepeatPageLoader.item);
 
             tryCompare(_alarm, "daysOfWeek", 0, 3000, "Alarm days of weeks is not 0 by default")
@@ -81,15 +109,6 @@ MainView {
         */
         function test_alarmTypeSwitch() {
             waitForRendering(alarmRepeatPageLoader.item);
-
-            // TEST FAILS HERE //
-            // Alarm should be one-time by default. By the test before this
-            // changed the value and the alarm.reset() in the cleanup doesn't
-            // seem to do its job.
-
-            // test_alarmObjectSetsSwitchStatus() is run before this test. And in
-            // that test I set the alarm type to repeating. However the cleanup
-            // should reset back to one-time when calling the alarm.reset() function.
 
             tryCompare(_alarm, "type", Alarm.OneTime, 3000, "Alarm type is not OneTime by default")
 
@@ -114,11 +133,13 @@ MainView {
                 var currentDaySwitch = findChild(alarmRepeatPageLoader.item, "daySwitch"+i)
 
                 if(!currentDaySwitch.checked) {
-                    mouseClick(dayListItem, dayListItem.width/2, dayListItem.height/2)
+                    mouseClick(dayListItem, centerOf(dayListItem).x, centerOf(dayListItem).y)
                 }
             }
 
-            compare(alarmRepeatPageLoader.item.alarm.daysOfWeek, 127, "Alarm Object daysOfWeek value is incorrect w.r.t to the UI")
+            var dailyDaysOfWeek = Alarm.Monday | Alarm.Tuesday | Alarm.Wednesday | Alarm.Thursday | Alarm.Friday | Alarm.Saturday | Alarm.Sunday
+
+            compare(alarmRepeatPageLoader.item.alarm.daysOfWeek, dailyDaysOfWeek, "Alarm Object daysOfWeek value is incorrect w.r.t to the UI")
         }
 
         /*
@@ -128,7 +149,7 @@ MainView {
         */
         function test_alarmObjectSetsSwitchStatus() {
             _alarm.type = Alarm.Repeating
-            _alarm.daysOfWeek = 96 // Enabled saturday and sunday
+            _alarm.daysOfWeek = Alarm.Saturday | Alarm.Sunday
 
             for(var i=0; i<repeater.count; i++) {
                 var currentDayLabel = findChild(alarmRepeatPageLoader.item, "alarmDay"+i)

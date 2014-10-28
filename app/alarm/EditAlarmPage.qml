@@ -23,7 +23,6 @@ import Qt.labs.folderlistmodel 2.1
 import Ubuntu.Components.Pickers 1.0
 import Ubuntu.Components.ListItems 1.0 as ListItem
 import "../components"
-import "../components/Utils.js" as Utils
 
 Page {
     id: _addAlarmPage
@@ -35,7 +34,11 @@ Page {
     // Property to store the index of the alarm to be edited
     property int alarmIndex
 
+    // Temporary alarm used to read saved alarm and modify them
     property var tempAlarm
+
+    // Property to store the alarm model
+    property var alarmModel
 
     title: isNewAlarm ? i18n.tr("New alarm") : i18n.tr("Edit alarm")
     visible: false
@@ -95,7 +98,7 @@ Page {
         tempAlarm.cancel()
 
         if(validateAlarm(tempAlarm)) {
-            mainStack.pop()
+            pageStack.pop()
         }
     }
 
@@ -111,21 +114,21 @@ Page {
         tempAlarm.message = _alarm.message
         tempAlarm.date = alarmTime
         tempAlarm.type = _alarm.type
-        tempAlarm.enabled = _alarm.enabled
+        tempAlarm.enabled = true
         tempAlarm.sound = _alarm.sound
         tempAlarm.daysOfWeek = _alarm.daysOfWeek
 
         tempAlarm.save()
 
         if(validateAlarm(tempAlarm)) {
-            mainStack.pop()
+            pageStack.pop()
         }
     }
 
     // Function to validate if the alarm was saved properly
     function validateAlarm(alarmObject) {
         if (alarmObject.error !== Alarm.NoError) {
-            Utils.log(debugMode, "Error saving alarm, code: " + alarmObject.error)
+            console.log("[ERROR]: Error saving alarm, code: " + alarmObject.error)
             return false
         }
         else {
@@ -177,7 +180,7 @@ Page {
 
         onErrorChanged: {
             if (error !== Alarm.NoError) {
-                Utils.log(debugMode, "Error saving alarm, code: " + error)
+                console.log("[LOG]: Error saving alarm, code: " + error)
             }
         }
 
@@ -186,7 +189,7 @@ Page {
                 return;
             if ((operation > Alarm.NoOperation) &&
                     (operation < Alarm.Reseting)) {
-                mainStack.pop();
+                pageStack.pop();
             }
         }
 
@@ -246,6 +249,7 @@ Page {
 
         DatePicker {
             id: _timePicker
+            objectName: "alarmTime"
 
             /*
               #FIXME: DatePicker does not respect the user's locale. The bug
@@ -258,7 +262,6 @@ Page {
                 margins: units.gu(-2)
             }
 
-            clip: true
             mode: "Hours|Minutes"
             date: {
                 if(isNewAlarm) {
@@ -288,7 +291,7 @@ Page {
 
             text: i18n.tr("Repeat")
             subText: alarmUtils.format_day_string(_alarm.daysOfWeek, _alarm.type)
-            onClicked: mainStack.push(Qt.resolvedUrl("AlarmRepeat.qml"),
+            onClicked: pageStack.push(Qt.resolvedUrl("AlarmRepeat.qml"),
                                       {"alarm": _alarm})
         }
 
@@ -298,7 +301,7 @@ Page {
 
             text: i18n.tr("Label")
             subText: _alarm.message
-            onClicked: mainStack.push(Qt.resolvedUrl("AlarmLabel.qml"),
+            onClicked: pageStack.push(Qt.resolvedUrl("AlarmLabel.qml"),
                                       {"alarm": _alarm})
         }
 
@@ -310,7 +313,7 @@ Page {
             property string _soundName: "Suru arpeggio"
 
             text: i18n.tr("Sound")
-            onClicked: mainStack.push(Qt.resolvedUrl("AlarmSound.qml"), {
+            onClicked: pageStack.push(Qt.resolvedUrl("AlarmSound.qml"), {
                                           "alarmSound": _alarmSound,
                                           "alarm": _alarm,
                                           "soundModel": soundModel
@@ -326,9 +329,6 @@ Page {
             topMargin: units.gu(3)
             horizontalCenter: parent.horizontalCenter
         }
-
-        width: units.gu(17)
-        height: units.gu(4)
 
         visible: !isNewAlarm
 

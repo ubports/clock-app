@@ -1,4 +1,4 @@
-# Italian translation for ubuntu-clock-app
+# Hungarian translation for ubuntu-clock-app
 # Copyright (c) 2014 Rosetta Contributors and Canonical Ltd 2014
 # This file is distributed under the same license as the ubuntu-clock-app package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2014.
@@ -8,9 +8,9 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2014-10-15 11:52+0200\n"
-"PO-Revision-Date: 2014-09-04 07:13+0000\n"
-"Last-Translator: Claudio Arseni <claudio.arseni@gmail.com>\n"
-"Language-Team: Italian <it@li.org>\n"
+"PO-Revision-Date: 2014-10-11 18:03+0000\n"
+"Last-Translator: Richard Somlói <ricsipontaz@gmail.com>\n"
+"Language-Team: Hungarian <hu@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -20,49 +20,49 @@ msgstr ""
 #: ../app/alarm/AlarmLabel.qml:30 ../app/alarm/AlarmLabel.qml:56
 #: ../app/alarm/EditAlarmPage.qml:303
 msgid "Label"
-msgstr "Etichetta"
+msgstr "Címke"
 
 #: ../app/alarm/AlarmList.qml:78 ../app/alarm/AlarmPage.qml:108
 #: ../app/worldclock/UserWorldCityList.qml:101
 msgid "Delete"
-msgstr "Elimina"
+msgstr "Törlés"
 
 #: ../app/alarm/AlarmPage.qml:26
 msgid "Alarms"
-msgstr "Allarmi"
+msgstr "Riasztások"
 
 #: ../app/alarm/AlarmPage.qml:43 ../app/alarm/EditAlarmPage.qml:50
 #: ../app/alarm/EditAlarmPage.qml:177
 msgid "Alarm"
-msgstr "Allarme"
+msgstr "Riasztás"
 
 #: ../app/alarm/AlarmPage.qml:58 ../app/worldclock/WorldCityList.qml:79
 msgid "Back"
-msgstr "Indietro"
+msgstr "Vissza"
 
 #: ../app/alarm/AlarmPage.qml:78
 msgid "Select None"
-msgstr ""
+msgstr "Kijelölés megszüntetése"
 
 #: ../app/alarm/AlarmPage.qml:80 ../app/alarm/AlarmRepeat.qml:35
 msgid "Select All"
-msgstr "Seleziona tutti"
+msgstr "Összes kijelölése"
 
 #: ../app/alarm/AlarmPage.qml:138
 msgid "No saved alarms"
-msgstr ""
+msgstr "Nincs mentett riasztás"
 
 #: ../app/alarm/AlarmPage.qml:139
 msgid "Tap the + icon to add an alarm"
-msgstr ""
+msgstr "Új hozzáadásához koppintson a + ikonra"
 
 #: ../app/alarm/AlarmRepeat.qml:31 ../app/alarm/EditAlarmPage.qml:293
 msgid "Repeat"
-msgstr "Ripeti"
+msgstr "Ismétlődés"
 
 #: ../app/alarm/AlarmSettingsPage.qml:29
 msgid "Settings"
-msgstr "Impostazioni"
+msgstr "Beállítások"
 
 #: ../app/alarm/AlarmSettingsPage.qml:53 ../app/alarm/AlarmSettingsPage.qml:54
 #: ../app/alarm/AlarmSettingsPage.qml:55 ../app/alarm/AlarmSettingsPage.qml:56
@@ -72,110 +72,110 @@ msgstr "Impostazioni"
 #: ../app/alarm/AlarmSettingsPage.qml:206
 #, qt-format
 msgid "%1 minutes"
-msgstr "%1 minuti"
+msgstr "%1 perc"
 
 #: ../app/alarm/AlarmSettingsPage.qml:93
 msgid "Alarm volume"
-msgstr "Volume allarme"
+msgstr "Riasztás hangereje"
 
 #: ../app/alarm/AlarmSettingsPage.qml:138
 msgid "Silence after"
-msgstr "Silenzioso dopo"
+msgstr "Csendesedjen el ennyi idő után"
 
 #: ../app/alarm/AlarmSettingsPage.qml:205
 msgid "Snooze for"
-msgstr ""
+msgstr "Szundi hossza"
 
 #: ../app/alarm/AlarmSettingsPage.qml:249
 msgid "Vibration"
-msgstr "Vibrazione"
+msgstr "Rezgés"
 
 #: ../app/alarm/AlarmSettingsPage.qml:278
 msgid "Change time and date"
-msgstr "Modifica data e ora"
+msgstr "Dátum és idő módosítása"
 
 #: ../app/alarm/AlarmSound.qml:28 ../app/alarm/EditAlarmPage.qml:316
 msgid "Sound"
-msgstr "Suono"
+msgstr "Hang"
 
 #: ../app/alarm/AlarmUtils.qml:31
 msgid "Never"
-msgstr ""
+msgstr "Soha"
 
 #: ../app/alarm/AlarmUtils.qml:37
 msgid "Weekdays"
-msgstr "Giorni della settimana"
+msgstr "Hétköznapokon"
 
 #: ../app/alarm/AlarmUtils.qml:41
 msgid "Weekends"
-msgstr "Fine settimana"
+msgstr "Hétvégén"
 
 #: ../app/alarm/AlarmUtils.qml:45
 msgid "Daily"
-msgstr "Giornaliero"
+msgstr "Naponta"
 
 #: ../app/alarm/AlarmUtils.qml:55
 msgid "No active alarms"
-msgstr ""
+msgstr "Nincs aktív riasztás"
 
 #: ../app/alarm/AlarmUtils.qml:72
 #, qt-format
 msgid "Next Alarm %1"
-msgstr ""
+msgstr "Következő riasztás: %1"
 
 #: ../app/alarm/AlarmUtils.qml:79
 msgid "Alarm Passed"
-msgstr ""
+msgstr "A riasztás elmúlt"
 
 #: ../app/alarm/AlarmUtils.qml:88
 #, qt-format
 msgid "in %1d %2h %3m"
-msgstr ""
+msgstr "%1n, %2ó és %3p múlva"
 
 #: ../app/alarm/AlarmUtils.qml:97
 #, qt-format
 msgid "in %1h %2m"
-msgstr "tra %1 ora %2 min"
+msgstr "%1ó és %2p múlva"
 
 #: ../app/alarm/AlarmUtils.qml:105
 #, c-format, qt-format
 msgid "in %1m"
-msgstr "tra %1m"
+msgstr "%1m múlva"
 
 #: ../app/alarm/EditAlarmPage.qml:43
 msgid "New alarm"
-msgstr "Nuovo allarme"
+msgstr "Új riasztás"
 
 #: ../app/alarm/EditAlarmPage.qml:43
 msgid "Edit alarm"
-msgstr "Modifica allarme"
+msgstr "Szerkesztés"
 
 #: ../app/alarm/EditAlarmPage.qml:337
 msgid "Delete alarm"
-msgstr "Elimina allarme"
+msgstr "Riasztás törlése"
 
 #: ../app/clock/ClockPage.qml:152
 msgid "Location"
-msgstr ""
+msgstr "Helyszín"
 
 #: ../app/worldclock/AddWorldCityButton.qml:30
 msgid "Add"
-msgstr "Aggiungi"
+msgstr "Város"
 
 #: ../app/worldclock/AddWorldCityButton.qml:61
 #: ../app/worldclock/WorldCityList.qml:64
 msgid "City"
-msgstr "Città"
+msgstr "hozzáadása"
 
 #. TRANSLATORS: this indicates if the time in a world clock
 #. is behind or ahead of the time at the current location
 #: ../app/worldclock/UserWorldCityDelegate.qml:142
 msgid "behind"
-msgstr "indietro"
+msgstr "Mínusz"
 
 #: ../app/worldclock/UserWorldCityDelegate.qml:143
 msgid "ahead"
-msgstr "avanti"
+msgstr "Plusz"
 
 #. TRANSLATORS: the first argument is hour, followed by
 #. minute, and the translation for either 'behind' or
@@ -183,59 +183,59 @@ msgstr "avanti"
 #: ../app/worldclock/UserWorldCityDelegate.qml:153
 #, qt-format
 msgid "%1h %2m %3"
-msgstr ""
+msgstr "%3 %1 óra %2 perc"
 
 #. TRANSLATORS: the first argument is hour, followed by the
 #. translation for either 'behind' or 'ahead'
 #: ../app/worldclock/UserWorldCityDelegate.qml:162
 #, qt-format
 msgid "%1h %2"
-msgstr ""
+msgstr "%2 %1 óra"
 
 #. TRANSLATORS: the first argument is minute, followed by the
 #. translation for either 'behind' or 'ahead'
 #: ../app/worldclock/UserWorldCityDelegate.qml:170
 #, qt-format
 msgid "%1m %2"
-msgstr ""
+msgstr "%2 %1 perc"
 
 #: ../app/worldclock/UserWorldCityDelegate.qml:176
 msgid "Same time"
-msgstr ""
+msgstr "Azonos időzóna"
 
 #: ../app/worldclock/WorldCityList.qml:51
 msgid "Select a city"
-msgstr "Seleziona una città"
+msgstr "Város kiválasztása"
 
 #: ../app/worldclock/WorldCityList.qml:94
 msgid "Search..."
-msgstr "Cerca..."
+msgstr "Keresés…"
 
 #: ../app/worldclock/WorldCityList.qml:205
 msgid "Searching for a city"
-msgstr "Cerca una città"
+msgstr "Városok keresése"
 
 #: ../app/worldclock/WorldCityList.qml:210
 msgid "No City Found"
-msgstr "Nessuna città trovata"
+msgstr "Nem található ilyen város"
 
 #: ../app/worldclock/WorldCityList.qml:216
 msgid "Unable to connect."
-msgstr "Impossibile connettersi."
+msgstr "A kapcsolat nem jött létre."
 
 #: ../app/worldclock/WorldCityList.qml:217
 msgid "Please check your network connection and try again"
-msgstr "Controllare la connessione a internet e riprovare"
+msgstr "Kérjük ellenőrizze a hálózati kapcsolatát és próbálja újra"
 
 #: ubuntu-clock-app.desktop.in.in.h:1
 msgid "Clock"
-msgstr "Orologio"
+msgstr "Óra"
 
 #: ubuntu-clock-app.desktop.in.in.h:2
 msgid ""
 "A sophisticated clock app that provides world clock and alarm functionality."
-msgstr ""
+msgstr "Kifinomult óra alkalmazás világóra és riasztás funkciókkal."
 
 #: ubuntu-clock-app.desktop.in.in.h:3
 msgid "time;alarm;alert;clock;world;"
-msgstr ""
+msgstr "idő;riasztás;ébresztés;óra;világ;"

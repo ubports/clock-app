@@ -20,8 +20,13 @@ import QtQuick 2.3
 import DateTime 1.0
 import U1db 1.0 as U1db
 import Ubuntu.Components 1.1
-import "clock"
-import "components"
+import "../../app/clock"
+
+/*
+ This file is meant to create a fake but fully fleshed clock app with its
+ own database and settings. This will avoid messing with the user data while
+ running the tests.
+*/
 
 MainView {
     id: clockApp
@@ -29,40 +34,16 @@ MainView {
     // Property to store the state of an application (active or suspended)
     property bool applicationState: Qt.application.active
 
-    // objectName for functional testing purposes (autopilot-qt5)
-    objectName: "clock"
-
-    // applicationName for click packages (used as an unique app identifier)
-    applicationName: "com.ubuntu.clock"
-
-    /*
-      This property enables the application to change orientation when the
-      device is rotated. This has been set to false since we are currently
-      only focussing on the phone interface.
-    */
-    automaticOrientation: false
-
-    /*
-      The width and height defined below are the same dimension used by the
-      designers in the clock visual spec.
-    */
     width: units.gu(40)
     height: units.gu(70)
-
-    backgroundColor: "#F5F5F5"
-
     useDeprecatedToolbar: false
-    anchorToKeyboard: true
+    applicationName: "com.ubuntu.fakeclock.test"
 
-    Background {}
-
-    // Database to store the user preferences locally
     U1db.Database {
         id: clockDB
         path: "user-preferences"
     }
 
-    // Document to store clock mode chosen by user
     U1db.Document {
         id: clockModeDocument
         create: true
@@ -71,25 +52,14 @@ MainView {
         defaults: { "digitalMode": false }
     }
 
-    U1db.Document {
-        id: userLocationDocument
-        create: true
-        database: clockDB
-        docId: "userLocationDocument"
-        defaults: { "lat": "NaN", "long": "Nan", "location": "Null" }
-    }
-
     DateTime {
         id: localTimeSource
         updateInterval: 1000
     }
 
-    onApplicationStateChanged: {
-        localTimeSource.update()
-    }
-
     PageStack {
         id: mainStack
+        objectName: "pageStack"
 
         Component.onCompleted: push(clockPage)
 
@@ -100,29 +70,6 @@ MainView {
                 id: alarmModelLoader
                 asynchronous: false
             }
-
-            /*
-              #FIXME: When the SDK support hiding the header, then enable the
-              clock page title. This will then set the correct window title on
-              the desktop.
-
-              title: "Clock"
-            */
-
-            /*
-             Create a new Date() object and pass the date, month, year, hour, minute
-             and second received from the DateTime plugin manually to ensure the
-             timezone info is set correctly.
-
-             Javascript Month is 0-11 while QDateTime month is 1-12. Hence the -1
-             is required.
-            */
-
-            /*
-              FIXME: When the upstream QT bug at
-              https://bugreports.qt-project.org/browse/QTBUG-40275 is fixed it will be
-              possible to receive a datetime object directly instead of using this hack.
-            */
 
             alarmModel: alarmModelLoader.item
             bottomEdgeEnabled: alarmModelLoader.status === Loader.Ready
@@ -139,4 +86,3 @@ MainView {
         }
     }
 }
-
