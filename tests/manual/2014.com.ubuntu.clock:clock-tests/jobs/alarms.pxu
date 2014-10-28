@@ -136,3 +136,23 @@ _description:
         The alarm should ring again (with haptic feedback). Note that if an alarm is set to ring
         originally at 10:00:00 and you snooze it the first time at 10:01:30, it should ring the next
         time at 10:03:30 and not at 10:02:00.
+        
+id: alarm/disable-alarm
+plugin: manual
+depends: alarm/trigger-alarm
+estimated_duration: 360
+_summary: Test the alarm disable feature
+_description:
+    This test checks if the alarm disable feature works as expected.
+    1. Launch the clock app.
+        Clock app opens showing the current local time.
+    2. Swipe the bottom edge to open the alarms page.
+        Alarms page should appear showing a list of alarm. If empty then you should see a
+        message being displayed that "No saved alarms".
+    3. Press the plus icon to create a new alarm. Change the alarm time to ring in the next
+       minute. Do not change any other options. Save Alarm.
+        The saved alarm should be displayed in the alarms page.
+    4. Press the switch next to the alarm that was just created to disable it.
+        The alarm switch should be colorless to indicate it is disabled.
+    5. Wait for the time to pass the alarm time.
+        The alarm should not ring since it was disabled.
