@@ -72,25 +72,27 @@ PageWithBottomEdge {
         }
 
         onPositionChanged: {
+            // Do not accept an invalid user location
             if(!position.longitudeValid || !position.latitudeValid) {
                 return
             }
 
+            /*
+             Stop querying for the user location if it is found to be
+             the same as the one stored in the app setting database
+            */
             if (userLongitude === userLocationDocument.contents.long ||
                     userLatitude === userLocationDocument.contents.lat) {
                 if (geoposition.active) {
+                    console.log("[LOG]: Stopping geolocation update service")
                     geoposition.stop()
                 }
                 return
             }
 
             else {
-                userLocation.source = String("%1%2%3%4%5")
-                .arg("http://api.geonames.org/findNearbyPlaceNameJSON?lat=")
-                .arg(position.coordinate.latitude)
-                .arg("&lng=")
-                .arg(position.coordinate.longitude)
-                .arg("&username=krnekhelesh&style=full")
+                // Retrieve user location online after receiving the user's lat and lng.
+                userLocation.setSource(position.coordinate.latitude, position.coordinate.longitude)
             }
         }
     }
@@ -116,6 +118,20 @@ PageWithBottomEdge {
 
     UserLocation.Location {
         id: userLocation
+
+        function setSource(lat, lng) {
+            var url = String("%1%2%3%4%5")
+            .arg("http://api.geonames.org/findNearbyPlaceNameJSON?lat=")
+            .arg(lat)
+            .arg("&lng=")
+            .arg(lng)
+            .arg("&username=krnekhelesh&style=full")
+
+            console.log("[LOG]: Searching online for user location at " + url)
+
+            userLocation.source =  url;
+        }
+
         onLocationChanged: {
             var locationData = JSON.parse
                     (JSON.stringify(userLocationDocument.contents))
@@ -131,6 +147,7 @@ PageWithBottomEdge {
              determined and saved to disk
            */
             if(geoposition.active) {
+                console.log("[LOG]: Stopping geolocation update service")
                 geoposition.stop()
             }
 
