@@ -19,13 +19,13 @@
 #include <QtQml>
 #include <QtQml/QQmlContext>
 #include "backend.h"
-#include "location.h"
+#include "geolocation.h"
 
 void BackendPlugin::registerTypes(const char *uri)
 {
-    Q_ASSERT(uri == QLatin1String("Location"));
+    Q_ASSERT(uri == QLatin1String("GeoLocation"));
 
-    qmlRegisterType<Location>(uri, 1, 0, "Location");
+    qmlRegisterType<GeoLocation>(uri, 1, 0, "GeoLocation");
 }
 
 void BackendPlugin::initializeEngine(QQmlEngine *engine, const char *uri)

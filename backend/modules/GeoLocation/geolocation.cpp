@@ -21,9 +21,9 @@
 #include <QNetworkRequest>
 #include <QJsonDocument>
 
-#include "location.h"
+#include "geolocation.h"
 
-Location::Location(QObject *parent):
+GeoLocation::GeoLocation(QObject *parent):
     QObject(parent)
 {
     m_nam = new QNetworkAccessManager(this);
@@ -33,17 +33,17 @@ Location::Location(QObject *parent):
             SLOT(networkReplyFinished(QNetworkReply*)));
 }
 
-QUrl Location::source() const
+QUrl GeoLocation::source() const
 {
     return m_source;
 }
 
-QString Location::location() const
+QString GeoLocation::location() const
 {
     return m_location;
 }
 
-void Location::setSource(const QUrl &source)
+void GeoLocation::setSource(const QUrl &source)
 {
     if (m_source == source) {
         // Don't set the source again if it is the same source being set again
@@ -57,7 +57,7 @@ void Location::setSource(const QUrl &source)
     retrieveLocationFromJson();
 }
 
-void Location::retrieveLocationFromJson()
+void GeoLocation::retrieveLocationFromJson()
 {
     // Define the request
     QNetworkRequest request(m_source);
@@ -66,7 +66,7 @@ void Location::retrieveLocationFromJson()
     m_nam->get(request);
 }
 
-void Location::networkReplyFinished(QNetworkReply *reply)
+void GeoLocation::networkReplyFinished(QNetworkReply *reply)
 {
     if(reply->error() != QNetworkReply::NoError) {
         qDebug() << "[LOG] Network error: " << reply->errorString();

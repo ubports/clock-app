@@ -23,7 +23,7 @@
 #include <QUrl>
 #include <QNetworkAccessManager>
 
-class Location : public QObject
+class GeoLocation : public QObject
 {
     Q_OBJECT
 
@@ -39,7 +39,7 @@ class Location : public QObject
                NOTIFY locationChanged)
 
 public:
-    Location(QObject *parent = 0);
+    GeoLocation(QObject *parent = 0);
 
     // Function to read the json document source
     QUrl source() const;

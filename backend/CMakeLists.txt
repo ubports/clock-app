@@ -26,9 +26,9 @@ set(
 )
 
 set(
-    location_SRCS
-    modules/Location/backend.cpp
-    modules/Location/location.cpp
+    geolocation_SRCS
+    modules/GeoLocation/backend.cpp
+    modules/GeoLocation/geolocation.cpp
 )
 
 add_library(timezone MODULE
@@ -43,8 +43,8 @@ add_library(alarmsettings MODULE
     ${alarmsettings_SRCS}
 )
 
-add_library(location MODULE
-    ${location_SRCS}
+add_library(geolocation MODULE
+    ${geolocation_SRCS}
 )
 
 set_target_properties(timezone PROPERTIES
@@ -59,14 +59,14 @@ set_target_properties(alarmsettings PROPERTIES
     LIBRARY_OUTPUT_DIRECTORY Alarm/Settings
 )
 
-set_target_properties(location PROPERTIES
-    LIBRARY_OUTPUT_DIRECTORY Location
+set_target_properties(geolocation PROPERTIES
+    LIBRARY_OUTPUT_DIRECTORY GeoLocation
 )
 
 qt5_use_modules(datetime Gui Qml Quick)
 qt5_use_modules(timezone Gui Qml Quick)
 qt5_use_modules(alarmsettings Gui Qml Quick DBus)
-qt5_use_modules(location Gui Qml Quick)
+qt5_use_modules(geolocation Gui Qml Quick)
 
 # Copy qmldir file to build dir for running in QtCreator
 add_custom_target(timezone-qmldir ALL
@@ -84,8 +84,8 @@ add_custom_target(alarmsettings-qmldir ALL
     DEPENDS ${QMLFILES}
 )
 
-add_custom_target(location-qmldir ALL
-    COMMAND cp ${CMAKE_CURRENT_SOURCE_DIR}/modules/Location/qmldir ${CMAKE_CURRENT_BINARY_DIR}/Location
+add_custom_target(geolocation-qmldir ALL
+    COMMAND cp ${CMAKE_CURRENT_SOURCE_DIR}/modules/GeoLocation/qmldir ${CMAKE_CURRENT_BINARY_DIR}/GeoLocation
     DEPENDS ${QMLFILES}
 )
 
@@ -99,5 +99,5 @@ install(FILES   modules/DateTime/qmldir DESTINATION ${MODULE_PATH}/DateTime/)
 install(TARGETS alarmsettings DESTINATION ${MODULE_PATH}/Alarm/Settings/)
 install(FILES   modules/Alarm/Settings/qmldir DESTINATION ${MODULE_PATH}/Alarm/Settings/)
 
-install(TARGETS location DESTINATION ${MODULE_PATH}/Location/)
-install(FILES   modules/Location/qmldir DESTINATION ${MODULE_PATH}/Location/)
+install(TARGETS geolocation DESTINATION ${MODULE_PATH}/GeoLocation/)
+install(FILES   modules/GeoLocation/qmldir DESTINATION ${MODULE_PATH}/GeoLocation/)

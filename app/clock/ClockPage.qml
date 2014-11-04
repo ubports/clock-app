@@ -20,7 +20,7 @@ import QtQuick 2.3
 import U1db 1.0 as U1db
 import QtPositioning 5.2
 import Ubuntu.Components 1.1
-import Location 1.0 as UserLocation
+import GeoLocation 1.0
 import "../alarm"
 import "../components"
 import "../upstreamcomponents"
@@ -116,7 +116,7 @@ PageWithBottomEdge {
         }
     }
 
-    UserLocation.Location {
+    GeoLocation {
         id: userLocation
 
         function setSource(lat, lng) {
