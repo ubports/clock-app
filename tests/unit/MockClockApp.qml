@@ -21,6 +21,7 @@ import DateTime 1.0
 import U1db 1.0 as U1db
 import Ubuntu.Components 1.1
 import "../../app/clock"
+import "../../app/components"
 
 /*
  This file is meant to create a fake but fully fleshed clock app with its
@@ -50,6 +51,14 @@ MainView {
         database: clockDB
         docId: "clockModeDocument"
         defaults: { "digitalMode": false }
+    }
+
+    U1db.Document {
+        id: userLocationDocument
+        create: true
+        database: clockDB
+        docId: "userLocationDocument"
+        defaults: { "lat": "NaN", "long": "Nan", "location": "Null" }
     }
 
     DateTime {

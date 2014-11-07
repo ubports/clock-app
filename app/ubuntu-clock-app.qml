@@ -71,6 +71,14 @@ MainView {
         defaults: { "digitalMode": false }
     }
 
+    U1db.Document {
+        id: userLocationDocument
+        create: true
+        database: clockDB
+        docId: "userLocationDocument"
+        defaults: { "lat": "NaN", "long": "Nan", "location": "Null" }
+    }
+
     DateTime {
         id: localTimeSource
         updateInterval: 1000

@@ -17,7 +17,10 @@
  */
 
 import QtQuick 2.3
+import U1db 1.0 as U1db
+import QtPositioning 5.2
 import Ubuntu.Components 1.1
+import GeoLocation 1.0
 import "../alarm"
 import "../components"
 import "../upstreamcomponents"
@@ -45,6 +48,110 @@ PageWithBottomEdge {
 
     AlarmUtils {
         id: alarmUtils
+    }
+
+    PositionSource {
+        id: geoposition
+
+        // Property to store the time of the last GPS location update
+        property var lastUpdate
+
+        readonly property real userLongitude: position.coordinate.longitude
+
+        readonly property real userLatitude: position.coordinate.latitude
+
+        active: true
+        updateInterval: 1000
+
+        onSourceErrorChanged: {
+            // Stop querying user location if location service is not available
+            if (sourceError !== PositionSource.NoError) {
+                console.log("[Source Error]: Location Service Error")
+                geoposition.stop()
+            }
+        }
+
+        onPositionChanged: {
+            // Do not accept an invalid user location
+            if(!position.longitudeValid || !position.latitudeValid) {
+                return
+            }
+
+            /*
+             Stop querying for the user location if it is found to be
+             the same as the one stored in the app setting database
+            */
+            if (userLongitude === userLocationDocument.contents.long ||
+                    userLatitude === userLocationDocument.contents.lat) {
+                if (geoposition.active) {
+                    console.log("[LOG]: Stopping geolocation update service")
+                    geoposition.stop()
+                }
+                return
+            }
+
+            else {
+                // Retrieve user location online after receiving the user's lat and lng.
+                userLocation.setSource(position.coordinate.latitude, position.coordinate.longitude)
+            }
+        }
+    }
+
+    Connections {
+        target: clockApp
+        onApplicationStateChanged: {
+            /*
+             If Clock App is brought from background after more than 30 mins,
+             query the user location to ensure it is up to date.
+            */
+            if(applicationState
+                    && Math.abs(clock.analogTime - geoposition.lastUpdate) > 1800000) {
+                if(!geoposition.active)
+                    geoposition.start()
+            }
+
+            else if (!applicationState) {
+                geoposition.lastUpdate = clock.analogTime
+            }
+        }
+    }
+
+    GeoLocation {
+        id: userLocation
+
+        function setSource(lat, lng) {
+            var url = String("%1%2%3%4%5")
+            .arg("http://api.geonames.org/findNearbyPlaceNameJSON?lat=")
+            .arg(lat)
+            .arg("&lng=")
+            .arg(lng)
+            .arg("&username=krnekhelesh&style=full")
+
+            console.log("[LOG]: Searching online for user location at " + url)
+
+            userLocation.source =  url;
+        }
+
+        onLocationChanged: {
+            var locationData = JSON.parse
+                    (JSON.stringify(userLocationDocument.contents))
+
+            locationData.lat = geoposition.userLatitude
+            locationData.long = geoposition.userLongitude
+            locationData.location = userLocation.location
+
+            userLocationDocument.contents = locationData
+
+            /*
+             Stop querying the user coordinates once the user location has been
+             determined and saved to disk
+           */
+            if(geoposition.active) {
+                console.log("[LOG]: Stopping geolocation update service")
+                geoposition.stop()
+            }
+
+        }
     }
 
     Flickable {
@@ -100,6 +207,10 @@ PageWithBottomEdge {
             id: clock
             objectName: "clock"
 
+            Component.onCompleted: {
+                geoposition.lastUpdate = analogTime
+            }
+
             analogTime: clockTime
 
             anchors {
@@ -130,9 +241,6 @@ PageWithBottomEdge {
             opacity: settingsIcon.opacity
             spacing: units.gu(1)
 
-            // TODO: Remove this once user location finding is implemented
-            visible: false
-
             anchors {
                 top: date.bottom
                 topMargin: units.gu(1)
@@ -149,10 +257,24 @@ PageWithBottomEdge {
             Label {
                 id: location
                 objectName: "location"
-                text: i18n.tr("Location")
+
                 fontSize: "medium"
                 anchors.verticalCenter: locationIcon.verticalCenter
                 color: UbuntuColors.midAubergine
+
+                text: {
+                    if (userLocationDocument.contents.location === "Null") {
+                        if(geoposition.sourceError !== PositionSource.NoError) {
+                            return i18n.tr("Location Service Error!")
+                        } else {
+                            return i18n.tr("Retrieving location...")
+                        }
+                    }
+
+                    else {
+                        return userLocationDocument.contents.location
+                    }
+                }
             }
         }
 
