@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2014-10-15 11:52+0200\n"
-"PO-Revision-Date: 2014-09-26 18:35+0000\n"
+"PO-Revision-Date: 2014-11-07 02:25+0000\n"
 "Last-Translator: Marcos Lans <Unknown>\n"
 "Language-Team: Galician <gl@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-10-15 20:23+0000\n"
-"X-Generator: Launchpad (build 17196)\n"
+"X-Launchpad-Export-Date: 2014-11-07 07:30+0000\n"
+"X-Generator: Launchpad (build 17231)\n"
 
 #: ../app/alarm/AlarmLabel.qml:30 ../app/alarm/AlarmLabel.qml:56
 #: ../app/alarm/EditAlarmPage.qml:303
@@ -116,12 +116,12 @@ msgstr "Diariamente"
 
 #: ../app/alarm/AlarmUtils.qml:55
 msgid "No active alarms"
-msgstr ""
+msgstr "Non hai alarmas activas"
 
 #: ../app/alarm/AlarmUtils.qml:72
 #, qt-format
 msgid "Next Alarm %1"
-msgstr ""
+msgstr "Seguinte alarma %1"
 
 #: ../app/alarm/AlarmUtils.qml:79
 msgid "Alarm Passed"
@@ -130,7 +130,7 @@ msgstr ""
 #: ../app/alarm/AlarmUtils.qml:88
 #, qt-format
 msgid "in %1d %2h %3m"
-msgstr ""
+msgstr "en %1d %2h %3m"
 
 #: ../app/alarm/AlarmUtils.qml:97
 #, qt-format
