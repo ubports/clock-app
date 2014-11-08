@@ -7,22 +7,22 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2014-10-15 11:52+0200\n"
+"POT-Creation-Date: 2014-11-04 16:55+0100\n"
 "PO-Revision-Date: 2014-10-26 18:19+0000\n"
 "Last-Translator: Vojtěch Daněk <vdanek@outlook.com>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-10-27 07:12+0000\n"
-"X-Generator: Launchpad (build 17203)\n"
+"X-Launchpad-Export-Date: 2014-11-08 06:20+0000\n"
+"X-Generator: Launchpad (build 17231)\n"
 
 #: ../app/alarm/AlarmLabel.qml:30 ../app/alarm/AlarmLabel.qml:56
-#: ../app/alarm/EditAlarmPage.qml:303
+#: ../app/alarm/EditAlarmPage.qml:302
 msgid "Label"
 msgstr "Štítek"
 
-#: ../app/alarm/AlarmList.qml:78 ../app/alarm/AlarmPage.qml:108
+#: ../app/alarm/AlarmList.qml:78 ../app/alarm/AlarmPage.qml:117
 #: ../app/worldclock/UserWorldCityList.qml:101
 msgid "Delete"
 msgstr "Odstranit"
@@ -36,27 +36,27 @@ msgstr "Budíky"
 msgid "Alarm"
 msgstr "Budík"
 
-#: ../app/alarm/AlarmPage.qml:58 ../app/worldclock/WorldCityList.qml:79
+#: ../app/alarm/AlarmPage.qml:58 ../app/worldclock/WorldCityList.qml:80
 msgid "Back"
 msgstr "Zpět"
 
-#: ../app/alarm/AlarmPage.qml:78
+#: ../app/alarm/AlarmPage.qml:87
 msgid "Select None"
 msgstr "Zrušit výběr"
 
-#: ../app/alarm/AlarmPage.qml:80 ../app/alarm/AlarmRepeat.qml:35
+#: ../app/alarm/AlarmPage.qml:89 ../app/alarm/AlarmRepeat.qml:35
 msgid "Select All"
 msgstr "Vybrat vše"
 
-#: ../app/alarm/AlarmPage.qml:138
+#: ../app/alarm/AlarmPage.qml:149
 msgid "No saved alarms"
 msgstr "Žádné uložené budíky"
 
-#: ../app/alarm/AlarmPage.qml:139
+#: ../app/alarm/AlarmPage.qml:150
 msgid "Tap the + icon to add an alarm"
 msgstr "Klepněte na ikonu + pro přidání budíku"
 
-#: ../app/alarm/AlarmRepeat.qml:31 ../app/alarm/EditAlarmPage.qml:293
+#: ../app/alarm/AlarmRepeat.qml:31 ../app/alarm/EditAlarmPage.qml:292
 msgid "Repeat"
 msgstr "Opakovat"
 
@@ -68,33 +68,33 @@ msgstr "Nastavení"
 #: ../app/alarm/AlarmSettingsPage.qml:55 ../app/alarm/AlarmSettingsPage.qml:56
 #: ../app/alarm/AlarmSettingsPage.qml:65 ../app/alarm/AlarmSettingsPage.qml:66
 #: ../app/alarm/AlarmSettingsPage.qml:67 ../app/alarm/AlarmSettingsPage.qml:68
-#: ../app/alarm/AlarmSettingsPage.qml:139
-#: ../app/alarm/AlarmSettingsPage.qml:206
+#: ../app/alarm/AlarmSettingsPage.qml:146
+#: ../app/alarm/AlarmSettingsPage.qml:215
 #, qt-format
 msgid "%1 minutes"
 msgstr "%1 minut"
 
-#: ../app/alarm/AlarmSettingsPage.qml:93
+#: ../app/alarm/AlarmSettingsPage.qml:92
 msgid "Alarm volume"
 msgstr "Hlasitost budíku"
 
-#: ../app/alarm/AlarmSettingsPage.qml:138
+#: ../app/alarm/AlarmSettingsPage.qml:145
 msgid "Silence after"
 msgstr "Ticho po"
 
-#: ../app/alarm/AlarmSettingsPage.qml:205
+#: ../app/alarm/AlarmSettingsPage.qml:214
 msgid "Snooze for"
 msgstr "Uspat na"
 
-#: ../app/alarm/AlarmSettingsPage.qml:249
+#: ../app/alarm/AlarmSettingsPage.qml:259
 msgid "Vibration"
 msgstr "Vibrace"
 
-#: ../app/alarm/AlarmSettingsPage.qml:278
+#: ../app/alarm/AlarmSettingsPage.qml:293
 msgid "Change time and date"
 msgstr "Změnit čas a datum"
 
-#: ../app/alarm/AlarmSound.qml:28 ../app/alarm/EditAlarmPage.qml:316
+#: ../app/alarm/AlarmSound.qml:28 ../app/alarm/EditAlarmPage.qml:315
 msgid "Sound"
 msgstr "Zvuk"
 
@@ -150,13 +150,17 @@ msgstr "Nový budík"
 msgid "Edit alarm"
 msgstr "Upravit budík"
 
-#: ../app/alarm/EditAlarmPage.qml:337
+#: ../app/alarm/EditAlarmPage.qml:336
 msgid "Delete alarm"
 msgstr "Smazat budík"
 
-#: ../app/clock/ClockPage.qml:152
-msgid "Location"
-msgstr "Místo"
+#: ../app/clock/ClockPage.qml:268
+msgid "Location Service Error!"
+msgstr ""
+
+#: ../app/clock/ClockPage.qml:270
+msgid "Retrieving location..."
+msgstr ""
 
 #: ../app/worldclock/AddWorldCityButton.qml:30
 msgid "Add"
@@ -207,23 +211,23 @@ msgstr "Stejný čas"
 msgid "Select a city"
 msgstr "Zvolte město"
 
-#: ../app/worldclock/WorldCityList.qml:94
+#: ../app/worldclock/WorldCityList.qml:109
 msgid "Search..."
 msgstr "Hledat..."
 
-#: ../app/worldclock/WorldCityList.qml:205
+#: ../app/worldclock/WorldCityList.qml:214
 msgid "Searching for a city"
 msgstr "Hledání města"
 
-#: ../app/worldclock/WorldCityList.qml:210
+#: ../app/worldclock/WorldCityList.qml:219
 msgid "No City Found"
 msgstr "Město nenalezeno"
 
-#: ../app/worldclock/WorldCityList.qml:216
+#: ../app/worldclock/WorldCityList.qml:225
 msgid "Unable to connect."
 msgstr "Nelze se připojit."
 
-#: ../app/worldclock/WorldCityList.qml:217
+#: ../app/worldclock/WorldCityList.qml:226
 msgid "Please check your network connection and try again"
 msgstr ""
 "Prosím, zkontrolujte své připojení k internetu a zkuste hledání znovu"

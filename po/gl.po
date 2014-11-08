@@ -7,22 +7,22 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2014-10-15 11:52+0200\n"
+"POT-Creation-Date: 2014-11-04 16:55+0100\n"
 "PO-Revision-Date: 2014-11-07 02:25+0000\n"
 "Last-Translator: Marcos Lans <Unknown>\n"
 "Language-Team: Galician <gl@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-11-07 07:30+0000\n"
+"X-Launchpad-Export-Date: 2014-11-08 06:20+0000\n"
 "X-Generator: Launchpad (build 17231)\n"
 
 #: ../app/alarm/AlarmLabel.qml:30 ../app/alarm/AlarmLabel.qml:56
-#: ../app/alarm/EditAlarmPage.qml:303
+#: ../app/alarm/EditAlarmPage.qml:302
 msgid "Label"
 msgstr "Etiqueta"
 
-#: ../app/alarm/AlarmList.qml:78 ../app/alarm/AlarmPage.qml:108
+#: ../app/alarm/AlarmList.qml:78 ../app/alarm/AlarmPage.qml:117
 #: ../app/worldclock/UserWorldCityList.qml:101
 msgid "Delete"
 msgstr "Eliminar"
@@ -36,27 +36,27 @@ msgstr "Alarmas"
 msgid "Alarm"
 msgstr "Alarma"
 
-#: ../app/alarm/AlarmPage.qml:58 ../app/worldclock/WorldCityList.qml:79
+#: ../app/alarm/AlarmPage.qml:58 ../app/worldclock/WorldCityList.qml:80
 msgid "Back"
 msgstr "Volver"
 
-#: ../app/alarm/AlarmPage.qml:78
+#: ../app/alarm/AlarmPage.qml:87
 msgid "Select None"
 msgstr "Non seleccionar nada"
 
-#: ../app/alarm/AlarmPage.qml:80 ../app/alarm/AlarmRepeat.qml:35
+#: ../app/alarm/AlarmPage.qml:89 ../app/alarm/AlarmRepeat.qml:35
 msgid "Select All"
 msgstr "Selecionar todo"
 
-#: ../app/alarm/AlarmPage.qml:138
+#: ../app/alarm/AlarmPage.qml:149
 msgid "No saved alarms"
 msgstr "Non hai alarmas gardadas"
 
-#: ../app/alarm/AlarmPage.qml:139
+#: ../app/alarm/AlarmPage.qml:150
 msgid "Tap the + icon to add an alarm"
 msgstr "Tocar a icona + engade unha alarma"
 
-#: ../app/alarm/AlarmRepeat.qml:31 ../app/alarm/EditAlarmPage.qml:293
+#: ../app/alarm/AlarmRepeat.qml:31 ../app/alarm/EditAlarmPage.qml:292
 msgid "Repeat"
 msgstr "Repetición"
 
@@ -68,33 +68,33 @@ msgstr "Axustes"
 #: ../app/alarm/AlarmSettingsPage.qml:55 ../app/alarm/AlarmSettingsPage.qml:56
 #: ../app/alarm/AlarmSettingsPage.qml:65 ../app/alarm/AlarmSettingsPage.qml:66
 #: ../app/alarm/AlarmSettingsPage.qml:67 ../app/alarm/AlarmSettingsPage.qml:68
-#: ../app/alarm/AlarmSettingsPage.qml:139
-#: ../app/alarm/AlarmSettingsPage.qml:206
+#: ../app/alarm/AlarmSettingsPage.qml:146
+#: ../app/alarm/AlarmSettingsPage.qml:215
 #, qt-format
 msgid "%1 minutes"
 msgstr "%1 minutos"
 
-#: ../app/alarm/AlarmSettingsPage.qml:93
+#: ../app/alarm/AlarmSettingsPage.qml:92
 msgid "Alarm volume"
 msgstr "Volume da alarma"
 
-#: ../app/alarm/AlarmSettingsPage.qml:138
+#: ../app/alarm/AlarmSettingsPage.qml:145
 msgid "Silence after"
 msgstr "Silenciar despois de"
 
-#: ../app/alarm/AlarmSettingsPage.qml:205
+#: ../app/alarm/AlarmSettingsPage.qml:214
 msgid "Snooze for"
 msgstr "Repetir"
 
-#: ../app/alarm/AlarmSettingsPage.qml:249
+#: ../app/alarm/AlarmSettingsPage.qml:259
 msgid "Vibration"
 msgstr "Vibración"
 
-#: ../app/alarm/AlarmSettingsPage.qml:278
+#: ../app/alarm/AlarmSettingsPage.qml:293
 msgid "Change time and date"
 msgstr "Cambiar hora e data"
 
-#: ../app/alarm/AlarmSound.qml:28 ../app/alarm/EditAlarmPage.qml:316
+#: ../app/alarm/AlarmSound.qml:28 ../app/alarm/EditAlarmPage.qml:315
 msgid "Sound"
 msgstr "Son"
 
@@ -150,13 +150,17 @@ msgstr "Nova alarma"
 msgid "Edit alarm"
 msgstr "Editar a alarma"
 
-#: ../app/alarm/EditAlarmPage.qml:337
+#: ../app/alarm/EditAlarmPage.qml:336
 msgid "Delete alarm"
 msgstr "Eliminar a alarma"
 
-#: ../app/clock/ClockPage.qml:152
-msgid "Location"
-msgstr "Localización"
+#: ../app/clock/ClockPage.qml:268
+msgid "Location Service Error!"
+msgstr ""
+
+#: ../app/clock/ClockPage.qml:270
+msgid "Retrieving location..."
+msgstr ""
 
 #: ../app/worldclock/AddWorldCityButton.qml:30
 msgid "Add"
@@ -207,23 +211,23 @@ msgstr "A mesma hora"
 msgid "Select a city"
 msgstr "Seleccionar cidade"
 
-#: ../app/worldclock/WorldCityList.qml:94
+#: ../app/worldclock/WorldCityList.qml:109
 msgid "Search..."
 msgstr "Buscar..."
 
-#: ../app/worldclock/WorldCityList.qml:205
+#: ../app/worldclock/WorldCityList.qml:214
 msgid "Searching for a city"
 msgstr "Buscando a cidade"
 
-#: ../app/worldclock/WorldCityList.qml:210
+#: ../app/worldclock/WorldCityList.qml:219
 msgid "No City Found"
 msgstr "Non se encontrou a cidade"
 
-#: ../app/worldclock/WorldCityList.qml:216
+#: ../app/worldclock/WorldCityList.qml:225
 msgid "Unable to connect."
 msgstr "Non é posíbel conectar."
 
-#: ../app/worldclock/WorldCityList.qml:217
+#: ../app/worldclock/WorldCityList.qml:226
 msgid "Please check your network connection and try again"
 msgstr "Comprobe a conexión de rede e ténteo de novo"
 

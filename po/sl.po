@@ -7,22 +7,22 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2014-10-15 11:52+0200\n"
+"POT-Creation-Date: 2014-11-04 16:55+0100\n"
 "PO-Revision-Date: 2014-10-28 14:27+0000\n"
 "Last-Translator: Damir Jerovšek <Unknown>\n"
 "Language-Team: Slovenian <sl@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-10-29 07:43+0000\n"
-"X-Generator: Launchpad (build 17203)\n"
+"X-Launchpad-Export-Date: 2014-11-08 06:20+0000\n"
+"X-Generator: Launchpad (build 17231)\n"
 
 #: ../app/alarm/AlarmLabel.qml:30 ../app/alarm/AlarmLabel.qml:56
-#: ../app/alarm/EditAlarmPage.qml:303
+#: ../app/alarm/EditAlarmPage.qml:302
 msgid "Label"
 msgstr "Naziv"
 
-#: ../app/alarm/AlarmList.qml:78 ../app/alarm/AlarmPage.qml:108
+#: ../app/alarm/AlarmList.qml:78 ../app/alarm/AlarmPage.qml:117
 #: ../app/worldclock/UserWorldCityList.qml:101
 msgid "Delete"
 msgstr "Izbriši"
@@ -36,27 +36,27 @@ msgstr "Alarmi"
 msgid "Alarm"
 msgstr "Alarm"
 
-#: ../app/alarm/AlarmPage.qml:58 ../app/worldclock/WorldCityList.qml:79
+#: ../app/alarm/AlarmPage.qml:58 ../app/worldclock/WorldCityList.qml:80
 msgid "Back"
 msgstr "Nazaj"
 
-#: ../app/alarm/AlarmPage.qml:78
+#: ../app/alarm/AlarmPage.qml:87
 msgid "Select None"
 msgstr "Odznači vse"
 
-#: ../app/alarm/AlarmPage.qml:80 ../app/alarm/AlarmRepeat.qml:35
+#: ../app/alarm/AlarmPage.qml:89 ../app/alarm/AlarmRepeat.qml:35
 msgid "Select All"
 msgstr "Označi vse"
 
-#: ../app/alarm/AlarmPage.qml:138
+#: ../app/alarm/AlarmPage.qml:149
 msgid "No saved alarms"
 msgstr "Ni shranjenih alarmov"
 
-#: ../app/alarm/AlarmPage.qml:139
+#: ../app/alarm/AlarmPage.qml:150
 msgid "Tap the + icon to add an alarm"
 msgstr "Tapnite na ikono + za dodanje alarma"
 
-#: ../app/alarm/AlarmRepeat.qml:31 ../app/alarm/EditAlarmPage.qml:293
+#: ../app/alarm/AlarmRepeat.qml:31 ../app/alarm/EditAlarmPage.qml:292
 msgid "Repeat"
 msgstr "Ponovi"
 
@@ -68,33 +68,33 @@ msgstr "Nastavitve"
 #: ../app/alarm/AlarmSettingsPage.qml:55 ../app/alarm/AlarmSettingsPage.qml:56
 #: ../app/alarm/AlarmSettingsPage.qml:65 ../app/alarm/AlarmSettingsPage.qml:66
 #: ../app/alarm/AlarmSettingsPage.qml:67 ../app/alarm/AlarmSettingsPage.qml:68
-#: ../app/alarm/AlarmSettingsPage.qml:139
-#: ../app/alarm/AlarmSettingsPage.qml:206
+#: ../app/alarm/AlarmSettingsPage.qml:146
+#: ../app/alarm/AlarmSettingsPage.qml:215
 #, qt-format
 msgid "%1 minutes"
 msgstr "%1 minut"
 
-#: ../app/alarm/AlarmSettingsPage.qml:93
+#: ../app/alarm/AlarmSettingsPage.qml:92
 msgid "Alarm volume"
 msgstr "Glasnost alarma"
 
-#: ../app/alarm/AlarmSettingsPage.qml:138
+#: ../app/alarm/AlarmSettingsPage.qml:145
 msgid "Silence after"
 msgstr "Utišaj po"
 
-#: ../app/alarm/AlarmSettingsPage.qml:205
+#: ../app/alarm/AlarmSettingsPage.qml:214
 msgid "Snooze for"
 msgstr "Dremež za"
 
-#: ../app/alarm/AlarmSettingsPage.qml:249
+#: ../app/alarm/AlarmSettingsPage.qml:259
 msgid "Vibration"
 msgstr "Vibriranje"
 
-#: ../app/alarm/AlarmSettingsPage.qml:278
+#: ../app/alarm/AlarmSettingsPage.qml:293
 msgid "Change time and date"
 msgstr "Spremeni čas in datum"
 
-#: ../app/alarm/AlarmSound.qml:28 ../app/alarm/EditAlarmPage.qml:316
+#: ../app/alarm/AlarmSound.qml:28 ../app/alarm/EditAlarmPage.qml:315
 msgid "Sound"
 msgstr "Zvok"
 
@@ -150,13 +150,17 @@ msgstr "Nov alarm"
 msgid "Edit alarm"
 msgstr "Uredi alarm"
 
-#: ../app/alarm/EditAlarmPage.qml:337
+#: ../app/alarm/EditAlarmPage.qml:336
 msgid "Delete alarm"
 msgstr "Zbriši alarm"
 
-#: ../app/clock/ClockPage.qml:152
-msgid "Location"
-msgstr "Kraj"
+#: ../app/clock/ClockPage.qml:268
+msgid "Location Service Error!"
+msgstr ""
+
+#: ../app/clock/ClockPage.qml:270
+msgid "Retrieving location..."
+msgstr ""
 
 #: ../app/worldclock/AddWorldCityButton.qml:30
 msgid "Add"
@@ -207,23 +211,23 @@ msgstr "Isti čas"
 msgid "Select a city"
 msgstr "Izberite mesto"
 
-#: ../app/worldclock/WorldCityList.qml:94
+#: ../app/worldclock/WorldCityList.qml:109
 msgid "Search..."
 msgstr "Poišči ..."
 
-#: ../app/worldclock/WorldCityList.qml:205
+#: ../app/worldclock/WorldCityList.qml:214
 msgid "Searching for a city"
 msgstr "Iskanje mesta"
 
-#: ../app/worldclock/WorldCityList.qml:210
+#: ../app/worldclock/WorldCityList.qml:219
 msgid "No City Found"
 msgstr "Mesto ni najdeno"
 
-#: ../app/worldclock/WorldCityList.qml:216
+#: ../app/worldclock/WorldCityList.qml:225
 msgid "Unable to connect."
 msgstr "Ni se mogoče povezati."
 
-#: ../app/worldclock/WorldCityList.qml:217
+#: ../app/worldclock/WorldCityList.qml:226
 msgid "Please check your network connection and try again"
 msgstr "Preverite omrežno povezavo ter poskusite znova"
 
