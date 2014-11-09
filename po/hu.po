@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2014-11-04 16:55+0100\n"
-"PO-Revision-Date: 2014-10-11 18:03+0000\n"
+"PO-Revision-Date: 2014-11-08 09:53+0000\n"
 "Last-Translator: Richard Somlói <ricsipontaz@gmail.com>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-11-08 06:20+0000\n"
+"X-Launchpad-Export-Date: 2014-11-09 07:32+0000\n"
 "X-Generator: Launchpad (build 17231)\n"
 
 #: ../app/alarm/AlarmLabel.qml:30 ../app/alarm/AlarmLabel.qml:56
@@ -156,11 +156,11 @@ msgstr "Riasztás törlése"
 
 #: ../app/clock/ClockPage.qml:268
 msgid "Location Service Error!"
-msgstr ""
+msgstr "Helymeghatározási hiba!"
 
 #: ../app/clock/ClockPage.qml:270
 msgid "Retrieving location..."
-msgstr ""
+msgstr "Hely meghatározása..."
 
 #: ../app/worldclock/AddWorldCityButton.qml:30
 msgid "Add"
