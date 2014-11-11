@@ -1,7 +1,7 @@
 {
     "name": "com.ubuntu.clock",
     "description": "A sophisticated clock app for Ubuntu Touch",
-    "framework": "ubuntu-sdk-14.10-dev2",
+    "framework": "ubuntu-sdk-14.10",
     "architecture": "@CLICK_ARCH@",
     "title": "Clock",
     "icon": "clock@30.png",
