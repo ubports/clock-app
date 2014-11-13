@@ -1,4 +1,4 @@
-# English (United Kingdom) translation for ubuntu-clock-app
+# Basque translation for ubuntu-clock-app
 # Copyright (c) 2014 Rosetta Contributors and Canonical Ltd 2014
 # This file is distributed under the same license as the ubuntu-clock-app package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2014.
@@ -8,9 +8,9 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2014-11-04 16:55+0100\n"
-"PO-Revision-Date: 2014-11-12 18:01+0000\n"
-"Last-Translator: Andi Chandler <Unknown>\n"
-"Language-Team: English (United Kingdom) <en_GB@li.org>\n"
+"PO-Revision-Date: 2014-11-12 21:42+0000\n"
+"Last-Translator: Asier Iturralde Sarasola <Unknown>\n"
+"Language-Team: Basque <eu@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -20,49 +20,49 @@ msgstr ""
 #: ../app/alarm/AlarmLabel.qml:30 ../app/alarm/AlarmLabel.qml:56
 #: ../app/alarm/EditAlarmPage.qml:302
 msgid "Label"
-msgstr "Label"
+msgstr "Etiketa"
 
 #: ../app/alarm/AlarmList.qml:78 ../app/alarm/AlarmPage.qml:117
 #: ../app/worldclock/UserWorldCityList.qml:101
 msgid "Delete"
-msgstr "Delete"
+msgstr "Ezabatu"
 
 #: ../app/alarm/AlarmPage.qml:26
 msgid "Alarms"
-msgstr "Alarms"
+msgstr "Alarmak"
 
 #: ../app/alarm/AlarmPage.qml:43 ../app/alarm/EditAlarmPage.qml:50
 #: ../app/alarm/EditAlarmPage.qml:177
 msgid "Alarm"
-msgstr "Alarm"
+msgstr "Alarma"
 
 #: ../app/alarm/AlarmPage.qml:58 ../app/worldclock/WorldCityList.qml:80
 msgid "Back"
-msgstr "Back"
+msgstr "Atzera"
 
 #: ../app/alarm/AlarmPage.qml:87
 msgid "Select None"
-msgstr "Select None"
+msgstr "Ez hautatu bat ere"
 
 #: ../app/alarm/AlarmPage.qml:89 ../app/alarm/AlarmRepeat.qml:35
 msgid "Select All"
-msgstr "Select All"
+msgstr "Hautatu dena"
 
 #: ../app/alarm/AlarmPage.qml:149
 msgid "No saved alarms"
-msgstr "No saved alarms"
+msgstr "Gordetako alarmarik ez"
 
 #: ../app/alarm/AlarmPage.qml:150
 msgid "Tap the + icon to add an alarm"
-msgstr "Tap the + icon to add an alarm"
+msgstr "Ukitu + ikonoa alarma gehitzeko"
 
 #: ../app/alarm/AlarmRepeat.qml:31 ../app/alarm/EditAlarmPage.qml:292
 msgid "Repeat"
-msgstr "Repeat"
+msgstr "Errepikatu"
 
 #: ../app/alarm/AlarmSettingsPage.qml:29
 msgid "Settings"
-msgstr "Settings"
+msgstr "Ezarpenak"
 
 #: ../app/alarm/AlarmSettingsPage.qml:53 ../app/alarm/AlarmSettingsPage.qml:54
 #: ../app/alarm/AlarmSettingsPage.qml:55 ../app/alarm/AlarmSettingsPage.qml:56
@@ -72,114 +72,114 @@ msgstr "Settings"
 #: ../app/alarm/AlarmSettingsPage.qml:215
 #, qt-format
 msgid "%1 minutes"
-msgstr "%1 minutes"
+msgstr "%1 minutu"
 
 #: ../app/alarm/AlarmSettingsPage.qml:92
 msgid "Alarm volume"
-msgstr "Alarm volume"
+msgstr "Alarmaren bolumena"
 
 #: ../app/alarm/AlarmSettingsPage.qml:145
 msgid "Silence after"
-msgstr "Silence after"
+msgstr ""
 
 #: ../app/alarm/AlarmSettingsPage.qml:214
 msgid "Snooze for"
-msgstr "Snooze for"
+msgstr ""
 
 #: ../app/alarm/AlarmSettingsPage.qml:259
 msgid "Vibration"
-msgstr "Vibration"
+msgstr "Bibrazioa"
 
 #: ../app/alarm/AlarmSettingsPage.qml:293
 msgid "Change time and date"
-msgstr "Change time and date"
+msgstr "Aldatu ordua eta data"
 
 #: ../app/alarm/AlarmSound.qml:28 ../app/alarm/EditAlarmPage.qml:315
 msgid "Sound"
-msgstr "Sound"
+msgstr "Soinua"
 
 #: ../app/alarm/AlarmUtils.qml:31
 msgid "Never"
-msgstr "Never"
+msgstr "Inoiz ez"
 
 #: ../app/alarm/AlarmUtils.qml:37
 msgid "Weekdays"
-msgstr "Weekdays"
+msgstr "Astegunak"
 
 #: ../app/alarm/AlarmUtils.qml:41
 msgid "Weekends"
-msgstr "Weekends"
+msgstr "Asteburuak"
 
 #: ../app/alarm/AlarmUtils.qml:45
 msgid "Daily"
-msgstr "Daily"
+msgstr "Egunero"
 
 #: ../app/alarm/AlarmUtils.qml:55
 msgid "No active alarms"
-msgstr "No active alarms"
+msgstr "Alarma aktiborik ez"
 
 #: ../app/alarm/AlarmUtils.qml:72
 #, qt-format
 msgid "Next Alarm %1"
-msgstr "Next Alarm %1"
+msgstr "Hurrengo alarma %1"
 
 #: ../app/alarm/AlarmUtils.qml:79
 msgid "Alarm Passed"
-msgstr "Alarm Passed"
+msgstr ""
 
 #: ../app/alarm/AlarmUtils.qml:88
 #, qt-format
 msgid "in %1d %2h %3m"
-msgstr "in %1d %2h %3m"
+msgstr ""
 
 #: ../app/alarm/AlarmUtils.qml:97
 #, qt-format
 msgid "in %1h %2m"
-msgstr "in %1h %2m"
+msgstr ""
 
 #: ../app/alarm/AlarmUtils.qml:105
 #, c-format, qt-format
 msgid "in %1m"
-msgstr "in %1m"
+msgstr ""
 
 #: ../app/alarm/EditAlarmPage.qml:43
 msgid "New alarm"
-msgstr "New alarm"
+msgstr "Alarma berria"
 
 #: ../app/alarm/EditAlarmPage.qml:43
 msgid "Edit alarm"
-msgstr "Edit alarm"
+msgstr "Editatu alarma"
 
 #: ../app/alarm/EditAlarmPage.qml:336
 msgid "Delete alarm"
-msgstr "Delete alarm"
+msgstr "Ezabatu alarma"
 
 #: ../app/clock/ClockPage.qml:268
 msgid "Location Service Error!"
-msgstr "Location Service Error!"
+msgstr "Kokapen-zerbitzuaren errorea!"
 
 #: ../app/clock/ClockPage.qml:270
 msgid "Retrieving location..."
-msgstr "Retrieving location..."
+msgstr "Kokapena eskuratzen..."
 
 #: ../app/worldclock/AddWorldCityButton.qml:30
 msgid "Add"
-msgstr "Add"
+msgstr "Gehitu"
 
 #: ../app/worldclock/AddWorldCityButton.qml:61
 #: ../app/worldclock/WorldCityList.qml:64
 msgid "City"
-msgstr "City"
+msgstr "Hiria"
 
 #. TRANSLATORS: this indicates if the time in a world clock
 #. is behind or ahead of the time at the current location
 #: ../app/worldclock/UserWorldCityDelegate.qml:142
 msgid "behind"
-msgstr "behind"
+msgstr "atzetik"
 
 #: ../app/worldclock/UserWorldCityDelegate.qml:143
 msgid "ahead"
-msgstr "ahead"
+msgstr "aurretik"
 
 #. TRANSLATORS: the first argument is hour, followed by
 #. minute, and the translation for either 'behind' or
@@ -205,42 +205,43 @@ msgstr "%1m %2"
 
 #: ../app/worldclock/UserWorldCityDelegate.qml:176
 msgid "Same time"
-msgstr "Same time"
+msgstr "Ordu bera"
 
 #: ../app/worldclock/WorldCityList.qml:51
 msgid "Select a city"
-msgstr "Select a city"
+msgstr "Hautatu hiria"
 
 #: ../app/worldclock/WorldCityList.qml:109
 msgid "Search..."
-msgstr "Search..."
+msgstr "Bilatu..."
 
 #: ../app/worldclock/WorldCityList.qml:214
 msgid "Searching for a city"
-msgstr "Searching for a City"
+msgstr "Hiriaren bila"
 
 #: ../app/worldclock/WorldCityList.qml:219
 msgid "No City Found"
-msgstr "No City Found"
+msgstr "Ez da hiririk aurkitu"
 
 #: ../app/worldclock/WorldCityList.qml:225
 msgid "Unable to connect."
-msgstr "Unable to connect."
+msgstr "Ezin da konektatu."
 
 #: ../app/worldclock/WorldCityList.qml:226
 msgid "Please check your network connection and try again"
-msgstr "Please check your network connection and try again"
+msgstr "Mesedez egiaztatu zure sareko konexioa eta saiatu berriro"
 
 #: ubuntu-clock-app.desktop.in.in.h:1
 msgid "Clock"
-msgstr "Clock"
+msgstr "Erlojua"
 
 #: ubuntu-clock-app.desktop.in.in.h:2
 msgid ""
 "A sophisticated clock app that provides world clock and alarm functionality."
 msgstr ""
-"A sophisticated clock app that provides world clock and alarm functionality."
+"Munduko ordu eta alarma funtzionalitatea eskaintzen duen erloju-aplikazio "
+"sofistikatua"
 
 #: ubuntu-clock-app.desktop.in.in.h:3
 msgid "time;alarm;alert;clock;world;"
-msgstr "time;alarm;alert;clock;world;"
+msgstr "ordua;alarma;alerta;erlojua;mundua;"
