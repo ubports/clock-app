@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-11-04 16:55+0100\n"
+"POT-Creation-Date: 2014-11-17 16:29+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -128,18 +128,21 @@ msgid "Alarm Passed"
 msgstr ""
 
 #: ../app/alarm/AlarmUtils.qml:88
-#, qt-format
-msgid "in %1d %2h %3m"
+msgid "d"
 msgstr ""
 
-#: ../app/alarm/AlarmUtils.qml:97
-#, qt-format
-msgid "in %1h %2m"
+#: ../app/alarm/AlarmUtils.qml:89 ../app/alarm/AlarmUtils.qml:96
+msgid "h"
 msgstr ""
 
-#: ../app/alarm/AlarmUtils.qml:105
-#, c-format, qt-format
-msgid "in %1m"
+#: ../app/alarm/AlarmUtils.qml:90 ../app/alarm/AlarmUtils.qml:97
+#: ../app/alarm/AlarmUtils.qml:103
+msgid "m"
+msgstr ""
+
+#: ../app/alarm/AlarmUtils.qml:106
+#, qt-format
+msgid "in %1"
 msgstr ""
 
 #: ../app/alarm/EditAlarmPage.qml:43

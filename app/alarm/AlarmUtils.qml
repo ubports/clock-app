@@ -85,28 +85,25 @@ QtObject {
         // TRANSLATORS: the first argument is the number of days,
         // followed by hour and minute (eg. in 1d 20h 3m)
         if(timeObject.days) {
-            alarmETA = i18n.tr("in %1d %2h %3m")
-            .arg(timeObject.days)
-            .arg(timeObject.hours)
-            .arg(timeObject.minutes)
+            alarmETA = timeObject.days + i18n.tr("d") + " "
+                    + timeObject.hours + i18n.tr("h") + " "
+                    + timeObject.minutes + i18n.tr("m")
         }
 
         // TRANSLATORS: the first argument is the number of
         // hours followed by the minutes (eg. in 4h 3m)
         else if (timeObject.hours) {
-            alarmETA = i18n.tr("in %1h %2m")
-            .arg(timeObject.hours)
-            .arg(timeObject.minutes)
+            alarmETA = timeObject.hours + i18n.tr("h") + " "
+                    + timeObject.minutes + i18n.tr("m")
         }
 
         // TRANSLATORS: the argument is the number of
         // minutes to the alarm (eg. in 3m)
         else {
-            alarmETA = i18n.tr("in %1m")
-            .arg(timeObject.minutes)
+            alarmETA = timeObject.minutes + i18n.tr("m")
         }
 
-        return alarmETA;
+        return i18n.tr("in %1").arg(alarmETA);
     }
 
     // Function return the alarm dayOfWeek according to the day provided
