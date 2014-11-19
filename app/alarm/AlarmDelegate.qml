@@ -40,7 +40,7 @@ ListItemWithActions {
         }
 
         fontSize: "medium"
-        text: Qt.formatTime(model.date)
+        text: Qt.formatTime(date)
         opacity: model.enabled ? 1.0 : 0.8
     }
 
@@ -60,7 +60,7 @@ ListItemWithActions {
             id: alarmLabel
             objectName: "listAlarmLabel" + index
 
-            text: model.message
+            text: message
             fontSize: "medium"
             width: parent.width
             elide: Text.ElideRight
@@ -73,9 +73,9 @@ ListItemWithActions {
 
             fontSize: "xx-small"
             width: parent.width
-            visible: !(model.type === Alarm.OneTime && !model.enabled)
+            visible: !(type === Alarm.OneTime && !model.enabled)
             wrapMode: Text.WrapAtWordBoundaryOrAnywhere
-            text: type === Alarm.Repeating ? alarmUtils.format_day_string(model.daysOfWeek, model.type)
+            text: type === Alarm.Repeating ? alarmUtils.format_day_string(daysOfWeek, type)
                                            : model.enabled ? alarmUtils.get_time_to_next_alarm(model.date - localTime)
                                                            : "Alarm Disabled"
         }
@@ -105,7 +105,7 @@ ListItemWithActions {
                 interval: 5000
                 repeat: false
                 onTriggered: {
-                    alarmSubtitle.text = alarmUtils.format_day_string(model.daysOfWeek)
+                    alarmSubtitle.text = alarmUtils.format_day_string(daysOfWeek)
                     _internalTimerLoader.sourceComponent = undefined
                 }
             }
