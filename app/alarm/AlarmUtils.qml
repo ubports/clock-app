@@ -85,6 +85,7 @@ QtObject {
         // TRANSLATORS: the first argument is the number of days,
         // followed by hour and minute (eg. in 1d 20h 3m)
         if(timeObject.days) {
+            //xgettext: no-c-format
             alarmETA = i18n.tr("in %1d %2h %3m")
             .arg(timeObject.days)
             .arg(timeObject.hours)
@@ -94,6 +95,7 @@ QtObject {
         // TRANSLATORS: the first argument is the number of
         // hours followed by the minutes (eg. in 4h 3m)
         else if (timeObject.hours) {
+            //xgettext: no-c-format
             alarmETA = i18n.tr("in %1h %2m")
             .arg(timeObject.hours)
             .arg(timeObject.minutes)
@@ -102,6 +104,7 @@ QtObject {
         // TRANSLATORS: the argument is the number of
         // minutes to the alarm (eg. in 3m)
         else {
+            //xgettext: no-c-format
             alarmETA = i18n.tr("in %1m")
             .arg(timeObject.minutes)
         }
