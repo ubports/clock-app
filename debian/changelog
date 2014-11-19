@@ -27,6 +27,7 @@ ubuntu-clock-app (3.2) utopic; urgency=medium
     now set to false to improve startup animation.
   * Customised splash screen (white background) (LP: #1377638)
   * Added manual test to check disabling of alarms.
+  * Fixed alarm string not being translatable (LP: #1380248)
 
   [Akiva Shammai Avraham]
   * Improved the analog clock performance by updating the clock hands every second
