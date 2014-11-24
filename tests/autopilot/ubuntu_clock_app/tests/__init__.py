@@ -29,7 +29,7 @@ from ubuntuuitoolkit import (
     emulators as toolkit_emulators
 )
 
-from ubuntu_clock_app import emulators
+from ubuntu_clock_app import emulators, helpers
 
 logger = logging.getLogger(__name__)
 
@@ -60,6 +60,8 @@ class ClockAppTestCase(base.UbuntuUIToolkitAppTestCase):
         # backup and wipe db's before testing
         self.temp_move_sqlite_db()
         self.addCleanup(self.restore_sqlite_db)
+        helpers.set_location_service_testing(True)
+        self.addCleanup(helpers.set_location_service_testing, False)
 
         launch, self.test_type = self.get_launcher_method_and_type()
         self.useFixture(fixtures.EnvironmentVariable('LC_ALL', newvalue='C'))
