@@ -8,6 +8,7 @@
 """Clock app autopilot fixtures."""
 
 import fixtures
+import logging
 import subprocess
 
 
@@ -18,16 +19,17 @@ class LocationServiceTestEnvironment(fixtures.Fixture):
         self._set_location_service_testing(True)
         self.addCleanup(self._set_location_service_testing(False))
 
-def _set_location_service_testing(test_mode):
-    test = 'true' if test_mode else 'false'
-    try:
-        subprocess.check_call(
-            'sudo setprop custom.location.testing {}'.format(test),
-            shell=True)
-        subprocess.check_call(
-            'sudo restart ubuntu-location-service && '
-            'restart ubuntu-location-service-trust-stored',
-            shell=True)
-    except subprocess.CalledProcessError:
-        print('Unable to start location service in testing mode '
-              'tests may fail as a result.')
+    def _set_location_service_testing(test_mode):
+        test = 'true' if test_mode else 'false'
+        try:
+            subprocess.check_call(
+                'sudo setprop custom.location.testing {}'.format(test),
+                shell=True)
+            subprocess.check_call(
+                'sudo restart ubuntu-location-service && '
+                'restart ubuntu-location-service-trust-stored',
+                shell=True)
+        except subprocess.CalledProcessError:
+            logger = logging.getLogger(__name__)
+            logger.error('Unable to start location service in testing mode '
+                         'tests may fail as a result.')
