@@ -92,8 +92,9 @@ ListItemWithActions {
 
         onCheckedChanged: {
             if (checked !== model.enabled) {
-                model.enabled = checked
-                model.save()
+                var alarmData = model
+                alarmData.enabled = checked
+                alarmData.save()
             }
         }
 

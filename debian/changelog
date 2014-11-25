@@ -28,6 +28,7 @@ ubuntu-clock-app (3.2) utopic; urgency=medium
   * Customised splash screen (white background) (LP: #1377638)
   * Added manual test to check disabling of alarms.
   * Fixed alarm string not being translatable (LP: #1380248)
+  * Fixed the incorrect overriding of alarm delegate model value.
 
   [Akiva Shammai Avraham]
   * Improved the analog clock performance by updating the clock hands every second
