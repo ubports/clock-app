@@ -60,7 +60,7 @@ class ClockAppTestCase(base.UbuntuUIToolkitAppTestCase):
         # backup and wipe db's before testing
         self.temp_move_sqlite_db()
         self.addCleanup(self.restore_sqlite_db)
-        self.useFixture(fixture_setup.LocationServiceTestEnvironment)
+        self.useFixture(fixture_setup.LocationServiceTestEnvironment())
         launch, self.test_type = self.get_launcher_method_and_type()
         self.useFixture(fixtures.EnvironmentVariable('LC_ALL', newvalue='C'))
         super(ClockAppTestCase, self).setUp()
