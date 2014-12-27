@@ -1,0 +1,245 @@
+# Amharic translation for ubuntu-clock-app
+# Copyright (c) 2014 Rosetta Contributors and Canonical Ltd 2014
+# This file is distributed under the same license as the ubuntu-clock-app package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2014.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ubuntu-clock-app\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2014-11-17 17:05+0100\n"
+"PO-Revision-Date: 2014-12-26 23:00+0000\n"
+"Last-Translator: samson <Unknown>\n"
+"Language-Team: Amharic <am@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2014-12-27 06:15+0000\n"
+"X-Generator: Launchpad (build 17286)\n"
+
+#: ../app/alarm/AlarmLabel.qml:30 ../app/alarm/AlarmLabel.qml:56
+#: ../app/alarm/EditAlarmPage.qml:302
+msgid "Label"
+msgstr "ምልክት"
+
+#: ../app/alarm/AlarmList.qml:78 ../app/alarm/AlarmPage.qml:117
+#: ../app/worldclock/UserWorldCityList.qml:101
+msgid "Delete"
+msgstr "ማጥፊያ"
+
+#: ../app/alarm/AlarmPage.qml:26
+msgid "Alarms"
+msgstr "መቀስቀሻዎች"
+
+#: ../app/alarm/AlarmPage.qml:43 ../app/alarm/EditAlarmPage.qml:50
+#: ../app/alarm/EditAlarmPage.qml:177
+msgid "Alarm"
+msgstr "መቀስቀሻ"
+
+#: ../app/alarm/AlarmPage.qml:58 ../app/worldclock/WorldCityList.qml:80
+msgid "Back"
+msgstr "ወደ ኋላ"
+
+#: ../app/alarm/AlarmPage.qml:87
+msgid "Select None"
+msgstr "ምንም ይምረጡ"
+
+#: ../app/alarm/AlarmPage.qml:89 ../app/alarm/AlarmRepeat.qml:35
+msgid "Select All"
+msgstr "ሁሉንም መምረጫ"
+
+#: ../app/alarm/AlarmPage.qml:149
+msgid "No saved alarms"
+msgstr "ምንም የተቀመጠ መቀስቀሻ የለም"
+
+#: ../app/alarm/AlarmPage.qml:150
+msgid "Tap the + icon to add an alarm"
+msgstr "መታ ያድርጉ + ምልክቱን መቀስቀሻ ለመጨመር"
+
+#: ../app/alarm/AlarmRepeat.qml:31 ../app/alarm/EditAlarmPage.qml:292
+msgid "Repeat"
+msgstr "መድገሚያ"
+
+#: ../app/alarm/AlarmSettingsPage.qml:29
+msgid "Settings"
+msgstr "ማሰናጃ"
+
+#: ../app/alarm/AlarmSettingsPage.qml:53 ../app/alarm/AlarmSettingsPage.qml:54
+#: ../app/alarm/AlarmSettingsPage.qml:55 ../app/alarm/AlarmSettingsPage.qml:56
+#: ../app/alarm/AlarmSettingsPage.qml:65 ../app/alarm/AlarmSettingsPage.qml:66
+#: ../app/alarm/AlarmSettingsPage.qml:67 ../app/alarm/AlarmSettingsPage.qml:68
+#: ../app/alarm/AlarmSettingsPage.qml:146
+#: ../app/alarm/AlarmSettingsPage.qml:215
+#, qt-format
+msgid "%1 minutes"
+msgstr "%1 ደቂቆች"
+
+#: ../app/alarm/AlarmSettingsPage.qml:92
+msgid "Alarm volume"
+msgstr "መቀስቀሻ መጠን"
+
+#: ../app/alarm/AlarmSettingsPage.qml:145
+msgid "Silence after"
+msgstr "በኋላ ማጥፊያ"
+
+#: ../app/alarm/AlarmSettingsPage.qml:214
+msgid "Snooze for"
+msgstr "መቀስቀሻ ለ"
+
+#: ../app/alarm/AlarmSettingsPage.qml:259
+msgid "Vibration"
+msgstr "ማንቀጥቀጫ"
+
+#: ../app/alarm/AlarmSettingsPage.qml:293
+msgid "Change time and date"
+msgstr "ሰአት እና ቀን መቀየሪያ"
+
+#: ../app/alarm/AlarmSound.qml:28 ../app/alarm/EditAlarmPage.qml:315
+msgid "Sound"
+msgstr "ድምፅ"
+
+#: ../app/alarm/AlarmUtils.qml:31
+msgid "Never"
+msgstr "በፍጹም"
+
+#: ../app/alarm/AlarmUtils.qml:37
+msgid "Weekdays"
+msgstr "የ ስራ ቀኖች"
+
+#: ../app/alarm/AlarmUtils.qml:41
+msgid "Weekends"
+msgstr "የ እረፍት ቀኖች"
+
+#: ../app/alarm/AlarmUtils.qml:45
+msgid "Daily"
+msgstr "በየቀኑ"
+
+#: ../app/alarm/AlarmUtils.qml:55
+msgid "No active alarms"
+msgstr "ንቁ መቀስቀሻ አልተገኘም"
+
+#: ../app/alarm/AlarmUtils.qml:72
+#, qt-format
+msgid "Next Alarm %1"
+msgstr "የሚቀጥለው  መቀስቀሻ %1"
+
+#: ../app/alarm/AlarmUtils.qml:79
+msgid "Alarm Passed"
+msgstr "መቀስቀሻው አልፏል"
+
+#: ../app/alarm/AlarmUtils.qml:89
+#, no-c-format, qt-format
+msgid "in %1d %2h %3m"
+msgstr "በ %1ቀ %2ሰ %3ደ"
+
+#: ../app/alarm/AlarmUtils.qml:99
+#, no-c-format, qt-format
+msgid "in %1h %2m"
+msgstr "በ %1ሰ %2ደ"
+
+#: ../app/alarm/AlarmUtils.qml:108
+#, no-c-format, qt-format
+msgid "in %1m"
+msgstr "በ %1ደ"
+
+#: ../app/alarm/EditAlarmPage.qml:43
+msgid "New alarm"
+msgstr "አዲስ መቀስቀሻ"
+
+#: ../app/alarm/EditAlarmPage.qml:43
+msgid "Edit alarm"
+msgstr "መቀስቀሻውን ማረሚያ"
+
+#: ../app/alarm/EditAlarmPage.qml:336
+msgid "Delete alarm"
+msgstr "መቀስቀሻውን ማጥፊያ"
+
+#: ../app/clock/ClockPage.qml:268
+msgid "Location Service Error!"
+msgstr "የ አካባቢ ግልጋሎት ስህተት!"
+
+#: ../app/clock/ClockPage.qml:270
+msgid "Retrieving location..."
+msgstr "አካባቢውን በ መፈለግ ላይ..."
+
+#: ../app/worldclock/AddWorldCityButton.qml:30
+msgid "Add"
+msgstr "መጨመሪያ"
+
+#: ../app/worldclock/AddWorldCityButton.qml:61
+#: ../app/worldclock/WorldCityList.qml:64
+msgid "City"
+msgstr "ከተማ"
+
+#. TRANSLATORS: this indicates if the time in a world clock
+#. is behind or ahead of the time at the current location
+#: ../app/worldclock/UserWorldCityDelegate.qml:142
+msgid "behind"
+msgstr "በኋላ"
+
+#: ../app/worldclock/UserWorldCityDelegate.qml:143
+msgid "ahead"
+msgstr "በፊት"
+
+#. TRANSLATORS: the first argument is hour, followed by
+#. minute, and the translation for either 'behind' or
+#. 'ahead'
+#: ../app/worldclock/UserWorldCityDelegate.qml:153
+#, qt-format
+msgid "%1h %2m %3"
+msgstr "%1ሰ %2ደ %3"
+
+#. TRANSLATORS: the first argument is hour, followed by the
+#. translation for either 'behind' or 'ahead'
+#: ../app/worldclock/UserWorldCityDelegate.qml:162
+#, qt-format
+msgid "%1h %2"
+msgstr "%1ሰ %2"
+
+#. TRANSLATORS: the first argument is minute, followed by the
+#. translation for either 'behind' or 'ahead'
+#: ../app/worldclock/UserWorldCityDelegate.qml:170
+#, qt-format
+msgid "%1m %2"
+msgstr "%1ሰ %2"
+
+#: ../app/worldclock/UserWorldCityDelegate.qml:176
+msgid "Same time"
+msgstr "በተመሳሳይ ጊዜ"
+
+#: ../app/worldclock/WorldCityList.qml:51
+msgid "Select a city"
+msgstr "ከተማ ይምረጡ"
+
+#: ../app/worldclock/WorldCityList.qml:109
+msgid "Search..."
+msgstr "መፈለጊያ..."
+
+#: ../app/worldclock/WorldCityList.qml:214
+msgid "Searching for a city"
+msgstr "ከተማ በመፈለግ ላይ"
+
+#: ../app/worldclock/WorldCityList.qml:219
+msgid "No City Found"
+msgstr "ከተማ አልተገኘም"
+
+#: ../app/worldclock/WorldCityList.qml:225
+msgid "Unable to connect."
+msgstr "መገናኘት አልተቻለም"
+
+#: ../app/worldclock/WorldCityList.qml:226
+msgid "Please check your network connection and try again"
+msgstr "እባክዎን የ ኔትዎርክ ግንኙነት ይምረምሩ እና እንደገና ይሞክሩ"
+
+#: ubuntu-clock-app.desktop.in.in.h:1
+msgid "Clock"
+msgstr "ሰአት"
+
+#: ubuntu-clock-app.desktop.in.in.h:2
+msgid ""
+"A sophisticated clock app that provides world clock and alarm functionality."
+msgstr ""
+
+#: ubuntu-clock-app.desktop.in.in.h:3
+msgid "time;alarm;alert;clock;world;"
+msgstr "ሰአት;መቀስቀሻ;ማስጠንቀቂያ;ሰአት;አለም;"
