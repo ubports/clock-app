@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2014-11-17 17:05+0100\n"
-"PO-Revision-Date: 2014-12-03 21:11+0000\n"
-"Last-Translator: Jonatan Zeidler <Unknown>\n"
+"PO-Revision-Date: 2015-01-02 16:33+0000\n"
+"Last-Translator: Philip Lange <lange.philip98@gmail.com>\n"
 "Language-Team: German <de@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-12-04 06:49+0000\n"
-"X-Generator: Launchpad (build 17274)\n"
+"X-Launchpad-Export-Date: 2015-01-03 06:19+0000\n"
+"X-Generator: Launchpad (build 17286)\n"
 
 #: ../app/alarm/AlarmLabel.qml:30 ../app/alarm/AlarmLabel.qml:56
 #: ../app/alarm/EditAlarmPage.qml:302
@@ -108,7 +108,7 @@ msgstr "Wochentags"
 
 #: ../app/alarm/AlarmUtils.qml:41
 msgid "Weekends"
-msgstr ""
+msgstr "Wochenenden"
 
 #: ../app/alarm/AlarmUtils.qml:45
 msgid "Daily"
@@ -121,7 +121,7 @@ msgstr "Keine aktiven Wecker"
 #: ../app/alarm/AlarmUtils.qml:72
 #, qt-format
 msgid "Next Alarm %1"
-msgstr ""
+msgstr "Nächster Alarm %1"
 
 #: ../app/alarm/AlarmUtils.qml:79
 msgid "Alarm Passed"
@@ -130,17 +130,17 @@ msgstr ""
 #: ../app/alarm/AlarmUtils.qml:89
 #, no-c-format, qt-format
 msgid "in %1d %2h %3m"
-msgstr ""
+msgstr "in %1 Tagen, %2 Stunden und %3 Minuten"
 
 #: ../app/alarm/AlarmUtils.qml:99
 #, no-c-format, qt-format
 msgid "in %1h %2m"
-msgstr ""
+msgstr "in %1 Stunden und %2 Minuten"
 
 #: ../app/alarm/AlarmUtils.qml:108
 #, no-c-format, qt-format
 msgid "in %1m"
-msgstr ""
+msgstr "in %1 Minuten"
 
 #: ../app/alarm/EditAlarmPage.qml:43
 msgid "New alarm"
@@ -160,7 +160,7 @@ msgstr ""
 
 #: ../app/clock/ClockPage.qml:270
 msgid "Retrieving location..."
-msgstr ""
+msgstr "Standort wird abgerufen …"
 
 #: ../app/worldclock/AddWorldCityButton.qml:30
 msgid "Add"
@@ -187,7 +187,7 @@ msgstr ""
 #: ../app/worldclock/UserWorldCityDelegate.qml:153
 #, qt-format
 msgid "%1h %2m %3"
-msgstr ""
+msgstr "%1 Stunden und %2 Minuten %3"
 
 #. TRANSLATORS: the first argument is hour, followed by the
 #. translation for either 'behind' or 'ahead'
