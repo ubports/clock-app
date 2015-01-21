@@ -29,6 +29,7 @@ ubuntu-clock-app (3.2) utopic; urgency=medium
   * Added manual test to check disabling of alarms.
   * Fixed alarm string not being translatable (LP: #1380248)
   * Fixed the incorrect overriding of alarm delegate model value.
+  * Fixed qml tests broken in vivid due to listitem behaviour change.
 
   [Akiva Shammai Avraham]
   * Improved the analog clock performance by updating the clock hands every second
