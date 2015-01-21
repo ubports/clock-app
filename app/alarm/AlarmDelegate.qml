@@ -104,7 +104,7 @@ ListItemWithActions {
                     var currentTime = new Date()
                     alarmData.daysOfWeek = alarmUtils.get_alarm_day(currentTime.getDay())
 
-                    if (alarmData.date.getTime() < currentTime.getTime()) {
+                    if (alarmData.date.getTime() <= currentTime.getTime()) {
                         var tomorrow = currentTime
                         tomorrow.setDate(tomorrow.getDate() + 1)
                         alarmData.daysOfWeek = alarmUtils.get_alarm_day(tomorrow.getDay())
