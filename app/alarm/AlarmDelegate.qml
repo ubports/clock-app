@@ -102,25 +102,14 @@ ListItemWithActions {
                 */
                 if(checked && type === Alarm.OneTime && alarmData.date < new Date()) {
                     var currentTime = new Date()
+
+                    var twentyfourHours = 86400000 // 1000 * 60 * 60 * 24
                     var tomorrow = currentTime
                     tomorrow.setDate(tomorrow.getDate() + 1)
+                    alarmData.daysOfWeek = alarmUtils.get_alarm_day(tomorrow.getDay())
 
-                    if(alarmData.date.getHours() > currentTime.getHours()) {
+                    if (alarmData.date.getTime() - currentTime.getTime() > twentyfourHours) {
                         alarmData.daysOfWeek = alarmUtils.get_alarm_day(currentTime.getDay())
-                    }
-
-                    else if (alarmData.date.getHours() < currentTime.getHours()) {
-                        alarmData.daysOfWeek = alarmUtils.get_alarm_day(tomorrow.getDay())
-                    }
-
-                    else {
-                        if (alarmData.date.getMinutes() > currentTime.getMinutes()) {
-                            alarmData.daysOfWeek = alarmUtils.get_alarm_day(currentTime.getDay())
-                        }
-
-                        else {
-                            alarmData.daysOfWeek = alarmUtils.get_alarm_day(tomorrow.getDay())
-                        }
                     }
                 }
 
