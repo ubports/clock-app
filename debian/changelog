@@ -1,3 +1,20 @@
+ubuntu-clock-app (3.3) utopic; urgency=medium
+
+  [Nekhelesh Ramananthan]
+  * Fixed alarm string not being translatable (LP: #1380248)
+  * Bumped framework version to ubuntu-sdk-14.10
+  * Fixed the incorrect overriding of alarm delegate model value.
+  * Fixed qml tests broken in vivid due to listitem behaviour change.
+  * Fixed one-time alarms not being able to be re-enabled using the alarm switch
+    after they have gone off once (LP: #1413027)
+  * OneTime alarms are not automatically dismissed after they are triggered (LP: #1362341)
+
+  [Brendan Donegan]
+  * Fixed AP failure by waiting for the bottom edge tip visible property to be true
+    before trying to swipe up the bottom edge.
+
+ -- Nekhelesh Ramananthan <krnekhelesh@gmail.com>  Wed, 21 Jan 2015 21:05:24 +0100
+
 ubuntu-clock-app (3.2) utopic; urgency=medium
 
   [Nekhelesh Ramananthan]
@@ -27,12 +44,6 @@ ubuntu-clock-app (3.2) utopic; urgency=medium
     now set to false to improve startup animation.
   * Customised splash screen (white background) (LP: #1377638)
   * Added manual test to check disabling of alarms.
-  * Fixed alarm string not being translatable (LP: #1380248)
-  * Fixed the incorrect overriding of alarm delegate model value.
-  * Fixed qml tests broken in vivid due to listitem behaviour change.
-  * Fixed one-time alarms not being able to be re-enabled using the alarm switch
-    after they have gone off once (LP: #1413027)
-  * OneTime alarms are not automatically dismissed after they are triggered (LP: #1362341)
 
   [Akiva Shammai Avraham]
   * Improved the analog clock performance by updating the clock hands every second
