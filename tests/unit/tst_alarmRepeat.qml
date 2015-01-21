@@ -112,12 +112,12 @@ MainView {
 
             tryCompare(_alarm, "type", Alarm.OneTime, 3000, "Alarm type is not OneTime by default")
 
-            var dayListItem = findChild(alarmRepeatPageLoader.item, "alarmDay"+3)
+            var randomDaySwitch = findChild(alarmRepeatPageLoader.item, "daySwitch"+3)
 
-            mouseClick(dayListItem, centerOf(dayListItem).x, centerOf(dayListItem).y)
+            mouseClick(randomDaySwitch, centerOf(randomDaySwitch).x, centerOf(randomDaySwitch).y)
             tryCompare(_alarm, "type", Alarm.Repeating, 3000, "Alarm type did not change to Repeating despite enabling a switch")
 
-            mouseClick(dayListItem, centerOf(dayListItem).x, centerOf(dayListItem).y)
+            mouseClick(randomDaySwitch, centerOf(randomDaySwitch).x, centerOf(randomDaySwitch).y)
             tryCompare(_alarm, "type", Alarm.OneTime, 3000, "Alarm type is not OneTime despite all switches disabled")
         }
 
@@ -129,11 +129,10 @@ MainView {
             waitForRendering(alarmRepeatPageLoader.item);
 
             for(var i=0; i<repeater.count; i++) {
-                var dayListItem = findChild(alarmRepeatPageLoader.item, "alarmDayHolder"+i)
                 var currentDaySwitch = findChild(alarmRepeatPageLoader.item, "daySwitch"+i)
 
                 if(!currentDaySwitch.checked) {
-                    mouseClick(dayListItem, centerOf(dayListItem).x, centerOf(dayListItem).y)
+                    mouseClick(currentDaySwitch, centerOf(currentDaySwitch).x, centerOf(currentDaySwitch).y)
                 }
             }
 
