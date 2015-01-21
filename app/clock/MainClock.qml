@@ -23,6 +23,9 @@ import "../components"
 Clock {
     id: mainClock
 
+    // Property to keep track of the cold start status of the app
+    property bool isColdStart: true
+
     fontSize: units.dp(62)
     periodFontSize: units.dp(12)
     innerCircleWidth: units.gu(23)
@@ -98,6 +101,7 @@ Clock {
         target: digitalModeLoader.item
         onAnimationComplete: {
             alarmModelLoader.source = Qt.resolvedUrl("../alarm/AlarmModelComponent.qml")
+            isColdStart = false
         }
     }
 
@@ -105,6 +109,7 @@ Clock {
         target: analogModeLoader.item
         onAnimationComplete: {
             alarmModelLoader.source = Qt.resolvedUrl("../alarm/AlarmModelComponent.qml")
+            isColdStart = false
         }
     }
 }
