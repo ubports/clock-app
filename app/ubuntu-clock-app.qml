@@ -86,6 +86,14 @@ MainView {
 
     onApplicationStateChanged: {
         localTimeSource.update()
+        /*
+         Reload the alarm model when the clock app gains focus to refresh
+         the alarm page UI in the case of alarm notifications.
+        */
+        if(applicationState && !clockPage.isColdStart) {
+            alarmModelLoader.source = ""
+            alarmModelLoader.source = Qt.resolvedUrl("alarm/AlarmModelComponent.qml")
+        }
     }
 
     PageStack {

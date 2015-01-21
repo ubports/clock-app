@@ -36,6 +36,9 @@ PageWithBottomEdge {
     // Property to keep track of the clock time
     property var clockTime: new Date()
 
+    // Property to keep track of app cold start status
+    property alias isColdStart: clock.isColdStart
+
     property var alarmModel
 
     flickable: null

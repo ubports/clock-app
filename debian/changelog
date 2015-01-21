@@ -32,6 +32,7 @@ ubuntu-clock-app (3.2) utopic; urgency=medium
   * Fixed qml tests broken in vivid due to listitem behaviour change.
   * Fixed one-time alarms not being able to be re-enabled using the alarm switch
     after they have gone off once (LP: #1413027)
+  * OneTime alarms are not automatically dismissed after they are triggered (LP: #1362341)
 
   [Akiva Shammai Avraham]
   * Improved the analog clock performance by updating the clock hands every second
