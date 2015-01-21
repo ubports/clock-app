@@ -30,6 +30,8 @@ ubuntu-clock-app (3.2) utopic; urgency=medium
   * Fixed alarm string not being translatable (LP: #1380248)
   * Fixed the incorrect overriding of alarm delegate model value.
   * Fixed qml tests broken in vivid due to listitem behaviour change.
+  * Fixed one-time alarms not being able to be re-enabled using the alarm switch
+    after they have gone off once (LP: #1413027)
 
   [Akiva Shammai Avraham]
   * Improved the analog clock performance by updating the clock hands every second
