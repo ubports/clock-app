@@ -292,7 +292,7 @@ Page {
             text: i18n.tr("Repeat")
             subText: alarmUtils.format_day_string(_alarm.daysOfWeek, _alarm.type)
             onClicked: pageStack.push(Qt.resolvedUrl("AlarmRepeat.qml"),
-                                      {"alarm": _alarm})
+                                      {"alarm": _alarm, "alarmUtils": alarmUtils})
         }
 
         SubtitledListItem {

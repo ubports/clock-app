@@ -27,6 +27,9 @@ Page {
     // Property to set the alarm days of the week in the edit alarm page
     property var alarm
 
+    // Property to hold the alarm utils functions passed from edit alarm page
+    property var alarmUtils
+
     visible: false
     title: i18n.tr("Repeat")
 
@@ -76,40 +79,23 @@ Page {
 
     ListModel {
         id: daysModel
+        Component.onCompleted: initialise()
 
-        ListElement {
-            day: "1"
-            flag: Alarm.Monday
-        }
+        // Function to generate the days of the week based on the user locale
+        function initialise() {
+            var i = 1
 
-        ListElement {
-            day: "2"
-            flag: Alarm.Tuesday
-        }
+            // Get the first day of the week based on the user locale
+            var j = Qt.locale().firstDayOfWeek
 
-        ListElement {
-            day: "3"
-            flag: Alarm.Wednesday
-        }
+            // Set first item on the list to be the first day of the week
+            daysModel.append({ "day": Qt.locale().standaloneDayName(j, Locale.LongFormat), "flag": alarmUtils.get_alarm_day(j) })
 
-        ListElement {
-            day: "4"
-            flag: Alarm.Thursday
-        }
-
-        ListElement {
-            day: "5"
-            flag: Alarm.Friday
-        }
-
-        ListElement {
-            day: "6"
-            flag: Alarm.Saturday
-        }
-
-        ListElement {
-            day: "0"
-            flag: Alarm.Sunday
+            // Retrieve the rest of the days of the week
+            while (i<=6) {
+                daysModel.append({ "day": Qt.locale().standaloneDayName((j+i)%7, Locale.LongFormat), "flag": alarmUtils.get_alarm_day((j+i)%7) })
+                i++
+            }
         }
     }
 
@@ -141,7 +127,7 @@ Page {
                     }
 
                     color: UbuntuColors.midAubergine
-                    text: Qt.locale().standaloneDayName(day, Locale.LongFormat)
+                    text: day
                 }
 
                 control: CheckBox {
