@@ -101,9 +101,27 @@ ListItemWithActions {
                  alarms do this automatically.
                 */
                 if(checked && type === Alarm.OneTime && alarmData.date < new Date()) {
-                    var tomorrow = new Date()
+                    var currentTime = new Date()
+                    var tomorrow = currentTime
                     tomorrow.setDate(tomorrow.getDate() + 1)
-                    alarmData.daysOfWeek = alarmUtils.get_alarm_day(tomorrow.getDay())
+
+                    if(alarmData.date.getHours() > currentTime.getHours()) {
+                        alarmData.daysOfWeek = alarmUtils.get_alarm_day(currentTime.getDay())
+                    }
+
+                    else if (alarmData.date.getHours() < currentTime.getHours()) {
+                        alarmData.daysOfWeek = alarmUtils.get_alarm_day(tomorrow.getDay())
+                    }
+
+                    else {
+                        if (alarmData.date.getMinutes() > currentTime.getMinutes()) {
+                            alarmData.daysOfWeek = alarmUtils.get_alarm_day(currentTime.getDay())
+                        }
+
+                        else {
+                            alarmData.daysOfWeek = alarmUtils.get_alarm_day(tomorrow.getDay())
+                        }
+                    }
                 }
 
                 alarmData.save()
