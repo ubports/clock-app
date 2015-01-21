@@ -33,10 +33,15 @@ MainView {
         id: _alarm
     }
 
+    AlarmUtils {
+        id: _alarmUtils
+    }
+
     Component {
         id: alarmRepeatPage
         AlarmRepeat {
             alarm: _alarm
+            alarmUtils: _alarmUtils
         }
     }
 
