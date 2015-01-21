@@ -156,3 +156,51 @@ _description:
         The alarm switch should be colorless to indicate it is disabled.
     5. Wait for the time to pass the alarm time.
         The alarm should not ring since it was disabled.
+
+id: alarm/refresh-one-alarm
+plugin: manual
+depends: alarm/trigger-alarm
+estimated_duration: 120
+_summary: Test the alarm page refresh issue
+_description:
+    This test checks if the alarm listview refreshes appropriately when clock app gains focus.
+    1. Launch the clock app.
+        Clock app opens showing the current local time.
+    2. Swipe the bottom edge to open the alarms page.
+        Alarms page should appear showing a list of alarm. If empty then you should see a
+        message being displayed that "No saved alarms".
+    3. Press the plus icon to create a new one-time alarm. Change the alarm time to ring in the next
+       minute. Do not change any other options. Save Alarm.
+        The saved alarm should be displayed in the alarms page.
+    4. Wait for the time to pass the alarm time.
+        The alarm should ring at the time set in the previous step.
+    5. Press "Ok" to dismiss the alarm
+        The alarm should be dismissed.
+    6. Check the status of the one-time alarm you just dismissed.
+        The one-time alarm must be disabled since it was triggered and dismissed by the user.
+
+id: alarm/refresh-recurring-alarm
+plugin: manual
+depends: alarm/trigger-alarm
+estimated_duration: 120
+_summary: Test the alarm switch disable issue
+_description:
+    This test checks if the recurring alarm switches stays enabled after dismissing the alarm.
+    1. Launch the clock app.
+        Clock app opens showing the current local time.
+    2. Swipe the bottom edge to open the alarms page.
+        Alarms page should appear showing a list of alarm. If empty then you should see a
+        message being displayed that "No saved alarms".
+    3. Press the plus icon to create a new recurring alarm. Change the alarm time to ring in the next
+       minute and set it to repeat on 2-3 days (including today). Save Alarm.
+        The saved alarm should be displayed in the alarms page.
+    4. Wait for the time to pass the alarm time.
+        The alarm should ring at the time set in the previous step.
+    5. Press "Ok" to dismiss the alarm
+        The alarm should be dismissed.
+    6. Check the status of the recurring alarm you just dismissed.
+        The recurring alarm must not be disabled after it was triggered and dismissed by the user since
+        it is a recurring alarm.
+    7. Check the recurring alarm in the datetime indicator.
+        Indicator datetime should update and show the next occurance day of the recurring alarm you dismissed.
+
