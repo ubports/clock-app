@@ -94,6 +94,18 @@ ListItemWithActions {
             if (checked !== model.enabled) {
                 var alarmData = model
                 alarmData.enabled = checked
+
+                /*
+                 Calculate the new alarm time if it is a one-time alarm and has
+                 gone-off and the user is re-enabling the alarm. Repeating
+                 alarms do this automatically.
+                */
+                if(checked && type === Alarm.OneTime && alarmData.date < new Date()) {
+                    var tomorrow = new Date()
+                    tomorrow.setDate(tomorrow.getDate() + 1)
+                    alarmData.daysOfWeek = alarmUtils.get_alarm_day(tomorrow.getDay())
+                }
+
                 alarmData.save()
             }
         }
