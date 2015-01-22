@@ -6,6 +6,7 @@ ubuntu-clock-app (3.3) utopic; urgency=medium
   * Fixed the incorrect overriding of alarm delegate model value.
   * Fixed qml tests broken in vivid due to listitem behaviour change.
   * OneTime alarms are not automatically dismissed after they are triggered (LP: #1362341)
+  * Fixed Day-of-Week picker in alarms not respecting user locale (LP: #1372545)
 
   [Brendan Donegan]
   * Fixed AP failure by waiting for the bottom edge tip visible property to be true

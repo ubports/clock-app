@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2014 Canonical Ltd
+ * Copyright (C) 2014-2015 Canonical Ltd
  *
  * This file is part of Ubuntu Clock App
  *
@@ -33,10 +33,15 @@ MainView {
         id: _alarm
     }
 
+    AlarmUtils {
+        id: _alarmUtils
+    }
+
     Component {
         id: alarmRepeatPage
         AlarmRepeat {
             alarm: _alarm
+            alarmUtils: _alarmUtils
         }
     }
 

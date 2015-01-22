@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2014 Canonical Ltd
+ * Copyright (C) 2014-2015 Canonical Ltd
  *
  * This file is part of Ubuntu Clock App
  *
@@ -292,7 +292,7 @@ Page {
             text: i18n.tr("Repeat")
             subText: alarmUtils.format_day_string(_alarm.daysOfWeek, _alarm.type)
             onClicked: pageStack.push(Qt.resolvedUrl("AlarmRepeat.qml"),
-                                      {"alarm": _alarm})
+                                      {"alarm": _alarm, "alarmUtils": alarmUtils})
         }
 
         SubtitledListItem {

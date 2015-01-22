@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2014 Canonical Ltd
+ * Copyright (C) 2014-2015 Canonical Ltd
  *
  * This file is part of Ubuntu Clock App
  *
@@ -26,6 +26,9 @@ Page {
 
     // Property to set the alarm days of the week in the edit alarm page
     property var alarm
+
+    // Property to hold the alarm utils functions passed from edit alarm page
+    property var alarmUtils
 
     visible: false
     title: i18n.tr("Repeat")
@@ -76,40 +79,22 @@ Page {
 
     ListModel {
         id: daysModel
+        Component.onCompleted: initialise()
 
-        ListElement {
-            day: "1"
-            flag: Alarm.Monday
-        }
+        // Function to generate the days of the week based on the user locale
+        function initialise() {
+            // Get the first day of the week based on the user locale
+            var j = Qt.locale().firstDayOfWeek
 
-        ListElement {
-            day: "2"
-            flag: Alarm.Tuesday
-        }
+            // Set first item on the list to be the first day of the week
+            daysModel.append({ "day": Qt.locale().standaloneDayName(j, Locale.LongFormat),
+                                 "flag": alarmUtils.get_alarm_day(j) })
 
-        ListElement {
-            day: "3"
-            flag: Alarm.Wednesday
-        }
-
-        ListElement {
-            day: "4"
-            flag: Alarm.Thursday
-        }
-
-        ListElement {
-            day: "5"
-            flag: Alarm.Friday
-        }
-
-        ListElement {
-            day: "6"
-            flag: Alarm.Saturday
-        }
-
-        ListElement {
-            day: "0"
-            flag: Alarm.Sunday
+            // Retrieve the rest of the alarms days of the week
+            for (var i=1; i<=6; i++) {
+                daysModel.append({ "day": Qt.locale().standaloneDayName((j+i)%7, Locale.LongFormat),
+                                     "flag": alarmUtils.get_alarm_day((j+i)%7) })
+            }
         }
     }
 
@@ -141,7 +126,7 @@ Page {
                     }
 
                     color: UbuntuColors.midAubergine
-                    text: Qt.locale().standaloneDayName(day, Locale.LongFormat)
+                    text: day
                 }
 
                 control: CheckBox {
