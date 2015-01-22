@@ -90,7 +90,7 @@ Page {
             daysModel.append({ "day": Qt.locale().standaloneDayName(j, Locale.LongFormat),
                                  "flag": alarmUtils.get_alarm_day(j) })
 
-            // Retrieve the rest of the days of the week
+            // Retrieve the rest of the alarms days of the week
             for (var i=1; i<=6; i++) {
                 daysModel.append({ "day": Qt.locale().standaloneDayName((j+i)%7, Locale.LongFormat),
                                      "flag": alarmUtils.get_alarm_day((j+i)%7) })
