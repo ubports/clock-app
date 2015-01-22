@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-11-17 17:05+0100\n"
+"POT-Creation-Date: 2015-01-22 01:14+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -44,7 +44,7 @@ msgstr ""
 msgid "Select None"
 msgstr ""
 
-#: ../app/alarm/AlarmPage.qml:89 ../app/alarm/AlarmRepeat.qml:35
+#: ../app/alarm/AlarmPage.qml:89 ../app/alarm/AlarmRepeat.qml:38
 msgid "Select All"
 msgstr ""
 
@@ -56,7 +56,7 @@ msgstr ""
 msgid "Tap the + icon to add an alarm"
 msgstr ""
 
-#: ../app/alarm/AlarmRepeat.qml:31 ../app/alarm/EditAlarmPage.qml:292
+#: ../app/alarm/AlarmRepeat.qml:34 ../app/alarm/EditAlarmPage.qml:292
 msgid "Repeat"
 msgstr ""
 
@@ -154,11 +154,11 @@ msgstr ""
 msgid "Delete alarm"
 msgstr ""
 
-#: ../app/clock/ClockPage.qml:268
+#: ../app/clock/ClockPage.qml:271
 msgid "Location Service Error!"
 msgstr ""
 
-#: ../app/clock/ClockPage.qml:270
+#: ../app/clock/ClockPage.qml:273
 msgid "Retrieving location..."
 msgstr ""
 

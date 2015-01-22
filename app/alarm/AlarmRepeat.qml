@@ -83,8 +83,6 @@ Page {
 
         // Function to generate the days of the week based on the user locale
         function initialise() {
-            var i = 1
-
             // Get the first day of the week based on the user locale
             var j = Qt.locale().firstDayOfWeek
 
@@ -93,10 +91,9 @@ Page {
                                  "flag": alarmUtils.get_alarm_day(j) })
 
             // Retrieve the rest of the days of the week
-            while (i<=6) {
+            for (var i=1; i<=6; i++) {
                 daysModel.append({ "day": Qt.locale().standaloneDayName((j+i)%7, Locale.LongFormat),
                                      "flag": alarmUtils.get_alarm_day((j+i)%7) })
-                i++
             }
         }
     }
