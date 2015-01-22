@@ -89,11 +89,13 @@ Page {
             var j = Qt.locale().firstDayOfWeek
 
             // Set first item on the list to be the first day of the week
-            daysModel.append({ "day": Qt.locale().standaloneDayName(j, Locale.LongFormat), "flag": alarmUtils.get_alarm_day(j) })
+            daysModel.append({ "day": Qt.locale().standaloneDayName(j, Locale.LongFormat),
+                                 "flag": alarmUtils.get_alarm_day(j) })
 
             // Retrieve the rest of the days of the week
             while (i<=6) {
-                daysModel.append({ "day": Qt.locale().standaloneDayName((j+i)%7, Locale.LongFormat), "flag": alarmUtils.get_alarm_day((j+i)%7) })
+                daysModel.append({ "day": Qt.locale().standaloneDayName((j+i)%7, Locale.LongFormat),
+                                     "flag": alarmUtils.get_alarm_day((j+i)%7) })
                 i++
             }
         }
