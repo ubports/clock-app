@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2014-11-17 17:05+0100\n"
+"POT-Creation-Date: 2015-01-22 01:14+0100\n"
 "PO-Revision-Date: 2015-01-07 09:29+0000\n"
 "Last-Translator: Gursharnjit_Singh <ubuntuser13@gmail.com>\n"
 "Language-Team: Punjabi <pa@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-01-08 07:14+0000\n"
-"X-Generator: Launchpad (build 17298)\n"
+"X-Launchpad-Export-Date: 2015-01-23 06:50+0000\n"
+"X-Generator: Launchpad (build 17306)\n"
 
 #: ../app/alarm/AlarmLabel.qml:30 ../app/alarm/AlarmLabel.qml:56
 #: ../app/alarm/EditAlarmPage.qml:302
@@ -44,7 +44,7 @@ msgstr "ਪਿੱਛੇ"
 msgid "Select None"
 msgstr "ਕੋਈ ਨਾ ਚੁਣੋ"
 
-#: ../app/alarm/AlarmPage.qml:89 ../app/alarm/AlarmRepeat.qml:35
+#: ../app/alarm/AlarmPage.qml:89 ../app/alarm/AlarmRepeat.qml:38
 msgid "Select All"
 msgstr "ਸੱਭ ਚੁਣੋ"
 
@@ -56,7 +56,7 @@ msgstr "ਕੋਈ ਸੰਭਾਲ੍ਹਿਆ ਅਲਾਰਮ ਨਹੀਂ"
 msgid "Tap the + icon to add an alarm"
 msgstr "ਇੱਕ ਅਲਾਰਮ ਜੋੜਨ ਲਈ + ਆਈਕਾਨ ਨੂੰ ਛੂਹੋ"
 
-#: ../app/alarm/AlarmRepeat.qml:31 ../app/alarm/EditAlarmPage.qml:292
+#: ../app/alarm/AlarmRepeat.qml:34 ../app/alarm/EditAlarmPage.qml:292
 msgid "Repeat"
 msgstr "ਦੁਹਰਾਓ"
 
@@ -154,11 +154,11 @@ msgstr ""
 msgid "Delete alarm"
 msgstr ""
 
-#: ../app/clock/ClockPage.qml:268
+#: ../app/clock/ClockPage.qml:271
 msgid "Location Service Error!"
 msgstr ""
 
-#: ../app/clock/ClockPage.qml:270
+#: ../app/clock/ClockPage.qml:273
 msgid "Retrieving location..."
 msgstr ""
 
