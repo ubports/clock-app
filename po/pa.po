@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2015-01-22 01:14+0100\n"
-"PO-Revision-Date: 2015-01-07 09:29+0000\n"
+"PO-Revision-Date: 2015-02-09 06:12+0000\n"
 "Last-Translator: Gursharnjit_Singh <ubuntuser13@gmail.com>\n"
 "Language-Team: Punjabi <pa@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-01-23 06:50+0000\n"
-"X-Generator: Launchpad (build 17306)\n"
+"X-Launchpad-Export-Date: 2015-02-09 06:23+0000\n"
+"X-Generator: Launchpad (build 17331)\n"
 
 #: ../app/alarm/AlarmLabel.qml:30 ../app/alarm/AlarmLabel.qml:56
 #: ../app/alarm/EditAlarmPage.qml:302
@@ -72,43 +72,43 @@ msgstr "ਸੈਟਿੰਗ"
 #: ../app/alarm/AlarmSettingsPage.qml:215
 #, qt-format
 msgid "%1 minutes"
-msgstr ""
+msgstr "%1 ਮਿੰਟ"
 
 #: ../app/alarm/AlarmSettingsPage.qml:92
 msgid "Alarm volume"
-msgstr ""
+msgstr "ਅਲਾਰਮ ਅਵਾਜ"
 
 #: ../app/alarm/AlarmSettingsPage.qml:145
 msgid "Silence after"
-msgstr ""
+msgstr "ਚੁੱਪ ਬਾਅਦ"
 
 #: ../app/alarm/AlarmSettingsPage.qml:214
 msgid "Snooze for"
-msgstr ""
+msgstr "ਲਈ ਝਪਕੀ"
 
 #: ../app/alarm/AlarmSettingsPage.qml:259
 msgid "Vibration"
-msgstr ""
+msgstr "ਕੰਬਣੀ"
 
 #: ../app/alarm/AlarmSettingsPage.qml:293
 msgid "Change time and date"
-msgstr ""
+msgstr "ਸਮਾਂ ਅਤੇ ਮਿਤੀ ਬਦਲੋ"
 
 #: ../app/alarm/AlarmSound.qml:28 ../app/alarm/EditAlarmPage.qml:315
 msgid "Sound"
-msgstr ""
+msgstr "ਆਵਾਜ਼"
 
 #: ../app/alarm/AlarmUtils.qml:31
 msgid "Never"
-msgstr ""
+msgstr "ਕਦੇ ਨਹੀਂ"
 
 #: ../app/alarm/AlarmUtils.qml:37
 msgid "Weekdays"
-msgstr ""
+msgstr "ਹਫ਼ਤਾ ਦਿਨ"
 
 #: ../app/alarm/AlarmUtils.qml:41
 msgid "Weekends"
-msgstr ""
+msgstr "ਹਫ਼ਤੇਵਾਰ"
 
 #: ../app/alarm/AlarmUtils.qml:45
 msgid "Daily"
@@ -116,70 +116,70 @@ msgstr "ਰੋਜ਼"
 
 #: ../app/alarm/AlarmUtils.qml:55
 msgid "No active alarms"
-msgstr ""
+msgstr "ਕੋਈ ਸਰਗਰਮ ਅਲਾਰਮ ਨਹੀਂ"
 
 #: ../app/alarm/AlarmUtils.qml:72
 #, qt-format
 msgid "Next Alarm %1"
-msgstr ""
+msgstr "ਅਗਲਾ ਅਲਾਰਮ %1"
 
 #: ../app/alarm/AlarmUtils.qml:79
 msgid "Alarm Passed"
-msgstr ""
+msgstr "ਅਲਾਰਮ ਲੰਘਿਆ"
 
 #: ../app/alarm/AlarmUtils.qml:89
 #, no-c-format, qt-format
 msgid "in %1d %2h %3m"
-msgstr ""
+msgstr "%1d %2h %3m ਵਿੱਚ"
 
 #: ../app/alarm/AlarmUtils.qml:99
 #, no-c-format, qt-format
 msgid "in %1h %2m"
-msgstr ""
+msgstr "%1h %2m ਵਿੱਚ"
 
 #: ../app/alarm/AlarmUtils.qml:108
 #, no-c-format, qt-format
 msgid "in %1m"
-msgstr ""
+msgstr "%1m ਵਿੱਚ"
 
 #: ../app/alarm/EditAlarmPage.qml:43
 msgid "New alarm"
-msgstr ""
+msgstr "ਨਵਾਂ ਅਲਾਰਮ"
 
 #: ../app/alarm/EditAlarmPage.qml:43
 msgid "Edit alarm"
-msgstr ""
+msgstr "ਅਲਾਰਮ ਸੋਧ"
 
 #: ../app/alarm/EditAlarmPage.qml:336
 msgid "Delete alarm"
-msgstr ""
+msgstr "ਅਲਾਰਮ ਹਟਾਓ"
 
 #: ../app/clock/ClockPage.qml:271
 msgid "Location Service Error!"
-msgstr ""
+msgstr "ਸਥਿਤੀ ਸੇਵਾ ਖਾਮੀ!"
 
 #: ../app/clock/ClockPage.qml:273
 msgid "Retrieving location..."
-msgstr ""
+msgstr "ਸਥਿਤੀ ਪ੍ਰਾਪਤ ਕਰ ਰਿਹਾ..."
 
 #: ../app/worldclock/AddWorldCityButton.qml:30
 msgid "Add"
-msgstr ""
+msgstr "ਜੋੜੋ"
 
 #: ../app/worldclock/AddWorldCityButton.qml:61
 #: ../app/worldclock/WorldCityList.qml:64
 msgid "City"
-msgstr ""
+msgstr "ਸ਼ਹਿਰ"
 
 #. TRANSLATORS: this indicates if the time in a world clock
 #. is behind or ahead of the time at the current location
 #: ../app/worldclock/UserWorldCityDelegate.qml:142
 msgid "behind"
-msgstr ""
+msgstr "ਪਿੱਛੇ"
 
 #: ../app/worldclock/UserWorldCityDelegate.qml:143
 msgid "ahead"
-msgstr ""
+msgstr "ਅੱਗੇ"
 
 #. TRANSLATORS: the first argument is hour, followed by
 #. minute, and the translation for either 'behind' or
@@ -187,49 +187,49 @@ msgstr ""
 #: ../app/worldclock/UserWorldCityDelegate.qml:153
 #, qt-format
 msgid "%1h %2m %3"
-msgstr ""
+msgstr "%1h %2m %3"
 
 #. TRANSLATORS: the first argument is hour, followed by the
 #. translation for either 'behind' or 'ahead'
 #: ../app/worldclock/UserWorldCityDelegate.qml:162
 #, qt-format
 msgid "%1h %2"
-msgstr ""
+msgstr "%1h %2"
 
 #. TRANSLATORS: the first argument is minute, followed by the
 #. translation for either 'behind' or 'ahead'
 #: ../app/worldclock/UserWorldCityDelegate.qml:170
 #, qt-format
 msgid "%1m %2"
-msgstr ""
+msgstr "%1m %2"
 
 #: ../app/worldclock/UserWorldCityDelegate.qml:176
 msgid "Same time"
-msgstr ""
+msgstr "ਉਹੀ ਸਮਾਂ"
 
 #: ../app/worldclock/WorldCityList.qml:51
 msgid "Select a city"
-msgstr ""
+msgstr "ਇੱਕ ਸ਼ਹਿਰ ਚੁਣੋ"
 
 #: ../app/worldclock/WorldCityList.qml:109
 msgid "Search..."
-msgstr ""
+msgstr "ਖੋਜੋ..."
 
 #: ../app/worldclock/WorldCityList.qml:214
 msgid "Searching for a city"
-msgstr ""
+msgstr "ਸ਼ਹਿਰ ਦੀ ਖੋਜ ਕਰ ਰਿਹਾ"
 
 #: ../app/worldclock/WorldCityList.qml:219
 msgid "No City Found"
-msgstr ""
+msgstr "ਕੋਈ ਸ਼ਹਿਰ ਨਹੀਂ ਮਿਲਿਆ"
 
 #: ../app/worldclock/WorldCityList.qml:225
 msgid "Unable to connect."
-msgstr ""
+msgstr "ਕੁਨੈਕਟ ਕਰਨ ਵਿੱਚ ਅਸਮਰੱਥ"
 
 #: ../app/worldclock/WorldCityList.qml:226
 msgid "Please check your network connection and try again"
-msgstr ""
+msgstr "ਕਿਰਪਾ ਕਰਕੇ ਆਪਣੇ ਇੰਟਰਨੈੱਟ ਕੁਨੈਕਸ਼ਨ ਦੀ ਪੜਤਾਲ ਕਰੋ ਅਤੇ ਮੁੜ-ਕੋਸ਼ਿਸ ਕਰੋ"
 
 #: ubuntu-clock-app.desktop.in.in.h:1
 msgid "Clock"
@@ -239,7 +239,8 @@ msgstr "ਘੜੀ"
 msgid ""
 "A sophisticated clock app that provides world clock and alarm functionality."
 msgstr ""
+"ਇੱਕ ਵਧੀਆ ਘੜੀ ਐਪ ਜੋ ਸੰਸਾਰ ਸਮਾਂ ਅਤੇ ਅਲਾਰਮ ਕਾਰਜਕੁਸ਼ਲਤਾ ਮੁਹੱਈਆ ਕਰਵਾਉਂਦੀ ਹੈ।"
 
 #: ubuntu-clock-app.desktop.in.in.h:3
 msgid "time;alarm;alert;clock;world;"
-msgstr ""
+msgstr "ਸਮਾਂ;ਅਲਾਰਮ;ਚੇਤਾਵਨੀ;ਘੜੀ;ਸੰਸਾਰ;"
