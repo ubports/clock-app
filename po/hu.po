@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2015-01-22 01:14+0100\n"
-"PO-Revision-Date: 2014-11-08 09:53+0000\n"
+"PO-Revision-Date: 2015-02-10 10:25+0000\n"
 "Last-Translator: Richard Somlói <ricsipontaz@gmail.com>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-01-23 06:50+0000\n"
-"X-Generator: Launchpad (build 17306)\n"
+"X-Launchpad-Export-Date: 2015-02-11 06:32+0000\n"
+"X-Generator: Launchpad (build 17336)\n"
 
 #: ../app/alarm/AlarmLabel.qml:30 ../app/alarm/AlarmLabel.qml:56
 #: ../app/alarm/EditAlarmPage.qml:302
@@ -140,7 +140,7 @@ msgstr "%1ó és %2p múlva"
 #: ../app/alarm/AlarmUtils.qml:108
 #, no-c-format, qt-format
 msgid "in %1m"
-msgstr "%1m múlva"
+msgstr "%1 perc múlva"
 
 #: ../app/alarm/EditAlarmPage.qml:43
 msgid "New alarm"
