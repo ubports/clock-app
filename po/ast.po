@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2015-01-22 01:14+0100\n"
-"PO-Revision-Date: 2014-10-12 17:18+0000\n"
-"Last-Translator: Xuacu Saturio <xuacusk8@gmail.com>\n"
+"PO-Revision-Date: 2015-02-11 20:35+0000\n"
+"Last-Translator: ivarela <ivarela@ubuntu.com>\n"
 "Language-Team: Asturian <ast@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-01-23 06:50+0000\n"
-"X-Generator: Launchpad (build 17306)\n"
+"X-Launchpad-Export-Date: 2015-02-12 07:08+0000\n"
+"X-Generator: Launchpad (build 17336)\n"
 
 #: ../app/alarm/AlarmLabel.qml:30 ../app/alarm/AlarmLabel.qml:56
 #: ../app/alarm/EditAlarmPage.qml:302
@@ -156,11 +156,11 @@ msgstr "Desaniciar alarma"
 
 #: ../app/clock/ClockPage.qml:271
 msgid "Location Service Error!"
-msgstr ""
+msgstr "¡Fallu del serviciu de llocalización!"
 
 #: ../app/clock/ClockPage.qml:273
 msgid "Retrieving location..."
-msgstr ""
+msgstr "Obteniendo llocalización..."
 
 #: ../app/worldclock/AddWorldCityButton.qml:30
 msgid "Add"
