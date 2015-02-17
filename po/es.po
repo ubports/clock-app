@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2015-01-22 01:14+0100\n"
-"PO-Revision-Date: 2014-11-13 19:13+0000\n"
+"PO-Revision-Date: 2015-02-16 19:29+0000\n"
 "Last-Translator: Víctor R. Ruiz <Unknown>\n"
 "Language-Team: Spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-01-23 06:50+0000\n"
-"X-Generator: Launchpad (build 17306)\n"
+"X-Launchpad-Export-Date: 2015-02-17 06:33+0000\n"
+"X-Generator: Launchpad (build 17341)\n"
 
 #: ../app/alarm/AlarmLabel.qml:30 ../app/alarm/AlarmLabel.qml:56
 #: ../app/alarm/EditAlarmPage.qml:302
@@ -156,7 +156,7 @@ msgstr "Eliminar alarma"
 
 #: ../app/clock/ClockPage.qml:271
 msgid "Location Service Error!"
-msgstr "¡Error del servicio de ubucación!"
+msgstr "¡Error del servicio de ubicación!"
 
 #: ../app/clock/ClockPage.qml:273
 msgid "Retrieving location..."
