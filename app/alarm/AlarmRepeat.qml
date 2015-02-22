@@ -154,6 +154,10 @@ Page {
                         }
                     }
                 }
+
+                onClicked: {
+                    daySwitch.checked = !daySwitch.checked
+                }
             }
         }
     }

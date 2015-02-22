@@ -95,11 +95,10 @@ Page {
 
                         checked: alarmSound.subText === _soundName.text ? true
                                                                         : false
-                        onClicked: {
-                            previewAlarmSound.source = fileURL
-                            previewAlarmSound.play()
-
+                        onCheckedChanged: {
                             if (checked) {
+                                previewAlarmSound.source = fileURL
+                                previewAlarmSound.play()
                                 alarmSound.subText = _soundName.text
                                 alarm.sound = fileURL
 
@@ -111,10 +110,25 @@ Page {
                                     }
                                 }
                             }
+                        }
 
-                            else {
-                                checked = !checked
+                        onClicked: {
+                            if (!checked) {
+                                checked = true
                             }
+                        }
+                    }
+
+                    onClicked: {
+                        if (!_soundStatus.checked) {
+                            // Ensures only one alarm sound is selected
+                            for(var i=0; i<soundModel.count; i++) {
+                                if(_alarmSounds.itemAt(i).isChecked &&
+                                        i !== index) {
+                                    _alarmSounds.itemAt(i).isChecked = false
+                                }
+                            }
+                            _soundStatus.checked = true
                         }
                     }
                 }
