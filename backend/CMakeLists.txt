@@ -8,7 +8,6 @@ set(
     timezone_SRCS
     modules/Timezone/backend.cpp
     modules/Timezone/timezonemodel.cpp
-    modules/Timezone/xmltimezonemodel.cpp
     modules/Timezone/generictimezonemodel.cpp
     modules/Timezone/jsontimezonemodel.cpp
     modules/Timezone/statictimezonemodel.cpp
