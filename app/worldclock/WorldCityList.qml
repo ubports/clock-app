@@ -38,14 +38,14 @@ Page {
 
     property bool isOnlineMode: false
     property alias jsonTimeZoneModel: jsonTimeZoneModelLoader.item
-    property alias xmlTimeZoneModel: xmlTimeZoneModelLoader.item
+    property alias staticTimeZoneModel: staticTimeZoneModelLoader.item
 
     Component.onCompleted: {
         /*
-         Load the XML Model *only* after the page has loaded to improve
-         the loading time preception of the user.
+         Load the predefined city list model *only* after the page has loaded
+         to improve the loading time preception of the user.
        */
-        xmlTimeZoneModelLoader.sourceComponent = xmlTimeZoneModelComponent
+        staticTimeZoneModelLoader.sourceComponent = staticTimeZoneModelComponent
     }
 
     title: i18n.tr("Select a city")
@@ -148,7 +148,7 @@ Page {
               from suspend instead of waiting for the next minute to update.
             */
             if(applicationState)
-                xmlTimeZoneModel.update()
+                staticTimeZoneModel.update()
         }
     }
 
@@ -169,15 +169,14 @@ Page {
     }
 
     Loader {
-        id: xmlTimeZoneModelLoader
+        id: staticTimeZoneModelLoader
         asynchronous: true
     }
 
     Component {
-        id: xmlTimeZoneModelComponent
-        XmlTimeZoneModel {
+        id: staticTimeZoneModelComponent
+        StaticTimeZoneModel {
             updateInterval: 60000
-            source: Qt.resolvedUrl("world-city-list.xml")
         }
     }
 
@@ -189,8 +188,8 @@ Page {
                 return jsonTimeZoneModel
             }
 
-            else  if (xmlTimeZoneModelLoader.status === Loader.Ready) {
-                return xmlTimeZoneModel
+            else  if (staticTimeZoneModelLoader.status === Loader.Ready) {
+                return staticTimeZoneModel
             }
 
             else {
