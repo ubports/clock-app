@@ -31,6 +31,7 @@ public:
 private:
     // Function to define the default city list
     void loadDefaultCityList();
+    void addCity(const QString &city, const QString &timezone, const QString &country);
 };
 
 #endif // STATICTIMEZONEMODEL_H

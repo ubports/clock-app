@@ -25,6 +25,14 @@ StaticTimeZoneModel::StaticTimeZoneModel(QObject *parent) :
     loadDefaultCityList();
 }
 
+void StaticTimeZoneModel::addCity(const QString &city, const QString &timezone, const QString &country) {
+    TimeZone tz;
+    tz.cityName = city;
+    tz.country = country;
+    tz.timeZone = QTimeZone(timezone.toLatin1());
+    m_timeZones.append(tz);
+}
+
 void StaticTimeZoneModel::loadDefaultCityList()
 {
     // Let QML know model is being reset and rebuilt
@@ -32,1392 +40,306 @@ void StaticTimeZoneModel::loadDefaultCityList()
 
     m_timeZones.clear();
 
-    TimeZone tz;
-
-    tz.cityName = tr("Abidjan");
-    tz.country = tr("Africa/Abidjan");
-    tz.timeZone = QTimeZone("Europe/Amsterdam");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Accra");
-    tz.country = tr("Ghana");
-    tz.timeZone = QTimeZone("Africa/Accra");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Addis Ababa");
-    tz.timeZone = QTimeZone("Africa/Addis_Ababa");
-    tz.country = tr("Ethiopia");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Adelaide");
-    tz.timeZone = QTimeZone("Australia/Adelaide");
-    tz.country = tr("Australia");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Albuquerque");
-    tz.timeZone = QTimeZone("America/Denver");
-    tz.country = tr("United States");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Algiers");
-    tz.timeZone = QTimeZone("Africa/Algiers");
-    tz.country = tr("Algeria");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Almaty");
-    tz.timeZone = QTimeZone("Asia/Almaty");
-    tz.country = tr("Kazakhstan");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Amman");
-    tz.timeZone = QTimeZone("Asia/Amman");
-    tz.country = tr("Jordan");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Amsterdam");
-    tz.timeZone = QTimeZone("Europe/Amsterdam");
-    tz.country = tr("Netherlands");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Anadyr");
-    tz.timeZone = QTimeZone("Asia/Anadyr");
-    tz.country = tr("Russia");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Anchorage");
-    tz.timeZone = QTimeZone("America/Anchorage");
-    tz.country = tr("United States");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Andorra");
-    tz.timeZone = QTimeZone("Europe/Andorra");
-    tz.country = tr("Andorra");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Ankara");
-    tz.timeZone = QTimeZone("Europe/Istanbul");
-    tz.country = tr("Turkey");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Ann Arbor");
-    tz.timeZone = QTimeZone("America/Detroit");
-    tz.country = tr("United States");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Antananarivo");
-    tz.timeZone = QTimeZone("Indian/Antananarivo");
-    tz.country = tr("Madagascar");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Aqtau");
-    tz.timeZone = QTimeZone("Asia/Aqtau");
-    tz.country = tr("Kazakhstan");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Aruba");
-    tz.timeZone = QTimeZone("America/Aruba");
-    tz.country = tr("Aruba");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Asunción");
-    tz.timeZone = QTimeZone("America/Asuncion");
-    tz.country = tr("Paraguay");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Athens");
-    tz.timeZone = QTimeZone("Europe/Athens");
-    tz.country = tr("Greece");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Atlanta");
-    tz.timeZone = QTimeZone("America/New_York");
-    tz.country = tr("United States");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Auckland");
-    tz.timeZone = QTimeZone("Pacific/Auckland");
-    tz.country = tr("New Zealand");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Austin");
-    tz.timeZone = QTimeZone("America/Chicago");
-    tz.country = tr("United States");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Baghdad");
-    tz.timeZone = QTimeZone("Asia/Baghdad");
-    tz.country = tr("Iraq");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Bahrain");
-    tz.timeZone = QTimeZone("Asia/Bahrain");
-    tz.country = tr("Bahrain");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Baku");
-    tz.timeZone = QTimeZone("Asia/Baku");
-    tz.country = tr("Azerbaijan");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Baltimore");
-    tz.timeZone = QTimeZone("America/New_York");
-    tz.country = tr("United States");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Bangalore");
-    tz.timeZone = QTimeZone("Asia/Kolkata");
-    tz.country = tr("India");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Bangkok");
-    tz.timeZone = QTimeZone("Asia/Bangkok");
-    tz.country = tr("Thailand");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Barbados");
-    tz.timeZone = QTimeZone("America/Barbados");
-    tz.country = tr("Barbados");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Barcelona");
-    tz.timeZone = QTimeZone("Europe/Madrid");
-    tz.country = tr("Spain");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Beijing");
-    tz.timeZone = QTimeZone("Asia/Shanghai");
-    tz.country = tr("China");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Beirut");
-    tz.timeZone = QTimeZone("Asia/Beirut");
-    tz.country = tr("Lebanon");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Belfast");
-    tz.timeZone = QTimeZone("Europe/Belfast");
-    tz.country = tr("United Kingdom");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Belgrade");
-    tz.timeZone = QTimeZone("Europe/Belgrade");
-    tz.country = tr("Serbia");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Belize");
-    tz.timeZone = QTimeZone("America/Belize");
-    tz.country = tr("Belize");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Belo Horizonte");
-    tz.timeZone = QTimeZone("America/Sao_Paulo");
-    tz.country = tr("Brazil");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Berlin");
-    tz.timeZone = QTimeZone("Europe/Berlin");
-    tz.country = tr("Germany");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Bermuda");
-    tz.timeZone = QTimeZone("Atlantic/Bermuda");
-    tz.country = tr("Bermuda");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Beulah");
-    tz.timeZone = QTimeZone("America/North_Dakota/Beulah");
-    tz.country = tr("United States");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Black Rock City");
-    tz.timeZone = QTimeZone("America/Chicago");
-    tz.country = tr("United States");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Blantyre");
-    tz.timeZone = QTimeZone("Africa/Blantyre");
-    tz.country = tr("Malawi");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Bogotá");
-    tz.timeZone = QTimeZone("America/Bogota");
-    tz.country = tr("Colombia");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Boston");
-    tz.timeZone = QTimeZone("America/New_York");
-    tz.country = tr("United States");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Boulder");
-    tz.timeZone = QTimeZone("America/Denver");
-    tz.country = tr("United States");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Brasília");
-    tz.timeZone = QTimeZone("America/Sao_Paulo");
-    tz.country = tr("Brazil");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Bratislava");
-    tz.timeZone = QTimeZone("Europe/Bratislava");
-    tz.country = tr("Slovakia");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Brazzaville");
-    tz.timeZone = QTimeZone("Africa/Brazzaville");
-    tz.country = tr("Republic of the Congo");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Brisbane");
-    tz.timeZone = QTimeZone("Australia/Brisbane");
-    tz.country = tr("Australia");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Brussels");
-    tz.timeZone = QTimeZone("Europe/Brussels");
-    tz.country = tr("Belgium");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Bucharest");
-    tz.timeZone = QTimeZone("Europe/Bucharest");
-    tz.country = tr("Romania");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Budapest");
-    tz.timeZone = QTimeZone("Europe/Budapest");
-    tz.country = tr("Hungary");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Buenos Aires");
-    tz.timeZone = QTimeZone("America/Argentina/Buenos_Aires");
-    tz.country = tr("Argentina");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Cairo");
-    tz.timeZone = QTimeZone("Africa/Cairo");
-    tz.country = tr("Egypt");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Calcutta");
-    tz.timeZone = QTimeZone("Asia/Calcutta");
-    tz.country = tr("India");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Calgary");
-    tz.timeZone = QTimeZone("America/Edmonton");
-    tz.country = tr("Canada");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Cambridge");
-    tz.timeZone = QTimeZone("Europe/London");
-    tz.country = tr("United Kingdom");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Canary");
-    tz.timeZone = QTimeZone("Atlantic/Canary");
-    tz.country = tr("Australia");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Canberra");
-    tz.timeZone = QTimeZone("Australia/Canberra");
-    tz.country = tr("Australia");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Cancún");
-    tz.timeZone = QTimeZone("America/Cancun");
-    tz.country = tr("Mexico");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Cape Town");
-    tz.timeZone = QTimeZone("Africa/Johannesburg");
-    tz.country = tr("South Africa");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Caracas");
-    tz.timeZone = QTimeZone("America/Caracas");
-    tz.country = tr("Venezuela");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Casablanca");
-    tz.timeZone = QTimeZone("Africa/Casablanca");
-    tz.country = tr("Morocco");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Cayman Palms");
-    tz.timeZone = QTimeZone("America/Cayman");
-    tz.country = tr("Cayman Islands");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Chicago");
-    tz.timeZone = QTimeZone("America/Chicago");
-    tz.country = tr("United States");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Chihuahua");
-    tz.timeZone = QTimeZone("America/Chihuahua");
-    tz.country = tr("Mexico");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Chişinău");
-    tz.timeZone = QTimeZone("Europe/Chisinau");
-    tz.country = tr("Moldova");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Cincinnati");
-    tz.timeZone = QTimeZone("America/New_York");
-    tz.country = tr("United States");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Cleveland");
-    tz.timeZone = QTimeZone("America/New_York");
-    tz.country = tr("United States");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Colombo");
-    tz.timeZone = QTimeZone("Asia/Colombo");
-    tz.country = tr("Sri Lanka");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Columbus");
-    tz.timeZone = QTimeZone("America/New_York");
-    tz.country = tr("United States");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Conakry");
-    tz.timeZone = QTimeZone("Africa/Conakry");
-    tz.country = tr("Guinea");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Copenhagen");
-    tz.timeZone = QTimeZone("Europe/Copenhagen");
-    tz.country = tr("Denmark");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Costa Rica");
-    tz.timeZone = QTimeZone("America/Costa_Rica");
-    tz.country = tr("Costa Rica");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Curaçao");
-    tz.timeZone = QTimeZone("America/Curacao");
-    tz.country = tr("Curacao");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Dakar");
-    tz.timeZone = QTimeZone("Africa/Dakar");
-    tz.country = tr("Senegal");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Dallas");
-    tz.timeZone = QTimeZone("America/Chicago");
-    tz.country = tr("United States");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Damascus");
-    tz.timeZone = QTimeZone("Asia/Damascus");
-    tz.country = tr("Syria");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Dar es Salaam");
-    tz.timeZone = QTimeZone("Africa/Dar_es_Salaam");
-    tz.country = tr("Tanzania");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Darwin");
-    tz.timeZone = QTimeZone("Australia/Darwin");
-    tz.country = tr("Australia");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Dawson Creek");
-    tz.timeZone = QTimeZone("America/Dawson_Creek");
-    tz.country = tr("Canada");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Delhi");
-    tz.timeZone = QTimeZone("Asia/Kolkata");
-    tz.country = tr("India");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Denver");
-    tz.timeZone = QTimeZone("America/Denver");
-    tz.country = tr("United States");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Detroit");
-    tz.timeZone = QTimeZone("America/Detroit");
-    tz.country = tr("United States");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Dhaka");
-    tz.timeZone = QTimeZone("Asia/Dhaka");
-    tz.country = tr("Bangladesh");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Djibouti");
-    tz.timeZone = QTimeZone("Africa/Djibouti");
-    tz.country = tr("Djibouti");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Doha");
-    tz.timeZone = QTimeZone("Asia/Qatar");
-    tz.country = tr("Qatar");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Dominica");
-    tz.timeZone = QTimeZone("America/Dominica");
-    tz.country = tr("Dominica");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Dubai");
-    tz.timeZone = QTimeZone("Asia/Dubai");
-    tz.country = tr("United Arab Emirates");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Dublin");
-    tz.timeZone = QTimeZone("Europe/Dublin");
-    tz.country = tr("Ireland");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Easter Island");
-    tz.timeZone = QTimeZone("Pacific/Easter");
-    tz.country = tr("Chile");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Edmonton");
-    tz.timeZone = QTimeZone("America/Edmonton");
-    tz.country = tr("Canada");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("El Salvador");
-    tz.timeZone = QTimeZone("America/El_Salvador");
-    tz.country = tr("El Salvador");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Fiji");
-    tz.timeZone = QTimeZone("Pacific/Fiji");
-    tz.country = tr("Fiji");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Fortaleza");
-    tz.timeZone = QTimeZone("America/Fortaleza");
-    tz.country = tr("Brazil");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Frankfurt");
-    tz.timeZone = QTimeZone("Europe/Berlin");
-    tz.country = tr("Germany");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Freetown");
-    tz.timeZone = QTimeZone("Africa/Freetown");
-    tz.country = tr("Sierra Leone");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Gaborone");
-    tz.timeZone = QTimeZone("Africa/Gaborone");
-    tz.country = tr("Botswana");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Gaza");
-    tz.timeZone = QTimeZone("Asia/Gaza");
-    tz.country = tr("Palestine");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Gibraltar");
-    tz.timeZone = QTimeZone("Europe/Gibraltar");
-    tz.country = tr("Gibraltar");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Grand Turk");
-    tz.timeZone = QTimeZone("America/Grand_Turk");
-    tz.country = tr("Turks and Caicos Islands");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Grenada");
-    tz.timeZone = QTimeZone("America/Grenada");
-    tz.country = tr("Grenada");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Guam");
-    tz.timeZone = QTimeZone("Pacific/Guam");
-    tz.country = tr("Guam");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Guangzhou");
-    tz.timeZone = QTimeZone("Asia/Shanghai");
-    tz.country = tr("China");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Guatemala");
-    tz.timeZone = QTimeZone("America/Guatemala");
-    tz.country = tr("Guatemala");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Gurgaon");
-    tz.timeZone = QTimeZone("Asia/Kolkata");
-    tz.country = tr("India");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Guyana");
-    tz.timeZone = QTimeZone("America/Guyana");
-    tz.country = tr("Guyana");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Haifa");
-    tz.timeZone = QTimeZone("Asia/Jerusalem");
-    tz.country = tr("Israel");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Halifax");
-    tz.timeZone = QTimeZone("America/Halifax");
-    tz.country = tr("Canada");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Hamburg");
-    tz.timeZone = QTimeZone("Europe/Berlin");
-    tz.country = tr("Germany");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Hanoi");
-    tz.timeZone = QTimeZone("Asia/Ho_Chi_Minh");
-    tz.country = tr("Vietnam");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Harare");
-    tz.timeZone = QTimeZone("Africa/Harare");
-    tz.country = tr("Zimbabwe");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Havana");
-    tz.timeZone = QTimeZone("America/Havana");
-    tz.country = tr("Cuba");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Hebron");
-    tz.timeZone = QTimeZone("Asia/Hebron");
-    tz.country = tr("Palestine");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Helsinki");
-    tz.timeZone = QTimeZone("Europe/Helsinki");
-    tz.country = tr("Finland");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Ho Chi Minh City");
-    tz.timeZone = QTimeZone("Asia/Ho_Chi_Minh");
-    tz.country = tr("Vietnam");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Hong Kong");
-    tz.timeZone = QTimeZone("Asia/Hong_Kong");
-    tz.country = tr("Hong Kong");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Honolulu");
-    tz.timeZone = QTimeZone("Pacific/Honolulu");
-    tz.country = tr("United States");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Houston");
-    tz.timeZone = QTimeZone("America/Chicago");
-    tz.country = tr("United States");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Hyderabad");
-    tz.timeZone = QTimeZone("Asia/Kolkata");
-    tz.country = tr("India");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Indianapolis");
-    tz.timeZone = QTimeZone("America/Indiana/Indianapolis");
-    tz.country = tr("United States");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Islamabad");
-    tz.timeZone = QTimeZone("Asia/Karachi");
-    tz.country = tr("Pakistan");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Isle of Man");
-    tz.timeZone = QTimeZone("Europe/Isle_of_Man");
-    tz.country = tr("Isle of Man");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Istanbul");
-    tz.timeZone = QTimeZone("Europe/Istanbul");
-    tz.country = tr("Turkey");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Jacksonville");
-    tz.timeZone = QTimeZone("America/New_York");
-    tz.country = tr("United States");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Jakarta");
-    tz.timeZone = QTimeZone("Asia/Jakarta");
-    tz.country = tr("Indonesia");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Jerusalem");
-    tz.timeZone = QTimeZone("Asia/Jerusalem");
-    tz.country = tr("Israel");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Johannesburg");
-    tz.timeZone = QTimeZone("Africa/Johannesburg");
-    tz.country = tr("South Africa");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Kabul");
-    tz.timeZone = QTimeZone("Asia/Kabul");
-    tz.country = tr("Afghanistan");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Kampala");
-    tz.timeZone = QTimeZone("Africa/Kampala");
-    tz.country = tr("Uganda");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Karachi");
-    tz.timeZone = QTimeZone("Asia/Karachi");
-    tz.country = tr("Pakistan");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Khartoum");
-    tz.timeZone = QTimeZone("Africa/Khartoum");
-    tz.country = tr("Sudan");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Kiev");
-    tz.timeZone = QTimeZone("Europe/Kiev");
-    tz.country = tr("Ukraine");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Kigali");
-    tz.timeZone = QTimeZone("Africa/Kigali");
-    tz.country = tr("Rwanda");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Kingston");
-    tz.timeZone = QTimeZone("America/Toronto");
-    tz.country = tr("Canada");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Kinshasa");
-    tz.timeZone = QTimeZone("Africa/Kinshasa");
-    tz.country = tr("Democratic Republic of the Congo");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Kiritimati");
-    tz.timeZone = QTimeZone("Pacific/Kiritimati");
-    tz.country = tr("Kiribati");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Kirkland");
-    tz.timeZone = QTimeZone("America/Montreal");
-    tz.country = tr("Canada");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Knox");
-    tz.timeZone = QTimeZone("Australia/Melbourne");
-    tz.country = tr("Australia");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Knoxville");
-    tz.timeZone = QTimeZone("America/New_York");
-    tz.country = tr("United States");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Kraków");
-    tz.timeZone = QTimeZone("Europe/Warsaw");
-    tz.country = tr("Poland");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Kuala Lumpur");
-    tz.timeZone = QTimeZone("Asia/Kuala_Lumpur");
-    tz.country = tr("Malaysia");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Kuwait City");
-    tz.timeZone = QTimeZone("Asia/Kuwait");
-    tz.country = tr("Kuwait");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Kyiv");
-    tz.timeZone = QTimeZone("Europe/Kiev");
-    tz.country = tr("Ukraine");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Lagos");
-    tz.timeZone = QTimeZone("Africa/Lagos");
-    tz.country = tr("Nigeria");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Lahore");
-    tz.timeZone = QTimeZone("Asia/Karachi");
-    tz.country = tr("Pakistan");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Las Vegas");
-    tz.timeZone = QTimeZone("America/Los_Angeles");
-    tz.country = tr("United States");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Lima");
-    tz.timeZone = QTimeZone("America/Lima");
-    tz.country = tr("Peru");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Lisbon");
-    tz.timeZone = QTimeZone("Europe/Lisbon");
-    tz.country = tr("Portugal");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("London");
-    tz.timeZone = QTimeZone("Europe/London");
-    tz.country = tr("United Kingdom");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Longyearbyen");
-    tz.timeZone = QTimeZone("Arctic/Longyearbyen");
-    tz.country = tr("Svalbard and Jan Mayen");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Los Angeles");
-    tz.timeZone = QTimeZone("America/Los_Angeles");
-    tz.country = tr("United States");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Louisville");
-    tz.timeZone = QTimeZone("America/Kentucky/Louisville");
-    tz.country = tr("United States");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Luxembourg");
-    tz.timeZone = QTimeZone("Europe/Luxembourg");
-    tz.country = tr("Luxembourg");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Macau");
-    tz.timeZone = QTimeZone("Asia/Macau");
-    tz.country = tr("Macao");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Madison");
-    tz.timeZone = QTimeZone("America/Chicago");
-    tz.country = tr("United States");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Madrid");
-    tz.timeZone = QTimeZone("Europe/Madrid");
-    tz.country = tr("Spain");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Maldives");
-    tz.timeZone = QTimeZone("Indian/Maldives");
-    tz.country = tr("Maldives");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Malta");
-    tz.timeZone = QTimeZone("Europe/Malta");
-    tz.country = tr("Malta");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Managua");
-    tz.timeZone = QTimeZone("America/Managua");
-    tz.country = tr("Nicaragua");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Manchester");
-    tz.timeZone = QTimeZone("Europe/London");
-    tz.country = tr("United Kingdom");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Manila");
-    tz.timeZone = QTimeZone("Asia/Manila");
-    tz.country = tr("Philippines");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Marengo");
-    tz.timeZone = QTimeZone("America/Indiana/Marengo");
-    tz.country = tr("United States");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Martinique");
-    tz.timeZone = QTimeZone("America/Martinique");
-    tz.country = tr("Canada");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Maseru");
-    tz.timeZone = QTimeZone("Africa/Maseru");
-    tz.country = tr("Lesotho");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Melbourne");
-    tz.timeZone = QTimeZone("Australia/Melbourne");
-    tz.country = tr("Australia");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Memphis");
-    tz.timeZone = QTimeZone("America/Chicago");
-    tz.country = tr("United States");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Mendoza");
-    tz.timeZone = QTimeZone("America/Argentina/Mendoza");
-    tz.country = tr("Argentina");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Metlakatla");
-    tz.timeZone = QTimeZone("America/Metlakatla");
-    tz.country = tr("United States");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Mexico City");
-    tz.timeZone = QTimeZone("America/Mexico_City");
-    tz.country = tr("Mexico");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Miami");
-    tz.timeZone = QTimeZone("America/New_York");
-    tz.country = tr("United States");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Milan");
-    tz.timeZone = QTimeZone("Europe/Rome");
-    tz.country = tr("Italy");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Milwaukee");
-    tz.timeZone = QTimeZone("America/Chicago");
-    tz.country = tr("United States");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Minneapolis");
-    tz.timeZone = QTimeZone("America/Chicago");
-    tz.country = tr("United States");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Minsk");
-    tz.timeZone = QTimeZone("Europe/Minsk");
-    tz.country = tr("Belarus");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Mogadishu");
-    tz.timeZone = QTimeZone("Africa/Mogadishu");
-    tz.country = tr("Somalia");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Monrovia");
-    tz.timeZone = QTimeZone("Africa/Monrovia");
-    tz.country = tr("Liberia");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Monaco");
-    tz.timeZone = QTimeZone("Europe/Monaco");
-    tz.country = tr("Monaco");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Monterrey");
-    tz.timeZone = QTimeZone("America/Monterrey");
-    tz.country = tr("Mexico");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Montevideo");
-    tz.timeZone = QTimeZone("America/Montevideo");
-    tz.country = tr("Uruguay");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Montreal");
-    tz.timeZone = QTimeZone("America/Montreal");
-    tz.country = tr("Canada");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Moscow");
-    tz.timeZone = QTimeZone("Europe/Moscow");
-    tz.country = tr("Russia");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Mountain View");
-    tz.timeZone = QTimeZone("America/Los_Angeles");
-    tz.country = tr("United States");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Mumbai");
-    tz.timeZone = QTimeZone("Asia/Kolkata");
-    tz.country = tr("India");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Munich");
-    tz.timeZone = QTimeZone("Europe/Berlin");
-    tz.country = tr("Germany");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Muscat");
-    tz.timeZone = QTimeZone("Asia/Muscat");
-    tz.country = tr("Oman");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Nairobi");
-    tz.timeZone = QTimeZone("Africa/Nairobi");
-    tz.country = tr("Kenya");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Nashville");
-    tz.timeZone = QTimeZone("America/Chicago");
-    tz.country = tr("United States");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Nassau");
-    tz.timeZone = QTimeZone("America/Nassau");
-    tz.country = tr("Bahamas");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("New Orleans");
-    tz.timeZone = QTimeZone("America/Chicago");
-    tz.country = tr("United States");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("New Salem");
-    tz.timeZone = QTimeZone("America/North_Dakota/New_Salem");
-    tz.country = tr("United States");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("New South Wales");
-    tz.timeZone = QTimeZone("Australia/Sydney");
-    tz.country = tr("Australia");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("New York");
-    tz.timeZone = QTimeZone("America/New_York");
-    tz.country = tr("United States");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Newfoundland");
-    tz.timeZone = QTimeZone("America/St_Johns");
-    tz.country = tr("United States");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Nouméa");
-    tz.timeZone = QTimeZone("Pacific/Noumea");
-    tz.country = tr("New Caledonia");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Nuestra Señora de La Paz");
-    tz.timeZone = QTimeZone("America/Bogota");
-    tz.country = tr("Colombia");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Oklahoma City");
-    tz.timeZone = QTimeZone("America/Chicago");
-    tz.country = tr("United States");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Osaka");
-    tz.timeZone = QTimeZone("Asia/Tokyo");
-    tz.country = tr("Japan");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Oslo");
-    tz.timeZone = QTimeZone("Europe/Oslo");
-    tz.country = tr("Norway");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Ottawa");
-    tz.timeZone = QTimeZone("America/Toronto");
-    tz.country = tr("Canada");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Oulu");
-    tz.timeZone = QTimeZone("Europe/Helsinki");
-    tz.country = tr("Finland");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Panamá");
-    tz.timeZone = QTimeZone("America/Panama");
-    tz.country = tr("Panama");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Paramaribo");
-    tz.timeZone = QTimeZone("America/Paramaribo");
-    tz.country = tr("Suriname");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Paris");
-    tz.timeZone = QTimeZone("Europe/Paris");
-    tz.country = tr("France");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Perth");
-    tz.timeZone = QTimeZone("Australia/Perth");
-    tz.country = tr("Australia");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Petersburg");
-    tz.timeZone = QTimeZone("America/Indiana/Petersburg");
-    tz.country = tr("Russia");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Philadelphia");
-    tz.timeZone = QTimeZone("America/New_York");
-    tz.country = tr("United States");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Phnom Penh");
-    tz.timeZone = QTimeZone("Asia/Phnom_Penh");
-    tz.country = tr("Cambodia");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Phoenix");
-    tz.timeZone = QTimeZone("America/Phoenix");
-    tz.country = tr("United States");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Pittsburgh");
-    tz.timeZone = QTimeZone("America/New_York");
-    tz.country = tr("United States");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Port of Spain");
-    tz.timeZone = QTimeZone("America/Port_of_Spain");
-    tz.country = tr("Trinidad and Tobago");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Port au Prince");
-    tz.timeZone = QTimeZone("America/Port-au-Prince");
-    tz.country = tr("Haiti");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Portland");
-    tz.timeZone = QTimeZone("America/Los_Angeles");
-    tz.country = tr("United States");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Prague");
-    tz.timeZone = QTimeZone("Europe/Prague");
-    tz.country = tr("Czech");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Pyongyang");
-    tz.timeZone = QTimeZone("Asia/Pyongyang");
-    tz.country = tr("North Korea");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Queensland");
-    tz.timeZone = QTimeZone("Australia/Brisbane");
-    tz.country = tr("United States");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Quito");
-    tz.timeZone = QTimeZone("America/Guayaquil");
-    tz.country = tr("Ecuador");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Rangoon");
-    tz.timeZone = QTimeZone("Asia/Rangoon");
-    tz.country = tr("Myanmar");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Reno");
-    tz.timeZone = QTimeZone("America/Los_Angeles");
-    tz.country = tr("United States");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Reston");
-    tz.timeZone = QTimeZone("America/New_York");
-    tz.country = tr("United States");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Reykjavík");
-    tz.timeZone = QTimeZone("Atlantic/Reykjavik");
-    tz.country = tr("Iceland");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Riga");
-    tz.timeZone = QTimeZone("Europe/Riga");
-    tz.country = tr("Latvia");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Rio de Janeiro");
-    tz.timeZone = QTimeZone("America/Sao_Paulo");
-    tz.country = tr("Brazil");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Riyadh");
-    tz.timeZone = QTimeZone("Asia/Riyadh");
-    tz.country = tr("Saudi Arabia");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Rome");
-    tz.timeZone = QTimeZone("Europe/Rome");
-    tz.country = tr("Italy");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Sacramento");
-    tz.timeZone = QTimeZone("America/Los_Angeles");
-    tz.country = tr("United States");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Salt Lake City");
-    tz.timeZone = QTimeZone("America/Denver");
-    tz.country = tr("United States");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Samoa");
-    tz.timeZone = QTimeZone("Pacific/Apia");
-    tz.country = tr("Samoa");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("San Antonio");
-    tz.timeZone = QTimeZone("America/Chicago");
-    tz.country = tr("United States");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("San Diego");
-    tz.timeZone = QTimeZone("America/Los_Angeles");
-    tz.country = tr("United States");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("San Francisco");
-    tz.timeZone = QTimeZone("America/Costa_Rica");
-    tz.country = tr("United States");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("San José");
-    tz.timeZone = QTimeZone("America/Costa_Rica");
-    tz.country = tr("Costa Rica");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("San Juan");
-    tz.timeZone = QTimeZone("America/Puerto_Rico");
-    tz.country = tr("Puerto Rico");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("San Marino");
-    tz.timeZone = QTimeZone("Europe/San_Marino");
-    tz.country = tr("San Marino");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("San Salvador");
-    tz.timeZone = QTimeZone("America/El_Salvador");
-    tz.country = tr("El Salvador");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Sanaa");
-    tz.timeZone = QTimeZone("Asia/Aden");
-    tz.country = tr("Yemen");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Santiago");
-    tz.timeZone = QTimeZone("America/Santiago");
-    tz.country = tr("Chile");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Santo Domingo");
-    tz.timeZone = QTimeZone("America/Santo_Domingo");
-    tz.country = tr("Dominican Republic");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("São Paulo");
-    tz.timeZone = QTimeZone("America/Sao_Paulo");
-    tz.country = tr("Brazil");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("São Tomé");
-    tz.timeZone = QTimeZone("Africa/Sao_Tome");
-    tz.country = tr("São Tomé and Príncipe");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Sarajevo");
-    tz.timeZone = QTimeZone("Europe/Sarajevo");
-    tz.country = tr("Bosnia and Herzegovina");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Saskatchewan");
-    tz.timeZone = QTimeZone("America/Regina");
-    tz.country = tr("Canada");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Seattle");
-    tz.timeZone = QTimeZone("America/Los_Angeles");
-    tz.country = tr("United States");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Seoul");
-    tz.timeZone = QTimeZone("Asia/Seoul");
-    tz.country = tr("South Korea");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Shanghai");
-    tz.timeZone = QTimeZone("Asia/Shanghai");
-    tz.country = tr("China");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Singapore");
-    tz.timeZone = QTimeZone("Asia/Singapore");
-    tz.country = tr("Singapore");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Simferopol’");
-    tz.timeZone = QTimeZone("Europe/Simferopol");
-    tz.country = tr("Ukraine");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Skopje");
-    tz.timeZone = QTimeZone("Europe/Skopje");
-    tz.country = tr("Macedonia");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Sofia");
-    tz.timeZone = QTimeZone("Europe/Sofia");
-    tz.country = tr("Bulgaria");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("St.Johns");
-    tz.timeZone = QTimeZone("America/St_Johns");
-    tz.country = tr("Canada");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("St.Kitts");
-    tz.timeZone = QTimeZone("America/St_Kitts");
-    tz.country = tr("Saint Kitts and Nevis");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("St.Louis");
-    tz.timeZone = QTimeZone("America/Chicago");
-    tz.country = tr("United States");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Stanley");
-    tz.timeZone = QTimeZone("Atlantic/Stanley");
-    tz.country = tr("Falkland Islands");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Stockholm");
-    tz.timeZone = QTimeZone("Europe/Stockholm");
-    tz.country = tr("Sweden");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Suva");
-    tz.timeZone = QTimeZone("Pacific/Fiji");
-    tz.country = tr("Fiji");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Sydney");
-    tz.timeZone = QTimeZone("Australia/Sydney");
-    tz.country = tr("Australia");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Taipei");
-    tz.timeZone = QTimeZone("Asia/Taipei");
-    tz.country = tr("Taiwan");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Tallinn");
-    tz.timeZone = QTimeZone("Europe/Tallinn");
-    tz.country = tr("Estonia");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Tehran");
-    tz.timeZone = QTimeZone("Asia/Tehran");
-    tz.country = tr("Iran");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Tokyo");
-    tz.timeZone = QTimeZone("Asia/Tokyo");
-    tz.country = tr("Japan");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Toronto");
-    tz.timeZone = QTimeZone("America/Toronto");
-    tz.country = tr("Canada");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Tripoli");
-    tz.timeZone = QTimeZone("Africa/Tripoli");
-    tz.country = tr("Libyra");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Tunis");
-    tz.timeZone = QTimeZone("Africa/Tunis");
-    tz.country = tr("Tunisia");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Ulan Bator");
-    tz.timeZone = QTimeZone("Asia/Ulan_Bator");
-    tz.country = tr("Mongolia");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("UTC");
-    tz.timeZone = QTimeZone("UTC");
-    tz.country = tr("UTC");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Vancouver");
-    tz.timeZone = QTimeZone("America/Vancouver");
-    tz.country = tr("Canada");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Vatican City");
-    tz.timeZone = QTimeZone("Europe/Vatican");
-    tz.country = tr("Vatican City");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Vevay");
-    tz.timeZone = QTimeZone("America/Indiana/Vevay");
-    tz.country = tr("United States");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Vienna");
-    tz.timeZone = QTimeZone("Europe/Vienna");
-    tz.country = tr("Austria");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Vilnius");
-    tz.timeZone = QTimeZone("Europe/Vilnius");
-    tz.country = tr("Lithuania");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Vincennes");
-    tz.timeZone = QTimeZone("America/Indiana/Vincennes");
-    tz.country = tr("France");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Warsaw");
-    tz.timeZone = QTimeZone("Europe/Warsaw");
-    tz.country = tr("Poland");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Washington D.C");
-    tz.timeZone = QTimeZone("America/New_York");
-    tz.country = tr("United States");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Winamac");
-    tz.timeZone = QTimeZone("America/Indiana/Winamac");
-    tz.country = tr("United States");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Winnipeg");
-    tz.timeZone = QTimeZone("America/Winnipeg");
-    tz.country = tr("Canada");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Wrocław");
-    tz.timeZone = QTimeZone("Europe/Warsaw");
-    tz.country = tr("Poland");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Zagreb");
-    tz.timeZone = QTimeZone("Europe/Zagreb");
-    tz.country = tr("Croatia");
-    m_timeZones.append(tz);
-
-    tz.cityName = tr("Zürich");
-    tz.timeZone = QTimeZone("Europe/Zurich");
-    tz.country = tr("Switzerland");
-    m_timeZones.append(tz);
+    addCity(tr("Abidjan"), "Africa/Abidjan", tr("Ivory Coast"));
+    addCity(tr("Accra"), "Africa/Accra", tr("Ghana"));
+    addCity(tr("Addis Ababa"), "Africa/Addis_Ababa", tr("Ethiopia"));
+    addCity(tr("Adelaide"), "Australia/Adelaide", tr("Australia"));
+    addCity(tr("Albuquerque"), "America/Denver", tr("United States"));
+    addCity(tr("Algiers"), "Africa/Algiers", tr("Algeria"));
+    addCity(tr("Almaty"), "Asia/Almaty", tr("Kazakhstan"));
+    addCity(tr("Amman"), "Asia/Amman", tr("Jordan"));
+    addCity(tr("Amsterdam"), "Europe/Amsterdam", tr("Netherlands"));
+    addCity(tr("Anadyr"), "Asia/Anadyr", tr("Russia"));
+    addCity(tr("Anchorage"), "America/Anchorage", tr("United States"));
+    addCity(tr("Andorra"), "Europe/Andorra", tr("Andorra"));
+    addCity(tr("Ankara"), "Europe/Istanbul", tr("Turkey"));
+    addCity(tr("Ann Arbor"), "America/Detroit", tr("United States"));
+    addCity(tr("Antananarivo"), "Indian/Antananarivo", tr("Madagascar"));
+    addCity(tr("Aqtau"), "Asia/Aqtau", tr("Kazakhstan"));
+    addCity(tr("Aruba"), "America/Aruba", tr("Aruba"));
+    addCity(tr("Asunción"), "America/Asuncion", tr("Paraguay"));
+    addCity(tr("Athens"), "Europe/Athens", tr("Greece"));
+    addCity(tr("Atlanta"), "America/New_York", tr("United States"));
+    addCity(tr("Auckland"), "Pacific/Auckland", tr("New Zealand"));
+    addCity(tr("Austin"), "America/Chicago", tr("United States"));
+
+    addCity(tr("Baghdad"), "Asia/Baghdad", tr("Iraq"));
+    addCity(tr("Bahrain"), "Asia/Bahrain", tr("Bahrain"));
+    addCity(tr("Baku"), "Asia/Baku", tr("Azerbaijan"));
+    addCity(tr("Baltimore"), "America/New_York", tr("United States"));
+    addCity(tr("Bangalore"), "Asia/Kolkata", tr("India"));
+    addCity(tr("Bangkok"), "Asia/Bangkok", tr("Thailand"));
+    addCity(tr("Barbados"), "America/Barbados", tr("Barbados"));
+    addCity(tr("Barcelona"), "Europe/Madrid", tr("Spain"));
+    addCity(tr("Beijing"), "Asia/Shanghai", tr("China"));
+    addCity(tr("Beirut"), "Asia/Beirut", tr("Lebanon"));
+    addCity(tr("Belfast"), "Europe/Belfast", tr("United Kingdom"));
+    addCity(tr("Belgrade"), "Europe/Belgrade", tr("Serbia"));
+    addCity(tr("Belize"), "America/Belize", tr("Belize"));
+    addCity(tr("Belo Horizonte"), "America/Sao_Paulo", tr("Brazil"));
+    addCity(tr("Berlin"), "Europe/Berlin", tr("Germany"));
+    addCity(tr("Bermuda"), "Atlantic/Bermuda", tr("Bermuda"));
+    addCity(tr("Beulah"), "America/North_Dakota/Beulah", tr("United States"));
+    addCity(tr("Black Rock City"), "America/Chicago", tr("United States"));
+    addCity(tr("Blantyre"), "Africa/Blantyre", tr("Malawi"));
+    addCity(tr("Bogotá"), "America/Bogota", tr("Colombia"));
+    addCity(tr("Boston"), "America/New_York", tr("United States"));
+    addCity(tr("Boulder"), "America/Denver", tr("United States"));
+    addCity(tr("Brasília"), "America/Sao_Paulo", tr("Brazil"));
+    addCity(tr("Bratislava"), "Europe/Bratislava", tr("Slovakia"));
+    addCity(tr("Brazzaville"), "Africa/Brazzaville", tr("Republic of the Congo"));
+    addCity(tr("Brisbane"), "Australia/Brisbane", tr("Australia"));
+    addCity(tr("Brussels"), "Europe/Brussels", tr("Belgium"));
+    addCity(tr("Bucharest"), "Europe/Bucharest", tr("Romania"));
+    addCity(tr("Budapest"), "Europe/Budapest", tr("Hungary"));
+    addCity(tr("Buenos Aires"), "America/Argentina/Buenos_Aires", tr("Argentina"));
+
+    addCity(tr("Cairo"), "Africa/Cairo", tr("Egypt"));
+    addCity(tr("Calcutta"), "Asia/Calcutta", tr("India"));
+    addCity(tr("Calgary"), "America/Edmonton", tr("Canada"));
+    addCity(tr("Cambridge"), "Europe/London", tr("United Kingdom"));
+    addCity(tr("Canary"), "Atlantic/Canary", tr("Australia"));
+    addCity(tr("Canberra"), "Australia/Canberra", tr("Australia"));
+    addCity(tr("Cancún"), "America/Cancun", tr("Mexico"));
+    addCity(tr("Cape Town"), "Africa/Johannesburg", tr("South Africa"));
+    addCity(tr("Caracas"), "America/Caracas", tr("Venezuela"));
+    addCity(tr("Casablanca"), "Africa/Casablanca", tr("Morocco"));
+    addCity(tr("Cayman Palms"), "America/Cayman", tr("Cayman Islands"));
+    addCity(tr("Chicago"), "America/Chicago", tr("United States"));
+    addCity(tr("Chihuahua"), "America/Chihuahua", tr("Mexico"));
+    addCity(tr("Chişinău"), "Europe/Chisinau", tr("Moldova"));
+    addCity(tr("Cincinnati"), "America/New_York", tr("United States"));
+    addCity(tr("Cleveland"), "America/New_York", tr("United States"));
+    addCity(tr("Colombo"), "Asia/Colombo", tr("Sri Lanka"));
+    addCity(tr("Columbus"), "America/New_York", tr("United States"));
+    addCity(tr("Conakry"), "Africa/Conakry", tr("Guinea"));
+    addCity(tr("Copenhagen"), "Europe/Copenhagen", tr("Denmark"));
+    addCity(tr("Costa Rica"), "America/Costa_Rica", tr("Costa Rica"));
+    addCity(tr("Curaçao"), "America/Curacao", tr("Curacao"));
+
+    addCity(tr("Dakar"), "Africa/Dakar", tr("Senegal"));
+    addCity(tr("Dallas"), "America/Chicago", tr("United States"));
+    addCity(tr("Damascus"), "Asia/Damascus", tr("Syria"));
+    addCity(tr("Dar es Salaam"), "Africa/Dar_es_Salaam", tr("Tanzania"));
+    addCity(tr("Darwin"), "Australia/Darwin", tr("Australia"));
+    addCity(tr("Dawson Creek"), "America/Dawson_Creek", tr("Canada"));
+    addCity(tr("Delhi"), "Asia/Kolkata", tr("India"));
+    addCity(tr("Denver"), "America/Denver", tr("United States"));
+    addCity(tr("Detroit"), "America/Detroit", tr("United States"));
+    addCity(tr("Dhaka"), "Asia/Dhaka", tr("Bangladesh"));
+    addCity(tr("Djibouti"), "Africa/Djibouti", tr("Djibouti"));
+    addCity(tr("Doha"), "Asia/Qatar", tr("Qatar"));
+    addCity(tr("Dominica"), "America/Dominica", tr("Dominica"));
+    addCity(tr("Dubai"), "Asia/Dubai", tr("United Arab Emirates"));
+    addCity(tr("Dublin"), "Europe/Dublin", tr("Ireland"));
+
+    addCity(tr("Easter Island"), "Pacific/Easter", tr("Chile"));
+    addCity(tr("Edmonton"), "America/Edmonton", tr("Canada"));
+    addCity(tr("El Salvador"), "America/El_Salvador", tr("El Salvador"));
+
+    addCity(tr("Fiji"), "Pacific/Fiji", tr("Fiji"));
+    addCity(tr("Fortaleza"), "America/Fortaleza", tr("Brazil"));
+    addCity(tr("Frankfurt"), "Europe/Berlin", tr("Germany"));
+    addCity(tr("Freetown"), "Africa/Freetown", tr("Sierra Leone"));
+
+    addCity(tr("Gaborone"), "Africa/Gaborone", tr("Botswana"));
+    addCity(tr("Gaza"), "Asia/Gaza", tr("Palestine"));
+    addCity(tr("Gibraltar"), "Europe/Gibraltar", tr("Gibraltar"));
+    addCity(tr("Grand Turk"), "America/Grand_Turk", tr("Turks and Caicos Islands"));
+    addCity(tr("Grenada"), "America/Grenada", tr("Grenada"));
+    addCity(tr("Guam"), "Pacific/Guam", tr("Guam"));
+    addCity(tr("Guangzhou"), "Asia/Shanghai", tr("China"));
+    addCity(tr("Guatemala"), "America/Guatemala", tr("Guatemala"));
+    addCity(tr("Gurgaon"), "Asia/Kolkata", tr("India"));
+    addCity(tr("Guyana"), "America/Guyana", tr("Guyana"));
+
+    addCity(tr("Haifa"), "Asia/Jerusalem", tr("Israel"));
+    addCity(tr("Halifax"), "America/Halifax", tr("Canada"));
+    addCity(tr("Hamburg"), "Europe/Berlin", tr("Germany"));
+    addCity(tr("Hanoi"), "Asia/Ho_Chi_Minh", tr("Vietnam"));
+    addCity(tr("Harare"), "Africa/Harare", tr("Zimbabwe"));
+    addCity(tr("Havana"), "America/Havana", tr("Cuba"));
+    addCity(tr("Hebron"), "Asia/Hebron", tr("Palestine"));
+    addCity(tr("Helsinki"), "Europe/Helsinki", tr("Finland"));
+    addCity(tr("Ho Chi Minh City"), "Asia/Ho_Chi_Minh", tr("Vietnam"));
+    addCity(tr("Hong Kong"), "Asia/Hong_Kong", tr("Hong Kong"));
+    addCity(tr("Honolulu"), "Pacific/Honolulu", tr("United States"));
+    addCity(tr("Houston"), "America/Chicago", tr("United States"));
+    addCity(tr("Hyderabad"), "Asia/Kolkata", tr("India"));
+
+    addCity(tr("Indianapolis"), "America/Indiana/Indianapolis", tr("United States"));
+    addCity(tr("Islamabad"), "Asia/Karachi", tr("Pakistan"));
+    addCity(tr("Isle of Man"), "Europe/Isle_of_Man", tr("Isle of Man"));
+    addCity(tr("Istanbul"), "Europe/Istanbul", tr("Turkey"));
+
+    addCity(tr("Jacksonville"), "America/New_York", tr("United States"));
+    addCity(tr("Jakarta"), "Asia/Jakarta", tr("Indonesia"));
+    addCity(tr("Jerusalem"), "Asia/Jerusalem", tr("Israel"));
+    addCity(tr("Johannesburg"), "Africa/Johannesburg", tr("South Africa"));
+
+    addCity(tr("Kabul"), "Asia/Kabul", tr("Afghanistan"));
+    addCity(tr("Kampala"), "Africa/Kampala", tr("Uganda"));
+    addCity(tr("Karachi"), "Asia/Karachi", tr("Pakistan"));
+    addCity(tr("Khartoum"), "Africa/Khartoum", tr("Sudan"));
+    addCity(tr("Kiev"), "Europe/Kiev", tr("Ukraine"));
+    addCity(tr("Kigali"), "Africa/Kigali", tr("Rwanda"));
+    addCity(tr("Kingston"), "America/Toronto", tr("Canada"));
+    addCity(tr("Kinshasa"), "Africa/Kinshasa", tr("Democratic Republic of the Congo"));
+    addCity(tr("Kiritimati"), "Pacific/Kiritimati", tr("Kiribati"));
+    addCity(tr("Kirkland"), "America/Montreal", tr("Canada"));
+    addCity(tr("Knox"), "Australia/Melbourne", tr("Australia"));
+    addCity(tr("Knoxville"), "America/New_York", tr("United States"));
+    addCity(tr("Kraków"), "Europe/Warsaw", tr("Poland"));
+    addCity(tr("Kuala Lumpur"), "Asia/Kuala_Lumpur", tr("Malaysia"));
+    addCity(tr("Kuwait City"), "Asia/Kuwait", tr("Kuwait"));
+    addCity(tr("Kyiv"), "Europe/Kiev", tr("Ukraine"));
+
+    addCity(tr("Lagos"), "Africa/Lagos", tr("Nigeria"));
+    addCity(tr("Lahore"), "Asia/Karachi", tr("Pakistan"));
+    addCity(tr("Las Vegas"), "America/Los_Angeles", tr("United States"));
+    addCity(tr("Lima"), "America/Lima", tr("Peru"));
+    addCity(tr("Lisbon"), "Europe/Lisbon", tr("Portugal"));
+    addCity(tr("London"), "Europe/London", tr("United Kingdom"));
+    addCity(tr("Longyearbyen"), "Arctic/Longyearbyen", tr("Svalbard and Jan Mayen"));
+    addCity(tr("Los Angeles"), "America/Los_Angeles", tr("United States"));
+    addCity(tr("Louisville"), "America/Kentucky/Louisville", tr("United States"));
+    addCity(tr("Luxembourg"), "Europe/Luxembourg", tr("Luxembourg"));
+
+    addCity(tr("Macau"), "Asia/Macau", tr("Macao"));
+    addCity(tr("Madison"), "America/Chicago", tr("United States"));
+    addCity(tr("Madrid"), "Europe/Madrid", tr("Spain"));
+    addCity(tr("Maldives"), "Indian/Maldives", tr("Maldives"));
+    addCity(tr("Malta"), "Europe/Malta", tr("Malta"));
+    addCity(tr("Managua"), "America/Managua", tr("Nicaragua"));
+    addCity(tr("Manchester"), "Europe/London", tr("United Kingdom"));
+    addCity(tr("Manila"), "Asia/Manila", tr("Philippines"));
+    addCity(tr("Marengo"), "America/Indiana/Marengo", tr("United States"));
+    addCity(tr("Martinique"), "America/Martinique", tr("Canada"));
+    addCity(tr("Maseru"), "Africa/Maseru", tr("Lesotho"));
+    addCity(tr("Melbourne"), "Australia/Melbourne", tr("Australia"));
+    addCity(tr("Memphis"), "America/Chicago", tr("United States"));
+    addCity(tr("Mendoza"), "America/Argentina/Mendoza", tr("Argentina"));
+    addCity(tr("Metlakatla"), "America/Metlakatla", tr("United States"));
+    addCity(tr("Mexico City"), "America/Mexico_City", tr("Mexico"));
+    addCity(tr("Miami"), "America/New_York", tr("United States"));
+    addCity(tr("Milan"), "Europe/Rome", tr("Italy"));
+    addCity(tr("Milwaukee"), "America/Chicago", tr("United States"));
+    addCity(tr("Minneapolis"), "America/Chicago", tr("United States"));
+    addCity(tr("Minsk"), "Europe/Minsk", tr("Belarus"));
+    addCity(tr("Mogadishu"), "Africa/Mogadishu", tr("Somalia"));
+    addCity(tr("Monrovia"), "Africa/Monrovia", tr("Liberia"));
+    addCity(tr("Monaco"), "Europe/Monaco", tr("Monaco"));
+    addCity(tr("Monterrey"), "America/Monterrey", tr("Mexico"));
+    addCity(tr("Montevideo"), "America/Montevideo", tr("Uruguay"));
+    addCity(tr("Montreal"), "America/Montreal", tr("Canada"));
+    addCity(tr("Moscow"), "Europe/Moscow", tr("Russia"));
+    addCity(tr("Mountain View"), "America/Los_Angeles", tr("United States"));
+    addCity(tr("Mumbai"), "Asia/Kolkata", tr("India"));
+    addCity(tr("Munich"), "Europe/Berlin", tr("Germany"));
+    addCity(tr("Muscat"), "Asia/Muscat", tr("Oman"));
+
+    addCity(tr("Nairobi"), "Africa/Nairobi", tr("Kenya"));
+    addCity(tr("Nashville"), "America/Chicago", tr("United States"));
+    addCity(tr("Nassau"), "America/Nassau", tr("Bahamas"));
+    addCity(tr("New Orleans"), "America/Chicago", tr("United States"));
+    addCity(tr("New Salem"), "America/North_Dakota/New_Salem", tr("United States"));
+    addCity(tr("New South Wales"), "Australia/Sydney", tr("Australia"));
+    addCity(tr("New York"), "America/New_York", tr("United States"));
+    addCity(tr("Newfoundland"), "America/St_Johns", tr("United States"));
+    addCity(tr("Nouméa"), "Pacific/Noumea", tr("New Caledonia"));
+    addCity(tr("Nuestra Señora de La Paz"), "America/Bogota", tr("Colombia"));
+
+    addCity(tr("Oklahoma City"), "America/Chicago", tr("United States"));
+    addCity(tr("Osaka"), "Asia/Tokyo", tr("Japan"));
+    addCity(tr("Oslo"), "Europe/Oslo", tr("Norway"));
+    addCity(tr("Ottawa"), "America/Toronto", tr("Canada"));
+    addCity(tr("Oulu"), "Europe/Helsinki", tr("Finland"));
+
+    addCity(tr("Panamá"), "America/Panama", tr("Panama"));
+    addCity(tr("Paramaribo"), "America/Paramaribo", tr("Suriname"));
+    addCity(tr("Paris"), "Europe/Paris", tr("France"));
+    addCity(tr("Perth"), "Australia/Perth", tr("Australia"));
+    addCity(tr("Petersburg"), "America/Indiana/Petersburg", tr("Russia"));
+    addCity(tr("Philadelphia"), "America/New_York", tr("United States"));
+    addCity(tr("Phnom Penh"), "Asia/Phnom_Penh", tr("Cambodia"));
+    addCity(tr("Phoenix"), "America/Phoenix", tr("United States"));
+    addCity(tr("Pittsburgh"), "America/New_York", tr("United States"));
+    addCity(tr("Port of Spain"), "America/Port_of_Spain", tr("Trinidad and Tobago"));
+    addCity(tr("Port au Prince"), "America/Port-au-Prince", tr("Haiti"));
+    addCity(tr("Portland"), "America/Los_Angeles", tr("United States"));
+    addCity(tr("Prague"), "Europe/Prague", tr("Czech"));
+    addCity(tr("Pyongyang"), "Asia/Pyongyang", tr("North Korea"));
+
+    addCity(tr("Queensland"), "Australia/Brisbane", tr("United States"));
+    addCity(tr("Quito"), "America/Guayaquil", tr("Ecuador"));
+
+    addCity(tr("Rangoon"), "Asia/Rangoon", tr("Myanmar"));
+    addCity(tr("Reno"), "America/Los_Angeles", tr("United States"));
+    addCity(tr("Reston"), "America/New_York", tr("United States"));
+    addCity(tr("Reykjavík"), "Atlantic/Reykjavik", tr("Iceland"));
+    addCity(tr("Riga"), "Europe/Riga", tr("Latvia"));
+    addCity(tr("Rio de Janeiro"), "America/Sao_Paulo", tr("Brazil"));
+    addCity(tr("Riyadh"), "Asia/Riyadh", tr("Saudi Arabia"));
+    addCity(tr("Rome"), "Europe/Rome", tr("Italy"));
+
+    addCity(tr("Sacramento"), "America/Los_Angeles", tr("United States"));
+    addCity(tr("Salt Lake City"), "America/Denver", tr("United States"));
+    addCity(tr("Samoa"), "Pacific/Apia", tr("Samoa"));
+    addCity(tr("San Antonio"), "America/Chicago", tr("United States"));
+    addCity(tr("San Diego"), "America/Los_Angeles", tr("United States"));
+    addCity(tr("San Francisco"), "America/Costa_Rica", tr("United States"));
+    addCity(tr("San José"), "America/Costa_Rica", tr("Costa Rica"));
+    addCity(tr("San Juan"), "America/Puerto_Rico", tr("Puerto Rico"));
+    addCity(tr("San Marino"), "Europe/San_Marino", tr("San Marino"));
+    addCity(tr("San Salvador"), "America/El_Salvador", tr("El Salvador"));
+    addCity(tr("Sanaa"), "Asia/Aden", tr("Yemen"));
+    addCity(tr("Santiago"), "America/Santiago", tr("Chile"));
+    addCity(tr("Santo Domingo"), "America/Santo_Domingo", tr("Dominican Republic"));
+    addCity(tr("São Paulo"), "America/Sao_Paulo", tr("Brazil"));
+    addCity(tr("São Tomé"), "Africa/Sao_Tome", tr("São Tomé and Príncipe"));
+    addCity(tr("Sarajevo"), "Europe/Sarajevo", tr("Bosnia and Herzegovina"));
+    addCity(tr("Saskatchewan"), "America/Regina", tr("Canada"));
+    addCity(tr("Seattle"), "America/Los_Angeles", tr("United States"));
+    addCity(tr("Seoul"), "Asia/Seoul", tr("South Korea"));
+    addCity(tr("Shanghai"), "Asia/Shanghai", tr("China"));
+    addCity(tr("Singapore"), "Asia/Singapore", tr("Singapore"));
+    addCity(tr("Simferopol’"), "Europe/Simferopol", tr("Ukraine"));
+    addCity(tr("Skopje"), "Europe/Skopje", tr("Macedonia"));
+    addCity(tr("Sofia"), "Europe/Sofia", tr("Bulgaria"));
+    addCity(tr("St.Johns"), "America/St_Johns", tr("Canada"));
+    addCity(tr("St.Kitts"), "America/St_Kitts", tr("Saint Kitts and Nevis"));
+    addCity(tr("St.Louis"), "America/Chicago", tr("United States"));
+    addCity(tr("Stanley"), "Atlantic/Stanley", tr("Falkland Islands"));
+    addCity(tr("Stockholm"), "Europe/Stockholm", tr("Sweden"));
+    addCity(tr("Suva"), "Pacific/Fiji", tr("Fiji"));
+    addCity(tr("Sydney"), "Australia/Sydney", tr("Australia"));
+
+    addCity(tr("Taipei"), "Asia/Taipei", tr("Taiwan"));
+    addCity(tr("Tallinn"), "Europe/Tallinn", tr("Estonia"));
+    addCity(tr("Tehran"), "Asia/Tehran", tr("Iran"));
+    addCity(tr("Tokyo"), "Asia/Tokyo", tr("Japan"));
+    addCity(tr("Toronto"), "America/Toronto", tr("Canada"));
+    addCity(tr("Tripoli"), "Africa/Tripoli", tr("Libyra"));
+    addCity(tr("Tunis"), "Africa/Tunis", tr("Tunisia"));
+
+    addCity(tr("Ulan Bator"), "Asia/Ulan_Bator", tr("Mongolia"));
+    addCity(tr("UTC"), "UTC", tr("UTC"));
+
+    addCity(tr("Vancouver"), "America/Vancouver", tr("Canada"));
+    addCity(tr("Vatican City"), "Europe/Vatican", tr("Vatican City"));
+    addCity(tr("Vevay"), "America/Indiana/Vevay", tr("United States"));
+    addCity(tr("Vienna"), "Europe/Vienna", tr("Austria"));
+    addCity(tr("Vilnius"), "Europe/Vilnius", tr("Lithuania"));
+    addCity(tr("Vincennes"), "America/Indiana/Vincennes", tr("France"));
+
+    addCity(tr("Warsaw"), "Europe/Warsaw", tr("Poland"));
+    addCity(tr("Washington D.C"), "America/New_York", tr("United States"));
+    addCity(tr("Winamac"), "America/Indiana/Winamac", tr("United States"));
+    addCity(tr("Winnipeg"), "America/Winnipeg", tr("Canada"));
+    addCity(tr("Wrocław"), "Europe/Warsaw", tr("Poland"));
+
+    addCity(tr("Zagreb"), "Europe/Zagreb", tr("Croatia"));
+    addCity(tr("Zürich"), "Europe/Zurich", tr("Switzerland"));
 
     // Let QML know model is reusable again
     endResetModel();
