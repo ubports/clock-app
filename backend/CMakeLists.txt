@@ -11,6 +11,7 @@ set(
     modules/Timezone/xmltimezonemodel.cpp
     modules/Timezone/generictimezonemodel.cpp
     modules/Timezone/jsontimezonemodel.cpp
+    modules/Timezone/statictimezonemodel.cpp
 )
 
 set(
