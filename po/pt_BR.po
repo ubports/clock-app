@@ -1,0 +1,247 @@
+# Brazilian Portuguese translation for ubuntu-clock-app
+# Copyright (c) 2015 Rosetta Contributors and Canonical Ltd 2015
+# This file is distributed under the same license as the ubuntu-clock-app package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2015.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ubuntu-clock-app\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2015-01-22 01:14+0100\n"
+"PO-Revision-Date: 2015-02-26 16:03+0000\n"
+"Last-Translator: Tiago Hillebrandt <tiagohillebrandt@gmail.com>\n"
+"Language-Team: Brazilian Portuguese <pt_BR@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2015-02-27 05:56+0000\n"
+"X-Generator: Launchpad (build 17361)\n"
+
+#: ../app/alarm/AlarmLabel.qml:30 ../app/alarm/AlarmLabel.qml:56
+#: ../app/alarm/EditAlarmPage.qml:302
+msgid "Label"
+msgstr "Etiqueta"
+
+#: ../app/alarm/AlarmList.qml:78 ../app/alarm/AlarmPage.qml:117
+#: ../app/worldclock/UserWorldCityList.qml:101
+msgid "Delete"
+msgstr "Excluir"
+
+#: ../app/alarm/AlarmPage.qml:26
+msgid "Alarms"
+msgstr "Alarmes"
+
+#: ../app/alarm/AlarmPage.qml:43 ../app/alarm/EditAlarmPage.qml:50
+#: ../app/alarm/EditAlarmPage.qml:177
+msgid "Alarm"
+msgstr "Alarme"
+
+#: ../app/alarm/AlarmPage.qml:58 ../app/worldclock/WorldCityList.qml:80
+msgid "Back"
+msgstr "Voltar"
+
+#: ../app/alarm/AlarmPage.qml:87
+msgid "Select None"
+msgstr "Selecionar nenhum"
+
+#: ../app/alarm/AlarmPage.qml:89 ../app/alarm/AlarmRepeat.qml:38
+msgid "Select All"
+msgstr "Selecionar todos"
+
+#: ../app/alarm/AlarmPage.qml:149
+msgid "No saved alarms"
+msgstr "Nenhum alarme salvo"
+
+#: ../app/alarm/AlarmPage.qml:150
+msgid "Tap the + icon to add an alarm"
+msgstr "Toque no ícone + para adicionar um alarme"
+
+#: ../app/alarm/AlarmRepeat.qml:34 ../app/alarm/EditAlarmPage.qml:292
+msgid "Repeat"
+msgstr "Repetir"
+
+#: ../app/alarm/AlarmSettingsPage.qml:29
+msgid "Settings"
+msgstr "Configurações"
+
+#: ../app/alarm/AlarmSettingsPage.qml:53 ../app/alarm/AlarmSettingsPage.qml:54
+#: ../app/alarm/AlarmSettingsPage.qml:55 ../app/alarm/AlarmSettingsPage.qml:56
+#: ../app/alarm/AlarmSettingsPage.qml:65 ../app/alarm/AlarmSettingsPage.qml:66
+#: ../app/alarm/AlarmSettingsPage.qml:67 ../app/alarm/AlarmSettingsPage.qml:68
+#: ../app/alarm/AlarmSettingsPage.qml:146
+#: ../app/alarm/AlarmSettingsPage.qml:215
+#, qt-format
+msgid "%1 minutes"
+msgstr "%1 minutos"
+
+#: ../app/alarm/AlarmSettingsPage.qml:92
+msgid "Alarm volume"
+msgstr "Volume do alarme"
+
+#: ../app/alarm/AlarmSettingsPage.qml:145
+msgid "Silence after"
+msgstr "Silenciar depois"
+
+#: ../app/alarm/AlarmSettingsPage.qml:214
+msgid "Snooze for"
+msgstr "Soneca por"
+
+#: ../app/alarm/AlarmSettingsPage.qml:259
+msgid "Vibration"
+msgstr "Vibração"
+
+#: ../app/alarm/AlarmSettingsPage.qml:293
+msgid "Change time and date"
+msgstr "Alterar data e hora"
+
+#: ../app/alarm/AlarmSound.qml:28 ../app/alarm/EditAlarmPage.qml:315
+msgid "Sound"
+msgstr "Som"
+
+#: ../app/alarm/AlarmUtils.qml:31
+msgid "Never"
+msgstr "Nunca"
+
+#: ../app/alarm/AlarmUtils.qml:37
+msgid "Weekdays"
+msgstr "Dias da semana"
+
+#: ../app/alarm/AlarmUtils.qml:41
+msgid "Weekends"
+msgstr "Finais de semana"
+
+#: ../app/alarm/AlarmUtils.qml:45
+msgid "Daily"
+msgstr "Diariamente"
+
+#: ../app/alarm/AlarmUtils.qml:55
+msgid "No active alarms"
+msgstr "Nenhum alarme ativo"
+
+#: ../app/alarm/AlarmUtils.qml:72
+#, qt-format
+msgid "Next Alarm %1"
+msgstr "Próximo alarme %1"
+
+#: ../app/alarm/AlarmUtils.qml:79
+msgid "Alarm Passed"
+msgstr "Alarme passou"
+
+#: ../app/alarm/AlarmUtils.qml:89
+#, no-c-format, qt-format
+msgid "in %1d %2h %3m"
+msgstr "em %1d %2h %3m"
+
+#: ../app/alarm/AlarmUtils.qml:99
+#, no-c-format, qt-format
+msgid "in %1h %2m"
+msgstr "em %1h %2m"
+
+#: ../app/alarm/AlarmUtils.qml:108
+#, no-c-format, qt-format
+msgid "in %1m"
+msgstr "em %1m"
+
+#: ../app/alarm/EditAlarmPage.qml:43
+msgid "New alarm"
+msgstr "Novo alarme"
+
+#: ../app/alarm/EditAlarmPage.qml:43
+msgid "Edit alarm"
+msgstr "Editar alarme"
+
+#: ../app/alarm/EditAlarmPage.qml:336
+msgid "Delete alarm"
+msgstr "Excluir alarme"
+
+#: ../app/clock/ClockPage.qml:271
+msgid "Location Service Error!"
+msgstr "Erro no serviço de localização!"
+
+#: ../app/clock/ClockPage.qml:273
+msgid "Retrieving location..."
+msgstr "Obtendo localização..."
+
+#: ../app/worldclock/AddWorldCityButton.qml:30
+msgid "Add"
+msgstr "Adicionar"
+
+#: ../app/worldclock/AddWorldCityButton.qml:61
+#: ../app/worldclock/WorldCityList.qml:64
+msgid "City"
+msgstr "Cidade"
+
+#. TRANSLATORS: this indicates if the time in a world clock
+#. is behind or ahead of the time at the current location
+#: ../app/worldclock/UserWorldCityDelegate.qml:142
+msgid "behind"
+msgstr "atrás"
+
+#: ../app/worldclock/UserWorldCityDelegate.qml:143
+msgid "ahead"
+msgstr "adiante"
+
+#. TRANSLATORS: the first argument is hour, followed by
+#. minute, and the translation for either 'behind' or
+#. 'ahead'
+#: ../app/worldclock/UserWorldCityDelegate.qml:153
+#, qt-format
+msgid "%1h %2m %3"
+msgstr "%1h %2m %3"
+
+#. TRANSLATORS: the first argument is hour, followed by the
+#. translation for either 'behind' or 'ahead'
+#: ../app/worldclock/UserWorldCityDelegate.qml:162
+#, qt-format
+msgid "%1h %2"
+msgstr "%1h %2"
+
+#. TRANSLATORS: the first argument is minute, followed by the
+#. translation for either 'behind' or 'ahead'
+#: ../app/worldclock/UserWorldCityDelegate.qml:170
+#, qt-format
+msgid "%1m %2"
+msgstr "%1m %2"
+
+#: ../app/worldclock/UserWorldCityDelegate.qml:176
+msgid "Same time"
+msgstr "Mesma hora"
+
+#: ../app/worldclock/WorldCityList.qml:51
+msgid "Select a city"
+msgstr "Selecione a cidade"
+
+#: ../app/worldclock/WorldCityList.qml:109
+msgid "Search..."
+msgstr "Pesquisar..."
+
+#: ../app/worldclock/WorldCityList.qml:214
+msgid "Searching for a city"
+msgstr "Pesquisando por uma cidade"
+
+#: ../app/worldclock/WorldCityList.qml:219
+msgid "No City Found"
+msgstr "Nenhum cidade encontrada"
+
+#: ../app/worldclock/WorldCityList.qml:225
+msgid "Unable to connect."
+msgstr "Não foi possível conectar."
+
+#: ../app/worldclock/WorldCityList.qml:226
+msgid "Please check your network connection and try again"
+msgstr "Por favor verifique sua conexão de internet e tente novamente"
+
+#: ubuntu-clock-app.desktop.in.in.h:1
+msgid "Clock"
+msgstr "Relógio"
+
+#: ubuntu-clock-app.desktop.in.in.h:2
+msgid ""
+"A sophisticated clock app that provides world clock and alarm functionality."
+msgstr ""
+"Um aplicativo sofisticado de relógio que fornece a hora mundialmente, bem "
+"como a funcionalidade de alarme."
+
+#: ubuntu-clock-app.desktop.in.in.h:3
+msgid "time;alarm;alert;clock;world;"
+msgstr "time;alarm;alert;clock;world;alarme;relógio;hora;despertador;"
