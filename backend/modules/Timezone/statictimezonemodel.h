@@ -20,6 +20,9 @@
 #define STATICTIMEZONEMODEL_H
 
 #include "timezonemodel.h"
+#include <libintl.h>
+
+//#define _(value) dgettext(GETTEXT_PACKAGE, value)
 
 class StaticTimeZoneModel : public TimeZoneModel
 {
