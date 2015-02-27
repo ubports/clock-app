@@ -4,9 +4,9 @@ include_directories(
     ${CMAKE_CURRENT_SOURCE_DIR}
 )
 
-#add_definitions(
-#  -DGETTEXT_PACKAGE=\"${PROJECT_NAME}\"
-#)
+add_definitions(
+  -DGETTEXT_PACKAGE=\"${PROJECT_NAME}\"
+)
 
 set(
     timezone_SRCS
