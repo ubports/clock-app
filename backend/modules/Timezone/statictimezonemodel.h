@@ -31,6 +31,8 @@ public:
 private:
     // Function to define the default city list
     void loadDefaultCityList();
+
+    // Function to append city list item into m_timeZones object
     void addCity(const QString &city, const QString &timezone, const QString &country);
 };
 
