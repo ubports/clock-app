@@ -1,0 +1,246 @@
+# Latvian translation for ubuntu-clock-app
+# Copyright (c) 2015 Rosetta Contributors and Canonical Ltd 2015
+# This file is distributed under the same license as the ubuntu-clock-app package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2015.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ubuntu-clock-app\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2015-01-22 01:14+0100\n"
+"PO-Revision-Date: 2015-02-28 13:52+0000\n"
+"Last-Translator: Rūdolfs Mazurs <Unknown>\n"
+"Language-Team: Latvian <lv@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2015-03-01 05:39+0000\n"
+"X-Generator: Launchpad (build 17361)\n"
+
+#: ../app/alarm/AlarmLabel.qml:30 ../app/alarm/AlarmLabel.qml:56
+#: ../app/alarm/EditAlarmPage.qml:302
+msgid "Label"
+msgstr "Etiķete"
+
+#: ../app/alarm/AlarmList.qml:78 ../app/alarm/AlarmPage.qml:117
+#: ../app/worldclock/UserWorldCityList.qml:101
+msgid "Delete"
+msgstr "Dzēst"
+
+#: ../app/alarm/AlarmPage.qml:26
+msgid "Alarms"
+msgstr "Atgādinājumi"
+
+#: ../app/alarm/AlarmPage.qml:43 ../app/alarm/EditAlarmPage.qml:50
+#: ../app/alarm/EditAlarmPage.qml:177
+msgid "Alarm"
+msgstr "Atgādinājums"
+
+#: ../app/alarm/AlarmPage.qml:58 ../app/worldclock/WorldCityList.qml:80
+msgid "Back"
+msgstr "Atpakaļ"
+
+#: ../app/alarm/AlarmPage.qml:87
+msgid "Select None"
+msgstr "Neizvēlēties nevienu"
+
+#: ../app/alarm/AlarmPage.qml:89 ../app/alarm/AlarmRepeat.qml:38
+msgid "Select All"
+msgstr "Izvēlēties visu"
+
+#: ../app/alarm/AlarmPage.qml:149
+msgid "No saved alarms"
+msgstr "Nav saglabātu atgādinājumu"
+
+#: ../app/alarm/AlarmPage.qml:150
+msgid "Tap the + icon to add an alarm"
+msgstr "Uzsitiet uz + ikonas, lai pievienotu atgādinājumu"
+
+#: ../app/alarm/AlarmRepeat.qml:34 ../app/alarm/EditAlarmPage.qml:292
+msgid "Repeat"
+msgstr "Atkārtot"
+
+#: ../app/alarm/AlarmSettingsPage.qml:29
+msgid "Settings"
+msgstr "Iestatījumi"
+
+#: ../app/alarm/AlarmSettingsPage.qml:53 ../app/alarm/AlarmSettingsPage.qml:54
+#: ../app/alarm/AlarmSettingsPage.qml:55 ../app/alarm/AlarmSettingsPage.qml:56
+#: ../app/alarm/AlarmSettingsPage.qml:65 ../app/alarm/AlarmSettingsPage.qml:66
+#: ../app/alarm/AlarmSettingsPage.qml:67 ../app/alarm/AlarmSettingsPage.qml:68
+#: ../app/alarm/AlarmSettingsPage.qml:146
+#: ../app/alarm/AlarmSettingsPage.qml:215
+#, qt-format
+msgid "%1 minutes"
+msgstr "%1 minūtes"
+
+#: ../app/alarm/AlarmSettingsPage.qml:92
+msgid "Alarm volume"
+msgstr "Atgādinājuma skaļums"
+
+#: ../app/alarm/AlarmSettingsPage.qml:145
+msgid "Silence after"
+msgstr "Apklusināt pēc"
+
+#: ../app/alarm/AlarmSettingsPage.qml:214
+msgid "Snooze for"
+msgstr "Atlikt uz"
+
+#: ../app/alarm/AlarmSettingsPage.qml:259
+msgid "Vibration"
+msgstr "Vibrācija"
+
+#: ../app/alarm/AlarmSettingsPage.qml:293
+msgid "Change time and date"
+msgstr "Mainīt laiku un datumu"
+
+#: ../app/alarm/AlarmSound.qml:28 ../app/alarm/EditAlarmPage.qml:315
+msgid "Sound"
+msgstr "Skaņa"
+
+#: ../app/alarm/AlarmUtils.qml:31
+msgid "Never"
+msgstr "Nekad"
+
+#: ../app/alarm/AlarmUtils.qml:37
+msgid "Weekdays"
+msgstr "Darba dienas"
+
+#: ../app/alarm/AlarmUtils.qml:41
+msgid "Weekends"
+msgstr "Nedēļas nogales"
+
+#: ../app/alarm/AlarmUtils.qml:45
+msgid "Daily"
+msgstr "Katru dienu"
+
+#: ../app/alarm/AlarmUtils.qml:55
+msgid "No active alarms"
+msgstr "Nav aktīvu atgādinājumu"
+
+#: ../app/alarm/AlarmUtils.qml:72
+#, qt-format
+msgid "Next Alarm %1"
+msgstr "Nākamais atgādinājums %1"
+
+#: ../app/alarm/AlarmUtils.qml:79
+msgid "Alarm Passed"
+msgstr "Atgādinājums ir nodots"
+
+#: ../app/alarm/AlarmUtils.qml:89
+#, no-c-format, qt-format
+msgid "in %1d %2h %3m"
+msgstr "pēc %1d %2h %3m"
+
+#: ../app/alarm/AlarmUtils.qml:99
+#, no-c-format, qt-format
+msgid "in %1h %2m"
+msgstr "pēc %1h %2m"
+
+#: ../app/alarm/AlarmUtils.qml:108
+#, no-c-format, qt-format
+msgid "in %1m"
+msgstr "pēc %1m"
+
+#: ../app/alarm/EditAlarmPage.qml:43
+msgid "New alarm"
+msgstr "Jauns atgādinājums"
+
+#: ../app/alarm/EditAlarmPage.qml:43
+msgid "Edit alarm"
+msgstr "Rediģēt atgādinājumu"
+
+#: ../app/alarm/EditAlarmPage.qml:336
+msgid "Delete alarm"
+msgstr "Dzēst atgādinājumu"
+
+#: ../app/clock/ClockPage.qml:271
+msgid "Location Service Error!"
+msgstr "Vietas noteikšanas pakalpojuma kļūda!"
+
+#: ../app/clock/ClockPage.qml:273
+msgid "Retrieving location..."
+msgstr "Saņem atrašanās vietu..."
+
+#: ../app/worldclock/AddWorldCityButton.qml:30
+msgid "Add"
+msgstr "Pievienot"
+
+#: ../app/worldclock/AddWorldCityButton.qml:61
+#: ../app/worldclock/WorldCityList.qml:64
+msgid "City"
+msgstr "Pilsēta"
+
+#. TRANSLATORS: this indicates if the time in a world clock
+#. is behind or ahead of the time at the current location
+#: ../app/worldclock/UserWorldCityDelegate.qml:142
+msgid "behind"
+msgstr "pirms"
+
+#: ../app/worldclock/UserWorldCityDelegate.qml:143
+msgid "ahead"
+msgstr "pēc"
+
+#. TRANSLATORS: the first argument is hour, followed by
+#. minute, and the translation for either 'behind' or
+#. 'ahead'
+#: ../app/worldclock/UserWorldCityDelegate.qml:153
+#, qt-format
+msgid "%1h %2m %3"
+msgstr "%1h %2m %3"
+
+#. TRANSLATORS: the first argument is hour, followed by the
+#. translation for either 'behind' or 'ahead'
+#: ../app/worldclock/UserWorldCityDelegate.qml:162
+#, qt-format
+msgid "%1h %2"
+msgstr "%1h %2"
+
+#. TRANSLATORS: the first argument is minute, followed by the
+#. translation for either 'behind' or 'ahead'
+#: ../app/worldclock/UserWorldCityDelegate.qml:170
+#, qt-format
+msgid "%1m %2"
+msgstr "%1m %2"
+
+#: ../app/worldclock/UserWorldCityDelegate.qml:176
+msgid "Same time"
+msgstr "Kāds laiks"
+
+#: ../app/worldclock/WorldCityList.qml:51
+msgid "Select a city"
+msgstr "Izvēlieties pilsētu"
+
+#: ../app/worldclock/WorldCityList.qml:109
+msgid "Search..."
+msgstr "Meklēt..."
+
+#: ../app/worldclock/WorldCityList.qml:214
+msgid "Searching for a city"
+msgstr "Meklē pilsētu"
+
+#: ../app/worldclock/WorldCityList.qml:219
+msgid "No City Found"
+msgstr "Nav atrastas pilsētas"
+
+#: ../app/worldclock/WorldCityList.qml:225
+msgid "Unable to connect."
+msgstr "Nevar izveidot savienojumu."
+
+#: ../app/worldclock/WorldCityList.qml:226
+msgid "Please check your network connection and try again"
+msgstr "Pārbaudiet tīkla savienojumu un mēģiniet vēlreiz"
+
+#: ubuntu-clock-app.desktop.in.in.h:1
+msgid "Clock"
+msgstr "Pulkstenis"
+
+#: ubuntu-clock-app.desktop.in.in.h:2
+msgid ""
+"A sophisticated clock app that provides world clock and alarm functionality."
+msgstr ""
+"Gudra pulksteņa lietotne, kas nodrošina pasaules pulksteņus un atgādinājumus."
+
+#: ubuntu-clock-app.desktop.in.in.h:3
+msgid "time;alarm;alert;clock;world;"
+msgstr "laiks;atgādinājums;trauksme;pulkstenis;pasaule;"
