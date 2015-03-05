@@ -9,6 +9,7 @@ ubuntu-clock-app (3.3) utopic; urgency=medium
   * Fixed Day-of-Week picker in alarms not respecting user locale (LP: #1372545)
   * Fixed predefined cities and countries not being translatable in the timezone
     selection dialog (LP: #1354466)
+  * Fixed empty state description not wrapping (LP: #1428165)
 
   [Brendan Donegan]
   * Fixed AP failure by waiting for the bottom edge tip visible property to be true

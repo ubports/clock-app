@@ -33,6 +33,7 @@ Item {
     property alias subTitle: emptySublabel.text
 
     height: childrenRect.height
+    width: parent.width
 
     Icon {
         id: emptyIcon
@@ -44,16 +45,20 @@ Item {
 
     Label {
         id: emptyLabel
-        anchors.top: emptyIcon.bottom
-        anchors.topMargin: units.gu(5)
-        anchors.horizontalCenter: parent.horizontalCenter
         fontSize: "large"
         font.bold: true
+        width: parent.width
+        wrapMode: Text.WordWrap
+        anchors.top: emptyIcon.bottom
+        anchors.topMargin: units.gu(5)
+        horizontalAlignment: Text.AlignHCenter
     }
 
     Label {
         id: emptySublabel
+        width: parent.width
+        wrapMode: Text.WordWrap
         anchors.top: emptyLabel.bottom
-        anchors.horizontalCenter: parent.horizontalCenter
+        horizontalAlignment: Text.AlignHCenter
     }
 }
