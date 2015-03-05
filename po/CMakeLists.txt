@@ -14,7 +14,7 @@ add_custom_target(${POT_FILE} ALL
         -D ${CMAKE_CURRENT_BINARY_DIR}
         --from-code=UTF-8
         --c++ --qt --add-comments=TRANSLATORS
-        --keyword=tr --keyword=tr:1,2 --keyword=N_
+        --keyword=tr --keyword=tr:1,2 --keyword=N_ --keyword=_
         --package-name='${PROJECT}'
         --copyright-holder='Canonical Ltd.'
         ${I18N_SRC_FILES}

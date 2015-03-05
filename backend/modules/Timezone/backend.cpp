@@ -20,17 +20,17 @@
 #include <QtQml/QQmlContext>
 #include "backend.h"
 #include "timezonemodel.h"
-#include "xmltimezonemodel.h"
 #include "generictimezonemodel.h"
 #include "jsontimezonemodel.h"
+#include "statictimezonemodel.h"
 
 void BackendPlugin::registerTypes(const char *uri)
 {
     Q_ASSERT(uri == QLatin1String("Timezone"));
 
-    qmlRegisterType<XmlTimeZoneModel>(uri, 1, 0, "XmlTimeZoneModel");
     qmlRegisterType<GenericTimeZoneModel>(uri, 1, 0, "GenericTimeZoneModel");
     qmlRegisterType<JsonTimeZoneModel>(uri, 1, 0, "JsonTimeZoneModel");
+    qmlRegisterType<StaticTimeZoneModel>(uri, 1, 0, "StaticTimeZoneModel");
 }
 
 void BackendPlugin::initializeEngine(QQmlEngine *engine, const char *uri)
