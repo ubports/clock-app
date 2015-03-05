@@ -48,6 +48,7 @@ Item {
         fontSize: "large"
         font.bold: true
         width: parent.width
+        wrapMode: Text.WordWrap
         anchors.top: emptyIcon.bottom
         anchors.topMargin: units.gu(5)
         horizontalAlignment: Text.AlignHCenter
