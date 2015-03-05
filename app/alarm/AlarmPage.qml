@@ -140,7 +140,12 @@ Page {
 
     Loader {
         id: emptyStateLoader
-        anchors.centerIn: parent
+        anchors {
+            left: parent.left
+            right: parent.right
+            margins: units.gu(2)
+            verticalCenter: parent.verticalCenter
+        }
         active: alarmModel ? alarmModel.count === 0 : true
         Component.onCompleted: {
             setSource(Qt.resolvedUrl("../components/EmptyState.qml"),
