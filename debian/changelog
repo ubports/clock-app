@@ -10,6 +10,7 @@ ubuntu-clock-app (3.3) utopic; urgency=medium
   * Fixed predefined cities and countries not being translatable in the timezone
     selection dialog (LP: #1354466)
   * Fixed empty state description not wrapping (LP: #1428165)
+  * Fixed edit alarm crash issue in vivid (thanks to Zsombor)
 
   [Brendan Donegan]
   * Fixed AP failure by waiting for the bottom edge tip visible property to be true
