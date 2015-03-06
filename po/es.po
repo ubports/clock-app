@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2015-01-22 01:14+0100\n"
-"PO-Revision-Date: 2015-02-24 13:26+0000\n"
-"Last-Translator: Víctor R. Ruiz <Unknown>\n"
+"POT-Creation-Date: 2015-03-05 13:52+0100\n"
+"PO-Revision-Date: 2015-03-06 04:27+0000\n"
+"Last-Translator: Adolfo Jayme <fitoschido@gmail.com>\n"
 "Language-Team: Spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-02-25 06:02+0000\n"
-"X-Generator: Launchpad (build 17355)\n"
+"X-Launchpad-Export-Date: 2015-03-06 06:07+0000\n"
+"X-Generator: Launchpad (build 17374)\n"
 
 #: ../app/alarm/AlarmLabel.qml:30 ../app/alarm/AlarmLabel.qml:56
 #: ../app/alarm/EditAlarmPage.qml:302
@@ -48,11 +48,11 @@ msgstr "Cancelar la selección"
 msgid "Select All"
 msgstr "Seleccionar todo"
 
-#: ../app/alarm/AlarmPage.qml:149
+#: ../app/alarm/AlarmPage.qml:154
 msgid "No saved alarms"
 msgstr "No hay alarmas guardadas"
 
-#: ../app/alarm/AlarmPage.qml:150
+#: ../app/alarm/AlarmPage.qml:155
 msgid "Tap the + icon to add an alarm"
 msgstr "Para añadir una alarma toque el icono +"
 
@@ -215,21 +215,1763 @@ msgstr "Seleccione una ciudad"
 msgid "Search..."
 msgstr "Buscar…"
 
-#: ../app/worldclock/WorldCityList.qml:214
+#: ../app/worldclock/WorldCityList.qml:213
 msgid "Searching for a city"
 msgstr "Buscando una ciudad"
 
-#: ../app/worldclock/WorldCityList.qml:219
+#: ../app/worldclock/WorldCityList.qml:218
 msgid "No City Found"
 msgstr "No se encontró ninguna ciudad"
 
-#: ../app/worldclock/WorldCityList.qml:225
+#: ../app/worldclock/WorldCityList.qml:224
 msgid "Unable to connect."
 msgstr "No se pudo conectar."
 
-#: ../app/worldclock/WorldCityList.qml:226
+#: ../app/worldclock/WorldCityList.qml:225
 msgid "Please check your network connection and try again"
 msgstr "Compruebe la conexión a la red e inténtelo de nuevo"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:43
+msgid "Abidjan"
+msgstr "Abiyán"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:43
+msgid "Ivory Coast"
+msgstr "Costa de Marfil"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:44
+msgid "Accra"
+msgstr "Acra"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:44
+msgid "Ghana"
+msgstr "Ghana"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:45
+msgid "Addis Ababa"
+msgstr "Adís Abeba"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:45
+msgid "Ethiopia"
+msgstr "Etiopía"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:46
+msgid "Adelaide"
+msgstr "Adelaida"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:46
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:91
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:101
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:102
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:124
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:190
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:219
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:246
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:261
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:315
+msgid "Australia"
+msgstr "Australia"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:47
+msgid "Albuquerque"
+msgstr "Albuquerque"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:47
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:53
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:56
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:62
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:64
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:69
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:82
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:83
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:86
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:87
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:108
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:111
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:112
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:114
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:121
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:127
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:128
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:166
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:167
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:170
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:175
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:191
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:199
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:204
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:205
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:209
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:216
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:220
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:222
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:224
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:226
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:227
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:236
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:242
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:244
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:245
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:247
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:248
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:252
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:263
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:265
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:266
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:269
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:273
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:277
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:278
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:285
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:286
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:288
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:289
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:290
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:302
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:311
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:330
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:336
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:337
+msgid "United States"
+msgstr "Estados Unidos"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:48
+msgid "Algiers"
+msgstr "Argel"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:48
+msgid "Algeria"
+msgstr "Argelia"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:49
+msgid "Almaty"
+msgstr "Almaty"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:49
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:58
+msgid "Kazakhstan"
+msgstr "Kazajistán"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:50
+msgid "Amman"
+msgstr "Amán"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:50
+msgid "Jordan"
+msgstr "Jordania"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:51
+msgid "Amsterdam"
+msgstr "Ámsterdam"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:51
+msgid "Netherlands"
+msgstr "Países Bajos"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:52
+msgid "Anadyr"
+msgstr "Anadyr"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:52
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:235
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:262
+msgid "Russia"
+msgstr "Rusia"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:53
+msgid "Anchorage"
+msgstr "Anchorage"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:54
+msgid "Andorra"
+msgstr "Andorra"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:55
+msgid "Ankara"
+msgstr "Ankara"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:55
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:173
+msgid "Turkey"
+msgstr "Turquía"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:56
+msgid "Ann Arbor"
+msgstr "Ann Arbor"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:57
+msgid "Antananarivo"
+msgstr "Antananarivo"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:57
+msgid "Madagascar"
+msgstr "Madagascar"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:58
+msgid "Aqtau"
+msgstr "Aktau"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:59
+msgid "Aruba"
+msgstr "Aruba"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:60
+msgid "Asunción"
+msgstr "Asunción"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:60
+msgid "Paraguay"
+msgstr "Paraguay"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:61
+msgid "Athens"
+msgstr "Atenas"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:61
+msgid "Greece"
+msgstr "Grecia"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:62
+msgid "Atlanta"
+msgstr "Atlanta"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:63
+msgid "Auckland"
+msgstr "Auckland"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:63
+msgid "New Zealand"
+msgstr "Nueva Zelanda"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:64
+msgid "Austin"
+msgstr "Austin"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:66
+msgid "Baghdad"
+msgstr "Bagdad"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:66
+msgid "Iraq"
+msgstr "Irak"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:67
+msgid "Bahrain"
+msgstr "Bahréin"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:68
+msgid "Baku"
+msgstr ""
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:68
+msgid "Azerbaijan"
+msgstr "Azerbaiyán"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:69
+msgid "Baltimore"
+msgstr "Baltimore"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:70
+msgid "Bangalore"
+msgstr "Bangalore"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:70
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:98
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:126
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:153
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:168
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:237
+msgid "India"
+msgstr "La India"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:71
+msgid "Bangkok"
+msgstr "Bangkok"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:71
+msgid "Thailand"
+msgstr "Tailandia"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:72
+msgid "Barbados"
+msgstr "Barbados"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:73
+msgid "Barcelona"
+msgstr "Barcelona"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:73
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:210
+msgid "Spain"
+msgstr "España"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:74
+msgid "Beijing"
+msgstr "Pekín"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:74
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:151
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:304
+msgid "China"
+msgstr "China"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:75
+msgid "Beirut"
+msgstr "Beirut"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:75
+msgid "Lebanon"
+msgstr "Líbano"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:76
+msgid "Belfast"
+msgstr "Belfast"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:76
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:100
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:202
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:214
+msgid "United Kingdom"
+msgstr "Reino Unido"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:77
+msgid "Belgrade"
+msgstr "Belgrado"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:77
+msgid "Serbia"
+msgstr "Serbia"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:78
+msgid "Belize"
+msgstr "Belice"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:79
+msgid "Belo Horizonte"
+msgstr "Belo Horizonte"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:79
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:88
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:141
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:281
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:298
+msgid "Brazil"
+msgstr "Brasil"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:80
+msgid "Berlin"
+msgstr "Berlín"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:80
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:142
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:158
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:238
+msgid "Germany"
+msgstr "Alemania"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:81
+msgid "Bermuda"
+msgstr ""
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:82
+msgid "Beulah"
+msgstr ""
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:83
+msgid "Black Rock City"
+msgstr ""
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:84
+msgid "Blantyre"
+msgstr ""
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:84
+msgid "Malawi"
+msgstr ""
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:85
+msgid "Bogotá"
+msgstr "Bogotá"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:85
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:250
+msgid "Colombia"
+msgstr "Colombia"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:86
+msgid "Boston"
+msgstr "Boston"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:87
+msgid "Boulder"
+msgstr ""
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:88
+msgid "Brasília"
+msgstr "Brasilia"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:89
+msgid "Bratislava"
+msgstr "Bratislava"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:89
+msgid "Slovakia"
+msgstr "Eslovaquia"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:90
+msgid "Brazzaville"
+msgstr ""
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:90
+msgid "Republic of the Congo"
+msgstr "República del Congo"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:91
+msgid "Brisbane"
+msgstr ""
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:92
+msgid "Brussels"
+msgstr "Bruselas"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:92
+msgid "Belgium"
+msgstr "Bélgica"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:93
+msgid "Bucharest"
+msgstr "Bucarest"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:93
+msgid "Romania"
+msgstr "Rumanía"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:94
+msgid "Budapest"
+msgstr "Budapest"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:94
+msgid "Hungary"
+msgstr "Hungría"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:95
+msgid "Buenos Aires"
+msgstr "Buenos Aires"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:95
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:221
+msgid "Argentina"
+msgstr "Argentina"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:97
+msgid "Cairo"
+msgstr "El Cairo"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:97
+msgid "Egypt"
+msgstr "Egipto"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:98
+msgid "Calcutta"
+msgstr "Calcuta"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:99
+msgid "Calgary"
+msgstr "Calgary"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:99
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:125
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:137
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:157
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:186
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:189
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:217
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:234
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:255
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:301
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:309
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:321
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:328
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:338
+msgid "Canada"
+msgstr "Canadá"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:100
+msgid "Cambridge"
+msgstr "Cambridge"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:101
+msgid "Canary"
+msgstr ""
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:102
+msgid "Canberra"
+msgstr "Camberra"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:103
+msgid "Cancún"
+msgstr "Cancún"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:103
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:109
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:223
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:232
+msgid "Mexico"
+msgstr "México"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:104
+msgid "Cape Town"
+msgstr "Ciudad del Cabo"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:104
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:178
+msgid "South Africa"
+msgstr "Sudáfrica"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:105
+msgid "Caracas"
+msgstr "Caracas"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:105
+msgid "Venezuela"
+msgstr "Venezuela"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:106
+msgid "Casablanca"
+msgstr "Casablanca"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:106
+msgid "Morocco"
+msgstr "Marruecos"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:107
+msgid "Cayman Palms"
+msgstr ""
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:107
+msgid "Cayman Islands"
+msgstr "Islas Caimán"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:108
+msgid "Chicago"
+msgstr "Chicago"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:109
+msgid "Chihuahua"
+msgstr "Chihuahua"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:110
+msgid "Chişinău"
+msgstr ""
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:110
+msgid "Moldova"
+msgstr "Moldavia"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:111
+msgid "Cincinnati"
+msgstr "Cincinnati"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:112
+msgid "Cleveland"
+msgstr "Cleveland"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:113
+msgid "Colombo"
+msgstr ""
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:113
+msgid "Sri Lanka"
+msgstr "Sri Lanka"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:114
+msgid "Columbus"
+msgstr ""
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:115
+msgid "Conakry"
+msgstr "Conakry"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:115
+msgid "Guinea"
+msgstr "Guinea"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:116
+msgid "Copenhagen"
+msgstr "Copenhague"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:116
+msgid "Denmark"
+msgstr "Dinamarca"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:117
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:291
+msgid "Costa Rica"
+msgstr "Costa Rica"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:118
+msgid "Curaçao"
+msgstr ""
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:118
+msgid "Curacao"
+msgstr ""
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:120
+msgid "Dakar"
+msgstr ""
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:120
+msgid "Senegal"
+msgstr "Senegal"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:121
+msgid "Dallas"
+msgstr "Dallas"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:122
+msgid "Damascus"
+msgstr "Damasco"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:122
+msgid "Syria"
+msgstr "Siria"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:123
+msgid "Dar es Salaam"
+msgstr ""
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:123
+msgid "Tanzania"
+msgstr "Tanzania"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:124
+msgid "Darwin"
+msgstr "Darwin"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:125
+msgid "Dawson Creek"
+msgstr "Dawson Creek"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:126
+msgid "Delhi"
+msgstr "Delhi"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:127
+msgid "Denver"
+msgstr ""
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:128
+msgid "Detroit"
+msgstr "Detroit"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:129
+msgid "Dhaka"
+msgstr ""
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:129
+msgid "Bangladesh"
+msgstr ""
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:130
+msgid "Djibouti"
+msgstr ""
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:131
+msgid "Doha"
+msgstr ""
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:131
+msgid "Qatar"
+msgstr ""
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:132
+msgid "Dominica"
+msgstr "Dominica"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:133
+msgid "Dubai"
+msgstr "Dubai"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:133
+msgid "United Arab Emirates"
+msgstr "Emiratos Árabes Unidos"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:134
+msgid "Dublin"
+msgstr "Dublín"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:134
+msgid "Ireland"
+msgstr "Irlanda"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:136
+msgid "Easter Island"
+msgstr "Isla de Pascua"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:136
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:296
+msgid "Chile"
+msgstr "Chile"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:137
+msgid "Edmonton"
+msgstr ""
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:138
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:294
+msgid "El Salvador"
+msgstr "El Salvador"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:140
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:314
+msgid "Fiji"
+msgstr ""
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:141
+msgid "Fortaleza"
+msgstr "Fortaleza"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:142
+msgid "Frankfurt"
+msgstr "Frankfurt"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:143
+msgid "Freetown"
+msgstr "Freetown"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:143
+msgid "Sierra Leone"
+msgstr "Sierra Leona"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:145
+msgid "Gaborone"
+msgstr ""
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:145
+msgid "Botswana"
+msgstr ""
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:146
+msgid "Gaza"
+msgstr "Gaza"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:146
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:162
+msgid "Palestine"
+msgstr "Palestina"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:147
+msgid "Gibraltar"
+msgstr "Gibraltar"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:148
+msgid "Grand Turk"
+msgstr ""
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:148
+msgid "Turks and Caicos Islands"
+msgstr ""
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:149
+msgid "Grenada"
+msgstr "Granada"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:150
+msgid "Guam"
+msgstr ""
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:151
+msgid "Guangzhou"
+msgstr "Guangzhou"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:152
+msgid "Guatemala"
+msgstr "Guatemala"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:153
+msgid "Gurgaon"
+msgstr ""
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:154
+msgid "Guyana"
+msgstr "Guayana"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:156
+msgid "Haifa"
+msgstr "Haifa"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:156
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:177
+msgid "Israel"
+msgstr "Israel"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:157
+msgid "Halifax"
+msgstr ""
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:158
+msgid "Hamburg"
+msgstr "Hamburgo"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:159
+msgid "Hanoi"
+msgstr ""
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:159
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:164
+msgid "Vietnam"
+msgstr "Vietnam"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:160
+msgid "Harare"
+msgstr ""
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:160
+msgid "Zimbabwe"
+msgstr ""
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:161
+msgid "Havana"
+msgstr "La Habana"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:161
+msgid "Cuba"
+msgstr "Cuba"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:162
+msgid "Hebron"
+msgstr "Hebrón"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:163
+msgid "Helsinki"
+msgstr "Helsinki"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:163
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:256
+msgid "Finland"
+msgstr "Finlandia"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:164
+msgid "Ho Chi Minh City"
+msgstr ""
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:165
+msgid "Hong Kong"
+msgstr "Hong Kong"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:166
+msgid "Honolulu"
+msgstr "Honolulú"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:167
+msgid "Houston"
+msgstr "Houston"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:168
+msgid "Hyderabad"
+msgstr ""
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:170
+msgid "Indianapolis"
+msgstr "Indianápolis"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:171
+msgid "Islamabad"
+msgstr "Islamabad"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:171
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:182
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:198
+msgid "Pakistan"
+msgstr ""
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:172
+msgid "Isle of Man"
+msgstr "Isla de Man"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:173
+msgid "Istanbul"
+msgstr "Estambúl"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:175
+msgid "Jacksonville"
+msgstr "Jacksonville"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:176
+msgid "Jakarta"
+msgstr ""
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:176
+msgid "Indonesia"
+msgstr "Indonesia"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:177
+msgid "Jerusalem"
+msgstr "Jerusalén"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:178
+msgid "Johannesburg"
+msgstr "Johannesburgo"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:180
+msgid "Kabul"
+msgstr ""
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:180
+msgid "Afghanistan"
+msgstr "Afganistán"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:181
+msgid "Kampala"
+msgstr ""
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:181
+msgid "Uganda"
+msgstr "Uganda"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:182
+msgid "Karachi"
+msgstr "Karachi"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:183
+msgid "Khartoum"
+msgstr ""
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:183
+msgid "Sudan"
+msgstr "Sudán"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:184
+msgid "Kiev"
+msgstr "Kiev"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:184
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:195
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:306
+msgid "Ukraine"
+msgstr "Ucrania"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:185
+msgid "Kigali"
+msgstr "Kigali"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:185
+msgid "Rwanda"
+msgstr ""
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:186
+msgid "Kingston"
+msgstr "Kingston"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:187
+msgid "Kinshasa"
+msgstr ""
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:187
+msgid "Democratic Republic of the Congo"
+msgstr "República Democrática del Congo"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:188
+msgid "Kiritimati"
+msgstr "Kiritimati"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:188
+msgid "Kiribati"
+msgstr ""
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:189
+msgid "Kirkland"
+msgstr "Kirkland"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:190
+msgid "Knox"
+msgstr "Knox"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:191
+msgid "Knoxville"
+msgstr "Knoxville"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:192
+msgid "Kraków"
+msgstr ""
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:192
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:335
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:339
+msgid "Poland"
+msgstr "Polonia"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:193
+msgid "Kuala Lumpur"
+msgstr "Kuala Lumpur"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:193
+msgid "Malaysia"
+msgstr "Malasia"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:194
+msgid "Kuwait City"
+msgstr "Ciudad de Kuwait"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:194
+msgid "Kuwait"
+msgstr "Kuwait"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:195
+msgid "Kyiv"
+msgstr "Kyiv"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:197
+msgid "Lagos"
+msgstr "Lagos"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:197
+msgid "Nigeria"
+msgstr "Nigeria"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:198
+msgid "Lahore"
+msgstr ""
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:199
+msgid "Las Vegas"
+msgstr "Las Vegas"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:200
+msgid "Lima"
+msgstr "Lima"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:200
+msgid "Peru"
+msgstr "Perú"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:201
+msgid "Lisbon"
+msgstr "Lisboa"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:201
+msgid "Portugal"
+msgstr "Portugal"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:202
+msgid "London"
+msgstr "Londres"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:203
+msgid "Longyearbyen"
+msgstr ""
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:203
+msgid "Svalbard and Jan Mayen"
+msgstr ""
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:204
+msgid "Los Angeles"
+msgstr "Los Ángeles"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:205
+msgid "Louisville"
+msgstr "Louisville"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:206
+msgid "Luxembourg"
+msgstr "Luxemburgo"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:208
+msgid "Macau"
+msgstr ""
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:208
+msgid "Macao"
+msgstr ""
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:209
+msgid "Madison"
+msgstr ""
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:210
+msgid "Madrid"
+msgstr "Madrid"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:211
+msgid "Maldives"
+msgstr "Maldivas"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:212
+msgid "Malta"
+msgstr "Malta"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:213
+msgid "Managua"
+msgstr "Managua"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:213
+msgid "Nicaragua"
+msgstr "Nicaragua"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:214
+msgid "Manchester"
+msgstr ""
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:215
+msgid "Manila"
+msgstr "Manila"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:215
+msgid "Philippines"
+msgstr "Filipinas"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:216
+msgid "Marengo"
+msgstr "Marengo"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:217
+msgid "Martinique"
+msgstr "Martinica"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:218
+msgid "Maseru"
+msgstr ""
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:218
+msgid "Lesotho"
+msgstr ""
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:219
+msgid "Melbourne"
+msgstr ""
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:220
+msgid "Memphis"
+msgstr ""
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:221
+msgid "Mendoza"
+msgstr "Mendoza"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:222
+msgid "Metlakatla"
+msgstr "Metlakatla"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:223
+msgid "Mexico City"
+msgstr "Ciudad de México"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:224
+msgid "Miami"
+msgstr "Miami"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:225
+msgid "Milan"
+msgstr "Milán"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:225
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:283
+msgid "Italy"
+msgstr "Italia"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:226
+msgid "Milwaukee"
+msgstr "Milwaukee"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:227
+msgid "Minneapolis"
+msgstr "Mineápolis"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:228
+msgid "Minsk"
+msgstr "Minsk"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:228
+msgid "Belarus"
+msgstr "Bielorrusia"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:229
+msgid "Mogadishu"
+msgstr "Mogadiscio"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:229
+msgid "Somalia"
+msgstr "Somalia"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:230
+msgid "Monrovia"
+msgstr "Monrovia"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:230
+msgid "Liberia"
+msgstr "Liberia"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:231
+msgid "Monaco"
+msgstr "Mónaco"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:232
+msgid "Monterrey"
+msgstr "Monterrey"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:233
+msgid "Montevideo"
+msgstr "Montevideo"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:233
+msgid "Uruguay"
+msgstr "Uruguay"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:234
+msgid "Montreal"
+msgstr "Montreal"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:235
+msgid "Moscow"
+msgstr "Moscú"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:236
+msgid "Mountain View"
+msgstr "Mountain View"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:237
+msgid "Mumbai"
+msgstr ""
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:238
+msgid "Munich"
+msgstr ""
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:239
+msgid "Muscat"
+msgstr ""
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:239
+msgid "Oman"
+msgstr "Omán"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:241
+msgid "Nairobi"
+msgstr "Nairobi"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:241
+msgid "Kenya"
+msgstr "Kenia"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:242
+msgid "Nashville"
+msgstr "Nashville"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:243
+msgid "Nassau"
+msgstr "Nassau"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:243
+msgid "Bahamas"
+msgstr ""
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:244
+msgid "New Orleans"
+msgstr "Nueva Orleans"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:245
+msgid "New Salem"
+msgstr "New Salem"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:246
+msgid "New South Wales"
+msgstr "Nueva Gales del Sur"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:247
+msgid "New York"
+msgstr "Nueva York"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:248
+msgid "Newfoundland"
+msgstr ""
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:249
+msgid "Nouméa"
+msgstr ""
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:249
+msgid "New Caledonia"
+msgstr "Nueva Caledonia"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:250
+msgid "Nuestra Señora de La Paz"
+msgstr "Nuestra Señora de La Paz"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:252
+msgid "Oklahoma City"
+msgstr "Ciudad de Oklahoma"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:253
+msgid "Osaka"
+msgstr "Osaka"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:253
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:320
+msgid "Japan"
+msgstr "Japón"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:254
+msgid "Oslo"
+msgstr "Oslo"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:254
+msgid "Norway"
+msgstr "Noruega"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:255
+msgid "Ottawa"
+msgstr "Ottawa"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:256
+msgid "Oulu"
+msgstr ""
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:258
+msgid "Panamá"
+msgstr "Panamá"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:258
+msgid "Panama"
+msgstr "Panamá"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:259
+msgid "Paramaribo"
+msgstr "Paramaribo"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:259
+msgid "Suriname"
+msgstr ""
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:260
+msgid "Paris"
+msgstr "París"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:260
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:333
+msgid "France"
+msgstr "Francia"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:261
+msgid "Perth"
+msgstr "Perth"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:262
+msgid "Petersburg"
+msgstr ""
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:263
+msgid "Philadelphia"
+msgstr "Filadelfia"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:264
+msgid "Phnom Penh"
+msgstr ""
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:264
+msgid "Cambodia"
+msgstr "Camboya"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:265
+msgid "Phoenix"
+msgstr ""
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:266
+msgid "Pittsburgh"
+msgstr "Pittsburgh"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:267
+msgid "Port of Spain"
+msgstr "Puerto España"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:267
+msgid "Trinidad and Tobago"
+msgstr "Trinidad y Tobago"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:268
+msgid "Port au Prince"
+msgstr "Puerto Príncipe"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:268
+msgid "Haiti"
+msgstr "Haití"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:269
+msgid "Portland"
+msgstr "Portland"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:270
+msgid "Prague"
+msgstr "Praga"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:270
+msgid "Czech"
+msgstr ""
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:271
+msgid "Pyongyang"
+msgstr "Pyongyang"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:271
+msgid "North Korea"
+msgstr "Corea del Norte"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:273
+msgid "Queensland"
+msgstr "Queensland"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:274
+msgid "Quito"
+msgstr "Quito"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:274
+msgid "Ecuador"
+msgstr "Ecuador"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:276
+msgid "Rangoon"
+msgstr ""
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:276
+msgid "Myanmar"
+msgstr ""
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:277
+msgid "Reno"
+msgstr "Reno"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:278
+msgid "Reston"
+msgstr ""
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:279
+msgid "Reykjavík"
+msgstr ""
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:279
+msgid "Iceland"
+msgstr "Islandia"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:280
+msgid "Riga"
+msgstr "Riga"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:280
+msgid "Latvia"
+msgstr "Letonia"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:281
+msgid "Rio de Janeiro"
+msgstr "Río de Janeiro"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:282
+msgid "Riyadh"
+msgstr ""
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:282
+msgid "Saudi Arabia"
+msgstr "Arabia Saudí"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:283
+msgid "Rome"
+msgstr "Roma"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:285
+msgid "Sacramento"
+msgstr "Sacramento"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:286
+msgid "Salt Lake City"
+msgstr ""
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:287
+msgid "Samoa"
+msgstr "Samoa"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:288
+msgid "San Antonio"
+msgstr "San Antonio"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:289
+msgid "San Diego"
+msgstr "San Diego"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:290
+msgid "San Francisco"
+msgstr "San Francisco"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:291
+msgid "San José"
+msgstr "San José"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:292
+msgid "San Juan"
+msgstr "San Juán"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:292
+msgid "Puerto Rico"
+msgstr "Puerto Rico"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:293
+msgid "San Marino"
+msgstr "San Marino"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:294
+msgid "San Salvador"
+msgstr "San Salvador"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:295
+msgid "Sanaa"
+msgstr ""
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:295
+msgid "Yemen"
+msgstr "Yemen"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:296
+msgid "Santiago"
+msgstr "Santiago"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:297
+msgid "Santo Domingo"
+msgstr "Santo Domingo"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:297
+msgid "Dominican Republic"
+msgstr "República Dominicana"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:298
+msgid "São Paulo"
+msgstr "São Paulo"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:299
+msgid "São Tomé"
+msgstr "São Tomé"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:299
+msgid "São Tomé and Príncipe"
+msgstr "São Tomé y Príncipe"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:300
+msgid "Sarajevo"
+msgstr "Sarajevo"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:300
+msgid "Bosnia and Herzegovina"
+msgstr "Bosnia y Herzegovina"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:301
+msgid "Saskatchewan"
+msgstr ""
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:302
+msgid "Seattle"
+msgstr "Seattle"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:303
+msgid "Seoul"
+msgstr "Seúl"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:303
+msgid "South Korea"
+msgstr "Corea del Sur"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:304
+msgid "Shanghai"
+msgstr ""
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:305
+msgid "Singapore"
+msgstr "Singapur"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:306
+msgid "Simferopol’"
+msgstr ""
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:307
+msgid "Skopje"
+msgstr ""
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:307
+msgid "Macedonia"
+msgstr "Macedonia"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:308
+msgid "Sofia"
+msgstr "Sofía"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:308
+msgid "Bulgaria"
+msgstr "Bulgaria"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:309
+msgid "St.Johns"
+msgstr "St.Johns"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:310
+msgid "St.Kitts"
+msgstr "St.Kitts"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:310
+msgid "Saint Kitts and Nevis"
+msgstr ""
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:311
+msgid "St.Louis"
+msgstr ""
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:312
+msgid "Stanley"
+msgstr "Stanley"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:312
+msgid "Falkland Islands"
+msgstr "Islas Malvinas"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:313
+msgid "Stockholm"
+msgstr "Estocolmo"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:313
+msgid "Sweden"
+msgstr "Suecia"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:314
+msgid "Suva"
+msgstr ""
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:315
+msgid "Sydney"
+msgstr ""
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:317
+msgid "Taipei"
+msgstr "Taipei"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:317
+msgid "Taiwan"
+msgstr "Taiwán"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:318
+msgid "Tallinn"
+msgstr ""
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:318
+msgid "Estonia"
+msgstr "Estonia"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:319
+msgid "Tehran"
+msgstr "Teherán"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:319
+msgid "Iran"
+msgstr "Irán"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:320
+msgid "Tokyo"
+msgstr "Tokio"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:321
+msgid "Toronto"
+msgstr "Toronto"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:322
+msgid "Tripoli"
+msgstr "Trípoli"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:322
+msgid "Libyra"
+msgstr ""
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:323
+msgid "Tunis"
+msgstr ""
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:323
+msgid "Tunisia"
+msgstr ""
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:325
+msgid "Ulan Bator"
+msgstr ""
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:325
+msgid "Mongolia"
+msgstr "Mongolia"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:326
+msgid "UTC"
+msgstr "UTC"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:328
+msgid "Vancouver"
+msgstr ""
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:329
+msgid "Vatican City"
+msgstr "Ciudad del Vaticano"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:330
+msgid "Vevay"
+msgstr ""
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:331
+msgid "Vienna"
+msgstr "Viena"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:331
+msgid "Austria"
+msgstr "Austria"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:332
+msgid "Vilnius"
+msgstr ""
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:332
+msgid "Lithuania"
+msgstr "Lituania"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:333
+msgid "Vincennes"
+msgstr ""
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:335
+msgid "Warsaw"
+msgstr "Varsovia"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:336
+msgid "Washington D.C"
+msgstr ""
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:337
+msgid "Winamac"
+msgstr ""
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:338
+msgid "Winnipeg"
+msgstr "Winnipeg"
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:339
+msgid "Wrocław"
+msgstr ""
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:341
+msgid "Zagreb"
+msgstr ""
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:341
+msgid "Croatia"
+msgstr ""
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:342
+msgid "Zürich"
+msgstr ""
+
+#: ../backend/modules/Timezone/statictimezonemodel.cpp:342
+msgid "Switzerland"
+msgstr ""
 
 #: ubuntu-clock-app.desktop.in.in.h:1
 msgid "Clock"
