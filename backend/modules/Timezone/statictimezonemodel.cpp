@@ -319,7 +319,7 @@ void StaticTimeZoneModel::loadDefaultCityList()
     addCity(_("Tehran"), "Asia/Tehran", _("Iran"));
     addCity(_("Tokyo"), "Asia/Tokyo", _("Japan"));
     addCity(_("Toronto"), "America/Toronto", _("Canada"));
-    addCity(_("Tripoli"), "Africa/Tripoli", _("Libyra"));
+    addCity(_("Tripoli"), "Africa/Tripoli", _("Libya"));
     addCity(_("Tunis"), "Africa/Tunis", _("Tunisia"));
 
     addCity(_("Ulan Bator"), "Asia/Ulan_Bator", _("Mongolia"));
