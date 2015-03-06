@@ -129,7 +129,7 @@ MultipleSelectionListView {
 
             else {
                 pageStack.push(Qt.resolvedUrl("EditAlarmPage.qml"),
-                               {isNewAlarm: false, alarmIndex: index, alarmModel: alarmModel})
+                               {isNewAlarm: false, tempAlarm: model})
             }
         }
 

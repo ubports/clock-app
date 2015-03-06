@@ -31,14 +31,8 @@ Page {
     // Property to determine if this is a new/saved alarm
     property bool isNewAlarm: true
 
-    // Property to store the index of the alarm to be edited
-    property int alarmIndex
-
     // Temporary alarm used to read saved alarm and modify them
     property var tempAlarm
-
-    // Property to store the alarm model
-    property var alarmModel
 
     title: isNewAlarm ? i18n.tr("New alarm") : i18n.tr("Edit alarm")
     visible: false
@@ -82,8 +76,6 @@ Page {
 
     // Function to read a saved alarm
     function readAlarm() {
-        tempAlarm = alarmModel.get(alarmIndex)
-
         _alarm.message = tempAlarm.message
         _alarm.type = tempAlarm.type
         _alarm.daysOfWeek = tempAlarm.daysOfWeek
@@ -94,7 +86,6 @@ Page {
 
     // Function to delete a saved alarm
     function deleteAlarm() {
-        tempAlarm = alarmModel.get(alarmIndex)
         tempAlarm.cancel()
 
         if(validateAlarm(tempAlarm)) {
@@ -104,8 +95,6 @@ Page {
 
     // Function to update a saved alarm
     function updateAlarm() {
-        tempAlarm = alarmModel.get(alarmIndex)
-
         var alarmTime = new Date()
         alarmTime.setHours(_timePicker.hours, _timePicker.minutes, 0)
 
