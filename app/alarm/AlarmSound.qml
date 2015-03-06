@@ -95,11 +95,10 @@ Page {
 
                         checked: alarmSound.subText === _soundName.text ? true
                                                                         : false
-                        onClicked: {
-                            previewAlarmSound.source = fileURL
-                            previewAlarmSound.play()
-
+                        onCheckedChanged: {
                             if (checked) {
+                                previewAlarmSound.source = fileURL
+                                previewAlarmSound.play()
                                 alarmSound.subText = _soundName.text
                                 alarm.sound = fileURL
 
@@ -111,10 +110,18 @@ Page {
                                     }
                                 }
                             }
+                        }
 
-                            else {
-                                checked = !checked
+                        onClicked: {
+                            if (!checked) {
+                                checked = true
                             }
+                        }
+                    }
+
+                    onClicked: {
+                        if (!_soundStatus.checked) {
+                            _soundStatus.checked = true
                         }
                     }
                 }
