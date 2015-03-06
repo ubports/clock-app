@@ -121,13 +121,6 @@ Page {
 
                     onClicked: {
                         if (!_soundStatus.checked) {
-                            // Ensures only one alarm sound is selected
-                            for(var i=0; i<soundModel.count; i++) {
-                                if(_alarmSounds.itemAt(i).isChecked &&
-                                        i !== index) {
-                                    _alarmSounds.itemAt(i).isChecked = false
-                                }
-                            }
                             _soundStatus.checked = true
                         }
                     }
