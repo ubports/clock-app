@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2015-03-05 13:52+0100\n"
-"PO-Revision-Date: 2015-03-06 05:41+0000\n"
+"POT-Creation-Date: 2015-03-06 11:52+0100\n"
+"PO-Revision-Date: 2015-03-06 18:38+0000\n"
 "Last-Translator: Marcos Lans <Unknown>\n"
 "Language-Team: Galician <gl@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-03-06 06:07+0000\n"
-"X-Generator: Launchpad (build 17374)\n"
+"X-Launchpad-Export-Date: 2015-03-07 05:47+0000\n"
+"X-Generator: Launchpad (build 17383)\n"
 
 #: ../app/alarm/AlarmLabel.qml:30 ../app/alarm/AlarmLabel.qml:56
 #: ../app/alarm/EditAlarmPage.qml:302
@@ -1882,8 +1882,8 @@ msgid "Tripoli"
 msgstr "Trípoli"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:322
-msgid "Libyra"
-msgstr "Libyra"
+msgid "Libya"
+msgstr "Libia"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:323
 msgid "Tunis"
