@@ -303,7 +303,7 @@ void StaticTimeZoneModel::loadDefaultCityList()
     addCity(_("Seoul"), "Asia/Seoul", _("South Korea"));
     addCity(_("Shanghai"), "Asia/Shanghai", _("China"));
     addCity(_("Singapore"), "Asia/Singapore", _("Singapore"));
-    addCity(_("Simferopol’"), "Europe/Simferopol", _("Ukraine"));
+    addCity(_("Simferopol"), "Europe/Simferopol", _("Ukraine"));
     addCity(_("Skopje"), "Europe/Skopje", _("Macedonia"));
     addCity(_("Sofia"), "Europe/Sofia", _("Bulgaria"));
     addCity(_("St.Johns"), "America/St_Johns", _("Canada"));
