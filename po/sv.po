@@ -8,24 +8,24 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2015-03-06 11:52+0100\n"
-"PO-Revision-Date: 2014-09-19 06:10+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2015-03-07 10:37+0000\n"
+"Last-Translator: Josef Andersson <Unknown>\n"
 "Language-Team: Swedish <sv@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-03-07 05:47+0000\n"
+"X-Launchpad-Export-Date: 2015-03-08 05:40+0000\n"
 "X-Generator: Launchpad (build 17383)\n"
 
 #: ../app/alarm/AlarmLabel.qml:30 ../app/alarm/AlarmLabel.qml:56
 #: ../app/alarm/EditAlarmPage.qml:302
 msgid "Label"
-msgstr ""
+msgstr "Etikett"
 
 #: ../app/alarm/AlarmList.qml:78 ../app/alarm/AlarmPage.qml:117
 #: ../app/worldclock/UserWorldCityList.qml:101
 msgid "Delete"
-msgstr ""
+msgstr "Ta bort"
 
 #: ../app/alarm/AlarmPage.qml:26
 msgid "Alarms"
@@ -38,27 +38,27 @@ msgstr "Alarm"
 
 #: ../app/alarm/AlarmPage.qml:58 ../app/worldclock/WorldCityList.qml:80
 msgid "Back"
-msgstr ""
+msgstr "Bakåt"
 
 #: ../app/alarm/AlarmPage.qml:87
 msgid "Select None"
-msgstr ""
+msgstr "Markera inget"
 
 #: ../app/alarm/AlarmPage.qml:89 ../app/alarm/AlarmRepeat.qml:38
 msgid "Select All"
-msgstr ""
+msgstr "Markera allt"
 
 #: ../app/alarm/AlarmPage.qml:154
 msgid "No saved alarms"
-msgstr ""
+msgstr "Inga sparade alarm"
 
 #: ../app/alarm/AlarmPage.qml:155
 msgid "Tap the + icon to add an alarm"
-msgstr ""
+msgstr "Tryck på ikonen + för att lägga till ett alarm"
 
 #: ../app/alarm/AlarmRepeat.qml:34 ../app/alarm/EditAlarmPage.qml:292
 msgid "Repeat"
-msgstr ""
+msgstr "Upprepa"
 
 #: ../app/alarm/AlarmSettingsPage.qml:29
 msgid "Settings"
@@ -72,43 +72,43 @@ msgstr "Inställningar"
 #: ../app/alarm/AlarmSettingsPage.qml:215
 #, qt-format
 msgid "%1 minutes"
-msgstr ""
+msgstr "%1 minuter"
 
 #: ../app/alarm/AlarmSettingsPage.qml:92
 msgid "Alarm volume"
-msgstr ""
+msgstr "Alarmvolym"
 
 #: ../app/alarm/AlarmSettingsPage.qml:145
 msgid "Silence after"
-msgstr ""
+msgstr "Tyst efter"
 
 #: ../app/alarm/AlarmSettingsPage.qml:214
 msgid "Snooze for"
-msgstr ""
+msgstr "Snooze i"
 
 #: ../app/alarm/AlarmSettingsPage.qml:259
 msgid "Vibration"
-msgstr ""
+msgstr "Vibration"
 
 #: ../app/alarm/AlarmSettingsPage.qml:293
 msgid "Change time and date"
-msgstr ""
+msgstr "Ändra tid och datum"
 
 #: ../app/alarm/AlarmSound.qml:28 ../app/alarm/EditAlarmPage.qml:315
 msgid "Sound"
-msgstr ""
+msgstr "Ljud"
 
 #: ../app/alarm/AlarmUtils.qml:31
 msgid "Never"
-msgstr ""
+msgstr "Aldrig"
 
 #: ../app/alarm/AlarmUtils.qml:37
 msgid "Weekdays"
-msgstr ""
+msgstr "Veckodagar"
 
 #: ../app/alarm/AlarmUtils.qml:41
 msgid "Weekends"
-msgstr ""
+msgstr "Helger"
 
 #: ../app/alarm/AlarmUtils.qml:45
 msgid "Daily"
@@ -116,55 +116,55 @@ msgstr "Dagligen"
 
 #: ../app/alarm/AlarmUtils.qml:55
 msgid "No active alarms"
-msgstr ""
+msgstr "Inga aktiva alarm"
 
 #: ../app/alarm/AlarmUtils.qml:72
 #, qt-format
 msgid "Next Alarm %1"
-msgstr ""
+msgstr "Nästa alarm %1"
 
 #: ../app/alarm/AlarmUtils.qml:79
 msgid "Alarm Passed"
-msgstr ""
+msgstr "Alarm passerat"
 
 #: ../app/alarm/AlarmUtils.qml:89
 #, no-c-format, qt-format
 msgid "in %1d %2h %3m"
-msgstr ""
+msgstr "i %1d %2t %3m"
 
 #: ../app/alarm/AlarmUtils.qml:99
 #, no-c-format, qt-format
 msgid "in %1h %2m"
-msgstr ""
+msgstr "i %1t %2m"
 
 #: ../app/alarm/AlarmUtils.qml:108
 #, no-c-format, qt-format
 msgid "in %1m"
-msgstr ""
+msgstr "i %1m"
 
 #: ../app/alarm/EditAlarmPage.qml:43
 msgid "New alarm"
-msgstr ""
+msgstr "Nytt alarm"
 
 #: ../app/alarm/EditAlarmPage.qml:43
 msgid "Edit alarm"
-msgstr ""
+msgstr "Redigera alarm"
 
 #: ../app/alarm/EditAlarmPage.qml:336
 msgid "Delete alarm"
-msgstr ""
+msgstr "Ta bort alarm"
 
 #: ../app/clock/ClockPage.qml:271
 msgid "Location Service Error!"
-msgstr ""
+msgstr "Platstjänsfel!"
 
 #: ../app/clock/ClockPage.qml:273
 msgid "Retrieving location..."
-msgstr ""
+msgstr "Hämtar plats..."
 
 #: ../app/worldclock/AddWorldCityButton.qml:30
 msgid "Add"
-msgstr ""
+msgstr "Lägg till"
 
 #: ../app/worldclock/AddWorldCityButton.qml:61
 #: ../app/worldclock/WorldCityList.qml:64
