@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2015-03-06 11:52+0100\n"
-"PO-Revision-Date: 2015-02-04 20:45+0000\n"
-"Last-Translator: Volkan Gezer <Unknown>\n"
+"PO-Revision-Date: 2015-03-09 19:33+0000\n"
+"Last-Translator: Mutlu Can YILMAZ <mtlcnylmz@gmail.com>\n"
 "Language-Team: Turkish <tr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-03-07 05:47+0000\n"
-"X-Generator: Launchpad (build 17383)\n"
+"X-Launchpad-Export-Date: 2015-03-10 05:50+0000\n"
+"X-Generator: Launchpad (build 17389)\n"
 
 #: ../app/alarm/AlarmLabel.qml:30 ../app/alarm/AlarmLabel.qml:56
 #: ../app/alarm/EditAlarmPage.qml:302
@@ -233,19 +233,19 @@ msgstr "Lütfen ağ bağlantınızı denetleyin ve yeniden deneyin"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:43
 msgid "Abidjan"
-msgstr ""
+msgstr "Abidjan"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:43
 msgid "Ivory Coast"
-msgstr ""
+msgstr "Fildişi Sahil"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:44
 msgid "Accra"
-msgstr ""
+msgstr "Accra"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:44
 msgid "Ghana"
-msgstr ""
+msgstr "Gana"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:45
 msgid "Addis Ababa"
@@ -253,7 +253,7 @@ msgstr ""
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:45
 msgid "Ethiopia"
-msgstr ""
+msgstr "Etiyopya"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:46
 msgid "Adelaide"
@@ -270,7 +270,7 @@ msgstr ""
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:261
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:315
 msgid "Australia"
-msgstr ""
+msgstr "Avustralya"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:47
 msgid "Albuquerque"
@@ -333,24 +333,24 @@ msgstr ""
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:336
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:337
 msgid "United States"
-msgstr ""
+msgstr "Amerika Birleşik Devletleri"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:48
 msgid "Algiers"
-msgstr ""
+msgstr "Cezayir"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:48
 msgid "Algeria"
-msgstr ""
+msgstr "Cezayir"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:49
 msgid "Almaty"
-msgstr ""
+msgstr "Almaata"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:49
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:58
 msgid "Kazakhstan"
-msgstr ""
+msgstr "Kazakistan"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:50
 msgid "Amman"
@@ -358,15 +358,15 @@ msgstr ""
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:50
 msgid "Jordan"
-msgstr ""
+msgstr "Ürdün"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:51
 msgid "Amsterdam"
-msgstr ""
+msgstr "Amsterdam"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:51
 msgid "Netherlands"
-msgstr ""
+msgstr "Hollanda"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:52
 msgid "Anadyr"
@@ -376,7 +376,7 @@ msgstr ""
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:235
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:262
 msgid "Russia"
-msgstr ""
+msgstr "Rusya"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:53
 msgid "Anchorage"

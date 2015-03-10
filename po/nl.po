@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2015-03-06 11:52+0100\n"
-"PO-Revision-Date: 2015-03-06 09:32+0000\n"
-"Last-Translator: Hannie Dumoleyn <Unknown>\n"
+"PO-Revision-Date: 2015-03-09 20:19+0000\n"
+"Last-Translator: rob <linuxned@gmail.com>\n"
 "Language-Team: Dutch <nl@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-03-07 05:47+0000\n"
-"X-Generator: Launchpad (build 17383)\n"
+"X-Launchpad-Export-Date: 2015-03-10 05:50+0000\n"
+"X-Generator: Launchpad (build 17389)\n"
 
 #: ../app/alarm/AlarmLabel.qml:30 ../app/alarm/AlarmLabel.qml:56
 #: ../app/alarm/EditAlarmPage.qml:302
@@ -702,7 +702,7 @@ msgstr "Cambridge"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:101
 msgid "Canary"
-msgstr "Canarische eilanden"
+msgstr "Canarische Eilanden"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:102
 msgid "Canberra"
@@ -887,7 +887,7 @@ msgstr "Qatar"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:132
 msgid "Dominica"
-msgstr "Dominicaanse republiek"
+msgstr "Gemenebest Dominica"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:133
 msgid "Dubai"
@@ -1883,7 +1883,7 @@ msgstr "Tripoli"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:322
 msgid "Libya"
-msgstr ""
+msgstr "Libië"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:323
 msgid "Tunis"
