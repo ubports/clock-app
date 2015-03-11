@@ -7,18 +7,18 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2015-03-06 11:52+0100\n"
+"POT-Creation-Date: 2015-03-06 17:09+0000\n"
 "PO-Revision-Date: 2015-03-07 17:19+0000\n"
 "Last-Translator: samson <Unknown>\n"
 "Language-Team: Amharic <am@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-03-08 05:40+0000\n"
-"X-Generator: Launchpad (build 17383)\n"
+"X-Launchpad-Export-Date: 2015-03-11 05:47+0000\n"
+"X-Generator: Launchpad (build 17389)\n"
 
 #: ../app/alarm/AlarmLabel.qml:30 ../app/alarm/AlarmLabel.qml:56
-#: ../app/alarm/EditAlarmPage.qml:302
+#: ../app/alarm/EditAlarmPage.qml:291
 msgid "Label"
 msgstr "ምልክት"
 
@@ -31,8 +31,8 @@ msgstr "ማጥፊያ"
 msgid "Alarms"
 msgstr "መቀስቀሻዎች"
 
-#: ../app/alarm/AlarmPage.qml:43 ../app/alarm/EditAlarmPage.qml:50
-#: ../app/alarm/EditAlarmPage.qml:177
+#: ../app/alarm/AlarmPage.qml:43 ../app/alarm/EditAlarmPage.qml:44
+#: ../app/alarm/EditAlarmPage.qml:166
 msgid "Alarm"
 msgstr "መቀስቀሻ"
 
@@ -56,7 +56,7 @@ msgstr "ምንም የተቀመጠ መቀስቀሻ የለም"
 msgid "Tap the + icon to add an alarm"
 msgstr "መታ ያድርጉ + ምልክቱን መቀስቀሻ ለመጨመር"
 
-#: ../app/alarm/AlarmRepeat.qml:34 ../app/alarm/EditAlarmPage.qml:292
+#: ../app/alarm/AlarmRepeat.qml:34 ../app/alarm/EditAlarmPage.qml:281
 msgid "Repeat"
 msgstr "መድገሚያ"
 
@@ -94,7 +94,7 @@ msgstr "ማንቀጥቀጫ"
 msgid "Change time and date"
 msgstr "ሰአት እና ቀን መቀየሪያ"
 
-#: ../app/alarm/AlarmSound.qml:28 ../app/alarm/EditAlarmPage.qml:315
+#: ../app/alarm/AlarmSound.qml:28 ../app/alarm/EditAlarmPage.qml:304
 msgid "Sound"
 msgstr "ድምፅ"
 
@@ -142,15 +142,15 @@ msgstr "በ %1ሰ %2ደ"
 msgid "in %1m"
 msgstr "በ %1ደ"
 
-#: ../app/alarm/EditAlarmPage.qml:43
+#: ../app/alarm/EditAlarmPage.qml:37
 msgid "New alarm"
 msgstr "አዲስ መቀስቀሻ"
 
-#: ../app/alarm/EditAlarmPage.qml:43
+#: ../app/alarm/EditAlarmPage.qml:37
 msgid "Edit alarm"
 msgstr "መቀስቀሻውን ማረሚያ"
 
-#: ../app/alarm/EditAlarmPage.qml:336
+#: ../app/alarm/EditAlarmPage.qml:325
 msgid "Delete alarm"
 msgstr "መቀስቀሻውን ማጥፊያ"
 

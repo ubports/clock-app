@@ -7,18 +7,18 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2015-03-06 11:52+0100\n"
+"POT-Creation-Date: 2015-03-06 17:09+0000\n"
 "PO-Revision-Date: 2015-03-07 19:51+0000\n"
 "Last-Translator: Meriuță Cornel <meriutacornel@neacornel.eu>\n"
 "Language-Team: Romanian <ro@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-03-08 05:40+0000\n"
-"X-Generator: Launchpad (build 17383)\n"
+"X-Launchpad-Export-Date: 2015-03-11 05:47+0000\n"
+"X-Generator: Launchpad (build 17389)\n"
 
 #: ../app/alarm/AlarmLabel.qml:30 ../app/alarm/AlarmLabel.qml:56
-#: ../app/alarm/EditAlarmPage.qml:302
+#: ../app/alarm/EditAlarmPage.qml:291
 msgid "Label"
 msgstr "Etichetă"
 
@@ -31,8 +31,8 @@ msgstr "Ştergeţi"
 msgid "Alarms"
 msgstr "Alarme"
 
-#: ../app/alarm/AlarmPage.qml:43 ../app/alarm/EditAlarmPage.qml:50
-#: ../app/alarm/EditAlarmPage.qml:177
+#: ../app/alarm/AlarmPage.qml:43 ../app/alarm/EditAlarmPage.qml:44
+#: ../app/alarm/EditAlarmPage.qml:166
 msgid "Alarm"
 msgstr "Alarmă"
 
@@ -56,7 +56,7 @@ msgstr "Nu sunt alarme salvate"
 msgid "Tap the + icon to add an alarm"
 msgstr "Apăsaţi pe pictograma + pentru a adăuga o alarmă"
 
-#: ../app/alarm/AlarmRepeat.qml:34 ../app/alarm/EditAlarmPage.qml:292
+#: ../app/alarm/AlarmRepeat.qml:34 ../app/alarm/EditAlarmPage.qml:281
 msgid "Repeat"
 msgstr "Repetare"
 
@@ -94,7 +94,7 @@ msgstr "Vibrație"
 msgid "Change time and date"
 msgstr "Schimbaţi ora şi data"
 
-#: ../app/alarm/AlarmSound.qml:28 ../app/alarm/EditAlarmPage.qml:315
+#: ../app/alarm/AlarmSound.qml:28 ../app/alarm/EditAlarmPage.qml:304
 msgid "Sound"
 msgstr "Sunet"
 
@@ -142,15 +142,15 @@ msgstr "în %1h %2m"
 msgid "in %1m"
 msgstr "în %1m"
 
-#: ../app/alarm/EditAlarmPage.qml:43
+#: ../app/alarm/EditAlarmPage.qml:37
 msgid "New alarm"
 msgstr "Alarmă nouă"
 
-#: ../app/alarm/EditAlarmPage.qml:43
+#: ../app/alarm/EditAlarmPage.qml:37
 msgid "Edit alarm"
 msgstr "Editează alarma"
 
-#: ../app/alarm/EditAlarmPage.qml:336
+#: ../app/alarm/EditAlarmPage.qml:325
 msgid "Delete alarm"
 msgstr "Șterge alarma"
 
