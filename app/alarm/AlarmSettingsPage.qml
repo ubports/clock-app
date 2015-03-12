@@ -50,10 +50,10 @@ Page {
         Component.onCompleted: initialise()
 
         function initialise() {
-            durationModel.append({ "duration": 10, "text": i18n.tr("%1 minutes").arg(10) })
-            durationModel.append({ "duration": 20, "text": i18n.tr("%1 minutes").arg(20) })
-            durationModel.append({ "duration": 30, "text": i18n.tr("%1 minutes").arg(30) })
-            durationModel.append({ "duration": 60, "text": i18n.tr("%1 minutes").arg(60) })
+            durationModel.append({ "duration": 10, "text": i18n.tr("%1 minute", "%1 minutes", 10).arg(10) })
+            durationModel.append({ "duration": 20, "text": i18n.tr("%1 minute", "%1 minutes", 20).arg(20) })
+            durationModel.append({ "duration": 30, "text": i18n.tr("%1 minute", "%1 minutes", 30).arg(30) })
+            durationModel.append({ "duration": 60, "text": i18n.tr("%1 minute", "%1 minutes", 60).arg(60) })
         }
     }
 
@@ -62,10 +62,10 @@ Page {
         Component.onCompleted: initialise()
 
         function initialise() {
-            snoozeModel.append({ "duration": 2, "text": i18n.tr("%1 minutes").arg(2) })
-            snoozeModel.append({ "duration": 4, "text": i18n.tr("%1 minutes").arg(4) })
-            snoozeModel.append({ "duration": 5, "text": i18n.tr("%1 minutes").arg(5) })
-            snoozeModel.append({ "duration": 10, "text": i18n.tr("%1 minutes").arg(10) })
+            snoozeModel.append({ "duration": 2, "text": i18n.tr("%1 minute", "%1 minutes", 2).arg(2) })
+            snoozeModel.append({ "duration": 4, "text": i18n.tr("%1 minute", "%1 minutes", 4).arg(4) })
+            snoozeModel.append({ "duration": 5, "text": i18n.tr("%1 minute", "%1 minutes", 5).arg(5) })
+            snoozeModel.append({ "duration": 10, "text": i18n.tr("%1 minute", "%1 minutes", 10).arg(10) })
         }
     }
 
@@ -143,7 +143,7 @@ Page {
                         SubtitledListItem {
                             id: _header
                             text: i18n.tr("Silence after")
-                            subText: i18n.tr("%1 minutes").arg(alarmSettings.duration)
+                            subText: i18n.tr("%1 minute", "%1 minutes", alarmSettings.duration).arg(alarmSettings.duration)
                             onClicked: _alarmDuration.expanded = true
 
                             Icon {
@@ -212,7 +212,7 @@ Page {
                         SubtitledListItem {
                             id: _snoozeHeader
                             text: i18n.tr("Snooze for")
-                            subText: i18n.tr("%1 minutes").arg(alarmSettings.snoozeDuration)
+                            subText: i18n.tr("%1 minute", "%1 minutes", alarmSettings.snoozeDuration).arg(alarmSettings.snoozeDuration)
                             onClicked: _alarmSnooze.expanded = true
 
                             Icon {

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-03-06 17:09+0000\n"
+"POT-Creation-Date: 2015-03-13 00:18+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,6 +16,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
 #: ../app/alarm/AlarmLabel.qml:30 ../app/alarm/AlarmLabel.qml:56
 #: ../app/alarm/EditAlarmPage.qml:291
@@ -71,8 +72,10 @@ msgstr ""
 #: ../app/alarm/AlarmSettingsPage.qml:146
 #: ../app/alarm/AlarmSettingsPage.qml:215
 #, qt-format
-msgid "%1 minutes"
-msgstr ""
+msgid "%1 minute"
+msgid_plural "%1 minutes"
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../app/alarm/AlarmSettingsPage.qml:92
 msgid "Alarm volume"
@@ -1786,7 +1789,7 @@ msgid "Singapore"
 msgstr ""
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:306
-msgid "Simferopol’"
+msgid "Simferopol"
 msgstr ""
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:307
