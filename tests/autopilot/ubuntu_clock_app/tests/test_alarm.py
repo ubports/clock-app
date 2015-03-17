@@ -71,12 +71,6 @@ class TestAlarm(ClockAppTestCase):
 
         self.page = self.main_view.open_alarm()
 
-    # TODO
-    # Due to bug https://bugs.launchpad.net/ubuntu-calendar-app/+bug/1328600
-    # this test cannot be run on device, so until the bug is not fixed we are
-    # skipping the test if model not Desktop.
-    @unittest.skipIf(model() != 'Desktop',
-                     "datepicker does not work correctly on device")
     def test_add_recurring_type_alarm_must_add_to_alarm_list(self):
         """Test to check if alarms are saved properly
 
