@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2015-03-13 00:18+0100\n"
-"PO-Revision-Date: 2015-03-14 10:00+0000\n"
+"PO-Revision-Date: 2015-03-17 14:41+0000\n"
 "Last-Translator: Aggelos Arnaoutis <angelosarn@hotmail.com>\n"
 "Language-Team: Greek <el@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2015-03-15 05:34+0000\n"
-"X-Generator: Launchpad (build 17389)\n"
+"X-Launchpad-Export-Date: 2015-03-18 06:14+0000\n"
+"X-Generator: Launchpad (build 17403)\n"
 
 #: ../app/alarm/AlarmLabel.qml:30 ../app/alarm/AlarmLabel.qml:56
 #: ../app/alarm/EditAlarmPage.qml:291
@@ -178,11 +178,11 @@ msgstr "Πόλη"
 #. is behind or ahead of the time at the current location
 #: ../app/worldclock/UserWorldCityDelegate.qml:142
 msgid "behind"
-msgstr ""
+msgstr "πίσω"
 
 #: ../app/worldclock/UserWorldCityDelegate.qml:143
 msgid "ahead"
-msgstr ""
+msgstr "μπροστά"
 
 #. TRANSLATORS: the first argument is hour, followed by
 #. minute, and the translation for either 'behind' or
@@ -1906,7 +1906,7 @@ msgstr "Μογγολία"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:326
 msgid "UTC"
-msgstr ""
+msgstr "UTC"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:328
 msgid "Vancouver"
@@ -1984,7 +1984,9 @@ msgstr "Ρολόι"
 msgid ""
 "A sophisticated clock app that provides world clock and alarm functionality."
 msgstr ""
+"Μια κομψή εφαρμογή ρολογιού που παρέχει λειτουργία παγκόσμιου ρολογιού και "
+"αφύπνισης."
 
 #: ubuntu-clock-app.desktop.in.in.h:3
 msgid "time;alarm;alert;clock;world;"
-msgstr ""
+msgstr "χρόνος;αφύπνιση;συναγερμός;ρολόι;κόσμος;"
