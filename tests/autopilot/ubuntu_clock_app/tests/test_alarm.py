@@ -1,4 +1,4 @@
-# Copyright (C) 2014 Canonical Ltd
+# Copyright (C) 2014-2015 Canonical Ltd
 #
 # This file is part of Ubuntu Clock App
 #
@@ -19,12 +19,10 @@
 from __future__ import absolute_import
 
 import datetime
-import unittest
 
 from autopilot.matchers import Eventually
 from testtools.matchers import Equals
 from ubuntu_clock_app.tests import ClockAppTestCase
-from autopilot.platform import model
 
 
 class TestAlarm(ClockAppTestCase):
