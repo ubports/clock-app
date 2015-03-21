@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2015-03-13 00:18+0100\n"
-"PO-Revision-Date: 2015-03-16 13:32+0000\n"
+"PO-Revision-Date: 2015-03-21 04:16+0000\n"
 "Last-Translator: Gursharnjit_Singh <ubuntuser13@gmail.com>\n"
 "Language-Team: Punjabi <pa@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2015-03-17 05:48+0000\n"
-"X-Generator: Launchpad (build 17389)\n"
+"X-Launchpad-Export-Date: 2015-03-21 05:45+0000\n"
+"X-Generator: Launchpad (build 17405)\n"
 
 #: ../app/alarm/AlarmLabel.qml:30 ../app/alarm/AlarmLabel.qml:56
 #: ../app/alarm/EditAlarmPage.qml:291
@@ -590,20 +590,20 @@ msgstr ""
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:84
 msgid "Malawi"
-msgstr ""
+msgstr "ਮਾਲਾਵੀ"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:85
 msgid "Bogotá"
-msgstr ""
+msgstr "ਬੋਗੋਤਾ"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:85
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:250
 msgid "Colombia"
-msgstr ""
+msgstr "ਕੋਲੰਬੀਆ"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:86
 msgid "Boston"
-msgstr ""
+msgstr "ਬੋਸਟਨ"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:87
 msgid "Boulder"
@@ -619,7 +619,7 @@ msgstr ""
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:89
 msgid "Slovakia"
-msgstr ""
+msgstr "ਸਲੋਵਾਕੀਆ"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:90
 msgid "Brazzaville"
@@ -627,7 +627,7 @@ msgstr ""
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:90
 msgid "Republic of the Congo"
-msgstr ""
+msgstr "ਕਾਂਗੋ ਗਣਰਾਜ"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:91
 msgid "Brisbane"
@@ -639,7 +639,7 @@ msgstr ""
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:92
 msgid "Belgium"
-msgstr ""
+msgstr "ਬੈਲਜੀਅਮ"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:93
 msgid "Bucharest"
@@ -647,7 +647,7 @@ msgstr ""
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:93
 msgid "Romania"
-msgstr ""
+msgstr "ਰੋਮਾਨੀਆ"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:94
 msgid "Budapest"
@@ -655,7 +655,7 @@ msgstr ""
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:94
 msgid "Hungary"
-msgstr ""
+msgstr "ਹੰਗਰੀ"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:95
 msgid "Buenos Aires"
@@ -664,23 +664,23 @@ msgstr ""
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:95
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:221
 msgid "Argentina"
-msgstr ""
+msgstr "ਅਰਜਨਟੀਨਾ"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:97
 msgid "Cairo"
-msgstr ""
+msgstr "ਕਾਇਰੋ"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:97
 msgid "Egypt"
-msgstr ""
+msgstr "ਮਿਸਰ"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:98
 msgid "Calcutta"
-msgstr ""
+msgstr "ਕਲੱਕਤਾ"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:99
 msgid "Calgary"
-msgstr ""
+msgstr "ਕੈਲਗਰੀ"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:99
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:125
@@ -697,30 +697,30 @@ msgstr ""
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:328
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:338
 msgid "Canada"
-msgstr ""
+msgstr "ਕੈਨੇਡਾ"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:100
 msgid "Cambridge"
-msgstr ""
+msgstr "ਕੈਮਬਰਿੱਜ"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:101
 msgid "Canary"
-msgstr ""
+msgstr "ਕੈਨਰੀ"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:102
 msgid "Canberra"
-msgstr ""
+msgstr "ਕੈਨਬੇਰਾ"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:103
 msgid "Cancún"
-msgstr ""
+msgstr "ਕੈਨਕਨ"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:103
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:109
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:223
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:232
 msgid "Mexico"
-msgstr ""
+msgstr "ਮੈਕਸੀਕੋ"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:104
 msgid "Cape Town"

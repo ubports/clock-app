@@ -1,69 +1,72 @@
-# Brazilian Portuguese translation for ubuntu-clock-app
+# Ukrainian translation for ubuntu-clock-app
 # Copyright (c) 2015 Rosetta Contributors and Canonical Ltd 2015
 # This file is distributed under the same license as the ubuntu-clock-app package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2015.
 #
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2015.
+# Yuri Chornoivan <yurchor@ukr.net>, 2015.
 msgid ""
 msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2015-03-13 00:18+0100\n"
-"PO-Revision-Date: 2015-03-20 19:46+0000\n"
-"Last-Translator: Tiago Hillebrandt <tiagohillebrandt@gmail.com>\n"
-"Language-Team: Brazilian Portuguese <pt_BR@li.org>\n"
+"PO-Revision-Date: 2015-03-20 18:09+0000\n"
+"Last-Translator: yurchor <Unknown>\n"
+"Language-Team: Ukrainian <uk@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Launchpad-Export-Date: 2015-03-21 05:45+0000\n"
 "X-Generator: Launchpad (build 17405)\n"
+"Language: uk\n"
 
 #: ../app/alarm/AlarmLabel.qml:30 ../app/alarm/AlarmLabel.qml:56
 #: ../app/alarm/EditAlarmPage.qml:291
 msgid "Label"
-msgstr "Nome"
+msgstr "Мітка"
 
 #: ../app/alarm/AlarmList.qml:78 ../app/alarm/AlarmPage.qml:117
 #: ../app/worldclock/UserWorldCityList.qml:101
 msgid "Delete"
-msgstr "Excluir"
+msgstr "Вилучити"
 
 #: ../app/alarm/AlarmPage.qml:26
 msgid "Alarms"
-msgstr "Alarmes"
+msgstr "Сигнали"
 
 #: ../app/alarm/AlarmPage.qml:43 ../app/alarm/EditAlarmPage.qml:44
 #: ../app/alarm/EditAlarmPage.qml:166
 msgid "Alarm"
-msgstr "Alarme"
+msgstr "Будильник"
 
 #: ../app/alarm/AlarmPage.qml:58 ../app/worldclock/WorldCityList.qml:80
 msgid "Back"
-msgstr "Voltar"
+msgstr "Назад"
 
 #: ../app/alarm/AlarmPage.qml:87
 msgid "Select None"
-msgstr "Selecionar nenhum"
+msgstr "Не обирати жодного"
 
 #: ../app/alarm/AlarmPage.qml:89 ../app/alarm/AlarmRepeat.qml:38
 msgid "Select All"
-msgstr "Selecionar todos"
+msgstr "Вибрати все"
 
 #: ../app/alarm/AlarmPage.qml:154
 msgid "No saved alarms"
-msgstr "Nenhum alarme salvo"
+msgstr "Немає збережених нагадувань"
 
 #: ../app/alarm/AlarmPage.qml:155
 msgid "Tap the + icon to add an alarm"
-msgstr "Toque no ícone + para adicionar um alarme"
+msgstr "Натисніть піктограму «+», щоб додати нагадування"
 
 #: ../app/alarm/AlarmRepeat.qml:34 ../app/alarm/EditAlarmPage.qml:281
 msgid "Repeat"
-msgstr "Repetir"
+msgstr "Повторити"
 
 #: ../app/alarm/AlarmSettingsPage.qml:29
 msgid "Settings"
-msgstr "Configurações"
+msgstr "Налаштування"
 
 #: ../app/alarm/AlarmSettingsPage.qml:53 ../app/alarm/AlarmSettingsPage.qml:54
 #: ../app/alarm/AlarmSettingsPage.qml:55 ../app/alarm/AlarmSettingsPage.qml:56
@@ -74,115 +77,116 @@ msgstr "Configurações"
 #, qt-format
 msgid "%1 minute"
 msgid_plural "%1 minutes"
-msgstr[0] "%1 minuto"
-msgstr[1] "%1 minutos"
+msgstr[0] "%1 хвилина"
+msgstr[1] "%1 хвилини"
+msgstr[2] "%1 хвилин"
 
 #: ../app/alarm/AlarmSettingsPage.qml:92
 msgid "Alarm volume"
-msgstr "Volume do alarme"
+msgstr "Гучність нагадування"
 
 #: ../app/alarm/AlarmSettingsPage.qml:145
 msgid "Silence after"
-msgstr "Silenciar depois"
+msgstr "Тиша після"
 
 #: ../app/alarm/AlarmSettingsPage.qml:214
 msgid "Snooze for"
-msgstr "Soneca por"
+msgstr "Подрімати"
 
 #: ../app/alarm/AlarmSettingsPage.qml:259
 msgid "Vibration"
-msgstr "Vibração"
+msgstr "Вібрація"
 
 #: ../app/alarm/AlarmSettingsPage.qml:293
 msgid "Change time and date"
-msgstr "Alterar data e hora"
+msgstr "Змінити час і дату"
 
 #: ../app/alarm/AlarmSound.qml:28 ../app/alarm/EditAlarmPage.qml:304
 msgid "Sound"
-msgstr "Som"
+msgstr "Звук"
 
 #: ../app/alarm/AlarmUtils.qml:31
 msgid "Never"
-msgstr "Nunca"
+msgstr "Ніколи"
 
 #: ../app/alarm/AlarmUtils.qml:37
 msgid "Weekdays"
-msgstr "Dias da semana"
+msgstr "Дні тижня"
 
 #: ../app/alarm/AlarmUtils.qml:41
 msgid "Weekends"
-msgstr "Finais de semana"
+msgstr "Вихідні"
 
 #: ../app/alarm/AlarmUtils.qml:45
 msgid "Daily"
-msgstr "Diariamente"
+msgstr "Щодня"
 
 #: ../app/alarm/AlarmUtils.qml:55
 msgid "No active alarms"
-msgstr "Nenhum alarme ativo"
+msgstr "Немає активних нагадувань"
 
 #: ../app/alarm/AlarmUtils.qml:72
 #, qt-format
 msgid "Next Alarm %1"
-msgstr "Próximo alarme %1"
+msgstr "Наступне нагадування %1"
 
 #: ../app/alarm/AlarmUtils.qml:79
 msgid "Alarm Passed"
-msgstr "Alarme passou"
+msgstr "Нагадування пропущено"
 
 #: ../app/alarm/AlarmUtils.qml:89
 #, no-c-format, qt-format
 msgid "in %1d %2h %3m"
-msgstr "em %1d %2h %3m"
+msgstr "за %1д %2г %3хв"
 
 #: ../app/alarm/AlarmUtils.qml:99
 #, no-c-format, qt-format
 msgid "in %1h %2m"
-msgstr "em %1h %2m"
+msgstr "за %1г %2хв"
 
 #: ../app/alarm/AlarmUtils.qml:108
 #, no-c-format, qt-format
 msgid "in %1m"
-msgstr "em %1m"
+msgstr "за %1хв"
 
 #: ../app/alarm/EditAlarmPage.qml:37
 msgid "New alarm"
-msgstr "Novo alarme"
+msgstr "Нове нагадування"
 
 #: ../app/alarm/EditAlarmPage.qml:37
 msgid "Edit alarm"
-msgstr "Editar alarme"
+msgstr "Редагувати нагадування"
 
 #: ../app/alarm/EditAlarmPage.qml:325
 msgid "Delete alarm"
-msgstr "Excluir alarme"
+msgstr "Вилучити нагадування"
 
 #: ../app/clock/ClockPage.qml:271
 msgid "Location Service Error!"
-msgstr "Erro no serviço de localização!"
+msgstr "Помилка служби місця перебування!"
 
 #: ../app/clock/ClockPage.qml:273
 msgid "Retrieving location..."
-msgstr "Obtendo localização..."
+msgstr "Отримуємо дані місця перебування…"
 
 #: ../app/worldclock/AddWorldCityButton.qml:30
 msgid "Add"
-msgstr "Adicionar"
+msgstr "Додати"
 
 #: ../app/worldclock/AddWorldCityButton.qml:61
 #: ../app/worldclock/WorldCityList.qml:64
 msgid "City"
-msgstr "Cidade"
+msgstr "Місто"
 
 #. TRANSLATORS: this indicates if the time in a world clock
 #. is behind or ahead of the time at the current location
 #: ../app/worldclock/UserWorldCityDelegate.qml:142
 msgid "behind"
-msgstr "atrás"
+msgstr "за"
 
 #: ../app/worldclock/UserWorldCityDelegate.qml:143
 msgid "ahead"
-msgstr "adiante"
+msgstr "перед"
 
 #. TRANSLATORS: the first argument is hour, followed by
 #. minute, and the translation for either 'behind' or
@@ -190,77 +194,79 @@ msgstr "adiante"
 #: ../app/worldclock/UserWorldCityDelegate.qml:153
 #, qt-format
 msgid "%1h %2m %3"
-msgstr "%1h %2m %3"
+msgstr "%1г %2хв %3"
 
 #. TRANSLATORS: the first argument is hour, followed by the
 #. translation for either 'behind' or 'ahead'
 #: ../app/worldclock/UserWorldCityDelegate.qml:162
 #, qt-format
 msgid "%1h %2"
-msgstr "%1h %2"
+msgstr "%1г %2"
 
 #. TRANSLATORS: the first argument is minute, followed by the
 #. translation for either 'behind' or 'ahead'
 #: ../app/worldclock/UserWorldCityDelegate.qml:170
 #, qt-format
 msgid "%1m %2"
-msgstr "%1m %2"
+msgstr "%1хв %2"
 
 #: ../app/worldclock/UserWorldCityDelegate.qml:176
 msgid "Same time"
-msgstr "Mesma hora"
+msgstr "Той самий час"
 
 #: ../app/worldclock/WorldCityList.qml:51
 msgid "Select a city"
-msgstr "Selecione a cidade"
+msgstr "Виберіть місто"
 
 #: ../app/worldclock/WorldCityList.qml:109
 msgid "Search..."
-msgstr "Pesquisar..."
+msgstr "Шукати…"
 
 #: ../app/worldclock/WorldCityList.qml:213
 msgid "Searching for a city"
-msgstr "Pesquisando por uma cidade"
+msgstr "Шукаємо місто"
 
 #: ../app/worldclock/WorldCityList.qml:218
 msgid "No City Found"
-msgstr "Nenhum cidade encontrada"
+msgstr "Міста не знайдено"
 
 #: ../app/worldclock/WorldCityList.qml:224
 msgid "Unable to connect."
-msgstr "Não foi possível conectar."
+msgstr "Не вдалось з’єднатися."
 
 #: ../app/worldclock/WorldCityList.qml:225
 msgid "Please check your network connection and try again"
-msgstr "Por favor verifique sua conexão de internet e tente novamente"
+msgstr ""
+"Будь ласка, перевірте, чи є працездатним мережеве з’єднання, і повторіть "
+"спробу"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:43
 msgid "Abidjan"
-msgstr "Abidjan"
+msgstr "Абіджан"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:43
 msgid "Ivory Coast"
-msgstr "Costa do Marfim"
+msgstr "Берег Слонової Кістки"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:44
 msgid "Accra"
-msgstr "Acra"
+msgstr "Аккра"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:44
 msgid "Ghana"
-msgstr "Gana"
+msgstr "Гана"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:45
 msgid "Addis Ababa"
-msgstr "Adis Abeba"
+msgstr "Аддис-Абеба"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:45
 msgid "Ethiopia"
-msgstr "Etiópia"
+msgstr "Ефіопія"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:46
 msgid "Adelaide"
-msgstr "Adelaide"
+msgstr "Аделаїда"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:46
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:91
@@ -273,11 +279,11 @@ msgstr "Adelaide"
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:261
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:315
 msgid "Australia"
-msgstr "Austrália"
+msgstr "Австралія"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:47
 msgid "Albuquerque"
-msgstr "Albuquerque"
+msgstr "Альбукерке"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:47
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:53
@@ -336,147 +342,147 @@ msgstr "Albuquerque"
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:336
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:337
 msgid "United States"
-msgstr "Estados Unidos"
+msgstr "США"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:48
 msgid "Algiers"
-msgstr "Argel"
+msgstr "Алжир"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:48
 msgid "Algeria"
-msgstr "Argélia"
+msgstr "Алжир"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:49
 msgid "Almaty"
-msgstr "Almaty"
+msgstr "Алмати"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:49
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:58
 msgid "Kazakhstan"
-msgstr "Cazaquistão"
+msgstr "Казахстан"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:50
 msgid "Amman"
-msgstr "Amã"
+msgstr "Амман"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:50
 msgid "Jordan"
-msgstr "Jordânia"
+msgstr "Йорданія"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:51
 msgid "Amsterdam"
-msgstr "Amsterdã"
+msgstr "Амстердам"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:51
 msgid "Netherlands"
-msgstr "Holanda"
+msgstr "Нідерланди"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:52
 msgid "Anadyr"
-msgstr "Anadyr"
+msgstr "Анадир"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:52
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:235
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:262
 msgid "Russia"
-msgstr "Rússia"
+msgstr "Росія"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:53
 msgid "Anchorage"
-msgstr "Anchorage"
+msgstr "Анкорідж"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:54
 msgid "Andorra"
-msgstr "Andorra"
+msgstr "Андорра"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:55
 msgid "Ankara"
-msgstr "Ancara"
+msgstr "Анкара"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:55
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:173
 msgid "Turkey"
-msgstr "Turquia"
+msgstr "Туреччина"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:56
 msgid "Ann Arbor"
-msgstr "Ann Arbor"
+msgstr "Енн-Арбор"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:57
 msgid "Antananarivo"
-msgstr "Antananarivo"
+msgstr "Антананаріву"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:57
 msgid "Madagascar"
-msgstr "Madadascar"
+msgstr "Мадагаскар"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:58
 msgid "Aqtau"
-msgstr "Aktau"
+msgstr "Актау"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:59
 msgid "Aruba"
-msgstr "Aruba"
+msgstr "Аруба"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:60
 msgid "Asunción"
-msgstr "Assunção"
+msgstr "Асунсьйон"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:60
 msgid "Paraguay"
-msgstr "Paraguai"
+msgstr "Парагвай"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:61
 msgid "Athens"
-msgstr "Atenas"
+msgstr "Афіни"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:61
 msgid "Greece"
-msgstr "Grécia"
+msgstr "Греція"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:62
 msgid "Atlanta"
-msgstr "Atlanta"
+msgstr "Атланта"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:63
 msgid "Auckland"
-msgstr "Auckland"
+msgstr "Окленд"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:63
 msgid "New Zealand"
-msgstr "Nova Zelândia"
+msgstr "Нова Зеландія"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:64
 msgid "Austin"
-msgstr "Austin"
+msgstr "Остін"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:66
 msgid "Baghdad"
-msgstr "Bagdá"
+msgstr "Багдад"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:66
 msgid "Iraq"
-msgstr "Iraque"
+msgstr "Ірак"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:67
 msgid "Bahrain"
-msgstr "Barein"
+msgstr "Бахрейн"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:68
 msgid "Baku"
-msgstr "Baku"
+msgstr "Баку"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:68
 msgid "Azerbaijan"
-msgstr "Azerbaijão"
+msgstr "Азербайджан"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:69
 msgid "Baltimore"
-msgstr "Baltimore"
+msgstr "Балтимор"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:70
 msgid "Bangalore"
-msgstr "Bangalore"
+msgstr "Бангалор"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:70
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:98
@@ -485,73 +491,73 @@ msgstr "Bangalore"
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:168
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:237
 msgid "India"
-msgstr "Índia"
+msgstr "Індія"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:71
 msgid "Bangkok"
-msgstr "Bangkok"
+msgstr "Бангкок"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:71
 msgid "Thailand"
-msgstr "Tailândia"
+msgstr "Таїланд"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:72
 msgid "Barbados"
-msgstr "Barbados"
+msgstr "Барбадос"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:73
 msgid "Barcelona"
-msgstr "Barcelona"
+msgstr "Барселона"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:73
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:210
 msgid "Spain"
-msgstr "Espanha"
+msgstr "Іспанія"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:74
 msgid "Beijing"
-msgstr "Pequim"
+msgstr "Пекін"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:74
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:151
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:304
 msgid "China"
-msgstr "China"
+msgstr "Китай"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:75
 msgid "Beirut"
-msgstr "Beirute"
+msgstr "Бейрут"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:75
 msgid "Lebanon"
-msgstr "Líbano"
+msgstr "Ліван"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:76
 msgid "Belfast"
-msgstr "Belfast"
+msgstr "Белфаст"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:76
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:100
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:202
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:214
 msgid "United Kingdom"
-msgstr "Reino Unido"
+msgstr "Великобританія"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:77
 msgid "Belgrade"
-msgstr "Belgrado"
+msgstr "Белград"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:77
 msgid "Serbia"
-msgstr "Sérvia"
+msgstr "Сербія"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:78
 msgid "Belize"
-msgstr "Belize"
+msgstr "Беліз"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:79
 msgid "Belo Horizonte"
-msgstr "Belo Horizonte"
+msgstr "Белу-Оризонті"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:79
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:88
@@ -559,128 +565,128 @@ msgstr "Belo Horizonte"
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:281
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:298
 msgid "Brazil"
-msgstr "Brasil"
+msgstr "Бразилія"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:80
 msgid "Berlin"
-msgstr "Berlim"
+msgstr "Берлін"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:80
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:142
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:158
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:238
 msgid "Germany"
-msgstr "Alemanha"
+msgstr "Німеччина"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:81
 msgid "Bermuda"
-msgstr "Bermudas"
+msgstr "Бермуди"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:82
 msgid "Beulah"
-msgstr "Beulah"
+msgstr "Б’юла"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:83
 msgid "Black Rock City"
-msgstr ""
+msgstr "Блек-рок"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:84
 msgid "Blantyre"
-msgstr "Blantyre"
+msgstr "Блантира"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:84
 msgid "Malawi"
-msgstr "Malaui"
+msgstr "Малаві"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:85
 msgid "Bogotá"
-msgstr "Bogotá"
+msgstr "Богота"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:85
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:250
 msgid "Colombia"
-msgstr "Colômbia"
+msgstr "Колумбія"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:86
 msgid "Boston"
-msgstr "Boston"
+msgstr "Бостон"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:87
 msgid "Boulder"
-msgstr "Boulder"
+msgstr "Боулдер"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:88
 msgid "Brasília"
-msgstr "Brasília"
+msgstr "Бразиліа"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:89
 msgid "Bratislava"
-msgstr "Bratislava"
+msgstr "Братислава"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:89
 msgid "Slovakia"
-msgstr "Eslováquia"
+msgstr "Словаччина"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:90
 msgid "Brazzaville"
-msgstr "Brazzaville"
+msgstr "Браззавіль"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:90
 msgid "Republic of the Congo"
-msgstr "República do Congo"
+msgstr "Республіка Конго"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:91
 msgid "Brisbane"
-msgstr "Brisbane"
+msgstr "Брисбен"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:92
 msgid "Brussels"
-msgstr "Bruxelas"
+msgstr "Брюссель"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:92
 msgid "Belgium"
-msgstr "Bélgica"
+msgstr "Бельгія"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:93
 msgid "Bucharest"
-msgstr "Bucareste"
+msgstr "Бухарест"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:93
 msgid "Romania"
-msgstr "Romênia"
+msgstr "Румунія"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:94
 msgid "Budapest"
-msgstr "Budapeste"
+msgstr "Будапешт"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:94
 msgid "Hungary"
-msgstr "Hungria"
+msgstr "Угорщина"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:95
 msgid "Buenos Aires"
-msgstr "Buenos Aires"
+msgstr "Буенос-Айрес"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:95
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:221
 msgid "Argentina"
-msgstr "Argentina"
+msgstr "Аргентина"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:97
 msgid "Cairo"
-msgstr "Cairo"
+msgstr "Каїр"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:97
 msgid "Egypt"
-msgstr "Egito"
+msgstr "Єгипет"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:98
 msgid "Calcutta"
-msgstr "Calcutá"
+msgstr "Калькутта"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:99
 msgid "Calgary"
-msgstr "Calgary"
+msgstr "Калгарі"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:99
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:125
@@ -697,1212 +703,1212 @@ msgstr "Calgary"
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:328
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:338
 msgid "Canada"
-msgstr "Canadá"
+msgstr "Канада"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:100
 msgid "Cambridge"
-msgstr "Cambridge"
+msgstr "Кембридж"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:101
 msgid "Canary"
-msgstr "Canárias"
+msgstr "Канарські острови"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:102
 msgid "Canberra"
-msgstr "Camberra"
+msgstr "Канберра"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:103
 msgid "Cancún"
-msgstr "Cancún"
+msgstr "Канкун"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:103
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:109
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:223
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:232
 msgid "Mexico"
-msgstr "México"
+msgstr "Мексика"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:104
 msgid "Cape Town"
-msgstr "Cidade do Cabo"
+msgstr "Кейптаун"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:104
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:178
 msgid "South Africa"
-msgstr "África do Sul"
+msgstr "Південна Африка"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:105
 msgid "Caracas"
-msgstr "Caracas"
+msgstr "Каракас"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:105
 msgid "Venezuela"
-msgstr "Venezuela"
+msgstr "Венесуела"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:106
 msgid "Casablanca"
-msgstr "Casablanca"
+msgstr "Касабланка"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:106
 msgid "Morocco"
-msgstr "Marrocos"
+msgstr "Марокко"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:107
 msgid "Cayman Palms"
-msgstr ""
+msgstr "Кайман-палмз"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:107
 msgid "Cayman Islands"
-msgstr "Ilhas Cayman"
+msgstr "Кайманові острови"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:108
 msgid "Chicago"
-msgstr "Chicago"
+msgstr "Чикаго"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:109
 msgid "Chihuahua"
-msgstr "Chihuahua"
+msgstr "Чиуауа"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:110
 msgid "Chişinău"
-msgstr "Chişinău"
+msgstr "Кишинев"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:110
 msgid "Moldova"
-msgstr "Moldávia"
+msgstr "Молдова"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:111
 msgid "Cincinnati"
-msgstr "Cincinnati"
+msgstr "Цинциннаті"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:112
 msgid "Cleveland"
-msgstr "Cleveland"
+msgstr "Клівленд"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:113
 msgid "Colombo"
-msgstr "Colombo"
+msgstr "Коломбо"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:113
 msgid "Sri Lanka"
-msgstr "Sri Lanka"
+msgstr "Шрі-Ланка"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:114
 msgid "Columbus"
-msgstr "Columbus"
+msgstr "Колумбус"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:115
 msgid "Conakry"
-msgstr "Conacri"
+msgstr "Конакрі"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:115
 msgid "Guinea"
-msgstr "Guiné"
+msgstr "Гвінея"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:116
 msgid "Copenhagen"
-msgstr "Copenhague"
+msgstr "Копенгаген"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:116
 msgid "Denmark"
-msgstr "Dinamarca"
+msgstr "Данія"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:117
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:291
 msgid "Costa Rica"
-msgstr "Costa Rica"
+msgstr "Коста-Рика"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:118
 msgid "Curaçao"
-msgstr "Curaçao"
+msgstr "Кюрасао"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:118
 msgid "Curacao"
-msgstr "Curacao"
+msgstr "Кюрасао"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:120
 msgid "Dakar"
-msgstr "Dakar"
+msgstr "Дакар"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:120
 msgid "Senegal"
-msgstr "Senegal"
+msgstr "Сенегал"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:121
 msgid "Dallas"
-msgstr "Dallas"
+msgstr "Даллас"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:122
 msgid "Damascus"
-msgstr "Damasco"
+msgstr "Дамаск"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:122
 msgid "Syria"
-msgstr "Síria"
+msgstr "Сирія"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:123
 msgid "Dar es Salaam"
-msgstr "Dar es Salaam"
+msgstr "Дар-ес-Салам"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:123
 msgid "Tanzania"
-msgstr "Tanzânia"
+msgstr "Танзанія"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:124
 msgid "Darwin"
-msgstr "Darwin"
+msgstr "Дарвін"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:125
 msgid "Dawson Creek"
-msgstr "Dawson Creek"
+msgstr "Доусон-крік"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:126
 msgid "Delhi"
-msgstr "Délhi"
+msgstr "Делі"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:127
 msgid "Denver"
-msgstr "Denver"
+msgstr "Денвер"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:128
 msgid "Detroit"
-msgstr "Detroit"
+msgstr "Детройт"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:129
 msgid "Dhaka"
-msgstr "Daca"
+msgstr "Дакка"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:129
 msgid "Bangladesh"
-msgstr "Bangladesh"
+msgstr "Бангладеш"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:130
 msgid "Djibouti"
-msgstr "Djibouti"
+msgstr "Джибуті"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:131
 msgid "Doha"
-msgstr "Doha"
+msgstr "Доха"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:131
 msgid "Qatar"
-msgstr "Qatar"
+msgstr "Катар"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:132
 msgid "Dominica"
-msgstr "Dominica"
+msgstr "Домініка"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:133
 msgid "Dubai"
-msgstr "Dubai"
+msgstr "Дубай"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:133
 msgid "United Arab Emirates"
-msgstr "Emirados Árabes Unidos"
+msgstr "Об’єднані Арабські Емірати"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:134
 msgid "Dublin"
-msgstr "Dublin"
+msgstr "Дублін"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:134
 msgid "Ireland"
-msgstr "Irlanda"
+msgstr "Ірландія"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:136
 msgid "Easter Island"
-msgstr "Ilha de Páscoa"
+msgstr "Острів Пасхи"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:136
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:296
 msgid "Chile"
-msgstr "Chile"
+msgstr "Чилі"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:137
 msgid "Edmonton"
-msgstr "Edmonton"
+msgstr "Едмонтон"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:138
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:294
 msgid "El Salvador"
-msgstr "El Salvador"
+msgstr "Сальвадор"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:140
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:314
 msgid "Fiji"
-msgstr "Fiji"
+msgstr "Фіджі"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:141
 msgid "Fortaleza"
-msgstr "Fortaleza"
+msgstr "Форталеза"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:142
 msgid "Frankfurt"
-msgstr "Frankfurt"
+msgstr "Франкфурт"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:143
 msgid "Freetown"
-msgstr "Freetown"
+msgstr "Фрітаун"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:143
 msgid "Sierra Leone"
-msgstr "Serra Leoa"
+msgstr "Сьєрра-Леоне"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:145
 msgid "Gaborone"
-msgstr "Gaborone"
+msgstr "Габороне"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:145
 msgid "Botswana"
-msgstr "Botsuana"
+msgstr "Ботсвана"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:146
 msgid "Gaza"
-msgstr "Gaza"
+msgstr "Газа"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:146
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:162
 msgid "Palestine"
-msgstr "Palestina"
+msgstr "Палестина"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:147
 msgid "Gibraltar"
-msgstr "Gibraltar"
+msgstr "Гібралтар"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:148
 msgid "Grand Turk"
-msgstr "Grand Turk"
+msgstr "Великий Трук"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:148
 msgid "Turks and Caicos Islands"
-msgstr "Ilhas Turcas e Caicos"
+msgstr "Острови Теркс і Кайкос"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:149
 msgid "Grenada"
-msgstr "Grenada"
+msgstr "Гренада"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:150
 msgid "Guam"
-msgstr "Guam"
+msgstr "Гуам"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:151
 msgid "Guangzhou"
-msgstr "Cantão"
+msgstr "Гуанчжоу"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:152
 msgid "Guatemala"
-msgstr "Guatemala"
+msgstr "Гватемала"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:153
 msgid "Gurgaon"
-msgstr "Gurgaon"
+msgstr "Гургаон"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:154
 msgid "Guyana"
-msgstr "Guiana"
+msgstr "Гайяна"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:156
 msgid "Haifa"
-msgstr "Haifa"
+msgstr "Хайфа"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:156
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:177
 msgid "Israel"
-msgstr "Israel"
+msgstr "Ізраїль"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:157
 msgid "Halifax"
-msgstr "Halifax"
+msgstr "Галіфакс"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:158
 msgid "Hamburg"
-msgstr "Hamburgo"
+msgstr "Гамбург"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:159
 msgid "Hanoi"
-msgstr "Hanói"
+msgstr "Ханой"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:159
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:164
 msgid "Vietnam"
-msgstr "Vietnã"
+msgstr "В'єтнам"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:160
 msgid "Harare"
-msgstr "Harare"
+msgstr "Хараре"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:160
 msgid "Zimbabwe"
-msgstr "Zimbábue"
+msgstr "Зімбабве"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:161
 msgid "Havana"
-msgstr "Havana"
+msgstr "Гавана"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:161
 msgid "Cuba"
-msgstr "Cuba"
+msgstr "Куба"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:162
 msgid "Hebron"
-msgstr "Hebron"
+msgstr "Хеврон"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:163
 msgid "Helsinki"
-msgstr "Helsinque"
+msgstr "Гельсінкі"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:163
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:256
 msgid "Finland"
-msgstr "Finlândia"
+msgstr "Фінляндія"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:164
 msgid "Ho Chi Minh City"
-msgstr "Cidade de Ho Chi Minh"
+msgstr "Хошимін"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:165
 msgid "Hong Kong"
-msgstr "Hong Kong"
+msgstr "Гонконг"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:166
 msgid "Honolulu"
-msgstr "Honolulu"
+msgstr "Гонолулу"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:167
 msgid "Houston"
-msgstr "Houston"
+msgstr "Хьюстон"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:168
 msgid "Hyderabad"
-msgstr "Hyderabad"
+msgstr "Хайдарабад"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:170
 msgid "Indianapolis"
-msgstr "Indianápolis"
+msgstr "Індіанаполіс"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:171
 msgid "Islamabad"
-msgstr ""
+msgstr "Ісламабад"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:171
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:182
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:198
 msgid "Pakistan"
-msgstr "Paquistão"
+msgstr "Пакистан"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:172
 msgid "Isle of Man"
-msgstr ""
+msgstr "Острів Мен"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:173
 msgid "Istanbul"
-msgstr "Istanbul"
+msgstr "Стамбул"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:175
 msgid "Jacksonville"
-msgstr "Jacksonville"
+msgstr "Джексонвілль"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:176
 msgid "Jakarta"
-msgstr "Jakarta"
+msgstr "Джакарта"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:176
 msgid "Indonesia"
-msgstr "Indonésia"
+msgstr "Індонезія"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:177
 msgid "Jerusalem"
-msgstr "Jerusalém"
+msgstr "Єрусалим"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:178
 msgid "Johannesburg"
-msgstr "Joanesburgo"
+msgstr "Йоганнесбург"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:180
 msgid "Kabul"
-msgstr "Cabul"
+msgstr "Кабул"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:180
 msgid "Afghanistan"
-msgstr "Afeganistão"
+msgstr "Афганістан"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:181
 msgid "Kampala"
-msgstr ""
+msgstr "Кампала"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:181
 msgid "Uganda"
-msgstr "Uganda"
+msgstr "Уганда"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:182
 msgid "Karachi"
-msgstr "Karachi"
+msgstr "Карачі"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:183
 msgid "Khartoum"
-msgstr "Cartum"
+msgstr "Хартум"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:183
 msgid "Sudan"
-msgstr "Sudão"
+msgstr "Судан"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:184
 msgid "Kiev"
-msgstr "Kiev"
+msgstr "Київ"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:184
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:195
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:306
 msgid "Ukraine"
-msgstr "Ucrânia"
+msgstr "Україна"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:185
 msgid "Kigali"
-msgstr "Kigali"
+msgstr "Кігалі"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:185
 msgid "Rwanda"
-msgstr "Ruanda"
+msgstr "Руанда"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:186
 msgid "Kingston"
-msgstr "Kingston"
+msgstr "Кінгстон"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:187
 msgid "Kinshasa"
-msgstr "Kinshasa"
+msgstr "Кіншаса"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:187
 msgid "Democratic Republic of the Congo"
-msgstr "República Democrática do Congo"
+msgstr "Демократична республіка Конго"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:188
 msgid "Kiritimati"
-msgstr "Kiritimati"
+msgstr "Кіріматі"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:188
 msgid "Kiribati"
-msgstr "Kiribati"
+msgstr "Кірибаті"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:189
 msgid "Kirkland"
-msgstr "Kirkland"
+msgstr "Кіркленд"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:190
 msgid "Knox"
-msgstr "Knox"
+msgstr "Нокс"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:191
 msgid "Knoxville"
-msgstr "Knoxville"
+msgstr "Ноксвілль"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:192
 msgid "Kraków"
-msgstr "Cracóvia"
+msgstr "Краків"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:192
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:335
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:339
 msgid "Poland"
-msgstr "Polônia"
+msgstr "Польща"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:193
 msgid "Kuala Lumpur"
-msgstr ""
+msgstr "Куала-Лумпур"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:193
 msgid "Malaysia"
-msgstr "Malásia"
+msgstr "Малайзія"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:194
 msgid "Kuwait City"
-msgstr ""
+msgstr "Ель-Кувейт"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:194
 msgid "Kuwait"
-msgstr "Kuait"
+msgstr "Кувейт"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:195
 msgid "Kyiv"
-msgstr "Kiev"
+msgstr "Київ"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:197
 msgid "Lagos"
-msgstr "Lagos"
+msgstr "Лагос"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:197
 msgid "Nigeria"
-msgstr "Nigéria"
+msgstr "Нігерія"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:198
 msgid "Lahore"
-msgstr ""
+msgstr "Лахор"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:199
 msgid "Las Vegas"
-msgstr "Las Vegas"
+msgstr "Лас-Вегас"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:200
 msgid "Lima"
-msgstr "Lima"
+msgstr "Ліма"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:200
 msgid "Peru"
-msgstr "Peru"
+msgstr "Перу"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:201
 msgid "Lisbon"
-msgstr "Lisboa"
+msgstr "Лісабон"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:201
 msgid "Portugal"
-msgstr "Portugal"
+msgstr "Португалія"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:202
 msgid "London"
-msgstr "Londres"
+msgstr "Лондон"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:203
 msgid "Longyearbyen"
-msgstr ""
+msgstr "Лонг'єрб'єн"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:203
 msgid "Svalbard and Jan Mayen"
-msgstr ""
+msgstr "Острови Свальбард і Ян Маєн"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:204
 msgid "Los Angeles"
-msgstr "Los Angeles"
+msgstr "Лос-Анджелес"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:205
 msgid "Louisville"
-msgstr ""
+msgstr "Луїсвілль"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:206
 msgid "Luxembourg"
-msgstr "Luxemburgo"
+msgstr "Люксембург"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:208
 msgid "Macau"
-msgstr "Macau"
+msgstr "Макао"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:208
 msgid "Macao"
-msgstr "Macao"
+msgstr "Макао"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:209
 msgid "Madison"
-msgstr "Madison"
+msgstr "Медісон"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:210
 msgid "Madrid"
-msgstr "Madri"
+msgstr "Мадрид"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:211
 msgid "Maldives"
-msgstr "Ilhas Maldivas"
+msgstr "Мальдіви"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:212
 msgid "Malta"
-msgstr "Malta"
+msgstr "Мальта"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:213
 msgid "Managua"
-msgstr ""
+msgstr "Манагуа"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:213
 msgid "Nicaragua"
-msgstr "Nicarágua"
+msgstr "Нікарагуа"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:214
 msgid "Manchester"
-msgstr "Manchester"
+msgstr "Манчестер"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:215
 msgid "Manila"
-msgstr ""
+msgstr "Маніла"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:215
 msgid "Philippines"
-msgstr "Filipinas"
+msgstr "Філіппіни"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:216
 msgid "Marengo"
-msgstr ""
+msgstr "Маренґо"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:217
 msgid "Martinique"
-msgstr ""
+msgstr "Мартиніка"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:218
 msgid "Maseru"
-msgstr ""
+msgstr "Масеру"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:218
 msgid "Lesotho"
-msgstr ""
+msgstr "Лесото"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:219
 msgid "Melbourne"
-msgstr "Melbourne"
+msgstr "Мельбурн"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:220
 msgid "Memphis"
-msgstr ""
+msgstr "Мемфіс"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:221
 msgid "Mendoza"
-msgstr ""
+msgstr "Мендоза"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:222
 msgid "Metlakatla"
-msgstr ""
+msgstr "Метлакатла"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:223
 msgid "Mexico City"
-msgstr "Cidade do México"
+msgstr "Мехіко"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:224
 msgid "Miami"
-msgstr "Miami"
+msgstr "Майамі"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:225
 msgid "Milan"
-msgstr "Milão"
+msgstr "Мілан"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:225
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:283
 msgid "Italy"
-msgstr "Itália"
+msgstr "Італія"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:226
 msgid "Milwaukee"
-msgstr ""
+msgstr "Мілуокі"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:227
 msgid "Minneapolis"
-msgstr ""
+msgstr "Міннаполіс"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:228
 msgid "Minsk"
-msgstr "Minsk"
+msgstr "Мінськ"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:228
 msgid "Belarus"
-msgstr "Bielorrússia"
+msgstr "Білорусь"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:229
 msgid "Mogadishu"
-msgstr ""
+msgstr "Могадішу"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:229
 msgid "Somalia"
-msgstr "Somália"
+msgstr "Сомалі"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:230
 msgid "Monrovia"
-msgstr ""
+msgstr "Монровія"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:230
 msgid "Liberia"
-msgstr "Libéria"
+msgstr "Ліберія"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:231
 msgid "Monaco"
-msgstr "Mônaco"
+msgstr "Монако"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:232
 msgid "Monterrey"
-msgstr ""
+msgstr "Монтеррей"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:233
 msgid "Montevideo"
-msgstr "Montevidéu"
+msgstr "Монтевідео"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:233
 msgid "Uruguay"
-msgstr "Uruguai"
+msgstr "Уругвай"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:234
 msgid "Montreal"
-msgstr "Montreal"
+msgstr "Монреаль"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:235
 msgid "Moscow"
-msgstr "Moscou"
+msgstr "Москва"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:236
 msgid "Mountain View"
-msgstr "Mountain View"
+msgstr "Маунтін-Вью"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:237
 msgid "Mumbai"
-msgstr ""
+msgstr "Бомбей (Момбай)"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:238
 msgid "Munich"
-msgstr "Munique"
+msgstr "Мюнхен"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:239
 msgid "Muscat"
-msgstr ""
+msgstr "Маскат"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:239
 msgid "Oman"
-msgstr "Omã"
+msgstr "Оман"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:241
 msgid "Nairobi"
-msgstr "Nairóbi"
+msgstr "Найробі"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:241
 msgid "Kenya"
-msgstr "Quênia"
+msgstr "Кенія"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:242
 msgid "Nashville"
-msgstr "Nashville"
+msgstr "Нешвілл"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:243
 msgid "Nassau"
-msgstr "Nassau"
+msgstr "Нассау"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:243
 msgid "Bahamas"
-msgstr ""
+msgstr "Багамські острови"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:244
 msgid "New Orleans"
-msgstr ""
+msgstr "Новий Орлеан"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:245
 msgid "New Salem"
-msgstr ""
+msgstr "Нью-Салем"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:246
 msgid "New South Wales"
-msgstr ""
+msgstr "Новий Південний Уельс"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:247
 msgid "New York"
-msgstr "Nova Iorque"
+msgstr "Нью-Йорк"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:248
 msgid "Newfoundland"
-msgstr ""
+msgstr "Ньюфаундленд"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:249
 msgid "Nouméa"
-msgstr ""
+msgstr "Нумеа"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:249
 msgid "New Caledonia"
-msgstr ""
+msgstr "Нова Каледонія"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:250
 msgid "Nuestra Señora de La Paz"
-msgstr ""
+msgstr "Нуестра-Сеньйора-де-ла-Пас"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:252
 msgid "Oklahoma City"
-msgstr ""
+msgstr "Оклахома-Сіті"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:253
 msgid "Osaka"
-msgstr ""
+msgstr "Осака"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:253
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:320
 msgid "Japan"
-msgstr "Japão"
+msgstr "Японія"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:254
 msgid "Oslo"
-msgstr ""
+msgstr "Осло"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:254
 msgid "Norway"
-msgstr "Noruega"
+msgstr "Норвегія"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:255
 msgid "Ottawa"
-msgstr ""
+msgstr "Оттава"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:256
 msgid "Oulu"
-msgstr ""
+msgstr "Оулу"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:258
 msgid "Panamá"
-msgstr "Panamá"
+msgstr "Панама"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:258
 msgid "Panama"
-msgstr ""
+msgstr "Панама"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:259
 msgid "Paramaribo"
-msgstr ""
+msgstr "Парамарибо"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:259
 msgid "Suriname"
-msgstr "Suriname"
+msgstr "Суринам"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:260
 msgid "Paris"
-msgstr "Paris"
+msgstr "Періс"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:260
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:333
 msgid "France"
-msgstr "França"
+msgstr "Франція"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:261
 msgid "Perth"
-msgstr ""
+msgstr "Перт"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:262
 msgid "Petersburg"
-msgstr ""
+msgstr "Петерсбург"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:263
 msgid "Philadelphia"
-msgstr ""
+msgstr "Філадельфія"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:264
 msgid "Phnom Penh"
-msgstr ""
+msgstr "Пномпень"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:264
 msgid "Cambodia"
-msgstr ""
+msgstr "Камбоджа"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:265
 msgid "Phoenix"
-msgstr ""
+msgstr "Фінікс"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:266
 msgid "Pittsburgh"
-msgstr ""
+msgstr "Піттсбург"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:267
 msgid "Port of Spain"
-msgstr ""
+msgstr "Порт-оф-Спейн"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:267
 msgid "Trinidad and Tobago"
-msgstr "Trinidade e Tobago"
+msgstr "Тринідад та Тобаго"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:268
 msgid "Port au Prince"
-msgstr ""
+msgstr "Порт-о-Пренс"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:268
 msgid "Haiti"
-msgstr ""
+msgstr "Гаїті"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:269
 msgid "Portland"
-msgstr ""
+msgstr "Портланд"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:270
 msgid "Prague"
-msgstr "Praga"
+msgstr "Прага"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:270
 msgid "Czech"
-msgstr ""
+msgstr "Чехія"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:271
 msgid "Pyongyang"
-msgstr ""
+msgstr "Пхеньян"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:271
 msgid "North Korea"
-msgstr "Coreia do Norte"
+msgstr "Північна Корея"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:273
 msgid "Queensland"
-msgstr ""
+msgstr "Квінсленд"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:274
 msgid "Quito"
-msgstr "Quito"
+msgstr "Кіто"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:274
 msgid "Ecuador"
-msgstr "Equador"
+msgstr "Еквадор"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:276
 msgid "Rangoon"
-msgstr ""
+msgstr "Рангун"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:276
 msgid "Myanmar"
-msgstr "Mianmar"
+msgstr "М’янма"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:277
 msgid "Reno"
-msgstr "Reno"
+msgstr "Ріно"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:278
 msgid "Reston"
-msgstr ""
+msgstr "Рестон"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:279
 msgid "Reykjavík"
-msgstr ""
+msgstr "Рейк'явік"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:279
 msgid "Iceland"
-msgstr "Islândia"
+msgstr "Ісландія"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:280
 msgid "Riga"
-msgstr ""
+msgstr "Рига"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:280
 msgid "Latvia"
-msgstr "Letônia"
+msgstr "Латвія"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:281
 msgid "Rio de Janeiro"
-msgstr "Rio de Janeiro"
+msgstr "Ріо-де-Жанейро"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:282
 msgid "Riyadh"
-msgstr ""
+msgstr "Ер-Ріяд"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:282
 msgid "Saudi Arabia"
-msgstr "Arábia Saudita"
+msgstr "Саудівська Аравія"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:283
 msgid "Rome"
-msgstr "Roma"
+msgstr "Рим"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:285
 msgid "Sacramento"
-msgstr "Sacramento"
+msgstr "Сакраменто"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:286
 msgid "Salt Lake City"
-msgstr "Salt Lake City"
+msgstr "Солт-Лейк-Сіті"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:287
 msgid "Samoa"
-msgstr "Samoa"
+msgstr "Самоа"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:288
 msgid "San Antonio"
-msgstr "San Antonio"
+msgstr "Сан-Антоніо"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:289
 msgid "San Diego"
-msgstr "San Diego"
+msgstr "Сан-Дієго"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:290
 msgid "San Francisco"
-msgstr "San Francisco"
+msgstr "Сан-Франциско"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:291
 msgid "San José"
-msgstr "San José"
+msgstr "Сан-Хосе"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:292
 msgid "San Juan"
-msgstr "San Juan"
+msgstr "Сан-Хуан"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:292
 msgid "Puerto Rico"
-msgstr "Porto Rico"
+msgstr "Пуерто-Рико"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:293
 msgid "San Marino"
-msgstr "San Marino"
+msgstr "Сан-Марино"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:294
 msgid "San Salvador"
-msgstr "San Salvador"
+msgstr "Сан-Сальвадор"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:295
 msgid "Sanaa"
-msgstr "Sanaa"
+msgstr "Сана"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:295
 msgid "Yemen"
-msgstr "Iêmen"
+msgstr "Ємен"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:296
 msgid "Santiago"
-msgstr "Santiago"
+msgstr "Сантьяго"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:297
 msgid "Santo Domingo"
-msgstr "Santo Domingo"
+msgstr "Санто-Домінго"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:297
 msgid "Dominican Republic"
-msgstr "República Dominicana"
+msgstr "Домініканська республіка"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:298
 msgid "São Paulo"
-msgstr "São Paulo"
+msgstr "Сан-Паулу"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:299
 msgid "São Tomé"
-msgstr "São Tomé"
+msgstr "Сан-Томе"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:299
 msgid "São Tomé and Príncipe"
-msgstr "São Tomé e Príncipe"
+msgstr "Сан-Томе і Прінсіпі"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:300
 msgid "Sarajevo"
-msgstr ""
+msgstr "Сараєво"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:300
 msgid "Bosnia and Herzegovina"
-msgstr "Bósnia e Herzegovina"
+msgstr "Боснія та Герцеговина"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:301
 msgid "Saskatchewan"
-msgstr "Saskatchewan"
+msgstr "Саскачеван"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:302
 msgid "Seattle"
-msgstr "Seattle"
+msgstr "Сієтл"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:303
 msgid "Seoul"
-msgstr "Seul"
+msgstr "Сеул"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:303
 msgid "South Korea"
-msgstr "Coreia do Sul"
+msgstr "Південна Корея"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:304
 msgid "Shanghai"
-msgstr "Shanghai"
+msgstr "Шанхай"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:305
 msgid "Singapore"
-msgstr "Singapura"
+msgstr "Сінгапур"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:306
 msgid "Simferopol"
-msgstr ""
+msgstr "Сімферополь"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:307
 msgid "Skopje"
-msgstr ""
+msgstr "Скоп'є"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:307
 msgid "Macedonia"
-msgstr "Macedônia"
+msgstr "Македонія"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:308
 msgid "Sofia"
-msgstr "Sófia"
+msgstr "Софія"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:308
 msgid "Bulgaria"
-msgstr "Bulgária"
+msgstr "Болгарія"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:309
 msgid "St.Johns"
-msgstr ""
+msgstr "Сент-Джонс"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:310
 msgid "St.Kitts"
-msgstr ""
+msgstr "Сент-Кіттс"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:310
 msgid "Saint Kitts and Nevis"
-msgstr "São Cristóvão e Neves"
+msgstr "Сент-Кітс і Невіс"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:311
 msgid "St.Louis"
-msgstr ""
+msgstr "Сент-Луїс"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:312
 msgid "Stanley"
-msgstr "Stanley"
+msgstr "Стенлі"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:312
 msgid "Falkland Islands"
-msgstr "Ilhas Malvinas"
+msgstr "Фолклендські острови"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:313
 msgid "Stockholm"
-msgstr "Estocolmo"
+msgstr "Стокгольм"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:313
 msgid "Sweden"
-msgstr "Suécia"
+msgstr "Швеція"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:314
 msgid "Suva"
-msgstr "Suva"
+msgstr "Сува"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:315
 msgid "Sydney"
-msgstr "Sidney"
+msgstr "Сідней"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:317
 msgid "Taipei"
-msgstr ""
+msgstr "Тайбей"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:317
 msgid "Taiwan"
-msgstr "Taiwan"
+msgstr "Тайвань"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:318
 msgid "Tallinn"
-msgstr ""
+msgstr "Таллінн"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:318
 msgid "Estonia"
-msgstr "Estônia"
+msgstr "Естонія"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:319
 msgid "Tehran"
-msgstr "Teerã"
+msgstr "Тегеран"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:319
 msgid "Iran"
-msgstr "Irã"
+msgstr "Іран"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:320
 msgid "Tokyo"
-msgstr "Tóquio"
+msgstr "Токіо"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:321
 msgid "Toronto"
-msgstr "Toronto"
+msgstr "Торонто"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:322
 msgid "Tripoli"
-msgstr ""
+msgstr "Тріполі"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:322
 msgid "Libya"
-msgstr "Líbia"
+msgstr "Лівія"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:323
 msgid "Tunis"
-msgstr ""
+msgstr "Туніс"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:323
 msgid "Tunisia"
-msgstr "Tunísia"
+msgstr "Туніс"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:325
 msgid "Ulan Bator"
-msgstr ""
+msgstr "Улан-Батор"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:325
 msgid "Mongolia"
-msgstr "Mongólia"
+msgstr "Монголія"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:326
 msgid "UTC"
@@ -1910,83 +1916,84 @@ msgstr "UTC"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:328
 msgid "Vancouver"
-msgstr "Vancouver"
+msgstr "Ванкувер"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:329
 msgid "Vatican City"
-msgstr "Vaticano"
+msgstr "Ватикан"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:330
 msgid "Vevay"
-msgstr ""
+msgstr "Вевей"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:331
 msgid "Vienna"
-msgstr "Viena"
+msgstr "Відень"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:331
 msgid "Austria"
-msgstr "Áustria"
+msgstr "Австрія"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:332
 msgid "Vilnius"
-msgstr ""
+msgstr "Вільнюс"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:332
 msgid "Lithuania"
-msgstr "Lituânia"
+msgstr "Литва"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:333
 msgid "Vincennes"
-msgstr ""
+msgstr "Вінсенес"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:335
 msgid "Warsaw"
-msgstr "Varsóvia"
+msgstr "Варшава"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:336
 msgid "Washington D.C"
-msgstr "Washington D.C"
+msgstr "Вашингтон"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:337
 msgid "Winamac"
-msgstr ""
+msgstr "Вінамак"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:338
 msgid "Winnipeg"
-msgstr "Winnipeg"
+msgstr "Вінніпег"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:339
 msgid "Wrocław"
-msgstr "Wrocław"
+msgstr "Вроцлав"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:341
 msgid "Zagreb"
-msgstr "Zagreb"
+msgstr "Загреб"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:341
 msgid "Croatia"
-msgstr "Croácia"
+msgstr "Хорватія"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:342
 msgid "Zürich"
-msgstr "Zurique"
+msgstr "Цюріх"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:342
 msgid "Switzerland"
-msgstr "Suíça"
+msgstr "Швейцарія"
 
 #: ubuntu-clock-app.desktop.in.in.h:1
 msgid "Clock"
-msgstr "Relógio"
+msgstr "Годинник"
 
 #: ubuntu-clock-app.desktop.in.in.h:2
 msgid ""
 "A sophisticated clock app that provides world clock and alarm functionality."
 msgstr ""
-"Um aplicativo sofisticado de relógio que fornece a hora mundialmente, bem "
-"como a funcionalidade de alarme."
+"Різнобічна програма-годинник, яка має функціональні можливості світового "
+"годинника та будильника."
 
 #: ubuntu-clock-app.desktop.in.in.h:3
 msgid "time;alarm;alert;clock;world;"
-msgstr "time;alarm;alert;clock;world;alarme;relógio;hora;despertador;"
+msgstr ""
+"time;alarm;alert;clock;world;час;нагадування;будильник;годинник;світ;"
