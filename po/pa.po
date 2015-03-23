@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2015-03-13 00:18+0100\n"
-"PO-Revision-Date: 2015-03-22 05:26+0000\n"
+"PO-Revision-Date: 2015-03-23 03:47+0000\n"
 "Last-Translator: Gursharnjit_Singh <ubuntuser13@gmail.com>\n"
 "Language-Team: Punjabi <pa@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2015-03-22 05:32+0000\n"
+"X-Launchpad-Export-Date: 2015-03-23 05:34+0000\n"
 "X-Generator: Launchpad (build 17405)\n"
 
 #: ../app/alarm/AlarmLabel.qml:30 ../app/alarm/AlarmLabel.qml:56
@@ -586,7 +586,7 @@ msgstr "ਬਲੈਕ ਰਾੱਕ ਸਿਟੀ"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:84
 msgid "Blantyre"
-msgstr ""
+msgstr "ਬ੍ਲੈਨਟਾਇ"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:84
 msgid "Malawi"
@@ -1622,199 +1622,199 @@ msgstr "ਉੱਤਰੀ ਕੋਰੀਆ"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:273
 msgid "Queensland"
-msgstr ""
+msgstr "ਕਿਊਨਜ਼ਲੈਂਡ"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:274
 msgid "Quito"
-msgstr ""
+msgstr "ਕ੍ਵੀਟੋ"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:274
 msgid "Ecuador"
-msgstr ""
+msgstr "ਏਕਵੇਡੋਰ"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:276
 msgid "Rangoon"
-msgstr ""
+msgstr "ਰੰਗੂਨ"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:276
 msgid "Myanmar"
-msgstr ""
+msgstr "ਮਿਆਂਮਾਰ"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:277
 msgid "Reno"
-msgstr ""
+msgstr "ਰੇਨੋ"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:278
 msgid "Reston"
-msgstr ""
+msgstr "ਰੇਸਟੋਨ"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:279
 msgid "Reykjavík"
-msgstr ""
+msgstr "ਰਿਕਿਯਵਿਕ"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:279
 msgid "Iceland"
-msgstr ""
+msgstr "ਆਈਸਲੈਂਡ"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:280
 msgid "Riga"
-msgstr ""
+msgstr "ਰੀਗਾ"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:280
 msgid "Latvia"
-msgstr ""
+msgstr "ਲਾਤਵੀਆ"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:281
 msgid "Rio de Janeiro"
-msgstr ""
+msgstr "ਰਿਓ ਦੇ ਜਨੇਯਰੋ"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:282
 msgid "Riyadh"
-msgstr ""
+msgstr "ਰਿਯਾਧ"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:282
 msgid "Saudi Arabia"
-msgstr ""
+msgstr "ਸਊਦੀ ਅਰਬ"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:283
 msgid "Rome"
-msgstr ""
+msgstr "ਰੋਮ"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:285
 msgid "Sacramento"
-msgstr ""
+msgstr "ਸਾਕਰਾਮੀਟੋ"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:286
 msgid "Salt Lake City"
-msgstr ""
+msgstr "ਸਾਲਟ ਲੇਕ ਸ਼ਹਿਰ"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:287
 msgid "Samoa"
-msgstr ""
+msgstr "ਸਾਮੋਆ"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:288
 msgid "San Antonio"
-msgstr ""
+msgstr "ਸੈਨ ਐਟੋਨੀਓ"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:289
 msgid "San Diego"
-msgstr ""
+msgstr "ਸਨ ਡਿਏਗੋ"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:290
 msgid "San Francisco"
-msgstr ""
+msgstr "ਸੇਨ ਫ੍ਰਾਂਸਿਸਕੋ"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:291
 msgid "San José"
-msgstr ""
+msgstr "ਸਨ ਹੋਜੇ"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:292
 msgid "San Juan"
-msgstr ""
+msgstr "ਸਨ ਜੁਆਨ"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:292
 msgid "Puerto Rico"
-msgstr ""
+msgstr "ਪੋਰਟੋ ਰੀਕੋ"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:293
 msgid "San Marino"
-msgstr ""
+msgstr "ਸਨ ਮਰੀਨੋ"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:294
 msgid "San Salvador"
-msgstr ""
+msgstr "ਸਨ ਸਾਲਵਾਡੋਰ"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:295
 msgid "Sanaa"
-msgstr ""
+msgstr "ਸਨਾ"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:295
 msgid "Yemen"
-msgstr ""
+msgstr "ਯਮਨ"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:296
 msgid "Santiago"
-msgstr ""
+msgstr "ਸੇਂਟੀਆਗੋ"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:297
 msgid "Santo Domingo"
-msgstr ""
+msgstr "ਸੇਂਟੋ ਡੋਮਿੰਗੋ"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:297
 msgid "Dominican Republic"
-msgstr ""
+msgstr "ਡੋਮੀਨੀਆਈ ਗਣਰਾਜ"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:298
 msgid "São Paulo"
-msgstr ""
+msgstr "ਸਾਓ ਪੌਲੋ"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:299
 msgid "São Tomé"
-msgstr ""
+msgstr "ਸਾਓ ਟੌਮ"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:299
 msgid "São Tomé and Príncipe"
-msgstr ""
+msgstr "ਸਾਓ ਟੌਮ ਅਤੇ ਪ੍ਰਿੰਸ਼ਪ"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:300
 msgid "Sarajevo"
-msgstr ""
+msgstr "ਸਾਰਜੇਯੇਵੋ"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:300
 msgid "Bosnia and Herzegovina"
-msgstr ""
+msgstr "ਬੋਸਨੀਆ ਅਤੇ ਹਰਜ਼ੇਗੋਵਿਨਾ"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:301
 msgid "Saskatchewan"
-msgstr ""
+msgstr "ਸਸਕੈਚਵਨ"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:302
 msgid "Seattle"
-msgstr ""
+msgstr "ਸੀਐਟ੍ਲ"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:303
 msgid "Seoul"
-msgstr ""
+msgstr "ਸਿਓਲ"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:303
 msgid "South Korea"
-msgstr ""
+msgstr "ਦੱਖਣ ਕੋਰੀਆ"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:304
 msgid "Shanghai"
-msgstr ""
+msgstr "ਸ਼ੰਘਾਈ"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:305
 msgid "Singapore"
-msgstr ""
+msgstr "ਸਿੰਗਾਪੁਰ"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:306
 msgid "Simferopol"
-msgstr ""
+msgstr "ਸਿਮਫੇੜੋਪੋਲ"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:307
 msgid "Skopje"
-msgstr ""
+msgstr "ਸ੍ਕੋਪਜ਼ੇ"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:307
 msgid "Macedonia"
-msgstr ""
+msgstr "ਮੇਕੇਡੋਨਿਆ"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:308
 msgid "Sofia"
-msgstr ""
+msgstr "ਸੋਫੀਆ"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:308
 msgid "Bulgaria"
-msgstr ""
+msgstr "ਬੁਲਗਾਰੀਆ"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:309
 msgid "St.Johns"
-msgstr ""
+msgstr "ਸੈਂਟ.ਜੋਨ"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:310
 msgid "St.Kitts"
-msgstr ""
+msgstr "ਸੈਂਟ.ਕਿਟਸ"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:310
 msgid "Saint Kitts and Nevis"
