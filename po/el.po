@@ -7,15 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2015-03-06 17:09+0000\n"
-"PO-Revision-Date: 2015-03-10 00:02+0000\n"
+"POT-Creation-Date: 2015-03-13 00:18+0100\n"
+"PO-Revision-Date: 2015-03-17 14:41+0000\n"
 "Last-Translator: Aggelos Arnaoutis <angelosarn@hotmail.com>\n"
 "Language-Team: Greek <el@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-03-11 05:47+0000\n"
-"X-Generator: Launchpad (build 17389)\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Launchpad-Export-Date: 2015-03-18 06:14+0000\n"
+"X-Generator: Launchpad (build 17403)\n"
 
 #: ../app/alarm/AlarmLabel.qml:30 ../app/alarm/AlarmLabel.qml:56
 #: ../app/alarm/EditAlarmPage.qml:291
@@ -71,8 +72,10 @@ msgstr "Ρυθμίσεις"
 #: ../app/alarm/AlarmSettingsPage.qml:146
 #: ../app/alarm/AlarmSettingsPage.qml:215
 #, qt-format
-msgid "%1 minutes"
-msgstr "%1 λεπτά"
+msgid "%1 minute"
+msgid_plural "%1 minutes"
+msgstr[0] "%1 λεπτό"
+msgstr[1] "%1 λεπτά"
 
 #: ../app/alarm/AlarmSettingsPage.qml:92
 msgid "Alarm volume"
@@ -175,11 +178,11 @@ msgstr "Πόλη"
 #. is behind or ahead of the time at the current location
 #: ../app/worldclock/UserWorldCityDelegate.qml:142
 msgid "behind"
-msgstr ""
+msgstr "πίσω"
 
 #: ../app/worldclock/UserWorldCityDelegate.qml:143
 msgid "ahead"
-msgstr ""
+msgstr "μπροστά"
 
 #. TRANSLATORS: the first argument is hour, followed by
 #. minute, and the translation for either 'behind' or
@@ -604,7 +607,7 @@ msgstr "Βοστώνη"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:87
 msgid "Boulder"
-msgstr ""
+msgstr "Μπούλντερ"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:88
 msgid "Brasília"
@@ -758,7 +761,7 @@ msgstr "Σικάγο"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:109
 msgid "Chihuahua"
-msgstr ""
+msgstr "Τσιουάουα"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:110
 msgid "Chişinău"
@@ -1186,7 +1189,7 @@ msgstr ""
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:190
 msgid "Knox"
-msgstr ""
+msgstr "Νοξ"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:191
 msgid "Knoxville"
@@ -1639,7 +1642,7 @@ msgstr "Μιανμάρ"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:277
 msgid "Reno"
-msgstr ""
+msgstr "Ρίνο"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:278
 msgid "Reston"
@@ -1786,7 +1789,7 @@ msgid "Singapore"
 msgstr "Σιγκαπούρη"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:306
-msgid "Simferopol’"
+msgid "Simferopol"
 msgstr "Συμφερόπολη"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:307
@@ -1807,7 +1810,7 @@ msgstr "Βουλγαρία"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:309
 msgid "St.Johns"
-msgstr ""
+msgstr "Άγιος Ιωάννης Νέας Γης"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:310
 msgid "St.Kitts"
@@ -1823,7 +1826,7 @@ msgstr "Σαιντ Λούις"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:312
 msgid "Stanley"
-msgstr ""
+msgstr "Στάνλεϋ"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:312
 msgid "Falkland Islands"
@@ -1903,7 +1906,7 @@ msgstr "Μογγολία"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:326
 msgid "UTC"
-msgstr ""
+msgstr "UTC"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:328
 msgid "Vancouver"
@@ -1943,7 +1946,7 @@ msgstr "Βαρσοβία"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:336
 msgid "Washington D.C"
-msgstr ""
+msgstr "Ουάσινγκτον, Π.Κ"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:337
 msgid "Winamac"
@@ -1981,7 +1984,9 @@ msgstr "Ρολόι"
 msgid ""
 "A sophisticated clock app that provides world clock and alarm functionality."
 msgstr ""
+"Μια κομψή εφαρμογή ρολογιού που παρέχει λειτουργία παγκόσμιου ρολογιού και "
+"αφύπνισης."
 
 #: ubuntu-clock-app.desktop.in.in.h:3
 msgid "time;alarm;alert;clock;world;"
-msgstr ""
+msgstr "χρόνος;αφύπνιση;συναγερμός;ρολόι;κόσμος;"
