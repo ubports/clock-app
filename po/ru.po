@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2015-03-13 00:18+0100\n"
-"PO-Revision-Date: 2015-03-06 08:10+0000\n"
+"PO-Revision-Date: 2015-03-25 09:15+0000\n"
 "Last-Translator: ☠Jay ZDLin☠ <Unknown>\n"
 "Language-Team: Russian <ru@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -16,8 +16,8 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Launchpad-Export-Date: 2015-03-14 05:35+0000\n"
-"X-Generator: Launchpad (build 17389)\n"
+"X-Launchpad-Export-Date: 2015-03-26 05:30+0000\n"
+"X-Generator: Launchpad (build 17413)\n"
 
 #: ../app/alarm/AlarmLabel.qml:30 ../app/alarm/AlarmLabel.qml:56
 #: ../app/alarm/EditAlarmPage.qml:291
@@ -75,8 +75,9 @@ msgstr "Настройки"
 #, qt-format
 msgid "%1 minute"
 msgid_plural "%1 minutes"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1 минута"
+msgstr[1] "%1 минуты"
+msgstr[2] "%1 минут"
 
 #: ../app/alarm/AlarmSettingsPage.qml:92
 msgid "Alarm volume"
@@ -129,7 +130,7 @@ msgstr "Следующий будильник %1"
 
 #: ../app/alarm/AlarmUtils.qml:79
 msgid "Alarm Passed"
-msgstr ""
+msgstr "Будильник прозвенел"
 
 #: ../app/alarm/AlarmUtils.qml:89
 #, no-c-format, qt-format
@@ -579,11 +580,11 @@ msgstr "Бермудские острова"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:82
 msgid "Beulah"
-msgstr ""
+msgstr "Бьюла"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:83
 msgid "Black Rock City"
-msgstr ""
+msgstr "Блэк Рок Сити"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:84
 msgid "Blantyre"
@@ -706,7 +707,7 @@ msgstr "Кембридж"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:101
 msgid "Canary"
-msgstr ""
+msgstr "Канарские острова"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:102
 msgid "Canberra"
@@ -750,7 +751,7 @@ msgstr "Марокко"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:107
 msgid "Cayman Palms"
-msgstr ""
+msgstr "Каймановы острова"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:107
 msgid "Cayman Islands"
@@ -891,7 +892,7 @@ msgstr "Катар"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:132
 msgid "Dominica"
-msgstr ""
+msgstr "Доминиканская республика"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:133
 msgid "Dubai"
@@ -1190,7 +1191,7 @@ msgstr "Киркленд"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:190
 msgid "Knox"
-msgstr ""
+msgstr "Нокс"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:191
 msgid "Knoxville"
@@ -1477,7 +1478,7 @@ msgstr "Новый Орлеан"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:245
 msgid "New Salem"
-msgstr ""
+msgstr "Нью-Сейлем"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:246
 msgid "New South Wales"
@@ -1791,7 +1792,7 @@ msgstr "Сингапур"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:306
 msgid "Simferopol"
-msgstr ""
+msgstr "Симферополь"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:307
 msgid "Skopje"
@@ -1887,7 +1888,7 @@ msgstr "Триполи"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:322
 msgid "Libya"
-msgstr ""
+msgstr "Ливия"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:323
 msgid "Tunis"
@@ -1988,4 +1989,4 @@ msgstr "Современные часы с функциями мирового �
 
 #: ubuntu-clock-app.desktop.in.in.h:3
 msgid "time;alarm;alert;clock;world;"
-msgstr ""
+msgstr "время;будильник;сигнал;часы;мировое;"
