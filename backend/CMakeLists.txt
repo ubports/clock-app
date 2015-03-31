@@ -7,7 +7,6 @@ include_directories(
 add_definitions(
   -DGETTEXT_PACKAGE=\"${PROJECT_NAME}\"
   -DGETTEXT_LOCALEDIR=\"${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_LOCALEDIR}\"
-  -DSTORE_DATA_DIR="${STORE_DATA_DIR}"
 )
 
 set(
