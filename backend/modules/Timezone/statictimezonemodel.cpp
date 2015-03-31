@@ -21,6 +21,10 @@
 StaticTimeZoneModel::StaticTimeZoneModel(QObject *parent) :
     TimeZoneModel(parent)
 {
+    setlocale(LC_ALL, "");
+    bindtextdomain(GETTEXT_PACKAGE, GETTEXT_LOCALEDIR);
+    bind_textdomain_codeset(GETTEXT_PACKAGE, "UTF-8");
+
     // Load default city list into model when object is initiated
     loadDefaultCityList();
 }
