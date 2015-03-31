@@ -337,7 +337,7 @@ void StaticTimeZoneModel::loadDefaultCityList()
     addCity(_("Vincennes"), "America/Indiana/Vincennes", _("France"));
 
     addCity(_("Warsaw"), "Europe/Warsaw", _("Poland"));
-    addCity(_("Washington D.C"), "America/New_York", _("United States"));
+    addCity(_("Washington D.C."), "America/New_York", _("United States"));
     addCity(_("Winamac"), "America/Indiana/Winamac", _("United States"));
     addCity(_("Winnipeg"), "America/Winnipeg", _("Canada"));
     addCity(_("Wrocław"), "Europe/Warsaw", _("Poland"));
