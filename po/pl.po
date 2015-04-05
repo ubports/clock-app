@@ -8,26 +8,26 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2015-03-31 20:29+0200\n"
-"PO-Revision-Date: 2015-03-05 23:22+0000\n"
-"Last-Translator: Seweryn Opyd <Unknown>\n"
+"PO-Revision-Date: 2015-04-04 12:15+0000\n"
+"Last-Translator: GTriderXC <gtriderxc@yahoo.com>\n"
 "Language-Team: Polish <pl@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2;\n"
-"X-Launchpad-Export-Date: 2015-04-01 05:33+0000\n"
+"X-Launchpad-Export-Date: 2015-04-05 06:39+0000\n"
 "X-Generator: Launchpad (build 17413)\n"
 
 #: ../app/alarm/AlarmLabel.qml:30 ../app/alarm/AlarmLabel.qml:56
 #: ../app/alarm/EditAlarmPage.qml:291
 msgid "Label"
-msgstr ""
+msgstr "Etykieta"
 
 #: ../app/alarm/AlarmList.qml:78 ../app/alarm/AlarmPage.qml:117
 #: ../app/worldclock/UserWorldCityList.qml:101
 msgid "Delete"
-msgstr ""
+msgstr "Kasuj"
 
 #: ../app/alarm/AlarmPage.qml:26
 msgid "Alarms"
@@ -40,7 +40,7 @@ msgstr "Budzik"
 
 #: ../app/alarm/AlarmPage.qml:58 ../app/worldclock/WorldCityList.qml:80
 msgid "Back"
-msgstr ""
+msgstr "Powrót"
 
 #: ../app/alarm/AlarmPage.qml:87
 msgid "Select None"
@@ -60,7 +60,7 @@ msgstr "Stuknij w „+” aby dodać alarm"
 
 #: ../app/alarm/AlarmRepeat.qml:34 ../app/alarm/EditAlarmPage.qml:281
 msgid "Repeat"
-msgstr ""
+msgstr "Powtarzanie"
 
 #: ../app/alarm/AlarmSettingsPage.qml:29
 msgid "Settings"
@@ -75,8 +75,9 @@ msgstr "Ustawienia"
 #, qt-format
 msgid "%1 minute"
 msgid_plural "%1 minutes"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1 minuta"
+msgstr[1] "%1 minuty"
+msgstr[2] "%1 minut"
 
 #: ../app/alarm/AlarmSettingsPage.qml:92
 msgid "Alarm volume"
@@ -84,35 +85,35 @@ msgstr "Głośność alarmu"
 
 #: ../app/alarm/AlarmSettingsPage.qml:145
 msgid "Silence after"
-msgstr ""
+msgstr "Wyciszenie po"
 
 #: ../app/alarm/AlarmSettingsPage.qml:214
 msgid "Snooze for"
-msgstr ""
+msgstr "Drzemka:"
 
 #: ../app/alarm/AlarmSettingsPage.qml:259
 msgid "Vibration"
-msgstr ""
+msgstr "Wibracja"
 
 #: ../app/alarm/AlarmSettingsPage.qml:293
 msgid "Change time and date"
-msgstr ""
+msgstr "Zmiana czasu i daty"
 
 #: ../app/alarm/AlarmSound.qml:28 ../app/alarm/EditAlarmPage.qml:304
 msgid "Sound"
-msgstr ""
+msgstr "Dźwięk"
 
 #: ../app/alarm/AlarmUtils.qml:31
 msgid "Never"
-msgstr ""
+msgstr "Nigdy"
 
 #: ../app/alarm/AlarmUtils.qml:37
 msgid "Weekdays"
-msgstr ""
+msgstr "Dni robocze"
 
 #: ../app/alarm/AlarmUtils.qml:41
 msgid "Weekends"
-msgstr ""
+msgstr "Weekendy"
 
 #: ../app/alarm/AlarmUtils.qml:45
 msgid "Daily"
@@ -120,39 +121,39 @@ msgstr "Codziennie"
 
 #: ../app/alarm/AlarmUtils.qml:55
 msgid "No active alarms"
-msgstr ""
+msgstr "Brak aktywnych alarmów"
 
 #: ../app/alarm/AlarmUtils.qml:72
 #, qt-format
 msgid "Next Alarm %1"
-msgstr ""
+msgstr "Następny alarm %1"
 
 #: ../app/alarm/AlarmUtils.qml:79
 msgid "Alarm Passed"
-msgstr ""
+msgstr "Alarm minął"
 
 #: ../app/alarm/AlarmUtils.qml:89
 #, no-c-format, qt-format
 msgid "in %1d %2h %3m"
-msgstr ""
+msgstr "za %1d %2g %3m"
 
 #: ../app/alarm/AlarmUtils.qml:99
 #, no-c-format, qt-format
 msgid "in %1h %2m"
-msgstr ""
+msgstr "za %1g %2m"
 
 #: ../app/alarm/AlarmUtils.qml:108
 #, no-c-format, qt-format
 msgid "in %1m"
-msgstr ""
+msgstr "za %1m"
 
 #: ../app/alarm/EditAlarmPage.qml:37
 msgid "New alarm"
-msgstr ""
+msgstr "Nowy alarm"
 
 #: ../app/alarm/EditAlarmPage.qml:37
 msgid "Edit alarm"
-msgstr ""
+msgstr "Edytuj alarm"
 
 #: ../app/alarm/EditAlarmPage.qml:325
 msgid "Delete alarm"
@@ -160,11 +161,11 @@ msgstr "Usuń alarm"
 
 #: ../app/clock/ClockPage.qml:271
 msgid "Location Service Error!"
-msgstr ""
+msgstr "Błąd usługi lokalizacji!"
 
 #: ../app/clock/ClockPage.qml:273
 msgid "Retrieving location..."
-msgstr ""
+msgstr "Ustalanie położenia..."
 
 #: ../app/worldclock/AddWorldCityButton.qml:30
 msgid "Add"
@@ -173,17 +174,17 @@ msgstr "Dodaj"
 #: ../app/worldclock/AddWorldCityButton.qml:61
 #: ../app/worldclock/WorldCityList.qml:64
 msgid "City"
-msgstr ""
+msgstr "Miasto"
 
 #. TRANSLATORS: this indicates if the time in a world clock
 #. is behind or ahead of the time at the current location
 #: ../app/worldclock/UserWorldCityDelegate.qml:142
 msgid "behind"
-msgstr ""
+msgstr "później"
 
 #: ../app/worldclock/UserWorldCityDelegate.qml:143
 msgid "ahead"
-msgstr ""
+msgstr "wcześniej"
 
 #. TRANSLATORS: the first argument is hour, followed by
 #. minute, and the translation for either 'behind' or
@@ -191,49 +192,49 @@ msgstr ""
 #: ../app/worldclock/UserWorldCityDelegate.qml:153
 #, qt-format
 msgid "%1h %2m %3"
-msgstr ""
+msgstr "%1g %2m %3"
 
 #. TRANSLATORS: the first argument is hour, followed by the
 #. translation for either 'behind' or 'ahead'
 #: ../app/worldclock/UserWorldCityDelegate.qml:162
 #, qt-format
 msgid "%1h %2"
-msgstr ""
+msgstr "%1g %2"
 
 #. TRANSLATORS: the first argument is minute, followed by the
 #. translation for either 'behind' or 'ahead'
 #: ../app/worldclock/UserWorldCityDelegate.qml:170
 #, qt-format
 msgid "%1m %2"
-msgstr ""
+msgstr "%1m %2"
 
 #: ../app/worldclock/UserWorldCityDelegate.qml:176
 msgid "Same time"
-msgstr ""
+msgstr "Ten sam czas"
 
 #: ../app/worldclock/WorldCityList.qml:51
 msgid "Select a city"
-msgstr ""
+msgstr "Wybierz miasto"
 
 #: ../app/worldclock/WorldCityList.qml:109
 msgid "Search..."
-msgstr ""
+msgstr "Wyszukiwanie..."
 
 #: ../app/worldclock/WorldCityList.qml:213
 msgid "Searching for a city"
-msgstr ""
+msgstr "Wyszukiwanie miasta"
 
 #: ../app/worldclock/WorldCityList.qml:218
 msgid "No City Found"
-msgstr ""
+msgstr "Nie odnaleziono takiej miejscowości"
 
 #: ../app/worldclock/WorldCityList.qml:224
 msgid "Unable to connect."
-msgstr ""
+msgstr "Brak połączenia."
 
 #: ../app/worldclock/WorldCityList.qml:225
 msgid "Please check your network connection and try again"
-msgstr ""
+msgstr "Sprawdź połączenie z siecią i spróbuj ponownie"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:47
 msgid "Abidjan"
@@ -261,7 +262,7 @@ msgstr "Etiopia"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:50
 msgid "Adelaide"
-msgstr ""
+msgstr "Adelaide"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:50
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:95
@@ -583,7 +584,7 @@ msgstr "Beulah"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:87
 msgid "Black Rock City"
-msgstr ""
+msgstr "Black Rock City"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:88
 msgid "Blantyre"
@@ -706,7 +707,7 @@ msgstr "Cambridge"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:105
 msgid "Canary"
-msgstr ""
+msgstr "Wyspy Kanaryjskie"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:106
 msgid "Canberra"
@@ -750,7 +751,7 @@ msgstr "Maroko"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:111
 msgid "Cayman Palms"
-msgstr ""
+msgstr "Wyspy Kajman"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:111
 msgid "Cayman Islands"
@@ -819,7 +820,7 @@ msgstr "Curaçao"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:122
 msgid "Curacao"
-msgstr ""
+msgstr "Curacao"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:124
 msgid "Dakar"
@@ -855,7 +856,7 @@ msgstr "Darwin"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:129
 msgid "Dawson Creek"
-msgstr ""
+msgstr "Dawson Creek"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:130
 msgid "Delhi"
@@ -916,7 +917,7 @@ msgstr "Wyspa Wielkanocna"
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:140
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:300
 msgid "Chile"
-msgstr ""
+msgstr "Chile"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:141
 msgid "Edmonton"
@@ -1100,7 +1101,7 @@ msgstr "Stambuł"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:179
 msgid "Jacksonville"
-msgstr ""
+msgstr "Jacksonville"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:180
 msgid "Jakarta"
@@ -1731,7 +1732,7 @@ msgstr "Sana"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:299
 msgid "Yemen"
-msgstr ""
+msgstr "Jemen"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:300
 msgid "Santiago"
@@ -1791,7 +1792,7 @@ msgstr "Singapur"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:310
 msgid "Simferopol"
-msgstr ""
+msgstr "Simferopol"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:311
 msgid "Skopje"
@@ -1887,7 +1888,7 @@ msgstr "Trypolis"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:326
 msgid "Libya"
-msgstr ""
+msgstr "Libia"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:327
 msgid "Tunis"
@@ -1947,7 +1948,7 @@ msgstr "Warszawa"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:340
 msgid "Washington D.C."
-msgstr ""
+msgstr "Waszyngton"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:341
 msgid "Winamac"
