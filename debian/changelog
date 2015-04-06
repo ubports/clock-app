@@ -14,6 +14,7 @@ ubuntu-clock-app (3.3) utopic; urgency=medium
   * Fixed strings not following gettext-style plural forms. (LP: #1431446)
   * Renabled create alarm tests on device which were disabled due to upstream bug
     in autopilot. (LP: #1426108)
+  * Fixed timezone difference label overflowing into the clock (LP: #1440732)
 
   [Brendan Donegan]
   * Fixed AP failure by waiting for the bottom edge tip visible property to be true
