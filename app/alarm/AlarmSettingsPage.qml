@@ -116,140 +116,58 @@ Page {
                 }
             }
 
-            ListItem.Expandable {
+            ExpandableListItem {
                 id: _alarmDuration
 
-                anchors {
-                    left: parent.left
-                    right: parent.right
-                }
+                listViewHeight: units.gu(24)
+                text: i18n.tr("Silence after")
+                subText: i18n.tr("%1 minute", "%1 minutes", alarmSettings.duration).arg(alarmSettings.duration)
 
-                collapseOnClick: true
-                expandedHeight: _contentColumn.height + units.gu(1)
+                model: durationModel
 
-                Column {
-                    id: _contentColumn
-
-                    anchors {
-                        left: parent.left
-                        right: parent.right
-                        margins: units.gu(-2)
+                delegate: ListItem.Standard {
+                    text: model.text
+                    onClicked: {
+                        alarmSettings.duration = duration
+                        _alarmDuration.expanded = false
                     }
 
-                    Item {
-                        width: parent.width
-                        height: _alarmDuration.collapsedHeight
-
-                        SubtitledListItem {
-                            id: _header
-                            text: i18n.tr("Silence after")
-                            subText: i18n.tr("%1 minute", "%1 minutes", alarmSettings.duration).arg(alarmSettings.duration)
-                            onClicked: _alarmDuration.expanded = true
-
-                            Icon {
-                                id: _upArrow
-
-                                width: units.gu(2)
-                                height: width
-                                anchors.right: parent.right
-                                anchors.rightMargin: units.gu(2)
-                                anchors.verticalCenter: parent.verticalCenter
-
-                                name: "go-down"
-                                color: "Grey"
-                                rotation: _alarmDuration.expanded ? 180 : 0
-
-                                Behavior on rotation {
-                                    UbuntuNumberAnimation {}
-                                }
-                            }
-                        }
-                    }
-
-                    ListView {
-                        id: _resultsList
-
-                        interactive: false
-                        model: durationModel
-                        width: parent.width
-                        height: units.gu(24)
-
-                        delegate: ListItem.Standard {
-                            text: model.text
-                            onClicked: {
-                                alarmSettings.duration = duration
-                                _alarmDuration.expanded = false
-                            }
-                        }
+                    Icon {
+                        width: units.gu(2)
+                        height: width
+                        name: "ok"
+                        visible: alarmSettings.duration === duration
+                        anchors.right: parent.right
+                        anchors.rightMargin: units.gu(2)
+                        anchors.verticalCenter: parent.verticalCenter
                     }
                 }
             }
 
-            ListItem.Expandable {
+            ExpandableListItem {
                 id: _alarmSnooze
 
-                anchors {
-                    left: parent.left
-                    right: parent.right
-                }
+                listViewHeight: units.gu(24)
+                text: i18n.tr("Snooze for")
+                subText: i18n.tr("%1 minute", "%1 minutes", alarmSettings.snoozeDuration).arg(alarmSettings.snoozeDuration)
 
-                collapseOnClick: true
-                expandedHeight: _snoozeContentColumn.height + units.gu(1)
+                model: snoozeModel
 
-                Column {
-                    id: _snoozeContentColumn
-
-                    anchors {
-                        left: parent.left
-                        right: parent.right
-                        margins: units.gu(-2)
+                delegate: ListItem.Standard {
+                    text: model.text
+                    onClicked: {
+                        alarmSettings.snoozeDuration = duration
+                        _alarmSnooze.expanded = false
                     }
 
-                    Item {
-                        width: parent.width
-                        height: _alarmSnooze.collapsedHeight
-
-                        SubtitledListItem {
-                            id: _snoozeHeader
-                            text: i18n.tr("Snooze for")
-                            subText: i18n.tr("%1 minute", "%1 minutes", alarmSettings.snoozeDuration).arg(alarmSettings.snoozeDuration)
-                            onClicked: _alarmSnooze.expanded = true
-
-                            Icon {
-                                id: _snoozeUpArrow
-
-                                width: units.gu(2)
-                                height: width
-                                anchors.right: parent.right
-                                anchors.rightMargin: units.gu(2)
-                                anchors.verticalCenter: parent.verticalCenter
-
-                                name: "go-down"
-                                color: "Grey"
-                                rotation: _alarmSnooze.expanded ? 180 : 0
-
-                                Behavior on rotation {
-                                    UbuntuNumberAnimation {}
-                                }
-                            }
-                        }
-                    }
-
-                    ListView {
-                        id: _snoozeResultsList
-
-                        interactive: false
-                        model: snoozeModel
-                        width: parent.width
-                        height: units.gu(24)
-
-                        delegate: ListItem.Standard {
-                            text: model.text
-                            onClicked: {
-                                alarmSettings.snoozeDuration = duration
-                                _alarmSnooze.expanded = false
-                            }
-                        }
+                    Icon {
+                        width: units.gu(2)
+                        height: width
+                        name: "ok"
+                        visible: alarmSettings.snoozeDuration === duration
+                        anchors.right: parent.right
+                        anchors.rightMargin: units.gu(2)
+                        anchors.verticalCenter: parent.verticalCenter
                     }
                 }
             }
