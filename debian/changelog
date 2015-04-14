@@ -12,6 +12,8 @@ ubuntu-clock-app (3.3) utopic; urgency=medium
   * Fixed empty state description not wrapping (LP: #1428165)
   * Fixed edit alarm crash issue in vivid (thanks to Zsombor) (LP: #1429273)
   * Fixed strings not following gettext-style plural forms. (LP: #1431446)
+  * Created a generic expandable listitem component for the settings page to avoid
+    code duplication in AlarmSettings.qml
   * Renabled create alarm tests on device which were disabled due to upstream bug
     in autopilot. (LP: #1426108)
   * Fixed timezone difference label overflowing into the clock (LP: #1440732)
