@@ -36,6 +36,14 @@ Page {
             head: alarmPage.head
             when: !alarmListView.isInSelectionMode
 
+            backAction: Action {
+                iconName: "down"
+                text: i18n.tr("Back")
+                onTriggered: {
+                    pageStack.pop()
+                }
+            }
+
             actions: [
                 Action {
                     objectName: "addAlarmAction"

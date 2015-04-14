@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-04-06 15:32+0200\n"
+"POT-Creation-Date: 2015-04-14 13:55+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,7 +23,7 @@ msgstr ""
 msgid "Label"
 msgstr ""
 
-#: ../app/alarm/AlarmList.qml:78 ../app/alarm/AlarmPage.qml:117
+#: ../app/alarm/AlarmList.qml:78 ../app/alarm/AlarmPage.qml:125
 #: ../app/worldclock/UserWorldCityList.qml:101
 msgid "Delete"
 msgstr ""
@@ -32,28 +32,29 @@ msgstr ""
 msgid "Alarms"
 msgstr ""
 
-#: ../app/alarm/AlarmPage.qml:43 ../app/alarm/EditAlarmPage.qml:44
+#: ../app/alarm/AlarmPage.qml:41 ../app/alarm/AlarmPage.qml:66
+#: ../app/worldclock/WorldCityList.qml:80
+msgid "Back"
+msgstr ""
+
+#: ../app/alarm/AlarmPage.qml:51 ../app/alarm/EditAlarmPage.qml:44
 #: ../app/alarm/EditAlarmPage.qml:166
 msgid "Alarm"
 msgstr ""
 
-#: ../app/alarm/AlarmPage.qml:58 ../app/worldclock/WorldCityList.qml:80
-msgid "Back"
-msgstr ""
-
-#: ../app/alarm/AlarmPage.qml:87
+#: ../app/alarm/AlarmPage.qml:95
 msgid "Select None"
 msgstr ""
 
-#: ../app/alarm/AlarmPage.qml:89 ../app/alarm/AlarmRepeat.qml:38
+#: ../app/alarm/AlarmPage.qml:97 ../app/alarm/AlarmRepeat.qml:38
 msgid "Select All"
 msgstr ""
 
-#: ../app/alarm/AlarmPage.qml:154
+#: ../app/alarm/AlarmPage.qml:162
 msgid "No saved alarms"
 msgstr ""
 
-#: ../app/alarm/AlarmPage.qml:155
+#: ../app/alarm/AlarmPage.qml:163
 msgid "Tap the + icon to add an alarm"
 msgstr ""
 
