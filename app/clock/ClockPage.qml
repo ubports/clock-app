@@ -254,7 +254,7 @@ PageWithBottomEdge {
 
             opacity: settingsIcon.opacity
             spacing: units.gu(1)
-            visible: geoposition.sourceError === PositionSource.NoError
+            visible: location.text !== "Null" && location.text !== "Denied"
 
             anchors {
                 top: date.bottom
