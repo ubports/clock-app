@@ -129,10 +129,14 @@ ListItemWithActions {
             id: relativeTimeLabel
             objectName: "relativeTimeLabel" + index
 
+            anchors.left: localTimeVisual.right
             anchors.right: parent.right
             anchors.verticalCenter: parent.verticalCenter
 
             fontSize: "xx-small"
+            wrapMode: Text.WordWrap
+            maximumLineCount: 2
+            elide: Text.ElideRight
             horizontalAlignment: Text.AlignRight
             text: {
                 var day;
