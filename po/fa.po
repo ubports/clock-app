@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2015-04-06 15:32+0200\n"
+"POT-Creation-Date: 2015-04-15 01:55+0200\n"
 "PO-Revision-Date: 2015-04-10 02:50+0000\n"
 "Last-Translator: Danial Behzadi <dani.behzi@gmail.com>\n"
 "Language-Team: Persian <fa@li.org>\n"
@@ -15,15 +15,15 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Launchpad-Export-Date: 2015-04-11 05:52+0000\n"
-"X-Generator: Launchpad (build 17423)\n"
+"X-Launchpad-Export-Date: 2015-04-15 05:46+0000\n"
+"X-Generator: Launchpad (build 17428)\n"
 
 #: ../app/alarm/AlarmLabel.qml:30 ../app/alarm/AlarmLabel.qml:56
 #: ../app/alarm/EditAlarmPage.qml:291
 msgid "Label"
 msgstr "برچسب"
 
-#: ../app/alarm/AlarmList.qml:78 ../app/alarm/AlarmPage.qml:117
+#: ../app/alarm/AlarmList.qml:78 ../app/alarm/AlarmPage.qml:125
 #: ../app/worldclock/UserWorldCityList.qml:101
 msgid "Delete"
 msgstr "حذف"
@@ -32,28 +32,29 @@ msgstr "حذف"
 msgid "Alarms"
 msgstr "هشدارها"
 
-#: ../app/alarm/AlarmPage.qml:43 ../app/alarm/EditAlarmPage.qml:44
+#: ../app/alarm/AlarmPage.qml:41 ../app/alarm/AlarmPage.qml:66
+#: ../app/worldclock/WorldCityList.qml:80
+msgid "Back"
+msgstr "بازگشت"
+
+#: ../app/alarm/AlarmPage.qml:51 ../app/alarm/EditAlarmPage.qml:44
 #: ../app/alarm/EditAlarmPage.qml:166
 msgid "Alarm"
 msgstr "هشدار"
 
-#: ../app/alarm/AlarmPage.qml:58 ../app/worldclock/WorldCityList.qml:80
-msgid "Back"
-msgstr "بازگشت"
-
-#: ../app/alarm/AlarmPage.qml:87
+#: ../app/alarm/AlarmPage.qml:95
 msgid "Select None"
 msgstr "برگزیدن هیچ‌کدام"
 
-#: ../app/alarm/AlarmPage.qml:89 ../app/alarm/AlarmRepeat.qml:38
+#: ../app/alarm/AlarmPage.qml:97 ../app/alarm/AlarmRepeat.qml:38
 msgid "Select All"
 msgstr "گزینش همه"
 
-#: ../app/alarm/AlarmPage.qml:154
+#: ../app/alarm/AlarmPage.qml:162
 msgid "No saved alarms"
 msgstr "هیچ هشداری ذخیره نشده است"
 
-#: ../app/alarm/AlarmPage.qml:155
+#: ../app/alarm/AlarmPage.qml:163
 msgid "Tap the + icon to add an alarm"
 msgstr "برای افزودن هشدار، روی شمایل + ضربه بزنید"
 
@@ -69,8 +70,8 @@ msgstr "تنظیمات"
 #: ../app/alarm/AlarmSettingsPage.qml:55 ../app/alarm/AlarmSettingsPage.qml:56
 #: ../app/alarm/AlarmSettingsPage.qml:65 ../app/alarm/AlarmSettingsPage.qml:66
 #: ../app/alarm/AlarmSettingsPage.qml:67 ../app/alarm/AlarmSettingsPage.qml:68
-#: ../app/alarm/AlarmSettingsPage.qml:146
-#: ../app/alarm/AlarmSettingsPage.qml:215
+#: ../app/alarm/AlarmSettingsPage.qml:124
+#: ../app/alarm/AlarmSettingsPage.qml:152
 #, qt-format
 msgid "%1 minute"
 msgid_plural "%1 minutes"
@@ -80,19 +81,19 @@ msgstr[0] "%1 دقیقه"
 msgid "Alarm volume"
 msgstr "حجم صدای هشدار"
 
-#: ../app/alarm/AlarmSettingsPage.qml:145
+#: ../app/alarm/AlarmSettingsPage.qml:123
 msgid "Silence after"
 msgstr "خاموشی بعد از"
 
-#: ../app/alarm/AlarmSettingsPage.qml:214
+#: ../app/alarm/AlarmSettingsPage.qml:151
 msgid "Snooze for"
 msgstr "چرت زدن برای"
 
-#: ../app/alarm/AlarmSettingsPage.qml:259
+#: ../app/alarm/AlarmSettingsPage.qml:177
 msgid "Vibration"
 msgstr "لرزش"
 
-#: ../app/alarm/AlarmSettingsPage.qml:293
+#: ../app/alarm/AlarmSettingsPage.qml:211
 msgid "Change time and date"
 msgstr "تغییر زمان و تاریخ"
 
