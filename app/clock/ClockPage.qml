@@ -71,6 +71,16 @@ PageWithBottomEdge {
             if (sourceError !== PositionSource.NoError) {
                 console.log("[Source Error]: Location Service Error")
                 geoposition.stop()
+
+                // If this is the first time, then set location as Denied
+                // to indicate user denying clock app location access.
+                if (userLocationDocument.contents.location === "Null") {
+                    var locationData = JSON.parse
+                            (JSON.stringify(userLocationDocument.contents))
+
+                    locationData.location = "Denied"
+                    userLocationDocument.contents = locationData
+                }
             }
         }
 
@@ -234,7 +244,8 @@ PageWithBottomEdge {
 
             text: clock.analogTime.toLocaleDateString()
             opacity: settingsIcon.opacity
-            fontSize: "xx-small"
+            color: locationRow.visible ? Theme.palette.baseText : UbuntuColors.midAubergine
+            fontSize: locationRow.visible ? "xx-small" : "medium"
         }
 
         Row {
@@ -243,6 +254,7 @@ PageWithBottomEdge {
 
             opacity: settingsIcon.opacity
             spacing: units.gu(1)
+            visible: location.text !== "Null" && location.text !== "Denied"
 
             anchors {
                 top: date.bottom
@@ -266,12 +278,10 @@ PageWithBottomEdge {
                 color: UbuntuColors.midAubergine
 
                 text: {
-                    if (userLocationDocument.contents.location === "Null") {
-                        if(geoposition.sourceError !== PositionSource.NoError) {
-                            return i18n.tr("Location Service Error!")
-                        } else {
+                    if (userLocationDocument.contents.location === "Null"
+                            || userLocationDocument.contents.location === "Denied"
+                            && geoposition.sourceError === PositionSource.NoError) {
                             return i18n.tr("Retrieving location...")
-                        }
                     }
 
                     else {
