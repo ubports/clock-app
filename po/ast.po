@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2015-04-15 01:55+0200\n"
+"POT-Creation-Date: 2015-04-15 02:13+0200\n"
 "PO-Revision-Date: 2015-02-11 20:35+0000\n"
 "Last-Translator: ivarela <ivarela@ubuntu.com>\n"
 "Language-Team: Asturian <ast@li.org>\n"
@@ -15,8 +15,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2015-04-16 05:53+0000\n"
-"X-Generator: Launchpad (build 17428)\n"
+"X-Launchpad-Export-Date: 2015-04-20 06:20+0000\n"
+"X-Generator: Launchpad (build 17430)\n"
 
 #: ../app/alarm/AlarmLabel.qml:30 ../app/alarm/AlarmLabel.qml:56
 #: ../app/alarm/EditAlarmPage.qml:291
@@ -158,11 +158,7 @@ msgstr "Editar alarma"
 msgid "Delete alarm"
 msgstr "Desaniciar alarma"
 
-#: ../app/clock/ClockPage.qml:271
-msgid "Location Service Error!"
-msgstr "¡Fallu del serviciu de llocalización!"
-
-#: ../app/clock/ClockPage.qml:273
+#: ../app/clock/ClockPage.qml:284
 msgid "Retrieving location..."
 msgstr "Obteniendo llocalización..."
 

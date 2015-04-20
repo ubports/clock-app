@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2015-04-15 01:55+0200\n"
+"POT-Creation-Date: 2015-04-15 02:13+0200\n"
 "PO-Revision-Date: 2015-03-07 19:51+0000\n"
 "Last-Translator: Meriuță Cornel <meriutacornel@neacornel.eu>\n"
 "Language-Team: Romanian <ro@li.org>\n"
@@ -16,8 +16,8 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n == 1 ? 0: (((n % 100 > 19) || ((n % 100 "
 "== 0) && (n != 0))) ? 2: 1));\n"
-"X-Launchpad-Export-Date: 2015-04-16 05:53+0000\n"
-"X-Generator: Launchpad (build 17428)\n"
+"X-Launchpad-Export-Date: 2015-04-20 06:22+0000\n"
+"X-Generator: Launchpad (build 17430)\n"
 
 #: ../app/alarm/AlarmLabel.qml:30 ../app/alarm/AlarmLabel.qml:56
 #: ../app/alarm/EditAlarmPage.qml:291
@@ -159,11 +159,7 @@ msgstr "Editează alarma"
 msgid "Delete alarm"
 msgstr "Șterge alarma"
 
-#: ../app/clock/ClockPage.qml:271
-msgid "Location Service Error!"
-msgstr "Eroare a serviciului de localizare!"
-
-#: ../app/clock/ClockPage.qml:273
+#: ../app/clock/ClockPage.qml:284
 msgid "Retrieving location..."
 msgstr ""
 

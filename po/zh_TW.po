@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2015-04-15 01:55+0200\n"
+"POT-Creation-Date: 2015-04-15 02:13+0200\n"
 "PO-Revision-Date: 2015-03-06 15:46+0000\n"
 "Last-Translator: Cheng-Chia Tseng <pswo10680@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <zh_TW@li.org>\n"
@@ -15,8 +15,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Launchpad-Export-Date: 2015-04-16 05:53+0000\n"
-"X-Generator: Launchpad (build 17428)\n"
+"X-Launchpad-Export-Date: 2015-04-20 06:23+0000\n"
+"X-Generator: Launchpad (build 17430)\n"
 
 #: ../app/alarm/AlarmLabel.qml:30 ../app/alarm/AlarmLabel.qml:56
 #: ../app/alarm/EditAlarmPage.qml:291
@@ -158,11 +158,7 @@ msgstr "編輯鬧鐘"
 msgid "Delete alarm"
 msgstr "刪除鬧鐘"
 
-#: ../app/clock/ClockPage.qml:271
-msgid "Location Service Error!"
-msgstr "位置服務發生錯誤！"
-
-#: ../app/clock/ClockPage.qml:273
+#: ../app/clock/ClockPage.qml:284
 msgid "Retrieving location..."
 msgstr "正在取得位置..."
 
