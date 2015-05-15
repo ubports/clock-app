@@ -245,7 +245,7 @@ PageWithBottomEdge {
             text: clock.analogTime.toLocaleDateString()
             opacity: settingsIcon.opacity
             color: locationRow.visible ? Theme.palette.baseText : UbuntuColors.midAubergine
-            fontSize: locationRow.visible ? "xx-small" : "medium"
+            fontSize: "medium"
         }
 
         Row {
