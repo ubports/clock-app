@@ -58,11 +58,11 @@ ClockCircle {
         text: {
             if (time.search(Qt.locale().amText) !== -1) {
                 // 12 hour format detected with the localised AM text
-                return time.split(Qt.locale().amText)[0].trim()
+                return time.replace(Qt.locale().amText, "").trim()
             }
             else if (time.search(Qt.locale().pmText) !== -1) {
                 // 12 hour format detected with the localised PM text
-                return time.split(Qt.locale().pmText)[0].trim()
+                return time.replace(Qt.locale().pmText, "").trim()
             }
             else {
                 // 24-hour format detected, return full time string
