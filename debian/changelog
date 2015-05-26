@@ -21,6 +21,10 @@ ubuntu-clock-app (3.3) utopic; urgency=medium
   * Fixed "Location service error" label being shown when user denies clock app
     location access (LP: #1393827)
   * Increased date font size (LP: #1432736)
+  * Fixed empty state component width warnings
+  
+  [Penk Chen]
+  * Fixed DigitalMode time being empty in chineese locale (LP: #1458808)
 
   [Brendan Donegan]
   * Fixed AP failure by waiting for the bottom edge tip visible property to be true
