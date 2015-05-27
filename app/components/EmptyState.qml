@@ -33,7 +33,6 @@ Item {
     property alias subTitle: emptySublabel.text
 
     height: childrenRect.height
-    width: parent.width
 
     Icon {
         id: emptyIcon
