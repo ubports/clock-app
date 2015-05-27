@@ -22,6 +22,7 @@ ubuntu-clock-app (3.3) utopic; urgency=medium
     location access (LP: #1393827)
   * Increased date font size (LP: #1432736)
   * Fixed empty state component width warnings
+  * Migrated to the 15.04 framework and also QtQuick 2.4
   
   [Penk Chen]
   * Fixed DigitalMode time being empty in chineese locale (LP: #1458808)
