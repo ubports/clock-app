@@ -19,7 +19,7 @@
 import QtQuick 2.4
 import Timezone 1.0
 import Ubuntu.Components 1.2
-import Ubuntu.Components.ListItems 1.0 as ListItem
+import Ubuntu.Components.ListItems 1.0 as ListItems
 import "../components"
 import "../upstreamcomponents"
 
@@ -304,12 +304,12 @@ Page {
         section.criteria: ViewSection.FirstCharacter
         section.labelPositioning: ViewSection.InlineLabels
 
-        section.delegate: ListItem.Header {
+        section.delegate: ListItems.Header {
             text: section
         }
 
-        delegate: ListItem.Empty {
-            showDivider: false
+        delegate: ListItem {
+            divider.visible: false
             objectName: "defaultWorldCityItem" + index
 
             Column {
