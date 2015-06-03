@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-05-28 02:36+0200\n"
+"POT-Creation-Date: 2015-06-03 16:00+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -71,7 +71,7 @@ msgstr ""
 #: ../app/alarm/AlarmSettingsPage.qml:65 ../app/alarm/AlarmSettingsPage.qml:66
 #: ../app/alarm/AlarmSettingsPage.qml:67 ../app/alarm/AlarmSettingsPage.qml:68
 #: ../app/alarm/AlarmSettingsPage.qml:124
-#: ../app/alarm/AlarmSettingsPage.qml:152
+#: ../app/alarm/AlarmSettingsPage.qml:162
 #, qt-format
 msgid "%1 minute"
 msgid_plural "%1 minutes"
@@ -86,15 +86,15 @@ msgstr ""
 msgid "Silence after"
 msgstr ""
 
-#: ../app/alarm/AlarmSettingsPage.qml:151
+#: ../app/alarm/AlarmSettingsPage.qml:161
 msgid "Snooze for"
 msgstr ""
 
-#: ../app/alarm/AlarmSettingsPage.qml:177
+#: ../app/alarm/AlarmSettingsPage.qml:197
 msgid "Vibration"
 msgstr ""
 
-#: ../app/alarm/AlarmSettingsPage.qml:211
+#: ../app/alarm/AlarmSettingsPage.qml:231
 msgid "Change time and date"
 msgstr ""
 

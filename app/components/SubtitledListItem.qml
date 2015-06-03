@@ -18,7 +18,6 @@
 
 import QtQuick 2.4
 import Ubuntu.Components 1.2
-import Ubuntu.Components.ListItems 1.0 as ListItem
 
 /*
   This component is almost an identical copy of the SDK's subtitled with the
@@ -27,7 +26,7 @@ import Ubuntu.Components.ListItems 1.0 as ListItem
   #TODO: Revert to using the SDK Subtitled Component when they change the
   design to match the new clock app design.
  */
-ListItem.Empty {
+ListItem {
     id: _subtitledContainer
 
     // Property to set the main text label

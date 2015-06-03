@@ -17,10 +17,10 @@
  */
 
 import QtQuick 2.4
+import QtQuick.Layouts 1.1
 import DateTime 1.0
 import Alarm.Settings 1.0
 import Ubuntu.Components 1.2
-import Ubuntu.Components.ListItems 1.0 as ListItem
 import "../components"
 
 Page {
@@ -84,7 +84,7 @@ Page {
                 right: parent.right
             }
 
-            ListItem.Empty {
+            ListItem {
                 height: 2 * implicitHeight
 
                 Label {
@@ -119,27 +119,37 @@ Page {
             ExpandableListItem {
                 id: _alarmDuration
 
-                listViewHeight: units.gu(24)
+                listViewHeight: units.gu(28)
                 text: i18n.tr("Silence after")
                 subText: i18n.tr("%1 minute", "%1 minutes", alarmSettings.duration).arg(alarmSettings.duration)
 
                 model: durationModel
 
-                delegate: ListItem.Standard {
-                    text: model.text
+                delegate: ListItem {
+                    RowLayout {
+                        anchors {
+                            left: parent.left
+                            right: parent.right
+                            margins: units.gu(2)
+                            verticalCenter: parent.verticalCenter
+                        }
+
+                        Label {
+                            text: model.text
+                            Layout.fillWidth: true
+                        }
+
+                        Icon {
+                            width: units.gu(2)
+                            height: width
+                            name: "ok"
+                            visible: alarmSettings.duration === duration
+                        }
+                    }
+
                     onClicked: {
                         alarmSettings.duration = duration
                         _alarmDuration.expanded = false
-                    }
-
-                    Icon {
-                        width: units.gu(2)
-                        height: width
-                        name: "ok"
-                        visible: alarmSettings.duration === duration
-                        anchors.right: parent.right
-                        anchors.rightMargin: units.gu(2)
-                        anchors.verticalCenter: parent.verticalCenter
                     }
                 }
             }
@@ -147,32 +157,42 @@ Page {
             ExpandableListItem {
                 id: _alarmSnooze
 
-                listViewHeight: units.gu(24)
+                listViewHeight: units.gu(28)
                 text: i18n.tr("Snooze for")
                 subText: i18n.tr("%1 minute", "%1 minutes", alarmSettings.snoozeDuration).arg(alarmSettings.snoozeDuration)
 
                 model: snoozeModel
 
-                delegate: ListItem.Standard {
-                    text: model.text
+                delegate: ListItem {
+                    RowLayout {
+                        anchors {
+                            left: parent.left
+                            right: parent.right
+                            margins: units.gu(2)
+                            verticalCenter: parent.verticalCenter
+                        }
+
+                        Label {
+                            text: model.text
+                            Layout.fillWidth: true
+                        }
+
+                        Icon {
+                            width: units.gu(2)
+                            height: width
+                            name: "ok"
+                            visible: alarmSettings.snoozeDuration === duration
+                        }
+                    }
+
                     onClicked: {
                         alarmSettings.snoozeDuration = duration
                         _alarmSnooze.expanded = false
                     }
-
-                    Icon {
-                        width: units.gu(2)
-                        height: width
-                        name: "ok"
-                        visible: alarmSettings.snoozeDuration === duration
-                        anchors.right: parent.right
-                        anchors.rightMargin: units.gu(2)
-                        anchors.verticalCenter: parent.verticalCenter
-                    }
                 }
             }
 
-            ListItem.Empty {
+            ListItem {
                 Label {
                     text: i18n.tr("Vibration")
                     color: UbuntuColors.midAubergine
