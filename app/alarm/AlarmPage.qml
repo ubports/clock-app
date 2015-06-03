@@ -71,75 +71,52 @@ Page {
                 }
             }
 
-            contents: Loader {
-                id: selectionStateLoader
-                active: alarmPage.state === "selection"
-                sourceComponent: selectionStateComponent
-                height: parent ? parent.height : undefined
-                anchors.right: parent ? parent.right: undefined
-            }
+            actions: [
+                Action {
+                    text: {
+                        if(alarmListView.ViewItems.selectedIndices.length === alarmListView.count) {
+                            return i18n.tr("Select None")
+                        } else {
+                            return i18n.tr("Select All")
+                        }
+                    }
+
+                    iconSource: {
+                        if(alarmListView.ViewItems.selectedIndices.length === alarmListView.count) {
+                            return Qt.resolvedUrl("../graphics/select-none.svg")
+                        } else {
+                            return Qt.resolvedUrl("../graphics/select.svg")
+                        }
+                    }
+
+                    onTriggered: {
+                        if(alarmListView.ViewItems.selectedIndices.length === alarmListView.count) {
+                            alarmListView.clearSelection()
+                        } else {
+                            alarmListView.selectAll()
+                        }
+                    }
+                },
+
+                Action {
+                    iconName: "delete"
+                    text: i18n.tr("Delete")
+                    enabled: alarmListView.ViewItems.selectedIndices.length !== 0
+
+                    onTriggered: {
+                        var items = alarmListView.ViewItems.selectedIndices
+
+                        for(var i=0; i < alarmListView.ViewItems.selectedIndices.length; i++) {
+                            var alarm = alarmModel.get(alarmListView.ViewItems.selectedIndices[i])
+                            alarm.cancel()
+                        }
+
+                        alarmListView.closeSelection()
+                    }
+                }
+            ]
         }
     ]
-
-    Component {
-        id: selectionStateComponent
-        Item {
-            HeaderButton {
-                id: selectButton
-
-                anchors {
-                    right: deleteButton.left
-                    rightMargin: units.gu(1)
-                }
-
-                text: {
-                    if(alarmListView.ViewItems.selectedIndices.length === alarmListView.count) {
-                        return i18n.tr("Select None")
-                    } else {
-                        return i18n.tr("Select All")
-                    }
-                }
-
-                iconSource: {
-                    if(alarmListView.ViewItems.selectedIndices.length === alarmListView.count) {
-                        return Qt.resolvedUrl("../graphics/select-none.svg")
-                    } else {
-                        return Qt.resolvedUrl("../graphics/select.svg")
-                    }
-                }
-
-                onTriggered: {
-                    if(alarmListView.ViewItems.selectedIndices.length === alarmListView.count) {
-                        alarmListView.clearSelection()
-                    } else {
-                        alarmListView.selectAll()
-                    }
-                }
-            }
-
-            HeaderButton {
-                id: deleteButton
-
-                anchors.right: parent.right
-                anchors.rightMargin: units.gu(2)
-
-                iconName: "delete"
-                text: i18n.tr("Delete")
-                enabled: alarmListView.ViewItems.selectedIndices.length !== 0
-
-                onTriggered: {
-                    var items = alarmListView.ViewItems.selectedIndices
-
-                    for(var i=0; i < alarmListView.ViewItems.selectedIndices.length; i++) {
-                        var alarm = alarmModel.get(alarmListView.ViewItems.selectedIndices[i])
-                        alarm.cancel()
-                    }
-
-                    alarmListView.closeSelection()
-                }
-            }
-        }
-    }
 
     AlarmList {
         id: alarmListView
