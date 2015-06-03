@@ -26,10 +26,7 @@ ListItem {
 
     width: parent ? parent.width : 0
     height: units.gu(6)
-
-    contentItem.anchors {
-        leftMargin: units.gu(2)
-    }
+    divider.visible: false
 
     Label {
         id: alarmTime
@@ -38,7 +35,7 @@ ListItem {
         anchors {
             top: alarmDetailsColumn.top
             left: parent.left
-            //leftMargin: units.gu(2)
+            leftMargin: units.gu(2)
         }
 
         fontSize: "medium"

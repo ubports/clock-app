@@ -18,19 +18,15 @@
 
 import QtQuick 2.4
 import Ubuntu.Components 1.2
-import "../components"
 
 Page {
     id: alarmPage
 
     title: i18n.tr("Alarms")
     objectName: 'AlarmPage'
-
-    Component.onCompleted: console.log("[LOG]: Alarm Page loaded")
-
     flickable: null
 
-    property bool isInSelectionMode: false
+    Component.onCompleted: console.log("[LOG]: Alarm Page loaded")
 
     states: [
         PageHeadState {
