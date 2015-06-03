@@ -30,11 +30,13 @@ Page {
 
     flickable: null
 
+    property bool isInSelectionMode: false
+
     states: [
         PageHeadState {
             name: "default"
             head: alarmPage.head
-            when: !alarmListView.isInSelectionMode
+            when: !alarmListView.ViewItems.selectMode
 
             backAction: Action {
                 iconName: "down"
@@ -59,13 +61,13 @@ Page {
         PageHeadState {
             name: "selection"
             head: alarmPage.head
-            when: alarmListView.isInSelectionMode
+            when: alarmListView.ViewItems.selectMode
 
             backAction: Action {
                 iconName: "back"
                 text: i18n.tr("Back")
                 onTriggered: {
-                    alarmListView.cancelSelection()
+                    alarmListView.ViewItems.selectMode = false
                 }
             }
 
@@ -91,7 +93,7 @@ Page {
                 }
 
                 text: {
-                    if(alarmListView.selectedItems.count === alarmListView.count) {
+                    if(alarmListView.ViewItems.selectedIndices.length === alarmListView.count) {
                         return i18n.tr("Select None")
                     } else {
                         return i18n.tr("Select All")
@@ -99,7 +101,7 @@ Page {
                 }
 
                 iconSource: {
-                    if(alarmListView.selectedItems.count === alarmListView.count) {
+                    if(alarmListView.ViewItems.selectedIndices.length === alarmListView.count) {
                         return Qt.resolvedUrl("../graphics/select-none.svg")
                     } else {
                         return Qt.resolvedUrl("../graphics/select.svg")
@@ -107,7 +109,7 @@ Page {
                 }
 
                 onTriggered: {
-                    if(alarmListView.selectedItems.count === alarmListView.count) {
+                    if(alarmListView.ViewItems.selectedIndices.length === alarmListView.count) {
                         alarmListView.clearSelection()
                     } else {
                         alarmListView.selectAll()
@@ -123,17 +125,17 @@ Page {
 
                 iconName: "delete"
                 text: i18n.tr("Delete")
-                enabled: alarmListView.selectedItems.count !== 0
+                enabled: alarmListView.ViewItems.selectedIndices.length !== 0
 
                 onTriggered: {
-                    var items = alarmListView.selectedItems
+                    var items = alarmListView.ViewItems.selectedIndices
 
-                    for(var i=0; i < items.count; i++) {
-                        var alarm = alarmModel.get(items.get(i).itemsIndex)
+                    for(var i=0; i < alarmListView.ViewItems.selectedIndices.length; i++) {
+                        var alarm = alarmModel.get(alarmListView.ViewItems.selectedIndices[i])
                         alarm.cancel()
                     }
 
-                    alarmListView.endSelection()
+                    alarmListView.closeSelection()
                 }
             }
         }
@@ -141,7 +143,7 @@ Page {
 
     AlarmList {
         id: alarmListView
-        listModel: alarmModel
+        model: alarmModel
         anchors.fill: parent
         localTime: clockTime
     }
