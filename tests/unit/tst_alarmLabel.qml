@@ -25,7 +25,6 @@ MainView {
 
     width: units.gu(40)
     height: units.gu(70)
-    useDeprecatedToolbar: false
 
     Alarm {
         id: _alarm

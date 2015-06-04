@@ -26,7 +26,6 @@ MainView {
 
     width: units.gu(40)
     height: units.gu(70)
-    useDeprecatedToolbar: false
 
     property var clockTime: new Date
                             (
