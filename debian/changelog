@@ -24,7 +24,7 @@ ubuntu-clock-app (3.3) utopic; urgency=medium
   * Fixed empty state component width warnings
 
   [themeles]  
-  * Fixes alarms after midnight being incorrectly enabled for the next day.
+  * Fixes alarms after midnight being incorrectly enabled for the next day. (LP: #1442518)
 
   [Penk Chen]
   * Fixed DigitalMode time being empty in chineese locale (LP: #1458808)

@@ -102,11 +102,11 @@ ListItemWithActions {
                 */
                 if(checked && type === Alarm.OneTime) {
                     alarmData.daysOfWeek = Alarm.AutoDetect
-                    var now=new Date()
+                    var now = new Date()
                     if (alarmData.date.getHours()*60+alarmData.date.getMinutes() <= now.getHours()*60+now.getMinutes()) {
-                        alarmData.date = new Date(now.getFullYear(),now.getMonth(),now.getDate()+1,alarmData.date.getHours(),alarmData.date.getMinutes(),0,0)
+                        alarmData.date = new Date(now.getFullYear(), now.getMonth(), now.getDate()+1, alarmData.date.getHours(), alarmData.date.getMinutes(), 0, 0)
                     } else {
-                        alarmData.date = new Date(now.getFullYear(),now.getMonth(),now.getDate(),alarmData.date.getHours(),alarmData.date.getMinutes(),0,0)
+                        alarmData.date = new Date(now.getFullYear(), now.getMonth(), now.getDate(), alarmData.date.getHours(), alarmData.date.getMinutes(), 0, 0)
                     }
                 }
 
