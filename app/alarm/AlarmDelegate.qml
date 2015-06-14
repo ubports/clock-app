@@ -101,10 +101,9 @@ ListItemWithActions {
                  alarms do this automatically.
                 */
                 if(checked && type === Alarm.OneTime) {
-                    var currentTime = new Date()
                     alarmData.daysOfWeek = Alarm.AutoDetect
                     var now=new Date()
-                    if (alarmData.date.getHours()*60+alarmData.date.getMinutes() <= currentTime.getHours()*60+currentTime.getMinutes()) {
+                    if (alarmData.date.getHours()*60+alarmData.date.getMinutes() <= now.getHours()*60+now.getMinutes()) {
                         alarmData.date = new Date(now.getFullYear(),now.getMonth(),now.getDate()+1,alarmData.date.getHours(),alarmData.date.getMinutes(),0,0)
                     } else {
                         alarmData.date = new Date(now.getFullYear(),now.getMonth(),now.getDate(),alarmData.date.getHours(),alarmData.date.getMinutes(),0,0)
