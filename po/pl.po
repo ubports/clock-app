@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2015-05-26 14:38+0000\n"
-"PO-Revision-Date: 2015-04-04 12:15+0000\n"
-"Last-Translator: GTriderXC <gtriderxc@yahoo.com>\n"
+"PO-Revision-Date: 2015-06-14 23:14+0000\n"
+"Last-Translator: Bartosz Kosiorek <Unknown>\n"
 "Language-Team: Polish <pl@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2;\n"
-"X-Launchpad-Export-Date: 2015-05-28 05:36+0000\n"
-"X-Generator: Launchpad (build 17528)\n"
+"X-Launchpad-Export-Date: 2015-06-15 05:08+0000\n"
+"X-Generator: Launchpad (build 17557)\n"
 
 #: ../app/alarm/AlarmLabel.qml:30 ../app/alarm/AlarmLabel.qml:56
 #: ../app/alarm/EditAlarmPage.qml:291
@@ -31,7 +31,7 @@ msgstr "Kasuj"
 
 #: ../app/alarm/AlarmPage.qml:26
 msgid "Alarms"
-msgstr "Budziki"
+msgstr "Alarmy"
 
 #: ../app/alarm/AlarmPage.qml:41 ../app/alarm/AlarmPage.qml:66
 #: ../app/worldclock/WorldCityList.qml:80
@@ -41,7 +41,7 @@ msgstr "Powrót"
 #: ../app/alarm/AlarmPage.qml:51 ../app/alarm/EditAlarmPage.qml:44
 #: ../app/alarm/EditAlarmPage.qml:166
 msgid "Alarm"
-msgstr "Budzik"
+msgstr "Alarm"
 
 #: ../app/alarm/AlarmPage.qml:95
 msgid "Select None"
@@ -90,7 +90,7 @@ msgstr "Wyciszenie po"
 
 #: ../app/alarm/AlarmSettingsPage.qml:151
 msgid "Snooze for"
-msgstr "Drzemka:"
+msgstr "Drzemka na"
 
 #: ../app/alarm/AlarmSettingsPage.qml:177
 msgid "Vibration"
@@ -223,7 +223,7 @@ msgstr "Wyszukiwanie miasta"
 
 #: ../app/worldclock/WorldCityList.qml:218
 msgid "No City Found"
-msgstr "Nie odnaleziono takiej miejscowości"
+msgstr "Nie odnaleziono takiego miasta"
 
 #: ../app/worldclock/WorldCityList.qml:224
 msgid "Unable to connect."
