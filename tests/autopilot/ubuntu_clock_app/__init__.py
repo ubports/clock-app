@@ -40,7 +40,7 @@ class ClockApp(object):
     def __init__(self, app_proxy, test_type):
         self.app = app_proxy
         self.test_type = test_type
-        self.main_view = self.app.select_single(MainView)
+        self.main_view = self.app.wait_select_single(MainView)
 
     @property
     def pointing_device(self):

@@ -94,7 +94,7 @@ class ClockAppTestCase(AutopilotTestCase):
 
     @autopilot_logging.log_action(logger.info)
     def launch_test_local(self):
-        self.app = self.launch_test_application(
+        return self.launch_test_application(
             base.get_qmlscene_launch_command(),
             self.local_location_qml,
             "-I", self.local_location_backend,
@@ -103,7 +103,7 @@ class ClockAppTestCase(AutopilotTestCase):
 
     @autopilot_logging.log_action(logger.info)
     def launch_test_installed(self):
-        self.app = self.launch_test_application(
+        return self.launch_test_application(
             base.get_qmlscene_launch_command(),
             self.installed_location_qml,
             "-I", self.installed_location_backend,
@@ -112,7 +112,7 @@ class ClockAppTestCase(AutopilotTestCase):
 
     @autopilot_logging.log_action(logger.info)
     def launch_test_click(self):
-        self.app = self.launch_click_package(
+        return self.launch_click_package(
             "com.ubuntu.clock",
             emulator_base=ubuntuuitoolkit.UbuntuUIToolkitCustomProxyObjectBase)
 
