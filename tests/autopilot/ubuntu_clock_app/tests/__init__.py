@@ -72,15 +72,15 @@ class ClockAppTestCase(AutopilotTestCase):
 
         # setup fixtures and launcher
         self.useFixture(fixture_setup.LocationServiceTestEnvironment())
-        launch, self.test_type = self.get_launcher_method_and_type()
         self.useFixture(fixtures.EnvironmentVariable('LC_ALL', newvalue='C'))
+        self.launcher, self.test_type = self.get_launcher_and_type()
 
         # launch application under introspection
         super(ClockAppTestCase, self).setUp()
-        self.app = ubuntu_clock_app.ClockApp(launch(), self.test_type)
+        self.app = ubuntu_clock_app.ClockApp(self.launcher(), self.test_type)
 
 
-    def get_launcher_method_and_type(self):
+    def get_launcher_and_type(self):
         if os.path.exists(self.local_location_backend):
             launcher = self.launch_test_local
             test_type = 'local'
