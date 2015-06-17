@@ -24,7 +24,9 @@ import logging
 import fixtures
 
 from autopilot import logging as autopilot_logging
+from autopilot.testcase import AutopilotTestCase
 import ubuntuuitoolkit
+from ubuntuuitoolkit import base
 
 import ubuntu_clock_app
 from ubuntu_clock_app import fixture_setup, CMakePluginParser
@@ -39,36 +41,44 @@ class ClockAppTestCase(AutopilotTestCase):
 
     """
 
-    binary = 'ubuntu-clock-app'
-    source_dir = os.path.dirname(os.path.dirname(os.path.abspath('.')))
-    build_dir = self._get_build_dir()
-
-    local_location = self.build_dir
-    local_location_qml = os.path.join(self.build_dir,
-                                      'app', self.binary + '.qml')
-
-    local_location_backend = os.path.join(local_location, 'builddir', 'backend')
-    installed_location_backend = ""
-    if glob.glob('/usr/lib/*/qt5/qml/ClockApp'):
-        installed_location_backend = \
-            glob.glob('/usr/lib/*/qt5/qml/ClockApp')[0]
-    installed_location_qml = \
-        '/usr/share/ubuntu-clock-app/ubuntu-clock-app.qml'
-
-    sqlite_dir = os.path.expanduser(
-        "~/.local/share/com.ubuntu.clock")
-    backup_dir = sqlite_dir + ".backup"
-
     def setUp(self):
+        # setup paths
+        self.binary = 'ubuntu-clock-app'
+        self.source_dir = os.path.dirname(
+            os.path.dirname(os.path.abspath('.')))
+        self.build_dir = self._get_build_dir()
+
+        self.local_location = self.build_dir
+        self.local_location_qml = os.path.join(self.build_dir,
+                                          'app', self.binary + '.qml')
+
+        self.local_location_backend = os.path.join(self.local_location,
+                                                   'builddir', 'backend')
+        self.installed_location_backend = ""
+        if glob.glob('/usr/lib/*/qt5/qml/ClockApp'):
+            installed_location_backend = \
+                glob.glob('/usr/lib/*/qt5/qml/ClockApp')[0]
+        self.installed_location_qml = \
+            '/usr/share/ubuntu-clock-app/ubuntu-clock-app.qml'
+
+        self.sqlite_dir = os.path.expanduser(
+            "~/.local/share/com.ubuntu.clock")
+        self.backup_dir = self.sqlite_dir + ".backup"
+
+
         # backup and wipe db's before testing
         self.temp_move_sqlite_db()
         self.addCleanup(self.restore_sqlite_db)
+
+        # setup fixtures and launcher
         self.useFixture(fixture_setup.LocationServiceTestEnvironment())
         launch, self.test_type = self.get_launcher_method_and_type()
         self.useFixture(fixtures.EnvironmentVariable('LC_ALL', newvalue='C'))
-        super(ClockAppTestCase, self).setUp()
 
-        launch()
+        # launch application under introspection
+        super(ClockAppTestCase, self).setUp()
+        self.app = ubuntu_clock_app.ClockApp(launch(), self.test_type)
+
 
     def get_launcher_method_and_type(self):
         if os.path.exists(self.local_location_backend):
@@ -149,7 +159,3 @@ class ClockAppTestCase(AutopilotTestCase):
             build_dir = self.source_dir
 
         return build_dir
-
-    @property
-    def main_view(self):
-        return self.app.wait_select_single(emulators.MainView)

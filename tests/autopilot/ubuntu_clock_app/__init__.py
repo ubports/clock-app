@@ -33,6 +33,20 @@ class ClockEmulatorException(ubuntuuitoolkit.ToolkitException):
     """Exception raised when there is an error with the emulator."""
 
 
+class ClockApp(object):
+
+    """Autopilot helper object for clock."""
+
+    def __init__(self, app_proxy, test_type):
+        self.app = app_proxy
+        self.test_type = test_type
+        self.main_view = self.app.select_single(MainView)
+
+    @property
+    def pointing_device(self):
+        return self.app.pointing_device
+
+
 class MainView(ubuntuuitoolkit.MainView):
 
     @autopilot_logging.log_action(logger.info)
