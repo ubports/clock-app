@@ -50,13 +50,13 @@ class ClockAppTestCase(AutopilotTestCase):
 
         self.local_location = self.build_dir
         self.local_location_qml = os.path.join(self.build_dir,
-                                          'app', self.binary + '.qml')
+                                               'app', self.binary + '.qml')
 
         self.local_location_backend = os.path.join(self.local_location,
                                                    'builddir', 'backend')
         self.installed_location_backend = ""
         if glob.glob('/usr/lib/*/qt5/qml/ClockApp'):
-            installed_location_backend = \
+            self.installed_location_backend = \
                 glob.glob('/usr/lib/*/qt5/qml/ClockApp')[0]
         self.installed_location_qml = \
             '/usr/share/ubuntu-clock-app/ubuntu-clock-app.qml'
@@ -64,7 +64,6 @@ class ClockAppTestCase(AutopilotTestCase):
         self.sqlite_dir = os.path.expanduser(
             "~/.local/share/com.ubuntu.clock")
         self.backup_dir = self.sqlite_dir + ".backup"
-
 
         # backup and wipe db's before testing
         self.temp_move_sqlite_db()
@@ -78,7 +77,6 @@ class ClockAppTestCase(AutopilotTestCase):
         # launch application under introspection
         super(ClockAppTestCase, self).setUp()
         self.app = ubuntu_clock_app.ClockApp(self.launcher(), self.test_type)
-
 
     def get_launcher_and_type(self):
         if os.path.exists(self.local_location_backend):
