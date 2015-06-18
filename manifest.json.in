@@ -12,7 +12,7 @@
             "urls": "share/url-dispatcher/urls/com.ubuntu.clock_clock.url-dispatcher"
         }
     },
-    "version": "3.3.@BZR_REVNO@",
+    "version": "3.4.@BZR_REVNO@",
     "maintainer": "Ubuntu App Cats <ubuntu-touch-coreapps@lists.launchpad.net>",
     "x-test": {
         "autopilot": "ubuntu_clock_app"
