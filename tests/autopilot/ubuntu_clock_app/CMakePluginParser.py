@@ -46,9 +46,8 @@ class CMakePluginParser(object):
         try:
             self.info = etree.parse(self.usr_file)
         except:
-            sys.stderr.write("Could not open the given " +
+            raise CMakePluginParseError("Could not open the given " +
                              "CMakeLists.txt.user file: " + self.info)
-            raise
 
     def _get_active_build_target(self):
         """

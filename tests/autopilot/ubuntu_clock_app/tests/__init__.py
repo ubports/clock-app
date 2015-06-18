@@ -18,6 +18,7 @@
 
 import os.path
 import os
+import sys
 import shutil
 import glob
 import logging
@@ -48,11 +49,11 @@ class ClockAppTestCase(AutopilotTestCase):
             os.path.dirname(os.path.abspath('.')))
         self.build_dir = self._get_build_dir()
 
-        self.local_location = self.build_dir
-        self.local_location_qml = os.path.join(self.build_dir,
+        self.local_location = self.source_dir
+        self.local_location_qml = os.path.join(self.source_dir,
                                                'app', self.binary + '.qml')
 
-        self.local_location_backend = os.path.join(self.local_location, 'backend')
+        self.local_location_backend = os.path.join(self.build_dir, 'backend')
 
         self.installed_location_backend = ""
         if glob.glob('/usr/lib/*/qt5/qml/ClockApp'):
@@ -154,6 +155,7 @@ class ClockAppTestCase(AutopilotTestCase):
                 self.source_dir, 'CMakeLists.txt.user'))
             build_dir = cmake_config.active_build_dir
         except:
+            logger.error("Error parsing CMakeLists.txt.user %s", sys.exc_info()[0])
             build_dir = self.source_dir
 
         return build_dir
