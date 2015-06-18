@@ -155,7 +155,8 @@ class ClockAppTestCase(AutopilotTestCase):
                 self.source_dir, 'CMakeLists.txt.user'))
             build_dir = cmake_config.active_build_dir
         except:
-            logger.error("Error parsing CMakeLists.txt.user %s", sys.exc_info()[0])
+            logger.error("Error parsing CMakeLists.txt.user %s",
+                         sys.exc_info()[0])
             build_dir = self.source_dir
 
         return build_dir

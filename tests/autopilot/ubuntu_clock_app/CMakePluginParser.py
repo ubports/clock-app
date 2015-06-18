@@ -22,7 +22,6 @@ This module parses a configuration file from the Qt Creator's CMake plugin and
 enables programmatical read-only access to several of its configuration options
 """
 
-import sys
 from lxml import etree
 
 
@@ -47,7 +46,8 @@ class CMakePluginParser(object):
             self.info = etree.parse(self.usr_file)
         except:
             raise CMakePluginParseError("Could not open the given " +
-                             "CMakeLists.txt.user file: " + self.info)
+                                        "CMakeLists.txt.user file: " +
+                                        self.info)
 
     def _get_active_build_target(self):
         """
