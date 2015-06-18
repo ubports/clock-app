@@ -1,3 +1,10 @@
+ubuntu-clock-app (3.4) vivid; urgency=medium
+
+  [Nekhelesh Ramananthan]
+  * Updated version to 3.4 to mark transition to vivid framework
+
+ -- Nekhelesh Ramananthan <krnekhelesh@gmail.com>  Thu, 18 Jun 2015 20:08:59 +0200
+
 ubuntu-clock-app (3.3) utopic; urgency=medium
 
   [Nekhelesh Ramananthan]
@@ -23,6 +30,7 @@ ubuntu-clock-app (3.3) utopic; urgency=medium
   * Increased date font size (LP: #1432736)
   * Fixed empty state component width warnings
   * Migrated to the 15.04 framework and also QtQuick 2.4
+  * Locked clock app orientation to portrait (LP: #1465457)
 
   [themeles]  
   * Fixes alarms after midnight being incorrectly enabled for the next day. (LP: #1442518)
