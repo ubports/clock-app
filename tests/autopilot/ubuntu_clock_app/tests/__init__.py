@@ -52,8 +52,8 @@ class ClockAppTestCase(AutopilotTestCase):
         self.local_location_qml = os.path.join(self.build_dir,
                                                'app', self.binary + '.qml')
 
-        self.local_location_backend = os.path.join(self.local_location,
-                                                   'builddir', 'backend')
+        self.local_location_backend = os.path.join(self.local_location, 'backend')
+
         self.installed_location_backend = ""
         if glob.glob('/usr/lib/*/qt5/qml/ClockApp'):
             self.installed_location_backend = \
