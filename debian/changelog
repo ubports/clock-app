@@ -1,3 +1,9 @@
+ubuntu-clock-app (3.3ubuntu1) UNRELEASED; urgency=medium
+
+  * Update testing layout. No longer require specific cmake build directory to run tests
+
+ -- Nicholas Skaggs <nicholas.skaggs@canonical.com>  Thu, 18 Jun 2015 15:42:29 -0400
+
 ubuntu-clock-app (3.3) utopic; urgency=medium
 
   [Nekhelesh Ramananthan]
