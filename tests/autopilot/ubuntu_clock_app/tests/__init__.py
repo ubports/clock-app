@@ -157,6 +157,6 @@ class ClockAppTestCase(AutopilotTestCase):
         except:
             logger.error("Error parsing CMakeLists.txt.user %s",
                          sys.exc_info()[0])
-            build_dir = self.source_dir
+            build_dir = os.path.join(self.source_dir, 'builddir')
 
         return build_dir
