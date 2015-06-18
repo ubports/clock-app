@@ -23,7 +23,10 @@ ubuntu-clock-app (3.3) utopic; urgency=medium
   * Increased date font size (LP: #1432736)
   * Fixed empty state component width warnings
   * Migrated to the 15.04 framework and also QtQuick 2.4
-  
+
+  [themeles]  
+  * Fixes alarms after midnight being incorrectly enabled for the next day. (LP: #1442518)
+
   [Penk Chen]
   * Fixed DigitalMode time being empty in chineese locale (LP: #1458808)
 

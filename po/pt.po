@@ -7,16 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2015-05-15 16:30+0000\n"
-"PO-Revision-Date: 2015-04-05 03:28+0000\n"
-"Last-Translator: António Miranda <Unknown>\n"
+"POT-Creation-Date: 2015-06-14 16:23+0200\n"
+"PO-Revision-Date: 2015-06-15 12:19+0000\n"
+"Last-Translator: Ivo Xavier <ivofernandes12@gmail.com>\n"
 "Language-Team: Portuguese <pt@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2015-05-16 05:43+0000\n"
-"X-Generator: Launchpad (build 17493)\n"
+"X-Launchpad-Export-Date: 2015-06-17 05:30+0000\n"
+"X-Generator: Launchpad (build 17557)\n"
 
 #: ../app/alarm/AlarmLabel.qml:30 ../app/alarm/AlarmLabel.qml:56
 #: ../app/alarm/EditAlarmPage.qml:291
@@ -129,7 +129,7 @@ msgstr "Próximo alarme %1"
 
 #: ../app/alarm/AlarmUtils.qml:79
 msgid "Alarm Passed"
-msgstr "Alarme Perdido"
+msgstr "Alarme perdido"
 
 #: ../app/alarm/AlarmUtils.qml:89
 #, no-c-format, qt-format
@@ -213,7 +213,7 @@ msgstr "Selecione uma cidade"
 
 #: ../app/worldclock/WorldCityList.qml:109
 msgid "Search..."
-msgstr "Procurar ..."
+msgstr "Procurar..."
 
 #: ../app/worldclock/WorldCityList.qml:213
 msgid "Searching for a city"
