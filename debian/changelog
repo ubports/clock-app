@@ -6,7 +6,7 @@ ubuntu-clock-app (3.4) vivid; urgency=medium
   [Victor Thompson]
   * Use city for location if available
 
--- Nekhelesh Ramananthan <krnekhelesh@gmail.com>  Thu, 18 Jun 2015 20:08:59 +0200
+ -- Nekhelesh Ramananthan <krnekhelesh@gmail.com>  Thu, 18 Jun 2015 20:08:59 +0200
 
 ubuntu-clock-app (3.3) utopic; urgency=medium
 
