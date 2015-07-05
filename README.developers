@@ -6,7 +6,7 @@ Building and running the Ubuntu Clock App is quite simple. You will require Ubun
 bzr branch lp:ubuntu-clock-app/reboot branch-name
 cd branch-name
 mkdir builddir && cd builddir
-cmake .. && make
+cmake .. && cmake --build .
 qmlscene ../app/ubuntu-clock-app.qml -I backend/
 ```
 
