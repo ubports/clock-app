@@ -65,12 +65,9 @@ Page {
         function initialise() {
             // TRANSLATORS: Snooze for
             snoozeModel.append({ "duration": 2, "text": i18n.tr("%1 minute", "%1 minutes", 2).arg(2) })
-            snoozeModel.append({ "duration": 4, "text": i18n.tr("%1 minute", "%1 minutes", 4).arg(4) })
             snoozeModel.append({ "duration": 5, "text": i18n.tr("%1 minute", "%1 minutes", 5).arg(5) })
             snoozeModel.append({ "duration": 10, "text": i18n.tr("%1 minute", "%1 minutes", 10).arg(10) })
             snoozeModel.append({ "duration": 15, "text": i18n.tr("%1 minute", "%1 minutes", 15).arg(15) })
-            snoozeModel.append({ "duration": 30, "text": i18n.tr("%1 minute", "%1 minutes", 30).arg(30) })
-            snoozeModel.append({ "duration": 60, "text": i18n.tr("%1 minute", "%1 minutes", 60).arg(60) })
         }
     }
 
