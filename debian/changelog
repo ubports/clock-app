@@ -1,8 +1,15 @@
-ubuntu-clock-app (3.4ubuntu1) UNRELEASED; urgency=medium
+ubuntu-clock-app (3.4ubuntu2) UNRELEASED; urgency=medium
 
+  [ Nicholas Skaggs ]
   * Update testing layout.
 
- -- Nicholas Skaggs <nicholas.skaggs@canonical.com>  Thu, 18 Jun 2015 15:48:22 -0400
+  [ Victor Thompson ]
+  * Use city for location if available (LP: #1465496)
+
+  [ Bartosz Kosiorek]
+  * Add more time choices for snooze time (LP: #1450767)
+
+ -- Bartosz Kosiorek <gang65@poczta.onet.pl>  Sun, 05 Jul 2015 15:10:12 +0200
 
 ubuntu-clock-app (3.4) vivid; urgency=medium
 
