@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2015-06-18 18:12+0000\n"
-"PO-Revision-Date: 2014-11-12 21:42+0000\n"
-"Last-Translator: Asier Iturralde Sarasola <Unknown>\n"
+"PO-Revision-Date: 2015-07-11 16:22+0000\n"
+"Last-Translator: Ibai Oihanguren Sala <Unknown>\n"
 "Language-Team: Basque <eu@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2015-06-19 05:03+0000\n"
-"X-Generator: Launchpad (build 17570)\n"
+"X-Launchpad-Export-Date: 2015-07-12 04:56+0000\n"
+"X-Generator: Launchpad (build 17620)\n"
 
 #: ../app/alarm/AlarmLabel.qml:30 ../app/alarm/AlarmLabel.qml:56
 #: ../app/alarm/EditAlarmPage.qml:291
@@ -75,8 +75,8 @@ msgstr "Ezarpenak"
 #, qt-format
 msgid "%1 minute"
 msgid_plural "%1 minutes"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "minutu %1"
+msgstr[1] "%1 minutu"
 
 #: ../app/alarm/AlarmSettingsPage.qml:92
 msgid "Alarm volume"
@@ -84,7 +84,7 @@ msgstr "Alarmaren bolumena"
 
 #: ../app/alarm/AlarmSettingsPage.qml:123
 msgid "Silence after"
-msgstr ""
+msgstr "Isiltzeko itxaron"
 
 #: ../app/alarm/AlarmSettingsPage.qml:151
 msgid "Snooze for"
