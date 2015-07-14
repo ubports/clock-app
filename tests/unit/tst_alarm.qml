@@ -131,11 +131,10 @@ MainView {
                 var alarmTime = findChild(alarmsList, "listAlarmTime"+i)
                 var alarmStatus = findChild(alarmsList, "listAlarmStatus"+i)
 
-                if (label && alarmLabel &&
-                    label === alarmLabel.text
-                    && time === alarmTime.text
-                    && repeat === alarmRepeat.text
-                    && status === alarmStatus.checked)
+                if (label === alarmLabel.text
+                        && time === alarmTime.text
+                        && repeat === alarmRepeat.text
+                        && status === alarmStatus.checked)
                 {
                     return i;
                 }
