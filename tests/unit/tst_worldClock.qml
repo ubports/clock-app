@@ -166,29 +166,5 @@ MockClockApp {
             // Clean up after the test by deleting the city which was added during the test
             deleteWorldCity("Amsterdam", "Netherlands")
         }
-
-        /*
-         Test to check if a city now found in the world city list can be added
-         by searcing it online and then adding it from the results returned.
-        */
-        function test_addCityBySearchingOnline() {
-            var clockPage = getPage(pageStack, "clockPage")
-
-            pressAddWorldCityButton()
-
-            var worldCityPage = getPage(pageStack, "worldCityList")
-            waitForRendering(worldCityPage)
-
-            /*
-             #TODO: Jenkins machine may run in a confined environment with no
-             access to internet to run this function. Ideally we should mock
-             the data given to this function.
-            */
-            addCityBySearchingOnline("Venice", "Provincia di Venezia, Veneto, Italy")
-            assertWorldCityAddition("Venice", " Veneto, Italy")
-
-            // Clean up after the test by deleting the city which was added during the test
-            deleteWorldCity("Venice", " Veneto, Italy")
-        }
     }
 }
