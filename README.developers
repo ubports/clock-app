@@ -44,9 +44,14 @@ Object Declarations, Grouped Properties and Lists.
 GDB allows one to see what is going on `inside' another program while it executes, 
 or what another program was doing at the moment it crashed. It is a pretty niffty tool which allows you 
 to get the crash log that can help a developer pin point the cause of the crash.
-Running a GDB trace for your app is quite simple. Open the terminal and follows the steps below.
+Before reproducing crash it is good to create symbols table for gdb, by using command:
 
    $ cd branch-name
+   $ mkdir builddir && cd builddir
+   $ cmake -DCMAKE_BUILD_TYPE=Debug .. && cmake --build .
+
+To run GDB:
+
    $ gdb qmlscene
 
 At this point, you are inside the gdb prompt. Run your application as you normally would.
