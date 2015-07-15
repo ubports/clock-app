@@ -21,5 +21,9 @@ import Ubuntu.Components 1.1
 
 AlarmModel {
     id: alarmModel
+
+    property bool isReady: false
+
     Component.onCompleted: console.log("[LOG]: Alarm Database loaded")
+    onModelReset: isReady = true
 }

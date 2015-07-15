@@ -1,5 +1,8 @@
 ubuntu-clock-app (3.4ubuntu2) UNRELEASED; urgency=medium
 
+  [Nekhelesh Ramananthan]
+  * Fixed bottom edge title showing incorrect status on app startup (LP: #1381432)
+
   [ Nicholas Skaggs ]
   * Update testing layout.
 
