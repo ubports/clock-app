@@ -48,6 +48,7 @@ ubuntu-clock-app (3.3) utopic; urgency=medium
     location access (LP: #1393827)
   * Increased date font size (LP: #1432736)
   * Fixed empty state component width warnings
+  * Migrated to the 15.04 framework and also QtQuick 2.4
   * Locked clock app orientation to portrait (LP: #1465457)
 
   [themeles]  

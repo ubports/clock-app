@@ -16,10 +16,10 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import QtQuick 2.3
+import QtQuick 2.4
 import DateTime 1.0
 import U1db 1.0 as U1db
-import Ubuntu.Components 1.1
+import Ubuntu.Components 1.2
 import "clock"
 import "components"
 
@@ -51,7 +51,6 @@ MainView {
 
     backgroundColor: "#F5F5F5"
 
-    useDeprecatedToolbar: false
     anchorToKeyboard: true
 
     Background {}

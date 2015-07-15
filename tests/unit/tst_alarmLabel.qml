@@ -16,8 +16,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import QtQuick 2.3
-import Ubuntu.Components 1.1
+import QtQuick 2.4
+import Ubuntu.Components 1.2
 import "../../app/alarm"
 
 MainView {
@@ -25,7 +25,6 @@ MainView {
 
     width: units.gu(40)
     height: units.gu(70)
-    useDeprecatedToolbar: false
 
     Alarm {
         id: _alarm
