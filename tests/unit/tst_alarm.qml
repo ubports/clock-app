@@ -84,6 +84,7 @@ MainView {
                 print("Deleting Alarm " + i)
                 var alarmObject = findChild(alarmsList, "alarm"+i)
                 swipeToDeleteItem(alarmObject)
+                waitForRendering(alarmPage)
             }
         }
 
@@ -214,12 +215,11 @@ MainView {
             _pressListItem(addAlarmPage, "alarmSound")
             var alarmSoundPage = getPage(pageStack, "alarmSoundPage")
             _setAlarmSound(alarmSoundPage)
-            pressButton(backButton)
 
+            pressButton(backButton)
             waitForRendering(addAlarmPage)
 
             pressHeaderButton(header, "saveAlarmAction")
-
             waitForRendering(alarmPage)
         }
 
@@ -289,6 +289,7 @@ MainView {
 
         // Test to check if creating an alarm works as expected
         function test_01_createAlarm(data) {
+            skip("Alarms utilize external dependencies. As such they are too time sensitive for unit tests")
             var date = new Date()
             date.setHours((date.getHours() + 10) % 24)
             date.setMinutes((date.getMinutes() + 40) % 60)
@@ -305,7 +306,8 @@ MainView {
         }
 
         // Test to check if editing an alarm and saving it works as expected
-        function skip_test_02_editAlarm() {
+        function test_02_editAlarm() {
+            skip("Alarms utilize external dependencies. As such they are too time sensitive for unit tests")
             var date = new Date()
             date.setHours((date.getHours() + 10) % 24)
             date.setMinutes((date.getMinutes() + 40) % 60)
