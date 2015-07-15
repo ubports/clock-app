@@ -1,13 +1,13 @@
 #!/bin/bash
 
-if [[ -z `which autopilot` ]]; then
-  echo "Autopilot is not installed. Skip"
+if [[ -z `which autopilot3` ]]; then
+  echo "Autopilot3 is not installed. Skip"
   exit
 fi
 
 SCRIPTPATH=`dirname $0`
 pushd ${SCRIPTPATH}
-autopilot run ubuntu_clock_app
+autopilot3 run ubuntu_clock_app
 retcode=$?
 popd
 exit $retcode

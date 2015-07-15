@@ -170,6 +170,7 @@ MainView {
 
         function _setAlarm(label, repeat, time) {
             pressHeaderButton(header, "addAlarmAction")
+            sleep(1000)
 
             var addAlarmPage = findChild(pageStack, "AddAlarmPage")
             waitForRendering(addAlarmPage)
@@ -177,34 +178,45 @@ MainView {
             // Set the alarm time
             var alarmTimePicker = findChild(pageStack, "alarmTime")
             _setAlarmTime(alarmTimePicker, time)
+            sleep(1000)
 
             // Set the alarm repeat options
             _pressListItem(addAlarmPage, "alarmRepeat")
+            sleep(1000)
             var alarmRepeatPage = getPage(pageStack, "alarmRepeatPage")
             _setAlarmRepeatDays(alarmRepeatPage, repeat)
+            sleep(1000)
             pressButton(backButton)
 
             waitForRendering(addAlarmPage)
+            sleep(1000)
 
             // Set the alarm label
             _pressListItem(addAlarmPage, "alarmLabel")
+            sleep(1000)
             var alarmLabelPage = getPage(pageStack, "alarmLabelPage")
             _setAlarmLabel(alarmLabelPage, label)
+            sleep(1000)
             pressButton(backButton)
 
             waitForRendering(addAlarmPage)
+            sleep(1000)
 
             // Set the alarm sound
             _pressListItem(addAlarmPage, "alarmSound")
+            sleep(1000)
             var alarmSoundPage = getPage(pageStack, "alarmSoundPage")
             _setAlarmSound(alarmSoundPage)
+            sleep(1000)
             pressButton(backButton)
 
             waitForRendering(addAlarmPage)
+            sleep(1000)
 
             pressHeaderButton(header, "saveAlarmAction")
 
             waitForRendering(alarmPage)
+            sleep(1000)
         }
 
         function _editAlarm(oldlabel, oldrepeat, oldtime, status, newlabel, newrepeat, newtime) {
@@ -265,9 +277,9 @@ MainView {
 
         function test_01_createAlarm_data() {
             return [
-                        {tag: "Weekday Alarms",   name: "Weekday Alarm",    repeat: [0,1,2,3,4], repeatLabel: "Weekdays"},
-                        {tag: "Weekend Alarms",   name: "Weekend Alarm",    repeat: [5,6],       repeatLabel: "Weekends"},
-                        {tag: "Random Day Alarm", name: "Random Day Alarm", repeat: [1,3],       repeatLabel: String("%1, %2").arg(Qt.locale().standaloneDayName(2, Locale.LongFormat)).arg(Qt.locale().standaloneDayName(4, Locale.LongFormat))}
+                        {tag: "Weekday Alarms",   name: "Weekday Alarm",    repeat: [1,2,3,4,5], repeatLabel: "Weekdays"},
+                        {tag: "Weekend Alarms",   name: "Weekend Alarm",    repeat: [6,0],       repeatLabel: "Weekends"},
+                        {tag: "Mixed Alarm", name: "Random Day Alarm", repeat: [1,6],       repeatLabel: String("%1, %2").arg(Qt.locale().standaloneDayName(2, Locale.LongFormat)).arg(Qt.locale().standaloneDayName(4, Locale.LongFormat))}
                     ]
         }
 
@@ -286,38 +298,6 @@ MainView {
              then we need to delete alarms to cleanup after the tests.
             */
             _deleteAlarm(data.name, data.repeatLabel, Qt.formatTime(date), true)
-        }
-
-        // Test to check if editing an alarm and saving it works as expected
-        function test_02_editAlarm() {
-            var date = new Date()
-            date.setHours((date.getHours() + 10) % 24)
-            date.setMinutes((date.getMinutes() + 40) % 60)
-            date.setSeconds(0)
-
-            _setAlarm("Test Edit Alarm", [0,1,2,3,4], date)
-
-            var newDate = new Date()
-            newDate.setHours((newDate.getHours() + 5) % 24)
-            newDate.setMinutes((newDate.getMinutes() + 15) % 60)
-            newDate.setSeconds(0)
-
-            _editAlarm("Test Edit Alarm", "Weekdays", Qt.formatTime(date), true, "Alarm Edited", [5,6], newDate)
-
-            /*
-             #NOTE: This wait is required since as per the design after an alarm is edited and saved
-             it shows the remaining time to that alarm and then after 5 secs shows the alarm
-             frequency. Hence we need to wait for 5 seconds before confirming alarm creation.
-            */
-            wait(6000)
-
-            _assertAlarmCreation("Alarm Edited", "Weekends", Qt.formatTime(newDate), true)
-
-            /*
-             #FIXME: This won't be required once we mock up alarm data. Until
-             then we need to delete alarms to cleanup after the tests.
-            */
-            _deleteAlarm("Alarm Edited", "Weekends", Qt.formatTime(newDate), true)
         }
     }
 }
