@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2015-06-18 22:57+0000\n"
+"POT-Creation-Date: 2015-07-16 01:36+0200\n"
 "PO-Revision-Date: 2015-06-02 18:58+0000\n"
 "Last-Translator: Sebastien Bacher <seb128@ubuntu.com>\n"
 "Language-Team: French <fr@li.org>\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Launchpad-Export-Date: 2015-07-16 05:47+0000\n"
+"X-Launchpad-Export-Date: 2015-07-17 05:39+0000\n"
 "X-Generator: Launchpad (build 17628)\n"
 
 #: ../app/alarm/AlarmLabel.qml:30 ../app/alarm/AlarmLabel.qml:56
@@ -66,35 +66,37 @@ msgstr "Répétition"
 msgid "Settings"
 msgstr "Paramètres"
 
-#: ../app/alarm/AlarmSettingsPage.qml:53 ../app/alarm/AlarmSettingsPage.qml:54
-#: ../app/alarm/AlarmSettingsPage.qml:55 ../app/alarm/AlarmSettingsPage.qml:56
-#: ../app/alarm/AlarmSettingsPage.qml:65 ../app/alarm/AlarmSettingsPage.qml:66
+#. TRANSLATORS: Silence after
+#. TRANSLATORS: Snooze for
+#: ../app/alarm/AlarmSettingsPage.qml:54 ../app/alarm/AlarmSettingsPage.qml:55
+#: ../app/alarm/AlarmSettingsPage.qml:56 ../app/alarm/AlarmSettingsPage.qml:57
 #: ../app/alarm/AlarmSettingsPage.qml:67 ../app/alarm/AlarmSettingsPage.qml:68
-#: ../app/alarm/AlarmSettingsPage.qml:124
-#: ../app/alarm/AlarmSettingsPage.qml:152
+#: ../app/alarm/AlarmSettingsPage.qml:69 ../app/alarm/AlarmSettingsPage.qml:70
+#: ../app/alarm/AlarmSettingsPage.qml:126
+#: ../app/alarm/AlarmSettingsPage.qml:154
 #, qt-format
 msgid "%1 minute"
 msgid_plural "%1 minutes"
 msgstr[0] "%1 minute"
 msgstr[1] "%1 minutes"
 
-#: ../app/alarm/AlarmSettingsPage.qml:92
+#: ../app/alarm/AlarmSettingsPage.qml:94
 msgid "Alarm volume"
 msgstr "Volume de l'alarme"
 
-#: ../app/alarm/AlarmSettingsPage.qml:123
+#: ../app/alarm/AlarmSettingsPage.qml:125
 msgid "Silence after"
 msgstr "Silence après"
 
-#: ../app/alarm/AlarmSettingsPage.qml:151
+#: ../app/alarm/AlarmSettingsPage.qml:153
 msgid "Snooze for"
 msgstr "Répéter dans"
 
-#: ../app/alarm/AlarmSettingsPage.qml:177
+#: ../app/alarm/AlarmSettingsPage.qml:179
 msgid "Vibration"
 msgstr "Vibration"
 
-#: ../app/alarm/AlarmSettingsPage.qml:211
+#: ../app/alarm/AlarmSettingsPage.qml:213
 msgid "Change time and date"
 msgstr "Changer l'heure et la date"
 
