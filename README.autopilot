@@ -50,4 +50,4 @@ Using terminal:
 Using autopkg:
 
 1. navigate to the directory where the ubuntu-clock-app branch is and run:
-  $ adt-run ubuntu-clock-app --click=com.ubuntu.clock.devel --- ssh -s adb -p YOURPASSWORD
+  $ adt-run ubuntu-clock-app --click=com.ubuntu.clock --- ssh -s adb -p YOURPASSWORD
