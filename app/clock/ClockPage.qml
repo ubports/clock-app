@@ -262,11 +262,11 @@ PageWithBottomEdge {
                 horizontalCenter: parent.horizontalCenter
             }
 
-            Image {
+            Icon {
                 id: locationIcon
-                source: "../graphics/Location_Pin.png"
-                width: units.gu(1.2)
+                name: "location"
                 height: units.gu(2.2)
+                color: "Grey"
             }
 
             Label {
