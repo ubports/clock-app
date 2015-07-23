@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2015-07-16 01:36+0200\n"
-"PO-Revision-Date: 2015-06-30 07:40+0000\n"
+"PO-Revision-Date: 2015-07-23 03:25+0000\n"
 "Last-Translator: Ian Li <Unknown>\n"
 "Language-Team: Chinese (Simplified) <zh_CN@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Launchpad-Export-Date: 2015-07-17 05:40+0000\n"
+"X-Launchpad-Export-Date: 2015-07-23 05:45+0000\n"
 "X-Generator: Launchpad (build 17628)\n"
 
 #: ../app/alarm/AlarmLabel.qml:30 ../app/alarm/AlarmLabel.qml:56
@@ -176,11 +176,11 @@ msgstr "城市"
 #. is behind or ahead of the time at the current location
 #: ../app/worldclock/UserWorldCityDelegate.qml:146
 msgid "behind"
-msgstr ""
+msgstr "后"
 
 #: ../app/worldclock/UserWorldCityDelegate.qml:147
 msgid "ahead"
-msgstr ""
+msgstr "前"
 
 #. TRANSLATORS: the first argument is hour, followed by
 #. minute, and the translation for either 'behind' or
