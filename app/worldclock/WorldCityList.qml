@@ -124,7 +124,7 @@ Page {
                         var url = String("%1%2%3")
                         .arg("http://geoname-lookup.ubuntu.com/?query=")
                         .arg(searchField.text)
-                        .arg("&app=com.ubuntu.clock&version=3.3.x")
+                        .arg("&app=com.ubuntu.clock&version=3.4.x")
                         console.log("Online URL: " + url)
                         if (jsonTimeZoneModelLoader.status === Loader.Ready) {
                             jsonTimeZoneModel.source = Qt.resolvedUrl(url)

@@ -1,41 +1,41 @@
-# Danish translation for ubuntu-clock-app
-# Copyright (c) 2014 Rosetta Contributors and Canonical Ltd 2014
+# Indonesian translation for ubuntu-clock-app
+# Copyright (c) 2015 Rosetta Contributors and Canonical Ltd 2015
 # This file is distributed under the same license as the ubuntu-clock-app package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2014.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2015.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2015-07-16 01:36+0200\n"
-"PO-Revision-Date: 2014-10-24 06:57+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: Danish <da@li.org>\n"
+"PO-Revision-Date: 2015-05-30 07:59+0000\n"
+"Last-Translator: Dirgita <Unknown>\n"
+"Language-Team: Indonesian <id@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "X-Launchpad-Export-Date: 2015-07-17 05:39+0000\n"
 "X-Generator: Launchpad (build 17628)\n"
 
 #: ../app/alarm/AlarmLabel.qml:30 ../app/alarm/AlarmLabel.qml:56
 #: ../app/alarm/EditAlarmPage.qml:291
 msgid "Label"
-msgstr ""
+msgstr "Label"
 
 #: ../app/alarm/AlarmList.qml:78 ../app/alarm/AlarmPage.qml:125
 #: ../app/worldclock/UserWorldCityList.qml:101
 msgid "Delete"
-msgstr ""
+msgstr "Hapus"
 
 #: ../app/alarm/AlarmPage.qml:26
 msgid "Alarms"
-msgstr "Alarmer"
+msgstr "Alarm"
 
 #: ../app/alarm/AlarmPage.qml:41 ../app/alarm/AlarmPage.qml:66
 #: ../app/worldclock/WorldCityList.qml:80
 msgid "Back"
-msgstr ""
+msgstr "Kembali"
 
 #: ../app/alarm/AlarmPage.qml:51 ../app/alarm/EditAlarmPage.qml:44
 #: ../app/alarm/EditAlarmPage.qml:166
@@ -44,11 +44,11 @@ msgstr "Alarm"
 
 #: ../app/alarm/AlarmPage.qml:95
 msgid "Select None"
-msgstr ""
+msgstr "Jangan Pilih"
 
 #: ../app/alarm/AlarmPage.qml:97 ../app/alarm/AlarmRepeat.qml:38
 msgid "Select All"
-msgstr ""
+msgstr "Pilih Semua"
 
 #: ../app/alarm/AlarmPage.qml:162
 msgid "No saved alarms"
@@ -64,7 +64,7 @@ msgstr ""
 
 #: ../app/alarm/AlarmSettingsPage.qml:29
 msgid "Settings"
-msgstr "Indstillinger"
+msgstr "Pengaturan"
 
 #. TRANSLATORS: Silence after
 #. TRANSLATORS: Snooze for
@@ -118,7 +118,7 @@ msgstr ""
 
 #: ../app/alarm/AlarmUtils.qml:45
 msgid "Daily"
-msgstr "Dagligt"
+msgstr "Tiap Hari"
 
 #: ../app/alarm/AlarmUtils.qml:55
 msgid "No active alarms"
@@ -1977,7 +1977,7 @@ msgstr ""
 
 #: ubuntu-clock-app.desktop.in.in.h:1
 msgid "Clock"
-msgstr "Ur"
+msgstr "Jam"
 
 #: ubuntu-clock-app.desktop.in.in.h:2
 msgid ""
