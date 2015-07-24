@@ -18,7 +18,6 @@
 
 import QtQuick 2.4
 import Ubuntu.Components 1.2
-import Ubuntu.Components.ListItems 1.0 as ListItem
 
 Page {
     id: _alarmRepeatPage
@@ -109,7 +108,7 @@ Page {
 
             model: daysModel
 
-            ListItem.Standard {
+            ListItem {
                 id: _alarmDayHolder
                 objectName: "alarmDayHolder" + index
 
@@ -129,13 +128,14 @@ Page {
                     text: day
                 }
 
-                control: CheckBox {
+                CheckBox {
                     id: daySwitch
                     objectName: 'daySwitch' + index
 
                     anchors {
                         right: parent.right
-                        rightMargin: units.gu(-0.2)
+                        rightMargin: units.gu(2)
+                        verticalCenter: parent.verticalCenter
                     }
 
                     checked: (alarm.daysOfWeek & flag) == flag

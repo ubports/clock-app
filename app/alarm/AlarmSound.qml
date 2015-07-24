@@ -19,7 +19,6 @@
 import QtQuick 2.4
 import QtMultimedia 5.0
 import Ubuntu.Components 1.2
-import Ubuntu.Components.ListItems 1.0 as ListItem
 
 Page {
     id: _alarmSoundPage
@@ -67,7 +66,7 @@ Page {
 
                 model: soundModel
 
-                ListItem.Standard {
+                ListItem {
                     id: _alarmSoundDelegate
 
                     property alias isChecked: _soundStatus.checked
@@ -89,9 +88,15 @@ Page {
                         text: fileBaseName
                     }
 
-                    control: CheckBox {
+                    CheckBox {
                         id: _soundStatus
                         objectName: "soundStatus" + index
+
+                        anchors {
+                            right: parent.right
+                            rightMargin: units.gu(2)
+                            verticalCenter: parent.verticalCenter
+                        }
 
                         checked: alarmSound.subText === _soundName.text ? true
                                                                         : false

@@ -46,7 +46,7 @@ msgstr ""
 msgid "Select None"
 msgstr ""
 
-#: ../app/alarm/AlarmPage.qml:76 ../app/alarm/AlarmRepeat.qml:38
+#: ../app/alarm/AlarmPage.qml:76 ../app/alarm/AlarmRepeat.qml:37
 msgid "Select All"
 msgstr ""
 
@@ -58,7 +58,7 @@ msgstr ""
 msgid "Tap the + icon to add an alarm"
 msgstr ""
 
-#: ../app/alarm/AlarmRepeat.qml:34 ../app/alarm/EditAlarmPage.qml:281
+#: ../app/alarm/AlarmRepeat.qml:33 ../app/alarm/EditAlarmPage.qml:281
 msgid "Repeat"
 msgstr ""
 
@@ -100,7 +100,7 @@ msgstr ""
 msgid "Change time and date"
 msgstr ""
 
-#: ../app/alarm/AlarmSound.qml:28 ../app/alarm/EditAlarmPage.qml:304
+#: ../app/alarm/AlarmSound.qml:27 ../app/alarm/EditAlarmPage.qml:304
 msgid "Sound"
 msgstr ""
 

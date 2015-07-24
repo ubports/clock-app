@@ -21,7 +21,6 @@ import DateTime 1.0
 import Ubuntu.Components 1.2
 import Qt.labs.folderlistmodel 2.1
 import Ubuntu.Components.Pickers 1.0
-import Ubuntu.Components.ListItems 1.0 as ListItem
 import "../components"
 
 Page {

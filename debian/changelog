@@ -9,6 +9,7 @@ ubuntu-clock-app (3.4ubuntu2) vivid; urgency=medium
   [ Nekhelesh Ramananthan ]
   * Fixed bottom edge title showing incorrect status on app startup (LP: #1381432)
   * Migrate to Ubuntu 15.04 SDK Framework and QtQuick 2.4.
+  * Migrated add-city, settings, main alarm page to the new list items.
 
   [ Nicholas Skaggs ]
   * Update testing layout.
