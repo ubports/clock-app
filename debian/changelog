@@ -1,4 +1,10 @@
-ubuntu-clock-app (3.4ubuntu2) UNRELEASED; urgency=medium
+ubuntu-clock-app (3.5) UNRELEASED; urgency=medium
+
+  * Disable automatic translation and update README.translations
+
+ -- Bartosz Kosiorek <gang65@poczta.onet.pl>  Fri, 24 Jul 2015 18:05:38 +0200
+
+ubuntu-clock-app (3.4ubuntu2) vivid; urgency=medium
 
   [ Nekhelesh Ramananthan ]
   * Fixed bottom edge title showing incorrect status on app startup (LP: #1381432)
