@@ -18,17 +18,15 @@
 
 import QtQuick 2.4
 import Ubuntu.Components 1.2
-import "../upstreamcomponents"
 
-ListItemWithActions {
+ListItem {
     id: root
 
     property var localTime
 
     width: parent ? parent.width : 0
     height: units.gu(6)
-    color: "Transparent"
-    selectedColor: "Transparent"
+    divider.visible: false
 
     Label {
         id: alarmTime
@@ -37,6 +35,7 @@ ListItemWithActions {
         anchors {
             top: alarmDetailsColumn.top
             left: parent.left
+            leftMargin: units.gu(2)
         }
 
         fontSize: "medium"
@@ -87,6 +86,7 @@ ListItemWithActions {
 
         anchors {
             right: parent.right
+            rightMargin: units.gu(2)
             verticalCenter: parent.verticalCenter
         }
 

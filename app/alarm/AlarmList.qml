@@ -18,127 +18,69 @@
 
 import QtQuick 2.4
 import Ubuntu.Components 1.2
-import Ubuntu.Components.ListItems 1.0 as ListItem
-import "../components"
-import "../upstreamcomponents"
 
-MultipleSelectionListView {
+UbuntuListView {
     id: alarmListView
     objectName: "alarmListView"
 
-    property var _currentSwipedItem: null
     property var localTime
 
-    function _updateSwipeState(item)
-    {
-        if (item.swipping) {
-            return
-        }
-
-        if (item.swipeState !== "Normal") {
-            if (alarmListView._currentSwipedItem !== item) {
-                if (alarmListView._currentSwipedItem) {
-                    alarmListView._currentSwipedItem.resetSwipe()
-                }
-                alarmListView._currentSwipedItem = item
-            }
-        } else if (item.swipeState !== "Normal"
-                   && alarmListView._currentSwipedItem === item) {
-            alarmListView._currentSwipedItem = null
-        }
-    }
+    signal clearSelection()
+    signal closeSelection()
+    signal selectAll()
 
     clip: true
     anchors.fill: parent
 
-    listDelegate: AlarmDelegate {
+    delegate: AlarmDelegate {
         id: alarmDelegate
         objectName: "alarm" + index
 
-        property var removalAnimation
         localTime: alarmListView.localTime
 
-        function remove() {
-            removalAnimation.start()
-        }
-
-        selectionMode: alarmListView.isInSelectionMode
-        selected: alarmListView.isSelected(alarmDelegate)
-
-        onSwippingChanged: {
-            _updateSwipeState(alarmDelegate)
-        }
-
-        onSwipeStateChanged: {
-            _updateSwipeState(alarmDelegate)
-        }
-
-        leftSideAction: Action {
-            iconName: "delete"
-            text: i18n.tr("Delete")
-            onTriggered: {
-                alarmDelegate.remove()
-            }
-        }
-
-        ListView.onRemove: ScriptAction {
-            script: {
-                if (_currentSwipedItem
-                        === alarmDelegate) {
-                    _currentSwipedItem = null
+        leadingActions: ListItemActions {
+            actions: [
+                Action {
+                    iconName: "delete"
+                    text: i18n.tr("Delete")
+                    onTriggered: {
+                        var alarm = alarmModel.get(index)
+                        alarm.cancel()
+                    }
                 }
+            ]
+        }
+
+        onClicked: {
+            if (selectMode) {
+                selected = !selected
+            } else {
+                pageStack.push(Qt.resolvedUrl("EditAlarmPage.qml"), {isNewAlarm: false, tempAlarm: model})
             }
         }
 
-        removalAnimation: SequentialAnimation {
-            alwaysRunToEnd: true
+        onPressAndHold: {
+            ListView.view.ViewItems.selectMode = !ListView.view.ViewItems.selectMode
+        }
+    }
 
-            PropertyAction {
-                target: alarmDelegate
-                property: "ListView.delayRemove"
-                value: true
-            }
+    onClearSelection: {
+        ViewItems.selectedIndices = []
+    }
 
-            UbuntuNumberAnimation {
-                target: alarmDelegate
-                property: "height"
-                to: 0
-            }
+    onSelectAll: {
+        var tmp = []
 
-            PropertyAction {
-                target: alarmDelegate
-                property: "ListView.delayRemove"
-                value: false
-            }
-
-            ScriptAction {
-                script: {
-                    var alarm = alarmModel.get(index)
-                    alarm.cancel()
-                }
-            }
+        for (var i=0; i < model.count; i++) {
+            tmp.push(i)
         }
 
-        onItemClicked: {
-            if(alarmListView.isInSelectionMode) {
-                if(!alarmListView.selectItem(alarmDelegate)) {
-                    alarmListView.deselectItem(alarmDelegate)
-                }
-                return
-            }
+        ViewItems.selectedIndices = tmp
+    }
 
-            else {
-                pageStack.push(Qt.resolvedUrl("EditAlarmPage.qml"),
-                               {isNewAlarm: false, tempAlarm: model})
-            }
-        }
-
-        onItemPressAndHold: {
-            if (!alarmListView.isInSelectionMode) {
-                alarmListView.startSelection()
-                alarmListView.selectItem(alarmDelegate)
-            }
-        }
+    onCloseSelection: {
+        clearSelection()
+        ViewItems.selectMode = false
     }
 }
 

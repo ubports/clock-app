@@ -23,38 +23,38 @@ msgstr ""
 msgid "Label"
 msgstr ""
 
-#: ../app/alarm/AlarmList.qml:78 ../app/alarm/AlarmPage.qml:125
+#: ../app/alarm/AlarmList.qml:45 ../app/alarm/AlarmPage.qml:99
 #: ../app/worldclock/UserWorldCityList.qml:101
 msgid "Delete"
 msgstr ""
 
-#: ../app/alarm/AlarmPage.qml:26
+#: ../app/alarm/AlarmPage.qml:25
 msgid "Alarms"
 msgstr ""
 
-#: ../app/alarm/AlarmPage.qml:41 ../app/alarm/AlarmPage.qml:66
+#: ../app/alarm/AlarmPage.qml:39 ../app/alarm/AlarmPage.qml:64
 #: ../app/worldclock/WorldCityList.qml:79
 msgid "Back"
 msgstr ""
 
-#: ../app/alarm/AlarmPage.qml:51 ../app/alarm/EditAlarmPage.qml:44
+#: ../app/alarm/AlarmPage.qml:49 ../app/alarm/EditAlarmPage.qml:44
 #: ../app/alarm/EditAlarmPage.qml:166
 msgid "Alarm"
 msgstr ""
 
-#: ../app/alarm/AlarmPage.qml:95
+#: ../app/alarm/AlarmPage.qml:74
 msgid "Select None"
 msgstr ""
 
-#: ../app/alarm/AlarmPage.qml:97 ../app/alarm/AlarmRepeat.qml:38
+#: ../app/alarm/AlarmPage.qml:76 ../app/alarm/AlarmRepeat.qml:38
 msgid "Select All"
 msgstr ""
 
-#: ../app/alarm/AlarmPage.qml:162
+#: ../app/alarm/AlarmPage.qml:137
 msgid "No saved alarms"
 msgstr ""
 
-#: ../app/alarm/AlarmPage.qml:163
+#: ../app/alarm/AlarmPage.qml:138
 msgid "Tap the + icon to add an alarm"
 msgstr ""
 

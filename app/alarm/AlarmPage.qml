@@ -18,23 +18,21 @@
 
 import QtQuick 2.4
 import Ubuntu.Components 1.2
-import "../components"
 
 Page {
     id: alarmPage
 
     title: i18n.tr("Alarms")
     objectName: 'AlarmPage'
+    flickable: null
 
     Component.onCompleted: console.log("[LOG]: Alarm Page loaded")
-
-    flickable: null
 
     states: [
         PageHeadState {
             name: "default"
             head: alarmPage.head
-            when: !alarmListView.isInSelectionMode
+            when: !alarmListView.ViewItems.selectMode
 
             backAction: Action {
                 iconName: "down"
@@ -59,89 +57,66 @@ Page {
         PageHeadState {
             name: "selection"
             head: alarmPage.head
-            when: alarmListView.isInSelectionMode
+            when: alarmListView.ViewItems.selectMode
 
             backAction: Action {
                 iconName: "back"
                 text: i18n.tr("Back")
                 onTriggered: {
-                    alarmListView.cancelSelection()
+                    alarmListView.ViewItems.selectMode = false
                 }
             }
 
-            contents: Loader {
-                id: selectionStateLoader
-                active: alarmPage.state === "selection"
-                sourceComponent: selectionStateComponent
-                height: parent ? parent.height : undefined
-                anchors.right: parent ? parent.right: undefined
-            }
+            actions: [
+                Action {
+                    text: {
+                        if(alarmListView.ViewItems.selectedIndices.length === alarmListView.count) {
+                            return i18n.tr("Select None")
+                        } else {
+                            return i18n.tr("Select All")
+                        }
+                    }
+
+                    iconSource: {
+                        if(alarmListView.ViewItems.selectedIndices.length === alarmListView.count) {
+                            return Qt.resolvedUrl("../graphics/select-none.svg")
+                        } else {
+                            return Qt.resolvedUrl("../graphics/select.svg")
+                        }
+                    }
+
+                    onTriggered: {
+                        if(alarmListView.ViewItems.selectedIndices.length === alarmListView.count) {
+                            alarmListView.clearSelection()
+                        } else {
+                            alarmListView.selectAll()
+                        }
+                    }
+                },
+
+                Action {
+                    iconName: "delete"
+                    text: i18n.tr("Delete")
+                    enabled: alarmListView.ViewItems.selectedIndices.length !== 0
+
+                    onTriggered: {
+                        var items = alarmListView.ViewItems.selectedIndices
+
+                        for(var i=0; i < alarmListView.ViewItems.selectedIndices.length; i++) {
+                            var alarm = alarmModel.get(alarmListView.ViewItems.selectedIndices[i])
+                            alarm.cancel()
+                        }
+
+                        alarmListView.closeSelection()
+                    }
+                }
+            ]
         }
     ]
 
-    Component {
-        id: selectionStateComponent
-        Item {
-            HeaderButton {
-                id: selectButton
-
-                anchors {
-                    right: deleteButton.left
-                    rightMargin: units.gu(1)
-                }
-
-                text: {
-                    if(alarmListView.selectedItems.count === alarmListView.count) {
-                        return i18n.tr("Select None")
-                    } else {
-                        return i18n.tr("Select All")
-                    }
-                }
-
-                iconSource: {
-                    if(alarmListView.selectedItems.count === alarmListView.count) {
-                        return Qt.resolvedUrl("../graphics/select-none.svg")
-                    } else {
-                        return Qt.resolvedUrl("../graphics/select.svg")
-                    }
-                }
-
-                onTriggered: {
-                    if(alarmListView.selectedItems.count === alarmListView.count) {
-                        alarmListView.clearSelection()
-                    } else {
-                        alarmListView.selectAll()
-                    }
-                }
-            }
-
-            HeaderButton {
-                id: deleteButton
-
-                anchors.right: parent.right
-                anchors.rightMargin: units.gu(2)
-
-                iconName: "delete"
-                text: i18n.tr("Delete")
-                enabled: alarmListView.selectedItems.count !== 0
-
-                onTriggered: {
-                    var items = alarmListView.selectedItems
-
-                    for(var i=0; i < items.count; i++) {
-                        var alarm = alarmModel.get(items.get(i).itemsIndex)
-                        alarm.cancel()
-                    }
-
-                    alarmListView.endSelection()
-                }
-            }
-        }
-    }
-
     AlarmList {
         id: alarmListView
-        listModel: alarmModel
+        model: alarmModel
         anchors.fill: parent
         localTime: clockTime
     }
