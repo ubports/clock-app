@@ -7,16 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2015-05-15 16:30+0000\n"
-"PO-Revision-Date: 2014-11-12 21:42+0000\n"
-"Last-Translator: Asier Iturralde Sarasola <Unknown>\n"
+"POT-Creation-Date: 2015-07-16 01:36+0200\n"
+"PO-Revision-Date: 2015-07-12 10:58+0000\n"
+"Last-Translator: Ibai Oihanguren Sala <Unknown>\n"
 "Language-Team: Basque <eu@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2015-05-16 05:43+0000\n"
-"X-Generator: Launchpad (build 17493)\n"
+"X-Launchpad-Export-Date: 2015-07-17 05:39+0000\n"
+"X-Generator: Launchpad (build 17628)\n"
 
 #: ../app/alarm/AlarmLabel.qml:30 ../app/alarm/AlarmLabel.qml:56
 #: ../app/alarm/EditAlarmPage.qml:291
@@ -66,35 +66,37 @@ msgstr "Errepikatu"
 msgid "Settings"
 msgstr "Ezarpenak"
 
-#: ../app/alarm/AlarmSettingsPage.qml:53 ../app/alarm/AlarmSettingsPage.qml:54
-#: ../app/alarm/AlarmSettingsPage.qml:55 ../app/alarm/AlarmSettingsPage.qml:56
-#: ../app/alarm/AlarmSettingsPage.qml:65 ../app/alarm/AlarmSettingsPage.qml:66
+#. TRANSLATORS: Silence after
+#. TRANSLATORS: Snooze for
+#: ../app/alarm/AlarmSettingsPage.qml:54 ../app/alarm/AlarmSettingsPage.qml:55
+#: ../app/alarm/AlarmSettingsPage.qml:56 ../app/alarm/AlarmSettingsPage.qml:57
 #: ../app/alarm/AlarmSettingsPage.qml:67 ../app/alarm/AlarmSettingsPage.qml:68
-#: ../app/alarm/AlarmSettingsPage.qml:124
-#: ../app/alarm/AlarmSettingsPage.qml:152
+#: ../app/alarm/AlarmSettingsPage.qml:69 ../app/alarm/AlarmSettingsPage.qml:70
+#: ../app/alarm/AlarmSettingsPage.qml:126
+#: ../app/alarm/AlarmSettingsPage.qml:154
 #, qt-format
 msgid "%1 minute"
 msgid_plural "%1 minutes"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "minutu %1"
+msgstr[1] "%1 minutu"
 
-#: ../app/alarm/AlarmSettingsPage.qml:92
+#: ../app/alarm/AlarmSettingsPage.qml:94
 msgid "Alarm volume"
 msgstr "Alarmaren bolumena"
 
-#: ../app/alarm/AlarmSettingsPage.qml:123
+#: ../app/alarm/AlarmSettingsPage.qml:125
 msgid "Silence after"
-msgstr ""
+msgstr "Isildu arteko denbora"
 
-#: ../app/alarm/AlarmSettingsPage.qml:151
+#: ../app/alarm/AlarmSettingsPage.qml:153
 msgid "Snooze for"
-msgstr ""
+msgstr "Atzeratu"
 
-#: ../app/alarm/AlarmSettingsPage.qml:177
+#: ../app/alarm/AlarmSettingsPage.qml:179
 msgid "Vibration"
 msgstr "Bibrazioa"
 
-#: ../app/alarm/AlarmSettingsPage.qml:211
+#: ../app/alarm/AlarmSettingsPage.qml:213
 msgid "Change time and date"
 msgstr "Aldatu ordua eta data"
 
@@ -108,11 +110,11 @@ msgstr "Inoiz ez"
 
 #: ../app/alarm/AlarmUtils.qml:37
 msgid "Weekdays"
-msgstr "Astegunak"
+msgstr "Astegunetan"
 
 #: ../app/alarm/AlarmUtils.qml:41
 msgid "Weekends"
-msgstr "Asteburuak"
+msgstr "Asteburuan"
 
 #: ../app/alarm/AlarmUtils.qml:45
 msgid "Daily"
@@ -129,22 +131,22 @@ msgstr "Hurrengo alarma %1"
 
 #: ../app/alarm/AlarmUtils.qml:79
 msgid "Alarm Passed"
-msgstr ""
+msgstr "Alarma pasata"
 
 #: ../app/alarm/AlarmUtils.qml:89
 #, no-c-format, qt-format
 msgid "in %1d %2h %3m"
-msgstr ""
+msgstr "%1e %2h %3m barru"
 
 #: ../app/alarm/AlarmUtils.qml:99
 #, no-c-format, qt-format
 msgid "in %1h %2m"
-msgstr ""
+msgstr "%1h %2m barru"
 
 #: ../app/alarm/AlarmUtils.qml:108
 #, no-c-format, qt-format
 msgid "in %1m"
-msgstr ""
+msgstr "%1m barru"
 
 #: ../app/alarm/EditAlarmPage.qml:37
 msgid "New alarm"
@@ -233,31 +235,31 @@ msgstr "Mesedez egiaztatu zure sareko konexioa eta saiatu berriro"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:47
 msgid "Abidjan"
-msgstr ""
+msgstr "Abidjan"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:47
 msgid "Ivory Coast"
-msgstr ""
+msgstr "Boli Kosta"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:48
 msgid "Accra"
-msgstr ""
+msgstr "Akkra"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:48
 msgid "Ghana"
-msgstr ""
+msgstr "Ghana"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:49
 msgid "Addis Ababa"
-msgstr ""
+msgstr "Addis Abeba"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:49
 msgid "Ethiopia"
-msgstr ""
+msgstr "Etiopia"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:50
 msgid "Adelaide"
-msgstr ""
+msgstr "Adelaide"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:50
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:95
@@ -270,11 +272,11 @@ msgstr ""
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:265
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:319
 msgid "Australia"
-msgstr ""
+msgstr "Australia"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:51
 msgid "Albuquerque"
-msgstr ""
+msgstr "Albuquerque"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:51
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:57
@@ -333,147 +335,147 @@ msgstr ""
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:340
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:341
 msgid "United States"
-msgstr ""
+msgstr "Ameriketako Estatu Batuak"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:52
 msgid "Algiers"
-msgstr ""
+msgstr "Aljer"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:52
 msgid "Algeria"
-msgstr ""
+msgstr "Aljeria"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:53
 msgid "Almaty"
-msgstr ""
+msgstr "Almaty"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:53
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:62
 msgid "Kazakhstan"
-msgstr ""
+msgstr "Kazakhstan"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:54
 msgid "Amman"
-msgstr ""
+msgstr "Amman"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:54
 msgid "Jordan"
-msgstr ""
+msgstr "Jordania"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:55
 msgid "Amsterdam"
-msgstr ""
+msgstr "Amsterdam"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:55
 msgid "Netherlands"
-msgstr ""
+msgstr "Herbehereak"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:56
 msgid "Anadyr"
-msgstr ""
+msgstr "Anadyr"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:56
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:239
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:266
 msgid "Russia"
-msgstr ""
+msgstr "Errusia"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:57
 msgid "Anchorage"
-msgstr ""
+msgstr "Anchorage"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:58
 msgid "Andorra"
-msgstr ""
+msgstr "Andorra"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:59
 msgid "Ankara"
-msgstr ""
+msgstr "Ankara"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:59
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:177
 msgid "Turkey"
-msgstr ""
+msgstr "Turkia"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:60
 msgid "Ann Arbor"
-msgstr ""
+msgstr "Ann Arbor"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:61
 msgid "Antananarivo"
-msgstr ""
+msgstr "Antananarivo"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:61
 msgid "Madagascar"
-msgstr ""
+msgstr "Madagaskar"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:62
 msgid "Aqtau"
-msgstr ""
+msgstr "Aktau"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:63
 msgid "Aruba"
-msgstr ""
+msgstr "Aruba"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:64
 msgid "Asunción"
-msgstr ""
+msgstr "Asuncion"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:64
 msgid "Paraguay"
-msgstr ""
+msgstr "Paraguai"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:65
 msgid "Athens"
-msgstr ""
+msgstr "Atenas"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:65
 msgid "Greece"
-msgstr ""
+msgstr "Grezia"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:66
 msgid "Atlanta"
-msgstr ""
+msgstr "Atlanta"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:67
 msgid "Auckland"
-msgstr ""
+msgstr "Auckland"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:67
 msgid "New Zealand"
-msgstr ""
+msgstr "Zeelanda Berria"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:68
 msgid "Austin"
-msgstr ""
+msgstr "Austin"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:70
 msgid "Baghdad"
-msgstr ""
+msgstr "Bagdad"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:70
 msgid "Iraq"
-msgstr ""
+msgstr "Irak"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:71
 msgid "Bahrain"
-msgstr ""
+msgstr "Bahrain"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:72
 msgid "Baku"
-msgstr ""
+msgstr "Baku"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:72
 msgid "Azerbaijan"
-msgstr ""
+msgstr "Azerbaijan"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:73
 msgid "Baltimore"
-msgstr ""
+msgstr "Baltimore"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:74
 msgid "Bangalore"
-msgstr ""
+msgstr "Bangalore"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:74
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:102
@@ -482,73 +484,73 @@ msgstr ""
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:172
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:241
 msgid "India"
-msgstr ""
+msgstr "India"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:75
 msgid "Bangkok"
-msgstr ""
+msgstr "Bangkok"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:75
 msgid "Thailand"
-msgstr ""
+msgstr "Thailandia"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:76
 msgid "Barbados"
-msgstr ""
+msgstr "Barbados"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:77
 msgid "Barcelona"
-msgstr ""
+msgstr "Bartzelona"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:77
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:214
 msgid "Spain"
-msgstr ""
+msgstr "Espainia"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:78
 msgid "Beijing"
-msgstr ""
+msgstr "Pekin"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:78
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:155
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:308
 msgid "China"
-msgstr ""
+msgstr "Txina"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:79
 msgid "Beirut"
-msgstr ""
+msgstr "Beirut"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:79
 msgid "Lebanon"
-msgstr ""
+msgstr "Libano"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:80
 msgid "Belfast"
-msgstr ""
+msgstr "Belfast"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:80
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:104
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:206
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:218
 msgid "United Kingdom"
-msgstr ""
+msgstr "Erresuma Batua"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:81
 msgid "Belgrade"
-msgstr ""
+msgstr "Belgrad"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:81
 msgid "Serbia"
-msgstr ""
+msgstr "Serbia"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:82
 msgid "Belize"
-msgstr ""
+msgstr "Belize"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:83
 msgid "Belo Horizonte"
-msgstr ""
+msgstr "Belo Horizonte"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:83
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:92
@@ -556,128 +558,128 @@ msgstr ""
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:285
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:302
 msgid "Brazil"
-msgstr ""
+msgstr "Brasil"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:84
 msgid "Berlin"
-msgstr ""
+msgstr "Berlin"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:84
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:146
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:162
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:242
 msgid "Germany"
-msgstr ""
+msgstr "Alemania"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:85
 msgid "Bermuda"
-msgstr ""
+msgstr "Bermuda"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:86
 msgid "Beulah"
-msgstr ""
+msgstr "Beulah"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:87
 msgid "Black Rock City"
-msgstr ""
+msgstr "Black Rock City"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:88
 msgid "Blantyre"
-msgstr ""
+msgstr "Blantyre"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:88
 msgid "Malawi"
-msgstr ""
+msgstr "Malawi"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:89
 msgid "Bogotá"
-msgstr ""
+msgstr "Bogota"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:89
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:254
 msgid "Colombia"
-msgstr ""
+msgstr "Kolonbia"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:90
 msgid "Boston"
-msgstr ""
+msgstr "Boston"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:91
 msgid "Boulder"
-msgstr ""
+msgstr "Boulder"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:92
 msgid "Brasília"
-msgstr ""
+msgstr "Brasília"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:93
 msgid "Bratislava"
-msgstr ""
+msgstr "Bratislava"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:93
 msgid "Slovakia"
-msgstr ""
+msgstr "Eslovakia"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:94
 msgid "Brazzaville"
-msgstr ""
+msgstr "Brazzaville"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:94
 msgid "Republic of the Congo"
-msgstr ""
+msgstr "Kongoko Errepublika"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:95
 msgid "Brisbane"
-msgstr ""
+msgstr "Brisbane"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:96
 msgid "Brussels"
-msgstr ""
+msgstr "Brusela"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:96
 msgid "Belgium"
-msgstr ""
+msgstr "Belgika"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:97
 msgid "Bucharest"
-msgstr ""
+msgstr "Bukarest"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:97
 msgid "Romania"
-msgstr ""
+msgstr "Errumania"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:98
 msgid "Budapest"
-msgstr ""
+msgstr "Budapest"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:98
 msgid "Hungary"
-msgstr ""
+msgstr "Hungaria"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:99
 msgid "Buenos Aires"
-msgstr ""
+msgstr "Buenos Aires"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:99
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:225
 msgid "Argentina"
-msgstr ""
+msgstr "Argentina"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:101
 msgid "Cairo"
-msgstr ""
+msgstr "Kairo"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:101
 msgid "Egypt"
-msgstr ""
+msgstr "Egipto"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:102
 msgid "Calcutta"
-msgstr ""
+msgstr "Kalkuta"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:103
 msgid "Calgary"
-msgstr ""
+msgstr "Calgary"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:103
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:129
@@ -694,19 +696,19 @@ msgstr ""
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:332
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:342
 msgid "Canada"
-msgstr ""
+msgstr "Kanada"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:104
 msgid "Cambridge"
-msgstr ""
+msgstr "Cambridge"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:105
 msgid "Canary"
-msgstr ""
+msgstr "Canary"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:106
 msgid "Canberra"
-msgstr ""
+msgstr "Canberra"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:107
 msgid "Cancún"
@@ -1292,7 +1294,7 @@ msgstr ""
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:214
 msgid "Madrid"
-msgstr ""
+msgstr "Madril"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:215
 msgid "Maldives"
@@ -1546,12 +1548,12 @@ msgstr ""
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:264
 msgid "Paris"
-msgstr ""
+msgstr "Paris"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:264
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:337
 msgid "France"
-msgstr ""
+msgstr "Frantzia"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:265
 msgid "Perth"
@@ -1971,7 +1973,7 @@ msgstr ""
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:346
 msgid "Switzerland"
-msgstr ""
+msgstr "Suitza"
 
 #: ubuntu-clock-app.desktop.in.in.h:1
 msgid "Clock"

@@ -37,7 +37,6 @@ MainView {
 
     width: units.gu(40)
     height: units.gu(70)
-    useDeprecatedToolbar: false
     applicationName: "com.ubuntu.fakeclock.test"
 
     U1db.Database {

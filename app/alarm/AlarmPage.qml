@@ -124,6 +124,8 @@ Page {
     Loader {
         id: emptyStateLoader
         anchors {
+            top: parent.top
+            topMargin: units.gu(5)
             left: parent.left
             right: parent.right
             margins: units.gu(2)

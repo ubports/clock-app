@@ -82,11 +82,11 @@ void GeoLocation::networkReplyFinished(QNetworkReply *reply)
     foreach (const QVariant &entry, cityData.toMap().value("geonames").toList())
     {
         auto data = entry.toMap();
-        auto adminName2 = data.value("adminName2").toString();
+        auto name = data.value("name").toString();
         auto adminName1 = data.value("adminName1").toString();
 
-        if (!adminName2.isEmpty()) {
-            m_location = adminName2;
+        if (!name.isEmpty()) {
+            m_location = name;
             emit locationChanged();
         }
 
