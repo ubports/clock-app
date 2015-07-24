@@ -65,9 +65,9 @@ class TestAlarm(ClockAppTestCase):
         """
         super(TestAlarm, self).setUp()
         self.assertThat(
-            self.main_view.visible, Eventually(Equals(True)))
+            self.app.main_view.visible, Eventually(Equals(True)))
 
-        self.page = self.main_view.open_alarm()
+        self.page = self.app.main_view.open_alarm()
 
     def test_add_recurring_type_alarm_must_add_to_alarm_list(self):
         """Test to check if alarms are saved properly
@@ -84,7 +84,7 @@ class TestAlarm(ClockAppTestCase):
         self.page.add_single_alarm(
             self.alarm_name, self.days, time_to_set, self.test_sound_name)
 
-        alarmlistPage = self.main_view.get_AlarmList()
+        alarmlistPage = self.app.main_view.get_AlarmList()
         saved_alarms = alarmlistPage.get_saved_alarms()
         self.assertIn(expected_alarm_info, saved_alarms)
 

@@ -39,9 +39,9 @@ class TestClock(ClockAppTestCase):
 
         super(TestClock, self).setUp()
         self.assertThat(
-            self.main_view.visible, Eventually(Equals(True)))
+            self.app.main_view.visible, Eventually(Equals(True)))
 
-        self.page = self.main_view.open_clock()
+        self.page = self.app.main_view.open_clock()
 
     def test_add_city_from_list_must_add_world_city(self):
         """Test if adding a world city chosing it from the list works"""
@@ -52,7 +52,7 @@ class TestClock(ClockAppTestCase):
         old_city_count = self.page.get_num_of_saved_cities()
 
         self.page.click_addCity_to_open_worldCityList()
-        worldCityList = self.main_view.get_worldCityList()
+        worldCityList = self.app.main_view.get_worldCityList()
         worldCityList.add_world_city_from_list(city_Name, country_Name)
 
         # Confirm that the city has been added
@@ -72,7 +72,7 @@ class TestClock(ClockAppTestCase):
         old_city_count = self.page.get_num_of_saved_cities()
 
         self.page.click_addCity_to_open_worldCityList()
-        worldCityList = self.main_view.get_worldCityList()
+        worldCityList = self.app.main_view.get_worldCityList()
         worldCityList.search_world_city_(city_Name, country_Name)
         worldCityList.add_world_city_from_list(city_Name, country_Name)
 

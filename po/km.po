@@ -1,70 +1,70 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR Canonical Ltd.
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Khmer translation for ubuntu-clock-app
+# Copyright (c) 2015 Rosetta Contributors and Canonical Ltd 2015
+# This file is distributed under the same license as the ubuntu-clock-app package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2015.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
-"Report-Msgid-Bugs-To: \n"
+"Project-Id-Version: ubuntu-clock-app\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2015-07-16 01:36+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2015-07-10 15:05+0000\n"
+"Last-Translator: Rockworld <sumoisrock@gmail.com>\n"
+"Language-Team: Khmer <km@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Launchpad-Export-Date: 2015-07-17 05:39+0000\n"
+"X-Generator: Launchpad (build 17628)\n"
 
 #: ../app/alarm/AlarmLabel.qml:30 ../app/alarm/AlarmLabel.qml:56
 #: ../app/alarm/EditAlarmPage.qml:291
 msgid "Label"
-msgstr ""
+msgstr "ស្លាក ៖"
 
-#: ../app/alarm/AlarmList.qml:45 ../app/alarm/AlarmPage.qml:99
+#: ../app/alarm/AlarmList.qml:78 ../app/alarm/AlarmPage.qml:125
 #: ../app/worldclock/UserWorldCityList.qml:101
 msgid "Delete"
-msgstr ""
+msgstr "លុប"
 
-#: ../app/alarm/AlarmPage.qml:25
+#: ../app/alarm/AlarmPage.qml:26
 msgid "Alarms"
-msgstr ""
+msgstr "ជូន​ដំណឹង"
 
-#: ../app/alarm/AlarmPage.qml:39 ../app/alarm/AlarmPage.qml:64
-#: ../app/worldclock/WorldCityList.qml:79
+#: ../app/alarm/AlarmPage.qml:41 ../app/alarm/AlarmPage.qml:66
+#: ../app/worldclock/WorldCityList.qml:80
 msgid "Back"
-msgstr ""
+msgstr "ថយក្រោយ"
 
-#: ../app/alarm/AlarmPage.qml:49 ../app/alarm/EditAlarmPage.qml:44
+#: ../app/alarm/AlarmPage.qml:51 ../app/alarm/EditAlarmPage.qml:44
 #: ../app/alarm/EditAlarmPage.qml:166
 msgid "Alarm"
-msgstr ""
+msgstr "សំឡេង​រោទ៍"
 
-#: ../app/alarm/AlarmPage.qml:74
+#: ../app/alarm/AlarmPage.qml:95
 msgid "Select None"
-msgstr ""
+msgstr "មិន​ជ្រើស​អ្វី​ទាំងអស់"
 
-#: ../app/alarm/AlarmPage.qml:76 ../app/alarm/AlarmRepeat.qml:37
+#: ../app/alarm/AlarmPage.qml:97 ../app/alarm/AlarmRepeat.qml:38
 msgid "Select All"
-msgstr ""
+msgstr "ជ្រើស​ទាំងអស់"
 
-#: ../app/alarm/AlarmPage.qml:137
+#: ../app/alarm/AlarmPage.qml:162
 msgid "No saved alarms"
 msgstr ""
 
-#: ../app/alarm/AlarmPage.qml:138
+#: ../app/alarm/AlarmPage.qml:163
 msgid "Tap the + icon to add an alarm"
 msgstr ""
 
-#: ../app/alarm/AlarmRepeat.qml:33 ../app/alarm/EditAlarmPage.qml:281
+#: ../app/alarm/AlarmRepeat.qml:34 ../app/alarm/EditAlarmPage.qml:281
 msgid "Repeat"
-msgstr ""
+msgstr "ធ្វើ​ឡើងវិញ"
 
 #: ../app/alarm/AlarmSettingsPage.qml:29
 msgid "Settings"
-msgstr ""
+msgstr "ការកំណត់"
 
 #. TRANSLATORS: Silence after
 #. TRANSLATORS: Snooze for
@@ -77,8 +77,7 @@ msgstr ""
 #, qt-format
 msgid "%1 minute"
 msgid_plural "%1 minutes"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1 នាទី"
 
 #: ../app/alarm/AlarmSettingsPage.qml:94
 msgid "Alarm volume"
@@ -100,17 +99,17 @@ msgstr ""
 msgid "Change time and date"
 msgstr ""
 
-#: ../app/alarm/AlarmSound.qml:27 ../app/alarm/EditAlarmPage.qml:304
+#: ../app/alarm/AlarmSound.qml:28 ../app/alarm/EditAlarmPage.qml:304
 msgid "Sound"
-msgstr ""
+msgstr "សម្លេង"
 
 #: ../app/alarm/AlarmUtils.qml:31
 msgid "Never"
-msgstr ""
+msgstr "មិន​កំណត់"
 
 #: ../app/alarm/AlarmUtils.qml:37
 msgid "Weekdays"
-msgstr ""
+msgstr "ថ្ងៃ​ធ្វើ​ការ"
 
 #: ../app/alarm/AlarmUtils.qml:41
 msgid "Weekends"
@@ -118,7 +117,7 @@ msgstr ""
 
 #: ../app/alarm/AlarmUtils.qml:45
 msgid "Daily"
-msgstr ""
+msgstr "រាល់​ថ្ងៃ"
 
 #: ../app/alarm/AlarmUtils.qml:55
 msgid "No active alarms"
@@ -150,15 +149,15 @@ msgstr ""
 
 #: ../app/alarm/EditAlarmPage.qml:37
 msgid "New alarm"
-msgstr ""
+msgstr "ការ​ជូន​ដំណឹង​ថ្មី"
 
 #: ../app/alarm/EditAlarmPage.qml:37
 msgid "Edit alarm"
-msgstr ""
+msgstr "កែសម្រួល​ការជូនដំណឹង"
 
 #: ../app/alarm/EditAlarmPage.qml:325
 msgid "Delete alarm"
-msgstr ""
+msgstr "លុប​ការជូនដំណឹង"
 
 #: ../app/clock/ClockPage.qml:284
 msgid "Retrieving location..."
@@ -166,12 +165,12 @@ msgstr ""
 
 #: ../app/worldclock/AddWorldCityButton.qml:30
 msgid "Add"
-msgstr ""
+msgstr "បន្ថែម"
 
 #: ../app/worldclock/AddWorldCityButton.qml:61
-#: ../app/worldclock/WorldCityList.qml:63
+#: ../app/worldclock/WorldCityList.qml:64
 msgid "City"
-msgstr ""
+msgstr "ទីក្រុង"
 
 #. TRANSLATORS: this indicates if the time in a world clock
 #. is behind or ahead of the time at the current location
@@ -209,57 +208,57 @@ msgstr ""
 msgid "Same time"
 msgstr ""
 
-#: ../app/worldclock/WorldCityList.qml:50
+#: ../app/worldclock/WorldCityList.qml:51
 msgid "Select a city"
 msgstr ""
 
-#: ../app/worldclock/WorldCityList.qml:108
+#: ../app/worldclock/WorldCityList.qml:109
 msgid "Search..."
-msgstr ""
+msgstr "ស្វែង​រក..."
 
-#: ../app/worldclock/WorldCityList.qml:212
+#: ../app/worldclock/WorldCityList.qml:213
 msgid "Searching for a city"
 msgstr ""
 
-#: ../app/worldclock/WorldCityList.qml:217
+#: ../app/worldclock/WorldCityList.qml:218
 msgid "No City Found"
 msgstr ""
 
-#: ../app/worldclock/WorldCityList.qml:223
-msgid "Unable to connect."
-msgstr ""
-
 #: ../app/worldclock/WorldCityList.qml:224
+msgid "Unable to connect."
+msgstr "មិនអាច​តភ្ជាប់​បានទេ ។"
+
+#: ../app/worldclock/WorldCityList.qml:225
 msgid "Please check your network connection and try again"
 msgstr ""
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:47
 msgid "Abidjan"
-msgstr ""
+msgstr "អាប៊ីចាន"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:47
 msgid "Ivory Coast"
-msgstr ""
+msgstr "កូតឌីវ័រ"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:48
 msgid "Accra"
-msgstr ""
+msgstr "អាក់ក្រា"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:48
 msgid "Ghana"
-msgstr ""
+msgstr "ហ្កាណា"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:49
 msgid "Addis Ababa"
-msgstr ""
+msgstr "អាឌីស​អាបាបា"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:49
 msgid "Ethiopia"
-msgstr ""
+msgstr "អេត្យូពី"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:50
 msgid "Adelaide"
-msgstr ""
+msgstr "អូស្ត្រាលី/អាឌឺឡេដ"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:50
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:95
@@ -272,7 +271,7 @@ msgstr ""
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:265
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:319
 msgid "Australia"
-msgstr ""
+msgstr "អូស្ត្រាលី"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:51
 msgid "Albuquerque"
@@ -335,50 +334,50 @@ msgstr ""
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:340
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:341
 msgid "United States"
-msgstr ""
+msgstr "សហរដ្ឋ​អាមេរិក"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:52
 msgid "Algiers"
-msgstr ""
+msgstr "អាល់ហ្សេរ"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:52
 msgid "Algeria"
-msgstr ""
+msgstr "អាល់​ហ្សេរី"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:53
 msgid "Almaty"
-msgstr ""
+msgstr "អាស៊ី/អាល់ម៉ាទី"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:53
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:62
 msgid "Kazakhstan"
-msgstr ""
+msgstr "ឃែហ្សាស្ទែន"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:54
 msgid "Amman"
-msgstr ""
+msgstr "អាម៉ាន់"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:54
 msgid "Jordan"
-msgstr ""
+msgstr "ហ៊្សដានី"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:55
 msgid "Amsterdam"
-msgstr ""
+msgstr "អាមស្តឺដាម"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:55
 msgid "Netherlands"
-msgstr ""
+msgstr "ហូឡង់"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:56
 msgid "Anadyr"
-msgstr ""
+msgstr "អាណាឌៀរ"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:56
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:239
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:266
 msgid "Russia"
-msgstr ""
+msgstr "រុស្ស៊ី"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:57
 msgid "Anchorage"
@@ -386,16 +385,16 @@ msgstr ""
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:58
 msgid "Andorra"
-msgstr ""
+msgstr "អង់ដូរ៉ា"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:59
 msgid "Ankara"
-msgstr ""
+msgstr "អង់ការា"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:59
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:177
 msgid "Turkey"
-msgstr ""
+msgstr "តួកគី"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:60
 msgid "Ann Arbor"
@@ -403,71 +402,71 @@ msgstr ""
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:61
 msgid "Antananarivo"
-msgstr ""
+msgstr "អង់តាណាណារីវ"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:61
 msgid "Madagascar"
-msgstr ""
+msgstr "ម៉ាដាហ្គាស្ការ"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:62
 msgid "Aqtau"
-msgstr ""
+msgstr "អាកតូ"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:63
 msgid "Aruba"
-msgstr ""
+msgstr "អារាំបា"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:64
 msgid "Asunción"
-msgstr ""
+msgstr "អាស៊ុនស្យិន"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:64
 msgid "Paraguay"
-msgstr ""
+msgstr "ប៉ារ៉ាហ្គាយ"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:65
 msgid "Athens"
-msgstr ""
+msgstr "អាតែន"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:65
 msgid "Greece"
-msgstr ""
+msgstr "ក្រិក"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:66
 msgid "Atlanta"
-msgstr ""
+msgstr "អាត្លង់តា"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:67
 msgid "Auckland"
-msgstr ""
+msgstr "អ័រកលែនដ៍"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:67
 msgid "New Zealand"
-msgstr ""
+msgstr "នូវែលហ្សេឡង់"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:68
 msgid "Austin"
-msgstr ""
+msgstr "អោស្ទីន"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:70
 msgid "Baghdad"
-msgstr ""
+msgstr "បាដាដ"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:70
 msgid "Iraq"
-msgstr ""
+msgstr "អ៊ីងឬ"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:71
 msgid "Bahrain"
-msgstr ""
+msgstr "បារ៉ែន"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:72
 msgid "Baku"
-msgstr ""
+msgstr "បាគូ"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:72
 msgid "Azerbaijan"
-msgstr ""
+msgstr "អាស៊ែបៃហ្សង់"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:73
 msgid "Baltimore"
@@ -475,7 +474,7 @@ msgstr ""
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:74
 msgid "Bangalore"
-msgstr ""
+msgstr "បង់ហ្កាឡូរ៉េ"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:74
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:102
@@ -484,57 +483,57 @@ msgstr ""
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:172
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:241
 msgid "India"
-msgstr ""
+msgstr "ឥណ្ឌា"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:75
 msgid "Bangkok"
-msgstr ""
+msgstr "បាងកក"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:75
 msgid "Thailand"
-msgstr ""
+msgstr "ថៃ"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:76
 msgid "Barbados"
-msgstr ""
+msgstr "បារបាដូស"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:77
 msgid "Barcelona"
-msgstr ""
+msgstr "បាសេឡូណា"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:77
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:214
 msgid "Spain"
-msgstr ""
+msgstr "អេស្ប៉ាញ"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:78
 msgid "Beijing"
-msgstr ""
+msgstr "ប៉េកាំង"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:78
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:155
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:308
 msgid "China"
-msgstr ""
+msgstr "ចិន"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:79
 msgid "Beirut"
-msgstr ""
+msgstr "បេរូត"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:79
 msgid "Lebanon"
-msgstr ""
+msgstr "លីបង់"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:80
 msgid "Belfast"
-msgstr ""
+msgstr "បេលហ្វាស"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:80
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:104
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:206
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:218
 msgid "United Kingdom"
-msgstr ""
+msgstr "ចក្រភពអង់គ្លេស"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:81
 msgid "Belgrade"
@@ -1977,7 +1976,7 @@ msgstr ""
 
 #: ubuntu-clock-app.desktop.in.in.h:1
 msgid "Clock"
-msgstr ""
+msgstr "នាឡិកា"
 
 #: ubuntu-clock-app.desktop.in.in.h:2
 msgid ""

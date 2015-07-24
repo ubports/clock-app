@@ -7,16 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2015-05-15 16:30+0000\n"
-"PO-Revision-Date: 2015-02-11 20:35+0000\n"
-"Last-Translator: ivarela <ivarela@ubuntu.com>\n"
+"POT-Creation-Date: 2015-07-16 01:36+0200\n"
+"PO-Revision-Date: 2015-06-09 15:36+0000\n"
+"Last-Translator: enolp <enolp@softastur.org>\n"
 "Language-Team: Asturian <ast@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2015-05-16 05:43+0000\n"
-"X-Generator: Launchpad (build 17493)\n"
+"X-Launchpad-Export-Date: 2015-07-17 05:39+0000\n"
+"X-Generator: Launchpad (build 17628)\n"
 
 #: ../app/alarm/AlarmLabel.qml:30 ../app/alarm/AlarmLabel.qml:56
 #: ../app/alarm/EditAlarmPage.qml:291
@@ -66,35 +66,37 @@ msgstr "Repetir"
 msgid "Settings"
 msgstr "Preferencies"
 
-#: ../app/alarm/AlarmSettingsPage.qml:53 ../app/alarm/AlarmSettingsPage.qml:54
-#: ../app/alarm/AlarmSettingsPage.qml:55 ../app/alarm/AlarmSettingsPage.qml:56
-#: ../app/alarm/AlarmSettingsPage.qml:65 ../app/alarm/AlarmSettingsPage.qml:66
+#. TRANSLATORS: Silence after
+#. TRANSLATORS: Snooze for
+#: ../app/alarm/AlarmSettingsPage.qml:54 ../app/alarm/AlarmSettingsPage.qml:55
+#: ../app/alarm/AlarmSettingsPage.qml:56 ../app/alarm/AlarmSettingsPage.qml:57
 #: ../app/alarm/AlarmSettingsPage.qml:67 ../app/alarm/AlarmSettingsPage.qml:68
-#: ../app/alarm/AlarmSettingsPage.qml:124
-#: ../app/alarm/AlarmSettingsPage.qml:152
+#: ../app/alarm/AlarmSettingsPage.qml:69 ../app/alarm/AlarmSettingsPage.qml:70
+#: ../app/alarm/AlarmSettingsPage.qml:126
+#: ../app/alarm/AlarmSettingsPage.qml:154
 #, qt-format
 msgid "%1 minute"
 msgid_plural "%1 minutes"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1 minutu"
+msgstr[1] "%1 minutos"
 
-#: ../app/alarm/AlarmSettingsPage.qml:92
+#: ../app/alarm/AlarmSettingsPage.qml:94
 msgid "Alarm volume"
 msgstr "Volume d'alarma"
 
-#: ../app/alarm/AlarmSettingsPage.qml:123
+#: ../app/alarm/AlarmSettingsPage.qml:125
 msgid "Silence after"
 msgstr "Silenciar tres"
 
-#: ../app/alarm/AlarmSettingsPage.qml:151
+#: ../app/alarm/AlarmSettingsPage.qml:153
 msgid "Snooze for"
 msgstr "Apigazar por"
 
-#: ../app/alarm/AlarmSettingsPage.qml:177
+#: ../app/alarm/AlarmSettingsPage.qml:179
 msgid "Vibration"
 msgstr "Vibración"
 
-#: ../app/alarm/AlarmSettingsPage.qml:211
+#: ../app/alarm/AlarmSettingsPage.qml:213
 msgid "Change time and date"
 msgstr "Cambiar el día y hora"
 
@@ -237,11 +239,11 @@ msgstr ""
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:47
 msgid "Ivory Coast"
-msgstr ""
+msgstr "Costa de Marfil"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:48
 msgid "Accra"
-msgstr ""
+msgstr "Accra"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:48
 msgid "Ghana"
@@ -253,11 +255,11 @@ msgstr ""
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:49
 msgid "Ethiopia"
-msgstr ""
+msgstr "Etiopía"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:50
 msgid "Adelaide"
-msgstr ""
+msgstr "Adelaida"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:50
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:95
@@ -270,11 +272,11 @@ msgstr ""
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:265
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:319
 msgid "Australia"
-msgstr ""
+msgstr "Australia"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:51
 msgid "Albuquerque"
-msgstr ""
+msgstr "Albuquerque"
 
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:51
 #: ../backend/modules/Timezone/statictimezonemodel.cpp:57
