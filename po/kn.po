@@ -1,58 +1,58 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR Canonical Ltd.
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Kannada translation for ubuntu-clock-app
+# Copyright (c) 2015 Rosetta Contributors and Canonical Ltd 2015
+# This file is distributed under the same license as the ubuntu-clock-app package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2015.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
-"Report-Msgid-Bugs-To: \n"
+"Project-Id-Version: ubuntu-clock-app\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2015-07-16 01:36+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2015-06-11 04:45+0000\n"
+"Last-Translator: Sai Ranjan <Unknown>\n"
+"Language-Team: Kannada <kn@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Launchpad-Export-Date: 2015-07-17 05:39+0000\n"
+"X-Generator: Launchpad (build 17628)\n"
 
 #: ../app/alarm/AlarmLabel.qml:30 ../app/alarm/AlarmLabel.qml:56
 #: ../app/alarm/EditAlarmPage.qml:291
 msgid "Label"
-msgstr ""
+msgstr "ಶೀರ್ಷಿಕೆ"
 
 #: ../app/alarm/AlarmList.qml:78 ../app/alarm/AlarmPage.qml:125
 #: ../app/worldclock/UserWorldCityList.qml:101
 msgid "Delete"
-msgstr ""
+msgstr "ಅಳಿಸು"
 
 #: ../app/alarm/AlarmPage.qml:26
 msgid "Alarms"
-msgstr ""
+msgstr "ಅಲಾರಂಗಳು"
 
 #: ../app/alarm/AlarmPage.qml:41 ../app/alarm/AlarmPage.qml:66
-#: ../app/worldclock/WorldCityList.qml:79
+#: ../app/worldclock/WorldCityList.qml:80
 msgid "Back"
-msgstr ""
+msgstr "ಹಿಂದಕ್ಕೆ"
 
 #: ../app/alarm/AlarmPage.qml:51 ../app/alarm/EditAlarmPage.qml:44
 #: ../app/alarm/EditAlarmPage.qml:166
 msgid "Alarm"
-msgstr ""
+msgstr "ಅಲಾರಂ"
 
 #: ../app/alarm/AlarmPage.qml:95
 msgid "Select None"
-msgstr ""
+msgstr "ಯಾವುದನ್ನೂ ಆರಿಸಬೇಡ"
 
 #: ../app/alarm/AlarmPage.qml:97 ../app/alarm/AlarmRepeat.qml:38
 msgid "Select All"
-msgstr ""
+msgstr "ಎಲ್ಲವನ್ನು ಆಯ್ಕೆಮಾಡು"
 
 #: ../app/alarm/AlarmPage.qml:162
 msgid "No saved alarms"
-msgstr ""
+msgstr "ಸೇವ್ ಮಾಡಿದ ಅಲಾರ್ಮ್ ಗಳಿಲ್ಲ"
 
 #: ../app/alarm/AlarmPage.qml:163
 msgid "Tap the + icon to add an alarm"
@@ -60,11 +60,11 @@ msgstr ""
 
 #: ../app/alarm/AlarmRepeat.qml:34 ../app/alarm/EditAlarmPage.qml:281
 msgid "Repeat"
-msgstr ""
+msgstr "ಮರುಕಳಿಸು"
 
 #: ../app/alarm/AlarmSettingsPage.qml:29
 msgid "Settings"
-msgstr ""
+msgstr "ಸೆಟ್ಟಿಂಗ್‌ಗಳು"
 
 #. TRANSLATORS: Silence after
 #. TRANSLATORS: Snooze for
@@ -82,7 +82,7 @@ msgstr[1] ""
 
 #: ../app/alarm/AlarmSettingsPage.qml:94
 msgid "Alarm volume"
-msgstr ""
+msgstr "ಅಲಾರ್ಮ್ ವಾಲ್ಯೂಮ್"
 
 #: ../app/alarm/AlarmSettingsPage.qml:125
 msgid "Silence after"
@@ -94,7 +94,7 @@ msgstr ""
 
 #: ../app/alarm/AlarmSettingsPage.qml:179
 msgid "Vibration"
-msgstr ""
+msgstr "ವೈಬ್ರೇಶನ್"
 
 #: ../app/alarm/AlarmSettingsPage.qml:213
 msgid "Change time and date"
@@ -102,15 +102,15 @@ msgstr ""
 
 #: ../app/alarm/AlarmSound.qml:28 ../app/alarm/EditAlarmPage.qml:304
 msgid "Sound"
-msgstr ""
+msgstr "ಧ್ವನಿ"
 
 #: ../app/alarm/AlarmUtils.qml:31
 msgid "Never"
-msgstr ""
+msgstr "ಎಂದಿಗೂ ಬೇಡ"
 
 #: ../app/alarm/AlarmUtils.qml:37
 msgid "Weekdays"
-msgstr ""
+msgstr "ವಾರದ ದಿನಗಳು"
 
 #: ../app/alarm/AlarmUtils.qml:41
 msgid "Weekends"
@@ -118,7 +118,7 @@ msgstr ""
 
 #: ../app/alarm/AlarmUtils.qml:45
 msgid "Daily"
-msgstr ""
+msgstr "ಪ್ರತಿದಿನ"
 
 #: ../app/alarm/AlarmUtils.qml:55
 msgid "No active alarms"
@@ -169,7 +169,7 @@ msgid "Add"
 msgstr ""
 
 #: ../app/worldclock/AddWorldCityButton.qml:61
-#: ../app/worldclock/WorldCityList.qml:63
+#: ../app/worldclock/WorldCityList.qml:64
 msgid "City"
 msgstr ""
 
@@ -209,27 +209,27 @@ msgstr ""
 msgid "Same time"
 msgstr ""
 
-#: ../app/worldclock/WorldCityList.qml:50
+#: ../app/worldclock/WorldCityList.qml:51
 msgid "Select a city"
 msgstr ""
 
-#: ../app/worldclock/WorldCityList.qml:108
+#: ../app/worldclock/WorldCityList.qml:109
 msgid "Search..."
 msgstr ""
 
-#: ../app/worldclock/WorldCityList.qml:212
+#: ../app/worldclock/WorldCityList.qml:213
 msgid "Searching for a city"
 msgstr ""
 
-#: ../app/worldclock/WorldCityList.qml:217
+#: ../app/worldclock/WorldCityList.qml:218
 msgid "No City Found"
 msgstr ""
 
-#: ../app/worldclock/WorldCityList.qml:223
+#: ../app/worldclock/WorldCityList.qml:224
 msgid "Unable to connect."
 msgstr ""
 
-#: ../app/worldclock/WorldCityList.qml:224
+#: ../app/worldclock/WorldCityList.qml:225
 msgid "Please check your network connection and try again"
 msgstr ""
 
@@ -1977,7 +1977,7 @@ msgstr ""
 
 #: ubuntu-clock-app.desktop.in.in.h:1
 msgid "Clock"
-msgstr ""
+msgstr "ಗಡಿಯಾರ"
 
 #: ubuntu-clock-app.desktop.in.in.h:2
 msgid ""

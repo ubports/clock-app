@@ -1,58 +1,59 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR Canonical Ltd.
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Arabic translation for ubuntu-clock-app
+# Copyright (c) 2015 Rosetta Contributors and Canonical Ltd 2015
+# This file is distributed under the same license as the ubuntu-clock-app package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2015.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
-"Report-Msgid-Bugs-To: \n"
+"Project-Id-Version: ubuntu-clock-app\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2015-07-16 01:36+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2015-07-14 11:19+0000\n"
+"Last-Translator: Ibrahim Saed <ibraheem5000@gmail.com>\n"
+"Language-Team: Arabic <ar@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n % 100 >= "
+"3 && n % 100 <= 10 ? 3 : n % 100 >= 11 && n % 100 <= 99 ? 4 : 5;\n"
+"X-Launchpad-Export-Date: 2015-07-17 05:39+0000\n"
+"X-Generator: Launchpad (build 17628)\n"
 
 #: ../app/alarm/AlarmLabel.qml:30 ../app/alarm/AlarmLabel.qml:56
 #: ../app/alarm/EditAlarmPage.qml:291
 msgid "Label"
-msgstr ""
+msgstr "التسمية"
 
 #: ../app/alarm/AlarmList.qml:78 ../app/alarm/AlarmPage.qml:125
 #: ../app/worldclock/UserWorldCityList.qml:101
 msgid "Delete"
-msgstr ""
+msgstr "حذف"
 
 #: ../app/alarm/AlarmPage.qml:26
 msgid "Alarms"
-msgstr ""
+msgstr "المنبهات"
 
 #: ../app/alarm/AlarmPage.qml:41 ../app/alarm/AlarmPage.qml:66
-#: ../app/worldclock/WorldCityList.qml:79
+#: ../app/worldclock/WorldCityList.qml:80
 msgid "Back"
-msgstr ""
+msgstr "عودة"
 
 #: ../app/alarm/AlarmPage.qml:51 ../app/alarm/EditAlarmPage.qml:44
 #: ../app/alarm/EditAlarmPage.qml:166
 msgid "Alarm"
-msgstr ""
+msgstr "المنبه"
 
 #: ../app/alarm/AlarmPage.qml:95
 msgid "Select None"
-msgstr ""
+msgstr "لا شيء"
 
 #: ../app/alarm/AlarmPage.qml:97 ../app/alarm/AlarmRepeat.qml:38
 msgid "Select All"
-msgstr ""
+msgstr "اختر الكل"
 
 #: ../app/alarm/AlarmPage.qml:162
 msgid "No saved alarms"
-msgstr ""
+msgstr "لا منبهات محفوظة"
 
 #: ../app/alarm/AlarmPage.qml:163
 msgid "Tap the + icon to add an alarm"
@@ -60,11 +61,11 @@ msgstr ""
 
 #: ../app/alarm/AlarmRepeat.qml:34 ../app/alarm/EditAlarmPage.qml:281
 msgid "Repeat"
-msgstr ""
+msgstr "التكرار"
 
 #: ../app/alarm/AlarmSettingsPage.qml:29
 msgid "Settings"
-msgstr ""
+msgstr "الإعدادات"
 
 #. TRANSLATORS: Silence after
 #. TRANSLATORS: Snooze for
@@ -118,7 +119,7 @@ msgstr ""
 
 #: ../app/alarm/AlarmUtils.qml:45
 msgid "Daily"
-msgstr ""
+msgstr "يوميًا"
 
 #: ../app/alarm/AlarmUtils.qml:55
 msgid "No active alarms"
@@ -169,7 +170,7 @@ msgid "Add"
 msgstr ""
 
 #: ../app/worldclock/AddWorldCityButton.qml:61
-#: ../app/worldclock/WorldCityList.qml:63
+#: ../app/worldclock/WorldCityList.qml:64
 msgid "City"
 msgstr ""
 
@@ -209,27 +210,27 @@ msgstr ""
 msgid "Same time"
 msgstr ""
 
-#: ../app/worldclock/WorldCityList.qml:50
+#: ../app/worldclock/WorldCityList.qml:51
 msgid "Select a city"
 msgstr ""
 
-#: ../app/worldclock/WorldCityList.qml:108
+#: ../app/worldclock/WorldCityList.qml:109
 msgid "Search..."
 msgstr ""
 
-#: ../app/worldclock/WorldCityList.qml:212
+#: ../app/worldclock/WorldCityList.qml:213
 msgid "Searching for a city"
 msgstr ""
 
-#: ../app/worldclock/WorldCityList.qml:217
+#: ../app/worldclock/WorldCityList.qml:218
 msgid "No City Found"
 msgstr ""
 
-#: ../app/worldclock/WorldCityList.qml:223
+#: ../app/worldclock/WorldCityList.qml:224
 msgid "Unable to connect."
 msgstr ""
 
-#: ../app/worldclock/WorldCityList.qml:224
+#: ../app/worldclock/WorldCityList.qml:225
 msgid "Please check your network connection and try again"
 msgstr ""
 
@@ -1977,7 +1978,7 @@ msgstr ""
 
 #: ubuntu-clock-app.desktop.in.in.h:1
 msgid "Clock"
-msgstr ""
+msgstr "الساعة"
 
 #: ubuntu-clock-app.desktop.in.in.h:2
 msgid ""

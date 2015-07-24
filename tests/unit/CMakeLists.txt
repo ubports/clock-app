@@ -10,7 +10,7 @@ find_program(XVFB_RUN_BIN
 
 macro(DECLARE_QML_TEST TST_NAME TST_QML_FILE)
     if(USE_XVFB)
-        set(COMMAND_PREFIX ${XVFB_RUN_BIN} -a -s "-screen 0 1024x768x24")
+        set(COMMAND_PREFIX ${XVFB_RUN_BIN} -a -s "-screen 0 400x600x24")
     else()
         set(COMMAND_PREFIX "")
     endif()

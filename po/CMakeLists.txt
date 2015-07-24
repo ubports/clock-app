@@ -18,7 +18,7 @@ add_custom_target(${POT_FILE} ALL
         --package-name='${PROJECT}'
         --copyright-holder='Canonical Ltd.'
         ${I18N_SRC_FILES}
-    COMMAND ${CMAKE_COMMAND} -E copy ${POT_FILE} ${CMAKE_CURRENT_SOURCE_DIR})
+)
 
 foreach(PO_FILE ${PO_FILES})
     get_filename_component(LANG ${PO_FILE} NAME_WE)

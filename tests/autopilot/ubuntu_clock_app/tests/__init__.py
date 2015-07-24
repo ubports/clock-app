@@ -18,56 +18,68 @@
 
 import os.path
 import os
+import sys
 import shutil
 import glob
 import logging
 import fixtures
 
 from autopilot import logging as autopilot_logging
-from ubuntuuitoolkit import (
-    base,
-    emulators as toolkit_emulators
-)
+from autopilot.testcase import AutopilotTestCase
+import ubuntuuitoolkit
+from ubuntuuitoolkit import base
 
-from ubuntu_clock_app import emulators, fixture_setup
+import ubuntu_clock_app
+from ubuntu_clock_app import fixture_setup, CMakePluginParser
 
 logger = logging.getLogger(__name__)
 
 
-class ClockAppTestCase(base.UbuntuUIToolkitAppTestCase):
+class ClockAppTestCase(AutopilotTestCase):
 
     """A common test case class that provides several useful methods for
     clock-app tests.
 
     """
 
-    local_location = os.path.dirname(os.path.dirname(os.getcwd()))
-    local_location_qml = os.path.join(local_location,
-                                      'app/ubuntu-clock-app.qml')
-    local_location_backend = os.path.join(local_location, 'builddir/backend')
-    installed_location_backend = ""
-    if glob.glob('/usr/lib/*/qt5/qml/ClockApp'):
-        installed_location_backend = \
-            glob.glob('/usr/lib/*/qt5/qml/ClockApp')[0]
-    installed_location_qml = \
-        '/usr/share/ubuntu-clock-app/ubuntu-clock-app.qml'
-
-    sqlite_dir = os.path.expanduser(
-        "~/.local/share/com.ubuntu.clock")
-    backup_dir = sqlite_dir + ".backup"
-
     def setUp(self):
+        # setup paths
+        self.binary = 'ubuntu-clock-app'
+        self.source_dir = os.path.dirname(
+            os.path.dirname(os.path.abspath('.')))
+        self.build_dir = self._get_build_dir()
+
+        self.local_location = self.source_dir
+        self.local_location_qml = os.path.join(self.source_dir,
+                                               'app', self.binary + '.qml')
+
+        self.local_location_backend = os.path.join(self.build_dir, 'backend')
+
+        self.installed_location_backend = ""
+        if glob.glob('/usr/lib/*/qt5/qml/ClockApp'):
+            self.installed_location_backend = \
+                glob.glob('/usr/lib/*/qt5/qml/ClockApp')[0]
+        self.installed_location_qml = \
+            '/usr/share/ubuntu-clock-app/ubuntu-clock-app.qml'
+
+        self.sqlite_dir = os.path.expanduser(
+            "~/.local/share/com.ubuntu.clock")
+        self.backup_dir = self.sqlite_dir + ".backup"
+
         # backup and wipe db's before testing
         self.temp_move_sqlite_db()
         self.addCleanup(self.restore_sqlite_db)
+
+        # setup fixtures and launcher
         self.useFixture(fixture_setup.LocationServiceTestEnvironment())
-        launch, self.test_type = self.get_launcher_method_and_type()
         self.useFixture(fixtures.EnvironmentVariable('LC_ALL', newvalue='C'))
+        self.launcher, self.test_type = self.get_launcher_and_type()
+
+        # launch application under introspection
         super(ClockAppTestCase, self).setUp()
+        self.app = ubuntu_clock_app.ClockApp(self.launcher(), self.test_type)
 
-        launch()
-
-    def get_launcher_method_and_type(self):
+    def get_launcher_and_type(self):
         if os.path.exists(self.local_location_backend):
             launcher = self.launch_test_local
             test_type = 'local'
@@ -81,27 +93,27 @@ class ClockAppTestCase(base.UbuntuUIToolkitAppTestCase):
 
     @autopilot_logging.log_action(logger.info)
     def launch_test_local(self):
-        self.app = self.launch_test_application(
+        return self.launch_test_application(
             base.get_qmlscene_launch_command(),
             self.local_location_qml,
             "-I", self.local_location_backend,
             app_type='qt',
-            emulator_base=toolkit_emulators.UbuntuUIToolkitEmulatorBase)
+            emulator_base=ubuntuuitoolkit.UbuntuUIToolkitCustomProxyObjectBase)
 
     @autopilot_logging.log_action(logger.info)
     def launch_test_installed(self):
-        self.app = self.launch_test_application(
+        return self.launch_test_application(
             base.get_qmlscene_launch_command(),
             self.installed_location_qml,
             "-I", self.installed_location_backend,
             app_type='qt',
-            emulator_base=toolkit_emulators.UbuntuUIToolkitEmulatorBase)
+            emulator_base=ubuntuuitoolkit.UbuntuUIToolkitCustomProxyObjectBase)
 
     @autopilot_logging.log_action(logger.info)
     def launch_test_click(self):
-        self.app = self.launch_click_package(
+        return self.launch_click_package(
             "com.ubuntu.clock",
-            emulator_base=toolkit_emulators.UbuntuUIToolkitEmulatorBase)
+            emulator_base=ubuntuuitoolkit.UbuntuUIToolkitCustomProxyObjectBase)
 
     def temp_move_sqlite_db(self):
         try:
@@ -132,6 +144,19 @@ class ClockAppTestCase(base.UbuntuUIToolkitAppTestCase):
             except:
                 logger.error("Failed to restore database")
 
-    @property
-    def main_view(self):
-        return self.app.wait_select_single(emulators.MainView)
+    def _get_build_dir(self):
+        """
+        Returns the build dir after having parsed the CMake config file
+        generated by Qt Creator. If it cannot find it or it cannot be parsed,
+        an in-tree build is assumed and thus returned.
+        """
+        try:
+            cmake_config = CMakePluginParser.CMakePluginParser(os.path.join(
+                self.source_dir, 'CMakeLists.txt.user'))
+            build_dir = cmake_config.active_build_dir
+        except:
+            logger.error("Error parsing CMakeLists.txt.user %s",
+                         sys.exc_info()[0])
+            build_dir = os.path.join(self.source_dir, 'builddir')
+
+        return build_dir

@@ -100,14 +100,13 @@ ListItemWithActions {
                  gone-off and the user is re-enabling the alarm. Repeating
                  alarms do this automatically.
                 */
-                if(checked && type === Alarm.OneTime && alarmData.date < new Date()) {
-                    var currentTime = new Date()
-                    alarmData.daysOfWeek = alarmUtils.get_alarm_day(currentTime.getDay())
-
-                    if (alarmData.date.getTime() <= currentTime.getTime()) {
-                        var tomorrow = currentTime
-                        tomorrow.setDate(tomorrow.getDate() + 1)
-                        alarmData.daysOfWeek = alarmUtils.get_alarm_day(tomorrow.getDay())
+                if(checked && type === Alarm.OneTime) {
+                    alarmData.daysOfWeek = Alarm.AutoDetect
+                    var now = new Date()
+                    if (alarmData.date.getHours()*60+alarmData.date.getMinutes() <= now.getHours()*60+now.getMinutes()) {
+                        alarmData.date = new Date(now.getFullYear(), now.getMonth(), now.getDate()+1, alarmData.date.getHours(), alarmData.date.getMinutes(), 0, 0)
+                    } else {
+                        alarmData.date = new Date(now.getFullYear(), now.getMonth(), now.getDate(), alarmData.date.getHours(), alarmData.date.getMinutes(), 0, 0)
                     }
                 }
 

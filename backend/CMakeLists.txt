@@ -73,22 +73,22 @@ qt5_use_modules(geolocation Gui Qml Quick)
 
 # Copy qmldir file to build dir for running in QtCreator
 add_custom_target(timezone-qmldir ALL
-    COMMAND cp ${CMAKE_CURRENT_SOURCE_DIR}/modules/Timezone/qmldir ${CMAKE_CURRENT_BINARY_DIR}/Timezone
+    COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_CURRENT_SOURCE_DIR}/modules/Timezone/qmldir ${CMAKE_CURRENT_BINARY_DIR}/Timezone
     DEPENDS ${QMLFILES}
 )
 
 add_custom_target(datetime-qmldir ALL
-    COMMAND cp ${CMAKE_CURRENT_SOURCE_DIR}/modules/DateTime/qmldir ${CMAKE_CURRENT_BINARY_DIR}/DateTime
+    COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_CURRENT_SOURCE_DIR}/modules/DateTime/qmldir ${CMAKE_CURRENT_BINARY_DIR}/DateTime
     DEPENDS ${QMLFILES}
 )
 
 add_custom_target(alarmsettings-qmldir ALL
-    COMMAND cp ${CMAKE_CURRENT_SOURCE_DIR}/modules/Alarm/Settings/qmldir ${CMAKE_CURRENT_BINARY_DIR}/Alarm/Settings
+    COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_CURRENT_SOURCE_DIR}/modules/Alarm/Settings/qmldir ${CMAKE_CURRENT_BINARY_DIR}/Alarm/Settings
     DEPENDS ${QMLFILES}
 )
 
 add_custom_target(geolocation-qmldir ALL
-    COMMAND cp ${CMAKE_CURRENT_SOURCE_DIR}/modules/GeoLocation/qmldir ${CMAKE_CURRENT_BINARY_DIR}/GeoLocation
+    COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_CURRENT_SOURCE_DIR}/modules/GeoLocation/qmldir ${CMAKE_CURRENT_BINARY_DIR}/GeoLocation
     DEPENDS ${QMLFILES}
 )
 
