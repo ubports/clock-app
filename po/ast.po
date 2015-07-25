@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2015-07-17 05:39+0000\n"
+"X-Launchpad-Export-Date: 2015-07-25 05:41+0000\n"
 "X-Generator: Launchpad (build 17628)\n"
 
 #: ../app/alarm/AlarmLabel.qml:30 ../app/alarm/AlarmLabel.qml:56
@@ -23,42 +23,42 @@ msgstr ""
 msgid "Label"
 msgstr "Etiqueta"
 
-#: ../app/alarm/AlarmList.qml:78 ../app/alarm/AlarmPage.qml:125
+#: ../app/alarm/AlarmList.qml:45 ../app/alarm/AlarmPage.qml:99
 #: ../app/worldclock/UserWorldCityList.qml:101
 msgid "Delete"
 msgstr "Desaniciar"
 
-#: ../app/alarm/AlarmPage.qml:26
+#: ../app/alarm/AlarmPage.qml:25
 msgid "Alarms"
 msgstr "Alarmes"
 
-#: ../app/alarm/AlarmPage.qml:41 ../app/alarm/AlarmPage.qml:66
-#: ../app/worldclock/WorldCityList.qml:80
+#: ../app/alarm/AlarmPage.qml:39 ../app/alarm/AlarmPage.qml:64
+#: ../app/worldclock/WorldCityList.qml:79
 msgid "Back"
 msgstr "Atrás"
 
-#: ../app/alarm/AlarmPage.qml:51 ../app/alarm/EditAlarmPage.qml:44
+#: ../app/alarm/AlarmPage.qml:49 ../app/alarm/EditAlarmPage.qml:44
 #: ../app/alarm/EditAlarmPage.qml:166
 msgid "Alarm"
 msgstr "Alarma"
 
-#: ../app/alarm/AlarmPage.qml:95
+#: ../app/alarm/AlarmPage.qml:74
 msgid "Select None"
 msgstr "Nun esbillar nada"
 
-#: ../app/alarm/AlarmPage.qml:97 ../app/alarm/AlarmRepeat.qml:38
+#: ../app/alarm/AlarmPage.qml:76 ../app/alarm/AlarmRepeat.qml:37
 msgid "Select All"
 msgstr "Esbillalo too"
 
-#: ../app/alarm/AlarmPage.qml:162
+#: ../app/alarm/AlarmPage.qml:137
 msgid "No saved alarms"
 msgstr "Nun hai alarmes guardaes"
 
-#: ../app/alarm/AlarmPage.qml:163
+#: ../app/alarm/AlarmPage.qml:138
 msgid "Tap the + icon to add an alarm"
 msgstr "Toca nel iconu + p'amestar una alarma"
 
-#: ../app/alarm/AlarmRepeat.qml:34 ../app/alarm/EditAlarmPage.qml:281
+#: ../app/alarm/AlarmRepeat.qml:33 ../app/alarm/EditAlarmPage.qml:281
 msgid "Repeat"
 msgstr "Repetir"
 
@@ -100,7 +100,7 @@ msgstr "Vibración"
 msgid "Change time and date"
 msgstr "Cambiar el día y hora"
 
-#: ../app/alarm/AlarmSound.qml:28 ../app/alarm/EditAlarmPage.qml:304
+#: ../app/alarm/AlarmSound.qml:27 ../app/alarm/EditAlarmPage.qml:304
 msgid "Sound"
 msgstr "Soníu"
 
@@ -169,7 +169,7 @@ msgid "Add"
 msgstr "Amestar"
 
 #: ../app/worldclock/AddWorldCityButton.qml:61
-#: ../app/worldclock/WorldCityList.qml:64
+#: ../app/worldclock/WorldCityList.qml:63
 msgid "City"
 msgstr "Ciudá"
 
@@ -209,27 +209,27 @@ msgstr "%1m %2"
 msgid "Same time"
 msgstr "La mesma hora"
 
-#: ../app/worldclock/WorldCityList.qml:51
+#: ../app/worldclock/WorldCityList.qml:50
 msgid "Select a city"
 msgstr "Escueyi una ciudá"
 
-#: ../app/worldclock/WorldCityList.qml:109
+#: ../app/worldclock/WorldCityList.qml:108
 msgid "Search..."
 msgstr "Guetar..."
 
-#: ../app/worldclock/WorldCityList.qml:213
+#: ../app/worldclock/WorldCityList.qml:212
 msgid "Searching for a city"
 msgstr "Guetando una ciudá"
 
-#: ../app/worldclock/WorldCityList.qml:218
+#: ../app/worldclock/WorldCityList.qml:217
 msgid "No City Found"
 msgstr "Nun s'alcontró denguna ciudá"
 
-#: ../app/worldclock/WorldCityList.qml:224
+#: ../app/worldclock/WorldCityList.qml:223
 msgid "Unable to connect."
 msgstr "Nun pue coneutase."
 
-#: ../app/worldclock/WorldCityList.qml:225
+#: ../app/worldclock/WorldCityList.qml:224
 msgid "Please check your network connection and try again"
 msgstr "Comprueba la conexón a la rede y vuelvi a intentalo"
 

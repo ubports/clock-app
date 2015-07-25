@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Launchpad-Export-Date: 2015-07-17 05:40+0000\n"
+"X-Launchpad-Export-Date: 2015-07-25 05:42+0000\n"
 "X-Generator: Launchpad (build 17628)\n"
 "Language: uk\n"
 
@@ -26,42 +26,42 @@ msgstr ""
 msgid "Label"
 msgstr "Мітка"
 
-#: ../app/alarm/AlarmList.qml:78 ../app/alarm/AlarmPage.qml:125
+#: ../app/alarm/AlarmList.qml:45 ../app/alarm/AlarmPage.qml:99
 #: ../app/worldclock/UserWorldCityList.qml:101
 msgid "Delete"
 msgstr "Вилучити"
 
-#: ../app/alarm/AlarmPage.qml:26
+#: ../app/alarm/AlarmPage.qml:25
 msgid "Alarms"
 msgstr "Сигнали"
 
-#: ../app/alarm/AlarmPage.qml:41 ../app/alarm/AlarmPage.qml:66
-#: ../app/worldclock/WorldCityList.qml:80
+#: ../app/alarm/AlarmPage.qml:39 ../app/alarm/AlarmPage.qml:64
+#: ../app/worldclock/WorldCityList.qml:79
 msgid "Back"
 msgstr "Назад"
 
-#: ../app/alarm/AlarmPage.qml:51 ../app/alarm/EditAlarmPage.qml:44
+#: ../app/alarm/AlarmPage.qml:49 ../app/alarm/EditAlarmPage.qml:44
 #: ../app/alarm/EditAlarmPage.qml:166
 msgid "Alarm"
 msgstr "Будильник"
 
-#: ../app/alarm/AlarmPage.qml:95
+#: ../app/alarm/AlarmPage.qml:74
 msgid "Select None"
 msgstr "Не обирати жодного"
 
-#: ../app/alarm/AlarmPage.qml:97 ../app/alarm/AlarmRepeat.qml:38
+#: ../app/alarm/AlarmPage.qml:76 ../app/alarm/AlarmRepeat.qml:37
 msgid "Select All"
 msgstr "Вибрати все"
 
-#: ../app/alarm/AlarmPage.qml:162
+#: ../app/alarm/AlarmPage.qml:137
 msgid "No saved alarms"
 msgstr "Немає збережених нагадувань"
 
-#: ../app/alarm/AlarmPage.qml:163
+#: ../app/alarm/AlarmPage.qml:138
 msgid "Tap the + icon to add an alarm"
 msgstr "Натисніть піктограму «+», щоб додати нагадування"
 
-#: ../app/alarm/AlarmRepeat.qml:34 ../app/alarm/EditAlarmPage.qml:281
+#: ../app/alarm/AlarmRepeat.qml:33 ../app/alarm/EditAlarmPage.qml:281
 msgid "Repeat"
 msgstr "Повторити"
 
@@ -104,7 +104,7 @@ msgstr "Вібрація"
 msgid "Change time and date"
 msgstr "Змінити час і дату"
 
-#: ../app/alarm/AlarmSound.qml:28 ../app/alarm/EditAlarmPage.qml:304
+#: ../app/alarm/AlarmSound.qml:27 ../app/alarm/EditAlarmPage.qml:304
 msgid "Sound"
 msgstr "Звук"
 
@@ -173,7 +173,7 @@ msgid "Add"
 msgstr "Додати"
 
 #: ../app/worldclock/AddWorldCityButton.qml:61
-#: ../app/worldclock/WorldCityList.qml:64
+#: ../app/worldclock/WorldCityList.qml:63
 msgid "City"
 msgstr "Місто"
 
@@ -213,27 +213,27 @@ msgstr "%1хв %2"
 msgid "Same time"
 msgstr "Той самий час"
 
-#: ../app/worldclock/WorldCityList.qml:51
+#: ../app/worldclock/WorldCityList.qml:50
 msgid "Select a city"
 msgstr "Виберіть місто"
 
-#: ../app/worldclock/WorldCityList.qml:109
+#: ../app/worldclock/WorldCityList.qml:108
 msgid "Search..."
 msgstr "Шукати…"
 
-#: ../app/worldclock/WorldCityList.qml:213
+#: ../app/worldclock/WorldCityList.qml:212
 msgid "Searching for a city"
 msgstr "Шукаємо місто"
 
-#: ../app/worldclock/WorldCityList.qml:218
+#: ../app/worldclock/WorldCityList.qml:217
 msgid "No City Found"
 msgstr "Міста не знайдено"
 
-#: ../app/worldclock/WorldCityList.qml:224
+#: ../app/worldclock/WorldCityList.qml:223
 msgid "Unable to connect."
 msgstr "Не вдалось з’єднатися."
 
-#: ../app/worldclock/WorldCityList.qml:225
+#: ../app/worldclock/WorldCityList.qml:224
 msgid "Please check your network connection and try again"
 msgstr ""
 "Будь ласка, перевірте, чи є працездатним мережеве з’єднання, і повторіть "

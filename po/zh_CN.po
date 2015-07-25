@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Launchpad-Export-Date: 2015-07-24 05:44+0000\n"
+"X-Launchpad-Export-Date: 2015-07-25 05:42+0000\n"
 "X-Generator: Launchpad (build 17628)\n"
 
 #: ../app/alarm/AlarmLabel.qml:30 ../app/alarm/AlarmLabel.qml:56
@@ -23,42 +23,42 @@ msgstr ""
 msgid "Label"
 msgstr "标签"
 
-#: ../app/alarm/AlarmList.qml:78 ../app/alarm/AlarmPage.qml:125
+#: ../app/alarm/AlarmList.qml:45 ../app/alarm/AlarmPage.qml:99
 #: ../app/worldclock/UserWorldCityList.qml:101
 msgid "Delete"
 msgstr "删除"
 
-#: ../app/alarm/AlarmPage.qml:26
+#: ../app/alarm/AlarmPage.qml:25
 msgid "Alarms"
 msgstr "闹钟"
 
-#: ../app/alarm/AlarmPage.qml:41 ../app/alarm/AlarmPage.qml:66
-#: ../app/worldclock/WorldCityList.qml:80
+#: ../app/alarm/AlarmPage.qml:39 ../app/alarm/AlarmPage.qml:64
+#: ../app/worldclock/WorldCityList.qml:79
 msgid "Back"
 msgstr "返回"
 
-#: ../app/alarm/AlarmPage.qml:51 ../app/alarm/EditAlarmPage.qml:44
+#: ../app/alarm/AlarmPage.qml:49 ../app/alarm/EditAlarmPage.qml:44
 #: ../app/alarm/EditAlarmPage.qml:166
 msgid "Alarm"
 msgstr "闹钟"
 
-#: ../app/alarm/AlarmPage.qml:95
+#: ../app/alarm/AlarmPage.qml:74
 msgid "Select None"
 msgstr "全部不选"
 
-#: ../app/alarm/AlarmPage.qml:97 ../app/alarm/AlarmRepeat.qml:38
+#: ../app/alarm/AlarmPage.qml:76 ../app/alarm/AlarmRepeat.qml:37
 msgid "Select All"
 msgstr "全选"
 
-#: ../app/alarm/AlarmPage.qml:162
+#: ../app/alarm/AlarmPage.qml:137
 msgid "No saved alarms"
 msgstr "未设定闹铃"
 
-#: ../app/alarm/AlarmPage.qml:163
+#: ../app/alarm/AlarmPage.qml:138
 msgid "Tap the + icon to add an alarm"
 msgstr "点击 + 来新增一个闹铃"
 
-#: ../app/alarm/AlarmRepeat.qml:34 ../app/alarm/EditAlarmPage.qml:281
+#: ../app/alarm/AlarmRepeat.qml:33 ../app/alarm/EditAlarmPage.qml:281
 msgid "Repeat"
 msgstr "重复"
 
@@ -99,7 +99,7 @@ msgstr "振动"
 msgid "Change time and date"
 msgstr "更改时间与日期"
 
-#: ../app/alarm/AlarmSound.qml:28 ../app/alarm/EditAlarmPage.qml:304
+#: ../app/alarm/AlarmSound.qml:27 ../app/alarm/EditAlarmPage.qml:304
 msgid "Sound"
 msgstr "声音"
 
@@ -168,7 +168,7 @@ msgid "Add"
 msgstr "新增"
 
 #: ../app/worldclock/AddWorldCityButton.qml:61
-#: ../app/worldclock/WorldCityList.qml:64
+#: ../app/worldclock/WorldCityList.qml:63
 msgid "City"
 msgstr "城市"
 
@@ -208,27 +208,27 @@ msgstr "%1 分钟 %2"
 msgid "Same time"
 msgstr "同一时间"
 
-#: ../app/worldclock/WorldCityList.qml:51
+#: ../app/worldclock/WorldCityList.qml:50
 msgid "Select a city"
 msgstr "选择城市"
 
-#: ../app/worldclock/WorldCityList.qml:109
+#: ../app/worldclock/WorldCityList.qml:108
 msgid "Search..."
 msgstr "搜索..."
 
-#: ../app/worldclock/WorldCityList.qml:213
+#: ../app/worldclock/WorldCityList.qml:212
 msgid "Searching for a city"
 msgstr "城市查找中"
 
-#: ../app/worldclock/WorldCityList.qml:218
+#: ../app/worldclock/WorldCityList.qml:217
 msgid "No City Found"
 msgstr "未找到城市"
 
-#: ../app/worldclock/WorldCityList.qml:224
+#: ../app/worldclock/WorldCityList.qml:223
 msgid "Unable to connect."
 msgstr "无法连接。"
 
-#: ../app/worldclock/WorldCityList.qml:225
+#: ../app/worldclock/WorldCityList.qml:224
 msgid "Please check your network connection and try again"
 msgstr "请检查你的网络连接并重试"
 

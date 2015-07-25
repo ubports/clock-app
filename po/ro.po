@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n == 1 ? 0: (((n % 100 > 19) || ((n % 100 "
 "== 0) && (n != 0))) ? 2: 1));\n"
-"X-Launchpad-Export-Date: 2015-07-17 05:40+0000\n"
+"X-Launchpad-Export-Date: 2015-07-25 05:42+0000\n"
 "X-Generator: Launchpad (build 17628)\n"
 
 #: ../app/alarm/AlarmLabel.qml:30 ../app/alarm/AlarmLabel.qml:56
@@ -24,42 +24,42 @@ msgstr ""
 msgid "Label"
 msgstr "Etichetă"
 
-#: ../app/alarm/AlarmList.qml:78 ../app/alarm/AlarmPage.qml:125
+#: ../app/alarm/AlarmList.qml:45 ../app/alarm/AlarmPage.qml:99
 #: ../app/worldclock/UserWorldCityList.qml:101
 msgid "Delete"
 msgstr "Ştergeţi"
 
-#: ../app/alarm/AlarmPage.qml:26
+#: ../app/alarm/AlarmPage.qml:25
 msgid "Alarms"
 msgstr "Alarme"
 
-#: ../app/alarm/AlarmPage.qml:41 ../app/alarm/AlarmPage.qml:66
-#: ../app/worldclock/WorldCityList.qml:80
+#: ../app/alarm/AlarmPage.qml:39 ../app/alarm/AlarmPage.qml:64
+#: ../app/worldclock/WorldCityList.qml:79
 msgid "Back"
 msgstr "Înapoi"
 
-#: ../app/alarm/AlarmPage.qml:51 ../app/alarm/EditAlarmPage.qml:44
+#: ../app/alarm/AlarmPage.qml:49 ../app/alarm/EditAlarmPage.qml:44
 #: ../app/alarm/EditAlarmPage.qml:166
 msgid "Alarm"
 msgstr "Alarmă"
 
-#: ../app/alarm/AlarmPage.qml:95
+#: ../app/alarm/AlarmPage.qml:74
 msgid "Select None"
 msgstr "Deselectare totală"
 
-#: ../app/alarm/AlarmPage.qml:97 ../app/alarm/AlarmRepeat.qml:38
+#: ../app/alarm/AlarmPage.qml:76 ../app/alarm/AlarmRepeat.qml:37
 msgid "Select All"
 msgstr "Selectați tot"
 
-#: ../app/alarm/AlarmPage.qml:162
+#: ../app/alarm/AlarmPage.qml:137
 msgid "No saved alarms"
 msgstr "Nu sunt alarme salvate"
 
-#: ../app/alarm/AlarmPage.qml:163
+#: ../app/alarm/AlarmPage.qml:138
 msgid "Tap the + icon to add an alarm"
 msgstr "Apăsaţi pe pictograma + pentru a adăuga o alarmă"
 
-#: ../app/alarm/AlarmRepeat.qml:34 ../app/alarm/EditAlarmPage.qml:281
+#: ../app/alarm/AlarmRepeat.qml:33 ../app/alarm/EditAlarmPage.qml:281
 msgid "Repeat"
 msgstr "Repetare"
 
@@ -102,7 +102,7 @@ msgstr "Vibrație"
 msgid "Change time and date"
 msgstr "Schimbaţi ora şi data"
 
-#: ../app/alarm/AlarmSound.qml:28 ../app/alarm/EditAlarmPage.qml:304
+#: ../app/alarm/AlarmSound.qml:27 ../app/alarm/EditAlarmPage.qml:304
 msgid "Sound"
 msgstr "Sunet"
 
@@ -171,7 +171,7 @@ msgid "Add"
 msgstr "Adăugați"
 
 #: ../app/worldclock/AddWorldCityButton.qml:61
-#: ../app/worldclock/WorldCityList.qml:64
+#: ../app/worldclock/WorldCityList.qml:63
 msgid "City"
 msgstr "Oraș"
 
@@ -211,27 +211,27 @@ msgstr "%1m %2"
 msgid "Same time"
 msgstr ""
 
-#: ../app/worldclock/WorldCityList.qml:51
+#: ../app/worldclock/WorldCityList.qml:50
 msgid "Select a city"
 msgstr "Selectaţi un oraş"
 
-#: ../app/worldclock/WorldCityList.qml:109
+#: ../app/worldclock/WorldCityList.qml:108
 msgid "Search..."
 msgstr "Căutare...."
 
-#: ../app/worldclock/WorldCityList.qml:213
+#: ../app/worldclock/WorldCityList.qml:212
 msgid "Searching for a city"
 msgstr "Se caută un oraş"
 
-#: ../app/worldclock/WorldCityList.qml:218
+#: ../app/worldclock/WorldCityList.qml:217
 msgid "No City Found"
 msgstr "Nu s-a găsit nici un oraş"
 
-#: ../app/worldclock/WorldCityList.qml:224
+#: ../app/worldclock/WorldCityList.qml:223
 msgid "Unable to connect."
 msgstr "Nu se poate realiza conectarea."
 
-#: ../app/worldclock/WorldCityList.qml:225
+#: ../app/worldclock/WorldCityList.qml:224
 msgid "Please check your network connection and try again"
 msgstr "Verificaţi conexiunea la reţea şi încercaţi din nou"
 
