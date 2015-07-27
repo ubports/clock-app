@@ -97,7 +97,8 @@ void JsonTimeZoneModel::networkReplyFinished(QNetworkReply *reply)
         auto admin2 = data.value("admin2").toString();
         auto country = data.value("country").toString();
 
-        tz.cityName = data.value("name").toString();
+        tz.cityId = data.value("name").toString();
+        tz.cityName = tz.cityId;
 
         if (!admin1.isEmpty() && !admin2.isEmpty()) {
             tz.country = QString("%1, %2, %3").arg(admin2).arg(admin1).arg(country);

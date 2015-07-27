@@ -52,7 +52,7 @@ ListItemWithActions {
             }
 
             Label {
-                text: model.city
+                text: model.cityName
                 objectName: "userCityNameText"
                 width: parent.width
                 elide: Text.ElideRight

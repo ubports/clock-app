@@ -197,9 +197,9 @@ Page {
             }
         }
 
-        sort.property: "city"
+        sort.property: "cityName"
         sort.order: Qt.AscendingOrder
-        filter.property: "city"
+        filter.property: "cityName"
         filter.pattern: searchComponentLoader.status === Loader.Ready ? RegExp(searchComponentLoader.item.text, "gi")
                                                                       : RegExp("", "gi")
     }
@@ -267,24 +267,24 @@ Page {
         id: cityList
         objectName: "cityList"
 
-        function addWorldCity(city, country, timezone) {
-            console.log("[LOG]: Adding city to U1db Database")
+        function addWorldCity(cityId, country, timezone) {
+            console.log("[LOG]: Adding " + cityId.toString() + " city to U1db Database")
             clockDB.putDoc
                     (
                         {
                             "worldlocation":
                             {
-                                "city": city,
+                                "city": cityId,
                                 "country": country,
                                 "timezone": timezone
                             }
                         },
-                        encodeURIComponent(city + "_" + country)
+                        encodeURIComponent(cityId + "_" + country)
                         )
         }
 
         function getSectionText(index) {
-            return sortedTimeZoneModel.get(index).city.substring(0,1)
+            return sortedTimeZoneModel.get(index).cityName.substring(0,1)
         }
 
         onFlickStarted: {
@@ -300,7 +300,7 @@ Page {
 
         clip: true
 
-        section.property: "city"
+        section.property: "cityName"
         section.criteria: ViewSection.FirstCharacter
         section.labelPositioning: ViewSection.InlineLabels
 
@@ -324,7 +324,7 @@ Page {
                 }
 
                 Label {
-                    text: city
+                    text: cityName
                     objectName: "defaultCityNameText"
                     width: parent.width
                     elide: Text.ElideRight
@@ -353,10 +353,10 @@ Page {
             onClicked: {
                 var tempCountry = country.split(",")
                 if(tempCountry.length > 2) {
-                    cityList.addWorldCity(city, tempCountry[1] + ","
+                    cityList.addWorldCity(cityId, tempCountry[1] + ","
                                           + tempCountry[2], timezoneID)
                 } else {
-                    cityList.addWorldCity(city, country, timezoneID)
+                    cityList.addWorldCity(cityId, country, timezoneID)
                 }
 
                 mainStack.pop()

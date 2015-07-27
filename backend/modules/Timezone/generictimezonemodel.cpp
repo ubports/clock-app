@@ -65,7 +65,8 @@ void GenericTimeZoneModel::loadTimeZonesFromVariantList()
     */
     for (int i=0; i < m_results.size(); i++) {
         // Map query model results to timezone tz
-        tz.cityName = m_results.value(i).toMap().value("city").toString();
+        tz.cityId = m_results.value(i).toMap().value("city").toString();
+        tz.cityName = tz.cityId;
         tz.country = m_results.value(i).toMap().value("country").toString();
         tz.timeZone = QTimeZone(m_results.value(i).toMap().value("timezone").toString().toLatin1());
 

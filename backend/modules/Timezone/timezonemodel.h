@@ -49,6 +49,7 @@ class TimeZoneModel: public QAbstractListModel
 
 public:
     enum Roles {
+        RoleCityId,
         RoleCityName,
         RoleCountryName,
         RoleTimeZoneId,
@@ -114,6 +115,7 @@ private:
 protected:
     // Create a simple container class to hold our information
     struct TimeZone{
+        QString cityId;
         QString cityName;
         QString country;
         QTimeZone timeZone;

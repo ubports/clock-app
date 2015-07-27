@@ -36,7 +36,7 @@ private:
     void loadDefaultCityList();
 
     // Function to append city list item into m_timeZones object
-    void addCity(const QString &city, const QString &timezone, const QString &country);
+    void addCity(const QString &cityId, const QString &cityName, const QString &timezone, const QString &country);
 };
 
 #endif // STATICTIMEZONEMODEL_H
