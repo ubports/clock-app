@@ -15,8 +15,13 @@
     "version": "3.5.@BZR_REVNO@",
     "maintainer": "Ubuntu App Cats <ubuntu-touch-coreapps@lists.launchpad.net>",
     "x-test": {
-        "autopilot": "ubuntu_clock_app"
-    },
+        "autopilot": {
+            "autopilot_module": "@AUTOPILOT_DIR@",
+            "depends": [
+                "python3-lxml"
+            ]
+        }
+    }
     "x-source": {
         "vcs-bzr": "@BZR_SOURCE@",
         "vcs-bzr-revno": "@BZR_REVNO@"
