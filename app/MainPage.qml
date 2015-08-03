@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2014-2015 Canonical Ltd
+ * Copyright (C) 2015 Canonical Ltd
  *
  * This file is part of Ubuntu Clock App
  *
@@ -21,6 +21,7 @@ import Ubuntu.Components 1.2
 import "upstreamcomponents"
 import "alarm"
 import "clock"
+import "stopwatch"
 
 PageWithBottomEdge {
     id: _mainPage
@@ -56,15 +57,10 @@ PageWithBottomEdge {
             height: listview.height
         }
 
-        // #FIXME: Demo Purposes Only! Replace with working version
-        Rectangle {
-            color: "LightBlue"
-            height: listview.height
+        StopwatchPage {
+            id: stopwatchPage
             width: clockApp.width
-            Label {
-                anchors.centerIn: parent
-                text: "Stopwatch!"
-            }
+            height: listview.height
         }
 
         // #FIXME: Demo Purposes Only! Replace with working version
@@ -101,7 +97,7 @@ PageWithBottomEdge {
                 verticalCenter: parent.verticalCenter
                 leftMargin: units.gu(2)
             }
-            text: "Header Container"
+            text: "Header Container (#FIXME)"
             fontSize: "large"
         }
 
