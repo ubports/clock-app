@@ -23,6 +23,8 @@ import "../components"
 ClockCircle {
     id: outerCirle
 
+    property int milliseconds: 0
+
     isOuter: true
     width: units.gu(32)
 
@@ -35,7 +37,7 @@ ClockCircle {
 
     Label {
         anchors.centerIn: parent
-        text: "00:00:00"
+        text: milliseconds
         font.pixelSize: units.dp(42)
         color: UbuntuColors.midAubergine
     }

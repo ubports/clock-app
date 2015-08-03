@@ -24,8 +24,51 @@ Item {
     id: _stopwatchPage
     objectName: "stopwatchPage"
 
+    property date startTime: new Date()
+    property date snapshot: startTime
+    property bool running: false
+
+    property int timeDiff: snapshot - startTime
+    property int oldDiff: 0
+
+    property int totalTimeDiff: timeDiff + oldDiff
+
     Component.onCompleted: {
         console.log("[LOG]: Stopwatch Page Loaded")
+    }
+
+    function start() {
+        startTime = new Date()
+        snapshot = startTime
+        running = true
+    }
+
+    function stop() {
+        oldDiff += timeDiff
+        startTime = new Date()
+        snapshot = startTime
+        running = false
+    }
+
+    function update() {
+        snapshot = new Date()
+    }
+
+    function clear() {
+        oldDiff = 0
+        startTime = new Date()
+        snapshot = startTime
+        // #TODO: Clear stopwatch lap listmodel
+    }
+
+    Timer {
+        id: refreshTimer
+        interval: 45
+        repeat: true
+        running: _stopwatchPage.running
+        onTriggered: {
+            _stopwatchPage.update()
+        }
     }
 
     Flickable {
@@ -38,11 +81,13 @@ Item {
         clip: true
         anchors.fill: parent
         contentWidth: parent.width
-        contentHeight: stopwatch.height + stopButton.height
+        contentHeight: stopwatch.height + buttonRow.height
 
         StopwatchFace {
             id: stopwatch
             objectName: "stopwatch"
+
+            milliseconds: _stopwatchPage.totalTimeDiff
 
             anchors {
                 verticalCenter: parent.top
@@ -65,15 +110,30 @@ Item {
 
             Button {
                 id: stopButton
-                text: "Start"
                 Layout.fillWidth: true
+                text: _stopwatchPage.running ? i18n.tr("Stop") : i18n.tr("Start")
+                onClicked: {
+                    if (_stopwatchPage.running) {
+                        _stopwatchPage.stop()
+                    } else {
+                        _stopwatchPage.start()
+                    }
+                }
             }
 
             Button {
                 id: lapButton
-                text: i18n.tr("Lap")
+                text: _stopwatchPage.running ? i18n.tr("Lap") : i18n.tr("Clear")
+                Layout.fillWidth: true
                 strokeColor: UbuntuColors.lightGrey
-                Layout.fillWidth: units.gu(2)
+                onClicked: {
+                    if (_stopwatchPage.running) {
+                        _stopwatchPage.update()
+                    } else {
+                        _stopwatchPage.clear()
+                        // #TODO Create stopwatch lap
+                    }
+                }
             }
         }
     }
