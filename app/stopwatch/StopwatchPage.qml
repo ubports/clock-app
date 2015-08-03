@@ -17,6 +17,7 @@
  */
 
 import QtQuick 2.4
+import QtQuick.Layouts 1.1
 import Ubuntu.Components 1.2
 
 Item {
@@ -50,29 +51,29 @@ Item {
             }
         }
 
-        Button {
-            id: stopButton
+        RowLayout {
+            id: buttonRow
 
-            text: "Stop"
-            width: parent.width/2.5
+            spacing: units.gu(2)
             anchors {
-                left: parent.left
                 top: parent.top
                 topMargin: units.gu(40)
+                left: parent.left
+                right: parent.right
                 margins: units.gu(2)
             }
-        }
 
-        Button {
-            id: lapButton
+            Button {
+                id: stopButton
+                text: "Start"
+                Layout.fillWidth: true
+            }
 
-            text: "Lap"
-            width: parent.width/2.5
-            anchors {
-                right: parent.right
-                top: parent.top
-                topMargin: units.gu(40)
-                margins: units.gu(2)
+            Button {
+                id: lapButton
+                text: i18n.tr("Lap")
+                strokeColor: UbuntuColors.lightGrey
+                Layout.fillWidth: units.gu(2)
             }
         }
     }

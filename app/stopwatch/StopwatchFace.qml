@@ -36,7 +36,7 @@ ClockCircle {
     Label {
         anchors.centerIn: parent
         text: "00:00:00"
-        fontSize: "x-large"
+        font.pixelSize: units.dp(42)
         color: UbuntuColors.midAubergine
     }
 }
