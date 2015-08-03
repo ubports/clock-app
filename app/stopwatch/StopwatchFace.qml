@@ -31,7 +31,7 @@ ClockCircle {
     }
 
     // Function to break down time (milliseconds) to hours, minutes and seconds
-    function millisToTimeString(millis) {
+    function millisToTimeString(millis, showMilliseconds) {
         var hours, minutes, seconds, milliseconds
 
         // Break down total time (milliseconds) to hours, minutes, seconds and milliseconds
@@ -45,6 +45,10 @@ ClockCircle {
         timeString += zeroPadding(hours, 2) + ":"
         timeString += zeroPadding(minutes, 2) + ":"
         timeString += zeroPadding(seconds, 2)
+
+        if (showMilliseconds) {
+            timeString += "." + zeroPadding(milliseconds, 3)
+        }
 
         return timeString
     }

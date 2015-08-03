@@ -58,7 +58,18 @@ Item {
         oldDiff = 0
         startTime = new Date()
         snapshot = startTime
-        // #TODO: Clear stopwatch lap listmodel
+        lapsModel.clear()
+    }
+
+    ListModel {
+        id: lapsModel
+        function addLap(totalTime) {
+            if (lapsModel.count === 0) {
+                append({"laptime": totalTime, "totaltime": totalTime})
+            } else {
+                insert(0, {"laptime": totalTime - lapsModel.get(0).totaltime, "totaltime": totalTime})
+            }
+        }
     }
 
     Timer {
@@ -81,7 +92,7 @@ Item {
         clip: true
         anchors.fill: parent
         contentWidth: parent.width
-        contentHeight: stopwatch.height + buttonRow.height
+        contentHeight: stopwatch.height + buttonRow.height + lapListView.height + units.gu(14)
 
         StopwatchFace {
             id: stopwatch
@@ -129,9 +140,55 @@ Item {
                 onClicked: {
                     if (_stopwatchPage.running) {
                         _stopwatchPage.update()
+                        lapsModel.addLap(_stopwatchPage.totalTimeDiff)
                     } else {
                         _stopwatchPage.clear()
-                        // #TODO Create stopwatch lap
+                    }
+                }
+            }
+        }
+
+        ListView {
+            id: lapListView
+
+            anchors {
+                top: buttonRow.bottom
+                left: parent.left
+                right: parent.right
+                topMargin: units.gu(1)
+            }
+            clip: true
+            interactive: false
+            model: lapsModel
+            height: units.gu(7) * lapsModel.count
+
+            delegate: ListItem {
+                divider.visible: true
+                Row {
+                    anchors {
+                        left: parent.left
+                        right: parent.right
+                        verticalCenter: parent.verticalCenter
+                        margins: units.gu(2)
+                    }
+
+                    Label {
+                        color: UbuntuColors.midAubergine
+                        text: "#%1".arg(lapsModel.count - index)
+                        width: parent.width/7
+                        horizontalAlignment: Text.AlignHCenter
+                    }
+
+                    Label {
+                        width: 3*parent.width/7
+                        text: stopwatch.millisToTimeString(model.laptime, true)
+                        horizontalAlignment: Text.AlignHCenter
+                    }
+
+                    Label {
+                        width: 3*parent.width/7
+                        text: stopwatch.millisToTimeString(model.totaltime, true)
+                        horizontalAlignment: Text.AlignHCenter
                     }
                 }
             }
