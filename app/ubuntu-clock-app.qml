@@ -20,7 +20,6 @@ import QtQuick 2.4
 import DateTime 1.0
 import U1db 1.0 as U1db
 import Ubuntu.Components 1.2
-import "clock"
 import "components"
 
 MainView {
@@ -89,7 +88,7 @@ MainView {
          Reload the alarm model when the clock app gains focus to refresh
          the alarm page UI in the case of alarm notifications.
         */
-        if(applicationState && !clockPage.isColdStart) {
+        if(applicationState && !mainPage.isColdStart) {
             alarmModelLoader.source = ""
             alarmModelLoader.source = Qt.resolvedUrl("alarm/AlarmModelComponent.qml")
         }
@@ -98,10 +97,10 @@ MainView {
     PageStack {
         id: mainStack
 
-        Component.onCompleted: push(clockPage)
+        Component.onCompleted: push(mainPage)
 
-        ClockPage {
-            id: clockPage
+        MainPage {
+            id: mainPage
 
             Loader {
                 id: alarmModelLoader
@@ -113,20 +112,20 @@ MainView {
               clock page title. This will then set the correct window title on
               the desktop.
 
-              title: "Clock"
+              title: i18n.tr("Clock")
             */
 
             /*
-             Create a new Date() object and pass the date, month, year, hour, minute
-             and second received from the DateTime plugin manually to ensure the
-             timezone info is set correctly.
+              Create a new Date() object and pass the date, month, year, hour, minute
+              and second received from the DateTime plugin manually to ensure the
+              timezone info is set correctly.
 
-             Javascript Month is 0-11 while QDateTime month is 1-12. Hence the -1
-             is required.
+              Javascript Month is 0-11 while QDateTime month is 1-12. Hence the -1
+              is required.
             */
 
             /*
-              FIXME: When the upstream QT bug at
+              #FIXME: When the upstream QT bug at
               https://bugreports.qt-project.org/browse/QTBUG-40275 is fixed it will be
               possible to receive a datetime object directly instead of using this hack.
             */

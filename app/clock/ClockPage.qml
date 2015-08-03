@@ -21,12 +21,10 @@ import U1db 1.0 as U1db
 import QtPositioning 5.2
 import Ubuntu.Components 1.2
 import GeoLocation 1.0
-import "../alarm"
 import "../components"
-import "../upstreamcomponents"
 import "../worldclock"
 
-PageWithBottomEdge {
+Item {
     id: _clockPage
     objectName: "clockPage"
 
@@ -39,18 +37,8 @@ PageWithBottomEdge {
     // Property to keep track of app cold start status
     property alias isColdStart: clock.isColdStart
 
-    property var alarmModel
-
-    flickable: null
-    bottomEdgeTitle: alarmUtils.set_bottom_edge_title(alarmModel, clockTime)
-
     Component.onCompleted: {
         console.log("[LOG]: Clock Page loaded")
-        _clockPage.setBottomEdgePage(Qt.resolvedUrl("../alarm/AlarmPage.qml"), {})
-    }
-
-    AlarmUtils {
-        id: alarmUtils
     }
 
     PositionSource {
@@ -176,45 +164,12 @@ PageWithBottomEdge {
             forceActiveFocus()
         }
 
+        clip: true
         anchors.fill: parent
         contentWidth: parent.width
         contentHeight: clock.height + date.height + locationRow.height
                        + worldCityColumn.height + addWorldCityButton.height
                        + units.gu(16)
-
-        AbstractButton {
-            id: settingsIcon
-            objectName: "settingsIcon"
-
-            onClicked: {
-                mainStack.push(Qt.resolvedUrl("../alarm/AlarmSettingsPage.qml"))
-            }
-
-            width: units.gu(5)
-            height: width
-            opacity: 0
-
-            anchors {
-                top: parent.top
-                topMargin: units.gu(6)
-                right: parent.right
-                rightMargin: units.gu(2)
-            }
-
-            Rectangle {
-                visible: settingsIcon.pressed
-                anchors.fill: parent
-                color: Theme.palette.selected.background
-            }
-
-            Icon {
-                width: units.gu(3)
-                height: width
-                anchors.centerIn: parent
-                name: "settings"
-                color: "Grey"
-            }
-        }
 
         MainClock {
             id: clock
@@ -228,7 +183,7 @@ PageWithBottomEdge {
 
             anchors {
                 verticalCenter: parent.top
-                verticalCenterOffset: units.gu(20)
+                verticalCenterOffset: units.gu(18)
                 horizontalCenter: parent.horizontalCenter
             }
         }
@@ -243,7 +198,7 @@ PageWithBottomEdge {
             }
 
             text: clock.analogTime.toLocaleDateString()
-            opacity: settingsIcon.opacity
+            opacity: 0
             color: locationRow.visible ? Theme.palette.baseText : UbuntuColors.midAubergine
             fontSize: "medium"
         }
@@ -252,7 +207,7 @@ PageWithBottomEdge {
             id: locationRow
             objectName: "locationRow"
 
-            opacity: settingsIcon.opacity
+            opacity: date.opacity
             spacing: units.gu(1)
             visible: location.text !== "Null" && location.text !== "Denied"
 
@@ -295,7 +250,7 @@ PageWithBottomEdge {
             id: worldCityColumn
             objectName: "worldCityColumn"
 
-            opacity: settingsIcon.opacity
+            opacity: date.opacity
             anchors {
                 top: locationRow.bottom
                 topMargin: units.gu(4)
@@ -306,7 +261,7 @@ PageWithBottomEdge {
             id: addWorldCityButton
             objectName: "addWorldCityButton"
 
-            opacity: settingsIcon.opacity
+            opacity: date.opacity
             anchors {
                 top: worldCityColumn.bottom
                 topMargin: units.gu(1)
@@ -317,15 +272,23 @@ PageWithBottomEdge {
             id: otherElementsStartUpAnimation
 
             PropertyAnimation {
-                target: settingsIcon
+                target: headerRow
                 property: "anchors.topMargin"
-                from: units.gu(6)
-                to: units.gu(2)
+                from: units.gu(4)
+                to: 0
                 duration: 900
             }
 
             PropertyAnimation {
-                target: settingsIcon
+                target: headerRow
+                property: "opacity"
+                from: 0
+                to: 1
+                duration: 900
+            }
+
+            PropertyAnimation {
+                target: date
                 property: "opacity"
                 from: 0
                 to: 1

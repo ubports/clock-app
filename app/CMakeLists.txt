@@ -10,6 +10,7 @@ if(CLICK_MODE)
 endif(CLICK_MODE)
 
 install(FILES ${MAIN_QML} DESTINATION ${UBUNTU-CLOCK_APP_DIR})
+install(FILES "MainPage.qml" DESTINATION ${UBUNTU-CLOCK_APP_DIR})
 
 add_subdirectory(clock)
 add_subdirectory(alarm)
