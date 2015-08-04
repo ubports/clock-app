@@ -15,8 +15,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : 2;\n"
-"X-Launchpad-Export-Date: 2015-07-25 05:41+0000\n"
-"X-Generator: Launchpad (build 17628)\n"
+"X-Launchpad-Export-Date: 2015-08-04 05:43+0000\n"
+"X-Generator: Launchpad (build 17656)\n"
 
 #: ../app/alarm/AlarmLabel.qml:30 ../app/alarm/AlarmLabel.qml:56
 #: ../app/alarm/EditAlarmPage.qml:291
@@ -28,7 +28,7 @@ msgstr "Etiķete"
 msgid "Delete"
 msgstr "Dzēst"
 
-#: ../app/alarm/AlarmPage.qml:25
+#: ../alarm/AlarmList.qml:44
 msgid "Alarms"
 msgstr "Atgādinājumi"
 
@@ -37,8 +37,8 @@ msgstr "Atgādinājumi"
 msgid "Back"
 msgstr "Atpakaļ"
 
-#: ../app/alarm/AlarmPage.qml:49 ../app/alarm/EditAlarmPage.qml:44
-#: ../app/alarm/EditAlarmPage.qml:166
+#: ../alarm/AddAlarmPage.qml:546 ../alarm/AlarmPage.qml:29
+#: ../ubuntu-clock-app.qml:190
 msgid "Alarm"
 msgstr "Atgādinājums"
 
@@ -62,7 +62,7 @@ msgstr "Uzsitiet uz + ikonas, lai pievienotu atgādinājumu"
 msgid "Repeat"
 msgstr "Atkārtot"
 
-#: ../app/alarm/AlarmSettingsPage.qml:29
+#: ../common/SettingsPage.qml:28 ../ubuntu-clock-app.qml:88
 msgid "Settings"
 msgstr "Iestatījumi"
 
@@ -116,7 +116,7 @@ msgstr "Darba dienas"
 msgid "Weekends"
 msgstr "Nedēļas nogales"
 
-#: ../app/alarm/AlarmUtils.qml:45
+#: ../alarm/AlarmPage.qml:133
 msgid "Daily"
 msgstr "Katru dienu"
 
@@ -1975,7 +1975,8 @@ msgstr ""
 msgid "Switzerland"
 msgstr ""
 
-#: ubuntu-clock-app.desktop.in.in.h:1
+#: ../clock/ClockPage.qml:33 ../ubuntu-clock-app.qml:171
+#: com.ubuntu.clock_clock.desktop.in.in.h:1
 msgid "Clock"
 msgstr "Pulkstenis"
 

@@ -15,8 +15,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Launchpad-Export-Date: 2015-07-25 05:42+0000\n"
-"X-Generator: Launchpad (build 17628)\n"
+"X-Launchpad-Export-Date: 2015-08-04 05:44+0000\n"
+"X-Generator: Launchpad (build 17656)\n"
 
 #: ../app/alarm/AlarmLabel.qml:30 ../app/alarm/AlarmLabel.qml:56
 #: ../app/alarm/EditAlarmPage.qml:291
@@ -28,7 +28,7 @@ msgstr "标签"
 msgid "Delete"
 msgstr "删除"
 
-#: ../app/alarm/AlarmPage.qml:25
+#: ../alarm/AlarmList.qml:44
 msgid "Alarms"
 msgstr "闹钟"
 
@@ -37,8 +37,8 @@ msgstr "闹钟"
 msgid "Back"
 msgstr "返回"
 
-#: ../app/alarm/AlarmPage.qml:49 ../app/alarm/EditAlarmPage.qml:44
-#: ../app/alarm/EditAlarmPage.qml:166
+#: ../alarm/AddAlarmPage.qml:546 ../alarm/AlarmPage.qml:29
+#: ../ubuntu-clock-app.qml:190
 msgid "Alarm"
 msgstr "闹钟"
 
@@ -62,7 +62,7 @@ msgstr "点击 + 来新增一个闹铃"
 msgid "Repeat"
 msgstr "重复"
 
-#: ../app/alarm/AlarmSettingsPage.qml:29
+#: ../common/SettingsPage.qml:28 ../ubuntu-clock-app.qml:88
 msgid "Settings"
 msgstr "设置"
 
@@ -115,7 +115,7 @@ msgstr "工作日"
 msgid "Weekends"
 msgstr "周末"
 
-#: ../app/alarm/AlarmUtils.qml:45
+#: ../alarm/AlarmPage.qml:133
 msgid "Daily"
 msgstr "每天"
 
@@ -1974,7 +1974,8 @@ msgstr "苏黎士"
 msgid "Switzerland"
 msgstr "瑞士"
 
-#: ubuntu-clock-app.desktop.in.in.h:1
+#: ../clock/ClockPage.qml:33 ../ubuntu-clock-app.qml:171
+#: com.ubuntu.clock_clock.desktop.in.in.h:1
 msgid "Clock"
 msgstr "时钟"
 
