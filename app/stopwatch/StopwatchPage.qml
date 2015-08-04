@@ -19,6 +19,7 @@
 import QtQuick 2.4
 import QtQuick.Layouts 1.1
 import Ubuntu.Components 1.2
+import "../components"
 
 Item {
     id: _stopwatchPage
@@ -94,6 +95,16 @@ Item {
         contentWidth: parent.width
         contentHeight: stopwatch.height + buttonRow.height + lapListViewLoader.height + units.gu(14)
 
+        HeaderNavigation {
+            id: headerRow
+            anchors {
+                top: parent.top
+                left: parent.left
+                right: parent.right
+                topMargin: 0
+            }
+        }
+
         StopwatchFace {
             id: stopwatch
             objectName: "stopwatch"
@@ -102,7 +113,7 @@ Item {
 
             anchors {
                 verticalCenter: parent.top
-                verticalCenterOffset: units.gu(18)
+                verticalCenterOffset: units.gu(25)
                 horizontalCenter: parent.horizontalCenter
             }
         }
@@ -113,7 +124,7 @@ Item {
             spacing: units.gu(2)
             anchors {
                 top: parent.top
-                topMargin: units.gu(40)
+                topMargin: units.gu(44)
                 left: parent.left
                 right: parent.right
                 margins: units.gu(2)

@@ -169,7 +169,18 @@ Item {
         contentWidth: parent.width
         contentHeight: clock.height + date.height + locationRow.height
                        + worldCityColumn.height + addWorldCityButton.height
-                       + units.gu(16)
+                       + units.gu(20)
+
+        HeaderNavigation {
+            id: headerRow
+            opacity: 0
+            anchors {
+                top: parent.top
+                left: parent.left
+                right: parent.right
+                topMargin: 0
+            }
+        }
 
         MainClock {
             id: clock
@@ -183,7 +194,7 @@ Item {
 
             anchors {
                 verticalCenter: parent.top
-                verticalCenterOffset: units.gu(18)
+                verticalCenterOffset: units.gu(25)
                 horizontalCenter: parent.horizontalCenter
             }
         }
@@ -193,7 +204,7 @@ Item {
 
             anchors {
                 top: parent.top
-                topMargin: units.gu(36)
+                topMargin: units.gu(38)
                 horizontalCenter: parent.horizontalCenter
             }
 
@@ -298,8 +309,8 @@ Item {
             PropertyAnimation {
                 target: date
                 property: "anchors.topMargin"
-                from: units.gu(36)
-                to: units.gu(40)
+                from: units.gu(40)
+                to: units.gu(44)
                 duration: 900
             }
         }
