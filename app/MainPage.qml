@@ -96,7 +96,7 @@ PageWithBottomEdge {
             }
 
             Item {
-                width: units.gu(4)
+                width: units.gu(3)
                 height: units.gu(3)
             }
 
@@ -121,15 +121,13 @@ PageWithBottomEdge {
                 top: iconContainer.bottom
                 topMargin: units.gu(0.5)
             }
-            height: units.gu(0.4)
+            height: units.gu(0.3)
             color: UbuntuColors.lightGrey
-            radius: units.gu(0.2)
 
             Rectangle {
                 height: parent.height
                 x: listview.currentIndex == 0 ? 0 : parent.width-width
                 width: units.gu(5)
-                radius: units.gu(0.2)
                 color: UbuntuColors.orange
                 Behavior on x {
                     UbuntuNumberAnimation {}
