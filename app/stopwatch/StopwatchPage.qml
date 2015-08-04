@@ -164,6 +164,17 @@ Item {
 
             delegate: ListItem {
                 divider.visible: true
+                leadingActions: ListItemActions {
+                    actions: [
+                        Action {
+                            iconName: "delete"
+                            onTriggered: {
+                                lapsModel.remove(index, 1)
+                            }
+                        }
+                    ]
+                }
+
                 Row {
                     anchors {
                         left: parent.left
