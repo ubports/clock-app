@@ -23,50 +23,15 @@ import "../components"
 ClockCircle {
     id: outerCirle
 
+    // Property to hold the total time (in milliseconds)
     property int milliseconds: 0
-
-    // Function to return only the milliseconds
-    function millisToString(millis) {
-        return zeroPadding(millis % 1000, 3)
-    }
-
-    // Function to break down time (milliseconds) to hours, minutes and seconds
-    function millisToTimeString(millis, showMilliseconds) {
-        var hours, minutes, seconds, milliseconds
-
-        // Break down total time (milliseconds) to hours, minutes, seconds and milliseconds
-        milliseconds = millis % 1000
-        seconds = Math.floor(millis / 1000) % 60;
-        minutes = Math.floor(millis / 1000 / 60) % 60
-        hours = Math.floor(millis / 1000 / 60 / 60)
-
-        // Build the time string without milliseconds
-        var timeString = ""
-        timeString += zeroPadding(hours, 2) + ":"
-        timeString += zeroPadding(minutes, 2) + ":"
-        timeString += zeroPadding(seconds, 2)
-
-        if (showMilliseconds) {
-            timeString += "." + zeroPadding(milliseconds, 3)
-        }
-
-        return timeString
-    }
-
-    // Function to add zero prefix if necessary.
-    function zeroPadding (str, count) {
-        var string, tmp
-
-        string  = "" + str
-        tmp = ""
-        for (var i = 0; i < count; i++) {
-            tmp += "0"
-        }
-        return (tmp + str).substring(string.length)
-    }
 
     isOuter: true
     width: units.gu(32)
+
+    StopwatchUtils {
+        id: stopwatchUtils
+    }
 
     ClockCircle {
         id: innerCircle
@@ -82,13 +47,13 @@ ClockCircle {
         anchors.centerIn: parent
 
         Label {
-            text: millisToTimeString(milliseconds)
+            text: stopwatchUtils.millisToTimeString(milliseconds)
             font.pixelSize: units.dp(34)
             color: UbuntuColors.midAubergine
         }
 
         Label {
-            text: millisToString(milliseconds)
+            text: stopwatchUtils.millisToString(milliseconds)
             font.pixelSize: units.dp(18)
             color: UbuntuColors.midAubergine
             anchors.horizontalCenter: parent.horizontalCenter

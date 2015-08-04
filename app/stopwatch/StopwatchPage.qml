@@ -92,7 +92,7 @@ Item {
         clip: true
         anchors.fill: parent
         contentWidth: parent.width
-        contentHeight: stopwatch.height + buttonRow.height + lapListView.height + units.gu(14)
+        contentHeight: stopwatch.height + buttonRow.height + lapListViewLoader.height + units.gu(14)
 
         StopwatchFace {
             id: stopwatch
@@ -148,60 +148,23 @@ Item {
             }
         }
 
-        ListView {
-            id: lapListView
-
+        Loader {
+            id: lapListViewLoader
             anchors {
                 top: buttonRow.bottom
                 left: parent.left
                 right: parent.right
                 topMargin: units.gu(1)
             }
-            clip: true
-            interactive: false
-            model: lapsModel
             height: units.gu(7) * lapsModel.count
+            sourceComponent: !running && totalTimeDiff == 0 ? undefined : lapListViewComponent
+        }
 
-            delegate: ListItem {
-                divider.visible: true
-                leadingActions: ListItemActions {
-                    actions: [
-                        Action {
-                            iconName: "delete"
-                            onTriggered: {
-                                lapsModel.remove(index, 1)
-                            }
-                        }
-                    ]
-                }
-
-                Row {
-                    anchors {
-                        left: parent.left
-                        right: parent.right
-                        verticalCenter: parent.verticalCenter
-                        margins: units.gu(2)
-                    }
-
-                    Label {
-                        color: UbuntuColors.midAubergine
-                        text: "#%1".arg(lapsModel.count - index)
-                        width: parent.width/7
-                        horizontalAlignment: Text.AlignHCenter
-                    }
-
-                    Label {
-                        width: 3*parent.width/7
-                        text: stopwatch.millisToTimeString(model.laptime, true)
-                        horizontalAlignment: Text.AlignHCenter
-                    }
-
-                    Label {
-                        width: 3*parent.width/7
-                        text: stopwatch.millisToTimeString(model.totaltime, true)
-                        horizontalAlignment: Text.AlignHCenter
-                    }
-                }
+        Component {
+            id: lapListViewComponent
+            LapListView {
+                id: lapListView
+                model: lapsModel
             }
         }
     }

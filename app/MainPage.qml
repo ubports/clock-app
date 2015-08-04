@@ -86,6 +86,7 @@ PageWithBottomEdge {
 
             anchors.centerIn: parent
 
+            // Boundary Space Creator
             Item {
                 width: units.gu(1)
                 height: units.gu(3)
@@ -98,6 +99,7 @@ PageWithBottomEdge {
                 color: UbuntuColors.coolGrey
             }
 
+            // Middle Space Creator
             Item {
                 width: units.gu(3)
                 height: units.gu(3)
@@ -110,6 +112,7 @@ PageWithBottomEdge {
                 color: UbuntuColors.coolGrey
             }
 
+            // Boundary Space Creator
             Item {
                 width: units.gu(1)
                 height: units.gu(3)
@@ -173,7 +176,14 @@ PageWithBottomEdge {
 
     ListView {
         id: listview
-        anchors { top: headerRow.bottom; left: parent.left; right: parent.right; bottom: parent.bottom }
+
+        anchors {
+            top: headerRow.bottom
+            left: parent.left
+            right: parent.right
+            bottom: parent.bottom
+        }
+
         model: navigationModel
         orientation: ListView.Horizontal
         snapMode: ListView.SnapOneItem
