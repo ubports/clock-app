@@ -20,8 +20,9 @@ import QtQuick 2.4
 import DateTime 1.0
 import U1db 1.0 as U1db
 import Ubuntu.Components 1.2
-import "../../app/clock"
+import "../../app"
 import "../../app/components"
+import "../../app/clock"
 
 /*
  This file is meant to create a fake but fully fleshed clock app with its
@@ -69,10 +70,10 @@ MainView {
         id: mainStack
         objectName: "pageStack"
 
-        Component.onCompleted: push(clockPage)
+        Component.onCompleted: push(mainPage)
 
-        ClockPage {
-            id: clockPage
+        MainPage {
+            id: mainPage
 
             Loader {
                 id: alarmModelLoader
@@ -80,7 +81,7 @@ MainView {
             }
 
             alarmModel: alarmModelLoader.item
-            bottomEdgeEnabled: alarmModelLoader.status === Loader.Ready
+            bottomEdgeEnabled: alarmModelLoader.status === Loader.Ready && alarmModelLoader.item.isReady && isClockPage
             clockTime: new Date
                        (
                            localTimeSource.localDateString.split(":")[0],
