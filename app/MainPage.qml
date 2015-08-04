@@ -76,11 +76,10 @@ PageWithBottomEdge {
     }
 
     // #TODO: Preferable this header should hide while scrolling up/down similar to ubuntu browser.
-    Rectangle {
+    Item {
         id: headerRow
 
-        color: "LightBlue"
-        height: units.gu(8)
+        height: units.gu(7)
         opacity: 0
 
         anchors {
@@ -90,15 +89,63 @@ PageWithBottomEdge {
             topMargin: 0
         }
 
-        // #FIXME: Remove Later!
-        Label {
-            anchors {
-                left: parent.left
-                verticalCenter: parent.verticalCenter
-                leftMargin: units.gu(2)
+        Row {
+            id: iconContainer
+
+            anchors.centerIn: parent
+
+            Item {
+                width: units.gu(1)
+                height: units.gu(3)
             }
-            text: "Header Container (#FIXME)"
-            fontSize: "large"
+
+            Icon {
+                name: "alarm-clock"
+                width: units.gu(3)
+                height: width
+                color: UbuntuColors.coolGrey
+            }
+
+            Item {
+                width: units.gu(4)
+                height: units.gu(3)
+            }
+
+            Icon {
+                name: "stopwatch-lap"
+                width: units.gu(3)
+                height: width
+                color: UbuntuColors.coolGrey
+            }
+
+            Item {
+                width: units.gu(1)
+                height: units.gu(3)
+            }
+        }
+
+        Rectangle {
+            id: outerProgressRectangle
+            anchors {
+                left: iconContainer.left
+                right: iconContainer.right
+                top: iconContainer.bottom
+                topMargin: units.gu(0.5)
+            }
+            height: units.gu(0.4)
+            color: UbuntuColors.lightGrey
+            radius: units.gu(0.2)
+
+            Rectangle {
+                height: parent.height
+                x: listview.currentIndex == 0 ? 0 : parent.width-width
+                width: units.gu(5)
+                radius: units.gu(0.2)
+                color: UbuntuColors.orange
+                Behavior on x {
+                    UbuntuNumberAnimation {}
+                }
+            }
         }
 
         AbstractButton {
@@ -129,7 +176,7 @@ PageWithBottomEdge {
                 height: width
                 anchors.centerIn: parent
                 name: "settings"
-                color: "Grey"
+                color: UbuntuColors.coolGrey
             }
         }
     }
