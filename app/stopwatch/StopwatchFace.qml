@@ -83,13 +83,13 @@ ClockCircle {
 
         Label {
             text: millisToTimeString(milliseconds)
-            font.pixelSize: units.dp(42)
+            font.pixelSize: units.dp(34)
             color: UbuntuColors.midAubergine
         }
 
         Label {
             text: millisToString(milliseconds)
-            font.pixelSize: units.dp(22)
+            font.pixelSize: units.dp(18)
             color: UbuntuColors.midAubergine
             anchors.horizontalCenter: parent.horizontalCenter
         }

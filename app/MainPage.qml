@@ -62,17 +62,6 @@ PageWithBottomEdge {
             width: clockApp.width
             height: listview.height
         }
-
-        // #FIXME: Demo Purposes Only! Replace with working version
-        Rectangle {
-            color: "LightGreen"
-            height: listview.height
-            width: clockApp.width
-            Label {
-                anchors.centerIn: parent
-                text: "Timer!"
-            }
-        }
     }
 
     // #TODO: Preferable this header should hide while scrolling up/down similar to ubuntu browser.
