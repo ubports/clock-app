@@ -33,6 +33,9 @@ PageWithBottomEdge {
     // Property to keep track of an app cold start status
     property alias isColdStart: clockPage.isColdStart
 
+    // Property to check if the clock page is currently visible
+    property bool isClockPage: listview.currentIndex === 0
+
     // Clock App Alarm Model Reference Variable
     property var alarmModel
 

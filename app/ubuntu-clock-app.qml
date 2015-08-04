@@ -131,7 +131,7 @@ MainView {
             */
 
             alarmModel: alarmModelLoader.item
-            bottomEdgeEnabled: alarmModelLoader.status === Loader.Ready && alarmModelLoader.item.isReady
+            bottomEdgeEnabled: alarmModelLoader.status === Loader.Ready && alarmModelLoader.item.isReady && isClockPage
             clockTime: new Date
                        (
                            localTimeSource.localDateString.split(":")[0],
