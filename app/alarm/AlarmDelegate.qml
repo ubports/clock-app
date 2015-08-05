@@ -27,7 +27,7 @@ ListItem {
 
     width: parent ? parent.width : 0
     height: units.gu(9)
-    divider.visible: false
+    divider.visible: true
 
     Column {
         id: alarmDetailsColumn
