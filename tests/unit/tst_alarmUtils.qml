@@ -155,7 +155,7 @@ TestCase {
         var alarmType = Alarm.Repeating
         var alarmDaysOfWeek = Alarm.Monday | Alarm.Tuesday
         var result = alarmUtils.format_day_string(alarmDaysOfWeek, alarmType)
-        compare(result, "Monday, Tuesday", "Repeating alarm days of week is not formatted correctly")
+        compare(result, "Mon, Tue", "Repeating alarm days of week is not formatted correctly")
     }
 
     /*
