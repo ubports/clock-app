@@ -166,10 +166,11 @@ Item {
 
         clip: true
         anchors.fill: parent
+        interactive: contentHeight > height
         contentWidth: parent.width
         contentHeight: clock.height + date.height + locationRow.height
                        + worldCityColumn.height + addWorldCityButton.height
-                       + units.gu(20)
+                       + units.gu(17)
 
         HeaderNavigation {
             id: headerRow
@@ -264,7 +265,7 @@ Item {
             opacity: date.opacity
             anchors {
                 top: locationRow.bottom
-                topMargin: units.gu(4)
+                topMargin: units.gu(2)
             }
         }
 

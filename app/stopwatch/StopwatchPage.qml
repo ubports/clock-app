@@ -92,6 +92,7 @@ Item {
 
         clip: true
         anchors.fill: parent
+        interactive: contentHeight > height
         contentWidth: parent.width
         contentHeight: stopwatch.height + buttonRow.height + lapListViewLoader.height + units.gu(14)
 
