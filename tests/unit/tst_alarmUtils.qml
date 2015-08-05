@@ -133,6 +133,7 @@ TestCase {
     function test_alarmDayString() {
         var value = Alarm.Monday | Alarm.Tuesday | Alarm.Wednesday | Alarm.Sunday
         var result = alarmUtils._get_day(value)
+        var expectedResult = "%1, %2, %3, %4".arg(Qt.locale().standaloneDayName(1, Locale.ShortFormat)).arg(Qt.locale().standaloneDayName(2, Locale.ShortFormat)).arg(Qt.locale().standaloneDayName(3, Locale.ShortFormat)).arg(Qt.locale().standaloneDayName(0, Locale.ShortFormat))
         compare(result, "Mon, Tue, Wed, Sun", "Alarm Day not properly formatted")
     }
 
@@ -155,7 +156,8 @@ TestCase {
         var alarmType = Alarm.Repeating
         var alarmDaysOfWeek = Alarm.Monday | Alarm.Tuesday
         var result = alarmUtils.format_day_string(alarmDaysOfWeek, alarmType)
-        compare(result, "Mon, Tue", "Repeating alarm days of week is not formatted correctly")
+        var expectedResult = "%1, %2".arg(Qt.locale().standaloneDayName(1, Locale.ShortFormat)).arg(Qt.locale().standaloneDayName(2, Locale.ShortFormat))
+        compare(result, expectedResult, "Repeating alarm days of week is not formatted correctly")
     }
 
     /*
