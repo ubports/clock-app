@@ -28,7 +28,11 @@ ListView {
     StopwatchUtils {
         id: stopwatchUtils
     }
-    
+
+    displaced: Transition {
+        UbuntuNumberAnimation { property: "y"; duration: UbuntuAnimation.BriskDuration }
+    }
+
     delegate: ListItem {
         divider.visible: true
         leadingActions: ListItemActions {

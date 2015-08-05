@@ -133,6 +133,7 @@ Item {
             Button {
                 id: stopButton
                 Layout.fillWidth: true
+                color: !_stopwatchPage.running ? UbuntuColors.green : UbuntuColors.red
                 text: _stopwatchPage.running ? i18n.tr("Stop") : i18n.tr("Start")
                 onClicked: {
                     if (_stopwatchPage.running) {
@@ -168,7 +169,7 @@ Item {
                 topMargin: units.gu(1)
             }
             height: units.gu(7) * lapsModel.count
-            sourceComponent: !running && totalTimeDiff == 0 ? undefined : lapListViewComponent
+            sourceComponent: !_stopwatchPage.running && _stopwatchPage.totalTimeDiff == 0 ? undefined : lapListViewComponent
         }
 
         Component {
