@@ -75,7 +75,7 @@ PageWithBottomEdge {
         model: navigationModel
         orientation: ListView.Horizontal
         snapMode: ListView.SnapOneItem
-        highlightMoveDuration: UbuntuAnimation.SlowDuration
+        highlightMoveDuration: UbuntuAnimation.BriskDuration
         highlightRangeMode: ListView.StrictlyEnforceRange
     }
 }
