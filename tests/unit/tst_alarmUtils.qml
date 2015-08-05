@@ -133,7 +133,7 @@ TestCase {
     function test_alarmDayString() {
         var value = Alarm.Monday | Alarm.Tuesday | Alarm.Wednesday | Alarm.Sunday
         var result = alarmUtils._get_day(value)
-        compare(result, "Monday, Tuesday, Wednesday, Sunday", "Alarm Day not properly formatted")
+        compare(result, "Mon, Tue, Wed, Sun", "Alarm Day not properly formatted")
     }
 
     /*
