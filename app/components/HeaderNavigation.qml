@@ -28,37 +28,19 @@ Item {
         id: iconContainer
         
         anchors.centerIn: parent
-        
-        // Boundary Space Creator
-        Item {
-            width: units.gu(1)
-            height: units.gu(3)
+
+        ActionIcon {
+            width: units.gu(5.5)
+            height: units.gu(4)
+            iconName: "alarm-clock"
+            onClicked: listview.currentIndex = 0
         }
         
-        Icon {
-            name: "alarm-clock"
-            width: units.gu(3)
-            height: width
-            color: UbuntuColors.coolGrey
-        }
-        
-        // Middle Space Creator
-        Item {
-            width: units.gu(3)
-            height: units.gu(3)
-        }
-        
-        Icon {
-            name: "stopwatch-lap"
-            width: units.gu(3)
-            height: width
-            color: UbuntuColors.coolGrey
-        }
-        
-        // Boundary Space Creator
-        Item {
-            width: units.gu(1)
-            height: units.gu(3)
+        ActionIcon {
+            width: units.gu(5.5)
+            height: units.gu(4)
+            iconName: "stopwatch-lap"
+            onClicked: listview.currentIndex = 1
         }
     }
     
@@ -68,7 +50,6 @@ Item {
             left: iconContainer.left
             right: iconContainer.right
             top: iconContainer.bottom
-            topMargin: units.gu(0.5)
         }
         height: units.gu(0.3)
         color: UbuntuColors.lightGrey
@@ -76,7 +57,7 @@ Item {
         Rectangle {
             height: parent.height
             x: listview.currentIndex == 0 ? 0 : parent.width-width
-            width: units.gu(5)
+            width: units.gu(5.5)
             color: UbuntuColors.orange
             Behavior on x {
                 UbuntuNumberAnimation {}
@@ -84,35 +65,20 @@ Item {
         }
     }
     
-    AbstractButton {
+    ActionIcon {
         id: settingsIcon
         objectName: "settingsIcon"
-        
-        onClicked: {
-            mainStack.push(Qt.resolvedUrl("../alarm/AlarmSettingsPage.qml"))
-        }
-        
-        width: units.gu(5)
-        height: width
         
         anchors {
             verticalCenter: parent.verticalCenter
             right: parent.right
             rightMargin: units.gu(2)
         }
+
+        iconName: "settings"
         
-        Rectangle {
-            visible: settingsIcon.pressed
-            anchors.fill: parent
-            color: Theme.palette.selected.background
-        }
-        
-        Icon {
-            width: units.gu(3)
-            height: width
-            anchors.centerIn: parent
-            name: "settings"
-            color: UbuntuColors.coolGrey
+        onClicked: {
+            mainStack.push(Qt.resolvedUrl("../alarm/AlarmSettingsPage.qml"))
         }
     }
 }
