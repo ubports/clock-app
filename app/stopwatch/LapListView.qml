@@ -30,7 +30,10 @@ ListView {
     }
 
     displaced: Transition {
-        UbuntuNumberAnimation { property: "y"; duration: UbuntuAnimation.BriskDuration }
+        UbuntuNumberAnimation {
+            property: "y"
+            duration: UbuntuAnimation.BriskDuration
+        }
     }
 
     delegate: ListItem {
@@ -57,18 +60,18 @@ ListView {
             Label {
                 color: UbuntuColors.midAubergine
                 text: "#%1".arg(count - index)
-                width: parent.width/7
+                width: parent.width / 7
                 horizontalAlignment: Text.AlignHCenter
             }
             
             Label {
-                width: 3*parent.width/7
+                width: 3 * parent.width / 7
                 text: stopwatchUtils.millisToTimeString(model.laptime, true)
                 horizontalAlignment: Text.AlignHCenter
             }
             
             Label {
-                width: 3*parent.width/7
+                width: 3 * parent.width / 7
                 text: stopwatchUtils.millisToTimeString(model.totaltime, true)
                 horizontalAlignment: Text.AlignHCenter
             }

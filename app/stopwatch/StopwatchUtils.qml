@@ -27,41 +27,33 @@ QtObject {
 
     // Function to return only the milliseconds
     function millisToString(millis) {
-        return zeroPadding(millis % 1000, 3)
+        return addZeroPrefix(millis % 1000, 3)
     }
 
     // Function to break down time (milliseconds) to hours, minutes and seconds
     function millisToTimeString(millis, showMilliseconds) {
-        var hours, minutes, seconds, milliseconds
+        var hours, minutes, seconds
 
-        // Break down total time (milliseconds) to hours, minutes, seconds and milliseconds
-        milliseconds = millis % 1000
+        // Break down total time (milliseconds) to hours, minutes and seconds
         seconds = Math.floor(millis / 1000) % 60;
         minutes = Math.floor(millis / 1000 / 60) % 60
         hours = Math.floor(millis / 1000 / 60 / 60)
 
         // Build the time string without milliseconds
         var timeString = ""
-        timeString += zeroPadding(hours, 2) + ":"
-        timeString += zeroPadding(minutes, 2) + ":"
-        timeString += zeroPadding(seconds, 2)
+        timeString += addZeroPrefix(hours, 2) + ":"
+        timeString += addZeroPrefix(minutes, 2) + ":"
+        timeString += addZeroPrefix(seconds, 2)
 
         if (showMilliseconds) {
-            timeString += "." + zeroPadding(milliseconds, 3)
+            timeString += "." + millisToString(millis)
         }
 
         return timeString
     }
 
     // Function to add zero prefix if necessary.
-    function zeroPadding (str, count) {
-        var string, tmp
-
-        string  = "" + str
-        tmp = ""
-        for (var i = 0; i < count; i++) {
-            tmp += "0"
-        }
-        return (tmp + str).substring(string.length)
+    function addZeroPrefix (str, totalLength) {
+        return ("00000" + str).slice(-totalLength)
     }
 }
