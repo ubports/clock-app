@@ -1,6 +1,10 @@
 ubuntu-clock-app (3.5) UNRELEASED; urgency=medium
 
+  [Bartosz Kosiorek]
   * Disable automatic translation and update README.translations
+  
+  [Nekhelesh Ramananthan]
+  * Increase the height of times in the alarm screen (LP: #1365428)
 
  -- Bartosz Kosiorek <gang65@poczta.onet.pl>  Fri, 24 Jul 2015 18:05:38 +0200
 
