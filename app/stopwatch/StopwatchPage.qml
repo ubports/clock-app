@@ -135,7 +135,7 @@ Item {
                 id: stopButton
                 Layout.fillWidth: true
                 color: !_stopwatchPage.running ? UbuntuColors.green : UbuntuColors.red
-                text: _stopwatchPage.running ? i18n.tr("Stop") : oldDiff === 0 ? i18n.tr("Start") : i18n.tr("Resume")
+                text: _stopwatchPage.running ? i18n.tr("Stop") : (oldDiff === 0 ? i18n.tr("Start") : i18n.tr("Resume"))
                 onClicked: {
                     if (_stopwatchPage.running) {
                         _stopwatchPage.stop()
@@ -150,6 +150,7 @@ Item {
                 text: _stopwatchPage.running ? i18n.tr("Lap") : i18n.tr("Clear")
                 Layout.fillWidth: true
                 strokeColor: UbuntuColors.lightGrey
+                visible: oldDiff !== 0 || running
                 onClicked: {
                     if (_stopwatchPage.running) {
                         _stopwatchPage.update()
