@@ -17,7 +17,6 @@
  */
 
 import QtQuick 2.4
-import QtQuick.Layouts 1.1
 import Ubuntu.Components 1.2
 import "../components"
 
@@ -119,7 +118,7 @@ Item {
             }
         }
 
-        RowLayout {
+        Row {
             id: buttonRow
 
             spacing: units.gu(2)
@@ -133,7 +132,7 @@ Item {
 
             Button {
                 id: stopButton
-                Layout.fillWidth: true
+                width: !lapButton.visible ? parent.width : (parent.width - parent.spacing) / 2
                 color: !_stopwatchPage.running ? UbuntuColors.green : UbuntuColors.red
                 text: _stopwatchPage.running ? i18n.tr("Stop") : (oldDiff === 0 ? i18n.tr("Start") : i18n.tr("Resume"))
                 onClicked: {
@@ -143,12 +142,17 @@ Item {
                         _stopwatchPage.start()
                     }
                 }
+                Behavior on width {
+                    UbuntuNumberAnimation{
+                        duration: UbuntuAnimation.BriskDuration
+                    }
+                }
             }
 
             Button {
                 id: lapButton
                 text: _stopwatchPage.running ? i18n.tr("Lap") : i18n.tr("Clear")
-                Layout.fillWidth: true
+                width: visible ? (parent.width - parent.spacing) / 2 : 0
                 strokeColor: UbuntuColors.lightGrey
                 visible: oldDiff !== 0 || running
                 onClicked: {
@@ -157,6 +161,11 @@ Item {
                         lapsModel.addLap(_stopwatchPage.totalTimeDiff)
                     } else {
                         _stopwatchPage.clear()
+                    }
+                }
+                Behavior on width {
+                    UbuntuNumberAnimation{
+                        duration: UbuntuAnimation.BriskDuration
                     }
                 }
             }
