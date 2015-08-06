@@ -16,8 +16,8 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n % 100 >= "
 "3 && n % 100 <= 10 ? 3 : n % 100 >= 11 && n % 100 <= 99 ? 4 : 5;\n"
-"X-Launchpad-Export-Date: 2015-07-25 05:41+0000\n"
-"X-Generator: Launchpad (build 17628)\n"
+"X-Launchpad-Export-Date: 2015-08-04 05:43+0000\n"
+"X-Generator: Launchpad (build 17656)\n"
 
 #: ../app/alarm/AlarmLabel.qml:30 ../app/alarm/AlarmLabel.qml:56
 #: ../app/alarm/EditAlarmPage.qml:291
@@ -29,7 +29,7 @@ msgstr "التسمية"
 msgid "Delete"
 msgstr "حذف"
 
-#: ../app/alarm/AlarmPage.qml:25
+#: ../alarm/AlarmList.qml:44
 msgid "Alarms"
 msgstr "المنبهات"
 
@@ -38,8 +38,8 @@ msgstr "المنبهات"
 msgid "Back"
 msgstr "عودة"
 
-#: ../app/alarm/AlarmPage.qml:49 ../app/alarm/EditAlarmPage.qml:44
-#: ../app/alarm/EditAlarmPage.qml:166
+#: ../alarm/AddAlarmPage.qml:546 ../alarm/AlarmPage.qml:29
+#: ../ubuntu-clock-app.qml:190
 msgid "Alarm"
 msgstr "المنبه"
 
@@ -63,7 +63,7 @@ msgstr ""
 msgid "Repeat"
 msgstr "التكرار"
 
-#: ../app/alarm/AlarmSettingsPage.qml:29
+#: ../common/SettingsPage.qml:28 ../ubuntu-clock-app.qml:88
 msgid "Settings"
 msgstr "الإعدادات"
 
@@ -117,7 +117,7 @@ msgstr ""
 msgid "Weekends"
 msgstr ""
 
-#: ../app/alarm/AlarmUtils.qml:45
+#: ../alarm/AlarmPage.qml:133
 msgid "Daily"
 msgstr "يوميًا"
 
@@ -1976,7 +1976,8 @@ msgstr ""
 msgid "Switzerland"
 msgstr ""
 
-#: ubuntu-clock-app.desktop.in.in.h:1
+#: ../clock/ClockPage.qml:33 ../ubuntu-clock-app.qml:171
+#: com.ubuntu.clock_clock.desktop.in.in.h:1
 msgid "Clock"
 msgstr "الساعة"
 

@@ -32,6 +32,10 @@ UbuntuListView {
     clip: true
     anchors.fill: parent
 
+    displaced: Transition {
+        UbuntuNumberAnimation { property: "y"; duration: UbuntuAnimation.BriskDuration }
+    }
+
     delegate: AlarmDelegate {
         id: alarmDelegate
         objectName: "alarm" + index
