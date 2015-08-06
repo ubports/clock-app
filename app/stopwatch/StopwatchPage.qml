@@ -93,7 +93,7 @@ Item {
         anchors.fill: parent
         interactive: contentHeight > height
         contentWidth: parent.width
-        contentHeight: stopwatch.height + buttonRow.height + lapListViewLoader.height + units.gu(14)
+        contentHeight: stopwatch.height + buttonRow.height + lapListViewLoader.height + units.gu(21)
 
         HeaderNavigation {
             id: headerRow

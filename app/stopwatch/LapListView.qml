@@ -29,6 +29,39 @@ ListView {
         id: stopwatchUtils
     }
 
+    header: ListItem {
+        visible: count !== 0
+        Row {
+            anchors {
+                left: parent.left
+                right: parent.right
+                verticalCenter: parent.verticalCenter
+                margins: units.gu(2)
+            }
+
+            Label {
+                text: i18n.tr("Lap #")
+                width: parent.width / 7
+                font.weight: Font.DemiBold
+                horizontalAlignment: Text.AlignHCenter
+            }
+
+            Label {
+                width: 3 * parent.width / 7
+                text: i18n.tr("Lap Time")
+                font.weight: Font.DemiBold
+                horizontalAlignment: Text.AlignHCenter
+            }
+
+            Label {
+                width: 3 * parent.width / 7
+                text: i18n.tr("Total Time")
+                font.weight: Font.DemiBold
+                horizontalAlignment: Text.AlignHCenter
+            }
+        }
+    }
+
     displaced: Transition {
         UbuntuNumberAnimation {
             property: "y"
