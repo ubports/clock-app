@@ -21,6 +21,7 @@
 
 #include "timezonemodel.h"
 #include <libintl.h>
+#include <QDebug>
 
 #define _(value) dgettext(GETTEXT_PACKAGE, value)
 
@@ -31,12 +32,13 @@ class StaticTimeZoneModel : public TimeZoneModel
 public:
     StaticTimeZoneModel(QObject *parent = 0);
 
+    // Function to 
+    Q_INVOKABLE QList<TimeZoneModel::TimeZone>::iterator getTranslatedCityName(const QString &cityId);
+
 private:
     // Function to define the default city list
     void loadDefaultCityList();
 
-    // Function to 
-    QList<TimeZoneModel::TimeZone>::iterator getTranslatedCityName(const QString &cityId);
 
     // Function to append city list item into m_timeZones object
     void addCity(const QString &cityId, const QString &cityName, const QString &timezone, const QString &country);
