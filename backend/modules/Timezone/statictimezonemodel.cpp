@@ -349,3 +349,18 @@ void StaticTimeZoneModel::loadDefaultCityList()
     // Let QML know model is reusable again
     endResetModel();
 }
+
+QList<TimeZoneModel::TimeZone>::iterator StaticTimeZoneModel::getTranslatedCityName(const QString &cityId)
+{
+   QString translatedCityName = cityId;
+   QList<TimeZoneModel::TimeZone>::iterator i;
+   for (i = m_timeZones.begin(); i != m_timeZones.end(); ++i) 
+   {
+       if (i->cityId == cityId) 
+       {
+           return i;
+       }       
+   }
+   return m_timeZones.end();
+}
+

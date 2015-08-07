@@ -68,6 +68,17 @@ void GenericTimeZoneModel::loadTimeZonesFromVariantList()
         tz.cityId = m_results.value(i).toMap().value("city").toString();
         tz.cityName = tz.cityId;
         tz.country = m_results.value(i).toMap().value("country").toString();
+
+        /*QList<TimeZoneModel::TimeZone>::iterator cityIt = getTranslatedCityName(tz.cityId);
+        if (cityIt == m_timeZones.end()) {
+            tz.cityName = tz.cityId+" bartek nie tlumaczone" + QVariant(m_timeZones.count()).toString();
+            tz.country = m_results.value(i).toMap().value("country").toString();
+        }
+        else
+        {
+            tz.cityName = cityIt->cityName+" bartek translated "  + QVariant(m_timeZones.count()).toString();
+            tz.country = cityIt->country;
+        }*/
         tz.timeZone = QTimeZone(m_results.value(i).toMap().value("timezone").toString().toLatin1());
 
         m_timeZones.append(tz);

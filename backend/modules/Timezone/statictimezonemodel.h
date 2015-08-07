@@ -35,6 +35,9 @@ private:
     // Function to define the default city list
     void loadDefaultCityList();
 
+    // Function to 
+    QList<TimeZoneModel::TimeZone>::iterator getTranslatedCityName(const QString &cityId);
+
     // Function to append city list item into m_timeZones object
     void addCity(const QString &cityId, const QString &cityName, const QString &timezone, const QString &country);
 };
