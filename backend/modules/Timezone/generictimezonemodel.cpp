@@ -17,6 +17,7 @@
  */
 
 #include "generictimezonemodel.h"
+#include "statictimezonemodel.h"
 
 #include <QDebug>
 
@@ -63,22 +64,21 @@ void GenericTimeZoneModel::loadTimeZonesFromVariantList()
      Cycle through the u1db query model results and transfer them to the
      TimeZone list.
     */
+    StaticTimeZoneModel timeZonesData;
     for (int i=0; i < m_results.size(); i++) {
         // Map query model results to timezone tz
         tz.cityId = m_results.value(i).toMap().value("city").toString();
-        tz.cityName = tz.cityId;
-        tz.country = m_results.value(i).toMap().value("country").toString();
 
-        /*QList<TimeZoneModel::TimeZone>::iterator cityIt = getTranslatedCityName(tz.cityId);
+        QList<TimeZoneModel::TimeZone>::iterator cityIt = timeZonesData.getTranslatedCityName(tz.cityId);
         if (cityIt == m_timeZones.end()) {
-            tz.cityName = tz.cityId+" bartek nie tlumaczone" + QVariant(m_timeZones.count()).toString();
+            tz.cityName = tz.cityId;
             tz.country = m_results.value(i).toMap().value("country").toString();
         }
         else
         {
-            tz.cityName = cityIt->cityName+" bartek translated "  + QVariant(m_timeZones.count()).toString();
+            tz.cityName = cityIt->cityName;
             tz.country = cityIt->country;
-        }*/
+        }
         tz.timeZone = QTimeZone(m_results.value(i).toMap().value("timezone").toString().toLatin1());
 
         m_timeZones.append(tz);
