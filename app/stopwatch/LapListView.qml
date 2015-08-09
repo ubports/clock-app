@@ -94,7 +94,7 @@ ListView {
             
             Label {
                 color: UbuntuColors.midAubergine
-                text: "#%1".arg(count - index)
+                text: "#%1".arg(Number(count - index).toLocaleString(Qt.locale(), "f", 0))
                 width: parent.width / 7
                 horizontalAlignment: Text.AlignHCenter
             }
