@@ -210,8 +210,9 @@ Item {
             }
 
             text: clock.analogTime.toLocaleDateString()
+
             opacity: 0
-            color: locationRow.visible ? Theme.palette.baseText : UbuntuColors.midAubergine
+            color: locationRow.visible ? Theme.palette.normal.baseText : UbuntuColors.midAubergine
             fontSize: "medium"
         }
 
