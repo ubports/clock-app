@@ -40,7 +40,9 @@ ListView {
             }
 
             Label {
-                text: i18n.tr("Lap #")
+                // #TRANSLATORS: This refers to the stopwatch lap and is shown as a header where space is limited. Constrain
+                // translation length to a few characters.
+                text: i18n.tr("Lap")
                 width: parent.width / 7
                 font.weight: Font.DemiBold
                 horizontalAlignment: Text.AlignHCenter
