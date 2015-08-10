@@ -109,12 +109,12 @@ add_subdirectory(backend)
 add_subdirectory(po)
 add_subdirectory(tests)
 
-# make the qml files visible on qtcreator
-file(GLOB QML_JS_FILES
-     RELATIVE ${CMAKE_CURRENT_SOURCE_DIR}
-     *.qml *.js README* *.txt)
+# make the README files visible in qtcreator
+file(GLOB README_FILES
+    RELATIVE ${CMAKE_CURRENT_SOURCE_DIR}
+    README*)
 
-add_custom_target(com_ubuntu_clock_QMLFiles DEPENDS ubuntu-clock-app.qml SOURCES ${QML_JS_FILES})
+add_custom_target(com_ubuntu_clock_QMLFiles DEPENDS ubuntu-clock-app.qml SOURCES ${README_FILES})
 
 add_custom_target("autopilot" chmod +x ${CMAKE_SOURCE_DIR}/tests/autopilot/run
                     COMMAND ${CMAKE_SOURCE_DIR}/tests/autopilot/run
