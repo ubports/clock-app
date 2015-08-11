@@ -117,7 +117,7 @@ protected:
     struct TimeZone{
         QString cityId;
         QString cityName;
-        QString country;
+        QString countryName;
         QTimeZone timeZone;
     };
 

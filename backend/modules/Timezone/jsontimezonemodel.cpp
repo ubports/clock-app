@@ -101,13 +101,13 @@ void JsonTimeZoneModel::networkReplyFinished(QNetworkReply *reply)
         tz.cityName = tz.cityId;
 
         if (!admin1.isEmpty() && !admin2.isEmpty()) {
-            tz.country = QString("%1, %2, %3").arg(admin2).arg(admin1).arg(country);
+            tz.countryName = QString("%1, %2, %3").arg(admin2).arg(admin1).arg(country);
         } else if (!admin1.isEmpty()) {
-            tz.country = QString("%1, %2").arg(admin1).arg(country);
+            tz.countryName = QString("%1, %2").arg(admin1).arg(country);
         } else if (!admin2.isEmpty()) {
-            tz.country = QString("%1, %2").arg(admin2).arg(country);
+            tz.countryName = QString("%1, %2").arg(admin2).arg(country);
         } else {
-            tz.country = country;
+            tz.countryName = country;
         }
 
         tz.timeZone = QTimeZone(data.value("timezone").toString().toLatin1());

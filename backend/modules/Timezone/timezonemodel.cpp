@@ -73,7 +73,7 @@ QVariant TimeZoneModel::data(const QModelIndex &index, int role) const
     case RoleCityName:
         return m_timeZones.at(row).cityName;
     case RoleCountryName:
-        return m_timeZones.at(row).country;
+        return m_timeZones.at(row).countryName;
     case RoleTimeZoneId:
         return m_timeZones.at(row).timeZone.id();
     }

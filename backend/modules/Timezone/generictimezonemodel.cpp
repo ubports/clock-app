@@ -72,12 +72,12 @@ void GenericTimeZoneModel::loadTimeZonesFromVariantList()
         QPair<QString, QString> trandslatedCityData = timeZonesData.getTranslatedCityName(tz.cityId);
         if (trandslatedCityData.first == "") {
             tz.cityName = tz.cityId;
-            tz.country = m_results.value(i).toMap().value("country").toString();
+            tz.countryName = m_results.value(i).toMap().value("country").toString();
         }
         else
         {
             tz.cityName = trandslatedCityData.first;
-            tz.country = trandslatedCityData.second;
+            tz.countryName = trandslatedCityData.second;
         }
         tz.timeZone = QTimeZone(m_results.value(i).toMap().value("timezone").toString().toLatin1());
 

@@ -29,11 +29,11 @@ StaticTimeZoneModel::StaticTimeZoneModel(QObject *parent) :
     loadDefaultCityList();
 }
 
-void StaticTimeZoneModel::addCity(const QString &cityId, const QString &cityName, const QString &timezone, const QString &country) {
+void StaticTimeZoneModel::addCity(const QString &cityId, const QString &cityName, const QString &timezone, const QString &countryName) {
     TimeZone tz;
     tz.cityId = cityId;
     tz.cityName = cityName;
-    tz.country = country;
+    tz.countryName = countryName;
     tz.timeZone = QTimeZone(timezone.toLatin1());
     m_timeZones.append(tz);
 }
@@ -358,7 +358,7 @@ QPair<QString, QString> StaticTimeZoneModel::getTranslatedCityName(const QString
    {
        if (QString::compare(i->cityId, cityId) == 0)
        {
-           return QPair<QString, QString>(i->cityName, i->country);
+           return QPair<QString, QString>(i->cityName, i->countryName);
        }       
    }
    return QPair<QString, QString>("", "");
