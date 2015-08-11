@@ -24,6 +24,7 @@ ListItem {
     id: root
 
     property var localTime
+    property bool showAlarmFrequency
 
     width: parent ? parent.width : 0
     height: units.gu(9)
@@ -82,6 +83,68 @@ ListItem {
                 text: type === Alarm.Repeating ? alarmUtils.format_day_string(daysOfWeek, type)
                                                : model.enabled ? alarmUtils.get_time_to_next_alarm(model.date - localTime)
                                                                : "Alarm Disabled"
+
+                states: [
+                    State {
+                        name: "AlarmFrequency"
+                        when: root.showAlarmFrequency && type === Alarm.Repeating
+                    },
+
+                    State {
+                        name: "AlarmETA"
+                        when: !root.showAlarmFrequency && type === Alarm.Repeating
+                    }
+                ]
+
+                transitions: [
+                    Transition {
+                        from: "AlarmFrequency"
+                        to: "AlarmETA"
+                        SequentialAnimation {
+                            PropertyAnimation {
+                                target: alarmSubtitle
+                                property: "opacity"
+                                to: 0
+                                duration: UbuntuAnimation.BriskDuration
+                            }
+
+                            ScriptAction {
+                                script: alarmSubtitle.text = alarmUtils.get_time_to_next_alarm(model.date - localTime)
+                            }
+
+                            PropertyAnimation {
+                                target: alarmSubtitle
+                                property: "opacity"
+                                to: 1.0
+                                duration: UbuntuAnimation.BriskDuration
+                            }
+                        }
+                    },
+
+                    Transition {
+                        from: "AlarmETA"
+                        to: "AlarmFrequency"
+                        SequentialAnimation {
+                            PropertyAnimation {
+                                target: alarmSubtitle
+                                property: "opacity"
+                                to: 0
+                                duration: UbuntuAnimation.BriskDuration
+                            }
+
+                            ScriptAction {
+                                script: alarmSubtitle.text = alarmUtils.format_day_string(daysOfWeek, type)
+                            }
+
+                            PropertyAnimation {
+                                target: alarmSubtitle
+                                property: "opacity"
+                                to: 1.0
+                                duration: UbuntuAnimation.BriskDuration
+                            }
+                        }
+                    }
+                ]
             }
         }
     }
@@ -120,30 +183,6 @@ ListItem {
             }
         }
 
-        Component {
-            id: _internalTimerComponent
-            Timer {
-                running: false
-                interval: 5000
-                repeat: false
-                onTriggered: {
-                    alarmSubtitle.text = alarmUtils.format_day_string(daysOfWeek)
-                    _internalTimerLoader.sourceComponent = undefined
-                }
-            }
-        }
-
-        Loader {
-            id: _internalTimerLoader
-            asynchronous: true
-
-            onStatusChanged: {
-                if(status === Loader.Ready) {
-                    _internalTimerLoader.item.restart()
-                }
-            }
-        }
-
         Connections {
             target: model
             onStatusChanged: {
@@ -153,11 +192,6 @@ ListItem {
                 */
                 if (model.status === Alarm.Ready) {
                     alarmStatus.checked = model.enabled;
-
-                    if(alarmStatus.checked && type === Alarm.Repeating) {
-                        alarmSubtitle.text = alarmUtils.get_time_to_next_alarm(model.date - localTime)
-                        _internalTimerLoader.sourceComponent = _internalTimerComponent
-                    }
                 }
             }
         }
