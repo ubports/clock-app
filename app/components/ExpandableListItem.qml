@@ -43,7 +43,7 @@ ListItem.Expandable {
     }
 
     collapseOnClick: true
-    expandedHeight: contentColumn.height + units.gu(1)
+    expandedHeight: contentColumn.height
 
     Column {
         id: contentColumn
@@ -53,30 +53,26 @@ ListItem.Expandable {
             right: parent.right
         }
 
-        Item {
-            width: parent.width
+        SubtitledListItem {
+            id: expandableHeader
             height: expandableListItem.collapsedHeight
+            onClicked: expandableListItem.expanded = true
 
-            SubtitledListItem {
-                id: expandableHeader
-                onClicked: expandableListItem.expanded = true
+            Icon {
+                id: arrow
 
-                Icon {
-                    id: arrow
+                width: units.gu(2)
+                height: width
+                anchors.right: parent.right
+                anchors.rightMargin: units.gu(2)
+                anchors.verticalCenter: parent.verticalCenter
 
-                    width: units.gu(2)
-                    height: width
-                    anchors.right: parent.right
-                    anchors.rightMargin: units.gu(2)
-                    anchors.verticalCenter: parent.verticalCenter
+                name: "go-down"
+                color: "Grey"
+                rotation: expandableListItem.expanded ? 180 : 0
 
-                    name: "go-down"
-                    color: "Grey"
-                    rotation: expandableListItem.expanded ? 180 : 0
-
-                    Behavior on rotation {
-                        UbuntuNumberAnimation {}
-                    }
+                Behavior on rotation {
+                    UbuntuNumberAnimation {}
                 }
             }
         }

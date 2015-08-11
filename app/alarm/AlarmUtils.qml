@@ -222,31 +222,31 @@ QtObject {
         var occurs = []
 
         if (value & Alarm.Monday) {
-            occurs.push(Qt.locale().standaloneDayName(1, Locale.LongFormat))
+            occurs.push(Qt.locale().standaloneDayName(1, Locale.ShortFormat))
         }
 
         if (value & Alarm.Tuesday) {
-            occurs.push(Qt.locale().standaloneDayName(2, Locale.LongFormat))
+            occurs.push(Qt.locale().standaloneDayName(2, Locale.ShortFormat))
         }
 
         if (value & Alarm.Wednesday) {
-            occurs.push(Qt.locale().standaloneDayName(3, Locale.LongFormat))
+            occurs.push(Qt.locale().standaloneDayName(3, Locale.ShortFormat))
         }
 
         if (value & Alarm.Thursday) {
-            occurs.push(Qt.locale().standaloneDayName(4, Locale.LongFormat))
+            occurs.push(Qt.locale().standaloneDayName(4, Locale.ShortFormat))
         }
 
         if (value & Alarm.Friday) {
-            occurs.push(Qt.locale().standaloneDayName(5, Locale.LongFormat))
+            occurs.push(Qt.locale().standaloneDayName(5, Locale.ShortFormat))
         }
 
         if (value & Alarm.Saturday) {
-            occurs.push(Qt.locale().standaloneDayName(6, Locale.LongFormat))
+            occurs.push(Qt.locale().standaloneDayName(6, Locale.ShortFormat))
         }
 
         if (value & Alarm.Sunday) {
-            occurs.push(Qt.locale().standaloneDayName(0, Locale.LongFormat))
+            occurs.push(Qt.locale().standaloneDayName(0, Locale.ShortFormat))
         }
 
         occurs = occurs.join(', ');

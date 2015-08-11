@@ -17,67 +17,72 @@
  */
 
 import QtQuick 2.4
+import QtQuick.Layouts 1.1
 import Ubuntu.Components 1.2
-import "../upstreamcomponents"
 
-ListItemWithActions {
+ListItem {
     id: root
 
     property var localTime
 
     width: parent ? parent.width : 0
-    height: units.gu(6)
-    color: "Transparent"
-    selectedColor: "Transparent"
-
-    Label {
-        id: alarmTime
-        objectName: "listAlarmTime" + index
-
-        anchors {
-            top: alarmDetailsColumn.top
-            left: parent.left
-        }
-
-        fontSize: "medium"
-        text: Qt.formatTime(date)
-        opacity: model.enabled ? 1.0 : 0.8
-    }
+    height: units.gu(9)
+    divider.visible: true
 
     Column {
         id: alarmDetailsColumn
 
+        spacing: units.gu(1)
         opacity: model.enabled ? 1.0 : 0.8
 
         anchors {
-            left: alarmTime.right
+            left: parent.left
+            leftMargin: units.gu(2)
             right: alarmStatus.left
+            rightMargin: units.gu(1)
             verticalCenter: parent.verticalCenter
-            margins: units.gu(1)
         }
 
         Label {
-            id: alarmLabel
-            objectName: "listAlarmLabel" + index
+            id: alarmTime
+            objectName: "listAlarmTime" + index
 
-            text: message
-            fontSize: "medium"
-            width: parent.width
-            elide: Text.ElideRight
             color: UbuntuColors.midAubergine
+            fontSize: "x-large"
+            text: Qt.formatTime(date)
         }
 
-        Label {
-            id: alarmSubtitle
-            objectName: "listAlarmSubtitle" + index
-
-            fontSize: "xx-small"
+        RowLayout {
             width: parent.width
-            visible: !(type === Alarm.OneTime && !model.enabled)
-            wrapMode: Text.WrapAtWordBoundaryOrAnywhere
-            text: type === Alarm.Repeating ? alarmUtils.format_day_string(daysOfWeek, type)
-                                           : model.enabled ? alarmUtils.get_time_to_next_alarm(model.date - localTime)
-                                                           : "Alarm Disabled"
+            spacing: units.gu(1)
+
+            Label {
+                id: alarmLabel
+                objectName: "listAlarmLabel" + index
+
+                text: message
+                fontSize: "small"
+                elide: Text.ElideRight
+                Layout.maximumWidth: parent.width/4
+            }
+
+            Label {
+                text: "|"
+                visible: alarmSubtitle.visible
+            }
+
+            Label {
+                id: alarmSubtitle
+                objectName: "listAlarmSubtitle" + index
+
+                fontSize: "small"
+                Layout.fillWidth: true
+                visible: !(type === Alarm.OneTime && !model.enabled)
+                elide: Text.ElideRight
+                text: type === Alarm.Repeating ? alarmUtils.format_day_string(daysOfWeek, type)
+                                               : model.enabled ? alarmUtils.get_time_to_next_alarm(model.date - localTime)
+                                                               : "Alarm Disabled"
+            }
         }
     }
 
@@ -87,6 +92,7 @@ ListItemWithActions {
 
         anchors {
             right: parent.right
+            rightMargin: units.gu(2)
             verticalCenter: parent.verticalCenter
         }
 

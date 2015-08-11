@@ -19,7 +19,6 @@
 import QtQuick 2.4
 import Timezone 1.0
 import Ubuntu.Components 1.2
-import Ubuntu.Components.ListItems 1.0 as ListItem
 import "../components"
 import "../upstreamcomponents"
 
@@ -304,12 +303,23 @@ Page {
         section.criteria: ViewSection.FirstCharacter
         section.labelPositioning: ViewSection.InlineLabels
 
-        section.delegate: ListItem.Header {
-            text: section
+        section.delegate: ListItem {
+            height: header.implicitHeight + units.gu(2)
+            Label {
+                id: header
+                text: section
+                font.weight: Font.DemiBold
+                anchors {
+                    left: parent.left
+                    leftMargin: units.gu(2)
+                    verticalCenter: parent.verticalCenter
+                }
+            }
         }
 
-        delegate: ListItem.Empty {
-            showDivider: false
+        delegate: ListItem {
+            height: worldCityDelegateColumn.height + units.gu(2)
+            divider.visible: false
             objectName: "defaultWorldCityItem" + index
 
             Column {

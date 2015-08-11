@@ -109,6 +109,13 @@ add_subdirectory(backend)
 add_subdirectory(po)
 add_subdirectory(tests)
 
+# make the README files visible in qtcreator
+file(GLOB README_FILES
+    RELATIVE ${CMAKE_CURRENT_SOURCE_DIR}
+    README*)
+
+add_custom_target(com_ubuntu_clock_READMEFiles SOURCES ${README_FILES})
+
 add_custom_target("autopilot" chmod +x ${CMAKE_SOURCE_DIR}/tests/autopilot/run
                     COMMAND ${CMAKE_SOURCE_DIR}/tests/autopilot/run
                     DEPENDS timezone timezone-qmldir alarmsettings alarmsettings-qmldir datetime datetime-qmldir geolocation geolocation-qmldir

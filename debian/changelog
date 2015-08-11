@@ -1,8 +1,23 @@
-ubuntu-clock-app (3.4ubuntu2) UNRELEASED; urgency=medium
+ubuntu-clock-app (3.5) UNRELEASED; urgency=medium
 
-  [ Nekhelesh Ramananthan ]
+  [Bartosz Kosiorek]
+  * Disable automatic translation and update README.translations
+  
+  [Nekhelesh Ramananthan]
+  * Increase the height of times in the alarm screen (LP: #1365428)
+
+  [Victor Thompson]
+  * Show all README files in QtCreator
+
+ -- Bartosz Kosiorek <gang65@poczta.onet.pl>  Fri, 24 Jul 2015 18:05:38 +0200
+
+ubuntu-clock-app (3.4) vivid; urgency=medium
+
+  [Nekhelesh Ramananthan]
+  * Updated version to 3.4 to mark transition to vivid framework
   * Fixed bottom edge title showing incorrect status on app startup (LP: #1381432)
   * Migrate to Ubuntu 15.04 SDK Framework and QtQuick 2.4.
+  * Migrated add-city, settings, main alarm page to the new list items.
 
   [ Nicholas Skaggs ]
   * Update testing layout.
@@ -17,16 +32,6 @@ ubuntu-clock-app (3.4ubuntu2) UNRELEASED; urgency=medium
   * Replace location icon with default Suru (LP: #1476580)
 
  -- Bartosz Kosiorek <gang65@poczta.onet.pl>  Sun, 05 Jul 2015 15:10:12 +0200
-
-ubuntu-clock-app (3.4) vivid; urgency=medium
-
-  [Nekhelesh Ramananthan]
-  * Updated version to 3.4 to mark transition to vivid framework
-
-  [Victor Thompson]
-  * Use city for location if available
-
- -- Nekhelesh Ramananthan <krnekhelesh@gmail.com>  Thu, 18 Jun 2015 20:08:59 +0200
 
 ubuntu-clock-app (3.3) utopic; urgency=medium
 
