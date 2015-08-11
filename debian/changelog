@@ -6,6 +6,7 @@ ubuntu-clock-app (3.5) UNRELEASED; urgency=medium
   
   [Nekhelesh Ramananthan]
   * Increase the height of times in the alarm screen (LP: #1365428)
+  * Fix alarm interval information being inconsistent (LP: #1466000)
 
   [Victor Thompson]
   * Show all README files in QtCreator
