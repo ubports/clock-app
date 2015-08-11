@@ -58,7 +58,7 @@ void GenericTimeZoneModel::loadTimeZonesFromVariantList()
 
     m_timeZones.clear();
 
-    TimeZone tz;
+    TimeZoneData tz;
 
     /*
      Cycle through the u1db query model results and transfer them to the
@@ -69,22 +69,22 @@ void GenericTimeZoneModel::loadTimeZonesFromVariantList()
         // Map query model results to timezone tz
         tz.cityId = m_results.value(i).toMap().value("city").toString();
 
-        QPair<QString, QString> trandslatedCityData = timeZonesData.getTranslatedCityName(tz.cityId);
-        if (trandslatedCityData.first == "") {
+        TimeZoneModel::TimeZoneData trandslatedCityData = timeZonesData.getTranslatedCityName(tz.cityId);
+        if (trandslatedCityData.cityId == "") {
             tz.cityName = tz.cityId;
             tz.countryName = m_results.value(i).toMap().value("country").toString();
         }
         else
         {
-            tz.cityName = trandslatedCityData.first;
-            tz.countryName = trandslatedCityData.second;
+            tz.cityName = trandslatedCityData.cityName;
+            tz.countryName = trandslatedCityData.countryName;
         }
         tz.timeZone = QTimeZone(m_results.value(i).toMap().value("timezone").toString().toLatin1());
 
         m_timeZones.append(tz);
 
         // Clear tz before next iteration
-        tz = TimeZone();
+        tz = TimeZoneData();
     }
 
 

@@ -90,7 +90,7 @@ void JsonTimeZoneModel::networkReplyFinished(QNetworkReply *reply)
      list.
     */
     foreach (const QVariant &entry, timezoneData.toList()) {
-        TimeZone tz;
+        TimeZoneData tz;
 
         auto data = entry.toMap();
         auto admin1 = data.value("admin1").toString();

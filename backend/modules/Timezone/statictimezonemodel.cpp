@@ -30,7 +30,7 @@ StaticTimeZoneModel::StaticTimeZoneModel(QObject *parent) :
 }
 
 void StaticTimeZoneModel::addCity(const QString &cityId, const QString &cityName, const QString &timezone, const QString &countryName) {
-    TimeZone tz;
+    TimeZoneData tz;
     tz.cityId = cityId;
     tz.cityName = cityName;
     tz.countryName = countryName;
@@ -350,17 +350,21 @@ void StaticTimeZoneModel::loadDefaultCityList()
     endResetModel();
 }
 
-QPair<QString, QString> StaticTimeZoneModel::getTranslatedCityName(const QString &cityId)
+TimeZoneModel::TimeZoneData StaticTimeZoneModel::getTranslatedCityName(const QString &cityId)
 {
    qDebug() << "Called the getTranslatedCityName method with" << cityId;
-   QList<TimeZoneModel::TimeZone>::iterator i;
-   for (i = m_timeZones.begin(); i != m_timeZones.end(); ++i)
+   for (QList<TimeZoneModel::TimeZoneData>::const_iterator tz_iter = m_timeZones.begin(); tz_iter != m_timeZones.end(); ++tz_iter)
    {
-       if (QString::compare(i->cityId, cityId) == 0)
+       if (QString::compare(tz_iter->cityId, cityId) == 0)
        {
-           return QPair<QString, QString>(i->cityName, i->countryName);
+           return *tz_iter;
        }       
    }
-   return QPair<QString, QString>("", "");
+
+   TimeZoneModel::TimeZoneData emptyTimeZone;
+   emptyTimeZone.cityId = "";
+   emptyTimeZone.cityName = "";
+   emptyTimeZone.countryName = "";
+   return emptyTimeZone;
 }
 
