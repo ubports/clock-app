@@ -3,6 +3,7 @@ ubuntu-clock-app (3.5) UNRELEASED; urgency=medium
   [Bartosz Kosiorek]
   * Disable automatic translation and update README.translations
   * Silent warning which is displayed during clock run
+  * Change "Silence after" to "Alarm stops afer" according to UX design
   * Translate city and country names after language switch (LP: #1477492)
   
   [Nekhelesh Ramananthan]
