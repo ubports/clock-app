@@ -22,6 +22,7 @@ import "upstreamcomponents"
 import "alarm"
 import "clock"
 import "stopwatch"
+import "components"
 
 PageWithBottomEdge {
     id: _mainPage
@@ -59,12 +60,53 @@ PageWithBottomEdge {
             clockTime: _mainPage.clockTime
             width: clockApp.width
             height: listview.height
+            onFlickUp: headerRow.hide()
+            onFlickDown: headerRow.show()
         }
 
         StopwatchPage {
             id: stopwatchPage
             width: clockApp.width
             height: listview.height
+            onFlickUp: headerRow.hide()
+            onFlickDown: headerRow.show()
+        }
+    }
+
+    HeaderNavigation {
+        id: headerRow
+
+        z: listview.z + 1000
+
+        function hide() {
+            hideAnimation.start()
+        }
+
+        function show() {
+            showAnimation.start()
+        }
+
+        anchors {
+            top: parent.top
+            left: parent.left
+            right: parent.right
+            topMargin: 0
+        }
+
+        PropertyAnimation {
+            id: hideAnimation
+            target: headerRow
+            property: "anchors.topMargin"
+            to: -headerRow.height
+            duration: UbuntuAnimation.BriskDuration
+        }
+
+        PropertyAnimation {
+            id: showAnimation
+            target: headerRow
+            property: "anchors.topMargin"
+            to: 0
+            duration: UbuntuAnimation.BriskDuration
         }
     }
 
@@ -75,7 +117,7 @@ PageWithBottomEdge {
         model: navigationModel
         orientation: ListView.Horizontal
         snapMode: ListView.SnapOneItem
-        interactive: false
+        interactive: true
         highlightMoveDuration: UbuntuAnimation.BriskDuration
         highlightRangeMode: ListView.StrictlyEnforceRange
     }

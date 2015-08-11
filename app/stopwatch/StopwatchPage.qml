@@ -18,7 +18,6 @@
 
 import QtQuick 2.4
 import Ubuntu.Components 1.2
-import "../components"
 
 Item {
     id: _stopwatchPage
@@ -32,6 +31,9 @@ Item {
     property int oldDiff: 0
 
     property int totalTimeDiff: timeDiff + oldDiff
+
+    signal flickUp()
+    signal flickDown()
 
     Component.onCompleted: {
         console.log("[LOG]: Stopwatch Page Loaded")
@@ -95,13 +97,15 @@ Item {
         contentWidth: parent.width
         contentHeight: stopwatch.height + buttonRow.height + lapListViewLoader.height + units.gu(21)
 
-        HeaderNavigation {
-            id: headerRow
-            anchors {
-                top: parent.top
-                left: parent.left
-                right: parent.right
-                topMargin: 0
+        property int oldContentY: 0
+
+        onDraggingChanged: {
+            if (contentY > oldContentY) {
+                flickUp()
+                oldContentY = contentY
+            } else if (contentY < oldContentY) {
+                flickDown()
+                oldContentY = contentY
             }
         }
 

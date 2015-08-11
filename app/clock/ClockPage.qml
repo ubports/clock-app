@@ -37,6 +37,9 @@ Item {
     // Property to keep track of app cold start status
     property alias isColdStart: clock.isColdStart
 
+    signal flickUp()
+    signal flickDown()
+
     Component.onCompleted: {
         console.log("[LOG]: Clock Page loaded")
     }
@@ -172,14 +175,15 @@ Item {
                        + worldCityColumn.height + addWorldCityButton.height
                        + units.gu(17)
 
-        HeaderNavigation {
-            id: headerRow
-            opacity: 0
-            anchors {
-                top: parent.top
-                left: parent.left
-                right: parent.right
-                topMargin: 0
+        property int oldContentY: 0
+
+        onDraggingChanged: {
+            if (contentY > oldContentY) {
+                flickUp()
+                oldContentY = contentY
+            } else if (contentY < oldContentY) {
+                flickDown()
+                oldContentY = contentY
             }
         }
 
