@@ -350,18 +350,17 @@ void StaticTimeZoneModel::loadDefaultCityList()
     endResetModel();
 }
 
-QList<TimeZoneModel::TimeZone>::iterator StaticTimeZoneModel::getTranslatedCityName(const QString &cityId)
+QPair<QString, QString> StaticTimeZoneModel::getTranslatedCityName(const QString &cityId)
 {
    qDebug() << "Called the getTranslatedCityName method with" << cityId;
-   QString translatedCityName = cityId;
    QList<TimeZoneModel::TimeZone>::iterator i;
    for (i = m_timeZones.begin(); i != m_timeZones.end(); ++i) 
    {
        if (i->cityId == cityId) 
        {
-           return i;
+           return QPair<QString, QString>(i->cityId, i->country);
        }       
    }
-   return m_timeZones.end();
+   return QPair<QString, QString>("", "");
 }
 

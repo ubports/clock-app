@@ -69,15 +69,15 @@ void GenericTimeZoneModel::loadTimeZonesFromVariantList()
         // Map query model results to timezone tz
         tz.cityId = m_results.value(i).toMap().value("city").toString();
 
-        QList<TimeZoneModel::TimeZone>::iterator cityIt = timeZonesData.getTranslatedCityName(tz.cityId);
-        if (cityIt == m_timeZones.end()) {
+        QPair<QString, QString> trandslatedCityData = timeZonesData.getTranslatedCityName(tz.cityId);
+        if (trandslatedCityData.first == "") {
             tz.cityName = tz.cityId;
             tz.country = m_results.value(i).toMap().value("country").toString();
         }
         else
         {
-            tz.cityName = cityIt->cityName;
-            tz.country = cityIt->country;
+            tz.cityName = trandslatedCityData.first;
+            tz.country = trandslatedCityData.second;
         }
         tz.timeZone = QTimeZone(m_results.value(i).toMap().value("timezone").toString().toLatin1());
 

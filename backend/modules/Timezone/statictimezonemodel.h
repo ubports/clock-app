@@ -33,7 +33,7 @@ public:
     StaticTimeZoneModel(QObject *parent = 0);
 
     // Function to 
-    Q_INVOKABLE QList<TimeZoneModel::TimeZone>::iterator getTranslatedCityName(const QString &cityId);
+    Q_INVOKABLE QPair<QString, QString> getTranslatedCityName(const QString &cityId);
 
 private:
     // Function to define the default city list
