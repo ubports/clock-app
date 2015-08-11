@@ -266,7 +266,7 @@ Page {
         id: cityList
         objectName: "cityList"
 
-        function addWorldCity(cityId, country, timezone) {
+        function addWorldCity(cityId, countryName, timezone) {
             console.log("[LOG]: Adding " + cityId.toString() + " city to U1db Database")
             clockDB.putDoc
                     (
@@ -274,11 +274,11 @@ Page {
                             "worldlocation":
                             {
                                 "city": cityId,
-                                "country": country,
+                                "country": countryName,
                                 "timezone": timezone
                             }
                         },
-                        encodeURIComponent(cityId + "_" + country)
+                        encodeURIComponent(cityId + "_" + countryName)
                         )
         }
 
@@ -342,7 +342,7 @@ Page {
                 }
 
                 Label {
-                    text: country
+                    text: countryName
                     objectName: "defaultCountryNameText"
                     fontSize: "xx-small"
                     width: parent.width
@@ -361,12 +361,13 @@ Page {
             }
 
             onClicked: {
-                var tempCountry = country.split(",")
-                if(tempCountry.length > 2) {
-                    cityList.addWorldCity(cityId, tempCountry[1] + ","
-                                          + tempCountry[2], timezoneID)
+                var splittedCountryName = countryName.split(",")
+                if(splittedCountryName.length > 2) {
+                    cityList.addWorldCity(cityId,
+                                          splittedCountryName[1] + "," + splittedCountryName[2],
+                                          timezoneID)
                 } else {
-                    cityList.addWorldCity(cityId, country, timezoneID)
+                    cityList.addWorldCity(cityId, countryName, timezoneID)
                 }
 
                 mainStack.pop()

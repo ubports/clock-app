@@ -60,7 +60,7 @@ ListItemWithActions {
             }
 
             Label {
-                text: model.country
+                text: model.countryName
                 objectName: "userCountryNameText"
                 fontSize: "xx-small"
                 width: parent.width

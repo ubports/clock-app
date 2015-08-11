@@ -108,7 +108,7 @@ QHash<int, QByteArray> TimeZoneModel::roleNames() const
     QHash<int, QByteArray> roles;
     roles.insert(RoleCityId, "cityId");
     roles.insert(RoleCityName, "cityName");
-    roles.insert(RoleCountryName, "country");
+    roles.insert(RoleCountryName, "countryName");
     roles.insert(RoleTimeZoneId, "timezoneID");
     roles.insert(RoleTimeString, "localTime");
     roles.insert(RoleTimeTo, "timeTo");
