@@ -132,7 +132,7 @@ Item {
 
             Button {
                 id: stopButton
-                width: !lapButton.visible ? parent.width : (parent.width - parent.spacing) / 2
+                width: oldDiff !== 0 || running ? (parent.width - parent.spacing) / 2 : parent.width
                 color: !_stopwatchPage.running ? UbuntuColors.green : UbuntuColors.red
                 text: _stopwatchPage.running ? i18n.tr("Stop") : (oldDiff === 0 ? i18n.tr("Start") : i18n.tr("Resume"))
                 onClicked: {
@@ -152,7 +152,7 @@ Item {
             Button {
                 id: lapButton
                 text: _stopwatchPage.running ? i18n.tr("Lap") : i18n.tr("Clear")
-                width: visible ? (parent.width - parent.spacing) / 2 : 0
+                width: oldDiff !== 0 || running ? (parent.width - parent.spacing) / 2 : 0
                 strokeColor: UbuntuColors.lightGrey
                 visible: oldDiff !== 0 || running
                 onClicked: {
