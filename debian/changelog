@@ -2,6 +2,7 @@ ubuntu-clock-app (3.5) UNRELEASED; urgency=medium
 
   [Bartosz Kosiorek]
   * Disable automatic translation and update README.translations
+  * Change "Silence after" to "Alarm stops afer" according to UX design
   
   [Nekhelesh Ramananthan]
   * Increase the height of times in the alarm screen (LP: #1365428)
