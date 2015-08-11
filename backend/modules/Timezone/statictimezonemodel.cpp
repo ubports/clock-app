@@ -356,9 +356,9 @@ QPair<QString, QString> StaticTimeZoneModel::getTranslatedCityName(const QString
    QList<TimeZoneModel::TimeZone>::iterator i;
    for (i = m_timeZones.begin(); i != m_timeZones.end(); ++i) 
    {
-       if (i->cityId == cityId) 
+       if (QString::compare(i->cityId, cityId) == 0)
        {
-           return QPair<QString, QString>(i->cityId, i->country);
+           return QPair<QString, QString>(i->cityName, i->country);
        }       
    }
    return QPair<QString, QString>("", "");
