@@ -1,4 +1,15 @@
-file(GLOB ALARM_QML_JS_FILES *.qml *.js)
+set(ALARM_QML_JS_FILES
+    AlarmDelegate.qml
+    AlarmLabel.qml
+    AlarmList.qml
+    AlarmModelComponent.qml
+    AlarmPage.qml
+    AlarmRepeat.qml
+    AlarmSettingsPage.qml
+    AlarmSound.qml
+    AlarmUtils.qml
+    EditAlarmPage.qml
+)
 
 # make the files visible in the qtcreator tree
 add_custom_target(ubuntu-clock-app_alarm_QMlFiles ALL SOURCES ${ALARM_QML_JS_FILES})
