@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2015-07-16 01:36+0200\n"
+"POT-Creation-Date: 2015-08-07 13:27+0200\n"
 "PO-Revision-Date: 2015-04-01 15:31+0000\n"
 "Last-Translator: Josef Andersson <Unknown>\n"
 "Language-Team: Swedish\n"
@@ -15,21 +15,21 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2015-08-04 05:43+0000\n"
+"X-Launchpad-Export-Date: 2015-08-10 06:28+0000\n"
 "X-Generator: Launchpad (build 17656)\n"
 "Language: sv\n"
 
 #: ../app/alarm/AlarmLabel.qml:30 ../app/alarm/AlarmLabel.qml:56
-#: ../app/alarm/EditAlarmPage.qml:291
+#: ../app/alarm/EditAlarmPage.qml:290
 msgid "Label"
 msgstr "Etikett"
 
-#: ../app/alarm/AlarmList.qml:45 ../app/alarm/AlarmPage.qml:99
+#: ../app/alarm/AlarmList.qml:49 ../app/alarm/AlarmPage.qml:99
 #: ../app/worldclock/UserWorldCityList.qml:101
 msgid "Delete"
 msgstr "Ta bort"
 
-#: ../alarm/AlarmList.qml:44
+#: ../app/alarm/AlarmPage.qml:25
 msgid "Alarms"
 msgstr "Alarm"
 
@@ -38,8 +38,8 @@ msgstr "Alarm"
 msgid "Back"
 msgstr "Bakåt"
 
-#: ../alarm/AddAlarmPage.qml:546 ../alarm/AlarmPage.qml:29
-#: ../ubuntu-clock-app.qml:190
+#: ../app/alarm/AlarmPage.qml:49 ../app/alarm/EditAlarmPage.qml:43
+#: ../app/alarm/EditAlarmPage.qml:165
 msgid "Alarm"
 msgstr "Alarm"
 
@@ -51,19 +51,19 @@ msgstr "Markera inget"
 msgid "Select All"
 msgstr "Markera allt"
 
-#: ../app/alarm/AlarmPage.qml:137
+#: ../app/alarm/AlarmPage.qml:139
 msgid "No saved alarms"
 msgstr "Inga sparade alarm"
 
-#: ../app/alarm/AlarmPage.qml:138
+#: ../app/alarm/AlarmPage.qml:140
 msgid "Tap the + icon to add an alarm"
 msgstr "Tryck på ikonen + för att lägga till ett alarm"
 
-#: ../app/alarm/AlarmRepeat.qml:33 ../app/alarm/EditAlarmPage.qml:281
+#: ../app/alarm/AlarmRepeat.qml:33 ../app/alarm/EditAlarmPage.qml:280
 msgid "Repeat"
 msgstr "Upprepa"
 
-#: ../common/SettingsPage.qml:28 ../ubuntu-clock-app.qml:88
+#: ../app/alarm/AlarmSettingsPage.qml:29
 msgid "Settings"
 msgstr "Inställningar"
 
@@ -74,7 +74,7 @@ msgstr "Inställningar"
 #: ../app/alarm/AlarmSettingsPage.qml:67 ../app/alarm/AlarmSettingsPage.qml:68
 #: ../app/alarm/AlarmSettingsPage.qml:69 ../app/alarm/AlarmSettingsPage.qml:70
 #: ../app/alarm/AlarmSettingsPage.qml:126
-#: ../app/alarm/AlarmSettingsPage.qml:154
+#: ../app/alarm/AlarmSettingsPage.qml:164
 #, qt-format
 msgid "%1 minute"
 msgid_plural "%1 minutes"
@@ -89,19 +89,19 @@ msgstr "Alarmvolym"
 msgid "Silence after"
 msgstr "Tyst efter"
 
-#: ../app/alarm/AlarmSettingsPage.qml:153
+#: ../app/alarm/AlarmSettingsPage.qml:163
 msgid "Snooze for"
 msgstr "Snooze i"
 
-#: ../app/alarm/AlarmSettingsPage.qml:179
+#: ../app/alarm/AlarmSettingsPage.qml:199
 msgid "Vibration"
 msgstr "Vibration"
 
-#: ../app/alarm/AlarmSettingsPage.qml:213
+#: ../app/alarm/AlarmSettingsPage.qml:233
 msgid "Change time and date"
 msgstr "Ändra tid och datum"
 
-#: ../app/alarm/AlarmSound.qml:27 ../app/alarm/EditAlarmPage.qml:304
+#: ../app/alarm/AlarmSound.qml:27 ../app/alarm/EditAlarmPage.qml:303
 msgid "Sound"
 msgstr "Ljud"
 
@@ -117,7 +117,7 @@ msgstr "Veckodagar"
 msgid "Weekends"
 msgstr "Helger"
 
-#: ../alarm/AlarmPage.qml:133
+#: ../app/alarm/AlarmUtils.qml:45
 msgid "Daily"
 msgstr "Dagligen"
 
@@ -149,15 +149,15 @@ msgstr "i %1t %2m"
 msgid "in %1m"
 msgstr "i %1m"
 
-#: ../app/alarm/EditAlarmPage.qml:37
+#: ../app/alarm/EditAlarmPage.qml:36
 msgid "New alarm"
 msgstr "Nytt alarm"
 
-#: ../app/alarm/EditAlarmPage.qml:37
+#: ../app/alarm/EditAlarmPage.qml:36
 msgid "Edit alarm"
 msgstr "Redigera alarm"
 
-#: ../app/alarm/EditAlarmPage.qml:325
+#: ../app/alarm/EditAlarmPage.qml:324
 msgid "Delete alarm"
 msgstr "Ta bort alarm"
 
@@ -1976,8 +1976,7 @@ msgstr "Zürich"
 msgid "Switzerland"
 msgstr "Schweiz"
 
-#: ../clock/ClockPage.qml:33 ../ubuntu-clock-app.qml:171
-#: com.ubuntu.clock_clock.desktop.in.in.h:1
+#: ubuntu-clock-app.desktop.in.in.h:1
 msgid "Clock"
 msgstr "Klocka"
 

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2015-07-16 01:36+0200\n"
+"POT-Creation-Date: 2015-08-07 13:27+0200\n"
 "PO-Revision-Date: 2015-04-07 08:16+0000\n"
 "Last-Translator: rob <linuxned@gmail.com>\n"
 "Language-Team: Dutch <nl@li.org>\n"
@@ -15,20 +15,20 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2015-08-04 05:43+0000\n"
+"X-Launchpad-Export-Date: 2015-08-10 06:26+0000\n"
 "X-Generator: Launchpad (build 17656)\n"
 
 #: ../app/alarm/AlarmLabel.qml:30 ../app/alarm/AlarmLabel.qml:56
-#: ../app/alarm/EditAlarmPage.qml:291
+#: ../app/alarm/EditAlarmPage.qml:290
 msgid "Label"
 msgstr "Label"
 
-#: ../app/alarm/AlarmList.qml:45 ../app/alarm/AlarmPage.qml:99
+#: ../app/alarm/AlarmList.qml:49 ../app/alarm/AlarmPage.qml:99
 #: ../app/worldclock/UserWorldCityList.qml:101
 msgid "Delete"
 msgstr "Verwijderen"
 
-#: ../alarm/AlarmList.qml:44
+#: ../app/alarm/AlarmPage.qml:25
 msgid "Alarms"
 msgstr "Herinneringen"
 
@@ -37,8 +37,8 @@ msgstr "Herinneringen"
 msgid "Back"
 msgstr "Terug"
 
-#: ../alarm/AddAlarmPage.qml:546 ../alarm/AlarmPage.qml:29
-#: ../ubuntu-clock-app.qml:190
+#: ../app/alarm/AlarmPage.qml:49 ../app/alarm/EditAlarmPage.qml:43
+#: ../app/alarm/EditAlarmPage.qml:165
 msgid "Alarm"
 msgstr "Herinnering"
 
@@ -50,19 +50,19 @@ msgstr "Niets selecteren"
 msgid "Select All"
 msgstr "Alles selecteren"
 
-#: ../app/alarm/AlarmPage.qml:137
+#: ../app/alarm/AlarmPage.qml:139
 msgid "No saved alarms"
 msgstr "Geen opgeslagen herinneringen"
 
-#: ../app/alarm/AlarmPage.qml:138
+#: ../app/alarm/AlarmPage.qml:140
 msgid "Tap the + icon to add an alarm"
 msgstr "Tik op het + pictogram om een herinnering toe te voegen"
 
-#: ../app/alarm/AlarmRepeat.qml:33 ../app/alarm/EditAlarmPage.qml:281
+#: ../app/alarm/AlarmRepeat.qml:33 ../app/alarm/EditAlarmPage.qml:280
 msgid "Repeat"
 msgstr "Herhalen"
 
-#: ../common/SettingsPage.qml:28 ../ubuntu-clock-app.qml:88
+#: ../app/alarm/AlarmSettingsPage.qml:29
 msgid "Settings"
 msgstr "Instellingen"
 
@@ -73,7 +73,7 @@ msgstr "Instellingen"
 #: ../app/alarm/AlarmSettingsPage.qml:67 ../app/alarm/AlarmSettingsPage.qml:68
 #: ../app/alarm/AlarmSettingsPage.qml:69 ../app/alarm/AlarmSettingsPage.qml:70
 #: ../app/alarm/AlarmSettingsPage.qml:126
-#: ../app/alarm/AlarmSettingsPage.qml:154
+#: ../app/alarm/AlarmSettingsPage.qml:164
 #, qt-format
 msgid "%1 minute"
 msgid_plural "%1 minutes"
@@ -88,19 +88,19 @@ msgstr "Herinneringsvolume"
 msgid "Silence after"
 msgstr "Stil na"
 
-#: ../app/alarm/AlarmSettingsPage.qml:153
+#: ../app/alarm/AlarmSettingsPage.qml:163
 msgid "Snooze for"
 msgstr "Sluimeren gedurende"
 
-#: ../app/alarm/AlarmSettingsPage.qml:179
+#: ../app/alarm/AlarmSettingsPage.qml:199
 msgid "Vibration"
 msgstr "Trilling"
 
-#: ../app/alarm/AlarmSettingsPage.qml:213
+#: ../app/alarm/AlarmSettingsPage.qml:233
 msgid "Change time and date"
 msgstr "Datum en tijd wijzigen"
 
-#: ../app/alarm/AlarmSound.qml:27 ../app/alarm/EditAlarmPage.qml:304
+#: ../app/alarm/AlarmSound.qml:27 ../app/alarm/EditAlarmPage.qml:303
 msgid "Sound"
 msgstr "Geluid"
 
@@ -116,7 +116,7 @@ msgstr "Werkdagen"
 msgid "Weekends"
 msgstr "Weekeinden"
 
-#: ../alarm/AlarmPage.qml:133
+#: ../app/alarm/AlarmUtils.qml:45
 msgid "Daily"
 msgstr "Dagelijks"
 
@@ -148,15 +148,15 @@ msgstr "over %1h %2m"
 msgid "in %1m"
 msgstr "over %1m"
 
-#: ../app/alarm/EditAlarmPage.qml:37
+#: ../app/alarm/EditAlarmPage.qml:36
 msgid "New alarm"
 msgstr "Nieuwe herinnering"
 
-#: ../app/alarm/EditAlarmPage.qml:37
+#: ../app/alarm/EditAlarmPage.qml:36
 msgid "Edit alarm"
 msgstr "Herinnering bewerken"
 
-#: ../app/alarm/EditAlarmPage.qml:325
+#: ../app/alarm/EditAlarmPage.qml:324
 msgid "Delete alarm"
 msgstr "Herinnering verwijderen"
 
@@ -1975,8 +1975,7 @@ msgstr "Zürich"
 msgid "Switzerland"
 msgstr "Zwitserland"
 
-#: ../clock/ClockPage.qml:33 ../ubuntu-clock-app.qml:171
-#: com.ubuntu.clock_clock.desktop.in.in.h:1
+#: ubuntu-clock-app.desktop.in.in.h:1
 msgid "Clock"
 msgstr "Klok"
 

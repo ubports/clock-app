@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2015-07-16 01:36+0200\n"
+"POT-Creation-Date: 2015-08-07 13:27+0200\n"
 "PO-Revision-Date: 2015-04-17 21:25+0000\n"
 "Last-Translator: Charif AYFARAH <ayfarah@ymail.com>\n"
 "Language-Team: Afar <aa@li.org>\n"
@@ -15,20 +15,20 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2015-08-04 05:43+0000\n"
+"X-Launchpad-Export-Date: 2015-08-10 06:25+0000\n"
 "X-Generator: Launchpad (build 17656)\n"
 
 #: ../app/alarm/AlarmLabel.qml:30 ../app/alarm/AlarmLabel.qml:56
-#: ../app/alarm/EditAlarmPage.qml:291
+#: ../app/alarm/EditAlarmPage.qml:290
 msgid "Label"
 msgstr "Bedu"
 
-#: ../app/alarm/AlarmList.qml:45 ../app/alarm/AlarmPage.qml:99
+#: ../app/alarm/AlarmList.qml:49 ../app/alarm/AlarmPage.qml:99
 #: ../app/worldclock/UserWorldCityList.qml:101
 msgid "Delete"
 msgstr "Dug"
 
-#: ../alarm/AlarmList.qml:44
+#: ../app/alarm/AlarmPage.qml:25
 msgid "Alarms"
 msgstr "Alalol"
 
@@ -37,8 +37,8 @@ msgstr "Alalol"
 msgid "Back"
 msgstr "Derre"
 
-#: ../alarm/AddAlarmPage.qml:546 ../alarm/AlarmPage.qml:29
-#: ../ubuntu-clock-app.qml:190
+#: ../app/alarm/AlarmPage.qml:49 ../app/alarm/EditAlarmPage.qml:43
+#: ../app/alarm/EditAlarmPage.qml:165
 msgid "Alarm"
 msgstr "Alalo"
 
@@ -50,19 +50,19 @@ msgstr "Meextem mattu"
 msgid "Select All"
 msgstr "Inkih meex"
 
-#: ../app/alarm/AlarmPage.qml:137
+#: ../app/alarm/AlarmPage.qml:139
 msgid "No saved alarms"
 msgstr "Taagisen alalol ma yan"
 
-#: ../app/alarm/AlarmPage.qml:138
+#: ../app/alarm/AlarmPage.qml:140
 msgid "Tap the + icon to add an alarm"
 msgstr "Alalo edde osissam faxxek + xukkut"
 
-#: ../app/alarm/AlarmRepeat.qml:33 ../app/alarm/EditAlarmPage.qml:281
+#: ../app/alarm/AlarmRepeat.qml:33 ../app/alarm/EditAlarmPage.qml:280
 msgid "Repeat"
 msgstr "Qagis"
 
-#: ../common/SettingsPage.qml:28 ../ubuntu-clock-app.qml:88
+#: ../app/alarm/AlarmSettingsPage.qml:29
 msgid "Settings"
 msgstr "Massosu"
 
@@ -73,7 +73,7 @@ msgstr "Massosu"
 #: ../app/alarm/AlarmSettingsPage.qml:67 ../app/alarm/AlarmSettingsPage.qml:68
 #: ../app/alarm/AlarmSettingsPage.qml:69 ../app/alarm/AlarmSettingsPage.qml:70
 #: ../app/alarm/AlarmSettingsPage.qml:126
-#: ../app/alarm/AlarmSettingsPage.qml:154
+#: ../app/alarm/AlarmSettingsPage.qml:164
 #, qt-format
 msgid "%1 minute"
 msgid_plural "%1 minutes"
@@ -88,19 +88,19 @@ msgstr "Alolô kaala"
 msgid "Silence after"
 msgstr "Lakal tibba"
 
-#: ../app/alarm/AlarmSettingsPage.qml:153
+#: ../app/alarm/AlarmSettingsPage.qml:163
 msgid "Snooze for"
 msgstr "Qundugulus"
 
-#: ../app/alarm/AlarmSettingsPage.qml:179
+#: ../app/alarm/AlarmSettingsPage.qml:199
 msgid "Vibration"
 msgstr "Araro"
 
-#: ../app/alarm/AlarmSettingsPage.qml:213
+#: ../app/alarm/AlarmSettingsPage.qml:233
 msgid "Change time and date"
 msgstr "Waqla kee taarik koris"
 
-#: ../app/alarm/AlarmSound.qml:27 ../app/alarm/EditAlarmPage.qml:304
+#: ../app/alarm/AlarmSound.qml:27 ../app/alarm/EditAlarmPage.qml:303
 msgid "Sound"
 msgstr "Xongolo"
 
@@ -116,7 +116,7 @@ msgstr "Ayyam-ayroora"
 msgid "Weekends"
 msgstr "Ayyam-ellecabo"
 
-#: ../alarm/AlarmPage.qml:133
+#: ../app/alarm/AlarmUtils.qml:45
 msgid "Daily"
 msgstr "Ayrol"
 
@@ -148,15 +148,15 @@ msgstr "%1saaqata %2minitih addat"
 msgid "in %1m"
 msgstr "%1minitih addat"
 
-#: ../app/alarm/EditAlarmPage.qml:37
+#: ../app/alarm/EditAlarmPage.qml:36
 msgid "New alarm"
 msgstr "Qusba alalo"
 
-#: ../app/alarm/EditAlarmPage.qml:37
+#: ../app/alarm/EditAlarmPage.qml:36
 msgid "Edit alarm"
 msgstr "Alalo Fak"
 
-#: ../app/alarm/EditAlarmPage.qml:325
+#: ../app/alarm/EditAlarmPage.qml:324
 msgid "Delete alarm"
 msgstr "Alalo dug"
 
@@ -1975,8 +1975,7 @@ msgstr "Zuurik"
 msgid "Switzerland"
 msgstr "Swisra"
 
-#: ../clock/ClockPage.qml:33 ../ubuntu-clock-app.qml:171
-#: com.ubuntu.clock_clock.desktop.in.in.h:1
+#: ubuntu-clock-app.desktop.in.in.h:1
 msgid "Clock"
 msgstr "Uddur"
 

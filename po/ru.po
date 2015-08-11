@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2015-07-16 01:36+0200\n"
+"POT-Creation-Date: 2015-08-07 13:27+0200\n"
 "PO-Revision-Date: 2015-05-12 05:41+0000\n"
 "Last-Translator: ☠Jay ZDLin☠ <Unknown>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -16,20 +16,20 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Launchpad-Export-Date: 2015-08-04 05:43+0000\n"
+"X-Launchpad-Export-Date: 2015-08-10 06:28+0000\n"
 "X-Generator: Launchpad (build 17656)\n"
 
 #: ../app/alarm/AlarmLabel.qml:30 ../app/alarm/AlarmLabel.qml:56
-#: ../app/alarm/EditAlarmPage.qml:291
+#: ../app/alarm/EditAlarmPage.qml:290
 msgid "Label"
 msgstr "Метка"
 
-#: ../app/alarm/AlarmList.qml:45 ../app/alarm/AlarmPage.qml:99
+#: ../app/alarm/AlarmList.qml:49 ../app/alarm/AlarmPage.qml:99
 #: ../app/worldclock/UserWorldCityList.qml:101
 msgid "Delete"
 msgstr "Удалить"
 
-#: ../alarm/AlarmList.qml:44
+#: ../app/alarm/AlarmPage.qml:25
 msgid "Alarms"
 msgstr "Будильники"
 
@@ -38,8 +38,8 @@ msgstr "Будильники"
 msgid "Back"
 msgstr "Назад"
 
-#: ../alarm/AddAlarmPage.qml:546 ../alarm/AlarmPage.qml:29
-#: ../ubuntu-clock-app.qml:190
+#: ../app/alarm/AlarmPage.qml:49 ../app/alarm/EditAlarmPage.qml:43
+#: ../app/alarm/EditAlarmPage.qml:165
 msgid "Alarm"
 msgstr "Будильник"
 
@@ -51,19 +51,19 @@ msgstr "Снять выделение"
 msgid "Select All"
 msgstr "Выбрать всё"
 
-#: ../app/alarm/AlarmPage.qml:137
+#: ../app/alarm/AlarmPage.qml:139
 msgid "No saved alarms"
 msgstr "Нет сохранённых будильников"
 
-#: ../app/alarm/AlarmPage.qml:138
+#: ../app/alarm/AlarmPage.qml:140
 msgid "Tap the + icon to add an alarm"
 msgstr "Чтобы добавить будильник, нажмите значок \"+\""
 
-#: ../app/alarm/AlarmRepeat.qml:33 ../app/alarm/EditAlarmPage.qml:281
+#: ../app/alarm/AlarmRepeat.qml:33 ../app/alarm/EditAlarmPage.qml:280
 msgid "Repeat"
 msgstr "Повторять"
 
-#: ../common/SettingsPage.qml:28 ../ubuntu-clock-app.qml:88
+#: ../app/alarm/AlarmSettingsPage.qml:29
 msgid "Settings"
 msgstr "Настройки"
 
@@ -74,7 +74,7 @@ msgstr "Настройки"
 #: ../app/alarm/AlarmSettingsPage.qml:67 ../app/alarm/AlarmSettingsPage.qml:68
 #: ../app/alarm/AlarmSettingsPage.qml:69 ../app/alarm/AlarmSettingsPage.qml:70
 #: ../app/alarm/AlarmSettingsPage.qml:126
-#: ../app/alarm/AlarmSettingsPage.qml:154
+#: ../app/alarm/AlarmSettingsPage.qml:164
 #, qt-format
 msgid "%1 minute"
 msgid_plural "%1 minutes"
@@ -90,19 +90,19 @@ msgstr "Громкость будильника"
 msgid "Silence after"
 msgstr "Заглушать после"
 
-#: ../app/alarm/AlarmSettingsPage.qml:153
+#: ../app/alarm/AlarmSettingsPage.qml:163
 msgid "Snooze for"
 msgstr "Повторить через"
 
-#: ../app/alarm/AlarmSettingsPage.qml:179
+#: ../app/alarm/AlarmSettingsPage.qml:199
 msgid "Vibration"
 msgstr "Вибро"
 
-#: ../app/alarm/AlarmSettingsPage.qml:213
+#: ../app/alarm/AlarmSettingsPage.qml:233
 msgid "Change time and date"
 msgstr "Изменить время и дату"
 
-#: ../app/alarm/AlarmSound.qml:27 ../app/alarm/EditAlarmPage.qml:304
+#: ../app/alarm/AlarmSound.qml:27 ../app/alarm/EditAlarmPage.qml:303
 msgid "Sound"
 msgstr "Мелодия"
 
@@ -118,7 +118,7 @@ msgstr "Будни"
 msgid "Weekends"
 msgstr "Выходные"
 
-#: ../alarm/AlarmPage.qml:133
+#: ../app/alarm/AlarmUtils.qml:45
 msgid "Daily"
 msgstr "Ежедневно"
 
@@ -150,15 +150,15 @@ msgstr "через %1h %2m"
 msgid "in %1m"
 msgstr "через %1m"
 
-#: ../app/alarm/EditAlarmPage.qml:37
+#: ../app/alarm/EditAlarmPage.qml:36
 msgid "New alarm"
 msgstr "Новый будильник"
 
-#: ../app/alarm/EditAlarmPage.qml:37
+#: ../app/alarm/EditAlarmPage.qml:36
 msgid "Edit alarm"
 msgstr "Редактировать будильник"
 
-#: ../app/alarm/EditAlarmPage.qml:325
+#: ../app/alarm/EditAlarmPage.qml:324
 msgid "Delete alarm"
 msgstr "Удалить будильник"
 
@@ -1977,8 +1977,7 @@ msgstr "Цюрих"
 msgid "Switzerland"
 msgstr "Швейцария"
 
-#: ../clock/ClockPage.qml:33 ../ubuntu-clock-app.qml:171
-#: com.ubuntu.clock_clock.desktop.in.in.h:1
+#: ubuntu-clock-app.desktop.in.in.h:1
 msgid "Clock"
 msgstr "Часы"
 
