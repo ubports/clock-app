@@ -2,14 +2,16 @@ ubuntu-clock-app (3.5) UNRELEASED; urgency=medium
 
   [Bartosz Kosiorek]
   * Disable automatic translation and update README.translations
+  * Silent warning which is displayed during clock run
+  * Translate city and country names after language switch (LP: #1477492)
   
   [Nekhelesh Ramananthan]
   * Increase the height of times in the alarm screen (LP: #1365428)
 
   [Victor Thompson]
-  * Show all README files in QtCreator
+  * Show all README files in QtCreator 
 
- -- Bartosz Kosiorek <gang65@poczta.onet.pl>  Fri, 24 Jul 2015 18:05:38 +0200
+ -- Bartosz Kosiorek <gang65@poczta.onet.pl>  Tue, 11 Aug 2015 12:34:58 +0200
 
 ubuntu-clock-app (3.4) vivid; urgency=medium
 
