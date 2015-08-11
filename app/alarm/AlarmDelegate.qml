@@ -30,6 +30,12 @@ ListItem {
     height: units.gu(9)
     divider.visible: true
 
+    onShowAlarmFrequencyChanged: {
+        if (type === Alarm.Repeating && model.enabled) {
+            alarmSubtitle.animateTextChange()
+        }
+    }
+
     Column {
         id: alarmDetailsColumn
 
@@ -84,67 +90,32 @@ ListItem {
                                                : model.enabled ? alarmUtils.get_time_to_next_alarm(model.date - localTime)
                                                                : "Alarm Disabled"
 
-                states: [
-                    State {
-                        name: "AlarmFrequency"
-                        when: root.showAlarmFrequency && type === Alarm.Repeating
-                    },
+                function animateTextChange() {
+                    textChangeAnimation.start()
+                }
 
-                    State {
-                        name: "AlarmETA"
-                        when: !root.showAlarmFrequency && type === Alarm.Repeating
+
+                SequentialAnimation {
+                    id: textChangeAnimation
+                    PropertyAnimation {
+                        target: alarmSubtitle
+                        property: "opacity"
+                        to: 0
+                        duration: UbuntuAnimation.BriskDuration
                     }
-                ]
 
-                transitions: [
-                    Transition {
-                        from: "AlarmFrequency"
-                        to: "AlarmETA"
-                        SequentialAnimation {
-                            PropertyAnimation {
-                                target: alarmSubtitle
-                                property: "opacity"
-                                to: 0
-                                duration: UbuntuAnimation.BriskDuration
-                            }
-
-                            ScriptAction {
-                                script: alarmSubtitle.text = alarmUtils.get_time_to_next_alarm(model.date - localTime)
-                            }
-
-                            PropertyAnimation {
-                                target: alarmSubtitle
-                                property: "opacity"
-                                to: 1.0
-                                duration: UbuntuAnimation.BriskDuration
-                            }
-                        }
-                    },
-
-                    Transition {
-                        from: "AlarmETA"
-                        to: "AlarmFrequency"
-                        SequentialAnimation {
-                            PropertyAnimation {
-                                target: alarmSubtitle
-                                property: "opacity"
-                                to: 0
-                                duration: UbuntuAnimation.BriskDuration
-                            }
-
-                            ScriptAction {
-                                script: alarmSubtitle.text = alarmUtils.format_day_string(daysOfWeek, type)
-                            }
-
-                            PropertyAnimation {
-                                target: alarmSubtitle
-                                property: "opacity"
-                                to: 1.0
-                                duration: UbuntuAnimation.BriskDuration
-                            }
-                        }
+                    ScriptAction {
+                        script: alarmSubtitle.text = showAlarmFrequency ? alarmUtils.format_day_string(daysOfWeek, type)
+                                                                        : alarmUtils.get_time_to_next_alarm(model.date - localTime)
                     }
-                ]
+
+                    PropertyAnimation {
+                        target: alarmSubtitle
+                        property: "opacity"
+                        to: 1.0
+                        duration: UbuntuAnimation.BriskDuration
+                    }
+                }
             }
         }
     }
@@ -192,6 +163,10 @@ ListItem {
                 */
                 if (model.status === Alarm.Ready) {
                     alarmStatus.checked = model.enabled;
+
+                    if (!alarmStatus.checked && type === Alarm.Repeating) {
+                        alarmSubtitle.text = alarmUtils.format_day_string(daysOfWeek, type)
+                    }
                 }
             }
         }
