@@ -1,4 +1,16 @@
-file(GLOB COMPONENTS_QML_JS_FILES *.qml *.js)
+set(COMPONENTS_QML_JS_FILES
+    AnalogMode.qml
+    AnalogShadow.qml
+    Background.qml
+    Clock.qml
+    ClockCircle.qml
+    DigitalMode.qml
+    DigitalShadow.qml
+    EmptyState.qml
+    ExpandableListItem.qml
+    Shadow.qml
+    SubtitledListItem.qml
+)
 
 # make the files visible in the qtcreator tree
 add_custom_target(ubuntu-clock-app_components_QMlFiles ALL SOURCES ${COMPONENTS_QML_JS_FILES})
