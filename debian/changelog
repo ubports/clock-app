@@ -6,6 +6,7 @@ ubuntu-clock-app (3.5) UNRELEASED; urgency=medium
   
   [Nekhelesh Ramananthan]
   * Increase the height of times in the alarm screen (LP: #1365428)
+  * Fixed the confusing behavior of the confirmation button (LP: #1408015)
 
   [Victor Thompson]
   * Show all README files in QtCreator
