@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2014 Canonical Ltd
+ * Copyright (C) 2014-15 Canonical Ltd
  *
  * This file is part of Ubuntu Clock App
  *
@@ -37,8 +37,32 @@ Page {
     // Property to set the alarm sound model in the edit alarm page
     property var soundModel
 
+    /*
+     Properties to store the previously set alarm sound values to detect
+     if the user changed the alarm sound or not
+    */
+    property url oldAlarmSoundUrl
+    property string oldAlarmSoundName
+
+    Component.onCompleted: {
+        // Record the current alarm sound values (url, name)
+        oldAlarmSoundUrl = alarm.sound
+        oldAlarmSoundName = alarmSound.subText
+    }
+
     head.backAction: Action {
         iconName: "back"
+        onTriggered: {
+            // Restore alarm sound to old values (url, name) if the back button is pressed
+            alarm.sound = oldAlarmSoundUrl
+            alarmSound.subText = oldAlarmSoundName
+            pop()
+        }
+    }
+
+    head.actions: Action {
+        iconName: "tick"
+        enabled: oldAlarmSoundUrl !== alarm.sound
         onTriggered: {
             pop()
         }
