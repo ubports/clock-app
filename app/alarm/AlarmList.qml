@@ -35,7 +35,7 @@ UbuntuListView {
 
     Timer {
         id: alarmTimer
-        running: alarmListView.visible
+        running: alarmListView.visible && alarmModel.count !== 0
         interval: 5000
         repeat: true
         onTriggered: {
