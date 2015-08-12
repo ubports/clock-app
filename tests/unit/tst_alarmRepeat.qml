@@ -16,7 +16,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import QtQuick 2.0
+import QtQuick 2.4
 import QtTest 1.0
 import Ubuntu.Test 1.0
 import Ubuntu.Components 1.2
@@ -59,6 +59,7 @@ MainView {
 
         property var header
         property var backButton
+        property var saveButton
         property var repeater
         property var today: Qt.locale().standaloneDayName(
                                 new Date().getDay(), Locale.LongFormat)
@@ -69,6 +70,7 @@ MainView {
             spy.target = alarmRepeatPageLoader.item.Component
             header = findChild(mainView, "MainView_Header")
             backButton = findChild(header, "customBackButton")
+            saveButton = findChild(header, "saveAction_header_button")
             repeater = findChild(alarmRepeatPageLoader.item, "alarmDays")
         }
 
@@ -103,6 +105,21 @@ MainView {
 
                 compare(currentDaySwitch.checked, false, "All switches are not disabled by default")
             }
+        }
+
+        /*
+         Test to check if the save button is disabled when no changes have been made
+         and enabled when changes are made.
+        */
+        function test_saveButtonIsDisabledOnNoChanges() {
+            waitForRendering(alarmRepeatPageLoader.item);
+
+            tryCompare(_alarm, "daysOfWeek", 0, 3000, "Alarm days of weeks is not 0 by default")
+            compare(saveButton.enabled, false, "save header button is not disabled despite no alarm frequency change")
+
+            var randomDaySwitch = findChild(alarmRepeatPageLoader.item, "daySwitch"+3)
+            mouseClick(randomDaySwitch, centerOf(randomDaySwitch).x, centerOf(randomDaySwitch).y)
+            compare(saveButton.enabled, true, "save header button is not disabled despite no alarm frequency change")
         }
 
         /*

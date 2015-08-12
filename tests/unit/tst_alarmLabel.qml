@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2014 Canonical Ltd
+ * Copyright (C) 2014-2015 Canonical Ltd
  *
  * This file is part of Ubuntu Clock App
  *
@@ -44,12 +44,14 @@ MainView {
         property var header
         property var alarmLabel
         property var backButton
+        property var saveButton
 
         function initTestCase() {
             alarmLabelPage.visible = true
             header = findChild(mainView, "MainView_Header")
             alarmLabel = findChild(alarmLabelPage, "labelEntry")
             backButton = findChild(header, "customBackButton")
+            saveButton = findChild(header, "saveAction_header_button")
         }
 
         /*
@@ -60,29 +62,63 @@ MainView {
             compare(alarmLabel.focus, true, "Alarm Label does not have focus by default")
         }
 
-        function test_backButtonEnabled_data() {
+        function test_saveButtonEnabled_data() {
             return [
-                        {tag: "EmptyAlarmLabel",       string: "",           enableStatus: false},
-                        {tag: "BlankSpacesAlarmLabel", string: "   ",        enableStatus: false},
-                        {tag: "FilledAlarmLabel",      string: "Test Label", enableStatus: true}
+                        {tag: "SameAlarmLabel",        string: "Alarm",      enableStatus: false, error: "Save button is enabled despite no alarm name change!"},
+                        {tag: "EmptyAlarmLabel",       string: "",           enableStatus: false, error: "Save button is enabled despite alarm name being empty!" },
+                        {tag: "BlankSpacesAlarmLabel", string: "   ",        enableStatus: false, error: "Save button is enabled despite alarm name being empty!" },
+                        {tag: "FilledAlarmLabel",      string: "Test Label", enableStatus: true,  error: "Save button is disabled despite alarm name being different!" }
                     ]
         }
 
         /*
-         Test to check if the back header button is enabled/disabled correctly
+         Test to check if the save header button is enabled/disabled correctly
          for different alarm label scenarios.
         */
-        function test_backButtonEnabled(data) {
+        function test_saveButtonEnabled(data) {
             compare(alarmLabel.text, "Alarm", "Default alarm label is not Alarm")
-            compare(backButton.enabled, true, "Back header button is not enabled by default")
+            compare(saveButton.enabled, false, "save header button is not disabled despite no alarm name change")
 
             clearTextField(alarmLabel)
             typeString(data.string)
 
             compare(alarmLabel.text, data.string, "Alarm label is not what was type in the textfield")
-            compare(backButton.enabled, data.enableStatus, "Back Button enable status is not as expected")
+            compare(saveButton.enabled, data.enableStatus, data.error)
 
             alarmLabel.text = _alarm.message
+        }
+
+        /*
+         Test to check if the back button correctly restores the alarm name to
+         the old value when the back button is pressed
+        */
+
+        function test_backButtonRestoresValues() {
+            compare(alarmLabel.text, "Alarm", "Default alarm label is not Alarm")
+
+            clearTextField(alarmLabel)
+            typeString("New Alarm Label")
+            mouseClick(backButton, centerOf(backButton).x, centerOf(backButton).y)
+
+            compare(_alarm.message, "Alarm", "Alarm name is restored to the old value")
+
+            alarmLabel.text = _alarm.message
+        }
+
+        /*
+         Test to check if the save button correctly saves the new alarm name to
+         the alarm object when the save button is pressed
+        */
+        function test_saveButtonSavesNewValues() {
+            compare(alarmLabel.text, "Alarm", "Default alarm label is not Alarm")
+            compare(_alarm.message, "Alarm", "Default alarm message is not Alarm")
+
+            clearTextField(alarmLabel)
+            typeString("New Alarm Label")
+            pressHeaderButton(header, "saveAction")
+
+            compare(_alarm.message, "New Alarm Label", "Alarm message has not changed despite pressing the save button")
+            _alarm.reset()
         }
 
         /*

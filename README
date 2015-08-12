@@ -1,14 +1,19 @@
-# ReadMe - Ubuntu Clock App
+ReadMe - Ubuntu Clock App
+=========================
 
-Ubuntu Clock App is the official clock app for Ubuntu Touch. We follow an open source model where the code is available to anyone to branch and hack on. The ubuntu clock app follows a test driven development (TDD) where tests are written in parallel to feature implementation to help spot regressions easier.
+Ubuntu Clock App is the official clock app for Ubuntu Touch. We follow an open
+source model where the code is available to anyone to branch and hack on. The
+ubuntu clock app follows a test driven development (TDD) where tests are
+written in parallel to feature implementation to help spot regressions easier.
 
-## Useful Links
+Useful Links
+============
 
 Here are some useful links with regards to the Clock App development.
 
+* Home Page      - https://developer.ubuntu.com/en/community/core-apps/clock/
 * Clock App Wiki - https://wiki.ubuntu.com/Touch/CoreApps/Clock
 * Designs        - https://drive.google.com/#folders/0B55Gs35e-jxxNzRzOHVxbmNDbFU
-* Trello Board   - https://trello.com/b/Ie2rAS3W/core-apps-management
 * Project page   - https://launchpad.net/ubuntu-clock-app
 
 
