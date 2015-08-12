@@ -1,22 +1,29 @@
-# Running Autopilot tests
+Running Autopilot tests
+=======================
 
-Ubuntu Clock App follows a test driven development where autopilot tests are run before every merge into trunk. If you are submitting your bugfix/patch to the clock app, please follow the following steps below to ensure that all tests pass before proposing a merge request.
+Ubuntu Clock App follows a test driven development where autopilot tests are
+run before every merge into trunk. If you are submitting your bugfix/patch to
+the clock app, please follow the following steps below to ensure that all tests
+pass before proposing a merge request.
 
-If you are looking for more info about Autopilot or writing AP tests for the clock app, here are some useful links to help you:
+If you are looking for more info about Autopilot or writing AP tests for the
+clock app, here are some useful links to help you:
 
-- http://developer.ubuntu.com/start/quality
-- https://developer.ubuntu.com/api/autopilot/python/1.5.0/
+* http://developer.ubuntu.com/start/quality
+* https://developer.ubuntu.com/api/autopilot/python/1.5.0/
 
 For help and options on running tests, see:
 
-- https://developer.ubuntu.com/en/start/platform/guides/running-autopilot-tests/
+* https://developer.ubuntu.com/en/start/platform/guides/running-autopilot-tests/
 
-## Prerequisites
+Prerequisites
+=============
 
 Install the following autopilot packages required to run the tests,
-$ sudo apt-get install python3-autopilot libautopilot-qt ubuntu-ui-toolkit-autopilot python3-autopilot-vis
+    $ sudo apt-get install python3-autopilot libautopilot-qt ubuntu-ui-toolkit-autopilot python3-autopilot-vis
 
-## Running tests on the desktop
+Running tests on the desktop
+============================
 
 Using terminal:
 
@@ -45,7 +52,8 @@ Using terminal:
     $ autopilot3 vis
 
 
-## Running tests on device or emulator:
+Running tests on device or emulator
+===================================
 
 Using autopkg:
 
