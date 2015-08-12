@@ -122,11 +122,13 @@ int TimeZoneModel::updateInterval() const
 
 void TimeZoneModel::setUpdateInterval(int updateInterval)
 {
-    if (m_updateTimer.interval() != updateInterval) {
+    if (m_updateTimer.interval() != updateInterval)
+    {
         m_updateTimer.setInterval(updateInterval);
         emit updateIntervalChanged();
 
-        if (m_updateTimer.interval() > 0) {
+        if (m_updateTimer.interval() > 0)
+        {
             m_updateTimer.start();
         }
         else {
@@ -154,7 +156,8 @@ void TimeZoneModel::update()
 
 void TimeZoneModel::setStatus(TimeZoneModel::Status status)
 {
-    if(m_status == status) {
+    if(m_status == status)
+    {
         return;
     }
 

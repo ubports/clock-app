@@ -33,7 +33,8 @@ QList<QVariant> GenericTimeZoneModel::results() const
 
 void GenericTimeZoneModel::setResults(const QList<QVariant> &results)
 {
-    if(m_results == results) {
+    if(m_results == results)
+    {
         // Don't parse the results again if it is the same results being set again
         return;
     }
@@ -48,7 +49,8 @@ void GenericTimeZoneModel::setResults(const QList<QVariant> &results)
 
 void GenericTimeZoneModel::loadTimeZonesFromVariantList()
 {
-    if(m_results.isEmpty()) {
+    if(m_results.isEmpty())
+    {
         // Don't parse an empty results
         return;
     }
@@ -58,19 +60,21 @@ void GenericTimeZoneModel::loadTimeZonesFromVariantList()
 
     m_timeZones.clear();
 
-    TimeZoneData tz;
+    CityData tz;
 
     /*
      Cycle through the u1db query model results and transfer them to the
      TimeZone list.
     */
     StaticTimeZoneModel timeZonesData;
-    for (int i=0; i < m_results.size(); i++) {
+    for (int i=0; i < m_results.size(); i++)
+    {
         // Map query model results to timezone tz
         tz.cityId = m_results.value(i).toMap().value("city").toString();
 
-        TimeZoneModel::TimeZoneData trandslatedCityData = timeZonesData.getTranslatedCityName(tz.cityId);
-        if (trandslatedCityData.cityId == "") {
+        TimeZoneModel::CityData trandslatedCityData = timeZonesData.getTranslatedCityData(tz.cityId);
+        if (trandslatedCityData.cityId == "")
+        {
             tz.cityName = tz.cityId;
             tz.countryName = m_results.value(i).toMap().value("country").toString();
         }
@@ -84,7 +88,7 @@ void GenericTimeZoneModel::loadTimeZonesFromVariantList()
         m_timeZones.append(tz);
 
         // Clear tz before next iteration
-        tz = TimeZoneData();
+        tz = CityData();
     }
 
 

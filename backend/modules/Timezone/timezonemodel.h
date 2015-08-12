@@ -114,7 +114,7 @@ private:
 
 protected:
     // Create a simple container class to hold our information
-    struct TimeZoneData{
+    struct CityData {
         QString cityId;
         QString cityName;
         QString countryName;
@@ -122,7 +122,7 @@ protected:
     };
 
     // Keep a list of TimeZone objects, holding all our timeZones.
-    QList<TimeZoneData> m_timeZones;
+    QList<CityData> m_timeZones;
 
     // Private property to keep track of the status of the timezonemodel
     Status m_status;
