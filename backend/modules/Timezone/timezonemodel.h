@@ -49,7 +49,7 @@ class TimeZoneModel: public QAbstractListModel
 
 public:
     enum Roles {
-        RoleCityId = Qt::UserRole,
+        RoleCityId,
         RoleCityName,
         RoleCountryName,
         RoleTimeZoneId,
