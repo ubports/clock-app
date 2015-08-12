@@ -31,6 +31,7 @@ MainView {
 
     Alarm {
         id: _alarm
+        sound: "file:///usr/share/sounds/ubuntu/ringtones/Bliss.ogg"
     }
 
     FolderListModel {
@@ -55,14 +56,17 @@ MainView {
         when: windowShown
 
         property var repeater
+        property var saveButton
 
         function initTestCase() {
             alarmSoundPage.visible = true
             repeater = findChild(alarmSoundPage, "alarmSounds")
+            saveButton = findChild(header, "saveAction_header_button")
         }
 
         function cleanup() {
             alarmSoundPage.alarmSound.subText = "Bliss"
+            _alarm.sound = "file:///usr/share/sounds/ubuntu/ringtones/Bliss.ogg"
             for(var i=0; i<repeater.count; i++) {
                 var alarmSoundSwitch = findChild(alarmSoundPage, "soundStatus"+i)
                 var alarmSoundLabel = findChild(alarmSoundPage, "soundName"+i)
@@ -99,20 +103,19 @@ MainView {
          Test to check if only one alarm sound is checked at all times
         */
         function test_onlyOneAlarmSoundIsSelected() {
-
             // Click on some random alarm sounds
             var secondSwitch = findChild(alarmSoundPage, "soundStatus"+2)
             mouseClick(secondSwitch, centerOf(secondSwitch).x, centerOf(secondSwitch).y)
 
-            var fourthSwitch = findChild(alarmSoundPage, "soundStatus"+2)
-            mouseClick(fourthSwitch, centerOf(fourthSwitch.width).x, centerOf(fourthSwitch.height).y)
+            var fourthSwitch = findChild(alarmSoundPage, "soundStatus"+4)
+            mouseClick(fourthSwitch, centerOf(fourthSwitch).x, centerOf(fourthSwitch).y)
 
             // Check if only that alarm sound is check while the rest is disabled
             for(var i=0; i<repeater.count; i++) {
                 var alarmSoundSwitch = findChild(alarmSoundPage, "soundStatus"+i)
                 var alarmSoundLabel = findChild(alarmSoundPage, "soundName"+i)
 
-                if(i !== 2) {
+                if(i !== 4) {
                     compare(alarmSoundSwitch.checked, false, "More than one alarm sound selected")
                 }
             }
@@ -133,6 +136,24 @@ MainView {
                     break;
                 }
             }
+        }
+
+        /*
+         Test to check if the save button is disabled when no changes have been made
+         and enabled when changes are made.
+        */
+        function test_saveButtonIsDisabledOnNoChanges() {
+            compare(saveButton.enabled, false, "save header button is not disabled despite no alarm sound change")
+
+            // Change sound and check if save button is enabled
+            var fifthSwitch = findChild(alarmSoundPage, "soundStatus"+5)
+            mouseClick(fifthSwitch, centerOf(fifthSwitch).x, centerOf(fifthSwitch).y)
+            compare(saveButton.enabled, true, "save header button is not enabled despite alarm sound change")
+
+            // Set sound to old value and check if save button is disabled
+            var firstSwitch = findChild(alarmSoundPage, "soundStatus"+1)
+            mouseClick(firstSwitch, centerOf(firstSwitch).x, centerOf(firstSwitch).y)
+            compare(saveButton.enabled, false, "save header button is not disabled despite no alarm sound change")
         }
     }
 }

@@ -61,6 +61,8 @@ Page {
     }
 
     head.actions: Action {
+        id: saveAction
+        objectName: "saveAction"
         iconName: "tick"
         enabled: oldAlarmSoundUrl !== alarm.sound
         onTriggered: {
