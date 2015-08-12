@@ -90,29 +90,29 @@ void JsonTimeZoneModel::networkReplyFinished(QNetworkReply *reply)
      list.
     */
     foreach (const QVariant &entry, timezoneData.toList()) {
-        CityData tz;
+        CityData cityData;
 
         auto data = entry.toMap();
         auto admin1 = data.value("admin1").toString();
         auto admin2 = data.value("admin2").toString();
         auto country = data.value("country").toString();
 
-        tz.cityId = data.value("name").toString();
-        tz.cityName = tz.cityId;
+        cityData.cityId = data.value("name").toString();
+        cityData.cityName = cityData.cityId;
 
         if (!admin1.isEmpty() && !admin2.isEmpty()) {
-            tz.countryName = QString("%1, %2, %3").arg(admin2).arg(admin1).arg(country);
+            cityData.countryName = QString("%1, %2, %3").arg(admin2).arg(admin1).arg(country);
         } else if (!admin1.isEmpty()) {
-            tz.countryName = QString("%1, %2").arg(admin1).arg(country);
+            cityData.countryName = QString("%1, %2").arg(admin1).arg(country);
         } else if (!admin2.isEmpty()) {
-            tz.countryName = QString("%1, %2").arg(admin2).arg(country);
+            cityData.countryName = QString("%1, %2").arg(admin2).arg(country);
         } else {
-            tz.countryName = country;
+            cityData.countryName = country;
         }
 
-        tz.timeZone = QTimeZone(data.value("timezone").toString().toLatin1());
+        cityData.timeZone = QTimeZone(data.value("timezone").toString().toLatin1());
 
-        m_timeZones.append(tz);
+        m_timeZones.append(cityData);
     }
 
     setStatus(TimeZoneModel::Ready);

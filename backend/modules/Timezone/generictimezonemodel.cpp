@@ -60,7 +60,7 @@ void GenericTimeZoneModel::loadTimeZonesFromVariantList()
 
     m_timeZones.clear();
 
-    CityData tz;
+    CityData cityData;
 
     /*
      Cycle through the u1db query model results and transfer them to the
@@ -70,25 +70,25 @@ void GenericTimeZoneModel::loadTimeZonesFromVariantList()
     for (int i=0; i < m_results.size(); i++)
     {
         // Map query model results to timezone tz
-        tz.cityId = m_results.value(i).toMap().value("city").toString();
+        cityData.cityId = m_results.value(i).toMap().value("city").toString();
 
-        TimeZoneModel::CityData trandslatedCityData = timeZonesData.getTranslatedCityData(tz.cityId);
+        TimeZoneModel::CityData trandslatedCityData = timeZonesData.getTranslatedCityData(cityData.cityId);
         if (trandslatedCityData.cityId == "")
         {
-            tz.cityName = tz.cityId;
-            tz.countryName = m_results.value(i).toMap().value("country").toString();
+            cityData.cityName = cityData.cityId;
+            cityData.countryName = m_results.value(i).toMap().value("country").toString();
         }
         else
         {
-            tz.cityName = trandslatedCityData.cityName;
-            tz.countryName = trandslatedCityData.countryName;
+            cityData.cityName = trandslatedCityData.cityName;
+            cityData.countryName = trandslatedCityData.countryName;
         }
-        tz.timeZone = QTimeZone(m_results.value(i).toMap().value("timezone").toString().toLatin1());
+        cityData.timeZone = QTimeZone(m_results.value(i).toMap().value("timezone").toString().toLatin1());
 
-        m_timeZones.append(tz);
+        m_timeZones.append(cityData);
 
         // Clear tz before next iteration
-        tz = CityData();
+        cityData = CityData();
     }
 
 

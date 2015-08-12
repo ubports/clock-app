@@ -30,12 +30,12 @@ StaticTimeZoneModel::StaticTimeZoneModel(QObject *parent) :
 }
 
 void StaticTimeZoneModel::addCity(const QString &cityId, const QString &cityName, const QString &timezone, const QString &countryName) {
-    CityData tz;
-    tz.cityId = cityId;
-    tz.cityName = cityName;
-    tz.countryName = countryName;
-    tz.timeZone = QTimeZone(timezone.toLatin1());
-    m_timeZones.append(tz);
+    CityData cityData;
+    cityData.cityId = cityId;
+    cityData.cityName = cityName;
+    cityData.countryName = countryName;
+    cityData.timeZone = QTimeZone(timezone.toLatin1());
+    m_timeZones.append(cityData);
 }
 
 void StaticTimeZoneModel::loadDefaultCityList()
