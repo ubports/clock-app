@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2014 Canonical Ltd
+ * Copyright (C) 2014-2015 Canonical Ltd
  *
  * This file is part of Ubuntu Clock App
  *
@@ -24,6 +24,7 @@ UbuntuListView {
     objectName: "alarmListView"
 
     property var localTime
+    property bool showAlarmFrequency: true
 
     signal clearSelection()
     signal closeSelection()
@@ -31,6 +32,16 @@ UbuntuListView {
 
     clip: true
     anchors.fill: parent
+
+    Timer {
+        id: alarmTimer
+        running: alarmListView.visible && alarmModel.count !== 0
+        interval: 5000
+        repeat: true
+        onTriggered: {
+            showAlarmFrequency = !showAlarmFrequency
+        }
+    }
 
     displaced: Transition {
         UbuntuNumberAnimation { property: "y"; duration: UbuntuAnimation.BriskDuration }
@@ -41,6 +52,7 @@ UbuntuListView {
         objectName: "alarm" + index
 
         localTime: alarmListView.localTime
+        showAlarmFrequency: alarmListView.showAlarmFrequency
 
         leadingActions: ListItemActions {
             actions: [
