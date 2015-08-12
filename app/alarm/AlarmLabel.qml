@@ -46,7 +46,7 @@ Page {
         id: saveAction
         objectName: "saveAction"
         iconName: "tick"
-        enabled: oldAlarmLabel !== _labelEntry.text.trim() && !!_labelEntry.text.trim()
+        enabled: oldAlarmLabel !== _labelEntry.text.trim() && _labelEntry.text.trim()
         onTriggered: {
             alarm.message = _labelEntry.text.trim()
             pop()
