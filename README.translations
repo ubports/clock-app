@@ -1,4 +1,5 @@
-# Updating translations
+Updating translations
+=====================
 
 Translations for the Clock app happen in [Launchpad Translations] and
 are automatically committed daily on the trunk branch in the po/ folder.
@@ -21,7 +22,8 @@ messages in the code, make sure to follow these steps:
 
 And that's it, once the branch lands Launchpad should take care of all the rest!
 
-# Behind the scenes
+Behind the scenes
+=================
 
 Behind the scenes, whenever the po/*.pot file (also known as translations template)
 is committed to trunk Launchpad reads it and updates the translatable strings
