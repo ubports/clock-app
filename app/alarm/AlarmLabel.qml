@@ -44,6 +44,7 @@ Page {
 
     head.actions: Action {
         id: saveAction
+        objectName: "saveAction"
         iconName: "tick"
         enabled: oldAlarmLabel !== _labelEntry.text.trim() && !!_labelEntry.text.trim()
         onTriggered: {
