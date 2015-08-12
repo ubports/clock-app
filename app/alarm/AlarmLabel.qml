@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2014 Canonical Ltd
+ * Copyright (C) 2014-2015 Canonical Ltd
  *
  * This file is part of Ubuntu Clock App
  *
@@ -26,6 +26,9 @@ Page {
     // Property to set the alarm label in the edit alarm page
     property var alarm
 
+    // Property to store the old alarm label to detect if user changed it or not
+    property string oldAlarmLabel: alarm.message
+
     visible: false
     title: i18n.tr("Label")
 
@@ -33,7 +36,18 @@ Page {
         id: backAction
         iconName: "back"
         onTriggered: {
-            alarm.message = _labelEntry.text
+            // Restore old alarm label if user presses the back button
+            alarm.message = oldAlarmLabel
+            pop()
+        }
+    }
+
+    head.actions: Action {
+        id: saveAction
+        iconName: "tick"
+        enabled: oldAlarmLabel !== _labelEntry.text.trim() && !!_labelEntry.text.trim()
+        onTriggered: {
+            alarm.message = _labelEntry.text.trim()
             pop()
         }
     }
@@ -63,10 +77,6 @@ Page {
             text: alarm.message
             width: parent.width
             inputMethodHints: Qt.ImhNoPredictiveText
-
-            onTextChanged: {
-                backAction.enabled = !!text.trim()
-            }
         }
     }
 }
