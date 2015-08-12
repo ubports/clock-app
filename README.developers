@@ -1,31 +1,38 @@
-# Building and running on Utopic Desktop (14.10)
+Building and running on Vivid Desktop (15.04)
+=============================================
 
-Building and running the Ubuntu Clock App is quite simple. You will require Ubuntu 14.10 and higher to run on the desktop.
+Building and running the Ubuntu Clock App is quite simple. You will require
+Ubuntu 15.04 and higher to run on the desktop.
 
-```
-   $ bzr branch lp:ubuntu-clock-app/reboot branch-name
+   $ bzr branch lp:ubuntu-clock-app branch-name
    $ cd branch-name
    $ mkdir builddir && cd builddir
    $ cmake .. && cmake --build .
    $ qmlscene ../app/ubuntu-clock-app.qml -I backend/
-```
 
-# Submitting a patch upstream
+Submitting a patch upstream
+===========================
 
-If you want to submit a bug fix you can do so by branching the code as shown above, implementing the fixes and running to see if it fixed the issue. We also request that you run the Autopilot and Unit tests to check if anything regressed due to the bug fix.
+If you want to submit a bug fix you can do so by branching the code as shown
+above, implementing the fixes and running to see if it fixed the issue. We also
+request that you run the Autopilot and Unit tests to check if anything
+regressed due to the bug fix.
 
-If the tests fail, you will have to fix them before your bug fix can be approved and merged into trunk. If the tests pass then commit and push your code by,
+If the tests fail, you will have to fix them before your bug fix can be
+approved and merged into trunk. If the tests pass then commit and push your
+code by,
 
-```
    $ bzr commit -m "Implemented bug fix" --fixes lp:bug-number
    $ bzr push lp:~launchpadid/ubuntu-clock-app/branch-name
-```
 
-# Running Tests
+Running Tests
+=============
 
-Please check README.autopilot and README.unittest on how to run the tests. They are quite explanatory and will help you get started.
+Please check README.autopilot and README.unittest on how to run the tests.
+They are quite explanatory and will help you get started.
 
-# Code Style
+Code Style
+==========
 
 We are trying to use a common code style throughout the code base to maintain
 uniformity and improve code clarity. Listed below are the code styles guides
@@ -39,7 +46,8 @@ Note: In the QML code convention, ignore the Javascript code section guidelines.
 So the sections that should be taken into account in the QML conventions are QML 
 Object Declarations, Grouped Properties and Lists.
 
-# Debugging
+Debugging
+=========
  
 GDB allows one to see what is going on `inside' another program while it executes, 
 or what another program was doing at the moment it crashed. It is a pretty niffty tool which allows you 
