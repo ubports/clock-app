@@ -18,6 +18,7 @@
 
 import QtQuick 2.4
 import Ubuntu.Components 1.2
+import QtSystemInfo 5.0
 import "upstreamcomponents"
 import "alarm"
 import "clock"
@@ -51,6 +52,10 @@ PageWithBottomEdge {
 
     AlarmUtils {
         id: alarmUtils
+    }
+
+    ScreenSaver {
+        screenSaverEnabled: !stopwatchPage.running
     }
 
     VisualItemModel {
