@@ -83,7 +83,7 @@ Page {
         Action {
             id: saveAction
             objectName: "saveAction"
-            iconName: "tick"
+            iconName: "ok"
             enabled: oldAlarmDaysOfWeek !== alarm.daysOfWeek
             onTriggered: {
                 pop()
