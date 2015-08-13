@@ -298,7 +298,7 @@ Page {
             objectName: "alarmSound"
 
             // Default Alarm Sound for new alarms
-            property string _soundName: "Suru arpeggio"
+            property string _soundName: "Alarm clock"
 
             text: i18n.tr("Sound")
             onClicked: pageStack.push(Qt.resolvedUrl("AlarmSound.qml"), {
