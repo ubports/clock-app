@@ -7,16 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2015-08-07 13:27+0200\n"
-"PO-Revision-Date: 2015-04-03 11:03+0000\n"
-"Last-Translator: Simeon <Unknown>\n"
+"POT-Creation-Date: 2015-08-11 22:38+0200\n"
+"PO-Revision-Date: 2015-08-12 19:12+0000\n"
+"Last-Translator: Phillip Sz <Unknown>\n"
 "Language-Team: German <de@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2015-08-10 06:26+0000\n"
-"X-Generator: Launchpad (build 17656)\n"
+"X-Launchpad-Export-Date: 2015-08-13 05:44+0000\n"
+"X-Generator: Launchpad (build 17686)\n"
 
 #: ../app/alarm/AlarmLabel.qml:30 ../app/alarm/AlarmLabel.qml:56
 #: ../app/alarm/EditAlarmPage.qml:290
@@ -66,7 +66,7 @@ msgstr "Wiederholen"
 msgid "Settings"
 msgstr "Einstellungen"
 
-#. TRANSLATORS: Silence after
+#. TRANSLATORS: Alarm stops after
 #. TRANSLATORS: Snooze for
 #: ../app/alarm/AlarmSettingsPage.qml:54 ../app/alarm/AlarmSettingsPage.qml:55
 #: ../app/alarm/AlarmSettingsPage.qml:56 ../app/alarm/AlarmSettingsPage.qml:57
@@ -85,8 +85,8 @@ msgid "Alarm volume"
 msgstr "Weckerlautstärke"
 
 #: ../app/alarm/AlarmSettingsPage.qml:125
-msgid "Silence after"
-msgstr "Stumm nach"
+msgid "Alarm stops after"
+msgstr "Alarm stoppt nach"
 
 #: ../app/alarm/AlarmSettingsPage.qml:163
 msgid "Snooze for"

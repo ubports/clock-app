@@ -50,7 +50,7 @@ Page {
         Component.onCompleted: initialise()
 
         function initialise() {
-            // TRANSLATORS: Silence after
+            // TRANSLATORS: Alarm stops after
             durationModel.append({ "duration": 10, "text": i18n.tr("%1 minute", "%1 minutes", 10).arg(10) })
             durationModel.append({ "duration": 20, "text": i18n.tr("%1 minute", "%1 minutes", 20).arg(20) })
             durationModel.append({ "duration": 30, "text": i18n.tr("%1 minute", "%1 minutes", 30).arg(30) })
@@ -122,7 +122,7 @@ Page {
                 id: _alarmDuration
 
                 listViewHeight: units.gu(28)
-                text: i18n.tr("Silence after")
+                text: i18n.tr("Alarm stops after")
                 subText: i18n.tr("%1 minute", "%1 minutes", alarmSettings.duration).arg(alarmSettings.duration)
 
                 model: durationModel

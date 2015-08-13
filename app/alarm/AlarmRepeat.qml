@@ -29,8 +29,30 @@ Page {
     // Property to hold the alarm utils functions passed from edit alarm page
     property var alarmUtils
 
+    // Property to store the previously set alarm frequency to detect user changes
+    property int oldAlarmDaysOfWeek
+
     visible: false
     title: i18n.tr("Repeat")
+
+    // Function to detect if alarm is OneTime or Repeating
+    function detectAlarmType() {
+        if (alarm.daysOfWeek > 0) {
+            alarm.type = Alarm.Repeating
+        } else {
+            alarm.type = Alarm.OneTime
+        }
+    }
+
+    head.backAction: Action {
+        iconName: "back"
+        onTriggered: {
+            // Restore alarm frequency and type if user presses the back button
+            alarm.daysOfWeek = oldAlarmDaysOfWeek
+            detectAlarmType()
+            pop()
+        }
+    }
 
     head.actions: [
         Action {
@@ -56,6 +78,16 @@ Page {
                     }
                 }
             }
+        },
+
+        Action {
+            id: saveAction
+            objectName: "saveAction"
+            iconName: "ok"
+            enabled: oldAlarmDaysOfWeek !== alarm.daysOfWeek
+            onTriggered: {
+                pop()
+            }
         }
     ]
 
@@ -69,6 +101,9 @@ Page {
     Component.onCompleted: {
         if (alarm.type === Alarm.OneTime)
             alarm.daysOfWeek = 0
+
+        // Record the current alarm repeat values (frequency)
+        oldAlarmDaysOfWeek = alarm.daysOfWeek
     }
 
     Component.onDestruction: {
@@ -147,11 +182,7 @@ Page {
                             alarm.daysOfWeek &= ~flag
                         }
 
-                        if (alarm.daysOfWeek > 0) {
-                            alarm.type = Alarm.Repeating
-                        } else {
-                            alarm.type = Alarm.OneTime
-                        }
+                        detectAlarmType()
                     }
                 }
 
