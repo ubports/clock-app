@@ -207,7 +207,7 @@ Page {
                   When folder model is completely loaded, proceed to perform
                   the following operations,
 
-                  if new alarm, then set the sound name as "Suru arpeggio" and
+                  if new alarm, then set the sound name as "Alarm clock" and
                   retrieve the sound path from the folder model to assign to
                   the alarm model sound property.
 
@@ -298,7 +298,7 @@ Page {
             objectName: "alarmSound"
 
             // Default Alarm Sound for new alarms
-            property string _soundName: "Suru arpeggio"
+            property string _soundName: "Alarm clock"
 
             text: i18n.tr("Sound")
             onClicked: pageStack.push(Qt.resolvedUrl("AlarmSound.qml"), {
