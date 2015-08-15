@@ -43,7 +43,7 @@ Item {
     signal flickDown()
 
     Component.onCompleted: {
-        console.log("[LOG]: Stopwatch Page Loaded "+ startTime.toString() + ": " + oldDiff.toString())
+        console.log("[LOG]: Stopwatch Page Loaded")
     }
 
     function start() {
