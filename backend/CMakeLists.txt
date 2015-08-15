@@ -34,6 +34,12 @@ set(
     modules/GeoLocation/geolocation.cpp
 )
 
+set(
+    laphistory_SRCS
+    modules/LapHistory/backend.cpp
+    modules/LapHistory/history.cpp
+)
+
 add_library(timezone MODULE
     ${timezone_SRCS}
 )
@@ -49,6 +55,11 @@ add_library(alarmsettings MODULE
 add_library(geolocation MODULE
     ${geolocation_SRCS}
 )
+
+add_library(laphistory MODULE
+    ${laphistory_SRCS}
+)
+
 
 set_target_properties(timezone PROPERTIES
     LIBRARY_OUTPUT_DIRECTORY Timezone
@@ -66,10 +77,15 @@ set_target_properties(geolocation PROPERTIES
     LIBRARY_OUTPUT_DIRECTORY GeoLocation
 )
 
+set_target_properties(laphistory PROPERTIES
+    LIBRARY_OUTPUT_DIRECTORY LapHistory
+)
+
 qt5_use_modules(datetime Gui Qml Quick)
 qt5_use_modules(timezone Gui Qml Quick)
 qt5_use_modules(alarmsettings Gui Qml Quick DBus)
 qt5_use_modules(geolocation Gui Qml Quick)
+qt5_use_modules(laphistory Qml)
 
 # Copy qmldir file to build dir for running in QtCreator
 add_custom_target(timezone-qmldir ALL
@@ -92,6 +108,12 @@ add_custom_target(geolocation-qmldir ALL
     DEPENDS ${QMLFILES}
 )
 
+add_custom_target(laphistory-qmldir ALL
+    COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_CURRENT_SOURCE_DIR}/modules/LapHistory/qmldir ${CMAKE_CURRENT_BINARY_DIR}/LapHistory
+    DEPENDS ${QMLFILES}
+)
+
+
 # Install plugin file
 install(TARGETS timezone DESTINATION ${MODULE_PATH}/Timezone/)
 install(FILES   modules/Timezone/qmldir DESTINATION ${MODULE_PATH}/Timezone/)
@@ -104,3 +126,6 @@ install(FILES   modules/Alarm/Settings/qmldir DESTINATION ${MODULE_PATH}/Alarm/S
 
 install(TARGETS geolocation DESTINATION ${MODULE_PATH}/GeoLocation/)
 install(FILES   modules/GeoLocation/qmldir DESTINATION ${MODULE_PATH}/GeoLocation/)
+
+install(TARGETS laphistory DESTINATION ${MODULE_PATH}/LapHistory/)
+install(FILES   modules/LapHistory/qmldir DESTINATION ${MODULE_PATH}/LapHistory/)
