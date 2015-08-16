@@ -18,17 +18,10 @@
 
 import QtQuick 2.4
 import Ubuntu.Components 1.2
-import Qt.labs.settings 1.0
 
 Item {
     id: _stopwatchPage
     objectName: "stopwatchPage"
-
-    Settings {
-        property alias stopwatchStartTime: _stopwatchPage.startTime
-        property alias stopwatchRunning: _stopwatchPage.running
-        property alias stopwatchOldDiff: _stopwatchPage.oldDiff
-    }
 
     property date startTime: new Date()
     property date snapshot: startTime
