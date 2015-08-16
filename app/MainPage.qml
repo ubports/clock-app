@@ -60,6 +60,7 @@ PageWithBottomEdge {
     }
 
     Settings {
+        id: stopwatchState
         property alias stopwatchStartTime: stopwatchPage.startTime
         property alias stopwatchRunning: stopwatchPage.running
         property alias stopwatchOldDiff: stopwatchPage.oldDiff
@@ -124,6 +125,12 @@ PageWithBottomEdge {
 
     ListView {
         id: listview
+
+        // Show the stopwatch page on app startup if it is running
+        Component.onCompleted: {
+            if (stopwatchState.stopwatchRunning)
+                positionViewAtIndex(1, ListView.SnapPosition)
+        }
 
         anchors.fill: parent
         model: navigationModel
