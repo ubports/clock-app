@@ -70,8 +70,8 @@ QHash<int, QByteArray> LapHistory::roleNames() const
 void LapHistory::addLap(int timeDiff)
 {
     QVariantList laps = m_settings.value("laps").toList();
-    beginInsertRows(QModelIndex(), laps.count(), laps.count());
-    laps.append(timeDiff);
+    beginInsertRows(QModelIndex(), 0, 0);
+    laps.prepend(timeDiff);
     m_settings.setValue("laps", laps);
     endInsertRows();
 }

@@ -71,17 +71,6 @@ Item {
         laphistory.clear()
     }
 
-    ListModel {
-        id: lapsModel
-        function addLap(totalTime) {
-            //if (lapsModel.count === 0) {
-            //    append({"laptime": totalTime, "totaltime": totalTime})
-            //} else {
-            //    insert(0, {"laptime": totalTime - lapsModel.get(0).totaltime, "totaltime": totalTime})
-            //}
-        }
-    }
-
     Timer {
         id: refreshTimer
         interval: 45
