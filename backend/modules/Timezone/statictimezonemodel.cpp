@@ -35,7 +35,7 @@ void StaticTimeZoneModel::addCity(const QString &cityId, const QString &cityName
     cityData.cityName = cityName;
     cityData.countryName = countryName;
     cityData.timeZone = QTimeZone(timezone.toLatin1());
-    m_timeZones.append(cityData);
+    m_citiesData.append(cityData);
 }
 
 void StaticTimeZoneModel::loadDefaultCityList()
@@ -43,7 +43,7 @@ void StaticTimeZoneModel::loadDefaultCityList()
     // Let QML know model is being reset and rebuilt
     beginResetModel();
 
-    m_timeZones.clear();
+    m_citiesData.clear();
 
     addCity("Abidjan", _("Abidjan"), "Africa/Abidjan", _("Ivory Coast"));
     addCity("Accra", _("Accra"), "Africa/Accra", _("Ghana"));
@@ -352,7 +352,7 @@ void StaticTimeZoneModel::loadDefaultCityList()
 
 TimeZoneModel::CityData StaticTimeZoneModel::getTranslatedCityData(const QString &cityId)
 {
-   for (QList<TimeZoneModel::CityData>::const_iterator tz_iter = m_timeZones.begin(); tz_iter != m_timeZones.end(); ++tz_iter)
+   for (QList<TimeZoneModel::CityData>::const_iterator tz_iter = m_citiesData.begin(); tz_iter != m_citiesData.end(); ++tz_iter)
    {
        if (QString::compare(tz_iter->cityId, cityId) == 0)
        {

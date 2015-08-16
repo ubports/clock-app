@@ -32,7 +32,7 @@ public:
     StaticTimeZoneModel(QObject *parent = 0);
 
     // Function to get translated translated city and country name
-    Q_INVOKABLE TimeZoneModel::CityData getTranslatedCityData(const QString &cityId);
+    TimeZoneModel::CityData getTranslatedCityData(const QString &cityId);
 
 private:
     // Function to define the default city list

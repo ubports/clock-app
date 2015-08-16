@@ -46,7 +46,7 @@ int TimeZoneModel::rowCount(const QModelIndex &parent) const
     */
     Q_UNUSED(parent)
 
-    return m_timeZones.count();
+    return m_citiesData.count();
 }
 
 /*
@@ -69,17 +69,17 @@ QVariant TimeZoneModel::data(const QModelIndex &index, int role) const
 
     switch (role) {
     case RoleCityId:
-        return m_timeZones.at(row).cityId;
+        return m_citiesData.at(row).cityId;
     case RoleCityName:
-        return m_timeZones.at(row).cityName;
+        return m_citiesData.at(row).cityName;
     case RoleCountryName:
-        return m_timeZones.at(row).countryName;
+        return m_citiesData.at(row).countryName;
     case RoleTimeZoneId:
-        return m_timeZones.at(row).timeZone.id();
+        return m_citiesData.at(row).timeZone.id();
     }
 
     QDateTime currentDateTime = QDateTime::currentDateTime();
-    QDateTime worldCityTime(currentDateTime.toTimeZone(m_timeZones.at(row).timeZone));
+    QDateTime worldCityTime(currentDateTime.toTimeZone(m_citiesData.at(row).timeZone));
 
     switch (role) {
     case RoleTimeString:
@@ -148,7 +148,7 @@ void TimeZoneModel::update()
     */
 
     QModelIndex startIndex = index(0);
-    QModelIndex endIndex = index(m_timeZones.count() - 1);
+    QModelIndex endIndex = index(m_citiesData.count() - 1);
     QVector<int> roles;
     roles << RoleTimeString << RoleTimeTo;
     emit dataChanged(startIndex, endIndex, roles);

@@ -122,7 +122,7 @@ protected:
     };
 
     // Keep a list of TimeZone objects, holding all our timeZones.
-    QList<CityData> m_timeZones;
+    QList<CityData> m_citiesData;
 
     // Private property to keep track of the status of the timezonemodel
     Status m_status;

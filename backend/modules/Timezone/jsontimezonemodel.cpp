@@ -83,7 +83,7 @@ void JsonTimeZoneModel::networkReplyFinished(QNetworkReply *reply)
     // Let QML know model is being reset and rebuilt
     beginResetModel();
 
-    m_timeZones.clear();
+    m_citiesData.clear();
 
     /*
      Cycle through each QVariant object and transfer them to the TimeZone
@@ -112,7 +112,7 @@ void JsonTimeZoneModel::networkReplyFinished(QNetworkReply *reply)
 
         cityData.timeZone = QTimeZone(data.value("timezone").toString().toLatin1());
 
-        m_timeZones.append(cityData);
+        m_citiesData.append(cityData);
     }
 
     setStatus(TimeZoneModel::Ready);

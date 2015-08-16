@@ -58,7 +58,7 @@ void GenericTimeZoneModel::loadTimeZonesFromVariantList()
     // Let QML know model is being reset and rebuilt
     beginResetModel();
 
-    m_timeZones.clear();
+    m_citiesData.clear();
 
     CityData cityData;
 
@@ -85,7 +85,7 @@ void GenericTimeZoneModel::loadTimeZonesFromVariantList()
         }
         cityData.timeZone = QTimeZone(m_results.value(i).toMap().value("timezone").toString().toLatin1());
 
-        m_timeZones.append(cityData);
+        m_citiesData.append(cityData);
 
         // Clear tz before next iteration
         cityData = CityData();
