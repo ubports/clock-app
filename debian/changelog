@@ -2,9 +2,12 @@ ubuntu-clock-app (3.5) UNRELEASED; urgency=medium
 
   [Bartosz Kosiorek]
   * Disable automatic translation and update README.translations
+  * Silent warning which is displayed during clock run
   * Change "Silence after" to "Alarm stops afer" according to UX design
   * Fix default alarm time issue (LP: #1484926)
-  
+  * Translate city and country names after language switch (LP: #1477492)
+  * Fix issue when unable to add city/country with apostrophes (LP: #1473074)  
+
   [Nekhelesh Ramananthan]
   * Increase the height of times in the alarm screen (LP: #1365428)
   * Fixed the confusing behavior of the confirmation button (LP: #1408015)
@@ -13,9 +16,9 @@ ubuntu-clock-app (3.5) UNRELEASED; urgency=medium
   * Changed default alarm sound (LP: #1354370)
 
   [Victor Thompson]
-  * Show all README files in QtCreator
+  * Show all README files in QtCreator 
 
- -- Bartosz Kosiorek <gang65@poczta.onet.pl>  Fri, 24 Jul 2015 18:05:38 +0200
+ -- Bartosz Kosiorek <gang65@poczta.onet.pl>  Thu, 13 Aug 2015 00:03:45 +0200
 
 ubuntu-clock-app (3.4) vivid; urgency=medium
 

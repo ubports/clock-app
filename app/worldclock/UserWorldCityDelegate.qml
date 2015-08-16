@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2014 Canonical Ltd
+ * Copyright (C) 2014-2015 Canonical Ltd
  *
  * This file is part of Ubuntu Clock App
  *
@@ -52,7 +52,7 @@ ListItemWithActions {
             }
 
             Label {
-                text: model.city
+                text: model.cityName
                 objectName: "userCityNameText"
                 width: parent.width
                 elide: Text.ElideRight
@@ -60,7 +60,7 @@ ListItemWithActions {
             }
 
             Label {
-                text: model.country
+                text: model.countryName
                 objectName: "userCountryNameText"
                 fontSize: "xx-small"
                 width: parent.width

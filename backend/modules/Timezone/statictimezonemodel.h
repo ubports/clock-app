@@ -31,12 +31,15 @@ class StaticTimeZoneModel : public TimeZoneModel
 public:
     StaticTimeZoneModel(QObject *parent = 0);
 
+    // Function to get translated translated city and country name
+    TimeZoneModel::CityData getTranslatedCityData(const QString &cityId);
+
 private:
     // Function to define the default city list
     void loadDefaultCityList();
 
     // Function to append city list item into m_timeZones object
-    void addCity(const QString &city, const QString &timezone, const QString &country);
+    void addCity(const QString &cityId, const QString &cityName, const QString &timezone, const QString &countryName);
 };
 
 #endif // STATICTIMEZONEMODEL_H
