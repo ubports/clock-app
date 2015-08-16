@@ -22,12 +22,13 @@
 
 #include <QStandardPaths>
 #include <iostream>
+#include <QDebug>
 
 LapHistory::LapHistory(QObject *parent) :
     QAbstractListModel(parent),
     m_settings(QStandardPaths::standardLocations(QStandardPaths::ConfigLocation).first() + "/com.ubuntu.clock/com.ubuntu.clock.stopwatch.conf", QSettings::IniFormat)
 {
-    std::cout << "loading laps" << m_settings.fileName().toStdString() << std::endl;
+    std::cout << "Loading laps" << m_settings.fileName().toStdString() << std::endl;
 }
 
 int LapHistory::rowCount(const QModelIndex &parent) const
@@ -43,16 +44,15 @@ int LapHistory::count() const
 QVariant LapHistory::data(const QModelIndex &index, int role) const
 {
     switch (role) {
-    case RoleTime:
+    case RoleTotalTime:
         return m_settings.value("laps").toList().at(index.row());
     case RoleDiffToPrevious: {
-        int previous = index.row() == 0 ? 0 : data(this->index(index.row() - 1), RoleTime).toInt();
+        int previous = 0;
+        if(index.row() != m_settings.value("laps").toList().count() - 1)
+        {
+            previous = data(this->index(index.row() + 1), RoleTotalTime).toInt();
+        }
         return m_settings.value("laps").toList().at(index.row()).toInt() - previous;
-    }
-    case RoleDelta: {
-        int previousTimeDiff = index.row() == 0 ? 0 : data(this->index(index.row() - 1), RoleDiffToPrevious).toInt();
-        int thisTimeDiff = data(this->index(index.row()), RoleDiffToPrevious).toInt();
-        return thisTimeDiff - previousTimeDiff;
     }
     }
     return QVariant();
@@ -61,9 +61,8 @@ QVariant LapHistory::data(const QModelIndex &index, int role) const
 QHash<int, QByteArray> LapHistory::roleNames() const
 {
     QHash< int, QByteArray> roles;
-    roles.insert(RoleTime, "totaltime");
+    roles.insert(RoleTotalTime, "totaltime");
     roles.insert(RoleDiffToPrevious, "laptime");
-    roles.insert(RoleDelta, "delta");
     return roles;
 }
 

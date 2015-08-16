@@ -29,9 +29,8 @@ class LapHistory : public QAbstractListModel
     Q_OBJECT
 public:
     enum Role {
-        RoleTime,
-        RoleDiffToPrevious,
-        RoleDelta
+        RoleTotalTime,
+        RoleDiffToPrevious
     };
 
     explicit LapHistory(QObject *parent = 0);
