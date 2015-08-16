@@ -72,16 +72,16 @@ void GenericTimeZoneModel::loadTimeZonesFromVariantList()
         // Map query model results to timezone tz
         cityData.cityId = m_results.value(i).toMap().value("city").toString();
 
-        TimeZoneModel::CityData trandslatedCityData = timeZonesData.getTranslatedCityData(cityData.cityId);
-        if (trandslatedCityData.cityId == "")
+        TimeZoneModel::CityData translatedCityData = timeZonesData.getTranslatedCityData(cityData.cityId);
+        if (translatedCityData.cityId == "")
         {
             cityData.cityName = cityData.cityId;
             cityData.countryName = m_results.value(i).toMap().value("country").toString();
         }
         else
         {
-            cityData.cityName = trandslatedCityData.cityName;
-            cityData.countryName = trandslatedCityData.countryName;
+            cityData.cityName = translatedCityData.cityName;
+            cityData.countryName = translatedCityData.countryName;
         }
         cityData.timeZone = QTimeZone(m_results.value(i).toMap().value("timezone").toString().toLatin1());
 

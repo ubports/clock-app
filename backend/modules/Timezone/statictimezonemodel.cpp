@@ -360,10 +360,10 @@ TimeZoneModel::CityData StaticTimeZoneModel::getTranslatedCityData(const QString
        }       
    }
 
-   TimeZoneModel::CityData emptyTimeZone;
-   emptyTimeZone.cityId = "";
-   emptyTimeZone.cityName = "";
-   emptyTimeZone.countryName = "";
-   return emptyTimeZone;
+   TimeZoneModel::CityData emptyCityData;
+   emptyCityData.cityId = "";
+   emptyCityData.cityName = "";
+   emptyCityData.countryName = "";
+   return emptyCityData;
 }
 
