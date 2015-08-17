@@ -77,35 +77,11 @@ PageWithBottomEdge {
     HeaderNavigation {
         id: headerRow
 
-        function hide() {
-            hideAnimation.start()
-        }
-
-        function show() {
-            showAnimation.start()
-        }
-
         anchors {
             top: parent.top
             left: parent.left
             right: parent.right
             topMargin: 0
-        }
-
-        PropertyAnimation {
-            id: hideAnimation
-            target: headerRow
-            property: "anchors.topMargin"
-            to: -headerRow.height
-            duration: UbuntuAnimation.BriskDuration
-        }
-
-        PropertyAnimation {
-            id: showAnimation
-            target: headerRow
-            property: "anchors.topMargin"
-            to: 0
-            duration: UbuntuAnimation.BriskDuration
         }
     }
 
