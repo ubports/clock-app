@@ -250,7 +250,6 @@ Item {
 
         UserWorldCityList {
             id: worldCityColumn
-            objectName: "worldCityColumn"
             opacity: date.opacity
 
             footer: AddWorldCityButton {
