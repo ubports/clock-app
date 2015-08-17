@@ -65,23 +65,17 @@ PageWithBottomEdge {
             clockTime: _mainPage.clockTime
             width: clockApp.width
             height: listview.height
-            onFlickUp: headerRow.hide()
-            onFlickDown: headerRow.show()
         }
 
         StopwatchPage {
             id: stopwatchPage
             width: clockApp.width
             height: listview.height
-            onFlickUp: headerRow.hide()
-            onFlickDown: headerRow.show()
         }
     }
 
     HeaderNavigation {
         id: headerRow
-
-        z: listview.z + 1000
 
         function hide() {
             hideAnimation.start()
@@ -118,7 +112,13 @@ PageWithBottomEdge {
     ListView {
         id: listview
 
-        anchors.fill: parent
+        anchors {
+            top: headerRow.bottom
+            left: parent.left
+            right: parent.right
+            bottom: parent.bottom
+        }
+
         model: navigationModel
         orientation: ListView.Horizontal
         snapMode: ListView.SnapOneItem

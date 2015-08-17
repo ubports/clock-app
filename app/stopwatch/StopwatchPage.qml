@@ -32,9 +32,6 @@ Item {
 
     property int totalTimeDiff: timeDiff + oldDiff
 
-    signal flickUp()
-    signal flickDown()
-
     Component.onCompleted: {
         console.log("[LOG]: Stopwatch Page Loaded")
     }
@@ -84,115 +81,95 @@ Item {
         }
     }
 
-    Flickable {
-        id: _flickable
+    StopwatchFace {
+        id: stopwatch
+        objectName: "stopwatch"
 
-        onFlickStarted: {
-            forceActiveFocus()
+        milliseconds: _stopwatchPage.totalTimeDiff
+
+        anchors {
+            top: parent.top
+            topMargin: units.gu(2)
+            horizontalCenter: parent.horizontalCenter
+        }
+    }
+
+    Row {
+        id: buttonRow
+
+        spacing: units.gu(2)
+        anchors {
+            top: stopwatch.bottom
+            topMargin: units.gu(3)
+            left: parent.left
+            right: parent.right
+            margins: units.gu(2)
         }
 
-        clip: true
-        anchors.fill: parent
-        interactive: contentHeight > height
-        contentWidth: parent.width
-        contentHeight: stopwatch.height + buttonRow.height + lapListViewLoader.height + units.gu(21)
-
-        property int oldContentY: 0
-
-        onDraggingChanged: {
-            if (contentY > oldContentY) {
-                flickUp()
-                oldContentY = contentY
-            } else if (contentY < oldContentY) {
-                flickDown()
-                oldContentY = contentY
-            }
-        }
-
-        StopwatchFace {
-            id: stopwatch
-            objectName: "stopwatch"
-
-            milliseconds: _stopwatchPage.totalTimeDiff
-
-            anchors {
-                verticalCenter: parent.top
-                verticalCenterOffset: units.gu(25)
-                horizontalCenter: parent.horizontalCenter
-            }
-        }
-
-        Row {
-            id: buttonRow
-
-            spacing: units.gu(2)
-            anchors {
-                top: parent.top
-                topMargin: units.gu(44)
-                left: parent.left
-                right: parent.right
-                margins: units.gu(2)
-            }
-
-            Button {
-                id: stopButton
-                width: oldDiff !== 0 || running ? (parent.width - parent.spacing) / 2 : parent.width
-                color: !_stopwatchPage.running ? UbuntuColors.green : UbuntuColors.red
-                text: _stopwatchPage.running ? i18n.tr("Stop") : (oldDiff === 0 ? i18n.tr("Start") : i18n.tr("Resume"))
-                onClicked: {
-                    if (_stopwatchPage.running) {
-                        _stopwatchPage.stop()
-                    } else {
-                        _stopwatchPage.start()
-                    }
-                }
-                Behavior on width {
-                    UbuntuNumberAnimation{
-                        duration: UbuntuAnimation.BriskDuration
-                    }
+        Button {
+            id: stopButton
+            width: oldDiff !== 0 || running ? (parent.width - parent.spacing) / 2 : parent.width
+            color: !_stopwatchPage.running ? UbuntuColors.green : UbuntuColors.red
+            text: _stopwatchPage.running ? i18n.tr("Stop") : (oldDiff === 0 ? i18n.tr("Start") : i18n.tr("Resume"))
+            onClicked: {
+                if (_stopwatchPage.running) {
+                    _stopwatchPage.stop()
+                } else {
+                    _stopwatchPage.start()
                 }
             }
-
-            Button {
-                id: lapButton
-                text: _stopwatchPage.running ? i18n.tr("Lap") : i18n.tr("Clear")
-                width: oldDiff !== 0 || running ? (parent.width - parent.spacing) / 2 : 0
-                strokeColor: UbuntuColors.lightGrey
-                visible: oldDiff !== 0 || running
-                onClicked: {
-                    if (_stopwatchPage.running) {
-                        _stopwatchPage.update()
-                        lapsModel.addLap(_stopwatchPage.totalTimeDiff)
-                    } else {
-                        _stopwatchPage.clear()
-                    }
-                }
-                Behavior on width {
-                    UbuntuNumberAnimation{
-                        duration: UbuntuAnimation.BriskDuration
-                    }
+            Behavior on width {
+                UbuntuNumberAnimation{
+                    duration: UbuntuAnimation.BriskDuration
                 }
             }
         }
+
+        Button {
+            id: lapButton
+            text: _stopwatchPage.running ? i18n.tr("Lap") : i18n.tr("Clear")
+            width: oldDiff !== 0 || running ? (parent.width - parent.spacing) / 2 : 0
+            strokeColor: UbuntuColors.lightGrey
+            visible: oldDiff !== 0 || running
+            onClicked: {
+                if (_stopwatchPage.running) {
+                    _stopwatchPage.update()
+                    lapsModel.addLap(_stopwatchPage.totalTimeDiff)
+                } else {
+                    _stopwatchPage.clear()
+                }
+            }
+            Behavior on width {
+                UbuntuNumberAnimation{
+                    duration: UbuntuAnimation.BriskDuration
+                }
+            }
+        }
+    }
+
+    MouseArea {
+        anchors {
+            top: buttonRow.bottom
+            bottom: parent.bottom
+            left: parent.left
+            right: parent.right
+            topMargin: units.gu(1)
+        }
+
+        preventStealing: true
 
         Loader {
             id: lapListViewLoader
-            anchors {
-                top: buttonRow.bottom
-                left: parent.left
-                right: parent.right
-                topMargin: units.gu(1)
-            }
-            height: units.gu(7) * lapsModel.count
+            anchors.fill: parent
             sourceComponent: !_stopwatchPage.running && _stopwatchPage.totalTimeDiff == 0 ? undefined : lapListViewComponent
         }
+    }
 
-        Component {
-            id: lapListViewComponent
-            LapListView {
-                id: lapListView
-                model: lapsModel
-            }
+    Component {
+        id: lapListViewComponent
+        LapListView {
+            id: lapListView
+            model: lapsModel
         }
     }
 }

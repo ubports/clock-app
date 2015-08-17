@@ -23,7 +23,7 @@ import Ubuntu.Components 1.2
 ListView {
     id: lapListView
 
-    interactive: false
+    clip: true
 
     StopwatchUtils {
         id: stopwatchUtils
@@ -83,7 +83,7 @@ ListView {
                 }
             ]
         }
-        
+
         Row {
             anchors {
                 left: parent.left
@@ -91,20 +91,20 @@ ListView {
                 verticalCenter: parent.verticalCenter
                 margins: units.gu(2)
             }
-            
+
             Label {
                 color: UbuntuColors.midAubergine
                 text: "#%1".arg(Number(count - index).toLocaleString(Qt.locale(), "f", 0))
                 width: parent.width / 7
                 horizontalAlignment: Text.AlignHCenter
             }
-            
+
             Label {
                 width: 3 * parent.width / 7
                 text: stopwatchUtils.millisToTimeString(model.laptime, true)
                 horizontalAlignment: Text.AlignHCenter
             }
-            
+
             Label {
                 width: 3 * parent.width / 7
                 text: stopwatchUtils.millisToTimeString(model.totaltime, true)
