@@ -32,14 +32,16 @@ Item {
         ActionIcon {
             width: units.gu(5.5)
             height: units.gu(4)
-            iconName: "alarm-clock"
+            iconWidth: units.gu(4)
+            iconSource: Qt.resolvedUrl("../graphics/WorldClock_Placeholder.svg")
             onClicked: listview.currentIndex = 0
         }
         
         ActionIcon {
             width: units.gu(5.5)
             height: units.gu(4)
-            iconName: "stopwatch-lap"
+            iconWidth: units.gu(4)
+            iconSource: Qt.resolvedUrl("../graphics/Stopwatch_Placeholder.svg")
             onClicked: listview.currentIndex = 1
         }
     }

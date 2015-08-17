@@ -23,6 +23,8 @@ AbstractButton {
     id: abstractButton
 
     property alias iconName: _icon.name
+    property alias iconSource: _icon.source
+    property alias iconWidth: _icon.width
 
     width: units.gu(5)
     height: width
