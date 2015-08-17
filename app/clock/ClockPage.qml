@@ -170,8 +170,8 @@ Item {
         analogTime: clockTime
 
         anchors {
-            top: parent.top
-            topMargin: units.gu(2)
+            verticalCenter: parent.top
+            verticalCenterOffset: units.gu(18)
             horizontalCenter: parent.horizontalCenter
         }
     }
