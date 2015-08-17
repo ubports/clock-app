@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-08-16 22:55+0200\n"
+"POT-Creation-Date: 2015-08-17 16:05+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,13 +18,17 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
+#: ../app/MainPage.qml:46 ../app/alarm/AlarmUtils.qml:55
+msgid "No active alarms"
+msgstr ""
+
 #: ../app/alarm/AlarmLabel.qml:33 ../app/alarm/AlarmLabel.qml:71
 #: ../app/alarm/EditAlarmPage.qml:290
 msgid "Label"
 msgstr ""
 
 #: ../app/alarm/AlarmList.qml:61 ../app/alarm/AlarmPage.qml:99
-#: ../app/worldclock/UserWorldCityList.qml:101
+#: ../app/worldclock/UserWorldCityList.qml:102
 msgid "Delete"
 msgstr ""
 
@@ -120,10 +124,6 @@ msgstr ""
 msgid "Daily"
 msgstr ""
 
-#: ../app/alarm/AlarmUtils.qml:55
-msgid "No active alarms"
-msgstr ""
-
 #: ../app/alarm/AlarmUtils.qml:72
 #, qt-format
 msgid "Next Alarm %1"
@@ -160,8 +160,38 @@ msgstr ""
 msgid "Delete alarm"
 msgstr ""
 
-#: ../app/clock/ClockPage.qml:284
+#: ../app/clock/ClockPage.qml:228
 msgid "Retrieving location..."
+msgstr ""
+
+#. TRANSLATORS: This refers to the stopwatch lap and is shown as a header where space is limited. Constrain
+#. translation length to a few characters.
+#: ../app/stopwatch/LapListView.qml:45 ../app/stopwatch/StopwatchPage.qml:130
+msgid "Lap"
+msgstr ""
+
+#: ../app/stopwatch/LapListView.qml:53
+msgid "Lap Time"
+msgstr ""
+
+#: ../app/stopwatch/LapListView.qml:60
+msgid "Total Time"
+msgstr ""
+
+#: ../app/stopwatch/StopwatchPage.qml:113
+msgid "Stop"
+msgstr ""
+
+#: ../app/stopwatch/StopwatchPage.qml:113
+msgid "Start"
+msgstr ""
+
+#: ../app/stopwatch/StopwatchPage.qml:113
+msgid "Resume"
+msgstr ""
+
+#: ../app/stopwatch/StopwatchPage.qml:130
+msgid "Clear"
 msgstr ""
 
 #: ../app/worldclock/AddWorldCityButton.qml:30

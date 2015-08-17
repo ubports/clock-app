@@ -43,7 +43,7 @@ PageWithBottomEdge {
 
     flickable: null
     bottomEdgeTitle: _mainPage.visible ? alarmUtils.set_bottom_edge_title(alarmModel, clockTime)
-                                       : i18n.tr("No Active Alarms")
+                                       : i18n.tr("No active alarms")
 
     Component.onCompleted: {
         console.log("[LOG]: Main Page loaded")
