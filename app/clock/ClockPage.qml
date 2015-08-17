@@ -37,9 +37,6 @@ Item {
     // Property to keep track of app cold start status
     property alias isColdStart: clock.isColdStart
 
-    signal flickUp()
-    signal flickDown()
-
     Component.onCompleted: {
         console.log("[LOG]: Clock Page loaded")
         otherElementsStartUpAnimation.start()
