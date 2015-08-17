@@ -55,6 +55,7 @@ PageWithBottomEdge {
     }
 
     ScreenSaver {
+        // Disable screen dimming/off when stopwatch is running
         screenSaverEnabled: !stopwatchPage.running
     }
 
