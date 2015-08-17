@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2014 Canonical Ltd
+ * Copyright (C) 2014-2015 Canonical Ltd
  *
  * This file is part of Ubuntu Clock App
  *
@@ -124,7 +124,7 @@ Page {
                         var url = String("%1%2%3")
                         .arg("http://geoname-lookup.ubuntu.com/?query=")
                         .arg(searchField.text)
-                        .arg("&app=com.ubuntu.clock&version=3.4.x")
+                        .arg("&app=com.ubuntu.clock&version=3.5.x")
                         console.log("Online URL: " + url)
                         if (jsonTimeZoneModelLoader.status === Loader.Ready) {
                             jsonTimeZoneModel.source = Qt.resolvedUrl(url)
@@ -196,9 +196,9 @@ Page {
             }
         }
 
-        sort.property: "city"
+        sort.property: "cityName"
         sort.order: Qt.AscendingOrder
-        filter.property: "city"
+        filter.property: "cityName"
         filter.pattern: searchComponentLoader.status === Loader.Ready ? RegExp(searchComponentLoader.item.text, "gi")
                                                                       : RegExp("", "gi")
     }
@@ -266,24 +266,27 @@ Page {
         id: cityList
         objectName: "cityList"
 
-        function addWorldCity(city, country, timezone) {
-            console.log("[LOG]: Adding city to U1db Database")
+        function addWorldCity(cityId, countryName, timezone) {
+            console.log("[LOG]: Adding " + cityId.toString() + " city to U1db Database")
             clockDB.putDoc
                     (
                         {
                             "worldlocation":
                             {
-                                "city": city,
-                                "country": country,
+                                "city": cityId,
+                                "country": countryName.replace("'"," "),
                                 "timezone": timezone
                             }
                         },
-                        encodeURIComponent(city + "_" + country)
+                        // Apostrophes are forbidden by database, so we replace it with spaces.
+                        // It will be replaced/translated next time after read from database.
+                        // Country field is used only by jsonTimeZoneModel (lp: #1473074).
+                        encodeURIComponent(cityId + "_" + countryName.replace("'"," "))
                         )
         }
 
         function getSectionText(index) {
-            return sortedTimeZoneModel.get(index).city.substring(0,1)
+            return sortedTimeZoneModel.get(index).cityName.substring(0,1)
         }
 
         onFlickStarted: {
@@ -299,7 +302,7 @@ Page {
 
         clip: true
 
-        section.property: "city"
+        section.property: "cityName"
         section.criteria: ViewSection.FirstCharacter
         section.labelPositioning: ViewSection.InlineLabels
 
@@ -334,7 +337,7 @@ Page {
                 }
 
                 Label {
-                    text: city
+                    text: cityName
                     objectName: "defaultCityNameText"
                     width: parent.width
                     elide: Text.ElideRight
@@ -342,7 +345,7 @@ Page {
                 }
 
                 Label {
-                    text: country
+                    text: countryName
                     objectName: "defaultCountryNameText"
                     fontSize: "xx-small"
                     width: parent.width
@@ -361,12 +364,13 @@ Page {
             }
 
             onClicked: {
-                var tempCountry = country.split(",")
-                if(tempCountry.length > 2) {
-                    cityList.addWorldCity(city, tempCountry[1] + ","
-                                          + tempCountry[2], timezoneID)
+                var splittedCountryName = countryName.split(",")
+                if(splittedCountryName.length > 2) {
+                    cityList.addWorldCity(cityId,
+                                          splittedCountryName[1] + "," + splittedCountryName[2],
+                                          timezoneID)
                 } else {
-                    cityList.addWorldCity(city, country, timezoneID)
+                    cityList.addWorldCity(cityId, countryName, timezoneID)
                 }
 
                 mainStack.pop()

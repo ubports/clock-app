@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2014 Canonical Ltd
+ * Copyright (C) 2014-2015 Canonical Ltd
  *
  * This file is part of Ubuntu Clock App
  *
@@ -49,6 +49,7 @@ class TimeZoneModel: public QAbstractListModel
 
 public:
     enum Roles {
+        RoleCityId,
         RoleCityName,
         RoleCountryName,
         RoleTimeZoneId,
@@ -113,14 +114,15 @@ private:
 
 protected:
     // Create a simple container class to hold our information
-    struct TimeZone{
+    struct CityData {
+        QString cityId;
         QString cityName;
-        QString country;
+        QString countryName;
         QTimeZone timeZone;
     };
 
     // Keep a list of TimeZone objects, holding all our timeZones.
-    QList<TimeZone> m_timeZones;
+    QList<CityData> m_citiesData;
 
     // Private property to keep track of the status of the timezonemodel
     Status m_status;

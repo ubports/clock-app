@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2014 Canonical Ltd
+ * Copyright (C) 2014-2015 Canonical Ltd
  *
  * This file is part of Ubuntu Clock App
  *
@@ -83,35 +83,36 @@ void JsonTimeZoneModel::networkReplyFinished(QNetworkReply *reply)
     // Let QML know model is being reset and rebuilt
     beginResetModel();
 
-    m_timeZones.clear();
+    m_citiesData.clear();
 
     /*
      Cycle through each QVariant object and transfer them to the TimeZone
      list.
     */
     foreach (const QVariant &entry, timezoneData.toList()) {
-        TimeZone tz;
+        CityData cityData;
 
         auto data = entry.toMap();
         auto admin1 = data.value("admin1").toString();
         auto admin2 = data.value("admin2").toString();
         auto country = data.value("country").toString();
 
-        tz.cityName = data.value("name").toString();
+        cityData.cityId = data.value("name").toString();
+        cityData.cityName = cityData.cityId;
 
         if (!admin1.isEmpty() && !admin2.isEmpty()) {
-            tz.country = QString("%1, %2, %3").arg(admin2).arg(admin1).arg(country);
+            cityData.countryName = QString("%1, %2, %3").arg(admin2).arg(admin1).arg(country);
         } else if (!admin1.isEmpty()) {
-            tz.country = QString("%1, %2").arg(admin1).arg(country);
+            cityData.countryName = QString("%1, %2").arg(admin1).arg(country);
         } else if (!admin2.isEmpty()) {
-            tz.country = QString("%1, %2").arg(admin2).arg(country);
+            cityData.countryName = QString("%1, %2").arg(admin2).arg(country);
         } else {
-            tz.country = country;
+            cityData.countryName = country;
         }
 
-        tz.timeZone = QTimeZone(data.value("timezone").toString().toLatin1());
+        cityData.timeZone = QTimeZone(data.value("timezone").toString().toLatin1());
 
-        m_timeZones.append(tz);
+        m_citiesData.append(cityData);
     }
 
     setStatus(TimeZoneModel::Ready);

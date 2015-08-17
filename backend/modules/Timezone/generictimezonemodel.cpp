@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2014 Canonical Ltd
+ * Copyright (C) 2014-2015 Canonical Ltd
  *
  * This file is part of Ubuntu Clock App
  *
@@ -17,6 +17,7 @@
  */
 
 #include "generictimezonemodel.h"
+#include "statictimezonemodel.h"
 
 #include <QDebug>
 
@@ -32,7 +33,8 @@ QList<QVariant> GenericTimeZoneModel::results() const
 
 void GenericTimeZoneModel::setResults(const QList<QVariant> &results)
 {
-    if(m_results == results) {
+    if(m_results == results)
+    {
         // Don't parse the results again if it is the same results being set again
         return;
     }
@@ -47,7 +49,8 @@ void GenericTimeZoneModel::setResults(const QList<QVariant> &results)
 
 void GenericTimeZoneModel::loadTimeZonesFromVariantList()
 {
-    if(m_results.isEmpty()) {
+    if(m_results.isEmpty())
+    {
         // Don't parse an empty results
         return;
     }
@@ -55,24 +58,37 @@ void GenericTimeZoneModel::loadTimeZonesFromVariantList()
     // Let QML know model is being reset and rebuilt
     beginResetModel();
 
-    m_timeZones.clear();
+    m_citiesData.clear();
 
-    TimeZone tz;
+    CityData cityData;
 
     /*
      Cycle through the u1db query model results and transfer them to the
      TimeZone list.
     */
-    for (int i=0; i < m_results.size(); i++) {
+    StaticTimeZoneModel timeZonesData;
+    for (int i=0; i < m_results.size(); i++)
+    {
         // Map query model results to timezone tz
-        tz.cityName = m_results.value(i).toMap().value("city").toString();
-        tz.country = m_results.value(i).toMap().value("country").toString();
-        tz.timeZone = QTimeZone(m_results.value(i).toMap().value("timezone").toString().toLatin1());
+        cityData.cityId = m_results.value(i).toMap().value("city").toString();
 
-        m_timeZones.append(tz);
+        TimeZoneModel::CityData translatedCityData = timeZonesData.getTranslatedCityData(cityData.cityId);
+        if (translatedCityData.cityId == "")
+        {
+            cityData.cityName = cityData.cityId;
+            cityData.countryName = m_results.value(i).toMap().value("country").toString();
+        }
+        else
+        {
+            cityData.cityName = translatedCityData.cityName;
+            cityData.countryName = translatedCityData.countryName;
+        }
+        cityData.timeZone = QTimeZone(m_results.value(i).toMap().value("timezone").toString().toLatin1());
+
+        m_citiesData.append(cityData);
 
         // Clear tz before next iteration
-        tz = TimeZone();
+        cityData = CityData();
     }
 
 
