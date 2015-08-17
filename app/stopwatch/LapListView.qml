@@ -44,12 +44,14 @@ ListView {
                 // translation length to a few characters.
                 text: i18n.tr("Lap")
                 width: parent.width / 7
+                elide: Text.ElideRight
                 font.weight: Font.DemiBold
                 horizontalAlignment: Text.AlignHCenter
             }
 
             Label {
                 width: 3 * parent.width / 7
+                elide: Text.ElideRight
                 text: i18n.tr("Lap Time")
                 font.weight: Font.DemiBold
                 horizontalAlignment: Text.AlignHCenter
@@ -57,6 +59,7 @@ ListView {
 
             Label {
                 width: 3 * parent.width / 7
+                elide: Text.ElideRight
                 text: i18n.tr("Total Time")
                 font.weight: Font.DemiBold
                 horizontalAlignment: Text.AlignHCenter
@@ -99,16 +102,36 @@ ListView {
                 horizontalAlignment: Text.AlignHCenter
             }
 
-            Label {
+            Item {
                 width: 3 * parent.width / 7
-                text: stopwatchUtils.millisToTimeString(model.laptime, true)
-                horizontalAlignment: Text.AlignHCenter
+                height: childrenRect.height
+                Row {
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    Label {
+                        text: stopwatchUtils.lapTimeToString(model.laptime) + "."
+                    }
+                    Label {
+                        fontSize: "x-small"
+                        text: stopwatchUtils.millisToString(model.laptime)
+                        anchors.bottom: parent.bottom
+                    }
+                }
             }
 
-            Label {
+            Item {
                 width: 3 * parent.width / 7
-                text: stopwatchUtils.millisToTimeString(model.totaltime, true)
-                horizontalAlignment: Text.AlignHCenter
+                height: childrenRect.height
+                Row {
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    Label {
+                        text: stopwatchUtils.lapTimeToString(model.totaltime) + "."
+                    }
+                    Label {
+                        fontSize: "x-small"
+                        text: stopwatchUtils.millisToString(model.totaltime)
+                        anchors.bottom: parent.bottom
+                    }
+                }
             }
         }
     }

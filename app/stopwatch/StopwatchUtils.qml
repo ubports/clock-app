@@ -31,7 +31,7 @@ QtObject {
     }
 
     // Function to break down time (milliseconds) to hours, minutes and seconds
-    function millisToTimeString(millis, showMilliseconds) {
+    function millisToTimeString(millis, showMilliseconds, showHours) {
         var hours, minutes, seconds
 
         // Break down total time (milliseconds) to hours, minutes and seconds
@@ -39,9 +39,13 @@ QtObject {
         minutes = Math.floor(millis / 1000 / 60) % 60
         hours = Math.floor(millis / 1000 / 60 / 60)
 
-        // Build the time string without milliseconds
+        // Build the time string
         var timeString = ""
-        timeString += addZeroPrefix(hours, 2) + ":"
+
+        if (showHours) {
+            timeString += addZeroPrefix(hours, 2) + ":"
+        }
+
         timeString += addZeroPrefix(minutes, 2) + ":"
         timeString += addZeroPrefix(seconds, 2)
 
@@ -55,5 +59,15 @@ QtObject {
     // Function to add zero prefix if necessary.
     function addZeroPrefix (str, totalLength) {
         return ("00000" + str).slice(-totalLength)
+    }
+
+    // Function to return lap time as a string
+    function lapTimeToString(millis) {
+        var hours = hours = Math.floor(millis / 1000 / 60 / 60)
+        if (hours > 0) {
+            return millisToTimeString(millis, false, true)
+        } else {
+            return millisToTimeString(millis, false, false)
+        }
     }
 }
