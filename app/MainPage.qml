@@ -44,7 +44,7 @@ PageWithBottomEdge {
 
     flickable: null
     bottomEdgeTitle: _mainPage.visible ? alarmUtils.set_bottom_edge_title(alarmModel, clockTime)
-                                       : i18n.tr("No Active Alarms")
+                                       : i18n.tr("No active alarms")
 
     Component.onCompleted: {
         console.log("[LOG]: Main Page loaded")
@@ -56,6 +56,7 @@ PageWithBottomEdge {
     }
 
     ScreenSaver {
+        // Disable screen dimming/off when stopwatch is running
         screenSaverEnabled: !stopwatchPage.running
     }
 
@@ -73,53 +74,23 @@ PageWithBottomEdge {
             clockTime: _mainPage.clockTime
             width: clockApp.width
             height: listview.height
-            onFlickUp: headerRow.hide()
-            onFlickDown: headerRow.show()
         }
 
         StopwatchPage {
             id: stopwatchPage
             width: clockApp.width
             height: listview.height
-            onFlickUp: headerRow.hide()
-            onFlickDown: headerRow.show()
         }
     }
 
     HeaderNavigation {
         id: headerRow
 
-        z: listview.z + 1000
-
-        function hide() {
-            hideAnimation.start()
-        }
-
-        function show() {
-            showAnimation.start()
-        }
-
         anchors {
             top: parent.top
             left: parent.left
             right: parent.right
             topMargin: 0
-        }
-
-        PropertyAnimation {
-            id: hideAnimation
-            target: headerRow
-            property: "anchors.topMargin"
-            to: -headerRow.height
-            duration: UbuntuAnimation.BriskDuration
-        }
-
-        PropertyAnimation {
-            id: showAnimation
-            target: headerRow
-            property: "anchors.topMargin"
-            to: 0
-            duration: UbuntuAnimation.BriskDuration
         }
     }
 
@@ -132,7 +103,13 @@ PageWithBottomEdge {
                 positionViewAtIndex(1, ListView.SnapPosition)
         }
 
-        anchors.fill: parent
+        anchors {
+            top: headerRow.bottom
+            left: parent.left
+            right: parent.right
+            bottom: parent.bottom
+        }
+
         model: navigationModel
         orientation: ListView.Horizontal
         snapMode: ListView.SnapOneItem

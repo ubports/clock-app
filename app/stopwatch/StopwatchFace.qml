@@ -43,11 +43,10 @@ ClockCircle {
     Column {
         id: text
 
-        width: childrenRect.width
         anchors.centerIn: parent
 
         Label {
-            text: stopwatchUtils.millisToTimeString(milliseconds)
+            text: stopwatchUtils.millisToTimeString(milliseconds, false, true)
             font.pixelSize: units.dp(34)
             color: UbuntuColors.midAubergine
         }

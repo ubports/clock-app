@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2014 Canonical Ltd
+ * Copyright (C) 2014-2015 Canonical Ltd
  *
  * This file is part of Ubuntu Clock App
  *
@@ -46,7 +46,7 @@ int TimeZoneModel::rowCount(const QModelIndex &parent) const
     */
     Q_UNUSED(parent)
 
-    return m_timeZones.count();
+    return m_citiesData.count();
 }
 
 /*
@@ -68,16 +68,18 @@ QVariant TimeZoneModel::data(const QModelIndex &index, int role) const
     */
 
     switch (role) {
+    case RoleCityId:
+        return m_citiesData.at(row).cityId;
     case RoleCityName:
-        return m_timeZones.at(row).cityName;
+        return m_citiesData.at(row).cityName;
     case RoleCountryName:
-        return m_timeZones.at(row).country;
+        return m_citiesData.at(row).countryName;
     case RoleTimeZoneId:
-        return m_timeZones.at(row).timeZone.id();
+        return m_citiesData.at(row).timeZone.id();
     }
 
     QDateTime currentDateTime = QDateTime::currentDateTime();
-    QDateTime worldCityTime(currentDateTime.toTimeZone(m_timeZones.at(row).timeZone));
+    QDateTime worldCityTime(currentDateTime.toTimeZone(m_citiesData.at(row).timeZone));
 
     switch (role) {
     case RoleTimeString:
@@ -104,8 +106,9 @@ QVariant TimeZoneModel::data(const QModelIndex &index, int role) const
 QHash<int, QByteArray> TimeZoneModel::roleNames() const
 {
     QHash<int, QByteArray> roles;
-    roles.insert(RoleCityName, "city");
-    roles.insert(RoleCountryName, "country");
+    roles.insert(RoleCityId, "cityId");
+    roles.insert(RoleCityName, "cityName");
+    roles.insert(RoleCountryName, "countryName");
     roles.insert(RoleTimeZoneId, "timezoneID");
     roles.insert(RoleTimeString, "localTime");
     roles.insert(RoleTimeTo, "timeTo");
@@ -119,11 +122,13 @@ int TimeZoneModel::updateInterval() const
 
 void TimeZoneModel::setUpdateInterval(int updateInterval)
 {
-    if (m_updateTimer.interval() != updateInterval) {
+    if (m_updateTimer.interval() != updateInterval)
+    {
         m_updateTimer.setInterval(updateInterval);
         emit updateIntervalChanged();
 
-        if (m_updateTimer.interval() > 0) {
+        if (m_updateTimer.interval() > 0)
+        {
             m_updateTimer.start();
         }
         else {
@@ -143,7 +148,7 @@ void TimeZoneModel::update()
     */
 
     QModelIndex startIndex = index(0);
-    QModelIndex endIndex = index(m_timeZones.count() - 1);
+    QModelIndex endIndex = index(m_citiesData.count() - 1);
     QVector<int> roles;
     roles << RoleTimeString << RoleTimeTo;
     emit dataChanged(startIndex, endIndex, roles);
@@ -151,7 +156,8 @@ void TimeZoneModel::update()
 
 void TimeZoneModel::setStatus(TimeZoneModel::Status status)
 {
-    if(m_status == status) {
+    if(m_status == status)
+    {
         return;
     }
 
