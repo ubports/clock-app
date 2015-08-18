@@ -39,7 +39,6 @@ public:
     QVariant data(const QModelIndex &index, int role) const;
     QHash<int, QByteArray> roleNames() const override;
 
-
 public slots:
     void addLap(int timeDiff);
     void clear();
