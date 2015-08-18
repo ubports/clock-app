@@ -19,7 +19,6 @@
 #include "history.h"
 
 #include <QStandardPaths>
-#include <iostream>
 #include <QDebug>
 
 LapHistory::LapHistory(QObject *parent) :
