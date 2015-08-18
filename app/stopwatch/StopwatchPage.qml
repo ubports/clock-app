@@ -58,7 +58,7 @@ Item {
         oldDiff = 0
         startTime = new Date()
         snapshot = startTime
-        laphistory.clear()
+        lapHistory.clear()
     }
 
     Timer {
@@ -124,7 +124,7 @@ Item {
             onClicked: {
                 if (_stopwatchPage.running) {
                     _stopwatchPage.update()
-                    laphistory.addLap(_stopwatchPage.totalTimeDiff)
+                    lapHistory.addLap(_stopwatchPage.totalTimeDiff)
                 } else {
                     _stopwatchPage.clear()
                 }
@@ -156,14 +156,14 @@ Item {
     }
 
     LapHistory {
-        id: laphistory
+        id: lapHistory
     }
 
     Component {
         id: lapListViewComponent
         LapListView {
             id: lapListView
-            model: laphistory
+            model: lapHistory
         }
     }
 }
