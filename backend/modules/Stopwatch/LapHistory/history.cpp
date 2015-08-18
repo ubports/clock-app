@@ -31,6 +31,14 @@ LapHistory::LapHistory(QObject *parent) :
 
 int LapHistory::rowCount(const QModelIndex &parent) const
 {
+    /*
+     QT's models also handle tables and tree views, so the index is not just a
+     integer but consists of a parent, row and a column. Since we using a simple
+     list model, let's ignore the parent. Q_UNUSED(parent) gets rid of the
+     compiler warning about the unused variable.
+    */
+    Q_UNUSED(parent)
+
     return m_settings.value("Stopwatch/laps").toList().count();
 }
 
