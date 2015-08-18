@@ -28,7 +28,7 @@ LapHistory::LapHistory(QObject *parent) :
     QAbstractListModel(parent),
     m_settings(QStandardPaths::standardLocations(QStandardPaths::ConfigLocation).first() + "/com.ubuntu.clock/com.ubuntu.clock.conf", QSettings::IniFormat)
 {
-    std::cout << "Loading laps" << m_settings.fileName().toStdString() << std::endl;
+    qDebug() << "[LOG] Loading laps from " << m_settings.fileName();
 }
 
 int LapHistory::rowCount(const QModelIndex &parent) const
