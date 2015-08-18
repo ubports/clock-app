@@ -70,7 +70,8 @@ ListItem {
                 text: message
                 fontSize: "small"
                 elide: Text.ElideRight
-                Layout.maximumWidth: parent.width/4
+                Layout.maximumWidth: parent.width > alarmLabel.contentWidth + alarmSubtitle.contentWidth ? (parent.width - alarmSubtitle.contentWidth - units.gu(4))
+                                                                                                         : contentWidth
             }
 
             Label {
