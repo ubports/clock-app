@@ -26,33 +26,33 @@
 
 LapHistory::LapHistory(QObject *parent) :
     QAbstractListModel(parent),
-    m_settings(QStandardPaths::standardLocations(QStandardPaths::ConfigLocation).first() + "/com.ubuntu.clock/com.ubuntu.clock.stopwatch.conf", QSettings::IniFormat)
+    m_settings(QStandardPaths::standardLocations(QStandardPaths::ConfigLocation).first() + "/com.ubuntu.clock/com.ubuntu.clock.conf", QSettings::IniFormat)
 {
     std::cout << "Loading laps" << m_settings.fileName().toStdString() << std::endl;
 }
 
 int LapHistory::rowCount(const QModelIndex &parent) const
 {
-    return m_settings.value("laps").toList().count();
+    return m_settings.value("Stopwatch/laps").toList().count();
 }
 
 int LapHistory::count() const
 {
-    return m_settings.value("laps").toList().count();
+    return m_settings.value("Stopwatch/laps").toList().count();
 }
 
 QVariant LapHistory::data(const QModelIndex &index, int role) const
 {
     switch (role) {
     case RoleTotalTime:
-        return m_settings.value("laps").toList().at(index.row());
+        return m_settings.value("Stopwatch/laps").toList().at(index.row());
     case RoleDiffToPrevious: {
         int previous = 0;
-        if(index.row() != m_settings.value("laps").toList().count() - 1)
+        if(index.row() != m_settings.value("Stopwatch/laps").toList().count() - 1)
         {
             previous = data(this->index(index.row() + 1), RoleTotalTime).toInt();
         }
-        return m_settings.value("laps").toList().at(index.row()).toInt() - previous;
+        return m_settings.value("Stopwatch/laps").toList().at(index.row()).toInt() - previous;
     }
     }
     return QVariant();
@@ -68,16 +68,16 @@ QHash<int, QByteArray> LapHistory::roleNames() const
 
 void LapHistory::addLap(int timeDiff)
 {
-    QVariantList laps = m_settings.value("laps").toList();
+    QVariantList laps = m_settings.value("Stopwatch/laps").toList();
     beginInsertRows(QModelIndex(), 0, 0);
     laps.prepend(timeDiff);
-    m_settings.setValue("laps", laps);
+    m_settings.setValue("Stopwatch/laps", laps);
     endInsertRows();
 }
 
 void LapHistory::clear()
 {
     beginResetModel();
-    m_settings.setValue("laps", QVariantList());
+    m_settings.setValue("Stopwatch/laps", QVariantList());
     endResetModel();
 }
