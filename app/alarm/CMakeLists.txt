@@ -9,6 +9,7 @@ set(ALARM_QML_JS_FILES
     AlarmSound.qml
     AlarmUtils.qml
     EditAlarmPage.qml
+    MusicAppPicker.qml
 )
 
 # make the files visible in the qtcreator tree
