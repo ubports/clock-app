@@ -34,6 +34,13 @@ set(
     modules/GeoLocation/geolocation.cpp
 )
 
+set(
+    clockutility_SRCS
+    modules/Clock/Utility/backend.cpp
+    modules/Clock/Utility/standardpath.cpp
+    modules/Clock/Utility/filemanagement.cpp
+)
+
 add_library(timezone MODULE
     ${timezone_SRCS}
 )
@@ -48,6 +55,10 @@ add_library(alarmsettings MODULE
 
 add_library(geolocation MODULE
     ${geolocation_SRCS}
+)
+
+add_library(clockutility MODULE
+    ${clockutility_SRCS}
 )
 
 set_target_properties(timezone PROPERTIES
@@ -66,10 +77,15 @@ set_target_properties(geolocation PROPERTIES
     LIBRARY_OUTPUT_DIRECTORY GeoLocation
 )
 
+set_target_properties(clockutility PROPERTIES
+    LIBRARY_OUTPUT_DIRECTORY Clock/Utility
+)
+
 qt5_use_modules(datetime Gui Qml Quick)
 qt5_use_modules(timezone Gui Qml Quick)
 qt5_use_modules(alarmsettings Gui Qml Quick DBus)
 qt5_use_modules(geolocation Gui Qml Quick)
+qt5_use_modules(clockutility Gui Qml Quick)
 
 # Copy qmldir file to build dir for running in QtCreator
 add_custom_target(timezone-qmldir ALL
@@ -92,6 +108,11 @@ add_custom_target(geolocation-qmldir ALL
     DEPENDS ${QMLFILES}
 )
 
+add_custom_target(clockutility-qmldir ALL
+    COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_CURRENT_SOURCE_DIR}/modules/Clock/Utility/qmldir ${CMAKE_CURRENT_BINARY_DIR}/Clock/Utility
+    DEPENDS ${QMLFILES}
+)
+
 # Install plugin file
 install(TARGETS timezone DESTINATION ${MODULE_PATH}/Timezone/)
 install(FILES   modules/Timezone/qmldir DESTINATION ${MODULE_PATH}/Timezone/)
@@ -104,3 +125,6 @@ install(FILES   modules/Alarm/Settings/qmldir DESTINATION ${MODULE_PATH}/Alarm/S
 
 install(TARGETS geolocation DESTINATION ${MODULE_PATH}/GeoLocation/)
 install(FILES   modules/GeoLocation/qmldir DESTINATION ${MODULE_PATH}/GeoLocation/)
+
+install(TARGETS clockutility DESTINATION ${MODULE_PATH}/Clock/Utility/)
+install(FILES   modules/Clock/Utility/qmldir DESTINATION ${MODULE_PATH}/Clock/Utility/)
