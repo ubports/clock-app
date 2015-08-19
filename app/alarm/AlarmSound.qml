@@ -158,25 +158,47 @@ Page {
                             Action {
                                 iconName: "delete"
                                 onTriggered: {
+                                    previewAlarmSound.stop()
+
                                     /*
                                      In case the selected custom alarm sound is deleted by the user, then
                                      set the alarm sound back to the default sound.
                                     */
                                     if (_customAlarmSoundDelegate.isChecked) {
-                                        alarmSound.subText = "Alarm clock"
-
-                                        for (var i=0; i<soundModel.count; i++) {
-                                            if (soundModel.get(i).fileBaseName === alarmSound.subText)
-                                                alarm.sound = soundModel.get(i).fileURL
-                                        }
 
                                         /*
                                          If the oldAlarmSoundName is the deleted custom alarm sound, then
                                          set the oldAlarmSound name & url to the default alarm ringtone as well.
                                         */
                                         if (oldAlarmSoundName === fileName) {
-                                            oldAlarmSoundName = alarmSound.subText
-                                            oldAlarmSoundUrl = alarm.sound
+                                            alarmSound.subText = "Alarm clock"
+                                            oldAlarmSoundName = "Alarm clock"
+                                            for (var i=0; i<soundModel.count; i++) {
+                                                if (soundModel.get(i,fileBaseName) === alarmSound.subText) {
+                                                    alarm.sound = soundModel.get(i, fileURL)
+                                                    oldAlarmSoundUrl = alarm.sound
+                                                    previewAlarmSound.source = soundModel.get(i, fileURL)
+                                                    _alarmSounds.itemAt(i).isChecked = true
+                                                }
+                                            }
+                                        }
+
+                                        else {
+                                            alarmSound.subText = oldAlarmSoundName
+                                            alarm.sound = oldAlarmSoundUrl
+                                            previewAlarmSound.source = alarm.sound
+
+                                            for (var j=0; j<soundModel.count; j++) {
+                                                if (soundModel.get(j, fileBaseName) === alarmSound.subText) {
+                                                    _alarmSounds.itemAt(j).isChecked = true
+                                                }
+                                            }
+
+                                            for (j=0; j<customSoundModel.count; j++) {
+                                                if (soundModel.get(j, fileBaseName) === alarmSound.subText) {
+                                                    _customAlarmSounds.itemAt(j).isChecked = true
+                                                }
+                                            }
                                         }
                                     }
 
