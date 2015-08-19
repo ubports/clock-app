@@ -17,6 +17,7 @@
  */
 
 import QtQuick 2.4
+import Clock.Utility 1.0
 import QtMultimedia 5.0
 import Ubuntu.Content 1.1
 import Ubuntu.Components 1.2
@@ -90,8 +91,6 @@ Page {
                 console.log("[LOG] Original URL: " + _alarmSoundPage.importItems[0].url)
                 _alarmSoundPage.importItems[0].move("/home/phablet/.local/share/com.ubuntu.clock")
                 console.log("[LOG] Final URL: " + _alarmSoundPage.importItems[0].url)
-                //customAlarmSoundSetting.customSoundUrl = _alarmSoundPage.importItems[0].url
-                //console.log("Custom Alarm Sound Setting Url: " + customAlarmSoundSetting.customSoundUrl)
             }
         }
     }
@@ -99,6 +98,14 @@ Page {
     Audio {
         id: previewAlarmSound
         audioRole: MediaPlayer.alert
+    }
+
+    FileManagement {
+        id: fileManagement
+    }
+
+    StandardPath {
+        id: standardPath
     }
 
     Flickable {
@@ -114,6 +121,7 @@ Page {
 
             ListItem {
                 id: customSoundListItem
+                height: units.gu(7)
                 Button {
                     id: customSoundButton
                     text: i18n.tr("Custom Sound")
@@ -137,6 +145,17 @@ Page {
                     property alias isChecked: _customSoundStatus.checked
 
                     height: units.gu(7)
+
+                    leadingActions: ListItemActions {
+                        actions: [
+                            Action {
+                                iconName: "delete"
+                                onTriggered: {
+                                    fileManagement.deleteFile(standardPath.appDirectory, fileName)
+                                }
+                            }
+                        ]
+                    }
 
                     Label {
                         id: _customSoundName

@@ -18,6 +18,7 @@
 
 import QtQuick 2.4
 import DateTime 1.0
+import Clock.Utility 1.0
 import Ubuntu.Components 1.2
 import Qt.labs.folderlistmodel 2.1
 import Ubuntu.Components.Pickers 1.0
@@ -237,12 +238,16 @@ Page {
         }
     }
 
+    StandardPath {
+        id: standardPath
+    }
+
     FolderListModel {
         id: customSoundModel
 
         showDirs: false
         nameFilters: [ "*.ogg", "*.mp3" ]
-        folder: "/home/phablet/.local/share/com.ubuntu.clock"
+        folder: standardPath.appDirectory
 
         onCountChanged: {
             if(count > 0) {
