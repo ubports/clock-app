@@ -15,6 +15,7 @@ ubuntu-clock-app (3.5) UNRELEASED; urgency=medium
   * Fix alarm interval information being inconsistent (LP: #1466000)
   * Changed default alarm sound (LP: #1354370)
   * Added Clock Utility C++ plugin housing filemanagement and standardpath.
+  * Added support for setting custom alarm sounds (LP: #1450640)
 
   [Victor Thompson]
   * Show all README files in QtCreator 
