@@ -30,6 +30,9 @@ Page {
     flickable: _pageFlickable
     visible: false
 
+    // Property used to let pageStack know that this is the alarm sound page
+    property bool isAlarmSoundPage: true
+
     // Property to set the alarm sound in the edit alarm page
     property var alarmSound
 
@@ -39,6 +42,7 @@ Page {
     // Property to set the alarm sound model in the edit alarm page
     property var soundModel
 
+    // Property to set the custom alarm sound model in the edit alarm page
     property var customSoundModel
 
     /*
@@ -48,6 +52,7 @@ Page {
     property url oldAlarmSoundUrl
     property string oldAlarmSoundName
 
+    // Content-hub Import Properties
     property list<ContentItem> importItems
     property var activeTransfer
     property list<ContentPeer> peers
@@ -88,9 +93,9 @@ Page {
         onStateChanged: {
             if (_alarmSoundPage.activeTransfer.state === ContentTransfer.Charged) {
                 _alarmSoundPage.importItems = _alarmSoundPage.activeTransfer.items
-                console.log("[LOG] Original URL: " + _alarmSoundPage.importItems[0].url)
-                _alarmSoundPage.importItems[0].move("/home/phablet/.local/share/com.ubuntu.clock")
-                console.log("[LOG] Final URL: " + _alarmSoundPage.importItems[0].url)
+                console.log("[LOG] Original Custom Alarm Sound URL: " + _alarmSoundPage.importItems[0].url)
+                _alarmSoundPage.importItems[0].move(standardPath.appDirectory)
+                console.log("[LOG] Final Custom Alarm Sound URL: " + _alarmSoundPage.importItems[0].url)
             }
         }
     }
@@ -112,7 +117,9 @@ Page {
         id: _pageFlickable
 
         anchors.fill: parent
-        contentHeight: soundModel.count * units.gu(7) + customSoundModel.count * units.gu(7) + customSoundListItem.height
+        contentHeight: soundModel.count * units.gu(7) +
+                       customSoundModel.count * units.gu(7) +
+                       customSoundListItem.height
 
         Column {
             id: _alarmSoundColumn
@@ -125,7 +132,7 @@ Page {
                 Button {
                     id: customSoundButton
                     text: i18n.tr("Add custom sound")
-                    width: parent.width/1.1
+                    width: parent.width / 1.1
                     anchors.centerIn: parent
                     onClicked: {
                         pageStack.push(Qt.resolvedUrl("MusicAppPicker.qml"), {alarmSoundPage: _alarmSoundPage})

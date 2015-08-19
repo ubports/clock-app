@@ -153,6 +153,16 @@ Page {
         }
     }
 
+    function setAlarmSound() {
+        if(isNewAlarm) {
+            _alarm.sound = getSoundPath(_alarmSound._soundName)
+            _alarmSound.subText = _alarmSound._soundName
+        }
+        else {
+            _alarmSound.subText = getSoundName(_alarm.sound.toString())
+        }
+    }
+
     function validateDate(date) {
         if (_alarm.type === Alarm.OneTime) {
             _alarm.daysOfWeek = Alarm.AutoDetect
@@ -216,30 +226,12 @@ Page {
 
         onCountChanged: {
             if(count > 0) {
-                /*
-                  When folder model is completely loaded, proceed to perform
-                  the following operations,
-
-                  if new alarm, then set the sound name as "Alarm clock" and
-                  retrieve the sound path from the folder model to assign to
-                  the alarm model sound property.
-
-                  If it is a saved alarm, get the sound path from the alarm
-                  object and retrieve the sound name from the folder model.
-                */
-                if(isNewAlarm) {
-                    _alarm.sound = getSoundPath(_alarmSound._soundName)
-                    _alarmSound.subText = _alarmSound._soundName
-                }
-                else {
-                    _alarmSound.subText = getSoundName(_alarm.sound.toString())
+                // When folder model is completely loaded set the alarm sound.
+                if(!pageStack.currentPage.isAlarmSoundPage) {
+                    setAlarmSound()
                 }
             }
         }
-    }
-
-    StandardPath {
-        id: standardPath
     }
 
     FolderListModel {
@@ -249,25 +241,16 @@ Page {
         nameFilters: [ "*.ogg", "*.mp3" ]
         folder: standardPath.appDirectory
 
+        // Custom C++ Component that returns the clock app directory /home/phablet/.local/share/com.ubuntu.clock
+        StandardPath {
+            id: standardPath
+        }
+
         onCountChanged: {
             if(count > 0) {
-                /*
-                  When folder model is completely loaded, proceed to perform
-                  the following operations,
-
-                  if new alarm, then set the sound name as "Alarm clock" and
-                  retrieve the sound path from the folder model to assign to
-                  the alarm model sound property.
-
-                  If it is a saved alarm, get the sound path from the alarm
-                  object and retrieve the sound name from the folder model.
-                */
-                if(isNewAlarm) {
-                    _alarm.sound = getSoundPath(_alarmSound._soundName)
-                    _alarmSound.subText = _alarmSound._soundName
-                }
-                else {
-                    _alarmSound.subText = getSoundName(_alarm.sound.toString())
+                // When folder model is completely loaded set the alarm sound.
+                if(!pageStack.currentPage.isAlarmSoundPage) {
+                    setAlarmSound()
                 }
             }
         }
