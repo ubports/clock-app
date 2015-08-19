@@ -33,7 +33,6 @@ void FileManagement::deleteFile(const QString &dirName, const QString &fileName)
     // If directory doesn't exist, return
     if (!dir.exists())
     {
-        qCritical("Directory %s doesn't exist", dirName);
         return;
     }
 
