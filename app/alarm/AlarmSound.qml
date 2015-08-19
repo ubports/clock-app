@@ -124,7 +124,7 @@ Page {
                 height: units.gu(7)
                 Button {
                     id: customSoundButton
-                    text: i18n.tr("Custom Sound")
+                    text: i18n.tr("Add custom sound")
                     width: parent.width/1.1
                     anchors.centerIn: parent
                     onClicked: {
@@ -151,6 +151,28 @@ Page {
                             Action {
                                 iconName: "delete"
                                 onTriggered: {
+                                    /*
+                                     In case the selected custom alarm sound is deleted by the user, then
+                                     set the alarm sound back to the default sound.
+                                    */
+                                    if (_customAlarmSoundDelegate.isChecked) {
+                                        alarmSound.subText = "Alarm clock"
+
+                                        for (var i=0; i<soundModel.count; i++) {
+                                            if (soundModel.get(i).fileBaseName === alarmSound.subText)
+                                                alarm.sound = soundModel.get(i).fileURL
+                                        }
+
+                                        /*
+                                         If the oldAlarmSoundName is the deleted custom alarm sound, then
+                                         set the oldAlarmSound name & url to the default alarm ringtone as well.
+                                        */
+                                        if (oldAlarmSoundName === fileName) {
+                                            oldAlarmSoundName = alarmSound.subText
+                                            oldAlarmSoundUrl = alarm.sound
+                                        }
+                                    }
+
                                     fileManagement.deleteFile(standardPath.appDirectory, fileName)
                                 }
                             }
