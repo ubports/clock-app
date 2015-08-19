@@ -20,12 +20,14 @@
 #include <QtQml/QQmlContext>
 #include "backend.h"
 #include "standardpath.h"
+#include "filemanagement.h"
 
 void BackendPlugin::registerTypes(const char *uri)
 {
     Q_ASSERT(uri == QLatin1String("Clock.Utility"));
 
     qmlRegisterType<StandardPath>(uri, 1, 0, "StandardPath");
+    qmlRegisterType<FileManagement>(uri, 1, 0, "FileManagement");
 }
 
 void BackendPlugin::initializeEngine(QQmlEngine *engine, const char *uri)

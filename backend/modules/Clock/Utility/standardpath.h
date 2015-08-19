@@ -25,14 +25,14 @@ class StandardPath: public QObject
 {
     Q_OBJECT
 
-    // READONLY Property to return the app data directory
+    // READONLY Property to return the app data directory path
     Q_PROPERTY( QString appDirectory
                 READ appDirectory)
 
 public:
     StandardPath(QObject *parent = 0);
 
-    // Function to return the alarm volume
+    // Function to return the app data directory path
     QString appDirectory() const;
 };
 

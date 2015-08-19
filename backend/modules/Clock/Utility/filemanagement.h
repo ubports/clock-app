@@ -16,16 +16,20 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include <QStandardPaths>
+#ifndef FILEMANAGEMENT_H
+#define FILEMANAGEMENT_H
 
-#include "standardpath.h"
+#include <QObject>
 
-StandardPath::StandardPath(QObject *parent):
-    QObject(parent)
+class FileManagement: public QObject
 {
-}
+    Q_OBJECT
 
-QString StandardPath::appDirectory() const
-{
-    return QStandardPaths::standardLocations(QStandardPaths::AppDataLocation).first();
-}
+public:
+    FileManagement(QObject *parent = 0);
+
+public slots:
+    void deleteFile(const QString &dirName, const QString &fileName);
+};
+
+#endif

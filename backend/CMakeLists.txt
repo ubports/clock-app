@@ -38,6 +38,7 @@ set(
     clockutility_SRCS
     modules/Clock/Utility/backend.cpp
     modules/Clock/Utility/standardpath.cpp
+    modules/Clock/Utility/filemanagement.cpp
 )
 
 add_library(timezone MODULE

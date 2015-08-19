@@ -16,16 +16,26 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include <QStandardPaths>
+#include <QDir>
+#include <QDebug>
 
-#include "standardpath.h"
+#include "filemanagement.h"
 
-StandardPath::StandardPath(QObject *parent):
+FileManagement::FileManagement(QObject *parent):
     QObject(parent)
 {
 }
 
-QString StandardPath::appDirectory() const
+void FileManagement::deleteFile(const QString &dirName, const QString &fileName)
 {
-    return QStandardPaths::standardLocations(QStandardPaths::AppDataLocation).first();
+    QDir dir(dirName);
+
+    // If directory doesn't exist, return
+    if (!dir.exists())
+    {
+        qCritical("Directory %s doesn't exist", dirName);
+        return;
+    }
+
+    dir.remove(fileName);
 }

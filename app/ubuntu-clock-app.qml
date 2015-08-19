@@ -56,11 +56,6 @@ MainView {
 
     Background {}
 
-    StandardPath {
-        id: standardPath
-        Component.onCompleted: console.log(appDirectory)
-    }
-
     // Database to store the user preferences locally
     U1db.Database {
         id: clockDB
