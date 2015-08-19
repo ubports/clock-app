@@ -3,7 +3,8 @@
         "audio",
         "calendar",
         "networking",
-        "location"
+        "location",
+        "content_exchange"
     ],
     "policy_version": 1.3
 }
