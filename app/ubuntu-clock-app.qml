@@ -20,7 +20,6 @@ import QtQuick 2.4
 import DateTime 1.0
 import U1db 1.0 as U1db
 import Ubuntu.Components 1.2
-import Clock.Utility 1.0
 import "clock"
 import "components"
 
