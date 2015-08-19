@@ -241,11 +241,6 @@ Page {
         nameFilters: [ "*.ogg", "*.mp3" ]
         folder: standardPath.appDirectory
 
-        // Custom C++ Component that returns the clock app directory /home/phablet/.local/share/com.ubuntu.clock
-        StandardPath {
-            id: standardPath
-        }
-
         onCountChanged: {
             if(count > 0) {
                 // When folder model is completely loaded set the alarm sound.
@@ -254,6 +249,11 @@ Page {
                 }
             }
         }
+    }
+
+    // Custom C++ Component that returns the clock app directory /home/phablet/.local/share/com.ubuntu.clock
+    StandardPath {
+        id: standardPath
     }
 
     AlarmUtils {
