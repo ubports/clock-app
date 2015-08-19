@@ -18,6 +18,7 @@
 
 import QtQuick 2.4
 import QtMultimedia 5.0
+import Ubuntu.Content 1.1
 import Ubuntu.Components 1.2
 
 Page {
@@ -37,12 +38,18 @@ Page {
     // Property to set the alarm sound model in the edit alarm page
     property var soundModel
 
+    property var customSoundModel
+
     /*
      Properties to store the previously set alarm sound values to detect
      if the user changed the alarm sound or not
     */
     property url oldAlarmSoundUrl
     property string oldAlarmSoundName
+
+    property list<ContentItem> importItems
+    property var activeTransfer
+    property list<ContentPeer> peers
 
     Component.onCompleted: {
         // Record the current alarm sound values (url, name)
@@ -70,6 +77,25 @@ Page {
         }
     }
 
+    ContentTransferHint {
+        anchors.fill: parent
+        activeTransfer: _alarmSoundPage.activeTransfer
+    }
+
+    Connections {
+        target: _alarmSoundPage.activeTransfer
+        onStateChanged: {
+            if (_alarmSoundPage.activeTransfer.state === ContentTransfer.Charged) {
+                _alarmSoundPage.importItems = _alarmSoundPage.activeTransfer.items
+                console.log("[LOG] Original URL: " + _alarmSoundPage.importItems[0].url)
+                _alarmSoundPage.importItems[0].move("/home/phablet/.local/share/com.ubuntu.clock")
+                console.log("[LOG] Final URL: " + _alarmSoundPage.importItems[0].url)
+                //customAlarmSoundSetting.customSoundUrl = _alarmSoundPage.importItems[0].url
+                //console.log("Custom Alarm Sound Setting Url: " + customAlarmSoundSetting.customSoundUrl)
+            }
+        }
+    }
+
     Audio {
         id: previewAlarmSound
         audioRole: MediaPlayer.alert
@@ -79,12 +105,102 @@ Page {
         id: _pageFlickable
 
         anchors.fill: parent
-        contentHeight: soundModel.count * units.gu(7)
+        contentHeight: soundModel.count * units.gu(7) + customSoundModel.count * units.gu(7) + customSoundListItem.height
 
         Column {
             id: _alarmSoundColumn
 
             anchors.fill: parent
+
+            ListItem {
+                id: customSoundListItem
+                Button {
+                    id: customSoundButton
+                    text: i18n.tr("Custom Sound")
+                    width: parent.width/1.1
+                    anchors.centerIn: parent
+                    onClicked: {
+                        pageStack.push(Qt.resolvedUrl("MusicAppPicker.qml"), {alarmSoundPage: _alarmSoundPage})
+                    }
+                }
+            }
+
+            Repeater {
+                id: _customAlarmSounds
+                objectName: "customAlarmSounds"
+
+                model: customSoundModel
+
+                ListItem {
+                    id: _customAlarmSoundDelegate
+
+                    property alias isChecked: _customSoundStatus.checked
+
+                    height: units.gu(7)
+
+                    Label {
+                        id: _customSoundName
+                        objectName: "customSoundName" + index
+
+                        anchors {
+                            left: parent.left
+                            leftMargin: units.gu(2)
+                            verticalCenter: parent.verticalCenter
+                        }
+
+                        color: UbuntuColors.midAubergine
+                        fontSize: "medium"
+                        text: fileBaseName
+                    }
+
+                    CheckBox {
+                        id: _customSoundStatus
+                        objectName: "customSoundStatus" + index
+
+                        anchors {
+                            right: parent.right
+                            rightMargin: units.gu(2)
+                            verticalCenter: parent.verticalCenter
+                        }
+
+                        checked: alarmSound.subText === _customSoundName.text ? true
+                                                                              : false
+                        onCheckedChanged: {
+                            if (checked) {
+                                previewAlarmSound.source = fileURL
+                                previewAlarmSound.play()
+                                alarmSound.subText = _customSoundName.text
+                                alarm.sound = fileURL
+
+                                // Ensures only one alarm sound is selected
+                                for(var i=0; i<customSoundModel.count; i++) {
+                                    if(_customAlarmSounds.itemAt(i).isChecked &&
+                                            i !== index) {
+                                        _customAlarmSounds.itemAt(i).isChecked = false
+                                    }
+                                }
+
+                                // Ensures only one alarm sound is selected
+                                for(i=0; i<soundModel.count; i++) {
+                                    _alarmSounds.itemAt(i).isChecked = false
+                                }
+                            }
+                        }
+
+                        onClicked: {
+                            if (!checked) {
+                                checked = true
+                            }
+                        }
+                    }
+
+                    onClicked: {
+                        if (!_customSoundStatus.checked) {
+                            _customSoundStatus.checked = true
+                        }
+                    }
+                }
+            }
 
             Repeater {
                 id: _alarmSounds
@@ -139,6 +255,11 @@ Page {
                                             i !== index) {
                                         _alarmSounds.itemAt(i).isChecked = false
                                     }
+                                }
+
+                                // Ensures only one alarm sound is selected
+                                for(i=0; i<customSoundModel.count; i++) {
+                                    _customAlarmSounds.itemAt(i).isChecked = false
                                 }
                             }
                         }

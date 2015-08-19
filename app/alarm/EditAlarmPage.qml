@@ -130,12 +130,24 @@ Page {
                 return soundModel.get(i, "fileBaseName")
             }
         }
+
+        for(var j=0; j<customSoundModel.count; j++) {
+            if(chosenSoundPath === Qt.resolvedUrl(customSoundModel.get(j, "filePath"))) {
+                return customSoundModel.get(j, "fileBaseName")
+            }
+        }
     }
 
     function getSoundPath(chosenSoundName) {
         for(var i=0; i<soundModel.count; i++) {
             if(chosenSoundName === soundModel.get(i, "fileBaseName")) {
                 return soundModel.get(i, "filePath")
+            }
+        }
+
+        for(var j=0; j<customSoundModel.count; j++) {
+            if(chosenSoundName === customSoundModel.get(i, "fileBaseName")) {
+                return customSoundModel.get(i, "filePath")
             }
         }
     }
@@ -200,6 +212,37 @@ Page {
         showDirs: false
         nameFilters: [ "*.ogg", "*.mp3" ]
         folder: "/usr/share/sounds/ubuntu/ringtones"
+
+        onCountChanged: {
+            if(count > 0) {
+                /*
+                  When folder model is completely loaded, proceed to perform
+                  the following operations,
+
+                  if new alarm, then set the sound name as "Alarm clock" and
+                  retrieve the sound path from the folder model to assign to
+                  the alarm model sound property.
+
+                  If it is a saved alarm, get the sound path from the alarm
+                  object and retrieve the sound name from the folder model.
+                */
+                if(isNewAlarm) {
+                    _alarm.sound = getSoundPath(_alarmSound._soundName)
+                    _alarmSound.subText = _alarmSound._soundName
+                }
+                else {
+                    _alarmSound.subText = getSoundName(_alarm.sound.toString())
+                }
+            }
+        }
+    }
+
+    FolderListModel {
+        id: customSoundModel
+
+        showDirs: false
+        nameFilters: [ "*.ogg", "*.mp3" ]
+        folder: "/home/phablet/.local/share/com.ubuntu.clock"
 
         onCountChanged: {
             if(count > 0) {
@@ -304,7 +347,8 @@ Page {
             onClicked: pageStack.push(Qt.resolvedUrl("AlarmSound.qml"), {
                                           "alarmSound": _alarmSound,
                                           "alarm": _alarm,
-                                          "soundModel": soundModel
+                                          "soundModel": soundModel,
+                                          "customSoundModel": customSoundModel
                                       })
         }
     }
