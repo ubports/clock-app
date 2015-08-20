@@ -16,20 +16,24 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef FILEMANAGEMENT_H
-#define FILEMANAGEMENT_H
+#include <QDir>
+#include <QStandardPaths>
 
-#include <QObject>
+#include "customalarmsound.h"
 
-class FileManagement: public QObject
+CustomAlarmSound::CustomAlarmSound(QObject *parent):
+    QObject(parent),
+    m_customAlarmDir(QStandardPaths::standardLocations(QStandardPaths::AppDataLocation).first())
 {
-    Q_OBJECT
+}
 
-public:
-    FileManagement(QObject *parent = 0);
+QString CustomAlarmSound::alarmSoundDirectory() const
+{
+    return m_customAlarmDir;
+}
 
-public slots:
-    void deleteFile(const QString &dirName, const QString &fileName);
-};
-
-#endif
+void CustomAlarmSound::deleteAlarmSound(const QString &soundName)
+{
+    QDir dir(m_customAlarmDir);
+    dir.remove(soundName);
+}
