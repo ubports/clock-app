@@ -25,6 +25,7 @@
 class LapHistory : public QAbstractListModel
 {
     Q_OBJECT
+
 public:
     enum Role {
         RoleTotalTime,
@@ -33,18 +34,28 @@ public:
 
     explicit LapHistory(QObject *parent = 0);
 
+    /*
+     Let's override the pure virtual functions (the ones marked as
+     "virtual" and have "= 0" in the end.
+    */
     int rowCount(const QModelIndex &parent) const;
     QVariant data(const QModelIndex &index, int role) const;
+
+    /*
+     As QML can't really deal with the Roles enum above, we need a mapping
+     between the enum and strings
+    */
     QHash<int, QByteArray> roleNames() const override;
 
 public slots:
+    // Function to add a stopwatch lap to the model
     void addLap(int timeDiff);
+
+    // Function to clear all stopwatch laps
     void clear();
-    int count() const;
 
 private:
     QSettings m_settings;
-
 };
 
 #endif // HISTORY_H

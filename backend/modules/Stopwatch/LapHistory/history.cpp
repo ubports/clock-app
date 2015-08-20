@@ -46,11 +46,6 @@ int LapHistory::rowCount(const QModelIndex &parent) const
     return m_settings.value("Stopwatch/laps").toList().count();
 }
 
-int LapHistory::count() const
-{
-    return m_settings.value("Stopwatch/laps").toList().count();
-}
-
 QVariant LapHistory::data(const QModelIndex &index, int role) const
 {
     switch (role) {
