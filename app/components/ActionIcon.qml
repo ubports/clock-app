@@ -40,6 +40,6 @@ AbstractButton {
         width: units.gu(3)
         height: width
         anchors.centerIn: parent
-        color: UbuntuColors.coolGrey
+        color: "#5B5B5B"
     }
 }

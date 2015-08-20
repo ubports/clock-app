@@ -114,6 +114,7 @@ ListView {
                         fontSize: "x-small"
                         text: stopwatchUtils.millisToString(model.laptime)
                         anchors.bottom: parent.bottom
+                        anchors.bottomMargin: units.dp(1)
                     }
                 }
             }
@@ -130,6 +131,7 @@ ListView {
                         fontSize: "x-small"
                         text: stopwatchUtils.millisToString(model.totaltime)
                         anchors.bottom: parent.bottom
+                        anchors.bottomMargin: units.dp(1)
                     }
                 }
             }
