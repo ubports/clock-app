@@ -18,6 +18,7 @@
 
 import QtQuick 2.4
 import Ubuntu.Components 1.2
+import Stopwatch.LapHistory 1.0
 
 Item {
     id: _stopwatchPage
@@ -57,18 +58,7 @@ Item {
         oldDiff = 0
         startTime = new Date()
         snapshot = startTime
-        lapsModel.clear()
-    }
-
-    ListModel {
-        id: lapsModel
-        function addLap(totalTime) {
-            if (lapsModel.count === 0) {
-                append({"laptime": totalTime, "totaltime": totalTime})
-            } else {
-                insert(0, {"laptime": totalTime - lapsModel.get(0).totaltime, "totaltime": totalTime})
-            }
-        }
+        lapHistory.clear()
     }
 
     Timer {
@@ -134,7 +124,7 @@ Item {
             onClicked: {
                 if (_stopwatchPage.running) {
                     _stopwatchPage.update()
-                    lapsModel.addLap(_stopwatchPage.totalTimeDiff)
+                    lapHistory.addLap(_stopwatchPage.totalTimeDiff)
                 } else {
                     _stopwatchPage.clear()
                 }
@@ -165,11 +155,15 @@ Item {
         }
     }
 
+    LapHistory {
+        id: lapHistory
+    }
+
     Component {
         id: lapListViewComponent
         LapListView {
             id: lapListView
-            model: lapsModel
+            model: lapHistory
         }
     }
 }

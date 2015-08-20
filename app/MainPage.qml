@@ -19,6 +19,7 @@
 import QtQuick 2.4
 import Ubuntu.Components 1.2
 import QtSystemInfo 5.0
+import Qt.labs.settings 1.0
 import "upstreamcomponents"
 import "alarm"
 import "clock"
@@ -59,6 +60,14 @@ PageWithBottomEdge {
         screenSaverEnabled: !stopwatchPage.running
     }
 
+    Settings {
+        id: stopwatchState
+        category: "Stopwatch"
+        property alias startTime: stopwatchPage.startTime
+        property alias running: stopwatchPage.running
+        property alias oldDiff: stopwatchPage.oldDiff
+    }
+
     VisualItemModel {
         id: navigationModel
         ClockPage {
@@ -88,6 +97,12 @@ PageWithBottomEdge {
 
     ListView {
         id: listview
+
+        // Show the stopwatch page on app startup if it is running
+        Component.onCompleted: {
+            if (stopwatchState.running)
+                positionViewAtIndex(1, ListView.SnapPosition)
+        }
 
         anchors {
             top: headerRow.bottom
