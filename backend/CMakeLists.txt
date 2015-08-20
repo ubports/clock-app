@@ -84,7 +84,7 @@ qt5_use_modules(datetime Gui Qml Quick)
 qt5_use_modules(timezone Gui Qml Quick)
 qt5_use_modules(alarmsettings Gui Qml Quick DBus)
 qt5_use_modules(geolocation Gui Qml Quick)
-qt5_use_modules(clockutility Gui Qml Quick)
+qt5_use_modules(clockutility Qml)
 
 # Copy qmldir file to build dir for running in QtCreator
 add_custom_target(timezone-qmldir ALL
