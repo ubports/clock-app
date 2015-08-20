@@ -21,11 +21,16 @@ import Timezone 1.0
 import U1db 1.0 as U1db
 import Ubuntu.Components 1.2
 
-Column {
+ListView {
     id: worldCityColumn
+    objectName: "userWorldCityRepeater"
 
-    width: parent.width
-    height: childrenRect.height
+    clip: true
+    anchors.fill: parent
+
+    onFlickStarted:  {
+        forceActiveFocus()
+    }
 
     // U1db Index to index all documents storing the world city details
     U1db.Index {
@@ -51,93 +56,89 @@ Column {
         results: worldCityQuery.results
     }
 
-    Repeater {
-        id: userWorldCityRepeater
-        objectName: "userWorldCityRepeater"
+    property var _currentSwipedItem: null
 
-        property var _currentSwipedItem: null
+    function _updateSwipeState(item)
+    {
+        if (item.swipping) {
+            return
+        }
 
-        function _updateSwipeState(item)
-        {
-            if (item.swipping) {
-                return
-            }
-
-            if (item.swipeState !== "Normal") {
-                if (userWorldCityRepeater._currentSwipedItem !== item) {
-                    if (userWorldCityRepeater._currentSwipedItem) {
-                        userWorldCityRepeater._currentSwipedItem.resetSwipe()
-                    }
-                    userWorldCityRepeater._currentSwipedItem = item
+        if (item.swipeState !== "Normal") {
+            if (worldCityColumn._currentSwipedItem !== item) {
+                if (worldCityColumn._currentSwipedItem) {
+                    worldCityColumn._currentSwipedItem.resetSwipe()
                 }
-            } else if (item.swipeState !== "Normal"
-                       && userWorldCityRepeater._currentSwipedItem === item) {
-                userWorldCityRepeater._currentSwipedItem = null
+                worldCityColumn._currentSwipedItem = item
+            }
+        } else if (item.swipeState !== "Normal"
+                   && worldCityColumn._currentSwipedItem === item) {
+            worldCityColumn._currentSwipedItem = null
+        }
+    }
+
+    model: u1dbModel
+
+    delegate: UserWorldCityDelegate {
+        id: userWorldCityDelegate
+        objectName: "userWorldCityItem" + index
+
+        property var removalAnimation
+
+        function remove() {
+            removalAnimation.start()
+        }
+
+        onSwippingChanged: {
+            worldCityColumn._updateSwipeState(userWorldCityDelegate)
+        }
+
+        onSwipeStateChanged: {
+            worldCityColumn._updateSwipeState(userWorldCityDelegate)
+        }
+
+        leftSideAction: Action {
+            iconName: "delete"
+            text: i18n.tr("Delete")
+            onTriggered: {
+                userWorldCityDelegate.remove()
             }
         }
 
-        model: u1dbModel
-
-        delegate: UserWorldCityDelegate {
-            id: userWorldCityDelegate
-            objectName: "userWorldCityItem" + index
-
-            property var removalAnimation
-
-            function remove() {
-                removalAnimation.start()
-            }
-
-            onSwippingChanged: {
-                userWorldCityRepeater._updateSwipeState(userWorldCityDelegate)
-            }
-
-            onSwipeStateChanged: {
-                userWorldCityRepeater._updateSwipeState(userWorldCityDelegate)
-            }
-
-            leftSideAction: Action {
-                iconName: "delete"
-                text: i18n.tr("Delete")
-                onTriggered: {
-                    userWorldCityDelegate.remove()
+        ListView.onRemove: ScriptAction {
+            script: {
+                if (worldCityColumn._currentSwipedItem
+                        === userWorldCityDelegate) {
+                    worldCityColumn._currentSwipedItem = null
                 }
             }
+        }
 
-            ListView.onRemove: ScriptAction {
-                script: {
-                    if (userWorldCityRepeater._currentSwipedItem
-                            === userWorldCityDelegate) {
-                        userWorldCityRepeater._currentSwipedItem = null
-                    }
-                }
+        removalAnimation: SequentialAnimation {
+            alwaysRunToEnd: true
+
+            PropertyAction {
+                target: userWorldCityDelegate
+                property: "ListView.delayRemove"
+                value: true
             }
 
-            removalAnimation: SequentialAnimation {
-                alwaysRunToEnd: true
+            UbuntuNumberAnimation {
+                target: userWorldCityDelegate
+                property: "height"
+                to: 0
+            }
 
-                PropertyAction {
-                    target: userWorldCityDelegate
-                    property: "ListView.delayRemove"
-                    value: true
-                }
+            PropertyAction {
+                target: userWorldCityDelegate
+                property: "ListView.delayRemove"
+                value: false
+            }
 
-                UbuntuNumberAnimation {
-                    target: userWorldCityDelegate
-                    property: "height"
-                    to: 0
-                }
-
-                PropertyAction {
-                    target: userWorldCityDelegate
-                    property: "ListView.delayRemove"
-                    value: false
-                }
-
-                ScriptAction {
-                    script: clockDB.deleteDoc(worldCityQuery.documents[index])
-                }
+            ScriptAction {
+                script: clockDB.deleteDoc(worldCityQuery.documents[index])
             }
         }
     }
+
 }

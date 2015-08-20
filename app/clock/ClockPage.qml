@@ -21,12 +21,10 @@ import U1db 1.0 as U1db
 import QtPositioning 5.2
 import Ubuntu.Components 1.2
 import GeoLocation 1.0
-import "../alarm"
 import "../components"
-import "../upstreamcomponents"
 import "../worldclock"
 
-PageWithBottomEdge {
+Item {
     id: _clockPage
     objectName: "clockPage"
 
@@ -39,18 +37,9 @@ PageWithBottomEdge {
     // Property to keep track of app cold start status
     property alias isColdStart: clock.isColdStart
 
-    property var alarmModel
-
-    flickable: null
-    bottomEdgeTitle: alarmUtils.set_bottom_edge_title(alarmModel, clockTime)
-
     Component.onCompleted: {
         console.log("[LOG]: Clock Page loaded")
-        _clockPage.setBottomEdgePage(Qt.resolvedUrl("../alarm/AlarmPage.qml"), {})
-    }
-
-    AlarmUtils {
-        id: alarmUtils
+        otherElementsStartUpAnimation.start()
     }
 
     PositionSource {
@@ -167,178 +156,139 @@ PageWithBottomEdge {
         }
     }
 
-    Flickable {
-        id: _flickable
+    MainClock {
+        id: clock
+        objectName: "clock"
 
-        Component.onCompleted: otherElementsStartUpAnimation.start()
-
-        onFlickStarted: {
-            forceActiveFocus()
+        Component.onCompleted: {
+            geoposition.lastUpdate = analogTime
         }
 
-        anchors.fill: parent
-        contentWidth: parent.width
-        contentHeight: clock.height + date.height + locationRow.height
-                       + worldCityColumn.height + addWorldCityButton.height
-                       + units.gu(16)
+        analogTime: clockTime
 
-        AbstractButton {
-            id: settingsIcon
-            objectName: "settingsIcon"
+        anchors {
+            verticalCenter: parent.top
+            verticalCenterOffset: units.gu(18)
+            horizontalCenter: parent.horizontalCenter
+        }
+    }
 
-            onClicked: {
-                mainStack.push(Qt.resolvedUrl("../alarm/AlarmSettingsPage.qml"))
-            }
+    Label {
+        id: date
 
-            width: units.gu(5)
-            height: width
-            opacity: 0
-
-            anchors {
-                top: parent.top
-                topMargin: units.gu(6)
-                right: parent.right
-                rightMargin: units.gu(2)
-            }
-
-            Rectangle {
-                visible: settingsIcon.pressed
-                anchors.fill: parent
-                color: Theme.palette.selected.background
-            }
-
-            Icon {
-                width: units.gu(3)
-                height: width
-                anchors.centerIn: parent
-                name: "settings"
-                color: "Grey"
-            }
+        anchors {
+            top: parent.top
+            topMargin: units.gu(41)
+            horizontalCenter: parent.horizontalCenter
         }
 
-        MainClock {
-            id: clock
-            objectName: "clock"
+        text: clock.analogTime.toLocaleDateString()
 
-            Component.onCompleted: {
-                geoposition.lastUpdate = analogTime
-            }
+        opacity: 0
+        color: locationRow.visible ? Theme.palette.normal.baseText : UbuntuColors.midAubergine
+        fontSize: "medium"
+    }
 
-            analogTime: clockTime
+    Row {
+        id: locationRow
+        objectName: "locationRow"
 
-            anchors {
-                verticalCenter: parent.top
-                verticalCenterOffset: units.gu(20)
-                horizontalCenter: parent.horizontalCenter
-            }
+        opacity: date.opacity
+        spacing: units.gu(1)
+        visible: location.text !== "Null" && location.text !== "Denied"
+
+        anchors {
+            top: date.bottom
+            topMargin: units.gu(1)
+            horizontalCenter: parent.horizontalCenter
+        }
+
+        Icon {
+            id: locationIcon
+            name: "location"
+            height: units.gu(2.2)
+            color: "Grey"
         }
 
         Label {
-            id: date
+            id: location
+            objectName: "location"
 
-            anchors {
-                top: parent.top
-                topMargin: units.gu(36)
-                horizontalCenter: parent.horizontalCenter
-            }
-
-            text: clock.analogTime.toLocaleDateString()
-            opacity: settingsIcon.opacity
-            color: locationRow.visible ? Theme.palette.normal.baseText : UbuntuColors.midAubergine
             fontSize: "medium"
-        }
+            anchors.verticalCenter: locationIcon.verticalCenter
+            color: UbuntuColors.midAubergine
 
-        Row {
-            id: locationRow
-            objectName: "locationRow"
+            text: {
+                if (userLocationDocument.contents.location === "Null"
+                        || userLocationDocument.contents.location === "Denied"
+                        && geoposition.sourceError === PositionSource.NoError) {
+                    return i18n.tr("Retrieving location...")
+                }
 
-            opacity: settingsIcon.opacity
-            spacing: units.gu(1)
-            visible: location.text !== "Null" && location.text !== "Denied"
-
-            anchors {
-                top: date.bottom
-                topMargin: units.gu(1)
-                horizontalCenter: parent.horizontalCenter
-            }
-
-            Icon {
-                id: locationIcon
-                name: "location"
-                height: units.gu(2.2)
-                color: "Grey"
-            }
-
-            Label {
-                id: location
-                objectName: "location"
-
-                fontSize: "medium"
-                anchors.verticalCenter: locationIcon.verticalCenter
-                color: UbuntuColors.midAubergine
-
-                text: {
-                    if (userLocationDocument.contents.location === "Null"
-                            || userLocationDocument.contents.location === "Denied"
-                            && geoposition.sourceError === PositionSource.NoError) {
-                            return i18n.tr("Retrieving location...")
-                    }
-
-                    else {
-                        return userLocationDocument.contents.location
-                    }
+                else {
+                    return userLocationDocument.contents.location
                 }
             }
+        }
+    }
+
+    MouseArea {
+        id: worldCityListMouseArea
+
+        preventStealing: true
+
+        anchors {
+            top: locationRow.bottom
+            topMargin: units.gu(2)
+            bottom: parent.bottom
+            left: parent.left
+            right: parent.right
         }
 
         UserWorldCityList {
             id: worldCityColumn
-            objectName: "worldCityColumn"
+            opacity: date.opacity
 
-            opacity: settingsIcon.opacity
-            anchors {
-                top: locationRow.bottom
-                topMargin: units.gu(4)
+            footer: AddWorldCityButton {
+                id: addWorldCityButton
+                objectName: "addWorldCityButton"
             }
         }
+    }
 
-        AddWorldCityButton {
-            id: addWorldCityButton
-            objectName: "addWorldCityButton"
+    ParallelAnimation {
+        id: otherElementsStartUpAnimation
 
-            opacity: settingsIcon.opacity
-            anchors {
-                top: worldCityColumn.bottom
-                topMargin: units.gu(1)
-            }
+        PropertyAnimation {
+            target: headerRow
+            property: "anchors.topMargin"
+            from: units.gu(4)
+            to: 0
+            duration: 900
         }
 
-        ParallelAnimation {
-            id: otherElementsStartUpAnimation
+        PropertyAnimation {
+            target: headerRow
+            property: "opacity"
+            from: 0
+            to: 1
+            duration: 900
+        }
 
-            PropertyAnimation {
-                target: settingsIcon
-                property: "anchors.topMargin"
-                from: units.gu(6)
-                to: units.gu(2)
-                duration: 900
-            }
+        PropertyAnimation {
+            target: date
+            property: "opacity"
+            from: 0
+            to: 1
+            duration: 900
+        }
 
-            PropertyAnimation {
-                target: settingsIcon
-                property: "opacity"
-                from: 0
-                to: 1
-                duration: 900
-            }
-
-            PropertyAnimation {
-                target: date
-                property: "anchors.topMargin"
-                from: units.gu(36)
-                to: units.gu(40)
-                duration: 900
-            }
+        PropertyAnimation {
+            target: date
+            property: "anchors.topMargin"
+            from: units.gu(41)
+            to: units.gu(37)
+            duration: 900
         }
     }
 }

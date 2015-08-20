@@ -7,6 +7,8 @@ set(GRAPHICS_FILES
     Second_Hand@27.png
     select-none.svg
     select.svg
+    Stopwatch_Placeholder.svg
+    WorldClock_Placeholder.svg
 )
 
 # make the files visible in the qtcreator tree

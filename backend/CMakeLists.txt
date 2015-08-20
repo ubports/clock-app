@@ -40,6 +40,12 @@ set(
     modules/Clock/Utility/customalarmsound.cpp
 )
 
+set(
+    stopwatchlaphistory_SRCS
+    modules/Stopwatch/LapHistory/backend.cpp
+    modules/Stopwatch/LapHistory/history.cpp
+)
+
 add_library(timezone MODULE
     ${timezone_SRCS}
 )
@@ -58,6 +64,10 @@ add_library(geolocation MODULE
 
 add_library(clockutility MODULE
     ${clockutility_SRCS}
+)
+
+add_library(stopwatchlaphistory MODULE
+    ${stopwatchlaphistory_SRCS}
 )
 
 set_target_properties(timezone PROPERTIES
@@ -80,11 +90,16 @@ set_target_properties(clockutility PROPERTIES
     LIBRARY_OUTPUT_DIRECTORY Clock/Utility
 )
 
+set_target_properties(stopwatchlaphistory PROPERTIES
+    LIBRARY_OUTPUT_DIRECTORY Stopwatch/LapHistory
+)
+
 qt5_use_modules(datetime Gui Qml Quick)
 qt5_use_modules(timezone Gui Qml Quick)
 qt5_use_modules(alarmsettings Gui Qml Quick DBus)
 qt5_use_modules(geolocation Gui Qml Quick)
 qt5_use_modules(clockutility Qml)
+qt5_use_modules(stopwatchlaphistory Qml)
 
 # Copy qmldir file to build dir for running in QtCreator
 add_custom_target(timezone-qmldir ALL
@@ -112,6 +127,11 @@ add_custom_target(clockutility-qmldir ALL
     DEPENDS ${QMLFILES}
 )
 
+add_custom_target(stopwatchlaphistory-qmldir ALL
+    COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_CURRENT_SOURCE_DIR}/modules/Stopwatch/LapHistory/qmldir ${CMAKE_CURRENT_BINARY_DIR}/Stopwatch/LapHistory
+    DEPENDS ${QMLFILES}
+)
+
 # Install plugin file
 install(TARGETS timezone DESTINATION ${MODULE_PATH}/Timezone/)
 install(FILES   modules/Timezone/qmldir DESTINATION ${MODULE_PATH}/Timezone/)
@@ -127,3 +147,7 @@ install(FILES   modules/GeoLocation/qmldir DESTINATION ${MODULE_PATH}/GeoLocatio
 
 install(TARGETS clockutility DESTINATION ${MODULE_PATH}/Clock/Utility/)
 install(FILES   modules/Clock/Utility/qmldir DESTINATION ${MODULE_PATH}/Clock/Utility/)
+
+install(TARGETS stopwatchlaphistory DESTINATION ${MODULE_PATH}/Stopwatch/LapHistory/)
+install(FILES   modules/Stopwatch/LapHistory/qmldir DESTINATION ${MODULE_PATH}/Stopwatch/LapHistory/)
+
