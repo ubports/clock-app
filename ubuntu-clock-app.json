@@ -3,7 +3,8 @@
         "audio",
         "calendar",
         "networking",
-        "location"
+        "location",
+        "keep-display-on"
     ],
     "policy_version": 1.3
 }
