@@ -170,10 +170,10 @@ Page {
                                             alarmSound.subText = "Alarm clock"
                                             oldAlarmSoundName = "Alarm clock"
                                             for (var i=0; i<soundModel.count; i++) {
-                                                if (soundModel.get(i,fileBaseName) === alarmSound.subText) {
-                                                    alarm.sound = soundModel.get(i, fileURL)
+                                                if (soundModel.get(i,"fileBaseName") === alarmSound.subText) {
+                                                    alarm.sound = soundModel.get(i, "fileURL")
                                                     oldAlarmSoundUrl = alarm.sound
-                                                    previewAlarmSound.source = soundModel.get(i, fileURL)
+                                                    previewAlarmSound.source = soundModel.get(i, "fileURL")
                                                     _alarmSounds.itemAt(i).isChecked = true
                                                 }
                                             }
@@ -185,13 +185,13 @@ Page {
                                             previewAlarmSound.source = alarm.sound
 
                                             for (var j=0; j<soundModel.count; j++) {
-                                                if (soundModel.get(j, fileBaseName) === alarmSound.subText) {
+                                                if (soundModel.get(j, "fileBaseName") === alarmSound.subText) {
                                                     _alarmSounds.itemAt(j).isChecked = true
                                                 }
                                             }
 
                                             for (j=0; j<customSoundModel.count; j++) {
-                                                if (soundModel.get(j, fileBaseName) === alarmSound.subText) {
+                                                if (soundModel.get(j, "fileBaseName") === alarmSound.subText) {
                                                     _customAlarmSounds.itemAt(j).isChecked = true
                                                 }
                                             }
