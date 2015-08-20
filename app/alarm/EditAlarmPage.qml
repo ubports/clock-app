@@ -238,7 +238,6 @@ Page {
         id: customSoundModel
 
         showDirs: false
-        nameFilters: [ "*.ogg", "*.mp3" ]
         folder: customSound.alarmSoundDirectory
 
         onCountChanged: {

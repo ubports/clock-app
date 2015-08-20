@@ -23,7 +23,7 @@
 
 CustomAlarmSound::CustomAlarmSound(QObject *parent):
     QObject(parent),
-    m_customAlarmDir(QStandardPaths::standardLocations(QStandardPaths::AppDataLocation).first())
+    m_customAlarmDir(QStandardPaths::standardLocations(QStandardPaths::AppDataLocation).first() + "/CustomSounds/")
 {
 }
 
