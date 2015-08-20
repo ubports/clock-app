@@ -23,6 +23,11 @@
 
 LapHistory::LapHistory(QObject *parent) :
     QAbstractListModel(parent),
+    /*
+     #FIXME: Change QStandardPaths::ConfigLocation to QStandardPaths::AppConfigLocation
+     when Ubuntu Touch moves over to Qt 5.5. AppConfigLocation will directly return
+     /home/phablet/.config/com.ubuntu.clock path.
+    */
     m_settings(QStandardPaths::standardLocations(QStandardPaths::ConfigLocation).first() + "/com.ubuntu.clock/com.ubuntu.clock.conf", QSettings::IniFormat)
 {
     qDebug() << "[LOG] Loading laps from " << m_settings.fileName();
