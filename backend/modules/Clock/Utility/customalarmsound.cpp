@@ -37,3 +37,14 @@ void CustomAlarmSound::deleteAlarmSound(const QString &soundName)
     QDir dir(m_customAlarmDir);
     dir.remove(soundName);
 }
+
+void CustomAlarmSound::createAlarmSoundDirectory()
+{
+    QDir dir(m_customAlarmDir);
+
+    if (dir.exists()) {
+        return;
+    }
+
+    dir.mkpath(m_customAlarmDir);
+}
