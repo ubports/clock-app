@@ -1,4 +1,5 @@
 set(COMPONENTS_QML_JS_FILES
+    ActionIcon.qml
     AnalogMode.qml
     AnalogShadow.qml
     Background.qml
@@ -8,6 +9,7 @@ set(COMPONENTS_QML_JS_FILES
     DigitalShadow.qml
     EmptyState.qml
     ExpandableListItem.qml
+    HeaderNavigation.qml
     Shadow.qml
     SubtitledListItem.qml
 )
