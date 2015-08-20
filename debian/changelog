@@ -7,6 +7,7 @@ ubuntu-clock-app (3.5) UNRELEASED; urgency=medium
   * Fix default alarm time issue (LP: #1484926)
   * Translate city and country names after language switch (LP: #1477492)
   * Fix issue when unable to add city/country with apostrophes (LP: #1473074)  
+  * Keep running stopwatch even when the clock or phone is turned off (LP: #1484942)
 
   [Nekhelesh Ramananthan]
   * Increase the height of times in the alarm screen (LP: #1365428)
