@@ -16,16 +16,31 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include <QStandardPaths>
+#ifndef CUSTOMALARMSOUND_H
+#define CUSTOMALARMSOUND_H
 
-#include "standardpath.h"
+#include <QObject>
 
-StandardPath::StandardPath(QObject *parent):
-    QObject(parent)
+class CustomAlarmSound: public QObject
 {
-}
+    Q_OBJECT
 
-QString StandardPath::appDirectory() const
-{
-    return QStandardPaths::standardLocations(QStandardPaths::AppDataLocation).first();
-}
+    // READONLY Property to return the custom alarm sound directory path
+    Q_PROPERTY( QString alarmSoundDirectory
+                READ alarmSoundDirectory)
+
+public:
+    CustomAlarmSound(QObject *parent = 0);
+
+    // Function to return the custom alarm sound directory path
+    QString alarmSoundDirectory() const;
+
+public slots:
+    // Function to delete a custom alarm sound
+    void deleteAlarmSound(const QString &soundName);
+
+private:
+    QString m_customAlarmDir;
+};
+
+#endif

@@ -37,8 +37,7 @@ set(
 set(
     clockutility_SRCS
     modules/Clock/Utility/backend.cpp
-    modules/Clock/Utility/standardpath.cpp
-    modules/Clock/Utility/filemanagement.cpp
+    modules/Clock/Utility/customalarmsound.cpp
 )
 
 add_library(timezone MODULE
