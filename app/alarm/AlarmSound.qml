@@ -211,9 +211,12 @@ Page {
                         anchors {
                             left: parent.left
                             leftMargin: units.gu(2)
+                            right: _customSoundStatus.left
+                            rightMargin: units.gu(2)
                             verticalCenter: parent.verticalCenter
                         }
 
+                        elide: Text.ElideRight
                         color: UbuntuColors.midAubergine
                         fontSize: "medium"
                         text: fileBaseName
