@@ -24,7 +24,7 @@ AbstractButton {
     id: addWorldCityButton
 
     width: parent.width
-    height: _addButton.height
+    height: _addButton.height + units.gu(4)
 
     Label {
         text: i18n.tr("Add")
@@ -32,7 +32,7 @@ AbstractButton {
         anchors {
             right: _addButton.left
             rightMargin: units.gu(1)
-            verticalCenter: parent.verticalCenter
+            verticalCenter: _addButton.verticalCenter
         }
     }
 
@@ -41,7 +41,11 @@ AbstractButton {
 
         isOuter: true
         width: units.gu(5)
-        anchors.horizontalCenter: parent.horizontalCenter
+        anchors {
+            horizontalCenter: parent.horizontalCenter
+            top: parent.top
+            topMargin: units.gu(1)
+        }
 
         ClockCircle {
             width: units.gu(3.5)
@@ -63,7 +67,7 @@ AbstractButton {
         anchors {
             left: _addButton.right
             leftMargin: units.gu(1)
-            verticalCenter: parent.verticalCenter
+            verticalCenter: _addButton.verticalCenter
         }
     }
 
