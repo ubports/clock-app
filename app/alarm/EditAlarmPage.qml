@@ -239,7 +239,7 @@ Page {
 
         showDirs: false
         nameFilters: [ "*.ogg", "*.mp3" ]
-        folder: standardPath.appDirectory
+        folder: customSound.alarmSoundDirectory
 
         onCountChanged: {
             if(count > 0) {
@@ -252,8 +252,8 @@ Page {
     }
 
     // Custom C++ Component that returns the clock app directory /home/phablet/.local/share/com.ubuntu.clock
-    StandardPath {
-        id: standardPath
+    CustomAlarmSound {
+        id: customSound
     }
 
     AlarmUtils {

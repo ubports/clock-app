@@ -94,7 +94,7 @@ Page {
             if (_alarmSoundPage.activeTransfer.state === ContentTransfer.Charged) {
                 _alarmSoundPage.importItems = _alarmSoundPage.activeTransfer.items
                 console.log("[LOG] Original Custom Alarm Sound URL: " + _alarmSoundPage.importItems[0].url)
-                _alarmSoundPage.importItems[0].move(standardPath.appDirectory)
+                _alarmSoundPage.importItems[0].move(customSound.alarmSoundDirectory)
                 console.log("[LOG] Final Custom Alarm Sound URL: " + _alarmSoundPage.importItems[0].url)
             }
         }
@@ -105,12 +105,8 @@ Page {
         audioRole: MediaPlayer.alert
     }
 
-    FileManagement {
-        id: fileManagement
-    }
-
-    StandardPath {
-        id: standardPath
+    CustomAlarmSound {
+        id: customSound
     }
 
     Flickable {
@@ -202,7 +198,7 @@ Page {
                                         }
                                     }
 
-                                    fileManagement.deleteFile(standardPath.appDirectory, fileName)
+                                    customSound.deleteAlarmSound(fileName)
                                 }
                             }
                         ]
