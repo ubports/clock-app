@@ -48,8 +48,11 @@ public:
     QHash<int, QByteArray> roleNames() const override;
 
 public slots:
-    // Function to add a stopwatch lap to the model
+    // Function to add a stopwatch lap
     void addLap(int timeDiff);
+
+    // Function to remove a stopwatch lap
+    void removeLap(int lapIndex);
 
     // Function to clear all stopwatch laps
     void clear();

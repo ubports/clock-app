@@ -80,6 +80,15 @@ void LapHistory::addLap(int timeDiff)
     endInsertRows();
 }
 
+void LapHistory::removeLap(int lapIndex)
+{
+    QVariantList laps = m_settings.value("Stopwatch/laps").toList();
+    beginRemoveRows(QModelIndex(), lapIndex, lapIndex);
+    laps.removeAt(lapIndex);
+    m_settings.setValue("Stopwatch/laps", laps);
+    endRemoveRows();
+}
+
 void LapHistory::clear()
 {
     beginResetModel();

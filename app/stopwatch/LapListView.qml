@@ -81,7 +81,7 @@ ListView {
                 Action {
                     iconName: "delete"
                     onTriggered: {
-                        lapsModel.remove(index, 1)
+                        lapHistory.removeLap(index)
                     }
                 }
             ]
