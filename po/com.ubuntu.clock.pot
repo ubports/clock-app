@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-08-17 16:05+0200\n"
+"POT-Creation-Date: 2015-08-20 22:42+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
-#: ../app/MainPage.qml:46 ../app/alarm/AlarmUtils.qml:55
+#: ../app/MainPage.qml:47 ../app/alarm/AlarmUtils.qml:55
 msgid "No active alarms"
 msgstr ""
 
@@ -160,37 +160,37 @@ msgstr ""
 msgid "Delete alarm"
 msgstr ""
 
-#: ../app/clock/ClockPage.qml:228
+#: ../app/clock/ClockPage.qml:225
 msgid "Retrieving location..."
 msgstr ""
 
 #. TRANSLATORS: This refers to the stopwatch lap and is shown as a header where space is limited. Constrain
 #. translation length to a few characters.
-#: ../app/stopwatch/LapListView.qml:45 ../app/stopwatch/StopwatchPage.qml:130
+#: ../app/stopwatch/LapListView.qml:45 ../app/stopwatch/StopwatchPage.qml:120
 msgid "Lap"
 msgstr ""
 
-#: ../app/stopwatch/LapListView.qml:53
+#: ../app/stopwatch/LapListView.qml:55
 msgid "Lap Time"
 msgstr ""
 
-#: ../app/stopwatch/LapListView.qml:60
+#: ../app/stopwatch/LapListView.qml:63
 msgid "Total Time"
 msgstr ""
 
-#: ../app/stopwatch/StopwatchPage.qml:113
+#: ../app/stopwatch/StopwatchPage.qml:103
 msgid "Stop"
 msgstr ""
 
-#: ../app/stopwatch/StopwatchPage.qml:113
+#: ../app/stopwatch/StopwatchPage.qml:103
 msgid "Start"
 msgstr ""
 
-#: ../app/stopwatch/StopwatchPage.qml:113
+#: ../app/stopwatch/StopwatchPage.qml:103
 msgid "Resume"
 msgstr ""
 
-#: ../app/stopwatch/StopwatchPage.qml:130
+#: ../app/stopwatch/StopwatchPage.qml:120
 msgid "Clear"
 msgstr ""
 
@@ -198,7 +198,7 @@ msgstr ""
 msgid "Add"
 msgstr ""
 
-#: ../app/worldclock/AddWorldCityButton.qml:61
+#: ../app/worldclock/AddWorldCityButton.qml:65
 #: ../app/worldclock/WorldCityList.qml:63
 msgid "City"
 msgstr ""
