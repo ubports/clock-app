@@ -103,6 +103,15 @@ Page {
     Audio {
         id: previewAlarmSound
         audioRole: MediaPlayer.alert
+
+        function controlPlayback(fileURL) {
+            source = fileURL
+            if (playbackState === Audio.StoppedState || playbackState === Audio.PausedState) {
+                play()
+            } else if (playbackState === Audio.PlayingState) {
+                stop()
+            }
+        }
     }
 
     CustomAlarmSound {
@@ -236,8 +245,7 @@ Page {
                                                                               : false
                         onCheckedChanged: {
                             if (checked) {
-                                previewAlarmSound.source = fileURL
-                                previewAlarmSound.play()
+                                previewAlarmSound.controlPlayback(fileURL)
                                 alarmSound.subText = _customSoundName.text
                                 alarm.sound = fileURL
 
@@ -259,6 +267,8 @@ Page {
                         onClicked: {
                             if (!checked) {
                                 checked = true
+                            } else {
+                                previewAlarmSound.controlPlayback(fileURL)
                             }
                         }
                     }
@@ -266,6 +276,8 @@ Page {
                     onClicked: {
                         if (!_customSoundStatus.checked) {
                             _customSoundStatus.checked = true
+                        } else {
+                            previewAlarmSound.controlPlayback(fileURL)
                         }
                     }
                 }
@@ -313,8 +325,7 @@ Page {
                                                                         : false
                         onCheckedChanged: {
                             if (checked) {
-                                previewAlarmSound.source = fileURL
-                                previewAlarmSound.play()
+                                previewAlarmSound.controlPlayback(fileURL)
                                 alarmSound.subText = _soundName.text
                                 alarm.sound = fileURL
 
@@ -336,6 +347,8 @@ Page {
                         onClicked: {
                             if (!checked) {
                                 checked = true
+                            } else {
+                                previewAlarmSound.controlPlayback(fileURL)
                             }
                         }
                     }
@@ -343,6 +356,8 @@ Page {
                     onClicked: {
                         if (!_soundStatus.checked) {
                             _soundStatus.checked = true
+                        } else {
+                            previewAlarmSound.controlPlayback(fileURL)
                         }
                     }
                 }
