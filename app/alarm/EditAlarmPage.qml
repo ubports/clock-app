@@ -252,33 +252,40 @@ Page {
     FolderListModel {
         id: defaultSoundModel
 
+        property bool isModelLoaded: false
+
         showDirs: false
         nameFilters: [ "*.ogg", "*.mp3" ]
         folder: "/usr/share/sounds/ubuntu/ringtones"
-
-        onCountChanged: {
-            if(count > 0) {
-                // When folder model is completely loaded set the alarm sound.
-                if(!pageStack.currentPage.isAlarmSoundPage) {
-                    setAlarmSound()
-                }
-            }
+        Component.onCompleted: {
+            isModelLoaded = true
         }
     }
 
     FolderListModel {
         id: customSoundModel
 
+        property bool isModelLoaded: false
+
         showDirs: false
         folder: customSound.alarmSoundDirectory
+        Component.onCompleted: {
+            isModelLoaded = true
+        }
+    }
 
-        onCountChanged: {
-            if(count > 0) {
-                // When folder model is completely loaded set the alarm sound.
-                if(!pageStack.currentPage.isAlarmSoundPage) {
-                    setAlarmSound()
-                }
-            }
+    /*
+     QML FolderListModel does not provide any signals to indicate that it is fully loaded other
+     than the onCompleted() signal which is not sufficient. This introduces a race-condition where
+     file checks are done *before* the folder models have fully loaded. This timer introduces a
+     delay to workaround that issue.
+    */
+    Timer {
+        id: delaySettingAlarmSoundTimer
+        interval: 250
+        running: defaultSoundModel.isModelLoaded && customSoundModel.isModelLoaded
+        onTriggered: {
+            setAlarmSound()
         }
     }
 
