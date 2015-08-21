@@ -282,7 +282,7 @@ Page {
     */
     Timer {
         id: delaySettingAlarmSoundTimer
-        interval: 250
+        interval: 100
         running: defaultSoundModel.isModelLoaded && customSoundModel.isModelLoaded
         onTriggered: {
             setAlarmSound()
@@ -366,8 +366,7 @@ Page {
             id: _alarmSound
             objectName: "alarmSound"
 
-            // Default Alarm Sound for new alarms
-            property string defaultAlarmSound: "Alarm clock"
+            readonly property string defaultAlarmSound: "Alarm clock"
 
             text: i18n.tr("Sound")
             onClicked: pageStack.push(Qt.resolvedUrl("AlarmSound.qml"), {
