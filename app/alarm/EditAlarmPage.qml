@@ -155,8 +155,8 @@ Page {
 
     function setAlarmSound() {
         if(isNewAlarm) {
-            _alarm.sound = getSoundPath(_alarmSound._soundName)
-            _alarmSound.subText = _alarmSound._soundName
+            _alarm.sound = getSoundPath(_alarmSound.defaultAlarmSound)
+            _alarmSound.subText = _alarmSound.defaultAlarmSound
         }
         else {
             _alarmSound.subText = getSoundName(_alarm.sound.toString())
@@ -328,7 +328,7 @@ Page {
             objectName: "alarmSound"
 
             // Default Alarm Sound for new alarms
-            property string _soundName: "Alarm clock"
+            property string defaultAlarmSound: "Alarm clock"
 
             text: i18n.tr("Sound")
             onClicked: pageStack.push(Qt.resolvedUrl("AlarmSound.qml"), {

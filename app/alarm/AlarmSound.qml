@@ -176,8 +176,8 @@ Page {
                                          set the oldAlarmSound name & url to the default alarm ringtone as well.
                                         */
                                         if (oldAlarmSoundName === fileName) {
-                                            alarmSound.subText = "Alarm clock"
-                                            oldAlarmSoundName = "Alarm clock"
+                                            alarmSound.subText = alarmSound.defaultAlarmSound
+                                            oldAlarmSoundName = alarmSound.defaultAlarmSound
                                             for (var i=0; i<defaultSoundModel.count; i++) {
                                                 if (defaultSoundModel.get(i, "fileBaseName") === alarmSound.subText) {
                                                     alarm.sound = defaultSoundModel.get(i, "fileURL")
