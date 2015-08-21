@@ -19,6 +19,7 @@ ubuntu-clock-app (3.5) UNRELEASED; urgency=medium
   * Changed default alarm sound (LP: #1354370)
   * Added Clock Utility C++ plugin housing CustomAlarmSound type required
     for custom alarm sound feature
+  * Added support for setting custom alarm sounds (LP: #1450640)
 
   [Victor Thompson]
   * Show all README files in QtCreator 

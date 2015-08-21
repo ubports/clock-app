@@ -16,35 +16,28 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include <QDir>
-#include <QStandardPaths>
+import QtQuick 2.4
+import Ubuntu.Components 1.2
+import Ubuntu.Content 1.1
 
-#include "customalarmsound.h"
+Page {
+    id: picker
 
-CustomAlarmSound::CustomAlarmSound(QObject *parent):
-    QObject(parent),
-    m_customAlarmDir(QStandardPaths::standardLocations(QStandardPaths::AppDataLocation).first() + "/CustomSounds/")
-{
-}
+    // #TRANSLATORS: This is the page title. Please keep the translation length to 3 words if possible
+    title: i18n.tr("Add sound from")
 
-QString CustomAlarmSound::alarmSoundDirectory() const
-{
-    return m_customAlarmDir;
-}
+    property var alarmSoundPage
 
-void CustomAlarmSound::deleteAlarmSound(const QString &soundName)
-{
-    QDir dir(m_customAlarmDir);
-    dir.remove(soundName);
-}
+    ContentPeerPicker {
+        id: peerPicker
+        handler: ContentHandler.Source
+        contentType: ContentType.Music
+        showTitle: false
 
-void CustomAlarmSound::createAlarmSoundDirectory()
-{
-    QDir dir(m_customAlarmDir);
-
-    if (dir.exists()) {
-        return;
+        onPeerSelected: {
+            peer.selectionType = ContentTransfer.Single
+            alarmSoundPage.activeTransfer = peer.request()
+            pageStack.pop()
+        }
     }
-
-    dir.mkpath(m_customAlarmDir);
 }

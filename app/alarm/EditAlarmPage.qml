@@ -18,6 +18,7 @@
 
 import QtQuick 2.4
 import DateTime 1.0
+import Clock.Utility 1.0
 import Ubuntu.Components 1.2
 import Qt.labs.folderlistmodel 2.1
 import Ubuntu.Components.Pickers 1.0
@@ -125,17 +126,50 @@ Page {
     }
 
     function getSoundName(chosenSoundPath) {
-        for(var i=0; i<soundModel.count; i++) {
-            if(chosenSoundPath === Qt.resolvedUrl(soundModel.get(i, "filePath"))) {
-                return soundModel.get(i, "fileBaseName")
+        for(var i=0; i<defaultSoundModel.count; i++) {
+            if(chosenSoundPath === Qt.resolvedUrl(defaultSoundModel.get(i, "filePath"))) {
+                return defaultSoundModel.get(i, "fileBaseName")
+            }
+        }
+
+        for(var j=0; j<customSoundModel.count; j++) {
+            if(chosenSoundPath === Qt.resolvedUrl(customSoundModel.get(j, "filePath"))) {
+                return customSoundModel.get(j, "fileBaseName")
+            }
+        }
+
+        return ""
+    }
+
+    function getSoundPath(chosenSoundName) {
+        for(var i=0; i<defaultSoundModel.count; i++) {
+            if(chosenSoundName === defaultSoundModel.get(i, "fileBaseName")) {
+                return defaultSoundModel.get(i, "filePath")
+            }
+        }
+
+        for(var j=0; j<customSoundModel.count; j++) {
+            if(chosenSoundName === customSoundModel.get(i, "fileBaseName")) {
+                return customSoundModel.get(i, "filePath")
             }
         }
     }
 
-    function getSoundPath(chosenSoundName) {
-        for(var i=0; i<soundModel.count; i++) {
-            if(chosenSoundName === soundModel.get(i, "fileBaseName")) {
-                return soundModel.get(i, "filePath")
+    function setAlarmSound() {
+        if(isNewAlarm) {
+            _alarm.sound = getSoundPath(_alarmSound.defaultAlarmSound)
+            _alarmSound.subText = _alarmSound.defaultAlarmSound
+        }
+        else {
+            _alarmSound.subText = getSoundName(_alarm.sound.toString())
+            /*
+             If the custom alarm sound of an alarm was deleted by the user,
+             then fall back to the default alarm sound instead of showing an
+             empty string.
+            */
+            if (_alarmSound.subText === "") {
+                _alarm.sound = getSoundPath(_alarmSound.defaultAlarmSound)
+                _alarmSound.subText = _alarmSound.defaultAlarmSound
             }
         }
     }
@@ -195,7 +229,7 @@ Page {
     }
 
     FolderListModel {
-        id: soundModel
+        id: defaultSoundModel
 
         showDirs: false
         nameFilters: [ "*.ogg", "*.mp3" ]
@@ -203,26 +237,33 @@ Page {
 
         onCountChanged: {
             if(count > 0) {
-                /*
-                  When folder model is completely loaded, proceed to perform
-                  the following operations,
-
-                  if new alarm, then set the sound name as "Alarm clock" and
-                  retrieve the sound path from the folder model to assign to
-                  the alarm model sound property.
-
-                  If it is a saved alarm, get the sound path from the alarm
-                  object and retrieve the sound name from the folder model.
-                */
-                if(isNewAlarm) {
-                    _alarm.sound = getSoundPath(_alarmSound._soundName)
-                    _alarmSound.subText = _alarmSound._soundName
-                }
-                else {
-                    _alarmSound.subText = getSoundName(_alarm.sound.toString())
+                // When folder model is completely loaded set the alarm sound.
+                if(!pageStack.currentPage.isAlarmSoundPage) {
+                    setAlarmSound()
                 }
             }
         }
+    }
+
+    FolderListModel {
+        id: customSoundModel
+
+        showDirs: false
+        folder: customSound.alarmSoundDirectory
+
+        onCountChanged: {
+            if(count > 0) {
+                // When folder model is completely loaded set the alarm sound.
+                if(!pageStack.currentPage.isAlarmSoundPage) {
+                    setAlarmSound()
+                }
+            }
+        }
+    }
+
+    // Custom C++ Component that returns the clock app directory /home/phablet/.local/share/com.ubuntu.clock
+    CustomAlarmSound {
+        id: customSound
     }
 
     AlarmUtils {
@@ -298,13 +339,14 @@ Page {
             objectName: "alarmSound"
 
             // Default Alarm Sound for new alarms
-            property string _soundName: "Alarm clock"
+            property string defaultAlarmSound: "Alarm clock"
 
             text: i18n.tr("Sound")
             onClicked: pageStack.push(Qt.resolvedUrl("AlarmSound.qml"), {
                                           "alarmSound": _alarmSound,
                                           "alarm": _alarm,
-                                          "soundModel": soundModel
+                                          "defaultSoundModel": defaultSoundModel,
+                                          "customSoundModel": customSoundModel
                                       })
         }
     }
