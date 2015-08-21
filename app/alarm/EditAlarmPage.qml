@@ -155,10 +155,28 @@ Page {
         }
     }
 
+    /*
+     #TODO: The default alarm sound was changed to "Alarm clock" which only lands
+     in OTA-6. This function is need to maintain backwards compatibility with
+     OTA-5 users.
+    */
+    function fallbacktoOldDefaultAlarmSound() {
+        _alarm.sound = getSoundPath("Suru arpeggio")
+        _alarmSound.subText = "Suru arpeggio"
+    }
+
+    function setDefaultAlarmSound() {
+        _alarm.sound = getSoundPath(_alarmSound.defaultAlarmSound)
+        _alarmSound.subText = _alarmSound.defaultAlarmSound
+    }
+
     function setAlarmSound() {
         if(isNewAlarm) {
-            _alarm.sound = getSoundPath(_alarmSound.defaultAlarmSound)
-            _alarmSound.subText = _alarmSound.defaultAlarmSound
+            if (!getSoundPath(_alarmSound.defaultAlarmSound)) {
+                fallbacktoOldDefaultAlarmSound()
+            } else {
+                setDefaultAlarmSound()
+            }
         }
         else {
             _alarmSound.subText = getSoundName(_alarm.sound.toString())
@@ -168,8 +186,11 @@ Page {
              empty string.
             */
             if (_alarmSound.subText === "") {
-                _alarm.sound = getSoundPath(_alarmSound.defaultAlarmSound)
-                _alarmSound.subText = _alarmSound.defaultAlarmSound
+                if (!getSoundPath(_alarmSound.defaultAlarmSound)) {
+                    fallbacktoOldDefaultAlarmSound()
+                } else {
+                    setDefaultAlarmSound()
+                }
             }
         }
     }
