@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-08-20 22:42+0200\n"
+"POT-Creation-Date: 2015-08-21 14:14+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2011,9 +2011,10 @@ msgstr ""
 
 #: ubuntu-clock-app.desktop.in.in.h:2
 msgid ""
-"A sophisticated clock app that provides world clock and alarm functionality."
+"A sophisticated clock app that provides world clock, alarm and stopwatch "
+"functionality."
 msgstr ""
 
 #: ubuntu-clock-app.desktop.in.in.h:3
-msgid "time;alarm;alert;clock;world;"
+msgid "time;alarm;alert;clock;world;stopwatch;"
 msgstr ""
