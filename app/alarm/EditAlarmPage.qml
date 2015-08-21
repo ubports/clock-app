@@ -137,6 +137,8 @@ Page {
                 return customSoundModel.get(j, "fileBaseName")
             }
         }
+
+        return ""
     }
 
     function getSoundPath(chosenSoundName) {
@@ -160,6 +162,15 @@ Page {
         }
         else {
             _alarmSound.subText = getSoundName(_alarm.sound.toString())
+            /*
+             If the custom alarm sound of an alarm was deleted by the user,
+             then fall back to the default alarm sound instead of showing an
+             empty string.
+            */
+            if (_alarmSound.subText === "") {
+                _alarm.sound = getSoundPath(_alarmSound.defaultAlarmSound)
+                _alarmSound.subText = _alarmSound.defaultAlarmSound
+            }
         }
     }
 
