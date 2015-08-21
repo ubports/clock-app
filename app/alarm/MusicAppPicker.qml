@@ -24,7 +24,7 @@ Page {
     id: picker
 
     // #TRANSLATORS: This is the page title. Please keep the translation length to 3 words if possible
-    title: i18n.tr("Add custom sound from")
+    title: i18n.tr("Add sound from")
 
     property var alarmSoundPage
 
