@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2015-08-16 22:55+0200\n"
+"POT-Creation-Date: 2015-08-20 22:42+0200\n"
 "PO-Revision-Date: 2015-02-28 13:52+0000\n"
 "Last-Translator: Rūdolfs Mazurs <Unknown>\n"
 "Language-Team: Latvian <lv@li.org>\n"
@@ -15,8 +15,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : 2;\n"
-"X-Launchpad-Export-Date: 2015-08-17 06:12+0000\n"
-"X-Generator: Launchpad (build 17686)\n"
+"X-Launchpad-Export-Date: 2015-08-21 05:43+0000\n"
+"X-Generator: Launchpad (build 17690)\n"
+
+#: ../app/MainPage.qml:47 ../app/alarm/AlarmUtils.qml:55
+msgid "No active alarms"
+msgstr "Nav aktīvu atgādinājumu"
 
 #: ../app/alarm/AlarmLabel.qml:33 ../app/alarm/AlarmLabel.qml:71
 #: ../app/alarm/EditAlarmPage.qml:290
@@ -24,7 +28,7 @@ msgid "Label"
 msgstr "Etiķete"
 
 #: ../app/alarm/AlarmList.qml:61 ../app/alarm/AlarmPage.qml:99
-#: ../app/worldclock/UserWorldCityList.qml:101
+#: ../app/worldclock/UserWorldCityList.qml:102
 msgid "Delete"
 msgstr "Dzēst"
 
@@ -120,10 +124,6 @@ msgstr "Nedēļas nogales"
 msgid "Daily"
 msgstr "Katru dienu"
 
-#: ../app/alarm/AlarmUtils.qml:55
-msgid "No active alarms"
-msgstr "Nav aktīvu atgādinājumu"
-
 #: ../app/alarm/AlarmUtils.qml:72
 #, qt-format
 msgid "Next Alarm %1"
@@ -160,15 +160,45 @@ msgstr "Rediģēt atgādinājumu"
 msgid "Delete alarm"
 msgstr "Dzēst atgādinājumu"
 
-#: ../app/clock/ClockPage.qml:284
+#: ../app/clock/ClockPage.qml:225
 msgid "Retrieving location..."
 msgstr "Saņem atrašanās vietu..."
+
+#. TRANSLATORS: This refers to the stopwatch lap and is shown as a header where space is limited. Constrain
+#. translation length to a few characters.
+#: ../app/stopwatch/LapListView.qml:45 ../app/stopwatch/StopwatchPage.qml:120
+msgid "Lap"
+msgstr ""
+
+#: ../app/stopwatch/LapListView.qml:55
+msgid "Lap Time"
+msgstr ""
+
+#: ../app/stopwatch/LapListView.qml:63
+msgid "Total Time"
+msgstr ""
+
+#: ../app/stopwatch/StopwatchPage.qml:103
+msgid "Stop"
+msgstr "Apturēt"
+
+#: ../app/stopwatch/StopwatchPage.qml:103
+msgid "Start"
+msgstr "Sākt"
+
+#: ../app/stopwatch/StopwatchPage.qml:103
+msgid "Resume"
+msgstr ""
+
+#: ../app/stopwatch/StopwatchPage.qml:120
+msgid "Clear"
+msgstr ""
 
 #: ../app/worldclock/AddWorldCityButton.qml:30
 msgid "Add"
 msgstr "Pievienot"
 
-#: ../app/worldclock/AddWorldCityButton.qml:61
+#: ../app/worldclock/AddWorldCityButton.qml:65
 #: ../app/worldclock/WorldCityList.qml:63
 msgid "City"
 msgstr "Pilsēta"
