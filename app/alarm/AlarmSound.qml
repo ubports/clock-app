@@ -140,7 +140,7 @@ Page {
                     width: parent.width / 1.1
                     anchors.centerIn: parent
                     onClicked: {
-                        pageStack.push(Qt.resolvedUrl("MusicAppPicker.qml"), {alarmSoundPage: _alarmSoundPage})
+                        pageStack.push(Qt.resolvedUrl("SoundPeerPicker.qml"), {alarmSoundPage: _alarmSoundPage})
                     }
                 }
             }
