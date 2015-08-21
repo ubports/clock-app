@@ -2,7 +2,7 @@
 Version=1.0
 _Name=Clock
 _Comment=A sophisticated clock app that provides world clock and alarm functionality.
-_Keywords=time;alarm;alert;clock;world;
+_Keywords=time;alarm;alert;clock;world;stopwatch;
 Exec=@EXEC@
 Icon=@ICON@
 Terminal=false
