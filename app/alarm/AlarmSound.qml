@@ -40,7 +40,7 @@ Page {
     property var alarm
 
     // Property to set the alarm sound model in the edit alarm page
-    property var soundModel
+    property var defaultSoundModel
 
     // Property to set the custom alarm sound model in the edit alarm page
     property var customSoundModel
@@ -122,7 +122,7 @@ Page {
         id: _pageFlickable
 
         anchors.fill: parent
-        contentHeight: soundModel.count * units.gu(7) +
+        contentHeight: defaultSoundModel.count * units.gu(7) +
                        customSoundModel.count * units.gu(7) +
                        customSoundListItem.height
 
@@ -178,11 +178,11 @@ Page {
                                         if (oldAlarmSoundName === fileName) {
                                             alarmSound.subText = "Alarm clock"
                                             oldAlarmSoundName = "Alarm clock"
-                                            for (var i=0; i<soundModel.count; i++) {
-                                                if (soundModel.get(i,"fileBaseName") === alarmSound.subText) {
-                                                    alarm.sound = soundModel.get(i, "fileURL")
+                                            for (var i=0; i<defaultSoundModel.count; i++) {
+                                                if (defaultSoundModel.get(i, "fileBaseName") === alarmSound.subText) {
+                                                    alarm.sound = defaultSoundModel.get(i, "fileURL")
                                                     oldAlarmSoundUrl = alarm.sound
-                                                    previewAlarmSound.source = soundModel.get(i, "fileURL")
+                                                    previewAlarmSound.source = defaultSoundModel.get(i, "fileURL")
                                                     _alarmSounds.itemAt(i).isChecked = true
                                                 }
                                             }
@@ -193,14 +193,14 @@ Page {
                                             alarm.sound = oldAlarmSoundUrl
                                             previewAlarmSound.source = alarm.sound
 
-                                            for (var j=0; j<soundModel.count; j++) {
-                                                if (soundModel.get(j, "fileBaseName") === alarmSound.subText) {
+                                            for (var j=0; j<defaultSoundModel.count; j++) {
+                                                if (defaultSoundModel.get(j, "fileBaseName") === alarmSound.subText) {
                                                     _alarmSounds.itemAt(j).isChecked = true
                                                 }
                                             }
 
                                             for (j=0; j<customSoundModel.count; j++) {
-                                                if (soundModel.get(j, "fileBaseName") === alarmSound.subText) {
+                                                if (customSoundModel.get(j, "fileBaseName") === alarmSound.subText) {
                                                     _customAlarmSounds.itemAt(j).isChecked = true
                                                 }
                                             }
@@ -257,8 +257,8 @@ Page {
                                     }
                                 }
 
-                                // Ensures only one alarm sound is selected
-                                for(i=0; i<soundModel.count; i++) {
+                                // Ensures only one alarm customSoundModelsound is selected
+                                for(i=0; i<defaultSoundModel.count; i++) {
                                     _alarmSounds.itemAt(i).isChecked = false
                                 }
                             }
@@ -287,7 +287,7 @@ Page {
                 id: _alarmSounds
                 objectName: "alarmSounds"
 
-                model: soundModel
+                model: defaultSoundModel
 
                 ListItem {
                     id: _alarmSoundDelegate
@@ -330,7 +330,7 @@ Page {
                                 alarm.sound = fileURL
 
                                 // Ensures only one alarm sound is selected
-                                for(var i=0; i<soundModel.count; i++) {
+                                for(var i=0; i<defaultSoundModel.count; i++) {
                                     if(_alarmSounds.itemAt(i).isChecked &&
                                             i !== index) {
                                         _alarmSounds.itemAt(i).isChecked = false

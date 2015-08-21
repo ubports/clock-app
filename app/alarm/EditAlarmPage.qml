@@ -126,9 +126,9 @@ Page {
     }
 
     function getSoundName(chosenSoundPath) {
-        for(var i=0; i<soundModel.count; i++) {
-            if(chosenSoundPath === Qt.resolvedUrl(soundModel.get(i, "filePath"))) {
-                return soundModel.get(i, "fileBaseName")
+        for(var i=0; i<defaultSoundModel.count; i++) {
+            if(chosenSoundPath === Qt.resolvedUrl(defaultSoundModel.get(i, "filePath"))) {
+                return defaultSoundModel.get(i, "fileBaseName")
             }
         }
 
@@ -140,9 +140,9 @@ Page {
     }
 
     function getSoundPath(chosenSoundName) {
-        for(var i=0; i<soundModel.count; i++) {
-            if(chosenSoundName === soundModel.get(i, "fileBaseName")) {
-                return soundModel.get(i, "filePath")
+        for(var i=0; i<defaultSoundModel.count; i++) {
+            if(chosenSoundName === defaultSoundModel.get(i, "fileBaseName")) {
+                return defaultSoundModel.get(i, "filePath")
             }
         }
 
@@ -218,7 +218,7 @@ Page {
     }
 
     FolderListModel {
-        id: soundModel
+        id: defaultSoundModel
 
         showDirs: false
         nameFilters: [ "*.ogg", "*.mp3" ]
@@ -334,7 +334,7 @@ Page {
             onClicked: pageStack.push(Qt.resolvedUrl("AlarmSound.qml"), {
                                           "alarmSound": _alarmSound,
                                           "alarm": _alarm,
-                                          "soundModel": soundModel,
+                                          "defaultSoundModel": defaultSoundModel,
                                           "customSoundModel": customSoundModel
                                       })
         }
