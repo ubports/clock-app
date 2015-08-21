@@ -35,7 +35,7 @@ MainView {
     }
 
     FolderListModel {
-        id: _soundModel
+        id: _defaultSoundModel
 
         showDirs: false
         nameFilters: [ "*.ogg", "*.mp3" ]
@@ -45,7 +45,7 @@ MainView {
     AlarmSound {
         id: alarmSoundPage
         alarm: _alarm
-        soundModel: _soundModel
+        defaultSoundModel: _defaultSoundModel
         alarmSound: { "subText": "Bliss" }
     }
 

@@ -175,7 +175,7 @@ Page {
                                          If the oldAlarmSoundName is the deleted custom alarm sound, then
                                          set the oldAlarmSound name & url to the default alarm ringtone as well.
                                         */
-                                        if (oldAlarmSoundName === fileName) {
+                                        if (oldAlarmSoundName === fileBaseName) {
                                             alarmSound.subText = alarmSound.defaultAlarmSound
                                             oldAlarmSoundName = alarmSound.defaultAlarmSound
                                             for (var i=0; i<defaultSoundModel.count; i++) {
