@@ -303,8 +303,6 @@ Page {
                         onClicked: {
                             if (!checked) {
                                 checked = true
-                            } else {
-                                previewAlarmSound.controlPlayback(fileURL)
                             }
                         }
                     }
@@ -383,8 +381,6 @@ Page {
                         onClicked: {
                             if (!checked) {
                                 checked = true
-                            } else {
-                                previewAlarmSound.controlPlayback(fileURL)
                             }
                         }
                     }
