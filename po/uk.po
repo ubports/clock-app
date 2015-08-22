@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2015-08-20 22:42+0200\n"
+"POT-Creation-Date: 2015-08-21 18:07+0200\n"
 "PO-Revision-Date: 2015-04-04 14:06+0000\n"
 "Last-Translator: Yuri Chornoivan <yurchor@gmail.com>\n"
 "Language-Team: Ukrainian <uk@li.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Launchpad-Export-Date: 2015-08-21 05:43+0000\n"
+"X-Launchpad-Export-Date: 2015-08-22 05:55+0000\n"
 "X-Generator: Launchpad (build 17690)\n"
 "Language: uk\n"
 
@@ -26,7 +26,7 @@ msgid "No active alarms"
 msgstr "Немає активних нагадувань"
 
 #: ../app/alarm/AlarmLabel.qml:33 ../app/alarm/AlarmLabel.qml:71
-#: ../app/alarm/EditAlarmPage.qml:290
+#: ../app/alarm/EditAlarmPage.qml:331
 msgid "Label"
 msgstr "Мітка"
 
@@ -44,8 +44,8 @@ msgstr "Сигнали"
 msgid "Back"
 msgstr "Назад"
 
-#: ../app/alarm/AlarmPage.qml:49 ../app/alarm/EditAlarmPage.qml:43
-#: ../app/alarm/EditAlarmPage.qml:165
+#: ../app/alarm/AlarmPage.qml:49 ../app/alarm/EditAlarmPage.qml:44
+#: ../app/alarm/EditAlarmPage.qml:199
 msgid "Alarm"
 msgstr "Будильник"
 
@@ -65,7 +65,7 @@ msgstr "Немає збережених нагадувань"
 msgid "Tap the + icon to add an alarm"
 msgstr "Натисніть піктограму «+», щоб додати нагадування"
 
-#: ../app/alarm/AlarmRepeat.qml:36 ../app/alarm/EditAlarmPage.qml:280
+#: ../app/alarm/AlarmRepeat.qml:36 ../app/alarm/EditAlarmPage.qml:321
 msgid "Repeat"
 msgstr "Повторити"
 
@@ -108,9 +108,13 @@ msgstr "Вібрація"
 msgid "Change time and date"
 msgstr "Змінити час і дату"
 
-#: ../app/alarm/AlarmSound.qml:27 ../app/alarm/EditAlarmPage.qml:303
+#: ../app/alarm/AlarmSound.qml:29 ../app/alarm/EditAlarmPage.qml:344
 msgid "Sound"
 msgstr "Звук"
+
+#: ../app/alarm/AlarmSound.qml:139
+msgid "Add custom sound"
+msgstr ""
 
 #: ../app/alarm/AlarmUtils.qml:31
 msgid "Never"
@@ -152,17 +156,22 @@ msgstr "за %1г %2хв"
 msgid "in %1m"
 msgstr "за %1хв"
 
-#: ../app/alarm/EditAlarmPage.qml:36
+#: ../app/alarm/EditAlarmPage.qml:37
 msgid "New alarm"
 msgstr "Нове нагадування"
 
-#: ../app/alarm/EditAlarmPage.qml:36
+#: ../app/alarm/EditAlarmPage.qml:37
 msgid "Edit alarm"
 msgstr "Редагувати нагадування"
 
-#: ../app/alarm/EditAlarmPage.qml:324
+#: ../app/alarm/EditAlarmPage.qml:366
 msgid "Delete alarm"
 msgstr "Вилучити нагадування"
+
+#. TRANSLATORS: This is the page title. Please keep the translation length to 3 words if possible
+#: ../app/alarm/SoundPeerPicker.qml:27
+msgid "Add sound from"
+msgstr ""
 
 #: ../app/clock/ClockPage.qml:225
 msgid "Retrieving location..."
@@ -2017,12 +2026,10 @@ msgstr "Годинник"
 
 #: ubuntu-clock-app.desktop.in.in.h:2
 msgid ""
-"A sophisticated clock app that provides world clock and alarm functionality."
+"A sophisticated clock app that provides world clock, alarm and stopwatch "
+"functionality."
 msgstr ""
-"Різнобічна програма-годинник, яка має функціональні можливості світового "
-"годинника та будильника."
 
 #: ubuntu-clock-app.desktop.in.in.h:3
-msgid "time;alarm;alert;clock;world;"
+msgid "time;alarm;alert;clock;world;stopwatch;"
 msgstr ""
-"time;alarm;alert;clock;world;час;нагадування;будильник;годинник;світ;"

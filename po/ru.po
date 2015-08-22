@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2015-08-20 22:42+0200\n"
+"POT-Creation-Date: 2015-08-21 18:07+0200\n"
 "PO-Revision-Date: 2015-05-12 05:41+0000\n"
 "Last-Translator: ☠Jay ZDLin☠ <Unknown>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Launchpad-Export-Date: 2015-08-21 05:43+0000\n"
+"X-Launchpad-Export-Date: 2015-08-22 05:54+0000\n"
 "X-Generator: Launchpad (build 17690)\n"
 
 #: ../app/MainPage.qml:47 ../app/alarm/AlarmUtils.qml:55
@@ -24,7 +24,7 @@ msgid "No active alarms"
 msgstr "Будильники отсутствуют"
 
 #: ../app/alarm/AlarmLabel.qml:33 ../app/alarm/AlarmLabel.qml:71
-#: ../app/alarm/EditAlarmPage.qml:290
+#: ../app/alarm/EditAlarmPage.qml:331
 msgid "Label"
 msgstr "Метка"
 
@@ -42,8 +42,8 @@ msgstr "Будильники"
 msgid "Back"
 msgstr "Назад"
 
-#: ../app/alarm/AlarmPage.qml:49 ../app/alarm/EditAlarmPage.qml:43
-#: ../app/alarm/EditAlarmPage.qml:165
+#: ../app/alarm/AlarmPage.qml:49 ../app/alarm/EditAlarmPage.qml:44
+#: ../app/alarm/EditAlarmPage.qml:199
 msgid "Alarm"
 msgstr "Будильник"
 
@@ -63,7 +63,7 @@ msgstr "Нет сохранённых будильников"
 msgid "Tap the + icon to add an alarm"
 msgstr "Чтобы добавить будильник, нажмите значок \"+\""
 
-#: ../app/alarm/AlarmRepeat.qml:36 ../app/alarm/EditAlarmPage.qml:280
+#: ../app/alarm/AlarmRepeat.qml:36 ../app/alarm/EditAlarmPage.qml:321
 msgid "Repeat"
 msgstr "Повторять"
 
@@ -106,9 +106,13 @@ msgstr "Вибро"
 msgid "Change time and date"
 msgstr "Изменить время и дату"
 
-#: ../app/alarm/AlarmSound.qml:27 ../app/alarm/EditAlarmPage.qml:303
+#: ../app/alarm/AlarmSound.qml:29 ../app/alarm/EditAlarmPage.qml:344
 msgid "Sound"
 msgstr "Мелодия"
+
+#: ../app/alarm/AlarmSound.qml:139
+msgid "Add custom sound"
+msgstr ""
 
 #: ../app/alarm/AlarmUtils.qml:31
 msgid "Never"
@@ -150,17 +154,22 @@ msgstr "через %1h %2m"
 msgid "in %1m"
 msgstr "через %1m"
 
-#: ../app/alarm/EditAlarmPage.qml:36
+#: ../app/alarm/EditAlarmPage.qml:37
 msgid "New alarm"
 msgstr "Новый будильник"
 
-#: ../app/alarm/EditAlarmPage.qml:36
+#: ../app/alarm/EditAlarmPage.qml:37
 msgid "Edit alarm"
 msgstr "Редактировать будильник"
 
-#: ../app/alarm/EditAlarmPage.qml:324
+#: ../app/alarm/EditAlarmPage.qml:366
 msgid "Delete alarm"
 msgstr "Удалить будильник"
+
+#. TRANSLATORS: This is the page title. Please keep the translation length to 3 words if possible
+#: ../app/alarm/SoundPeerPicker.qml:27
+msgid "Add sound from"
+msgstr ""
 
 #: ../app/clock/ClockPage.qml:225
 msgid "Retrieving location..."
@@ -2013,9 +2022,10 @@ msgstr "Часы"
 
 #: ubuntu-clock-app.desktop.in.in.h:2
 msgid ""
-"A sophisticated clock app that provides world clock and alarm functionality."
-msgstr "Современные часы с функциями мирового времени и будильника."
+"A sophisticated clock app that provides world clock, alarm and stopwatch "
+"functionality."
+msgstr ""
 
 #: ubuntu-clock-app.desktop.in.in.h:3
-msgid "time;alarm;alert;clock;world;"
-msgstr "время;будильник;сигнал;часы;мировое;"
+msgid "time;alarm;alert;clock;world;stopwatch;"
+msgstr ""

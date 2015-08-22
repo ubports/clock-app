@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2015-08-20 22:42+0200\n"
+"POT-Creation-Date: 2015-08-21 18:07+0200\n"
 "PO-Revision-Date: 2015-05-07 08:45+0000\n"
 "Last-Translator: Vojtěch Daněk <vdanek@outlook.com>\n"
 "Language-Team: Czech <cs@li.org>\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Launchpad-Export-Date: 2015-08-21 05:42+0000\n"
+"X-Launchpad-Export-Date: 2015-08-22 05:54+0000\n"
 "X-Generator: Launchpad (build 17690)\n"
 
 #: ../app/MainPage.qml:47 ../app/alarm/AlarmUtils.qml:55
@@ -23,7 +23,7 @@ msgid "No active alarms"
 msgstr "Žádné aktivní budíky"
 
 #: ../app/alarm/AlarmLabel.qml:33 ../app/alarm/AlarmLabel.qml:71
-#: ../app/alarm/EditAlarmPage.qml:290
+#: ../app/alarm/EditAlarmPage.qml:331
 msgid "Label"
 msgstr "Štítek"
 
@@ -41,8 +41,8 @@ msgstr "Budíky"
 msgid "Back"
 msgstr "Zpět"
 
-#: ../app/alarm/AlarmPage.qml:49 ../app/alarm/EditAlarmPage.qml:43
-#: ../app/alarm/EditAlarmPage.qml:165
+#: ../app/alarm/AlarmPage.qml:49 ../app/alarm/EditAlarmPage.qml:44
+#: ../app/alarm/EditAlarmPage.qml:199
 msgid "Alarm"
 msgstr "Budík"
 
@@ -62,7 +62,7 @@ msgstr "Žádné uložené budíky"
 msgid "Tap the + icon to add an alarm"
 msgstr "Klepněte na ikonu + pro přidání budíku"
 
-#: ../app/alarm/AlarmRepeat.qml:36 ../app/alarm/EditAlarmPage.qml:280
+#: ../app/alarm/AlarmRepeat.qml:36 ../app/alarm/EditAlarmPage.qml:321
 msgid "Repeat"
 msgstr "Opakovat"
 
@@ -105,9 +105,13 @@ msgstr "Vibrace"
 msgid "Change time and date"
 msgstr "Změnit čas a datum"
 
-#: ../app/alarm/AlarmSound.qml:27 ../app/alarm/EditAlarmPage.qml:303
+#: ../app/alarm/AlarmSound.qml:29 ../app/alarm/EditAlarmPage.qml:344
 msgid "Sound"
 msgstr "Zvuk"
+
+#: ../app/alarm/AlarmSound.qml:139
+msgid "Add custom sound"
+msgstr ""
 
 #: ../app/alarm/AlarmUtils.qml:31
 msgid "Never"
@@ -149,17 +153,22 @@ msgstr "za %1h %2m"
 msgid "in %1m"
 msgstr "za %1m"
 
-#: ../app/alarm/EditAlarmPage.qml:36
+#: ../app/alarm/EditAlarmPage.qml:37
 msgid "New alarm"
 msgstr "Nový budík"
 
-#: ../app/alarm/EditAlarmPage.qml:36
+#: ../app/alarm/EditAlarmPage.qml:37
 msgid "Edit alarm"
 msgstr "Upravit budík"
 
-#: ../app/alarm/EditAlarmPage.qml:324
+#: ../app/alarm/EditAlarmPage.qml:366
 msgid "Delete alarm"
 msgstr "Smazat budík"
+
+#. TRANSLATORS: This is the page title. Please keep the translation length to 3 words if possible
+#: ../app/alarm/SoundPeerPicker.qml:27
+msgid "Add sound from"
+msgstr ""
 
 #: ../app/clock/ClockPage.qml:225
 msgid "Retrieving location..."
@@ -2013,9 +2022,10 @@ msgstr "Hodiny"
 
 #: ubuntu-clock-app.desktop.in.in.h:2
 msgid ""
-"A sophisticated clock app that provides world clock and alarm functionality."
-msgstr "Sofistikovaná aplikace hodin, která obsahuje světový čas a budík"
+"A sophisticated clock app that provides world clock, alarm and stopwatch "
+"functionality."
+msgstr ""
 
 #: ubuntu-clock-app.desktop.in.in.h:3
-msgid "time;alarm;alert;clock;world;"
-msgstr "čas;budík;upozornění;hodiny;svět"
+msgid "time;alarm;alert;clock;world;stopwatch;"
+msgstr ""

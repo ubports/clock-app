@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2015-08-20 22:42+0200\n"
+"POT-Creation-Date: 2015-08-21 18:07+0200\n"
 "PO-Revision-Date: 2015-08-16 15:47+0000\n"
 "Last-Translator: Ivo Xavier <ivofernandes12@gmail.com>\n"
 "Language-Team: Portuguese <pt@li.org>\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2015-08-21 05:43+0000\n"
+"X-Launchpad-Export-Date: 2015-08-22 05:54+0000\n"
 "X-Generator: Launchpad (build 17690)\n"
 
 #: ../app/MainPage.qml:47 ../app/alarm/AlarmUtils.qml:55
@@ -23,7 +23,7 @@ msgid "No active alarms"
 msgstr "Sem alarmes ativos"
 
 #: ../app/alarm/AlarmLabel.qml:33 ../app/alarm/AlarmLabel.qml:71
-#: ../app/alarm/EditAlarmPage.qml:290
+#: ../app/alarm/EditAlarmPage.qml:331
 msgid "Label"
 msgstr "Etiqueta"
 
@@ -41,8 +41,8 @@ msgstr "Alarmes"
 msgid "Back"
 msgstr "Anterior"
 
-#: ../app/alarm/AlarmPage.qml:49 ../app/alarm/EditAlarmPage.qml:43
-#: ../app/alarm/EditAlarmPage.qml:165
+#: ../app/alarm/AlarmPage.qml:49 ../app/alarm/EditAlarmPage.qml:44
+#: ../app/alarm/EditAlarmPage.qml:199
 msgid "Alarm"
 msgstr "Alarme"
 
@@ -62,7 +62,7 @@ msgstr "Sem alarmes guardados"
 msgid "Tap the + icon to add an alarm"
 msgstr "Toque no ícone + para adicionar um alarme"
 
-#: ../app/alarm/AlarmRepeat.qml:36 ../app/alarm/EditAlarmPage.qml:280
+#: ../app/alarm/AlarmRepeat.qml:36 ../app/alarm/EditAlarmPage.qml:321
 msgid "Repeat"
 msgstr "Repetir"
 
@@ -104,9 +104,13 @@ msgstr "Vibração"
 msgid "Change time and date"
 msgstr "Mudar hora e data"
 
-#: ../app/alarm/AlarmSound.qml:27 ../app/alarm/EditAlarmPage.qml:303
+#: ../app/alarm/AlarmSound.qml:29 ../app/alarm/EditAlarmPage.qml:344
 msgid "Sound"
 msgstr "Som"
+
+#: ../app/alarm/AlarmSound.qml:139
+msgid "Add custom sound"
+msgstr ""
 
 #: ../app/alarm/AlarmUtils.qml:31
 msgid "Never"
@@ -148,17 +152,22 @@ msgstr "em %1h %2m"
 msgid "in %1m"
 msgstr "em %1m"
 
-#: ../app/alarm/EditAlarmPage.qml:36
+#: ../app/alarm/EditAlarmPage.qml:37
 msgid "New alarm"
 msgstr "Novo alarme"
 
-#: ../app/alarm/EditAlarmPage.qml:36
+#: ../app/alarm/EditAlarmPage.qml:37
 msgid "Edit alarm"
 msgstr "Editar o alarme"
 
-#: ../app/alarm/EditAlarmPage.qml:324
+#: ../app/alarm/EditAlarmPage.qml:366
 msgid "Delete alarm"
 msgstr "Apagar o alarme"
+
+#. TRANSLATORS: This is the page title. Please keep the translation length to 3 words if possible
+#: ../app/alarm/SoundPeerPicker.qml:27
+msgid "Add sound from"
+msgstr ""
 
 #: ../app/clock/ClockPage.qml:225
 msgid "Retrieving location..."
@@ -2011,10 +2020,10 @@ msgstr "Relógio"
 
 #: ubuntu-clock-app.desktop.in.in.h:2
 msgid ""
-"A sophisticated clock app that provides world clock and alarm functionality."
+"A sophisticated clock app that provides world clock, alarm and stopwatch "
+"functionality."
 msgstr ""
-"Uma sofisticada aplicação de relógio que fornece horas mundiais e alarmes."
 
 #: ubuntu-clock-app.desktop.in.in.h:3
-msgid "time;alarm;alert;clock;world;"
-msgstr "tempo;alarme;alerta;relógio;mundo;"
+msgid "time;alarm;alert;clock;world;stopwatch;"
+msgstr ""

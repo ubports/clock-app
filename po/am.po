@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2015-08-20 22:42+0200\n"
-"PO-Revision-Date: 2015-08-12 17:43+0000\n"
+"POT-Creation-Date: 2015-08-21 18:07+0200\n"
+"PO-Revision-Date: 2015-08-21 13:40+0000\n"
 "Last-Translator: samson <Unknown>\n"
 "Language-Team: Amharic <am@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Launchpad-Export-Date: 2015-08-21 05:42+0000\n"
+"X-Launchpad-Export-Date: 2015-08-22 05:54+0000\n"
 "X-Generator: Launchpad (build 17690)\n"
 
 #: ../app/MainPage.qml:47 ../app/alarm/AlarmUtils.qml:55
@@ -23,7 +23,7 @@ msgid "No active alarms"
 msgstr "ንቁ መቀስቀሻ አልተገኘም"
 
 #: ../app/alarm/AlarmLabel.qml:33 ../app/alarm/AlarmLabel.qml:71
-#: ../app/alarm/EditAlarmPage.qml:290
+#: ../app/alarm/EditAlarmPage.qml:331
 msgid "Label"
 msgstr "ምልክት"
 
@@ -41,8 +41,8 @@ msgstr "መቀስቀሻዎች"
 msgid "Back"
 msgstr "ወደ ኋላ"
 
-#: ../app/alarm/AlarmPage.qml:49 ../app/alarm/EditAlarmPage.qml:43
-#: ../app/alarm/EditAlarmPage.qml:165
+#: ../app/alarm/AlarmPage.qml:49 ../app/alarm/EditAlarmPage.qml:44
+#: ../app/alarm/EditAlarmPage.qml:199
 msgid "Alarm"
 msgstr "መቀስቀሻ"
 
@@ -62,7 +62,7 @@ msgstr "ምንም የተቀመጠ መቀስቀሻ የለም"
 msgid "Tap the + icon to add an alarm"
 msgstr "መታ ያድርጉ + ምልክቱን መቀስቀሻ ለመጨመር"
 
-#: ../app/alarm/AlarmRepeat.qml:36 ../app/alarm/EditAlarmPage.qml:280
+#: ../app/alarm/AlarmRepeat.qml:36 ../app/alarm/EditAlarmPage.qml:321
 msgid "Repeat"
 msgstr "መድገሚያ"
 
@@ -104,9 +104,13 @@ msgstr "ማንቀጥቀጫ"
 msgid "Change time and date"
 msgstr "ሰአት እና ቀን መቀየሪያ"
 
-#: ../app/alarm/AlarmSound.qml:27 ../app/alarm/EditAlarmPage.qml:303
+#: ../app/alarm/AlarmSound.qml:29 ../app/alarm/EditAlarmPage.qml:344
 msgid "Sound"
 msgstr "ድምፅ"
+
+#: ../app/alarm/AlarmSound.qml:139
+msgid "Add custom sound"
+msgstr ""
 
 #: ../app/alarm/AlarmUtils.qml:31
 msgid "Never"
@@ -148,17 +152,22 @@ msgstr "በ %1ሰ %2ደ"
 msgid "in %1m"
 msgstr "በ %1ደ"
 
-#: ../app/alarm/EditAlarmPage.qml:36
+#: ../app/alarm/EditAlarmPage.qml:37
 msgid "New alarm"
 msgstr "አዲስ መቀስቀሻ"
 
-#: ../app/alarm/EditAlarmPage.qml:36
+#: ../app/alarm/EditAlarmPage.qml:37
 msgid "Edit alarm"
 msgstr "መቀስቀሻውን ማረሚያ"
 
-#: ../app/alarm/EditAlarmPage.qml:324
+#: ../app/alarm/EditAlarmPage.qml:366
 msgid "Delete alarm"
 msgstr "መቀስቀሻውን ማጥፊያ"
+
+#. TRANSLATORS: This is the page title. Please keep the translation length to 3 words if possible
+#: ../app/alarm/SoundPeerPicker.qml:27
+msgid "Add sound from"
+msgstr ""
 
 #: ../app/clock/ClockPage.qml:225
 msgid "Retrieving location..."
@@ -168,15 +177,15 @@ msgstr "አካባቢውን በ መፈለግ ላይ..."
 #. translation length to a few characters.
 #: ../app/stopwatch/LapListView.qml:45 ../app/stopwatch/StopwatchPage.qml:120
 msgid "Lap"
-msgstr ""
+msgstr "ዙር"
 
 #: ../app/stopwatch/LapListView.qml:55
 msgid "Lap Time"
-msgstr ""
+msgstr "የ ዙር ሰአት"
 
 #: ../app/stopwatch/LapListView.qml:63
 msgid "Total Time"
-msgstr ""
+msgstr "ጠቅላላ ሰአት"
 
 #: ../app/stopwatch/StopwatchPage.qml:103
 msgid "Stop"
@@ -188,11 +197,11 @@ msgstr "መጀመሪያ"
 
 #: ../app/stopwatch/StopwatchPage.qml:103
 msgid "Resume"
-msgstr ""
+msgstr "ይቀጥሉ"
 
 #: ../app/stopwatch/StopwatchPage.qml:120
 msgid "Clear"
-msgstr ""
+msgstr "ማጽጃ"
 
 #: ../app/worldclock/AddWorldCityButton.qml:30
 msgid "Add"
@@ -2011,9 +2020,10 @@ msgstr "ሰአት"
 
 #: ubuntu-clock-app.desktop.in.in.h:2
 msgid ""
-"A sophisticated clock app that provides world clock and alarm functionality."
-msgstr "በጣም የተወሳሰበ የ ሰአት መተግበሪያ የ አለም ሰአት እና መቀስቀሻ ያካተተ"
+"A sophisticated clock app that provides world clock, alarm and stopwatch "
+"functionality."
+msgstr "ውስብስብ የ ሰአት መተግበሪያ የ አለም ሰአት: መቀስቀሻ እና ሰአት ማስቆሚያ ተግባሮች ያካትታል"
 
 #: ubuntu-clock-app.desktop.in.in.h:3
-msgid "time;alarm;alert;clock;world;"
-msgstr "ሰአት;መቀስቀሻ;ማስጠንቀቂያ;ሰአት;አለም;"
+msgid "time;alarm;alert;clock;world;stopwatch;"
+msgstr "ሰአት: መቀስቀሻ: ማስጠንቀቂያ: የ አለም ሰአት: ሰአት ማስቆሚያ"

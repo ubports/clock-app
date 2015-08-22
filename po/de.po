@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2015-08-20 22:42+0200\n"
-"PO-Revision-Date: 2015-08-12 19:12+0000\n"
+"POT-Creation-Date: 2015-08-21 18:07+0200\n"
+"PO-Revision-Date: 2015-08-22 04:39+0000\n"
 "Last-Translator: Phillip Sz <Unknown>\n"
 "Language-Team: German <de@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2015-08-21 05:42+0000\n"
+"X-Launchpad-Export-Date: 2015-08-22 05:54+0000\n"
 "X-Generator: Launchpad (build 17690)\n"
 
 #: ../app/MainPage.qml:47 ../app/alarm/AlarmUtils.qml:55
@@ -23,7 +23,7 @@ msgid "No active alarms"
 msgstr "Keine aktiven Wecker"
 
 #: ../app/alarm/AlarmLabel.qml:33 ../app/alarm/AlarmLabel.qml:71
-#: ../app/alarm/EditAlarmPage.qml:290
+#: ../app/alarm/EditAlarmPage.qml:331
 msgid "Label"
 msgstr "Bezeichnung"
 
@@ -41,8 +41,8 @@ msgstr "Wecker"
 msgid "Back"
 msgstr "Zurück"
 
-#: ../app/alarm/AlarmPage.qml:49 ../app/alarm/EditAlarmPage.qml:43
-#: ../app/alarm/EditAlarmPage.qml:165
+#: ../app/alarm/AlarmPage.qml:49 ../app/alarm/EditAlarmPage.qml:44
+#: ../app/alarm/EditAlarmPage.qml:199
 msgid "Alarm"
 msgstr "Wecker"
 
@@ -62,7 +62,7 @@ msgstr "Keine gespeicherten Wecker"
 msgid "Tap the + icon to add an alarm"
 msgstr "Das +-Symbol antippen, um einen neuen Wecker hinzuzufügen"
 
-#: ../app/alarm/AlarmRepeat.qml:36 ../app/alarm/EditAlarmPage.qml:280
+#: ../app/alarm/AlarmRepeat.qml:36 ../app/alarm/EditAlarmPage.qml:321
 msgid "Repeat"
 msgstr "Wiederholen"
 
@@ -104,9 +104,13 @@ msgstr "Vibration"
 msgid "Change time and date"
 msgstr "Zeit und Datum ändern"
 
-#: ../app/alarm/AlarmSound.qml:27 ../app/alarm/EditAlarmPage.qml:303
+#: ../app/alarm/AlarmSound.qml:29 ../app/alarm/EditAlarmPage.qml:344
 msgid "Sound"
 msgstr "Klang"
+
+#: ../app/alarm/AlarmSound.qml:139
+msgid "Add custom sound"
+msgstr "Eigenen Ton hinzufügen"
 
 #: ../app/alarm/AlarmUtils.qml:31
 msgid "Never"
@@ -148,17 +152,22 @@ msgstr "in %1 Stunden und %2 Minuten"
 msgid "in %1m"
 msgstr "in %1 Minuten"
 
-#: ../app/alarm/EditAlarmPage.qml:36
+#: ../app/alarm/EditAlarmPage.qml:37
 msgid "New alarm"
 msgstr "Neuer Wecker"
 
-#: ../app/alarm/EditAlarmPage.qml:36
+#: ../app/alarm/EditAlarmPage.qml:37
 msgid "Edit alarm"
 msgstr "Wecker bearbeiten"
 
-#: ../app/alarm/EditAlarmPage.qml:324
+#: ../app/alarm/EditAlarmPage.qml:366
 msgid "Delete alarm"
 msgstr "Wecker löschen"
+
+#. TRANSLATORS: This is the page title. Please keep the translation length to 3 words if possible
+#: ../app/alarm/SoundPeerPicker.qml:27
+msgid "Add sound from"
+msgstr "Ton hinzufügen von"
 
 #: ../app/clock/ClockPage.qml:225
 msgid "Retrieving location..."
@@ -168,15 +177,15 @@ msgstr "Standort wird abgerufen …"
 #. translation length to a few characters.
 #: ../app/stopwatch/LapListView.qml:45 ../app/stopwatch/StopwatchPage.qml:120
 msgid "Lap"
-msgstr ""
+msgstr "Runde"
 
 #: ../app/stopwatch/LapListView.qml:55
 msgid "Lap Time"
-msgstr ""
+msgstr "Rundenzeit"
 
 #: ../app/stopwatch/LapListView.qml:63
 msgid "Total Time"
-msgstr ""
+msgstr "Gesamtzeit"
 
 #: ../app/stopwatch/StopwatchPage.qml:103
 msgid "Stop"
@@ -188,11 +197,11 @@ msgstr "Start"
 
 #: ../app/stopwatch/StopwatchPage.qml:103
 msgid "Resume"
-msgstr ""
+msgstr "Fortsetzen"
 
 #: ../app/stopwatch/StopwatchPage.qml:120
 msgid "Clear"
-msgstr ""
+msgstr "Löschen"
 
 #: ../app/worldclock/AddWorldCityButton.qml:30
 msgid "Add"
@@ -2011,11 +2020,10 @@ msgstr "Uhr"
 
 #: ubuntu-clock-app.desktop.in.in.h:2
 msgid ""
-"A sophisticated clock app that provides world clock and alarm functionality."
+"A sophisticated clock app that provides world clock, alarm and stopwatch "
+"functionality."
 msgstr ""
-"Eine umfassende Uhren-App, welche Weltzeit- und Weckerfunktionalitäten "
-"bietet."
 
 #: ubuntu-clock-app.desktop.in.in.h:3
-msgid "time;alarm;alert;clock;world;"
-msgstr "Zeit;Wecker;Alarm;Uhr;Welt;"
+msgid "time;alarm;alert;clock;world;stopwatch;"
+msgstr ""

@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2015-08-20 22:42+0200\n"
-"PO-Revision-Date: 2015-08-13 00:38+0000\n"
+"POT-Creation-Date: 2015-08-21 18:07+0200\n"
+"PO-Revision-Date: 2015-08-21 12:00+0000\n"
 "Last-Translator: Danial Behzadi <dani.behzi@gmail.com>\n"
 "Language-Team: Persian <fa@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Launchpad-Export-Date: 2015-08-21 05:43+0000\n"
+"X-Launchpad-Export-Date: 2015-08-22 05:54+0000\n"
 "X-Generator: Launchpad (build 17690)\n"
 
 #: ../app/MainPage.qml:47 ../app/alarm/AlarmUtils.qml:55
@@ -23,7 +23,7 @@ msgid "No active alarms"
 msgstr "هیچ هشداری فعّال نیست"
 
 #: ../app/alarm/AlarmLabel.qml:33 ../app/alarm/AlarmLabel.qml:71
-#: ../app/alarm/EditAlarmPage.qml:290
+#: ../app/alarm/EditAlarmPage.qml:331
 msgid "Label"
 msgstr "برچسب"
 
@@ -41,8 +41,8 @@ msgstr "هشدارها"
 msgid "Back"
 msgstr "بازگشت"
 
-#: ../app/alarm/AlarmPage.qml:49 ../app/alarm/EditAlarmPage.qml:43
-#: ../app/alarm/EditAlarmPage.qml:165
+#: ../app/alarm/AlarmPage.qml:49 ../app/alarm/EditAlarmPage.qml:44
+#: ../app/alarm/EditAlarmPage.qml:199
 msgid "Alarm"
 msgstr "هشدار"
 
@@ -62,7 +62,7 @@ msgstr "هیچ هشداری ذخیره نشده است"
 msgid "Tap the + icon to add an alarm"
 msgstr "برای افزودن هشدار، روی شمایل + ضربه بزنید"
 
-#: ../app/alarm/AlarmRepeat.qml:36 ../app/alarm/EditAlarmPage.qml:280
+#: ../app/alarm/AlarmRepeat.qml:36 ../app/alarm/EditAlarmPage.qml:321
 msgid "Repeat"
 msgstr "تکرار"
 
@@ -103,9 +103,13 @@ msgstr "لرزش"
 msgid "Change time and date"
 msgstr "تغییر زمان و تاریخ"
 
-#: ../app/alarm/AlarmSound.qml:27 ../app/alarm/EditAlarmPage.qml:303
+#: ../app/alarm/AlarmSound.qml:29 ../app/alarm/EditAlarmPage.qml:344
 msgid "Sound"
 msgstr "صدا"
+
+#: ../app/alarm/AlarmSound.qml:139
+msgid "Add custom sound"
+msgstr ""
 
 #: ../app/alarm/AlarmUtils.qml:31
 msgid "Never"
@@ -147,17 +151,22 @@ msgstr "در %1 ساعت و %2 دقیقه"
 msgid "in %1m"
 msgstr "در %1 دقیقه"
 
-#: ../app/alarm/EditAlarmPage.qml:36
+#: ../app/alarm/EditAlarmPage.qml:37
 msgid "New alarm"
 msgstr "هشدار جديد"
 
-#: ../app/alarm/EditAlarmPage.qml:36
+#: ../app/alarm/EditAlarmPage.qml:37
 msgid "Edit alarm"
 msgstr "ویرایش هشدار"
 
-#: ../app/alarm/EditAlarmPage.qml:324
+#: ../app/alarm/EditAlarmPage.qml:366
 msgid "Delete alarm"
 msgstr "حذف هشدار"
+
+#. TRANSLATORS: This is the page title. Please keep the translation length to 3 words if possible
+#: ../app/alarm/SoundPeerPicker.qml:27
+msgid "Add sound from"
+msgstr ""
 
 #: ../app/clock/ClockPage.qml:225
 msgid "Retrieving location..."
@@ -167,15 +176,15 @@ msgstr "درحال بازیابی موقعیت…"
 #. translation length to a few characters.
 #: ../app/stopwatch/LapListView.qml:45 ../app/stopwatch/StopwatchPage.qml:120
 msgid "Lap"
-msgstr ""
+msgstr "دور"
 
 #: ../app/stopwatch/LapListView.qml:55
 msgid "Lap Time"
-msgstr ""
+msgstr "زمان دور"
 
 #: ../app/stopwatch/LapListView.qml:63
 msgid "Total Time"
-msgstr ""
+msgstr "زمان کل"
 
 #: ../app/stopwatch/StopwatchPage.qml:103
 msgid "Stop"
@@ -187,11 +196,11 @@ msgstr "آغاز"
 
 #: ../app/stopwatch/StopwatchPage.qml:103
 msgid "Resume"
-msgstr ""
+msgstr "از سر گیری"
 
 #: ../app/stopwatch/StopwatchPage.qml:120
 msgid "Clear"
-msgstr ""
+msgstr "پاک‌سازی"
 
 #: ../app/worldclock/AddWorldCityButton.qml:30
 msgid "Add"
@@ -2010,10 +2019,10 @@ msgstr "ساعت‌"
 
 #: ubuntu-clock-app.desktop.in.in.h:2
 msgid ""
-"A sophisticated clock app that provides world clock and alarm functionality."
+"A sophisticated clock app that provides world clock, alarm and stopwatch "
+"functionality."
 msgstr ""
-"یک برنامه‌ی ساعت خفن که ساعت جهانی و قابلیت‌های هشدار را فراهم مي‌کند."
 
 #: ubuntu-clock-app.desktop.in.in.h:3
-msgid "time;alarm;alert;clock;world;"
-msgstr "time;alarm;alert;clock;world;"
+msgid "time;alarm;alert;clock;world;stopwatch;"
+msgstr ""
