@@ -100,6 +100,19 @@ Page {
         }
     }
 
+    Connections {
+        target: clockApp
+        onApplicationStateChanged: {
+            previewAlarmSound.stop()
+        }
+    }
+
+    onVisibleChanged: {
+        if (!_alarmSoundPage.visible) {
+            previewAlarmSound.stop()
+        }
+    }
+
     Audio {
         id: previewAlarmSound
         audioRole: MediaPlayer.alert
