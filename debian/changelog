@@ -20,6 +20,10 @@ ubuntu-clock-app (3.5) UNRELEASED; urgency=medium
   * Added Clock Utility C++ plugin housing CustomAlarmSound type required
     for custom alarm sound feature
   * Added support for setting custom alarm sounds (LP: #1450640)
+  * Stop playing alarm sound preview if the application loses focus or
+    alarm sound page not visible. (LP: #1487699)
+  * Select the newly imported custom sound automatically (LP: #1487689)
+  * Fixed alarm sound preview not playing when pressing on the checkbox (LP: #1487690)
 
   [Victor Thompson]
   * Show all README files in QtCreator 
