@@ -96,6 +96,29 @@ Page {
                 console.log("[LOG] Original Custom Alarm Sound URL: " + _alarmSoundPage.importItems[0].url)
                 _alarmSoundPage.importItems[0].move(customSound.alarmSoundDirectory)
                 console.log("[LOG] Final Custom Alarm Sound URL: " + _alarmSoundPage.importItems[0].url)
+                // Wait for folder model to update and then select the imported sound
+                waitForCustomSoundModelToUpdate.start()
+            }
+        }
+    }
+
+    Timer {
+        id: waitForCustomSoundModelToUpdate
+        interval: 100
+        repeat: false
+        onTriggered: {
+            selectNewlyImportedCustomSound(_alarmSoundPage.importItems[0].url)
+        }
+    }
+
+    function selectNewlyImportedCustomSound(soundUrl) {
+        for (var i=0; i<customSoundModel.count; i++) {
+            if (soundUrl === customSoundModel.get(i, "fileURL")) {
+                alarmSound.subText = customSoundModel.get(i, "fileBaseName")
+                alarm.sound = soundUrl
+                previewAlarmSound.source = soundUrl
+                _customAlarmSounds.itemAt(i).isChecked = true
+                return
             }
         }
     }
