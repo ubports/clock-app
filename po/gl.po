@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2015-08-21 18:07+0200\n"
-"PO-Revision-Date: 2015-08-21 09:46+0000\n"
+"PO-Revision-Date: 2015-08-22 22:12+0000\n"
 "Last-Translator: Marcos Lans <Unknown>\n"
 "Language-Team: Galician <gl@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2015-08-22 05:54+0000\n"
+"X-Launchpad-Export-Date: 2015-08-23 06:35+0000\n"
 "X-Generator: Launchpad (build 17690)\n"
 
 #: ../app/MainPage.qml:47 ../app/alarm/AlarmUtils.qml:55
@@ -110,7 +110,7 @@ msgstr "Son"
 
 #: ../app/alarm/AlarmSound.qml:139
 msgid "Add custom sound"
-msgstr ""
+msgstr "Son personalizado"
 
 #: ../app/alarm/AlarmUtils.qml:31
 msgid "Never"
@@ -167,7 +167,7 @@ msgstr "Eliminar a alarma"
 #. TRANSLATORS: This is the page title. Please keep the translation length to 3 words if possible
 #: ../app/alarm/SoundPeerPicker.qml:27
 msgid "Add sound from"
-msgstr ""
+msgstr "Engadir son"
 
 #: ../app/clock/ClockPage.qml:225
 msgid "Retrieving location..."
@@ -177,11 +177,11 @@ msgstr "Recuperando a localización..."
 #. translation length to a few characters.
 #: ../app/stopwatch/LapListView.qml:45 ../app/stopwatch/StopwatchPage.qml:120
 msgid "Lap"
-msgstr ""
+msgstr "Parcial"
 
 #: ../app/stopwatch/LapListView.qml:55
 msgid "Lap Time"
-msgstr ""
+msgstr "Tempo parcial"
 
 #: ../app/stopwatch/LapListView.qml:63
 msgid "Total Time"
@@ -2023,7 +2023,9 @@ msgid ""
 "A sophisticated clock app that provides world clock, alarm and stopwatch "
 "functionality."
 msgstr ""
+"Un aplicativo de reloxo sofisticado que proporciona horas de todo o mundo, "
+"alarma e cronómetro."
 
 #: ubuntu-clock-app.desktop.in.in.h:3
 msgid "time;alarm;alert;clock;world;stopwatch;"
-msgstr ""
+msgstr "hora;alarma;alerta;reloxo;mundo;cronómetro;"
