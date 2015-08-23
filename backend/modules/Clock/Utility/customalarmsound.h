@@ -39,6 +39,10 @@ public slots:
     // Function to delete a custom alarm sound
     void deleteAlarmSound(const QString &soundName);
 
+    // Function to delete old alarm file sound according to file name from full path.
+    // It will able to replace sound alarm with new version
+    void prepareToAddAlarmSound(const QString &soundPath);
+
     // Function to create the CustomSounds alarm directory
     void createAlarmSoundDirectory();
 

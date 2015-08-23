@@ -94,10 +94,12 @@ Page {
             if (_alarmSoundPage.activeTransfer.state === ContentTransfer.Charged) {
                 _alarmSoundPage.importItems = _alarmSoundPage.activeTransfer.items
                 console.log("[LOG] Original Custom Alarm Sound URL: " + _alarmSoundPage.importItems[0].url)
-                _alarmSoundPage.importItems[0].move(customSound.alarmSoundDirectory)
+                customSound.prepareToAddAlarmSound(_alarmSoundPage.importItems[0].url)
+                if (_alarmSoundPage.importItems[0].move(customSound.alarmSoundDirectory) === true) {
+                    // Wait for folder model to update and then select the imported sound
+                    waitForCustomSoundModelToUpdate.start()
+                }
                 console.log("[LOG] Final Custom Alarm Sound URL: " + _alarmSoundPage.importItems[0].url)
-                // Wait for folder model to update and then select the imported sound
-                waitForCustomSoundModelToUpdate.start()
             }
         }
     }

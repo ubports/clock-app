@@ -17,6 +17,7 @@
  */
 
 #include <QDir>
+#include <QFileInfo>
 #include <QStandardPaths>
 
 #include "customalarmsound.h"
@@ -35,7 +36,17 @@ QString CustomAlarmSound::alarmSoundDirectory() const
 void CustomAlarmSound::deleteAlarmSound(const QString &soundName)
 {
     QDir dir(m_customAlarmDir);
-    dir.remove(soundName);
+    if (dir.exists(soundName))
+    {
+        dir.remove(soundName);
+    }
+}
+
+void CustomAlarmSound::prepareToAddAlarmSound(const QString &soundPath)
+{
+    QFileInfo soundFile(soundPath);
+    QString soundFileName = soundFile.fileName();
+    deleteAlarmSound(soundFileName);
 }
 
 void CustomAlarmSound::createAlarmSoundDirectory()
