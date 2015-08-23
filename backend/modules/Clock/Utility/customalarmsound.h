@@ -27,7 +27,8 @@ class CustomAlarmSound: public QObject
 
     // READONLY Property to return the custom alarm sound directory path
     Q_PROPERTY( QString alarmSoundDirectory
-                READ alarmSoundDirectory)
+                READ alarmSoundDirectory
+                CONSTANT)
 
 public:
     CustomAlarmSound(QObject *parent = 0);
