@@ -1,0 +1,25 @@
+id: worldcity/language-change
+plugin: manual
+_summary: Test to check if world city language changes when the system language is changed
+estimated_duration: 600
+_description:
+    Test to check if world city language changes when the system language is changed
+    1. Launch system settings app and navigate to Language&Text.
+        The display language is English.
+    1. Launch the clock app.
+        Clock app opens showing the current local time.
+    2. Press the add city button.
+        The add world city page is shown with a list of cities in English.
+    3. Select a city from the list shown.
+        The main clock page will be shown with the city you selected in English.
+    4. Switch to the system settings app and change display language to Espanol (Espana).
+        The restart dialog will be shown asking to reboot the device to change the
+        system language.
+    5. Reboot the device.
+        The device restarts and is now in Espanol.
+    6. Launch the clock app.
+        Clock app opens showing the current local time along with the city you added
+        in step 3 in Espanol.
+    7. Press the add city button.
+        The add world city page is shown with a list of cities in Espanol
+
