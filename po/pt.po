@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2015-08-21 18:07+0200\n"
-"PO-Revision-Date: 2015-08-16 15:47+0000\n"
+"PO-Revision-Date: 2015-08-22 11:36+0000\n"
 "Last-Translator: Ivo Xavier <ivofernandes12@gmail.com>\n"
 "Language-Team: Portuguese <pt@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2015-08-22 05:54+0000\n"
+"X-Launchpad-Export-Date: 2015-08-23 06:35+0000\n"
 "X-Generator: Launchpad (build 17690)\n"
 
 #: ../app/MainPage.qml:47 ../app/alarm/AlarmUtils.qml:55
@@ -110,7 +110,7 @@ msgstr "Som"
 
 #: ../app/alarm/AlarmSound.qml:139
 msgid "Add custom sound"
-msgstr ""
+msgstr "Adicionar som personalizado"
 
 #: ../app/alarm/AlarmUtils.qml:31
 msgid "Never"
@@ -167,7 +167,7 @@ msgstr "Apagar o alarme"
 #. TRANSLATORS: This is the page title. Please keep the translation length to 3 words if possible
 #: ../app/alarm/SoundPeerPicker.qml:27
 msgid "Add sound from"
-msgstr ""
+msgstr "Adicionar som de"
 
 #: ../app/clock/ClockPage.qml:225
 msgid "Retrieving location..."
@@ -177,15 +177,15 @@ msgstr "A recuperar localização..."
 #. translation length to a few characters.
 #: ../app/stopwatch/LapListView.qml:45 ../app/stopwatch/StopwatchPage.qml:120
 msgid "Lap"
-msgstr ""
+msgstr "Volta"
 
 #: ../app/stopwatch/LapListView.qml:55
 msgid "Lap Time"
-msgstr ""
+msgstr "Tempo de volta"
 
 #: ../app/stopwatch/LapListView.qml:63
 msgid "Total Time"
-msgstr ""
+msgstr "Tempo total"
 
 #: ../app/stopwatch/StopwatchPage.qml:103
 msgid "Stop"
@@ -197,11 +197,11 @@ msgstr "Iniciar"
 
 #: ../app/stopwatch/StopwatchPage.qml:103
 msgid "Resume"
-msgstr ""
+msgstr "Retomar"
 
 #: ../app/stopwatch/StopwatchPage.qml:120
 msgid "Clear"
-msgstr ""
+msgstr "Limpar"
 
 #: ../app/worldclock/AddWorldCityButton.qml:30
 msgid "Add"
@@ -2022,8 +2022,8 @@ msgstr "Relógio"
 msgid ""
 "A sophisticated clock app that provides world clock, alarm and stopwatch "
 "functionality."
-msgstr ""
+msgstr "Uma app que fornece um relógio mundial, alarme e cronómetro."
 
 #: ubuntu-clock-app.desktop.in.in.h:3
 msgid "time;alarm;alert;clock;world;stopwatch;"
-msgstr ""
+msgstr "tempo;alarme;alerta;relógio;mundo;cronómetro;"

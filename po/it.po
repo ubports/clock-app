@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2015-08-21 18:07+0200\n"
-"PO-Revision-Date: 2015-04-01 15:11+0000\n"
+"PO-Revision-Date: 2015-08-22 06:26+0000\n"
 "Last-Translator: Claudio Arseni <claudio.arseni@gmail.com>\n"
 "Language-Team: Italian <it@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2015-08-22 05:54+0000\n"
+"X-Launchpad-Export-Date: 2015-08-23 06:35+0000\n"
 "X-Generator: Launchpad (build 17690)\n"
 
 #: ../app/MainPage.qml:47 ../app/alarm/AlarmUtils.qml:55
@@ -34,7 +34,7 @@ msgstr "Elimina"
 
 #: ../app/alarm/AlarmPage.qml:25
 msgid "Alarms"
-msgstr "Allarmi"
+msgstr "Sveglie"
 
 #: ../app/alarm/AlarmPage.qml:39 ../app/alarm/AlarmPage.qml:64
 #: ../app/worldclock/WorldCityList.qml:79
@@ -44,7 +44,7 @@ msgstr "Indietro"
 #: ../app/alarm/AlarmPage.qml:49 ../app/alarm/EditAlarmPage.qml:44
 #: ../app/alarm/EditAlarmPage.qml:199
 msgid "Alarm"
-msgstr "Allarme"
+msgstr "Sveglia"
 
 #: ../app/alarm/AlarmPage.qml:74
 msgid "Select None"
@@ -86,11 +86,11 @@ msgstr[1] "%1 minuti"
 
 #: ../app/alarm/AlarmSettingsPage.qml:94
 msgid "Alarm volume"
-msgstr "Volume allarme"
+msgstr "Volume sveglia"
 
 #: ../app/alarm/AlarmSettingsPage.qml:125
 msgid "Alarm stops after"
-msgstr ""
+msgstr "La sveglia si spegne dopo"
 
 #: ../app/alarm/AlarmSettingsPage.qml:163
 msgid "Snooze for"
@@ -110,7 +110,7 @@ msgstr "Suono"
 
 #: ../app/alarm/AlarmSound.qml:139
 msgid "Add custom sound"
-msgstr ""
+msgstr "Aggiungi suono personalizzato"
 
 #: ../app/alarm/AlarmUtils.qml:31
 msgid "Never"
@@ -118,7 +118,7 @@ msgstr "Mai"
 
 #: ../app/alarm/AlarmUtils.qml:37
 msgid "Weekdays"
-msgstr "Giorni della settimana"
+msgstr "Giorni feriali"
 
 #: ../app/alarm/AlarmUtils.qml:41
 msgid "Weekends"
@@ -154,20 +154,20 @@ msgstr "tra %1m"
 
 #: ../app/alarm/EditAlarmPage.qml:37
 msgid "New alarm"
-msgstr "Nuovo allarme"
+msgstr "Nuova sveglia"
 
 #: ../app/alarm/EditAlarmPage.qml:37
 msgid "Edit alarm"
-msgstr "Modifica allarme"
+msgstr "Modifica sveglia"
 
 #: ../app/alarm/EditAlarmPage.qml:366
 msgid "Delete alarm"
-msgstr "Elimina allarme"
+msgstr "Elimina sveglia"
 
 #. TRANSLATORS: This is the page title. Please keep the translation length to 3 words if possible
 #: ../app/alarm/SoundPeerPicker.qml:27
 msgid "Add sound from"
-msgstr ""
+msgstr "Aggiungi suono da"
 
 #: ../app/clock/ClockPage.qml:225
 msgid "Retrieving location..."
@@ -177,15 +177,15 @@ msgstr "Recupero posizione..."
 #. translation length to a few characters.
 #: ../app/stopwatch/LapListView.qml:45 ../app/stopwatch/StopwatchPage.qml:120
 msgid "Lap"
-msgstr ""
+msgstr "Giro"
 
 #: ../app/stopwatch/LapListView.qml:55
 msgid "Lap Time"
-msgstr ""
+msgstr "Tempo del giro"
 
 #: ../app/stopwatch/LapListView.qml:63
 msgid "Total Time"
-msgstr ""
+msgstr "Tempo totale"
 
 #: ../app/stopwatch/StopwatchPage.qml:103
 msgid "Stop"
@@ -197,11 +197,11 @@ msgstr "Avvia"
 
 #: ../app/stopwatch/StopwatchPage.qml:103
 msgid "Resume"
-msgstr ""
+msgstr "Riprendi"
 
 #: ../app/stopwatch/StopwatchPage.qml:120
 msgid "Clear"
-msgstr ""
+msgstr "Ripristina"
 
 #: ../app/worldclock/AddWorldCityButton.qml:30
 msgid "Add"
@@ -250,7 +250,7 @@ msgstr "Stessa ora"
 
 #: ../app/worldclock/WorldCityList.qml:50
 msgid "Select a city"
-msgstr "Seleziona una città"
+msgstr "Selezionare una città"
 
 #: ../app/worldclock/WorldCityList.qml:108
 msgid "Search..."
@@ -2023,7 +2023,9 @@ msgid ""
 "A sophisticated clock app that provides world clock, alarm and stopwatch "
 "functionality."
 msgstr ""
+"Un sofisticato orologio che fornisce l'ora da diversi fusi orari e "
+"funzionalità di sveglia e cronometro."
 
 #: ubuntu-clock-app.desktop.in.in.h:3
 msgid "time;alarm;alert;clock;world;stopwatch;"
-msgstr ""
+msgstr "ora;sveglia;allarme;avviso;orologio;cronometro;mondo;"
