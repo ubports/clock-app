@@ -95,7 +95,9 @@ MainView {
          Reload the alarm model when the clock app gains focus to refresh
          the alarm page UI in the case of alarm notifications.
         */
-        if(applicationState && !mainPage.isColdStart) {
+        if(applicationState && !mainPage.isColdStart && (mainStack.currentPage.isMainPage
+                || mainStack.currentPage.isAlarmPage)) {
+            console.log("[LOG]: Alarm Database unloaded")
             alarmModelLoader.source = ""
             alarmModelLoader.source = Qt.resolvedUrl("alarm/AlarmModelComponent.qml")
         }
@@ -108,6 +110,8 @@ MainView {
 
         MainPage {
             id: mainPage
+
+            readonly property bool isMainPage: true
 
             Loader {
                 id: alarmModelLoader

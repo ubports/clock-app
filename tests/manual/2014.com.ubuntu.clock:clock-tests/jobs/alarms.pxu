@@ -49,6 +49,35 @@ _description:
     9. Press "Ok" to dismiss the alarm.
         The alarm should be dismissed.
 
+id: alarm/edit-alarm-focus
+plugin: manual
+depends: alarm/trigger-alarm
+_summary: Edit Alarm focus test
+estimated_duration: 660
+_description:
+    This test check if an edited alarm is saveable even when clock app loses focus during the test.
+    1. Launch the clock app.
+        Clock app opens showing the current local time.
+    2. Swipe the bottom edge to open the alarms page.
+        Alarms page should appear showing a list of alarm. If empty then you should see a
+        message being displayed that "No saved alarms".
+    3. Press the plus icon to create a new alarm. Change the alarm time to ring in the next
+       minute. Do not change any other options. Save Alarm.
+        The saved alarm should be displayed in the alarms page.
+    4. Press the saved alarm to edit it.
+        The edit alarm page should be visible with the values set in the previous step.
+    5. Swipe from the right-edge briefly.
+        The Unity dash should be visible
+    6. Swipe again from the right-edge briefly.
+        The clock app should now be visible
+    7. Change the alarm time to ring in the next minute. Do not change any other options. Save Alarm.
+        The saved alarm should be displayed in the alarms page.
+    8. Wait for the alarm to ring.
+        The alarm should ring (with haptic feedback) at the time set in the previous step and 
+        should show a notification with the buttons "Snooze" and "Ok".
+    9. Press "Ok" to dismiss the alarm.
+        The alarm should be dismissed.
+
 id: alarm/silence-setting
 plugin: manual
 depends: alarm/trigger-alarm

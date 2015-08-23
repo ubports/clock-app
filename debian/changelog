@@ -26,6 +26,8 @@ ubuntu-clock-app (3.5) UNRELEASED; urgency=medium
   * Select the newly imported custom sound automatically (LP: #1487689)
   * Added world city manual test to check world city translation issue (LP: #1487802)
   * Fixed alarm sound preview not playing when pressing on the checkbox (LP: #1487690)
+  * Fixed edited alarm not being saveable if at any point of editing the alarm
+    clock app loses focus (LP: #1487789)
 
   [Victor Thompson]
   * Show all README files in QtCreator 
