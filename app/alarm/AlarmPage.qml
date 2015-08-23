@@ -22,6 +22,8 @@ import Ubuntu.Components 1.2
 Page {
     id: alarmPage
 
+    property bool isAlarmPage: true
+
     title: i18n.tr("Alarms")
     objectName: 'AlarmPage'
     flickable: null
