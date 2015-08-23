@@ -111,7 +111,7 @@ MainView {
         MainPage {
             id: mainPage
 
-            property bool isMainPage: true
+            readonly property bool isMainPage: true
 
             Loader {
                 id: alarmModelLoader
