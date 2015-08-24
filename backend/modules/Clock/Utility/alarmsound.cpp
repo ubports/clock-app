@@ -85,11 +85,6 @@ QString AlarmSound::getDefaultAlarmSoundPath(const QString &soundFileName) const
     return m_defaultAlarmDir + soundFileName;
 }
 
-QString AlarmSound::getCustomAlarmSoundPath(const QString &soundFileName) const
-{
-    return m_customAlarmDir + soundFileName;
-}
-
 QString AlarmSound::getSoundName(const QString &soundPath) const
 {
     QFileInfo soundFile(soundPath);

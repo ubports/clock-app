@@ -49,7 +49,6 @@ public slots:
     bool isAlarmSoundValid(const QUrl &soundUrl);
 
     QString getDefaultAlarmSoundPath(const QString &soundFileName) const;
-    QString getCustomAlarmSoundPath(const QString &soundFileName) const;
 
     QString getSoundName(const QString &soundPath) const;
 
