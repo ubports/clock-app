@@ -19,13 +19,13 @@
 #include <QtQml>
 #include <QtQml/QQmlContext>
 #include "backend.h"
-#include "customalarmsound.h"
+#include "alarmsound.h"
 
 void BackendPlugin::registerTypes(const char *uri)
 {
     Q_ASSERT(uri == QLatin1String("Clock.Utility"));
 
-    qmlRegisterType<CustomAlarmSound>(uri, 1, 0, "CustomAlarmSound");
+    qmlRegisterType<AlarmSound>(uri, 1, 0, "AlarmSound");
 }
 
 void BackendPlugin::initializeEngine(QQmlEngine *engine, const char *uri)

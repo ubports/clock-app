@@ -56,6 +56,7 @@ Page {
         if(!isNewAlarm) {
             readAlarm()
         }
+        setAlarmSound()
     }
 
     // Function to save a new alarm
@@ -125,68 +126,34 @@ Page {
         }
     }
 
-    function getSoundName(chosenSoundPath) {
-        for(var i=0; i<defaultSoundModel.count; i++) {
-            if(chosenSoundPath === Qt.resolvedUrl(defaultSoundModel.get(i, "filePath"))) {
-                return defaultSoundModel.get(i, "fileBaseName")
-            }
-        }
-
-        for(var j=0; j<customSoundModel.count; j++) {
-            if(chosenSoundPath === Qt.resolvedUrl(customSoundModel.get(j, "filePath"))) {
-                return customSoundModel.get(j, "fileBaseName")
-            }
-        }
-
-        return ""
-    }
-
-    function getSoundPath(chosenSoundName) {
-        for(var i=0; i<defaultSoundModel.count; i++) {
-            if(chosenSoundName === defaultSoundModel.get(i, "fileBaseName")) {
-                return defaultSoundModel.get(i, "filePath")
-            }
-        }
-
-        for(var j=0; j<customSoundModel.count; j++) {
-            if(chosenSoundName === customSoundModel.get(i, "fileBaseName")) {
-                return customSoundModel.get(i, "filePath")
-            }
-        }
-    }
-
     /*
      #TODO: The default alarm sound was changed to "Alarm clock" which only lands
      in OTA-6. This function is need to maintain backwards compatibility with
      OTA-5 users.
     */
     function fallbacktoOldDefaultAlarmSound() {
-        _alarm.sound = getSoundPath("Suru arpeggio")
+        _alarm.sound = alarmSoundHelper.getDefaultAlarmSoundPath("Suru arpeggio.ogg")
         _alarmSound.subText = "Suru arpeggio"
     }
 
     function setDefaultAlarmSound() {
-        _alarm.sound = getSoundPath(_alarmSound.defaultAlarmSound)
+        _alarm.sound = alarmSoundHelper.getDefaultAlarmSoundPath(_alarmSound.defaultAlarmSoundFileName)
         _alarmSound.subText = _alarmSound.defaultAlarmSound
     }
 
     function setAlarmSound() {
         if(isNewAlarm) {
-            if (!getSoundPath(_alarmSound.defaultAlarmSound)) {
+            if (!alarmSoundHelper.isAlarmSoundValid(_alarmSound.defaultAlarmSoundFileName)) {
                 fallbacktoOldDefaultAlarmSound()
             } else {
                 setDefaultAlarmSound()
             }
         }
         else {
-            _alarmSound.subText = getSoundName(_alarm.sound.toString())
-            /*
-             If the custom alarm sound of an alarm was deleted by the user,
-             then fall back to the default alarm sound instead of showing an
-             empty string.
-            */
-            if (_alarmSound.subText === "") {
-                if (!getSoundPath(_alarmSound.defaultAlarmSound)) {
+            if (alarmSoundHelper.isAlarmSoundValid(_alarm.sound)) {
+                _alarmSound.subText = alarmSoundHelper.getSoundName(_alarm.sound.toString())
+            } else {
+                if (!alarmSoundHelper.isAlarmSoundValid(_alarmSound.defaultAlarmSoundFileName)) {
                     fallbacktoOldDefaultAlarmSound()
                 } else {
                     setDefaultAlarmSound()
@@ -251,47 +218,19 @@ Page {
 
     FolderListModel {
         id: defaultSoundModel
-
-        property bool isModelLoaded: false
-
         showDirs: false
         nameFilters: [ "*.ogg", "*.mp3" ]
         folder: "/usr/share/sounds/ubuntu/ringtones"
-        Component.onCompleted: {
-            isModelLoaded = true
-        }
     }
 
     FolderListModel {
         id: customSoundModel
-
-        property bool isModelLoaded: false
-
         showDirs: false
-        folder: customSound.alarmSoundDirectory
-        Component.onCompleted: {
-            isModelLoaded = true
-        }
+        folder: alarmSoundHelper.customAlarmSoundDirectory
     }
 
-    /*
-     QML FolderListModel does not provide any signals to indicate that it is fully loaded other
-     than the onCompleted() signal which is not sufficient. This introduces a race-condition where
-     file checks are done *before* the folder models have fully loaded. This timer introduces a
-     delay to workaround that issue.
-    */
-    Timer {
-        id: delaySettingAlarmSoundTimer
-        interval: 100
-        running: defaultSoundModel.isModelLoaded && customSoundModel.isModelLoaded
-        onTriggered: {
-            setAlarmSound()
-        }
-    }
-
-    // Custom C++ Component that returns the clock app directory /home/phablet/.local/share/com.ubuntu.clock
-    CustomAlarmSound {
-        id: customSound
+    AlarmSound {
+        id: alarmSoundHelper
     }
 
     AlarmUtils {
@@ -367,6 +306,7 @@ Page {
             objectName: "alarmSound"
 
             readonly property string defaultAlarmSound: "Alarm clock"
+            readonly property string defaultAlarmSoundFileName: "Alarm clock.ogg"
 
             text: i18n.tr("Sound")
             onClicked: pageStack.push(Qt.resolvedUrl("AlarmSound.qml"), {

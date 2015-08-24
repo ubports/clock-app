@@ -37,7 +37,7 @@ set(
 set(
     clockutility_SRCS
     modules/Clock/Utility/backend.cpp
-    modules/Clock/Utility/customalarmsound.cpp
+    modules/Clock/Utility/alarmsound.cpp
 )
 
 set(

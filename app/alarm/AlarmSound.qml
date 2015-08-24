@@ -94,8 +94,8 @@ Page {
             if (_alarmSoundPage.activeTransfer.state === ContentTransfer.Charged) {
                 _alarmSoundPage.importItems = _alarmSoundPage.activeTransfer.items
                 console.log("[LOG] Original Custom Alarm Sound URL: " + _alarmSoundPage.importItems[0].url)
-                customSound.prepareToAddAlarmSound(_alarmSoundPage.importItems[0].url)
-                if (_alarmSoundPage.importItems[0].move(customSound.alarmSoundDirectory) === true) {
+                alarmSoundHelper.prepareToAddAlarmSound(_alarmSoundPage.importItems[0].url)
+                if (_alarmSoundPage.importItems[0].move(alarmSoundHelper.customAlarmSoundDirectory) === true) {
                     // Wait for folder model to update and then select the imported sound
                     waitForCustomSoundModelToUpdate.start()
                 }
@@ -152,8 +152,8 @@ Page {
         }
     }
 
-    CustomAlarmSound {
-        id: customSound
+    AlarmSound {
+        id: alarmSoundHelper
     }
 
     Flickable {
@@ -245,7 +245,7 @@ Page {
                                         }
                                     }
 
-                                    customSound.deleteAlarmSound(fileName)
+                                    alarmSoundHelper.deleteCustomAlarmSound(fileName)
                                 }
                             }
                         ]

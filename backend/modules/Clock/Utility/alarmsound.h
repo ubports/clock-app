@@ -16,39 +16,45 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef CUSTOMALARMSOUND_H
-#define CUSTOMALARMSOUND_H
+#ifndef ALARMSOUND_H
+#define ALARMSOUND_H
 
 #include <QObject>
+#include <QUrl>
 
-class CustomAlarmSound: public QObject
+class AlarmSound: public QObject
 {
     Q_OBJECT
 
     // READONLY Property to return the custom alarm sound directory path
-    Q_PROPERTY( QString alarmSoundDirectory
-                READ alarmSoundDirectory
+    Q_PROPERTY( QString customAlarmSoundDirectory
+                READ customAlarmSoundDirectory
                 CONSTANT)
 
 public:
-    CustomAlarmSound(QObject *parent = 0);
+    AlarmSound(QObject *parent = 0);
 
-    // Function to return the custom alarm sound directory path
-    QString alarmSoundDirectory() const;
+    QString customAlarmSoundDirectory() const;
 
 public slots:
-    // Function to delete a custom alarm sound
-    void deleteAlarmSound(const QString &soundName);
+    void deleteCustomAlarmSound(const QString &soundName);
 
     // Function to delete old alarm file sound according to file name from full path.
     // It will able to replace sound alarm with new version
     void prepareToAddAlarmSound(const QString &soundPath);
 
-    // Function to create the CustomSounds alarm directory
-    void createAlarmSoundDirectory();
+    void createCustomAlarmSoundDirectory();
+
+    bool isAlarmSoundValid(const QString &soundFileName);
+    bool isAlarmSoundValid(const QUrl &soundUrl);
+
+    QString getDefaultAlarmSoundPath(const QString &soundFileName) const;
+
+    QString getSoundName(const QString &soundPath) const;
 
 private:
     QString m_customAlarmDir;
+    QString m_defaultAlarmDir;
 };
 
 #endif
