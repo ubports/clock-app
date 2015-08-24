@@ -1,5 +1,6 @@
 /*****************************************************************************
  * Copyright: 2015 Michael Zanetti <michael_zanetti@gmx.net>                 *
+ *            2015 Bartosz Kosiorek <gang65@poczta.onet.pl>                  *
  *                                                                           *
  * This prject is free software: you can redistribute it and/or modify       *
  * it under the terms of the GNU General Public License as published by      *
