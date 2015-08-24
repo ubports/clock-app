@@ -76,7 +76,7 @@ bool AlarmSound::isAlarmSoundValid(const QString &soundFileName)
 
 bool AlarmSound::isAlarmSoundValid(const QUrl &soundUrl)
 {
-    QDir soundFile;
+    QFileInfo soundFile;
     return soundFile.exists(soundUrl.path());
 }
 
