@@ -54,7 +54,8 @@ void AlarmSound::createCustomAlarmSoundDirectory()
 {
     QDir dir(m_customAlarmDir);
 
-    if (dir.exists()) {
+    if (dir.exists())
+    {
         return;
     }
 
@@ -65,11 +66,18 @@ bool AlarmSound::isAlarmSoundValid(const QString &soundFileName)
 {
     QFileInfo soundFile;
 
-    if (soundFile.exists(m_defaultAlarmDir + soundFileName)) {
+    if (soundFile.exists(m_defaultAlarmDir + soundFileName))
+    {
         return true;
-    } else if (soundFile.exists(m_customAlarmDir + soundFileName)) {
+    }
+
+    else if (soundFile.exists(m_customAlarmDir + soundFileName))
+    {
         return true;
-    } else {
+    }
+
+    else
+    {
         return false;
     }
 }
