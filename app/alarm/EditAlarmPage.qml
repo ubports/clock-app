@@ -143,18 +143,17 @@ Page {
 
     function setAlarmSound() {
         if(isNewAlarm) {
-            console.log("********************* \/ Alarm Clock exists? " + alarmSoundHelper.doesDefaultAlarmSoundExist(_alarmSound.defaultAlarmSoundFileName))
-            if (!alarmSoundHelper.doesDefaultAlarmSoundExist(_alarmSound.defaultAlarmSoundFileName)) {
+            if (!alarmSoundHelper.isAlarmSoundValid(_alarmSound.defaultAlarmSoundFileName)) {
                 fallbacktoOldDefaultAlarmSound()
             } else {
                 setDefaultAlarmSound()
             }
         }
         else {
-            if (alarmSoundHelper.doesCustomAlarmSoundExist(_alarm.sound.toString())) {
+            if (alarmSoundHelper.isAlarmSoundValid(_alarm.sound)) {
                 _alarmSound.subText = alarmSoundHelper.getSoundName(_alarm.sound.toString())
             } else {
-                if (!alarmSoundHelper.doesDefaultAlarmSoundExist(_alarmSound.defaultAlarmSoundFileName)) {
+                if (!alarmSoundHelper.isAlarmSoundValid(_alarmSound.defaultAlarmSoundFileName)) {
                     fallbacktoOldDefaultAlarmSound()
                 } else {
                     setDefaultAlarmSound()
@@ -219,9 +218,6 @@ Page {
 
     FolderListModel {
         id: defaultSoundModel
-
-        property bool isModelLoaded: false
-
         showDirs: false
         nameFilters: [ "*.ogg", "*.mp3" ]
         folder: "/usr/share/sounds/ubuntu/ringtones"
@@ -229,9 +225,6 @@ Page {
 
     FolderListModel {
         id: customSoundModel
-
-        property bool isModelLoaded: false
-
         showDirs: false
         folder: alarmSoundHelper.customAlarmSoundDirectory
     }

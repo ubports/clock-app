@@ -20,6 +20,7 @@
 #define ALARMSOUND_H
 
 #include <QObject>
+#include <QUrl>
 
 class AlarmSound: public QObject
 {
@@ -44,8 +45,8 @@ public slots:
 
     void createCustomAlarmSoundDirectory();
 
-    bool doesDefaultAlarmSoundExist(const QString &soundFileName);
-    bool doesCustomAlarmSoundExist(const QString &soundFileName);
+    bool isAlarmSoundValid(const QString &soundFileName);
+    bool isAlarmSoundValid(const QUrl &soundUrl);
 
     QString getDefaultAlarmSoundPath(const QString &soundFileName) const;
     QString getCustomAlarmSoundPath(const QString &soundFileName) const;

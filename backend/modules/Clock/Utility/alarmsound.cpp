@@ -61,16 +61,23 @@ void AlarmSound::createCustomAlarmSoundDirectory()
     dir.mkpath(m_customAlarmDir);
 }
 
-bool AlarmSound::doesDefaultAlarmSoundExist(const QString &soundFileName)
+bool AlarmSound::isAlarmSoundValid(const QString &soundFileName)
 {
     QFileInfo soundFile;
-    return soundFile.exists(m_defaultAlarmDir + soundFileName);
+
+    if (soundFile.exists(m_defaultAlarmDir + soundFileName)) {
+        return true;
+    } else if (soundFile.exists(m_customAlarmDir + soundFileName)) {
+        return true;
+    } else {
+        return false;
+    }
 }
 
-bool AlarmSound::doesCustomAlarmSoundExist(const QString &soundFileName)
+bool AlarmSound::isAlarmSoundValid(const QUrl &soundUrl)
 {
-    QFileInfo soundFile;
-    return soundFile.exists(m_customAlarmDir + soundFileName);
+    QDir soundFile;
+    return soundFile.exists(soundUrl.path());
 }
 
 QString AlarmSound::getDefaultAlarmSoundPath(const QString &soundFileName) const
