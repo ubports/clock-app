@@ -23,7 +23,7 @@
 
 void BackendPlugin::registerTypes(const char *uri)
 {
-    Q_ASSERT(uri == QLatin1String("Stopwatch.LapHistory"));
+    Q_ASSERT(uri == QLatin1String("Stopwatch"));
 
     qmlRegisterType<LapHistory>(uri, 1, 0, "LapHistory");
 }
