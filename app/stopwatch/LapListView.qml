@@ -19,14 +19,14 @@
 import QtQuick 2.4
 import QtQuick.Layouts 1.1
 import Ubuntu.Components 1.2
-import Stopwatch 1.0 as Stopwatch
+import Stopwatch 1.0
 
 ListView {
     id: lapListView
 
     clip: true
 
-    Stopwatch.StopwatchUtils {
+    StopwatchUtils {
         id: stopwatchUtils
     }
 
