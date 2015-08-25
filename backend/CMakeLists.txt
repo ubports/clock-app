@@ -23,9 +23,9 @@ set(
 )
 
 set(
-    alarmsettings_SRCS
-    modules/Alarm/Settings/backend.cpp
-    modules/Alarm/Settings/alarmsettings.cpp
+    alarm_SRCS
+    modules/Alarm/backend.cpp
+    modules/Alarm/settings.cpp
 )
 
 set(
@@ -54,8 +54,8 @@ add_library(datetime MODULE
     ${datetime_SRCS}
 )
 
-add_library(alarmsettings MODULE
-    ${alarmsettings_SRCS}
+add_library(alarm MODULE
+    ${alarm_SRCS}
 )
 
 add_library(geolocation MODULE
@@ -78,8 +78,8 @@ set_target_properties(datetime PROPERTIES
     LIBRARY_OUTPUT_DIRECTORY DateTime
 )
 
-set_target_properties(alarmsettings PROPERTIES
-    LIBRARY_OUTPUT_DIRECTORY Alarm/Settings
+set_target_properties(alarm PROPERTIES
+    LIBRARY_OUTPUT_DIRECTORY Alarm
 )
 
 set_target_properties(geolocation PROPERTIES
@@ -96,7 +96,7 @@ set_target_properties(stopwatchlaphistory PROPERTIES
 
 qt5_use_modules(datetime Gui Qml Quick)
 qt5_use_modules(timezone Gui Qml Quick)
-qt5_use_modules(alarmsettings Gui Qml Quick DBus)
+qt5_use_modules(alarm Gui Qml Quick DBus)
 qt5_use_modules(geolocation Gui Qml Quick)
 qt5_use_modules(clockutility Qml)
 qt5_use_modules(stopwatchlaphistory Qml)
@@ -112,8 +112,8 @@ add_custom_target(datetime-qmldir ALL
     DEPENDS ${QMLFILES}
 )
 
-add_custom_target(alarmsettings-qmldir ALL
-    COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_CURRENT_SOURCE_DIR}/modules/Alarm/Settings/qmldir ${CMAKE_CURRENT_BINARY_DIR}/Alarm/Settings
+add_custom_target(alarm-qmldir ALL
+    COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_CURRENT_SOURCE_DIR}/modules/Alarm/qmldir ${CMAKE_CURRENT_BINARY_DIR}/Alarm
     DEPENDS ${QMLFILES}
 )
 
@@ -139,8 +139,8 @@ install(FILES   modules/Timezone/qmldir DESTINATION ${MODULE_PATH}/Timezone/)
 install(TARGETS datetime DESTINATION ${MODULE_PATH}/DateTime/)
 install(FILES   modules/DateTime/qmldir DESTINATION ${MODULE_PATH}/DateTime/)
 
-install(TARGETS alarmsettings DESTINATION ${MODULE_PATH}/Alarm/Settings/)
-install(FILES   modules/Alarm/Settings/qmldir DESTINATION ${MODULE_PATH}/Alarm/Settings/)
+install(TARGETS alarm DESTINATION ${MODULE_PATH}/Alarm/)
+install(FILES   modules/Alarm/qmldir DESTINATION ${MODULE_PATH}/Alarm/)
 
 install(TARGETS geolocation DESTINATION ${MODULE_PATH}/GeoLocation/)
 install(FILES   modules/GeoLocation/qmldir DESTINATION ${MODULE_PATH}/GeoLocation/)

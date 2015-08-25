@@ -19,13 +19,13 @@
 #include <QtQml>
 #include <QtQml/QQmlContext>
 #include "backend.h"
-#include "alarmsettings.h"
+#include "settings.h"
 
 void BackendPlugin::registerTypes(const char *uri)
 {
-    Q_ASSERT(uri == QLatin1String("Alarm.Settings"));
+    Q_ASSERT(uri == QLatin1String("Alarm"));
 
-    qmlRegisterType<AlarmSettings>(uri, 1, 0, "AlarmSettings");
+    qmlRegisterType<Settings>(uri, 1, 0, "Settings");
 }
 
 void BackendPlugin::initializeEngine(QQmlEngine *engine, const char *uri)

@@ -19,7 +19,7 @@
 import QtQuick 2.4
 import QtQuick.Layouts 1.1
 import DateTime 1.0
-import Alarm.Settings 1.0
+import Alarm 1.0
 import Ubuntu.Components 1.2
 import "../components"
 
@@ -41,8 +41,8 @@ Page {
         id: localTimeSource
     }
 
-    AlarmSettings {
-        id: alarmSettings
+    Settings {
+        id: settings
     }
 
     ListModel {
@@ -110,10 +110,10 @@ Page {
 
                     minimumValue: 1
                     maximumValue: 100
-                    value: alarmSettings.volume
+                    value: settings.volume
 
                     onValueChanged: {
-                        alarmSettings.volume = formatValue(value)
+                        settings.volume = formatValue(value)
                     }
                 }
             }
@@ -123,7 +123,7 @@ Page {
 
                 listViewHeight: units.gu(28)
                 text: i18n.tr("Alarm stops after")
-                subText: i18n.tr("%1 minute", "%1 minutes", alarmSettings.duration).arg(alarmSettings.duration)
+                subText: i18n.tr("%1 minute", "%1 minutes", settings.duration).arg(settings.duration)
 
                 model: durationModel
 
@@ -145,12 +145,12 @@ Page {
                             width: units.gu(2)
                             height: width
                             name: "ok"
-                            visible: alarmSettings.duration === duration
+                            visible: settings.duration === duration
                         }
                     }
 
                     onClicked: {
-                        alarmSettings.duration = duration
+                        settings.duration = duration
                         _alarmDuration.expanded = false
                     }
                 }
@@ -161,7 +161,7 @@ Page {
 
                 listViewHeight: units.gu(28)
                 text: i18n.tr("Snooze for")
-                subText: i18n.tr("%1 minute", "%1 minutes", alarmSettings.snoozeDuration).arg(alarmSettings.snoozeDuration)
+                subText: i18n.tr("%1 minute", "%1 minutes", settings.snoozeDuration).arg(settings.snoozeDuration)
 
                 model: snoozeModel
 
@@ -183,12 +183,12 @@ Page {
                             width: units.gu(2)
                             height: width
                             name: "ok"
-                            visible: alarmSettings.snoozeDuration === duration
+                            visible: settings.snoozeDuration === duration
                         }
                     }
 
                     onClicked: {
-                        alarmSettings.snoozeDuration = duration
+                        settings.snoozeDuration = duration
                         _alarmSnooze.expanded = false
                     }
                 }
@@ -214,12 +214,12 @@ Page {
                         verticalCenter: parent.verticalCenter
                     }
 
-                    checked: alarmSettings.vibration === "pulse"
+                    checked: settings.vibration === "pulse"
                     onCheckedChanged: {
                         if(checked) {
-                            alarmSettings.vibration = "pulse"
+                            settings.vibration = "pulse"
                         } else {
-                            alarmSettings.vibration = "none"
+                            settings.vibration = "none"
                         }
                     }
                 }
