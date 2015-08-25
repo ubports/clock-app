@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2015-08-21 18:07+0200\n"
-"PO-Revision-Date: 2015-04-01 15:31+0000\n"
+"PO-Revision-Date: 2015-08-25 05:41+0000\n"
 "Last-Translator: Josef Andersson <Unknown>\n"
 "Language-Team: Swedish\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2015-08-22 05:55+0000\n"
+"X-Launchpad-Export-Date: 2015-08-25 05:57+0000\n"
 "X-Generator: Launchpad (build 17690)\n"
 "Language: sv\n"
 
@@ -91,7 +91,7 @@ msgstr "Alarmvolym"
 
 #: ../app/alarm/AlarmSettingsPage.qml:125
 msgid "Alarm stops after"
-msgstr ""
+msgstr "Alarm slutar efter"
 
 #: ../app/alarm/AlarmSettingsPage.qml:163
 msgid "Snooze for"
@@ -111,7 +111,7 @@ msgstr "Ljud"
 
 #: ../app/alarm/AlarmSound.qml:139
 msgid "Add custom sound"
-msgstr ""
+msgstr "Lägg till anpassat ljud"
 
 #: ../app/alarm/AlarmUtils.qml:31
 msgid "Never"
@@ -168,7 +168,7 @@ msgstr "Ta bort alarm"
 #. TRANSLATORS: This is the page title. Please keep the translation length to 3 words if possible
 #: ../app/alarm/SoundPeerPicker.qml:27
 msgid "Add sound from"
-msgstr ""
+msgstr "Lägg till ljud från"
 
 #: ../app/clock/ClockPage.qml:225
 msgid "Retrieving location..."
@@ -178,15 +178,15 @@ msgstr "Hämtar plats..."
 #. translation length to a few characters.
 #: ../app/stopwatch/LapListView.qml:45 ../app/stopwatch/StopwatchPage.qml:120
 msgid "Lap"
-msgstr ""
+msgstr "Varv"
 
 #: ../app/stopwatch/LapListView.qml:55
 msgid "Lap Time"
-msgstr ""
+msgstr "Varvtid"
 
 #: ../app/stopwatch/LapListView.qml:63
 msgid "Total Time"
-msgstr ""
+msgstr "Total tid"
 
 #: ../app/stopwatch/StopwatchPage.qml:103
 msgid "Stop"
@@ -198,11 +198,11 @@ msgstr "Start"
 
 #: ../app/stopwatch/StopwatchPage.qml:103
 msgid "Resume"
-msgstr ""
+msgstr "Fortsätt"
 
 #: ../app/stopwatch/StopwatchPage.qml:120
 msgid "Clear"
-msgstr ""
+msgstr "Rensa"
 
 #: ../app/worldclock/AddWorldCityButton.qml:30
 msgid "Add"
@@ -2024,7 +2024,8 @@ msgid ""
 "A sophisticated clock app that provides world clock, alarm and stopwatch "
 "functionality."
 msgstr ""
+"En sofistikerad klockapp med världsur, alarm och tidtagarfunktionalitet."
 
 #: ubuntu-clock-app.desktop.in.in.h:3
 msgid "time;alarm;alert;clock;world;stopwatch;"
-msgstr ""
+msgstr "tid;alarm;varning;klocka;värld;tidtagning;"
