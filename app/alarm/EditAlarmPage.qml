@@ -28,11 +28,9 @@ Page {
     id: _addAlarmPage
     objectName: "AddAlarmPage"
 
-    // Property to determine if this is a new/saved alarm
-    property bool isNewAlarm: true
-
-    // Temporary alarm used to read saved alarm and modify them
+    property var alarmModel
     property var tempAlarm
+    property bool isNewAlarm: true
 
     title: isNewAlarm ? i18n.tr("New alarm") : i18n.tr("Edit alarm")
     visible: false
@@ -112,6 +110,7 @@ Page {
 
         if(validateAlarm(tempAlarm)) {
             pageStack.pop()
+            alarmModel.refresh()
         }
     }
 
