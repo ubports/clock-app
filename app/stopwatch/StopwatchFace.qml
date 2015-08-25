@@ -47,7 +47,7 @@ ClockCircle {
         anchors.centerIn: parent
 
         Label {
-            text: stopwatchUtils.millisToTimeString(milliseconds, false, true)
+            text: stopwatchUtils.millisToTimeString(milliseconds, true)
             font.pixelSize: units.dp(34)
             color: UbuntuColors.midAubergine
         }

@@ -30,7 +30,7 @@ QString StopwatchUtils::millisToString(int millis) const
     return addZeroPrefix(QString::number(millis), 3);
 }
 
-QString StopwatchUtils::millisToTimeString(int millis, bool showMilliseconds, bool showHours) const
+QString StopwatchUtils::millisToTimeString(int millis, bool showHours) const
 {
     int hours, minutes, seconds;
 
@@ -48,11 +48,6 @@ QString StopwatchUtils::millisToTimeString(int millis, bool showMilliseconds, bo
     timeString += addZeroPrefix(QString::number(minutes), 2) + ":";
     timeString += addZeroPrefix(QString::number(seconds), 2);
 
-    if (showMilliseconds)
-    {
-        timeString += "." + millisToString(millis);
-    }
-
     return timeString;
 }
 
@@ -67,10 +62,10 @@ QString StopwatchUtils::lapTimeToString(int millis) const
 
     if (hours > 0)
     {
-        return millisToTimeString(millis, false, true);
+        return millisToTimeString(millis, true);
     }
 
     else {
-        return millisToTimeString(millis, false, false);
+        return millisToTimeString(millis, false);
     }
 }

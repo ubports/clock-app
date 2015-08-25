@@ -47,9 +47,11 @@ TestCase {
      correctly.
     */
     function test_convertTimeInMillisecondsToString() {
-        var timeInMilliseconds = 1123000
-        var result = stopwatchUtils.millisToTimeString(timeInMilliseconds, false, true)
+        var timeInMilliseconds = 1123000, result
+        result = stopwatchUtils.millisToTimeString(timeInMilliseconds, true)
         compare(result, "00:18:43", "Time not properly converted from milliseconds to hh:mm:ss")
+        result = stopwatchUtils.millisToTimeString(timeInMilliseconds, false)
+        compare(result, "18:43", "Time not properly converted from milliseconds to mm:ss")
     }
 
     /*

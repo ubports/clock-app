@@ -30,7 +30,7 @@ public:
 
 public slots:
     QString millisToString(int millis) const;
-    QString millisToTimeString(int millis, bool showMilliseconds, bool showHours) const;
+    QString millisToTimeString(int millis, bool showHours) const;
     QString addZeroPrefix(QString str, int totalLength) const;
     QString lapTimeToString(int millis) const;
 };
