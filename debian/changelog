@@ -28,7 +28,7 @@ ubuntu-clock-app (3.5) UNRELEASED; urgency=medium
   * Fixed alarm sound preview not playing when pressing on the checkbox (LP: #1487690)
   * Fixed edited alarm not being saveable if at any point of editing the alarm
     clock app loses focus (LP: #1487789)
-  * Fixed edited alarmed when saved doesn't update the listview (LP: #1488439)
+  * Fixed edited alarms when saved not updating the alarms listview (LP: #1488439)
 
   [Victor Thompson]
   * Show all README files in QtCreator 
