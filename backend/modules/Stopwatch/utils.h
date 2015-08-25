@@ -16,21 +16,23 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include <QtQml>
-#include <QtQml/QQmlContext>
-#include "backend.h"
-#include "history.h"
-#include "utils.h"
+#ifndef UTILS_H
+#define UTILS_H
 
-void BackendPlugin::registerTypes(const char *uri)
+#include <QObject>
+
+class StopwatchUtils: public QObject
 {
-    Q_ASSERT(uri == QLatin1String("Stopwatch"));
+    Q_OBJECT
 
-    qmlRegisterType<LapHistory>(uri, 1, 0, "LapHistory");
-    qmlRegisterType<StopwatchUtils>(uri, 1, 0, "StopwatchUtils");
-}
+public:
+    StopwatchUtils(QObject *parent=0);
 
-void BackendPlugin::initializeEngine(QQmlEngine *engine, const char *uri)
-{
-    QQmlExtensionPlugin::initializeEngine(engine, uri);
-}
+public slots:
+    QString millisToString(int millis) const;
+    QString millisToTimeString(int millis, bool showMilliseconds, bool showHours) const;
+    QString addZeroPrefix(QString str, int totalLength) const;
+    QString lapTimeToString(int millis) const;
+};
+
+#endif

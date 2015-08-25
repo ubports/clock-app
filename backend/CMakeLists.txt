@@ -44,6 +44,7 @@ set(
     stopwatch_SRCS
     modules/Stopwatch/backend.cpp
     modules/Stopwatch/history.cpp
+    modules/Stopwatch/utils.cpp
 )
 
 add_library(timezone MODULE

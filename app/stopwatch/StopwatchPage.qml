@@ -18,7 +18,7 @@
 
 import QtQuick 2.4
 import Ubuntu.Components 1.2
-import Stopwatch 1.0
+import Stopwatch 1.0 as Stopwatch
 
 Item {
     id: _stopwatchPage
@@ -155,7 +155,7 @@ Item {
         }
     }
 
-    LapHistory {
+    Stopwatch.LapHistory {
         id: lapHistory
     }
 
