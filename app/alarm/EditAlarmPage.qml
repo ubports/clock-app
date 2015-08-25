@@ -30,7 +30,7 @@ Page {
 
     property var alarmModel
     property var tempAlarm
-    readonly property bool isNewAlarm: true
+    property bool isNewAlarm: true
 
     title: isNewAlarm ? i18n.tr("New alarm") : i18n.tr("Edit alarm")
     visible: false
