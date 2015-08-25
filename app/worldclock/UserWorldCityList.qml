@@ -17,7 +17,7 @@
  */
 
 import QtQuick 2.4
-import Timezone 1.0
+import Clock 1.0
 import U1db 1.0 as U1db
 import Ubuntu.Components 1.2
 

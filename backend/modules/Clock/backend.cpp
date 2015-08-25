@@ -21,6 +21,10 @@
 #include "backend.h"
 #include "geolocation.h"
 #include "datetime.h"
+#include "timezonemodel.h"
+#include "generictimezonemodel.h"
+#include "jsontimezonemodel.h"
+#include "statictimezonemodel.h"
 
 void BackendPlugin::registerTypes(const char *uri)
 {
@@ -28,6 +32,9 @@ void BackendPlugin::registerTypes(const char *uri)
 
     qmlRegisterType<GeoLocation>(uri, 1, 0, "GeoLocation");
     qmlRegisterType<DateTime>(uri, 1, 0, "DateTime");
+    qmlRegisterType<GenericTimeZoneModel>(uri, 1, 0, "GenericTimeZoneModel");
+    qmlRegisterType<JsonTimeZoneModel>(uri, 1, 0, "JsonTimeZoneModel");
+    qmlRegisterType<StaticTimeZoneModel>(uri, 1, 0, "StaticTimeZoneModel");
 }
 
 void BackendPlugin::initializeEngine(QQmlEngine *engine, const char *uri)
