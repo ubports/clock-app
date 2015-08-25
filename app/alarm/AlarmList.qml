@@ -71,7 +71,7 @@ UbuntuListView {
             if (selectMode) {
                 selected = !selected
             } else {
-                pageStack.push(Qt.resolvedUrl("EditAlarmPage.qml"), {isNewAlarm: false, tempAlarm: model})
+                pageStack.push(Qt.resolvedUrl("EditAlarmPage.qml"), {isNewAlarm: false, tempAlarm: model, alarmModel: alarmModel})
             }
         }
 
