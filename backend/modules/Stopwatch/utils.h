@@ -21,12 +21,12 @@
 
 #include <QObject>
 
-class StopwatchUtils: public QObject
+class Utils: public QObject
 {
     Q_OBJECT
 
 public:
-    StopwatchUtils(QObject *parent=0);
+    Utils(QObject *parent=0);
 
 public slots:
     QString millisToString(int millis) const;

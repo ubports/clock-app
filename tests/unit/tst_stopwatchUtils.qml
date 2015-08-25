@@ -26,8 +26,8 @@ TestCase {
     id: stopwatchUtilsTest
     name: "StopwatchUtilsLibrary"
 
-    StopwatchUtils {
-        id: stopwatchUtils
+    Utils {
+        id: utils
     }
 
     /*
@@ -36,9 +36,9 @@ TestCase {
     */
     function test_returnMillisecond() {
         var result
-        result = stopwatchUtils.millisToString(400)
+        result = utils.millisToString(400)
         compare(result, "400", "Milliseconds not properly converted to the format required")
-        result = stopwatchUtils.millisToString(4)
+        result = utils.millisToString(4)
         compare(result, "004", "Milliseconds not properly converted to the format required")
     }
 
@@ -48,9 +48,9 @@ TestCase {
     */
     function test_convertTimeInMillisecondsToString() {
         var timeInMilliseconds = 1123000, result
-        result = stopwatchUtils.millisToTimeString(timeInMilliseconds, true)
+        result = utils.millisToTimeString(timeInMilliseconds, true)
         compare(result, "00:18:43", "Time not properly converted from milliseconds to hh:mm:ss")
-        result = stopwatchUtils.millisToTimeString(timeInMilliseconds, false)
+        result = utils.millisToTimeString(timeInMilliseconds, false)
         compare(result, "18:43", "Time not properly converted from milliseconds to mm:ss")
     }
 
@@ -60,11 +60,11 @@ TestCase {
     */
     function test_zeroPrefixAddedCorrectly() {
         var str = "32", result
-        result = stopwatchUtils.addZeroPrefix(str, 2)
+        result = utils.addZeroPrefix(str, 2)
         compare(result, "32", "Zero prefix not added correctly")
-        result = stopwatchUtils.addZeroPrefix(str, 3)
+        result = utils.addZeroPrefix(str, 3)
         compare(result, "032", "Zero prefix not added correctly")
-        result = stopwatchUtils.addZeroPrefix(str, 4)
+        result = utils.addZeroPrefix(str, 4)
         compare(result, "0032", "Zero prefix not added correctly")
     }
 
@@ -74,9 +74,9 @@ TestCase {
     */
     function test_lapTimeIncludesHoursCorrectly() {
         var result
-        result = stopwatchUtils.lapTimeToString(1123000)
+        result = utils.lapTimeToString(1123000)
         compare(result, "18:43", "Lap time shows hours despite it not being greater than 0")
-        result = stopwatchUtils.lapTimeToString(8323000)
+        result = utils.lapTimeToString(8323000)
         compare(result, "02:18:43", "Lap time not showing hours despite it being greater than 0")
     }
 }

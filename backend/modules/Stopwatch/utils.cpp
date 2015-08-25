@@ -20,17 +20,17 @@
 
 #include <QtMath>
 
-StopwatchUtils::StopwatchUtils(QObject *parent):
+Utils::Utils(QObject *parent):
     QObject(parent)
 {
 }
 
-QString StopwatchUtils::millisToString(int millis) const
+QString Utils::millisToString(int millis) const
 {
     return addZeroPrefix(QString::number(millis), 3);
 }
 
-QString StopwatchUtils::millisToTimeString(int millis, bool showHours) const
+QString Utils::millisToTimeString(int millis, bool showHours) const
 {
     int hours, minutes, seconds;
 
@@ -51,12 +51,12 @@ QString StopwatchUtils::millisToTimeString(int millis, bool showHours) const
     return timeString;
 }
 
-QString StopwatchUtils::addZeroPrefix(QString str, int totalLength) const
+QString Utils::addZeroPrefix(QString str, int totalLength) const
 {
     return QString("00000" + str).remove(0, 5 + str.length() - totalLength);
 }
 
-QString StopwatchUtils::lapTimeToString(int millis) const
+QString Utils::lapTimeToString(int millis) const
 {
     int hours = qFloor(millis / 1000 / 60 / 60);
 
