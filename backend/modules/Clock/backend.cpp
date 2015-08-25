@@ -20,12 +20,14 @@
 #include <QtQml/QQmlContext>
 #include "backend.h"
 #include "geolocation.h"
+#include "datetime.h"
 
 void BackendPlugin::registerTypes(const char *uri)
 {
     Q_ASSERT(uri == QLatin1String("Clock"));
 
     qmlRegisterType<GeoLocation>(uri, 1, 0, "GeoLocation");
+    qmlRegisterType<DateTime>(uri, 1, 0, "DateTime");
 }
 
 void BackendPlugin::initializeEngine(QQmlEngine *engine, const char *uri)
