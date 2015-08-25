@@ -17,7 +17,7 @@
  */
 
 import QtQuick 2.4
-import Clock.Utility 1.0
+import Alarm 1.0
 import QtMultimedia 5.0
 import Ubuntu.Content 1.1
 import Ubuntu.Components 1.2
@@ -152,7 +152,7 @@ Page {
         }
     }
 
-    AlarmSound {
+    Sound {
         id: alarmSoundHelper
     }
 

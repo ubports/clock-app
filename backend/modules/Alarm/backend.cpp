@@ -20,12 +20,14 @@
 #include <QtQml/QQmlContext>
 #include "backend.h"
 #include "settings.h"
+#include "sound.h"
 
 void BackendPlugin::registerTypes(const char *uri)
 {
     Q_ASSERT(uri == QLatin1String("Alarm"));
 
     qmlRegisterType<Settings>(uri, 1, 0, "Settings");
+    qmlRegisterType<Sound>(uri, 1, 0, "Sound");
 }
 
 void BackendPlugin::initializeEngine(QQmlEngine *engine, const char *uri)

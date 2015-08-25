@@ -26,6 +26,7 @@ set(
     alarm_SRCS
     modules/Alarm/backend.cpp
     modules/Alarm/settings.cpp
+    modules/Alarm/sound.cpp
 )
 
 set(
@@ -37,7 +38,6 @@ set(
 set(
     clockutility_SRCS
     modules/Clock/Utility/backend.cpp
-    modules/Clock/Utility/alarmsound.cpp
 )
 
 set(

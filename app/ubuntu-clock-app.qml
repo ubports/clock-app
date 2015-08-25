@@ -19,7 +19,7 @@
 import QtQuick 2.4
 import DateTime 1.0
 import U1db 1.0 as U1db
-import Clock.Utility 1.0
+import Alarm 1.0
 import Ubuntu.Components 1.2
 import "components"
 
@@ -83,7 +83,7 @@ MainView {
         updateInterval: 1000
     }
 
-    AlarmSound {
+    Sound {
         id: alarmSoundHelper
         // Create CustomSounds directory if it does not exist on app startup
         Component.onCompleted: createCustomAlarmSoundDirectory()
