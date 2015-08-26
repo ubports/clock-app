@@ -15,14 +15,14 @@ set(
 )
 
 set(
-    clock_SRCS
-    modules/Clock/backend.cpp
-    modules/Clock/geolocation.cpp
-    modules/Clock/datetime.cpp
-    modules/Clock/timezonemodel.cpp
-    modules/Clock/generictimezonemodel.cpp
-    modules/Clock/jsontimezonemodel.cpp
-    modules/Clock/statictimezonemodel.cpp
+    worldclock_SRCS
+    modules/WorldClock/backend.cpp
+    modules/WorldClock/geolocation.cpp
+    modules/WorldClock/datetime.cpp
+    modules/WorldClock/timezonemodel.cpp
+    modules/WorldClock/generictimezonemodel.cpp
+    modules/WorldClock/jsontimezonemodel.cpp
+    modules/WorldClock/statictimezonemodel.cpp
 )
 
 set(
@@ -35,8 +35,8 @@ add_library(alarm MODULE
     ${alarm_SRCS}
 )
 
-add_library(clock MODULE
-    ${clock_SRCS}
+add_library(worldclock MODULE
+    ${worldclock_SRCS}
 )
 
 add_library(stopwatchlaphistory MODULE
@@ -47,8 +47,8 @@ set_target_properties(alarm PROPERTIES
     LIBRARY_OUTPUT_DIRECTORY Alarm
 )
 
-set_target_properties(clock PROPERTIES
-    LIBRARY_OUTPUT_DIRECTORY Clock
+set_target_properties(worldclock PROPERTIES
+    LIBRARY_OUTPUT_DIRECTORY WorldClock
 )
 
 set_target_properties(stopwatchlaphistory PROPERTIES
@@ -56,7 +56,7 @@ set_target_properties(stopwatchlaphistory PROPERTIES
 )
 
 qt5_use_modules(alarm Gui Qml Quick DBus)
-qt5_use_modules(clock Gui Qml Quick)
+qt5_use_modules(worldclock Gui Qml Quick)
 qt5_use_modules(stopwatchlaphistory Qml)
 
 # Copy qmldir file to build dir for running in QtCreator
@@ -65,8 +65,8 @@ add_custom_target(alarm-qmldir ALL
     DEPENDS ${QMLFILES}
 )
 
-add_custom_target(clock-qmldir ALL
-    COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_CURRENT_SOURCE_DIR}/modules/Clock/qmldir ${CMAKE_CURRENT_BINARY_DIR}/Clock
+add_custom_target(worldclock-qmldir ALL
+    COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_CURRENT_SOURCE_DIR}/modules/WorldClock/qmldir ${CMAKE_CURRENT_BINARY_DIR}/WorldClock
     DEPENDS ${QMLFILES}
 )
 
@@ -79,8 +79,8 @@ add_custom_target(stopwatchlaphistory-qmldir ALL
 install(TARGETS alarm DESTINATION ${MODULE_PATH}/Alarm/)
 install(FILES   modules/Alarm/qmldir DESTINATION ${MODULE_PATH}/Alarm/)
 
-install(TARGETS clock DESTINATION ${MODULE_PATH}/Clock/)
-install(FILES   modules/Clock/qmldir DESTINATION ${MODULE_PATH}/Clock/)
+install(TARGETS worldclock DESTINATION ${MODULE_PATH}/WorldClock/)
+install(FILES   modules/WorldClock/qmldir DESTINATION ${MODULE_PATH}/WorldClock/)
 
 install(TARGETS stopwatchlaphistory DESTINATION ${MODULE_PATH}/Stopwatch/LapHistory/)
 install(FILES   modules/Stopwatch/LapHistory/qmldir DESTINATION ${MODULE_PATH}/Stopwatch/LapHistory/)

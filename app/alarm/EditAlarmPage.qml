@@ -17,7 +17,7 @@
  */
 
 import QtQuick 2.4
-import Clock 1.0
+import WorldClock 1.0
 import Alarm 1.0
 import Ubuntu.Components 1.2
 import Qt.labs.folderlistmodel 2.1

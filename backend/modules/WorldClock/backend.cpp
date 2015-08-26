@@ -28,7 +28,7 @@
 
 void BackendPlugin::registerTypes(const char *uri)
 {
-    Q_ASSERT(uri == QLatin1String("Clock"));
+    Q_ASSERT(uri == QLatin1String("WorldClock"));
 
     qmlRegisterType<GeoLocation>(uri, 1, 0, "GeoLocation");
     qmlRegisterType<DateTime>(uri, 1, 0, "DateTime");
