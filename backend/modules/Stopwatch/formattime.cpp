@@ -42,7 +42,14 @@ QString FormatTime::millisToTimeString(int millis, bool showHours) const
 
     if (showHours)
     {
-        timeString += addZeroPrefix(QString::number(hours), 2) + ":";
+        if (hours < 10)
+        {
+            timeString += addZeroPrefix(QString::number(hours), 2) + ":";
+        }
+
+        else {
+            timeString += QString::number(hours) + ":";
+        }
     }
 
     timeString += addZeroPrefix(QString::number(minutes), 2) + ":";
