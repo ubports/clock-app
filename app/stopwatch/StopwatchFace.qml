@@ -17,6 +17,7 @@
  */
 
 import QtQuick 2.4
+import Stopwatch 1.0
 import Ubuntu.Components 1.2
 import "../components"
 
@@ -29,8 +30,8 @@ ClockCircle {
     isOuter: true
     width: units.gu(32)
 
-    StopwatchUtils {
-        id: stopwatchUtils
+    StopwatchFormatTime {
+        id: stopwatchFormatTime
     }
 
     ClockCircle {
@@ -46,13 +47,13 @@ ClockCircle {
         anchors.centerIn: parent
 
         Label {
-            text: stopwatchUtils.millisToTimeString(milliseconds, false, true)
+            text: stopwatchFormatTime.millisToTimeString(milliseconds, true)
             font.pixelSize: units.dp(34)
             color: UbuntuColors.midAubergine
         }
 
         Label {
-            text: stopwatchUtils.millisToString(milliseconds)
+            text: stopwatchFormatTime.millisToString(milliseconds)
             font.pixelSize: units.dp(18)
             color: UbuntuColors.midAubergine
             anchors.horizontalCenter: parent.horizontalCenter

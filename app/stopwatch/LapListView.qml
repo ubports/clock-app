@@ -19,14 +19,15 @@
 import QtQuick 2.4
 import QtQuick.Layouts 1.1
 import Ubuntu.Components 1.2
+import Stopwatch 1.0
 
 ListView {
     id: lapListView
 
     clip: true
 
-    StopwatchUtils {
-        id: stopwatchUtils
+    StopwatchFormatTime {
+        id: stopwatchFormatTime
     }
 
     header: ListItem {
@@ -108,11 +109,11 @@ ListView {
                 Row {
                     anchors.horizontalCenter: parent.horizontalCenter
                     Label {
-                        text: stopwatchUtils.lapTimeToString(model.laptime) + "."
+                        text: stopwatchFormatTime.lapTimeToString(model.laptime) + "."
                     }
                     Label {
                         fontSize: "x-small"
-                        text: stopwatchUtils.millisToString(model.laptime)
+                        text: stopwatchFormatTime.millisToString(model.laptime)
                         anchors.bottom: parent.bottom
                         anchors.bottomMargin: units.dp(1)
                     }
@@ -125,11 +126,11 @@ ListView {
                 Row {
                     anchors.horizontalCenter: parent.horizontalCenter
                     Label {
-                        text: stopwatchUtils.lapTimeToString(model.totaltime) + "."
+                        text: stopwatchFormatTime.lapTimeToString(model.totaltime) + "."
                     }
                     Label {
                         fontSize: "x-small"
-                        text: stopwatchUtils.millisToString(model.totaltime)
+                        text: stopwatchFormatTime.millisToString(model.totaltime)
                         anchors.bottom: parent.bottom
                         anchors.bottomMargin: units.dp(1)
                     }

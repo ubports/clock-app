@@ -16,19 +16,23 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include <QtQml>
-#include <QtQml/QQmlContext>
-#include "backend.h"
-#include "history.h"
+#ifndef FORMATTIME_H
+#define FORMATTIME_H
 
-void BackendPlugin::registerTypes(const char *uri)
+#include <QObject>
+
+class FormatTime: public QObject
 {
-    Q_ASSERT(uri == QLatin1String("Stopwatch.LapHistory"));
+    Q_OBJECT
 
-    qmlRegisterType<LapHistory>(uri, 1, 0, "LapHistory");
-}
+public:
+    FormatTime(QObject *parent=0);
 
-void BackendPlugin::initializeEngine(QQmlEngine *engine, const char *uri)
-{
-    QQmlExtensionPlugin::initializeEngine(engine, uri);
-}
+public slots:
+    QString millisToString(int millis) const;
+    QString millisToTimeString(int millis, bool showHours) const;
+    QString addZeroPrefix(QString str, int totalLength) const;
+    QString lapTimeToString(int millis) const;
+};
+
+#endif
