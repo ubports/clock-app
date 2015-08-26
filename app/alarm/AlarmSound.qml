@@ -152,7 +152,7 @@ Page {
         }
     }
 
-    Sound {
+    AlarmSound {
         id: alarmSoundHelper
     }
 

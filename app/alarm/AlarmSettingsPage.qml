@@ -41,8 +41,8 @@ Page {
         id: localTimeSource
     }
 
-    Settings {
-        id: settings
+    AlarmSettings {
+        id: alarmSettings
     }
 
     ListModel {
@@ -110,10 +110,10 @@ Page {
 
                     minimumValue: 1
                     maximumValue: 100
-                    value: settings.volume
+                    value: alarmSettings.volume
 
                     onValueChanged: {
-                        settings.volume = formatValue(value)
+                        alarmSettings.volume = formatValue(value)
                     }
                 }
             }
@@ -123,7 +123,7 @@ Page {
 
                 listViewHeight: units.gu(28)
                 text: i18n.tr("Alarm stops after")
-                subText: i18n.tr("%1 minute", "%1 minutes", settings.duration).arg(settings.duration)
+                subText: i18n.tr("%1 minute", "%1 minutes", alarmSettings.duration).arg(alarmSettings.duration)
 
                 model: durationModel
 
@@ -145,12 +145,12 @@ Page {
                             width: units.gu(2)
                             height: width
                             name: "ok"
-                            visible: settings.duration === duration
+                            visible: alarmSettings.duration === duration
                         }
                     }
 
                     onClicked: {
-                        settings.duration = duration
+                        alarmSettings.duration = duration
                         _alarmDuration.expanded = false
                     }
                 }
@@ -161,7 +161,7 @@ Page {
 
                 listViewHeight: units.gu(28)
                 text: i18n.tr("Snooze for")
-                subText: i18n.tr("%1 minute", "%1 minutes", settings.snoozeDuration).arg(settings.snoozeDuration)
+                subText: i18n.tr("%1 minute", "%1 minutes", alarmSettings.snoozeDuration).arg(alarmSettings.snoozeDuration)
 
                 model: snoozeModel
 
@@ -183,12 +183,12 @@ Page {
                             width: units.gu(2)
                             height: width
                             name: "ok"
-                            visible: settings.snoozeDuration === duration
+                            visible: alarmSettings.snoozeDuration === duration
                         }
                     }
 
                     onClicked: {
-                        settings.snoozeDuration = duration
+                        alarmSettings.snoozeDuration = duration
                         _alarmSnooze.expanded = false
                     }
                 }
@@ -214,12 +214,12 @@ Page {
                         verticalCenter: parent.verticalCenter
                     }
 
-                    checked: settings.vibration === "pulse"
+                    checked: alarmSettings.vibration === "pulse"
                     onCheckedChanged: {
                         if(checked) {
-                            settings.vibration = "pulse"
+                            alarmSettings.vibration = "pulse"
                         } else {
-                            settings.vibration = "none"
+                            alarmSettings.vibration = "none"
                         }
                     }
                 }

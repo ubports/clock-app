@@ -83,7 +83,7 @@ MainView {
         updateInterval: 1000
     }
 
-    Sound {
+    AlarmSound {
         id: alarmSoundHelper
         // Create CustomSounds directory if it does not exist on app startup
         Component.onCompleted: createCustomAlarmSoundDirectory()

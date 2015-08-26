@@ -26,8 +26,8 @@ void BackendPlugin::registerTypes(const char *uri)
 {
     Q_ASSERT(uri == QLatin1String("Alarm"));
 
-    qmlRegisterType<Settings>(uri, 1, 0, "Settings");
-    qmlRegisterType<Sound>(uri, 1, 0, "Sound");
+    qmlRegisterType<Settings>(uri, 1, 0, "AlarmSettings");
+    qmlRegisterType<Sound>(uri, 1, 0, "AlarmSound");
 }
 
 void BackendPlugin::initializeEngine(QQmlEngine *engine, const char *uri)

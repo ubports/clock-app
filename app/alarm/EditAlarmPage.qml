@@ -228,7 +228,7 @@ Page {
         folder: alarmSoundHelper.customAlarmSoundDirectory
     }
 
-    Sound {
+    AlarmSound {
         id: alarmSoundHelper
     }
 
