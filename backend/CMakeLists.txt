@@ -41,9 +41,10 @@ set(
 )
 
 set(
-    stopwatchlaphistory_SRCS
-    modules/Stopwatch/LapHistory/backend.cpp
-    modules/Stopwatch/LapHistory/history.cpp
+    stopwatch_SRCS
+    modules/Stopwatch/backend.cpp
+    modules/Stopwatch/history.cpp
+    modules/Stopwatch/formattime.cpp
 )
 
 add_library(timezone MODULE
@@ -66,8 +67,8 @@ add_library(clockutility MODULE
     ${clockutility_SRCS}
 )
 
-add_library(stopwatchlaphistory MODULE
-    ${stopwatchlaphistory_SRCS}
+add_library(stopwatch MODULE
+    ${stopwatch_SRCS}
 )
 
 set_target_properties(timezone PROPERTIES
@@ -90,8 +91,8 @@ set_target_properties(clockutility PROPERTIES
     LIBRARY_OUTPUT_DIRECTORY Clock/Utility
 )
 
-set_target_properties(stopwatchlaphistory PROPERTIES
-    LIBRARY_OUTPUT_DIRECTORY Stopwatch/LapHistory
+set_target_properties(stopwatch PROPERTIES
+    LIBRARY_OUTPUT_DIRECTORY Stopwatch/
 )
 
 qt5_use_modules(datetime Gui Qml Quick)
@@ -99,7 +100,7 @@ qt5_use_modules(timezone Gui Qml Quick)
 qt5_use_modules(alarmsettings Gui Qml Quick DBus)
 qt5_use_modules(geolocation Gui Qml Quick)
 qt5_use_modules(clockutility Qml)
-qt5_use_modules(stopwatchlaphistory Qml)
+qt5_use_modules(stopwatch Qml)
 
 # Copy qmldir file to build dir for running in QtCreator
 add_custom_target(timezone-qmldir ALL
@@ -127,8 +128,8 @@ add_custom_target(clockutility-qmldir ALL
     DEPENDS ${QMLFILES}
 )
 
-add_custom_target(stopwatchlaphistory-qmldir ALL
-    COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_CURRENT_SOURCE_DIR}/modules/Stopwatch/LapHistory/qmldir ${CMAKE_CURRENT_BINARY_DIR}/Stopwatch/LapHistory
+add_custom_target(stopwatch-qmldir ALL
+    COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_CURRENT_SOURCE_DIR}/modules/Stopwatch/qmldir ${CMAKE_CURRENT_BINARY_DIR}/Stopwatch
     DEPENDS ${QMLFILES}
 )
 
@@ -148,6 +149,6 @@ install(FILES   modules/GeoLocation/qmldir DESTINATION ${MODULE_PATH}/GeoLocatio
 install(TARGETS clockutility DESTINATION ${MODULE_PATH}/Clock/Utility/)
 install(FILES   modules/Clock/Utility/qmldir DESTINATION ${MODULE_PATH}/Clock/Utility/)
 
-install(TARGETS stopwatchlaphistory DESTINATION ${MODULE_PATH}/Stopwatch/LapHistory/)
-install(FILES   modules/Stopwatch/LapHistory/qmldir DESTINATION ${MODULE_PATH}/Stopwatch/LapHistory/)
+install(TARGETS stopwatch DESTINATION ${MODULE_PATH}/Stopwatch/)
+install(FILES   modules/Stopwatch/qmldir DESTINATION ${MODULE_PATH}/Stopwatch/)
 

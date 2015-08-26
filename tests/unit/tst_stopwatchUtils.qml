@@ -18,15 +18,16 @@
 
 import QtQuick 2.4
 import QtTest 1.0
+import Stopwatch 1.0
 import Ubuntu.Components 1.2
 import "../../app/stopwatch"
 
 TestCase {
-    id: stopwatchUtilsTest
-    name: "StopwatchUtilsLibrary"
+    id: stopwatchFormatTimeTest
+    name: "StopwatchFormatTimeLibrary"
 
-    StopwatchUtils {
-        id: stopwatchUtils
+    StopwatchFormatTime {
+        id: stopwatchFormatTime
     }
 
     /*
@@ -35,9 +36,9 @@ TestCase {
     */
     function test_returnMillisecond() {
         var result
-        result = stopwatchUtils.millisToString(400)
+        result = stopwatchFormatTime.millisToString(400)
         compare(result, "400", "Milliseconds not properly converted to the format required")
-        result = stopwatchUtils.millisToString(4)
+        result = stopwatchFormatTime.millisToString(4)
         compare(result, "004", "Milliseconds not properly converted to the format required")
     }
 
@@ -46,9 +47,11 @@ TestCase {
      correctly.
     */
     function test_convertTimeInMillisecondsToString() {
-        var timeInMilliseconds = 1123000
-        var result = stopwatchUtils.millisToTimeString(timeInMilliseconds, false, true)
+        var timeInMilliseconds = 1123000, result
+        result = stopwatchFormatTime.millisToTimeString(timeInMilliseconds, true)
         compare(result, "00:18:43", "Time not properly converted from milliseconds to hh:mm:ss")
+        result = stopwatchFormatTime.millisToTimeString(timeInMilliseconds, false)
+        compare(result, "18:43", "Time not properly converted from milliseconds to mm:ss")
     }
 
     /*
@@ -57,11 +60,11 @@ TestCase {
     */
     function test_zeroPrefixAddedCorrectly() {
         var str = "32", result
-        result = stopwatchUtils.addZeroPrefix(str, 2)
+        result = stopwatchFormatTime.addZeroPrefix(str, 2)
         compare(result, "32", "Zero prefix not added correctly")
-        result = stopwatchUtils.addZeroPrefix(str, 3)
+        result = stopwatchFormatTime.addZeroPrefix(str, 3)
         compare(result, "032", "Zero prefix not added correctly")
-        result = stopwatchUtils.addZeroPrefix(str, 4)
+        result = stopwatchFormatTime.addZeroPrefix(str, 4)
         compare(result, "0032", "Zero prefix not added correctly")
     }
 
@@ -71,9 +74,9 @@ TestCase {
     */
     function test_lapTimeIncludesHoursCorrectly() {
         var result
-        result = stopwatchUtils.lapTimeToString(1123000)
+        result = stopwatchFormatTime.lapTimeToString(1123000)
         compare(result, "18:43", "Lap time shows hours despite it not being greater than 0")
-        result = stopwatchUtils.lapTimeToString(8323000)
+        result = stopwatchFormatTime.lapTimeToString(8323000)
         compare(result, "02:18:43", "Lap time not showing hours despite it being greater than 0")
     }
 }

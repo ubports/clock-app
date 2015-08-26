@@ -2,7 +2,6 @@ set(STOPWATCH_QML_JS_FILES
     LapListView.qml
     StopwatchFace.qml
     StopwatchPage.qml
-    StopwatchUtils.qml
 )
 
 # make the files visible in the qtcreator tree

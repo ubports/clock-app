@@ -1,0 +1,2 @@
+module Stopwatch
+plugin stopwatch
