@@ -26,8 +26,8 @@ ListView {
 
     clip: true
 
-    Utils {
-        id: utils
+    StopwatchFormatTime {
+        id: stopwatchFormatTime
     }
 
     header: ListItem {
@@ -109,11 +109,11 @@ ListView {
                 Row {
                     anchors.horizontalCenter: parent.horizontalCenter
                     Label {
-                        text: utils.lapTimeToString(model.laptime) + "."
+                        text: stopwatchFormatTime.lapTimeToString(model.laptime) + "."
                     }
                     Label {
                         fontSize: "x-small"
-                        text: utils.millisToString(model.laptime)
+                        text: stopwatchFormatTime.millisToString(model.laptime)
                         anchors.bottom: parent.bottom
                         anchors.bottomMargin: units.dp(1)
                     }
@@ -126,11 +126,11 @@ ListView {
                 Row {
                     anchors.horizontalCenter: parent.horizontalCenter
                     Label {
-                        text: utils.lapTimeToString(model.totaltime) + "."
+                        text: stopwatchFormatTime.lapTimeToString(model.totaltime) + "."
                     }
                     Label {
                         fontSize: "x-small"
-                        text: utils.millisToString(model.totaltime)
+                        text: stopwatchFormatTime.millisToString(model.totaltime)
                         anchors.bottom: parent.bottom
                         anchors.bottomMargin: units.dp(1)
                     }

@@ -16,17 +16,17 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef UTILS_H
-#define UTILS_H
+#ifndef FORMATTIME_H
+#define FORMATTIME_H
 
 #include <QObject>
 
-class Utils: public QObject
+class FormatTime: public QObject
 {
     Q_OBJECT
 
 public:
-    Utils(QObject *parent=0);
+    FormatTime(QObject *parent=0);
 
 public slots:
     QString millisToString(int millis) const;

@@ -20,14 +20,14 @@
 #include <QtQml/QQmlContext>
 #include "backend.h"
 #include "history.h"
-#include "utils.h"
+#include "formattime.h"
 
 void BackendPlugin::registerTypes(const char *uri)
 {
     Q_ASSERT(uri == QLatin1String("Stopwatch"));
 
     qmlRegisterType<LapHistory>(uri, 1, 0, "LapHistory");
-    qmlRegisterType<Utils>(uri, 1, 0, "Utils");
+    qmlRegisterType<FormatTime>(uri, 1, 0, "StopwatchFormatTime");
 }
 
 void BackendPlugin::initializeEngine(QQmlEngine *engine, const char *uri)

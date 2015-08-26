@@ -30,8 +30,8 @@ ClockCircle {
     isOuter: true
     width: units.gu(32)
 
-    Utils {
-        id: utils
+    StopwatchFormatTime {
+        id: stopwatchFormatTime
     }
 
     ClockCircle {
@@ -47,13 +47,13 @@ ClockCircle {
         anchors.centerIn: parent
 
         Label {
-            text: utils.millisToTimeString(milliseconds, true)
+            text: stopwatchFormatTime.millisToTimeString(milliseconds, true)
             font.pixelSize: units.dp(34)
             color: UbuntuColors.midAubergine
         }
 
         Label {
-            text: utils.millisToString(milliseconds)
+            text: stopwatchFormatTime.millisToString(milliseconds)
             font.pixelSize: units.dp(18)
             color: UbuntuColors.midAubergine
             anchors.horizontalCenter: parent.horizontalCenter

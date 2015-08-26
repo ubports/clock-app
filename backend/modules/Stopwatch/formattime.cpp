@@ -16,21 +16,21 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "utils.h"
+#include "formattime.h"
 
 #include <QtMath>
 
-Utils::Utils(QObject *parent):
+FormatTime::FormatTime(QObject *parent):
     QObject(parent)
 {
 }
 
-QString Utils::millisToString(int millis) const
+QString FormatTime::millisToString(int millis) const
 {
     return addZeroPrefix(QString::number(millis), 3);
 }
 
-QString Utils::millisToTimeString(int millis, bool showHours) const
+QString FormatTime::millisToTimeString(int millis, bool showHours) const
 {
     int hours, minutes, seconds;
 
@@ -51,12 +51,12 @@ QString Utils::millisToTimeString(int millis, bool showHours) const
     return timeString;
 }
 
-QString Utils::addZeroPrefix(QString str, int totalLength) const
+QString FormatTime::addZeroPrefix(QString str, int totalLength) const
 {
     return QString("00000" + str).remove(0, 5 + str.length() - totalLength);
 }
 
-QString Utils::lapTimeToString(int millis) const
+QString FormatTime::lapTimeToString(int millis) const
 {
     int hours = qFloor(millis / 1000 / 60 / 60);
 
