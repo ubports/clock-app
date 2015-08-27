@@ -34,18 +34,9 @@ MainView {
         sound: "file:///usr/share/sounds/ubuntu/ringtones/Bliss.ogg"
     }
 
-    FolderListModel {
-        id: _defaultSoundModel
-
-        showDirs: false
-        nameFilters: [ "*.ogg", "*.mp3" ]
-        folder: "/usr/share/sounds/ubuntu/ringtones"
-    }
-
     AlarmSound {
         id: alarmSoundPage
         alarm: _alarm
-        defaultSoundModel: _defaultSoundModel
         alarmSound: { "subText": "Bliss" }
     }
 
@@ -68,15 +59,15 @@ MainView {
             alarmSoundPage.alarmSound.subText = "Bliss"
             _alarm.sound = "file:///usr/share/sounds/ubuntu/ringtones/Bliss.ogg"
             for(var i=0; i<repeater.count; i++) {
-                var alarmSoundSwitch = findChild(alarmSoundPage, "soundStatus"+i)
+                var alarmSoundListItem = findChild(alarmSoundPage, "alarmSoundDelegate"+i)
                 var alarmSoundLabel = findChild(alarmSoundPage, "soundName"+i)
 
                 if(alarmSoundPage.alarmSound.subText === alarmSoundLabel.text) {
-                    alarmSoundSwitch.checked = true
+                    alarmSoundListItem.isChecked = true
                 }
 
                 else {
-                    alarmSoundSwitch.checked = false
+                    alarmSoundListItem.isChecked = false
                 }
             }
         }
@@ -86,15 +77,15 @@ MainView {
         */
         function test_defaultAlarmSoundIsChecked() {
             for(var i=0; i<repeater.count; i++) {
-                var alarmSoundSwitch = findChild(alarmSoundPage, "soundStatus"+i)
+                var alarmSoundListItem = findChild(alarmSoundPage, "alarmSoundDelegate"+i)
                 var alarmSoundLabel = findChild(alarmSoundPage, "soundName"+i)
 
                 if(alarmSoundPage.alarmSound.subText === alarmSoundLabel.text) {
-                    compare(alarmSoundSwitch.checked, true, "Default alarm sound is not checked by default")
+                    compare(alarmSoundListItem.isChecked, true, "Default alarm sound is not checked by default")
                 }
 
                 else {
-                    compare(alarmSoundSwitch.checked, false, "Switch for alarm sounds not default is enabled incorrectly")
+                    compare(alarmSoundListItem.isChecked, false, "Switch for alarm sounds not default is enabled incorrectly")
                 }
             }
         }
@@ -104,19 +95,19 @@ MainView {
         */
         function test_onlyOneAlarmSoundIsSelected() {
             // Click on some random alarm sounds
-            var secondSwitch = findChild(alarmSoundPage, "soundStatus"+2)
+            var secondSwitch = findChild(alarmSoundPage, "alarmSoundDelegate"+2)
             mouseClick(secondSwitch, centerOf(secondSwitch).x, centerOf(secondSwitch).y)
 
-            var fourthSwitch = findChild(alarmSoundPage, "soundStatus"+4)
+            var fourthSwitch = findChild(alarmSoundPage, "alarmSoundDelegate"+4)
             mouseClick(fourthSwitch, centerOf(fourthSwitch).x, centerOf(fourthSwitch).y)
 
             // Check if only that alarm sound is check while the rest is disabled
             for(var i=0; i<repeater.count; i++) {
-                var alarmSoundSwitch = findChild(alarmSoundPage, "soundStatus"+i)
+                var alarmSoundListItem = findChild(alarmSoundPage, "alarmSoundDelegate"+i)
                 var alarmSoundLabel = findChild(alarmSoundPage, "soundName"+i)
 
                 if(i !== 4) {
-                    compare(alarmSoundSwitch.checked, false, "More than one alarm sound selected")
+                    compare(alarmSoundListItem.isChecked, false, "More than one alarm sound selected")
                 }
             }
         }
@@ -128,11 +119,11 @@ MainView {
         function test_soundListHasNoEmptySelection() {
 
             for(var i=0; i<repeater.count; i++) {
-                var alarmSoundSwitch = findChild(alarmSoundPage, "soundStatus"+i)
+                var alarmSoundListItem = findChild(alarmSoundPage, "alarmSoundDelegate"+i)
 
-                if(alarmSoundSwitch.checked) {
-                    mouseClick(alarmSoundSwitch, centerOf(alarmSoundSwitch).x, centerOf(alarmSoundSwitch.height).y)
-                    compare(alarmSoundSwitch.checked, true, "Clicking on the only selected alarm sound disabled it")
+                if(alarmSoundListItem.isChecked) {
+                    mouseClick(alarmSoundListItem, centerOf(alarmSoundListItem).x, centerOf(alarmSoundListItem.height).y)
+                    compare(alarmSoundListItem.isChecked, true, "Clicking on the only selected alarm sound disabled it")
                     break;
                 }
             }
@@ -146,14 +137,20 @@ MainView {
             compare(saveButton.enabled, false, "save header button is not disabled despite no alarm sound change")
 
             // Change sound and check if save button is enabled
-            var fifthSwitch = findChild(alarmSoundPage, "soundStatus"+5)
+            var fifthSwitch = findChild(alarmSoundPage, "alarmSoundDelegate"+5)
             mouseClick(fifthSwitch, centerOf(fifthSwitch).x, centerOf(fifthSwitch).y)
             compare(saveButton.enabled, true, "save header button is not enabled despite alarm sound change")
 
             // Set sound to old value and check if save button is disabled
-            var firstSwitch = findChild(alarmSoundPage, "soundStatus"+1)
-            mouseClick(firstSwitch, centerOf(firstSwitch).x, centerOf(firstSwitch).y)
-            compare(saveButton.enabled, false, "save header button is not disabled despite no alarm sound change")
+            for(var i=0; i<repeater.count; i++) {
+                var alarmSoundListItem = findChild(alarmSoundPage, "alarmSoundDelegate"+i)
+                var alarmSoundLabel = findChild(alarmSoundPage, "soundName"+i)
+
+                if(alarmSoundLabel.text === "Bliss") {
+                    mouseClick(alarmSoundListItem, centerOf(alarmSoundListItem).x, centerOf(alarmSoundListItem).y)
+                    compare(saveButton.enabled, false, "save header button is not disabled despite no alarm sound change")
+                }
+            }
         }
     }
 }

@@ -199,6 +199,7 @@ Page {
 
                 ListItem {
                     id: _customAlarmSoundDelegate
+                    objectName: "customAlarmSoundDelegate" + index
 
                     property bool isChecked: alarmSound.subText === _customSoundName.text ? true
                                                                                           : false
@@ -327,6 +328,7 @@ Page {
 
                 ListItem {
                     id: _alarmSoundDelegate
+                    objectName: "alarmSoundDelegate" + index
 
                     property bool isChecked: alarmSound.subText === _soundName.text ? true
                                                                                     : false
