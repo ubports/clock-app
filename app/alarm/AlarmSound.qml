@@ -192,7 +192,8 @@ Page {
                 ListItem {
                     id: _customAlarmSoundDelegate
 
-                    property alias isChecked: _customSoundStatus.checked
+                    property bool isChecked: alarmSound.subText === _customSoundName.text ? true
+                                                                                          : false
 
                     height: units.gu(7)
 
@@ -269,49 +270,42 @@ Page {
                         text: fileBaseName
                     }
 
-                    CheckBox {
-                        id: _customSoundStatus
-                        objectName: "customSoundStatus" + index
+                    Icon {
+                        width: units.gu(2)
+                        height: width
+                        name: "tick"
+                        visible: _customAlarmSoundDelegate.isChecked
 
                         anchors {
                             right: parent.right
                             rightMargin: units.gu(2)
                             verticalCenter: parent.verticalCenter
                         }
+                    }
 
-                        checked: alarmSound.subText === _customSoundName.text ? true
-                                                                              : false
-                        onCheckedChanged: {
-                            if (checked) {
-                                previewAlarmSound.controlPlayback(fileURL)
-                                alarmSound.subText = _customSoundName.text
-                                alarm.sound = fileURL
+                    onIsCheckedChanged: {
+                        if (isChecked) {
+                            previewAlarmSound.controlPlayback(fileURL)
+                            alarmSound.subText = _customSoundName.text
+                            alarm.sound = fileURL
 
-                                // Ensures only one alarm sound is selected
-                                for(var i=0; i<customSoundModel.count; i++) {
-                                    if(_customAlarmSounds.itemAt(i).isChecked &&
-                                            i !== index) {
-                                        _customAlarmSounds.itemAt(i).isChecked = false
-                                    }
-                                }
-
-                                // Ensures only one alarm customSoundModelsound is selected
-                                for(i=0; i<defaultSoundModel.count; i++) {
-                                    _alarmSounds.itemAt(i).isChecked = false
+                            // Ensures only one custom alarm sound is selected
+                            for(var i=0; i<customSoundModel.count; i++) {
+                                if(_customAlarmSounds.itemAt(i).isChecked && i !== index) {
+                                    _customAlarmSounds.itemAt(i).isChecked = false
                                 }
                             }
-                        }
 
-                        onClicked: {
-                            if (!checked) {
-                                checked = true
+                            // Uncheck all the default alarm sounds
+                            for(i=0; i<defaultSoundModel.count; i++) {
+                                _alarmSounds.itemAt(i).isChecked = false
                             }
                         }
                     }
 
                     onClicked: {
-                        if (!_customSoundStatus.checked) {
-                            _customSoundStatus.checked = true
+                        if (!_customAlarmSoundDelegate.isChecked) {
+                            _customAlarmSoundDelegate.isChecked = true
                         } else {
                             previewAlarmSound.controlPlayback(fileURL)
                         }
@@ -328,7 +322,8 @@ Page {
                 ListItem {
                     id: _alarmSoundDelegate
 
-                    property alias isChecked: _soundStatus.checked
+                    property bool isChecked: alarmSound.subText === _soundName.text ? true
+                                                                                    : false
 
                     height: units.gu(7)
 
@@ -347,49 +342,43 @@ Page {
                         text: fileBaseName
                     }
 
-                    CheckBox {
-                        id: _soundStatus
-                        objectName: "soundStatus" + index
+                    Icon {
+                        width: units.gu(2)
+                        height: width
+                        name: "tick"
+                        visible: _alarmSoundDelegate.isChecked
 
                         anchors {
                             right: parent.right
                             rightMargin: units.gu(2)
                             verticalCenter: parent.verticalCenter
                         }
+                    }
 
-                        checked: alarmSound.subText === _soundName.text ? true
-                                                                        : false
-                        onCheckedChanged: {
-                            if (checked) {
-                                previewAlarmSound.controlPlayback(fileURL)
-                                alarmSound.subText = _soundName.text
-                                alarm.sound = fileURL
+                    onIsCheckedChanged: {
+                        if (isChecked) {
+                            previewAlarmSound.controlPlayback(fileURL)
+                            alarmSound.subText = _soundName.text
+                            alarm.sound = fileURL
 
-                                // Ensures only one alarm sound is selected
-                                for(var i=0; i<defaultSoundModel.count; i++) {
-                                    if(_alarmSounds.itemAt(i).isChecked &&
-                                            i !== index) {
-                                        _alarmSounds.itemAt(i).isChecked = false
-                                    }
-                                }
-
-                                // Ensures only one alarm sound is selected
-                                for(i=0; i<customSoundModel.count; i++) {
-                                    _customAlarmSounds.itemAt(i).isChecked = false
+                            // Ensures only one alarm sound is selected
+                            for(var i=0; i<defaultSoundModel.count; i++) {
+                                if(_alarmSounds.itemAt(i).isChecked &&
+                                        i !== index) {
+                                    _alarmSounds.itemAt(i).isChecked = false
                                 }
                             }
-                        }
 
-                        onClicked: {
-                            if (!checked) {
-                                checked = true
+                            // Uncheck all the custom alarm sounds
+                            for(i=0; i<customSoundModel.count; i++) {
+                                _customAlarmSounds.itemAt(i).isChecked = false
                             }
                         }
                     }
 
                     onClicked: {
-                        if (!_soundStatus.checked) {
-                            _soundStatus.checked = true
+                        if (!_alarmSoundDelegate.isChecked) {
+                            _alarmSoundDelegate.isChecked = true
                         } else {
                             previewAlarmSound.controlPlayback(fileURL)
                         }
