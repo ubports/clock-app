@@ -268,7 +268,7 @@ Page {
                         anchors {
                             left: parent.left
                             leftMargin: units.gu(2)
-                            right: _customSoundStatus.left
+                            right: tickIcon.left
                             rightMargin: units.gu(2)
                             verticalCenter: parent.verticalCenter
                         }
@@ -280,6 +280,7 @@ Page {
                     }
 
                     Icon {
+                        id: tickIcon
                         width: units.gu(2)
                         height: width
                         name: "tick"
