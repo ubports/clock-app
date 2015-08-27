@@ -21,6 +21,7 @@ import Clock.Utility 1.0
 import QtMultimedia 5.0
 import Ubuntu.Content 1.1
 import Ubuntu.Components 1.2
+import Qt.labs.folderlistmodel 2.1
 
 Page {
     id: _alarmSoundPage
@@ -38,12 +39,6 @@ Page {
 
     // Property to store the alarm object
     property var alarm
-
-    // Property to set the alarm sound model in the edit alarm page
-    property var defaultSoundModel
-
-    // Property to set the custom alarm sound model in the edit alarm page
-    property var customSoundModel
 
     /*
      Properties to store the previously set alarm sound values to detect
@@ -83,6 +78,19 @@ Page {
         }
     }
 
+    FolderListModel {
+        id: defaultSoundModel
+        showDirs: false
+        nameFilters: [ "*.ogg", "*.mp3" ]
+        folder: "/usr/share/sounds/ubuntu/ringtones"
+    }
+
+    FolderListModel {
+        id: customSoundModel
+        showDirs: false
+        folder: alarmSoundHelper.customAlarmSoundDirectory
+    }
+
     ContentTransferHint {
         anchors.fill: parent
         activeTransfer: _alarmSoundPage.activeTransfer
@@ -117,9 +125,9 @@ Page {
         for (var i=0; i<customSoundModel.count; i++) {
             if (soundUrl === customSoundModel.get(i, "fileURL")) {
                 alarmSound.subText = customSoundModel.get(i, "fileBaseName")
-                alarm.sound = soundUrl
-                previewAlarmSound.source = soundUrl
+                alarm.sound = soundUrl                
                 _customAlarmSounds.itemAt(i).isChecked = true
+                previewAlarmSound.controlPlayback(soundUrl)
                 return
             }
         }
@@ -220,9 +228,9 @@ Page {
                                             for (var i=0; i<defaultSoundModel.count; i++) {
                                                 if (defaultSoundModel.get(i, "fileBaseName") === alarmSound.subText) {
                                                     alarm.sound = defaultSoundModel.get(i, "fileURL")
-                                                    oldAlarmSoundUrl = alarm.sound
-                                                    previewAlarmSound.source = defaultSoundModel.get(i, "fileURL")
+                                                    oldAlarmSoundUrl = alarm.sound                                                    
                                                     _alarmSounds.itemAt(i).isChecked = true
+                                                    previewAlarmSound.controlPlayback(defaultSoundModel.get(i, "fileURL"))
                                                 }
                                             }
                                         }
@@ -230,7 +238,7 @@ Page {
                                         else {
                                             alarmSound.subText = oldAlarmSoundName
                                             alarm.sound = oldAlarmSoundUrl
-                                            previewAlarmSound.source = alarm.sound
+                                            previewAlarmSound.controlPlayback(alarm.sound)
 
                                             for (var j=0; j<defaultSoundModel.count; j++) {
                                                 if (defaultSoundModel.get(j, "fileBaseName") === alarmSound.subText) {
@@ -285,7 +293,6 @@ Page {
 
                     onIsCheckedChanged: {
                         if (isChecked) {
-                            previewAlarmSound.controlPlayback(fileURL)
                             alarmSound.subText = _customSoundName.text
                             alarm.sound = fileURL
 
@@ -306,9 +313,8 @@ Page {
                     onClicked: {
                         if (!_customAlarmSoundDelegate.isChecked) {
                             _customAlarmSoundDelegate.isChecked = true
-                        } else {
-                            previewAlarmSound.controlPlayback(fileURL)
                         }
+                        previewAlarmSound.controlPlayback(fileURL)
                     }
                 }
             }
@@ -357,7 +363,6 @@ Page {
 
                     onIsCheckedChanged: {
                         if (isChecked) {
-                            previewAlarmSound.controlPlayback(fileURL)
                             alarmSound.subText = _soundName.text
                             alarm.sound = fileURL
 
@@ -379,9 +384,8 @@ Page {
                     onClicked: {
                         if (!_alarmSoundDelegate.isChecked) {
                             _alarmSoundDelegate.isChecked = true
-                        } else {
-                            previewAlarmSound.controlPlayback(fileURL)
                         }
+                        previewAlarmSound.controlPlayback(fileURL)
                     }
                 }
             }

@@ -20,7 +20,6 @@ import QtQuick 2.4
 import DateTime 1.0
 import Clock.Utility 1.0
 import Ubuntu.Components 1.2
-import Qt.labs.folderlistmodel 2.1
 import Ubuntu.Components.Pickers 1.0
 import "../components"
 
@@ -215,19 +214,6 @@ Page {
         }
     }
 
-    FolderListModel {
-        id: defaultSoundModel
-        showDirs: false
-        nameFilters: [ "*.ogg", "*.mp3" ]
-        folder: "/usr/share/sounds/ubuntu/ringtones"
-    }
-
-    FolderListModel {
-        id: customSoundModel
-        showDirs: false
-        folder: alarmSoundHelper.customAlarmSoundDirectory
-    }
-
     AlarmSound {
         id: alarmSoundHelper
     }
@@ -310,9 +296,7 @@ Page {
             text: i18n.tr("Sound")
             onClicked: pageStack.push(Qt.resolvedUrl("AlarmSound.qml"), {
                                           "alarmSound": _alarmSound,
-                                          "alarm": _alarm,
-                                          "defaultSoundModel": defaultSoundModel,
-                                          "customSoundModel": customSoundModel
+                                          "alarm": _alarm
                                       })
         }
     }
