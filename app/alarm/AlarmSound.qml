@@ -170,7 +170,8 @@ Page {
         anchors.fill: parent
         contentHeight: defaultSoundModel.count * units.gu(7) +
                        customSoundModel.count * units.gu(7) +
-                       customSoundListItem.height
+                       customSoundListItem.height +
+                       2*customSoundsHeader.implicitHeight + units.gu(4)
 
         Column {
             id: _alarmSoundColumn
@@ -187,6 +188,21 @@ Page {
                     anchors.centerIn: parent
                     onClicked: {
                         pageStack.push(Qt.resolvedUrl("SoundPeerPicker.qml"), {alarmSoundPage: _alarmSoundPage})
+                    }
+                }
+            }
+
+            ListItem {
+                visible: customSoundModel.count !== 0
+                height: customSoundsHeader.implicitHeight + units.gu(2)
+                Label {
+                    id: customSoundsHeader
+                    text: i18n.tr("Custom Sounds")
+                    font.weight: Font.DemiBold
+                    anchors {
+                        left: parent.left
+                        leftMargin: units.gu(2)
+                        verticalCenter: parent.verticalCenter
                     }
                 }
             }
@@ -317,6 +333,21 @@ Page {
                             _customAlarmSoundDelegate.isChecked = true
                         }
                         previewAlarmSound.controlPlayback(fileURL)
+                    }
+                }
+            }
+
+            ListItem {
+                visible: customSoundModel.count !== 0
+                height: defaultSoundsHeader.implicitHeight + units.gu(2)
+                Label {
+                    id: defaultSoundsHeader
+                    text: i18n.tr("Default Sounds")
+                    font.weight: Font.DemiBold
+                    anchors {
+                        left: parent.left
+                        leftMargin: units.gu(2)
+                        verticalCenter: parent.verticalCenter
                     }
                 }
             }
