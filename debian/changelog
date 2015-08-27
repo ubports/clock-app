@@ -1,4 +1,11 @@
-ubuntu-clock-app (3.5) UNRELEASED; urgency=medium
+ubuntu-clock-app (3.6) UNRELEASED; urgency=medium
+
+  [Nekhelesh Ramananthan]
+  * Replaced checkboxes in alarm sound page with tick-marks (LP: #1487717)
+
+ -- Nekhelesh Ramananthan <krnekhelesh@gmail.com>  Thu, 27 Aug 2015 20:56:08 +0200
+
+ubuntu-clock-app (3.5) vivid; urgency=medium
 
   [Bartosz Kosiorek]
   * Disable automatic translation and update README.translations
