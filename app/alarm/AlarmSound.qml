@@ -171,7 +171,7 @@ Page {
         contentHeight: defaultSoundModel.count * units.gu(7) +
                        customSoundModel.count * units.gu(7) +
                        customSoundListItem.height +
-                       2*customSoundsHeader.implicitHeight + units.gu(4)
+                       2 * customSoundsHeader.implicitHeight + units.gu(4)
 
         Column {
             id: _alarmSoundColumn

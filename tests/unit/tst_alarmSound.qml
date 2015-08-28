@@ -59,8 +59,8 @@ MainView {
             alarmSoundPage.alarmSound.subText = "Bliss"
             _alarm.sound = "file:///usr/share/sounds/ubuntu/ringtones/Bliss.ogg"
             for(var i=0; i<repeater.count; i++) {
-                var alarmSoundListItem = findChild(alarmSoundPage, "alarmSoundDelegate"+i)
-                var alarmSoundLabel = findChild(alarmSoundPage, "soundName"+i)
+                var alarmSoundListItem = findChild(alarmSoundPage, "alarmSoundDelegate" + i)
+                var alarmSoundLabel = findChild(alarmSoundPage, "soundName" + i)
 
                 if(alarmSoundPage.alarmSound.subText === alarmSoundLabel.text) {
                     alarmSoundListItem.isChecked = true
@@ -95,16 +95,16 @@ MainView {
         */
         function test_onlyOneAlarmSoundIsSelected() {
             // Click on some random alarm sounds
-            var secondSwitch = findChild(alarmSoundPage, "alarmSoundDelegate"+2)
+            var secondSwitch = findChild(alarmSoundPage, "alarmSoundDelegate" + 2)
             mouseClick(secondSwitch, centerOf(secondSwitch).x, centerOf(secondSwitch).y)
 
-            var fourthSwitch = findChild(alarmSoundPage, "alarmSoundDelegate"+4)
+            var fourthSwitch = findChild(alarmSoundPage, "alarmSoundDelegate" + 4)
             mouseClick(fourthSwitch, centerOf(fourthSwitch).x, centerOf(fourthSwitch).y)
 
             // Check if only that alarm sound is check while the rest is disabled
             for(var i=0; i<repeater.count; i++) {
-                var alarmSoundListItem = findChild(alarmSoundPage, "alarmSoundDelegate"+i)
-                var alarmSoundLabel = findChild(alarmSoundPage, "soundName"+i)
+                var alarmSoundListItem = findChild(alarmSoundPage, "alarmSoundDelegate" + i)
+                var alarmSoundLabel = findChild(alarmSoundPage, "soundName" + i)
 
                 if(i !== 4) {
                     compare(alarmSoundListItem.isChecked, false, "More than one alarm sound selected")
@@ -119,7 +119,7 @@ MainView {
         function test_soundListHasNoEmptySelection() {
 
             for(var i=0; i<repeater.count; i++) {
-                var alarmSoundListItem = findChild(alarmSoundPage, "alarmSoundDelegate"+i)
+                var alarmSoundListItem = findChild(alarmSoundPage, "alarmSoundDelegate" + i)
 
                 if(alarmSoundListItem.isChecked) {
                     mouseClick(alarmSoundListItem, centerOf(alarmSoundListItem).x, centerOf(alarmSoundListItem.height).y)
@@ -137,14 +137,14 @@ MainView {
             compare(saveButton.enabled, false, "save header button is not disabled despite no alarm sound change")
 
             // Change sound and check if save button is enabled
-            var fifthSwitch = findChild(alarmSoundPage, "alarmSoundDelegate"+5)
+            var fifthSwitch = findChild(alarmSoundPage, "alarmSoundDelegate" + 5)
             mouseClick(fifthSwitch, centerOf(fifthSwitch).x, centerOf(fifthSwitch).y)
             compare(saveButton.enabled, true, "save header button is not enabled despite alarm sound change")
 
             // Set sound to old value and check if save button is disabled
             for(var i=0; i<repeater.count; i++) {
-                var alarmSoundListItem = findChild(alarmSoundPage, "alarmSoundDelegate"+i)
-                var alarmSoundLabel = findChild(alarmSoundPage, "soundName"+i)
+                var alarmSoundListItem = findChild(alarmSoundPage, "alarmSoundDelegate" + i)
+                var alarmSoundLabel = findChild(alarmSoundPage, "soundName" + i)
 
                 if(alarmSoundLabel.text === "Bliss") {
                     mouseClick(alarmSoundListItem, centerOf(alarmSoundListItem).x, centerOf(alarmSoundListItem).y)
