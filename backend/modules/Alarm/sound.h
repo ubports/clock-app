@@ -16,13 +16,13 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef ALARMSOUND_H
-#define ALARMSOUND_H
+#ifndef SOUND_H
+#define SOUND_H
 
 #include <QObject>
 #include <QUrl>
 
-class AlarmSound: public QObject
+class Sound: public QObject
 {
     Q_OBJECT
 
@@ -32,7 +32,7 @@ class AlarmSound: public QObject
                 CONSTANT)
 
 public:
-    AlarmSound(QObject *parent = 0);
+    Sound(QObject *parent = 0);
 
     QString customAlarmSoundDirectory() const;
 

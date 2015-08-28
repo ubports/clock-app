@@ -17,7 +17,7 @@
  */
 
 import QtQuick 2.4
-import Timezone 1.0
+import WorldClock 1.0
 import Ubuntu.Components 1.2
 import "../components"
 import "../upstreamcomponents"

@@ -20,21 +20,21 @@
 #include <QFileInfo>
 #include <QStandardPaths>
 
-#include "alarmsound.h"
+#include "sound.h"
 
-AlarmSound::AlarmSound(QObject *parent):
+Sound::Sound(QObject *parent):
     QObject(parent),
     m_customAlarmDir(QStandardPaths::standardLocations(QStandardPaths::AppDataLocation).first() + "/CustomSounds/"),
     m_defaultAlarmDir("/usr/share/sounds/ubuntu/ringtones/")
 {
 }
 
-QString AlarmSound::customAlarmSoundDirectory() const
+QString Sound::customAlarmSoundDirectory() const
 {
     return m_customAlarmDir;
 }
 
-void AlarmSound::deleteCustomAlarmSound(const QString &soundName)
+void Sound::deleteCustomAlarmSound(const QString &soundName)
 {
     QDir dir(m_customAlarmDir);
     if (dir.exists(soundName))
@@ -43,14 +43,14 @@ void AlarmSound::deleteCustomAlarmSound(const QString &soundName)
     }
 }
 
-void AlarmSound::prepareToAddAlarmSound(const QString &soundPath)
+void Sound::prepareToAddAlarmSound(const QString &soundPath)
 {
     QFileInfo soundFile(soundPath);
     QString soundFileName = soundFile.fileName();
     deleteCustomAlarmSound(soundFileName);
 }
 
-void AlarmSound::createCustomAlarmSoundDirectory()
+void Sound::createCustomAlarmSoundDirectory()
 {
     QDir dir(m_customAlarmDir);
 
@@ -62,7 +62,7 @@ void AlarmSound::createCustomAlarmSoundDirectory()
     dir.mkpath(m_customAlarmDir);
 }
 
-bool AlarmSound::isAlarmSoundValid(const QString &soundFileName)
+bool Sound::isAlarmSoundValid(const QString &soundFileName)
 {
     QFileInfo soundFile;
 
@@ -82,18 +82,18 @@ bool AlarmSound::isAlarmSoundValid(const QString &soundFileName)
     }
 }
 
-bool AlarmSound::isAlarmSoundValid(const QUrl &soundUrl)
+bool Sound::isAlarmSoundValid(const QUrl &soundUrl)
 {
     QFileInfo soundFile;
     return soundFile.exists(soundUrl.path());
 }
 
-QString AlarmSound::getDefaultAlarmSoundPath(const QString &soundFileName) const
+QString Sound::getDefaultAlarmSoundPath(const QString &soundFileName) const
 {
     return m_defaultAlarmDir + soundFileName;
 }
 
-QString AlarmSound::getSoundName(const QString &soundPath) const
+QString Sound::getSoundName(const QString &soundPath) const
 {
     QFileInfo soundFile(soundPath);
     return soundFile.baseName();
