@@ -21,6 +21,7 @@ import Clock.Utility 1.0
 import QtMultimedia 5.0
 import Ubuntu.Content 1.1
 import Ubuntu.Components 1.2
+import QtQuick.Layouts 1.1
 import Qt.labs.folderlistmodel 2.1
 
 Page {
@@ -277,35 +278,43 @@ Page {
                         ]
                     }
 
-                    Label {
-                        id: _customSoundName
-                        objectName: "customSoundName" + index
+                    RowLayout {
+                        spacing: units.gu(2)
 
                         anchors {
-                            left: parent.left
+                            fill: parent
                             leftMargin: units.gu(2)
-                            right: tickIcon.left
                             rightMargin: units.gu(2)
-                            verticalCenter: parent.verticalCenter
                         }
 
-                        elide: Text.ElideRight
-                        color: UbuntuColors.midAubergine
-                        fontSize: "medium"
-                        text: fileBaseName
-                    }
+                        Label {
+                            id: _customSoundName
+                            objectName: "customSoundName" + index
 
-                    Icon {
-                        id: tickIcon
-                        width: units.gu(2)
-                        height: width
-                        name: "tick"
-                        visible: _customAlarmSoundDelegate.isChecked
+                            anchors.verticalCenter: parent.verticalCenter
+                            Layout.fillWidth: true
 
-                        anchors {
-                            right: parent.right
-                            rightMargin: units.gu(2)
-                            verticalCenter: parent.verticalCenter
+                            elide: Text.ElideRight
+                            color: UbuntuColors.midAubergine
+                            fontSize: "medium"
+                            text: fileBaseName
+                        }
+
+                        Icon {
+                            width: units.gu(2)
+                            height: width
+                            name: "media-playback-pause"
+                            visible: _customAlarmSoundDelegate.isChecked &&
+                                     previewAlarmSound.playbackState === Audio.PlayingState
+                        }
+
+                        Icon {
+                            id: tickIcon
+                            width: units.gu(2)
+                            height: width
+                            name: "tick"
+                            visible: _customAlarmSoundDelegate.isChecked
+                            anchors.verticalCenter: parent.verticalCenter
                         }
                     }
 
@@ -356,7 +365,6 @@ Page {
                 objectName: "alarmSounds"
 
                 model: defaultSoundModel
-                color: isChecked ? Theme.palette.selected.background : "Transparent"
 
                 ListItem {
                     id: _alarmSoundDelegate
@@ -366,32 +374,43 @@ Page {
                                                                                     : false
 
                     height: units.gu(7)
+                    color: isChecked ? Theme.palette.selected.background : "Transparent"
 
-                    Label {
-                        id: _soundName
-                        objectName: "soundName" + index
+                    RowLayout {
+                        spacing: units.gu(2)
 
                         anchors {
-                            left: parent.left
+                            fill: parent
                             leftMargin: units.gu(2)
-                            verticalCenter: parent.verticalCenter
+                            rightMargin: units.gu(2)
                         }
 
-                        color: UbuntuColors.midAubergine
-                        fontSize: "medium"
-                        text: fileBaseName
-                    }
+                        Label {
+                            id: _soundName
+                            objectName: "soundName" + index
 
-                    Icon {
-                        width: units.gu(2)
-                        height: width
-                        name: "tick"
-                        visible: _alarmSoundDelegate.isChecked
+                            anchors.verticalCenter: parent.verticalCenter
+                            Layout.fillWidth: true
 
-                        anchors {
-                            right: parent.right
-                            rightMargin: units.gu(2)
-                            verticalCenter: parent.verticalCenter
+                            color: UbuntuColors.midAubergine
+                            fontSize: "medium"
+                            text: fileBaseName
+                        }
+
+                        Icon {
+                            width: units.gu(2)
+                            height: width
+                            name: "media-playback-pause"
+                            visible: _alarmSoundDelegate.isChecked &&
+                                     previewAlarmSound.playbackState === Audio.PlayingState
+                        }
+
+                        Icon {
+                            width: units.gu(2)
+                            height: width
+                            name: "tick"
+                            visible: _alarmSoundDelegate.isChecked
+                            anchors.verticalCenter: parent.verticalCenter
                         }
                     }
 
