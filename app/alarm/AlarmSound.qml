@@ -179,30 +179,29 @@ Page {
             anchors.fill: parent
 
             ListItem {
-                id: customSoundListItem
-                height: units.gu(7)
-                Button {
-                    id: customSoundButton
-                    text: i18n.tr("Add custom sound")
-                    width: parent.width / 1.1
-                    anchors.centerIn: parent
-                    onClicked: {
-                        pageStack.push(Qt.resolvedUrl("SoundPeerPicker.qml"), {alarmSoundPage: _alarmSoundPage})
-                    }
-                }
-            }
-
-            ListItem {
-                visible: customSoundModel.count !== 0
                 height: customSoundsHeader.implicitHeight + units.gu(2)
                 Label {
                     id: customSoundsHeader
-                    text: i18n.tr("Custom Sounds")
+                    text: i18n.tr("Custom alarm sounds")
                     font.weight: Font.DemiBold
                     anchors {
                         left: parent.left
                         leftMargin: units.gu(2)
                         verticalCenter: parent.verticalCenter
+                    }
+                }
+            }
+
+            ListItem {
+                id: customSoundListItem
+                height: units.gu(7)
+                Button {
+                    id: customSoundButton
+                    text: i18n.tr("Add sound")
+                    width: parent.width / 1.1
+                    anchors.centerIn: parent
+                    onClicked: {
+                        pageStack.push(Qt.resolvedUrl("SoundPeerPicker.qml"), {alarmSoundPage: _alarmSoundPage})
                     }
                 }
             }
@@ -221,6 +220,7 @@ Page {
                                                                                           : false
 
                     height: units.gu(7)
+                    color: isChecked ? Theme.palette.selected.background : "Transparent"
 
                     leadingActions: ListItemActions {
                         actions: [
@@ -338,11 +338,10 @@ Page {
             }
 
             ListItem {
-                visible: customSoundModel.count !== 0
                 height: defaultSoundsHeader.implicitHeight + units.gu(2)
                 Label {
                     id: defaultSoundsHeader
-                    text: i18n.tr("Default Sounds")
+                    text: i18n.tr("Default alarm sounds")
                     font.weight: Font.DemiBold
                     anchors {
                         left: parent.left
@@ -357,6 +356,7 @@ Page {
                 objectName: "alarmSounds"
 
                 model: defaultSoundModel
+                color: isChecked ? Theme.palette.selected.background : "Transparent"
 
                 ListItem {
                     id: _alarmSoundDelegate
