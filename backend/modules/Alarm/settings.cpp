@@ -19,9 +19,9 @@
 #include <QDebug>
 #include <QtDBus>
 
-#include "alarmsettings.h"
+#include "settings.h"
 
-AlarmSettings::AlarmSettings(QObject *parent):
+Settings::Settings(QObject *parent):
     QObject(parent)
 {
     // On startup, retrieve all the settings values from Dbus
@@ -37,7 +37,7 @@ AlarmSettings::AlarmSettings(QObject *parent):
                        SLOT(onSettingsChanged(QString, QVariantMap, QStringList)));
 }
 
-void AlarmSettings::onSettingsChanged(const QString &interface,
+void Settings::onSettingsChanged(const QString &interface,
                                       const QVariantMap &properties,
                                       const QStringList & /*valid*/)
 {
@@ -87,7 +87,7 @@ void AlarmSettings::onSettingsChanged(const QString &interface,
     }
 }
 
-void AlarmSettings::refreshProperties()
+void Settings::refreshProperties()
 {
     QDBusInterface handlerPropertiesInterface
             ("com.canonical.indicator.datetime",
@@ -111,7 +111,7 @@ void AlarmSettings::refreshProperties()
     m_vibration = map["HapticFeedback"].toString();
 }
 
-void AlarmSettings::setDBusProperty(const QString &name, const QVariant &value)
+void Settings::setDBusProperty(const QString &name, const QVariant &value)
 {
     QDBusInterface handlerPropertiesInterface
             ("com.canonical.indicator.datetime",
@@ -125,27 +125,27 @@ void AlarmSettings::setDBusProperty(const QString &name, const QVariant &value)
                 QVariant::fromValue(QDBusVariant(value)));
 }
 
-int AlarmSettings::volume() const
+int Settings::volume() const
 {
     return m_volume;
 }
 
-int AlarmSettings::duration() const
+int Settings::duration() const
 {
     return m_duration;
 }
 
-int AlarmSettings::snoozeDuration() const
+int Settings::snoozeDuration() const
 {
     return m_snoozeDuration;
 }
 
-QString AlarmSettings::vibration() const
+QString Settings::vibration() const
 {
     return m_vibration;
 }
 
-void AlarmSettings::setVolume(int volume)
+void Settings::setVolume(int volume)
 {
     if(m_volume == volume) {
         // Don't send the volume over dbus if it is the same one already
@@ -159,7 +159,7 @@ void AlarmSettings::setVolume(int volume)
     setDBusProperty("DefaultVolume", QVariant(m_volume));
 }
 
-void AlarmSettings::setDuration(int duration)
+void Settings::setDuration(int duration)
 {
     if(m_duration == duration) {
         // Don't send the duration over dbus if it is the same one already
@@ -173,7 +173,7 @@ void AlarmSettings::setDuration(int duration)
     setDBusProperty("Duration", QVariant(m_duration));
 }
 
-void AlarmSettings::setSnoozeDuration(int snoozeDuration)
+void Settings::setSnoozeDuration(int snoozeDuration)
 {
     if(m_snoozeDuration == snoozeDuration) {
         // Don't send the snooze duration over dbus if it is the same one already
@@ -187,7 +187,7 @@ void AlarmSettings::setSnoozeDuration(int snoozeDuration)
     setDBusProperty("SnoozeDuration", QVariant(m_snoozeDuration));
 }
 
-void AlarmSettings::setVibration(QString vibration)
+void Settings::setVibration(QString vibration)
 {
     if(m_vibration == vibration) {
         // Don't send the vibration mode over dbus if it is the same one already

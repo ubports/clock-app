@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2014-2015 Canonical Ltd
+ * Copyright (C) 2015 Canonical Ltd
  *
  * This file is part of Ubuntu Clock App
  *
@@ -19,13 +19,22 @@
 #include <QtQml>
 #include <QtQml/QQmlContext>
 #include "backend.h"
+#include "geolocation.h"
 #include "datetime.h"
+#include "timezonemodel.h"
+#include "generictimezonemodel.h"
+#include "jsontimezonemodel.h"
+#include "statictimezonemodel.h"
 
 void BackendPlugin::registerTypes(const char *uri)
 {
-    Q_ASSERT(uri == QLatin1String("DateTime"));
+    Q_ASSERT(uri == QLatin1String("WorldClock"));
 
+    qmlRegisterType<GeoLocation>(uri, 1, 0, "GeoLocation");
     qmlRegisterType<DateTime>(uri, 1, 0, "DateTime");
+    qmlRegisterType<GenericTimeZoneModel>(uri, 1, 0, "GenericTimeZoneModel");
+    qmlRegisterType<JsonTimeZoneModel>(uri, 1, 0, "JsonTimeZoneModel");
+    qmlRegisterType<StaticTimeZoneModel>(uri, 1, 0, "StaticTimeZoneModel");
 }
 
 void BackendPlugin::initializeEngine(QQmlEngine *engine, const char *uri)

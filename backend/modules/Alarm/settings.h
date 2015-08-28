@@ -16,13 +16,13 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef ALARMSETTINGS_H
-#define ALARMSETTINGS_H
+#ifndef SETTINGS_H
+#define SETTINGS_H
 
 #include <QObject>
 #include <QVariant>
 
-class AlarmSettings: public QObject
+class Settings: public QObject
 {
     Q_OBJECT
 
@@ -51,7 +51,7 @@ class AlarmSettings: public QObject
                NOTIFY vibrationChanged)
 
 public:
-    AlarmSettings(QObject *parent = 0);
+    Settings(QObject *parent = 0);
 
     // Function to return the alarm volume
     int volume() const;

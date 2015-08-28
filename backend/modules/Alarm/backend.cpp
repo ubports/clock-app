@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015 Canonical Ltd
+ * Copyright (C) 2014-2015 Canonical Ltd
  *
  * This file is part of Ubuntu Clock App
  *
@@ -19,13 +19,15 @@
 #include <QtQml>
 #include <QtQml/QQmlContext>
 #include "backend.h"
-#include "alarmsound.h"
+#include "settings.h"
+#include "sound.h"
 
 void BackendPlugin::registerTypes(const char *uri)
 {
-    Q_ASSERT(uri == QLatin1String("Clock.Utility"));
+    Q_ASSERT(uri == QLatin1String("Alarm"));
 
-    qmlRegisterType<AlarmSound>(uri, 1, 0, "AlarmSound");
+    qmlRegisterType<Settings>(uri, 1, 0, "AlarmSettings");
+    qmlRegisterType<Sound>(uri, 1, 0, "AlarmSound");
 }
 
 void BackendPlugin::initializeEngine(QQmlEngine *engine, const char *uri)

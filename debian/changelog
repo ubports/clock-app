@@ -37,6 +37,7 @@ ubuntu-clock-app (3.5) vivid; urgency=medium
   * Fixed edited alarm not being saveable if at any point of editing the alarm
     clock app loses focus (LP: #1487789)
   * Fixed edited alarms when saved not updating the alarms listview (LP: #1488439)
+  * Reorganized backend c++ plugins with proper naming and folder structures.
 
   [Victor Thompson]
   * Show all README files in QtCreator 
