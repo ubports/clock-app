@@ -43,6 +43,9 @@ public:
     // Function to set the model
     void setResults(const QList<QVariant> &results);
 
+public slots:
+    void clear();
+
 signals:
     // Signal to notify the change of the model to QML
     void resultsChanged();
