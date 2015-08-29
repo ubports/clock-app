@@ -1,6 +1,9 @@
 ubuntu-clock-app (3.6) UNRELEASED; urgency=medium
 
+  [Nekhelesh Ramananthan]
   * Bumped version to 3.6
+  * Removed ListItemWithActions upstream component and also fixed the user
+    world city list count never decreasing to 0. (LP: #1368393)
 
  -- Nekhelesh Ramananthan <krnekhelesh@gmail.com>  Sat, 29 Aug 2015 01:47:00 +0200
 
