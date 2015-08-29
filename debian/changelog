@@ -1,4 +1,10 @@
-ubuntu-clock-app (3.5) UNRELEASED; urgency=medium
+ubuntu-clock-app (3.6) UNRELEASED; urgency=medium
+
+  * Bumped version to 3.6
+
+ -- Nekhelesh Ramananthan <krnekhelesh@gmail.com>  Sat, 29 Aug 2015 01:47:00 +0200
+
+ubuntu-clock-app (3.5) vivid; urgency=medium
 
   [Bartosz Kosiorek]
   * Disable automatic translation and update README.translations
