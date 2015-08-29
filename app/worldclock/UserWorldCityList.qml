@@ -68,6 +68,11 @@ ListView {
                     iconName: "delete"
                     text: i18n.tr("Delete")
                     onTriggered: {
+                        /*
+                         This if loop check is required due to a bug where the listitem
+                         is not deleted when the listview count is 1. This should fix
+                         http://pad.lv/1368393
+                        */
                         if (worldCityColumn.count === 1) {
                             clockDB.deleteDoc(worldCityQuery.documents[index])
                             u1dbModel.clear()

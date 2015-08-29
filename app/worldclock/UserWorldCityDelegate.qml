@@ -21,7 +21,7 @@ import Ubuntu.Components 1.2
 import "../components"
 
 ListItem {
-    id: root
+    id: userWorldCityDelegate
 
     function getTimeDiff(time) {
         var hours, minutes;
@@ -32,14 +32,15 @@ ListItem {
     }
 
     height: units.gu(9)
-    width: parent ? parent.width : 0
     divider.visible: false
 
     Item {
         id: delegate
 
-        anchors.fill: parent
-        anchors.margins: units.gu(2)
+        anchors {
+            fill: parent
+            margins: units.gu(2)
+        }
 
         Column {
             id: cityColumn
