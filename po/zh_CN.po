@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2015-08-21 18:07+0200\n"
-"PO-Revision-Date: 2015-07-23 03:25+0000\n"
+"PO-Revision-Date: 2015-08-31 01:57+0000\n"
 "Last-Translator: Ian Li <Unknown>\n"
 "Language-Team: Chinese (Simplified) <zh_CN@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Launchpad-Export-Date: 2015-08-22 05:55+0000\n"
+"X-Launchpad-Export-Date: 2015-08-31 05:28+0000\n"
 "X-Generator: Launchpad (build 17690)\n"
 
 #: ../app/MainPage.qml:47 ../app/alarm/AlarmUtils.qml:55
@@ -89,7 +89,7 @@ msgstr "闹钟音量"
 
 #: ../app/alarm/AlarmSettingsPage.qml:125
 msgid "Alarm stops after"
-msgstr ""
+msgstr "闹铃停止于"
 
 #: ../app/alarm/AlarmSettingsPage.qml:163
 msgid "Snooze for"
@@ -109,7 +109,7 @@ msgstr "声音"
 
 #: ../app/alarm/AlarmSound.qml:139
 msgid "Add custom sound"
-msgstr ""
+msgstr "添加定制声音"
 
 #: ../app/alarm/AlarmUtils.qml:31
 msgid "Never"
@@ -166,7 +166,7 @@ msgstr "删除闹钟"
 #. TRANSLATORS: This is the page title. Please keep the translation length to 3 words if possible
 #: ../app/alarm/SoundPeerPicker.qml:27
 msgid "Add sound from"
-msgstr ""
+msgstr "添加声音自"
 
 #: ../app/clock/ClockPage.qml:225
 msgid "Retrieving location..."
@@ -176,15 +176,15 @@ msgstr "确定方位中..."
 #. translation length to a few characters.
 #: ../app/stopwatch/LapListView.qml:45 ../app/stopwatch/StopwatchPage.qml:120
 msgid "Lap"
-msgstr ""
+msgstr "圈"
 
 #: ../app/stopwatch/LapListView.qml:55
 msgid "Lap Time"
-msgstr ""
+msgstr "单圈时间"
 
 #: ../app/stopwatch/LapListView.qml:63
 msgid "Total Time"
-msgstr ""
+msgstr "总时间"
 
 #: ../app/stopwatch/StopwatchPage.qml:103
 msgid "Stop"
@@ -196,11 +196,11 @@ msgstr "开始"
 
 #: ../app/stopwatch/StopwatchPage.qml:103
 msgid "Resume"
-msgstr ""
+msgstr "继续"
 
 #: ../app/stopwatch/StopwatchPage.qml:120
 msgid "Clear"
-msgstr ""
+msgstr "清除"
 
 #: ../app/worldclock/AddWorldCityButton.qml:30
 msgid "Add"
@@ -2021,8 +2021,8 @@ msgstr "时钟"
 msgid ""
 "A sophisticated clock app that provides world clock, alarm and stopwatch "
 "functionality."
-msgstr ""
+msgstr "一个完备世界时、闹铃以及计时功能的时钟应用。"
 
 #: ubuntu-clock-app.desktop.in.in.h:3
 msgid "time;alarm;alert;clock;world;stopwatch;"
-msgstr ""
+msgstr "time;alarm;alert;clock;world;stopwatch; 时间;闹铃;闹钟;世界时;秒表;"
