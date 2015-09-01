@@ -24,7 +24,7 @@ Item {
     id: _stopwatchPage
     objectName: "stopwatchPage"
 
-    property date startTime: new Date()
+    property date startTime: getUTCDate()
     property date snapshot: startTime
     property bool running: false
 
@@ -37,28 +37,42 @@ Item {
         console.log("[LOG]: Stopwatch Page Loaded")
     }
 
+    function getUTCDate() {
+        var localDate = new Date()
+        return new Date(localDate.getUTCFullYear(),
+                        localDate.getUTCMonth(),
+                        localDate.getUTCDate(),
+                        localDate.getUTCHours(),
+                        localDate.getUTCMinutes(),
+                        localDate.getUTCSeconds(),
+                        localDate.getUTCMilliseconds());
+    }
+
     function start() {
-        startTime = new Date()
+        startTime = getUTCDate()
         snapshot = startTime
         running = true
     }
 
     function stop() {
         oldDiff += timeDiff
-        startTime = new Date()
+        startTime = getUTCDate()
         snapshot = startTime
         running = false
     }
 
     function update() {
-        snapshot = new Date()
+        snapshot = getUTCDate()
+        timeDiff = snapshot - startTime
+        totalTimeDiff = timeDiff + oldDiff
     }
 
     function clear() {
         oldDiff = 0
-        startTime = new Date()
+        startTime = getUTCDate()
         snapshot = startTime
         lapHistory.clear()
+        totalTimeDiff = 0
     }
 
     Timer {
