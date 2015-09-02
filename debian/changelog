@@ -1,11 +1,14 @@
 ubuntu-clock-app (3.6) UNRELEASED; urgency=medium
 
-  [Nekhelesh Ramananthan]
+  [ Nekhelesh Ramananthan ]
   * Bumped version to 3.6
   * Removed ListItemWithActions upstream component and also fixed the user
     world city list count never decreasing to 0. (LP: #1368393)
 
- -- Nekhelesh Ramananthan <krnekhelesh@gmail.com>  Sat, 29 Aug 2015 01:47:00 +0200
+  [ Bartosz Kosiorek ]
+  * Fix wrong time after changing timezone, when stopwatch is running (LP: #1491024)
+
+ -- Bartosz Kosiorek <gang65@poczta.onet.pl>  Wed, 02 Sep 2015 15:16:29 +0200
 
 ubuntu-clock-app (3.5) vivid; urgency=medium
 
