@@ -45,7 +45,7 @@ Item {
                         localDate.getUTCHours(),
                         localDate.getUTCMinutes(),
                         localDate.getUTCSeconds(),
-                        localDate.getUTCMilliseconds());
+                        localDate.getUTCMilliseconds())
     }
 
     function start() {
@@ -63,8 +63,6 @@ Item {
 
     function update() {
         snapshot = getUTCDate()
-        timeDiff = snapshot - startTime
-        totalTimeDiff = timeDiff + oldDiff
     }
 
     function clear() {
@@ -72,7 +70,6 @@ Item {
         startTime = getUTCDate()
         snapshot = startTime
         lapHistory.clear()
-        totalTimeDiff = 0
     }
 
     Timer {
