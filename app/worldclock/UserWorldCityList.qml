@@ -56,89 +56,32 @@ ListView {
         results: worldCityQuery.results
     }
 
-    property var _currentSwipedItem: null
-
-    function _updateSwipeState(item)
-    {
-        if (item.swipping) {
-            return
-        }
-
-        if (item.swipeState !== "Normal") {
-            if (worldCityColumn._currentSwipedItem !== item) {
-                if (worldCityColumn._currentSwipedItem) {
-                    worldCityColumn._currentSwipedItem.resetSwipe()
-                }
-                worldCityColumn._currentSwipedItem = item
-            }
-        } else if (item.swipeState !== "Normal"
-                   && worldCityColumn._currentSwipedItem === item) {
-            worldCityColumn._currentSwipedItem = null
-        }
-    }
-
     model: u1dbModel
 
     delegate: UserWorldCityDelegate {
         id: userWorldCityDelegate
         objectName: "userWorldCityItem" + index
 
-        property var removalAnimation
-
-        function remove() {
-            removalAnimation.start()
-        }
-
-        onSwippingChanged: {
-            worldCityColumn._updateSwipeState(userWorldCityDelegate)
-        }
-
-        onSwipeStateChanged: {
-            worldCityColumn._updateSwipeState(userWorldCityDelegate)
-        }
-
-        leftSideAction: Action {
-            iconName: "delete"
-            text: i18n.tr("Delete")
-            onTriggered: {
-                userWorldCityDelegate.remove()
-            }
-        }
-
-        ListView.onRemove: ScriptAction {
-            script: {
-                if (worldCityColumn._currentSwipedItem
-                        === userWorldCityDelegate) {
-                    worldCityColumn._currentSwipedItem = null
+        leadingActions: ListItemActions {
+            actions: [
+                Action {
+                    iconName: "delete"
+                    text: i18n.tr("Delete")
+                    onTriggered: {
+                        /*
+                         This if loop check is required due to a bug where the listitem
+                         is not deleted when the listview count is 1. This should fix
+                         http://pad.lv/1368393
+                        */
+                        if (worldCityColumn.count === 1) {
+                            clockDB.deleteDoc(worldCityQuery.documents[index])
+                            u1dbModel.clear()
+                        } else {
+                            clockDB.deleteDoc(worldCityQuery.documents[index])
+                        }
+                    }
                 }
-            }
-        }
-
-        removalAnimation: SequentialAnimation {
-            alwaysRunToEnd: true
-
-            PropertyAction {
-                target: userWorldCityDelegate
-                property: "ListView.delayRemove"
-                value: true
-            }
-
-            UbuntuNumberAnimation {
-                target: userWorldCityDelegate
-                property: "height"
-                to: 0
-            }
-
-            PropertyAction {
-                target: userWorldCityDelegate
-                property: "ListView.delayRemove"
-                value: false
-            }
-
-            ScriptAction {
-                script: clockDB.deleteDoc(worldCityQuery.documents[index])
-            }
+            ]
         }
     }
-
 }

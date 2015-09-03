@@ -95,3 +95,12 @@ void GenericTimeZoneModel::loadTimeZonesFromVariantList()
     // Let QML know model is reusable again
    endResetModel();
 }
+
+void GenericTimeZoneModel::clear()
+{
+    beginResetModel();
+
+    m_citiesData.clear();
+
+    endResetModel();
+}

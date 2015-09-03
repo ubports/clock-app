@@ -19,10 +19,9 @@
 import QtQuick 2.4
 import Ubuntu.Components 1.2
 import "../components"
-import "../upstreamcomponents"
 
-ListItemWithActions {
-    id: root
+ListItem {
+    id: userWorldCityDelegate
 
     function getTimeDiff(time) {
         var hours, minutes;
@@ -33,13 +32,15 @@ ListItemWithActions {
     }
 
     height: units.gu(9)
-    width: parent ? parent.width : 0
-    color: "Transparent"
+    divider.visible: false
 
     Item {
         id: delegate
 
-        anchors.fill: parent
+        anchors {
+            fill: parent
+            margins: units.gu(2)
+        }
 
         Column {
             id: cityColumn
