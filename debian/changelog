@@ -2,6 +2,8 @@ ubuntu-clock-app (3.6) UNRELEASED; urgency=medium
 
   [ Nekhelesh Ramananthan ]
   * Bumped version to 3.6
+  * Replaced checkboxes in alarm sound page with tick-marks (LP: #1487717)
+  * Added sections headers to separate custom and default alarm sounds (LP: #1487735)
   * Removed ListItemWithActions upstream component and also fixed the user
     world city list count never decreasing to 0. (LP: #1368393)
 
