@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2015-08-21 18:07+0200\n"
+"POT-Creation-Date: 2015-09-03 23:10+0200\n"
 "PO-Revision-Date: 2015-08-22 11:19+0000\n"
 "Last-Translator: Danial Behzadi <dani.behzi@gmail.com>\n"
 "Language-Team: Persian <fa@li.org>\n"
@@ -15,54 +15,54 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Launchpad-Export-Date: 2015-08-23 06:35+0000\n"
-"X-Generator: Launchpad (build 17690)\n"
+"X-Launchpad-Export-Date: 2015-09-04 05:38+0000\n"
+"X-Generator: Launchpad (build 17706)\n"
 
 #: ../app/MainPage.qml:47 ../app/alarm/AlarmUtils.qml:55
 msgid "No active alarms"
 msgstr "هیچ هشداری فعّال نیست"
 
 #: ../app/alarm/AlarmLabel.qml:33 ../app/alarm/AlarmLabel.qml:71
-#: ../app/alarm/EditAlarmPage.qml:331
+#: ../app/alarm/EditAlarmPage.qml:283
 msgid "Label"
 msgstr "برچسب"
 
-#: ../app/alarm/AlarmList.qml:61 ../app/alarm/AlarmPage.qml:99
-#: ../app/worldclock/UserWorldCityList.qml:102
+#: ../app/alarm/AlarmList.qml:61 ../app/alarm/AlarmPage.qml:101
+#: ../app/worldclock/UserWorldCityList.qml:69
 msgid "Delete"
 msgstr "حذف"
 
-#: ../app/alarm/AlarmPage.qml:25
+#: ../app/alarm/AlarmPage.qml:27
 msgid "Alarms"
 msgstr "هشدارها"
 
-#: ../app/alarm/AlarmPage.qml:39 ../app/alarm/AlarmPage.qml:64
+#: ../app/alarm/AlarmPage.qml:41 ../app/alarm/AlarmPage.qml:66
 #: ../app/worldclock/WorldCityList.qml:79
 msgid "Back"
 msgstr "بازگشت"
 
-#: ../app/alarm/AlarmPage.qml:49 ../app/alarm/EditAlarmPage.qml:44
-#: ../app/alarm/EditAlarmPage.qml:199
+#: ../app/alarm/AlarmPage.qml:51 ../app/alarm/EditAlarmPage.qml:41
+#: ../app/alarm/EditAlarmPage.qml:185
 msgid "Alarm"
 msgstr "هشدار"
 
-#: ../app/alarm/AlarmPage.qml:74
+#: ../app/alarm/AlarmPage.qml:76
 msgid "Select None"
 msgstr "برگزیدن هیچ‌کدام"
 
-#: ../app/alarm/AlarmPage.qml:76 ../app/alarm/AlarmRepeat.qml:59
+#: ../app/alarm/AlarmPage.qml:78 ../app/alarm/AlarmRepeat.qml:59
 msgid "Select All"
 msgstr "گزینش همه"
 
-#: ../app/alarm/AlarmPage.qml:139
+#: ../app/alarm/AlarmPage.qml:141
 msgid "No saved alarms"
 msgstr "هیچ هشداری ذخیره نشده است"
 
-#: ../app/alarm/AlarmPage.qml:140
+#: ../app/alarm/AlarmPage.qml:142
 msgid "Tap the + icon to add an alarm"
 msgstr "برای افزودن هشدار، روی شمایل + ضربه بزنید"
 
-#: ../app/alarm/AlarmRepeat.qml:36 ../app/alarm/EditAlarmPage.qml:321
+#: ../app/alarm/AlarmRepeat.qml:36 ../app/alarm/EditAlarmPage.qml:273
 msgid "Repeat"
 msgstr "تکرار"
 
@@ -103,13 +103,21 @@ msgstr "لرزش"
 msgid "Change time and date"
 msgstr "تغییر زمان و تاریخ"
 
-#: ../app/alarm/AlarmSound.qml:29 ../app/alarm/EditAlarmPage.qml:344
+#: ../app/alarm/AlarmSound.qml:31 ../app/alarm/EditAlarmPage.qml:296
 msgid "Sound"
 msgstr "صدا"
 
-#: ../app/alarm/AlarmSound.qml:139
-msgid "Add custom sound"
-msgstr "افزودن صدای شخصی"
+#: ../app/alarm/AlarmSound.qml:186
+msgid "Custom alarm sounds"
+msgstr ""
+
+#: ../app/alarm/AlarmSound.qml:201
+msgid "Add sound"
+msgstr ""
+
+#: ../app/alarm/AlarmSound.qml:353
+msgid "Default alarm sounds"
+msgstr ""
 
 #: ../app/alarm/AlarmUtils.qml:31
 msgid "Never"
@@ -151,15 +159,15 @@ msgstr "در %1 ساعت و %2 دقیقه"
 msgid "in %1m"
 msgstr "در %1 دقیقه"
 
-#: ../app/alarm/EditAlarmPage.qml:37
+#: ../app/alarm/EditAlarmPage.qml:34
 msgid "New alarm"
 msgstr "هشدار جديد"
 
-#: ../app/alarm/EditAlarmPage.qml:37
+#: ../app/alarm/EditAlarmPage.qml:34
 msgid "Edit alarm"
 msgstr "ویرایش هشدار"
 
-#: ../app/alarm/EditAlarmPage.qml:366
+#: ../app/alarm/EditAlarmPage.qml:316
 msgid "Delete alarm"
 msgstr "حذف هشدار"
 
@@ -174,31 +182,31 @@ msgstr "درحال بازیابی موقعیت…"
 
 #. TRANSLATORS: This refers to the stopwatch lap and is shown as a header where space is limited. Constrain
 #. translation length to a few characters.
-#: ../app/stopwatch/LapListView.qml:45 ../app/stopwatch/StopwatchPage.qml:120
+#: ../app/stopwatch/LapListView.qml:46 ../app/stopwatch/StopwatchPage.qml:131
 msgid "Lap"
 msgstr "دور"
 
-#: ../app/stopwatch/LapListView.qml:55
+#: ../app/stopwatch/LapListView.qml:56
 msgid "Lap Time"
 msgstr "زمان دور"
 
-#: ../app/stopwatch/LapListView.qml:63
+#: ../app/stopwatch/LapListView.qml:64
 msgid "Total Time"
 msgstr "زمان کل"
 
-#: ../app/stopwatch/StopwatchPage.qml:103
+#: ../app/stopwatch/StopwatchPage.qml:114
 msgid "Stop"
 msgstr "پایان"
 
-#: ../app/stopwatch/StopwatchPage.qml:103
+#: ../app/stopwatch/StopwatchPage.qml:114
 msgid "Start"
 msgstr "آغاز"
 
-#: ../app/stopwatch/StopwatchPage.qml:103
+#: ../app/stopwatch/StopwatchPage.qml:114
 msgid "Resume"
 msgstr "از سر گیری"
 
-#: ../app/stopwatch/StopwatchPage.qml:120
+#: ../app/stopwatch/StopwatchPage.qml:131
 msgid "Clear"
 msgstr "پاک‌سازی"
 
@@ -213,37 +221,37 @@ msgstr "شهر"
 
 #. TRANSLATORS: this indicates if the time in a world clock
 #. is behind or ahead of the time at the current location
-#: ../app/worldclock/UserWorldCityDelegate.qml:146
+#: ../app/worldclock/UserWorldCityDelegate.qml:147
 msgid "behind"
 msgstr "عقب"
 
-#: ../app/worldclock/UserWorldCityDelegate.qml:147
+#: ../app/worldclock/UserWorldCityDelegate.qml:148
 msgid "ahead"
 msgstr "جلو"
 
 #. TRANSLATORS: the first argument is hour, followed by
 #. minute, and the translation for either 'behind' or
 #. 'ahead'
-#: ../app/worldclock/UserWorldCityDelegate.qml:157
+#: ../app/worldclock/UserWorldCityDelegate.qml:158
 #, qt-format
 msgid "%1h %2m %3"
 msgstr "%1 ساعت و %2 دقیقه %3"
 
 #. TRANSLATORS: the first argument is hour, followed by the
 #. translation for either 'behind' or 'ahead'
-#: ../app/worldclock/UserWorldCityDelegate.qml:166
+#: ../app/worldclock/UserWorldCityDelegate.qml:167
 #, qt-format
 msgid "%1h %2"
 msgstr "%1 ساعت %2"
 
 #. TRANSLATORS: the first argument is minute, followed by the
 #. translation for either 'behind' or 'ahead'
-#: ../app/worldclock/UserWorldCityDelegate.qml:174
+#: ../app/worldclock/UserWorldCityDelegate.qml:175
 #, qt-format
 msgid "%1m %2"
 msgstr "%1 دقیقه %2"
 
-#: ../app/worldclock/UserWorldCityDelegate.qml:180
+#: ../app/worldclock/UserWorldCityDelegate.qml:181
 msgid "Same time"
 msgstr "زمان یکسان"
 
@@ -271,1745 +279,1745 @@ msgstr "ناتوان در اتّصال."
 msgid "Please check your network connection and try again"
 msgstr "لطفاً اتّصال شبکه‌تان را بررسی کرده و دوباره تلاش کنید"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:48
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:48
 msgid "Abidjan"
 msgstr "آبیجان"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:48
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:48
 msgid "Ivory Coast"
 msgstr "ساحل عاج"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:49
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:49
 msgid "Accra"
 msgstr "آکرا"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:49
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:49
 msgid "Ghana"
 msgstr "غنا"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:50
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:50
 msgid "Addis Ababa"
 msgstr "آدیس آبابا"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:50
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:50
 msgid "Ethiopia"
 msgstr "اتیوپی"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:51
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:51
 msgid "Adelaide"
 msgstr "آدلاید"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:51
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:96
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:106
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:107
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:129
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:195
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:224
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:251
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:266
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:320
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:51
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:96
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:106
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:107
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:129
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:195
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:224
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:251
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:266
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:320
 msgid "Australia"
 msgstr "استرالیا"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:52
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:52
 msgid "Albuquerque"
 msgstr "آلبوکرک"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:52
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:58
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:61
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:67
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:69
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:74
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:87
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:88
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:91
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:92
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:113
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:116
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:117
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:119
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:126
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:132
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:133
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:171
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:172
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:175
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:180
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:196
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:204
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:209
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:210
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:214
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:221
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:225
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:227
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:229
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:231
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:232
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:241
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:247
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:249
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:250
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:252
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:253
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:257
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:268
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:270
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:271
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:274
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:278
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:282
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:283
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:290
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:291
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:293
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:294
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:295
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:307
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:316
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:335
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:341
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:342
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:52
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:58
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:61
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:67
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:69
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:74
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:87
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:88
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:91
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:92
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:113
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:116
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:117
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:119
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:126
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:132
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:133
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:171
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:172
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:175
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:180
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:196
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:204
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:209
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:210
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:214
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:221
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:225
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:227
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:229
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:231
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:232
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:241
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:247
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:249
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:250
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:252
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:253
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:257
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:268
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:270
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:271
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:274
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:278
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:282
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:283
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:290
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:291
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:293
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:294
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:295
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:307
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:316
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:335
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:341
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:342
 msgid "United States"
 msgstr "ایالات متحده"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:53
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:53
 msgid "Algiers"
 msgstr "آلجیرز"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:53
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:53
 msgid "Algeria"
 msgstr "الجزایر"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:54
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:54
 msgid "Almaty"
 msgstr "آلماتی"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:54
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:63
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:54
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:63
 msgid "Kazakhstan"
 msgstr "قزاقستان"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:55
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:55
 msgid "Amman"
 msgstr "عمان"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:55
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:55
 msgid "Jordan"
 msgstr "اردن"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:56
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:56
 msgid "Amsterdam"
 msgstr "آمستردام"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:56
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:56
 msgid "Netherlands"
 msgstr "هلند"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:57
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:57
 msgid "Anadyr"
 msgstr "آنادیر"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:57
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:240
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:267
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:57
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:240
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:267
 msgid "Russia"
 msgstr "روسیه"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:58
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:58
 msgid "Anchorage"
 msgstr "انکریج"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:59
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:59
 msgid "Andorra"
 msgstr "آندورا"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:60
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:60
 msgid "Ankara"
 msgstr "آنکارا"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:60
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:178
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:60
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:178
 msgid "Turkey"
 msgstr "ترکیه"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:61
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:61
 msgid "Ann Arbor"
 msgstr "ان آربور"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:62
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:62
 msgid "Antananarivo"
 msgstr "آنتاناناریوو"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:62
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:62
 msgid "Madagascar"
 msgstr "ماداگاسکار"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:63
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:63
 msgid "Aqtau"
 msgstr "آگتا"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:64
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:64
 msgid "Aruba"
 msgstr "آروبا"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:65
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:65
 msgid "Asunción"
 msgstr "آسونسیون"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:65
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:65
 msgid "Paraguay"
 msgstr "پاراگوئه"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:66
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:66
 msgid "Athens"
 msgstr "آتن"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:66
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:66
 msgid "Greece"
 msgstr "یونان"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:67
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:67
 msgid "Atlanta"
 msgstr "آتلانتا"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:68
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:68
 msgid "Auckland"
 msgstr "اوکلند"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:68
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:68
 msgid "New Zealand"
 msgstr "نیوزیلند"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:69
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:69
 msgid "Austin"
 msgstr "آستین"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:71
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:71
 msgid "Baghdad"
 msgstr "بغداد"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:71
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:71
 msgid "Iraq"
 msgstr "عراق"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:72
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:72
 msgid "Bahrain"
 msgstr "بحرین"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:73
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:73
 msgid "Baku"
 msgstr "باکو"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:73
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:73
 msgid "Azerbaijan"
 msgstr "آذربایجان"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:74
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:74
 msgid "Baltimore"
 msgstr "بالتیمور"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:75
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:75
 msgid "Bangalore"
 msgstr "بنگلور"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:75
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:103
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:131
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:158
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:173
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:242
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:75
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:103
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:131
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:158
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:173
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:242
 msgid "India"
 msgstr "هند"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:76
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:76
 msgid "Bangkok"
 msgstr "بانکوک"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:76
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:76
 msgid "Thailand"
 msgstr "تایلند"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:77
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:77
 msgid "Barbados"
 msgstr "باربادوس"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:78
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:78
 msgid "Barcelona"
 msgstr "بارسلونا"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:78
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:215
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:78
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:215
 msgid "Spain"
 msgstr "اسپانیا"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:79
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:79
 msgid "Beijing"
 msgstr "پکن"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:79
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:156
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:309
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:79
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:156
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:309
 msgid "China"
 msgstr "چین"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:80
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:80
 msgid "Beirut"
 msgstr "بیروت"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:80
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:80
 msgid "Lebanon"
 msgstr "لبنان"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:81
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:81
 msgid "Belfast"
 msgstr "بلفاست"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:81
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:105
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:207
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:219
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:81
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:105
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:207
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:219
 msgid "United Kingdom"
 msgstr "انگلستان"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:82
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:82
 msgid "Belgrade"
 msgstr "بلگراد"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:82
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:82
 msgid "Serbia"
 msgstr "صربستان"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:83
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:83
 msgid "Belize"
 msgstr "بلیز"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:84
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:84
 msgid "Belo Horizonte"
 msgstr "بلو هوریزونته"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:84
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:93
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:146
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:286
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:303
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:84
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:93
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:146
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:286
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:303
 msgid "Brazil"
 msgstr "برزیل"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:85
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:85
 msgid "Berlin"
 msgstr "برلین"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:85
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:147
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:163
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:243
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:85
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:147
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:163
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:243
 msgid "Germany"
 msgstr "آلمان"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:86
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:86
 msgid "Bermuda"
 msgstr "برمودا"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:87
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:87
 msgid "Beulah"
 msgstr "بولا"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:88
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:88
 msgid "Black Rock City"
 msgstr "بلک‌راک سیتی"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:89
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:89
 msgid "Blantyre"
 msgstr "بلانتایر"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:89
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:89
 msgid "Malawi"
 msgstr "مالاوی"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:90
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:90
 msgid "Bogotá"
 msgstr "بوگوتا"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:90
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:255
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:90
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:255
 msgid "Colombia"
 msgstr "کلمبیا"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:91
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:91
 msgid "Boston"
 msgstr "بوستون"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:92
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:92
 msgid "Boulder"
 msgstr "بولدر"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:93
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:93
 msgid "Brasília"
 msgstr "برازیلیا"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:94
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:94
 msgid "Bratislava"
 msgstr "براتیسلاوا"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:94
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:94
 msgid "Slovakia"
 msgstr "اسلواکی"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:95
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:95
 msgid "Brazzaville"
 msgstr "برازاویل"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:95
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:95
 msgid "Republic of the Congo"
 msgstr "جمهوری کنگو"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:96
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:96
 msgid "Brisbane"
 msgstr "بریزبین"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:97
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:97
 msgid "Brussels"
 msgstr "بروکسل"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:97
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:97
 msgid "Belgium"
 msgstr "بلژیک"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:98
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:98
 msgid "Bucharest"
 msgstr "بخارست"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:98
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:98
 msgid "Romania"
 msgstr "رومانی"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:99
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:99
 msgid "Budapest"
 msgstr "بوداپست"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:99
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:99
 msgid "Hungary"
 msgstr "مجارستان"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:100
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:100
 msgid "Buenos Aires"
 msgstr "بوینس‌آبرس"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:100
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:226
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:100
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:226
 msgid "Argentina"
 msgstr "آرژانتین"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:102
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:102
 msgid "Cairo"
 msgstr "قاهره"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:102
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:102
 msgid "Egypt"
 msgstr "مصر"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:103
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:103
 msgid "Calcutta"
 msgstr "کلکته"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:104
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:104
 msgid "Calgary"
 msgstr "کلگری"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:104
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:130
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:142
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:162
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:191
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:194
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:222
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:239
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:260
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:306
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:314
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:326
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:333
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:343
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:104
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:130
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:142
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:162
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:191
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:194
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:222
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:239
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:260
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:306
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:314
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:326
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:333
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:343
 msgid "Canada"
 msgstr "کانادا"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:105
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:105
 msgid "Cambridge"
 msgstr "کمبریج"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:106
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:106
 msgid "Canary"
 msgstr "قناری"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:107
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:107
 msgid "Canberra"
 msgstr "کانبرا"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:108
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:108
 msgid "Cancún"
 msgstr "کانکون"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:108
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:114
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:228
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:237
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:108
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:114
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:228
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:237
 msgid "Mexico"
 msgstr "مکزیک"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:109
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:109
 msgid "Cape Town"
 msgstr "کیپ تاون"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:109
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:183
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:109
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:183
 msgid "South Africa"
 msgstr "افریقای جنوبی"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:110
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:110
 msgid "Caracas"
 msgstr "کاراکاس"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:110
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:110
 msgid "Venezuela"
 msgstr "ونزوئلا"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:111
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:111
 msgid "Casablanca"
 msgstr "کازابلانکا"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:111
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:111
 msgid "Morocco"
 msgstr "مراکش"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:112
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:112
 msgid "Cayman Palms"
 msgstr "کایمن پالمز"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:112
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:112
 msgid "Cayman Islands"
 msgstr "جزایر کایمن"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:113
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:113
 msgid "Chicago"
 msgstr "شیکاگو"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:114
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:114
 msgid "Chihuahua"
 msgstr "شیواوا"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:115
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:115
 msgid "Chişinău"
 msgstr "کیشی‌نف"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:115
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:115
 msgid "Moldova"
 msgstr "مولداوی"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:116
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:116
 msgid "Cincinnati"
 msgstr "سینسیناتی"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:117
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:117
 msgid "Cleveland"
 msgstr "کلولند"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:118
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:118
 msgid "Colombo"
 msgstr "کلمبو"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:118
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:118
 msgid "Sri Lanka"
 msgstr "سری‌لانکا"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:119
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:119
 msgid "Columbus"
 msgstr "کلمبوس"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:120
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:120
 msgid "Conakry"
 msgstr "کوناکری"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:120
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:120
 msgid "Guinea"
 msgstr "گینه"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:121
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:121
 msgid "Copenhagen"
 msgstr "کپنهاک"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:121
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:121
 msgid "Denmark"
 msgstr "دانمارک"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:122
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:296
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:122
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:296
 msgid "Costa Rica"
 msgstr "کاستاریکا"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:123
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:123
 msgid "Curaçao"
 msgstr "کاراکاو"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:123
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:123
 msgid "Curacao"
 msgstr "کاراکاو"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:125
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:125
 msgid "Dakar"
 msgstr "داکار"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:125
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:125
 msgid "Senegal"
 msgstr "سنگال"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:126
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:126
 msgid "Dallas"
 msgstr "دالاس"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:127
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:127
 msgid "Damascus"
 msgstr "دمشق"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:127
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:127
 msgid "Syria"
 msgstr "سوریه"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:128
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:128
 msgid "Dar es Salaam"
 msgstr "دارالسلام"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:128
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:128
 msgid "Tanzania"
 msgstr "تانزانیا"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:129
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:129
 msgid "Darwin"
 msgstr "داروین"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:130
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:130
 msgid "Dawson Creek"
 msgstr "داوسون کریک"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:131
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:131
 msgid "Delhi"
 msgstr "دهلی"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:132
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:132
 msgid "Denver"
 msgstr "دنور"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:133
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:133
 msgid "Detroit"
 msgstr "دیترویت"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:134
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:134
 msgid "Dhaka"
 msgstr "داکا"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:134
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:134
 msgid "Bangladesh"
 msgstr "بنگلادش"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:135
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:135
 msgid "Djibouti"
 msgstr "جیبوتی"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:136
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:136
 msgid "Doha"
 msgstr "دوحه"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:136
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:136
 msgid "Qatar"
 msgstr "قطر"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:137
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:137
 msgid "Dominica"
 msgstr "دومینیک"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:138
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:138
 msgid "Dubai"
 msgstr "دوبی"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:138
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:138
 msgid "United Arab Emirates"
 msgstr "امارات متحده‌ی عربی"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:139
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:139
 msgid "Dublin"
 msgstr "دوبلین"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:139
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:139
 msgid "Ireland"
 msgstr "ايرلند"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:141
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:141
 msgid "Easter Island"
 msgstr "ایسلند شرقی"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:141
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:301
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:141
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:301
 msgid "Chile"
 msgstr "شیلی"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:142
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:142
 msgid "Edmonton"
 msgstr "ادمونتون"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:143
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:299
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:143
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:299
 msgid "El Salvador"
 msgstr "ال‌سالوادور"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:145
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:319
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:145
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:319
 msgid "Fiji"
 msgstr "فیجی"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:146
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:146
 msgid "Fortaleza"
 msgstr "فورتالزا"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:147
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:147
 msgid "Frankfurt"
 msgstr "فرانکفورت"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:148
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:148
 msgid "Freetown"
 msgstr "فری تاون"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:148
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:148
 msgid "Sierra Leone"
 msgstr "سیرالئون"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:150
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:150
 msgid "Gaborone"
 msgstr "گابرون"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:150
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:150
 msgid "Botswana"
 msgstr "بوسوانا"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:151
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:151
 msgid "Gaza"
 msgstr "غزّه"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:151
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:167
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:151
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:167
 msgid "Palestine"
 msgstr "فلسطین"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:152
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:152
 msgid "Gibraltar"
 msgstr "جبرالتر"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:153
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:153
 msgid "Grand Turk"
 msgstr "گرندتورک"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:153
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:153
 msgid "Turks and Caicos Islands"
 msgstr "جزایر تورکس و کایکوس"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:154
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:154
 msgid "Grenada"
 msgstr "گرنیدا"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:155
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:155
 msgid "Guam"
 msgstr "گوآم"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:156
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:156
 msgid "Guangzhou"
 msgstr "گوانگ‌ژو"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:157
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:157
 msgid "Guatemala"
 msgstr "گوآتمالا"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:158
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:158
 msgid "Gurgaon"
 msgstr "گورگون"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:159
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:159
 msgid "Guyana"
 msgstr "گویانا"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:161
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:161
 msgid "Haifa"
 msgstr "حیفا"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:161
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:182
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:161
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:182
 msgid "Israel"
 msgstr "اسرائیل"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:162
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:162
 msgid "Halifax"
 msgstr "هلیفکس"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:163
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:163
 msgid "Hamburg"
 msgstr "هامبورگ"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:164
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:164
 msgid "Hanoi"
 msgstr "هانوی"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:164
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:169
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:164
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:169
 msgid "Vietnam"
 msgstr "ویتنام"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:165
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:165
 msgid "Harare"
 msgstr "هراره"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:165
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:165
 msgid "Zimbabwe"
 msgstr "زيمباوه"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:166
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:166
 msgid "Havana"
 msgstr "هاوانا"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:166
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:166
 msgid "Cuba"
 msgstr "کوبا"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:167
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:167
 msgid "Hebron"
 msgstr "هیبرون"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:168
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:168
 msgid "Helsinki"
 msgstr "هلسینکی"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:168
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:261
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:168
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:261
 msgid "Finland"
 msgstr "فنلاند"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:169
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:169
 msgid "Ho Chi Minh City"
 msgstr "هوشی‌مینه"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:170
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:170
 msgid "Hong Kong"
 msgstr "هنگ‌کنگ"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:171
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:171
 msgid "Honolulu"
 msgstr "هونولولو"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:172
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:172
 msgid "Houston"
 msgstr "هوستون"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:173
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:173
 msgid "Hyderabad"
 msgstr "حیدرآباد"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:175
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:175
 msgid "Indianapolis"
 msgstr "ایندیاناپولیس"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:176
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:176
 msgid "Islamabad"
 msgstr "اسلام‌آباد"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:176
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:187
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:203
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:176
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:187
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:203
 msgid "Pakistan"
 msgstr "پاکستان"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:177
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:177
 msgid "Isle of Man"
 msgstr "آیزل آف من"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:178
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:178
 msgid "Istanbul"
 msgstr "استانبول"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:180
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:180
 msgid "Jacksonville"
 msgstr "جکسون ویل"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:181
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:181
 msgid "Jakarta"
 msgstr "جاکارتا"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:181
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:181
 msgid "Indonesia"
 msgstr "اندونزی"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:182
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:182
 msgid "Jerusalem"
 msgstr "اورشلیم"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:183
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:183
 msgid "Johannesburg"
 msgstr "ژوهانسبورگ"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:185
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:185
 msgid "Kabul"
 msgstr "کابل"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:185
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:185
 msgid "Afghanistan"
 msgstr "افغانستان"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:186
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:186
 msgid "Kampala"
 msgstr "کامپلا"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:186
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:186
 msgid "Uganda"
 msgstr "اوگاندا"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:187
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:187
 msgid "Karachi"
 msgstr "کراچی"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:188
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:188
 msgid "Khartoum"
 msgstr "خارطوم"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:188
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:188
 msgid "Sudan"
 msgstr "سودان"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:189
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:189
 msgid "Kiev"
 msgstr "کی‌اف"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:189
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:200
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:311
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:189
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:200
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:311
 msgid "Ukraine"
 msgstr "اوکراین"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:190
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:190
 msgid "Kigali"
 msgstr "کیگالی"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:190
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:190
 msgid "Rwanda"
 msgstr "روآندا"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:191
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:191
 msgid "Kingston"
 msgstr "کینگستون"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:192
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:192
 msgid "Kinshasa"
 msgstr "کینشاسا"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:192
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:192
 msgid "Democratic Republic of the Congo"
 msgstr "جمهوری خلق کنگو"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:193
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:193
 msgid "Kiritimati"
 msgstr "کریتی‌ماتی"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:193
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:193
 msgid "Kiribati"
 msgstr "کری‌باتی"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:194
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:194
 msgid "Kirkland"
 msgstr "کرک‌لند"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:195
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:195
 msgid "Knox"
 msgstr "ناکس"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:196
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:196
 msgid "Knoxville"
 msgstr "ناکسویل"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:197
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:197
 msgid "Kraków"
 msgstr "کراکوف"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:197
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:340
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:344
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:197
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:340
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:344
 msgid "Poland"
 msgstr "لهستان"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:198
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:198
 msgid "Kuala Lumpur"
 msgstr "کوآلالامپور"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:198
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:198
 msgid "Malaysia"
 msgstr "مالزی"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:199
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:199
 msgid "Kuwait City"
 msgstr "کویت"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:199
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:199
 msgid "Kuwait"
 msgstr "کویت"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:200
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:200
 msgid "Kyiv"
 msgstr "کایف"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:202
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:202
 msgid "Lagos"
 msgstr "لاگوس"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:202
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:202
 msgid "Nigeria"
 msgstr "نیجریه"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:203
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:203
 msgid "Lahore"
 msgstr "لاهور"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:204
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:204
 msgid "Las Vegas"
 msgstr "لاس وگاس"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:205
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:205
 msgid "Lima"
 msgstr "لیما"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:205
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:205
 msgid "Peru"
 msgstr "پرو"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:206
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:206
 msgid "Lisbon"
 msgstr "لیسبون"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:206
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:206
 msgid "Portugal"
 msgstr "پرتغال"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:207
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:207
 msgid "London"
 msgstr "لندن"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:208
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:208
 msgid "Longyearbyen"
 msgstr "لانگ‌یربین"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:208
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:208
 msgid "Svalbard and Jan Mayen"
 msgstr "اسوالبارد و جان ماین"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:209
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:209
 msgid "Los Angeles"
 msgstr "لس آنجلس"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:210
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:210
 msgid "Louisville"
 msgstr "لوئیزویل"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:211
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:211
 msgid "Luxembourg"
 msgstr "لوکزامبورگ"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:213
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:213
 msgid "Macau"
 msgstr "ماکائو"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:213
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:213
 msgid "Macao"
 msgstr "ماکائو"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:214
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:214
 msgid "Madison"
 msgstr "مدیسون"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:215
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:215
 msgid "Madrid"
 msgstr "مادرید"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:216
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:216
 msgid "Maldives"
 msgstr "مالدیو"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:217
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:217
 msgid "Malta"
 msgstr "مالت"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:218
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:218
 msgid "Managua"
 msgstr "ماناگوآ"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:218
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:218
 msgid "Nicaragua"
 msgstr "نیکاراگوئه"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:219
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:219
 msgid "Manchester"
 msgstr "منچستر"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:220
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:220
 msgid "Manila"
 msgstr "مانیل"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:220
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:220
 msgid "Philippines"
 msgstr "فیلیپین"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:221
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:221
 msgid "Marengo"
 msgstr "مارنگو"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:222
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:222
 msgid "Martinique"
 msgstr "مارتینیک"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:223
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:223
 msgid "Maseru"
 msgstr "ماسرو"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:223
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:223
 msgid "Lesotho"
 msgstr "لسوتو"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:224
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:224
 msgid "Melbourne"
 msgstr "ملبورن"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:225
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:225
 msgid "Memphis"
 msgstr "ممفیس"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:226
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:226
 msgid "Mendoza"
 msgstr "مندوزا"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:227
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:227
 msgid "Metlakatla"
 msgstr "متالاکاتلا"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:228
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:228
 msgid "Mexico City"
 msgstr "مکزیکو سیتی"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:229
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:229
 msgid "Miami"
 msgstr "میامی"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:230
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:230
 msgid "Milan"
 msgstr "میلان"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:230
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:288
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:230
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:288
 msgid "Italy"
 msgstr "ایتالیا"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:231
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:231
 msgid "Milwaukee"
 msgstr "میلواکی"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:232
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:232
 msgid "Minneapolis"
 msgstr "مینیاپولیس"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:233
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:233
 msgid "Minsk"
 msgstr "مینسک"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:233
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:233
 msgid "Belarus"
 msgstr "بلاروس"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:234
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:234
 msgid "Mogadishu"
 msgstr "موگادیشو"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:234
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:234
 msgid "Somalia"
 msgstr "سومالی"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:235
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:235
 msgid "Monrovia"
 msgstr "مونروویا"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:235
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:235
 msgid "Liberia"
 msgstr "لیبریا"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:236
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:236
 msgid "Monaco"
 msgstr "موناکو"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:237
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:237
 msgid "Monterrey"
 msgstr "مونترئی"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:238
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:238
 msgid "Montevideo"
 msgstr "مونته ویدیو"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:238
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:238
 msgid "Uruguay"
 msgstr "اوروگوئه"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:239
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:239
 msgid "Montreal"
 msgstr "مونترئال"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:240
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:240
 msgid "Moscow"
 msgstr "مسکو"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:241
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:241
 msgid "Mountain View"
 msgstr "مانتن ویو"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:242
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:242
 msgid "Mumbai"
 msgstr "بمبئی"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:243
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:243
 msgid "Munich"
 msgstr "مونیخ"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:244
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:244
 msgid "Muscat"
 msgstr "مسقط"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:244
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:244
 msgid "Oman"
 msgstr "عمان"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:246
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:246
 msgid "Nairobi"
 msgstr "نایروبی"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:246
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:246
 msgid "Kenya"
 msgstr "كنيا"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:247
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:247
 msgid "Nashville"
 msgstr "نشویل"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:248
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:248
 msgid "Nassau"
 msgstr "ناسائو"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:248
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:248
 msgid "Bahamas"
 msgstr "باهاماس"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:249
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:249
 msgid "New Orleans"
 msgstr "نیواورلئان"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:250
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:250
 msgid "New Salem"
 msgstr "نیوسالم"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:251
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:251
 msgid "New South Wales"
 msgstr "نیو ساوت ولز"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:252
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:252
 msgid "New York"
 msgstr "نیویورک"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:253
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:253
 msgid "Newfoundland"
 msgstr "نیوفاوندلند"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:254
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:254
 msgid "Nouméa"
 msgstr "نومه‌آ"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:254
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:254
 msgid "New Caledonia"
 msgstr "نیوکالدونیا"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:255
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:255
 msgid "Nuestra Señora de La Paz"
 msgstr "نوسترا سینیورا ده‌لاپاز"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:257
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:257
 msgid "Oklahoma City"
 msgstr "اوکلاهما"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:258
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:258
 msgid "Osaka"
 msgstr "اوزاکا"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:258
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:325
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:258
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:325
 msgid "Japan"
 msgstr "ژاپن"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:259
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:259
 msgid "Oslo"
 msgstr "اوسلو"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:259
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:259
 msgid "Norway"
 msgstr "نروژ"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:260
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:260
 msgid "Ottawa"
 msgstr "اوتاوا"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:261
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:261
 msgid "Oulu"
 msgstr "اوئولو"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:263
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:263
 msgid "Panamá"
 msgstr "پاناما"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:263
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:263
 msgid "Panama"
 msgstr "پاناما"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:264
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:264
 msgid "Paramaribo"
 msgstr "پاراماریبو"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:264
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:264
 msgid "Suriname"
 msgstr "سورینام"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:265
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:265
 msgid "Paris"
 msgstr "پاریس"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:265
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:338
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:265
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:338
 msgid "France"
 msgstr "فرانسه"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:266
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:266
 msgid "Perth"
 msgstr "پرث"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:267
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:267
 msgid "Petersburg"
 msgstr "پیترزبورگ"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:268
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:268
 msgid "Philadelphia"
 msgstr "فیلادلفیا"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:269
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:269
 msgid "Phnom Penh"
 msgstr "پنوم پن"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:269
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:269
 msgid "Cambodia"
 msgstr "کامبوج"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:270
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:270
 msgid "Phoenix"
 msgstr "فنیکس"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:271
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:271
 msgid "Pittsburgh"
 msgstr "پیتزبورگ"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:272
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:272
 msgid "Port of Spain"
 msgstr "پورت آو اسپین"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:272
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:272
 msgid "Trinidad and Tobago"
 msgstr "ترینیداد و توباگو"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:273
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:273
 msgid "Port au Prince"
 msgstr "پورت آ پرینس"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:273
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:273
 msgid "Haiti"
 msgstr "هاییتی"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:274
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:274
 msgid "Portland"
 msgstr "پورتلند"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:275
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:275
 msgid "Prague"
 msgstr "پراگ"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:275
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:275
 msgid "Czech"
 msgstr "چک"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:276
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:276
 msgid "Pyongyang"
 msgstr "پیونگ‌یانگ"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:276
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:276
 msgid "North Korea"
 msgstr "کره‌ی شمالی"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:278
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:278
 msgid "Queensland"
 msgstr "کویینزلند"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:279
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:279
 msgid "Quito"
 msgstr "کیتو"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:279
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:279
 msgid "Ecuador"
 msgstr "اکوادور"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:281
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:281
 msgid "Rangoon"
 msgstr "رنگون"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:281
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:281
 msgid "Myanmar"
 msgstr "میانمار"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:282
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:282
 msgid "Reno"
 msgstr "رنو"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:283
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:283
 msgid "Reston"
 msgstr "رستون"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:284
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:284
 msgid "Reykjavík"
 msgstr "ریکیاویک"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:284
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:284
 msgid "Iceland"
 msgstr "ایسلند"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:285
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:285
 msgid "Riga"
 msgstr "ریگا"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:285
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:285
 msgid "Latvia"
 msgstr "لاتویا"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:286
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:286
 msgid "Rio de Janeiro"
 msgstr "ریودوژانیرو"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:287
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:287
 msgid "Riyadh"
 msgstr "ریاض"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:287
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:287
 msgid "Saudi Arabia"
 msgstr "عربستان سعودی"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:288
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:288
 msgid "Rome"
 msgstr "رم"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:290
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:290
 msgid "Sacramento"
 msgstr "ساکرامنتو"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:291
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:291
 msgid "Salt Lake City"
 msgstr "سلت لیک سیتی"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:292
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:292
 msgid "Samoa"
 msgstr "ساموآ"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:293
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:293
 msgid "San Antonio"
 msgstr "سان آنتونیو"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:294
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:294
 msgid "San Diego"
 msgstr "سن دیگو"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:295
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:295
 msgid "San Francisco"
 msgstr "سان فرانسیسکو"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:296
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:296
 msgid "San José"
 msgstr "سن ژوزه"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:297
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:297
 msgid "San Juan"
 msgstr "سان خوان"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:297
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:297
 msgid "Puerto Rico"
 msgstr "پورتو ریکو"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:298
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:298
 msgid "San Marino"
 msgstr "سن مارینو"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:299
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:299
 msgid "San Salvador"
 msgstr "سن سالوادور"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:300
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:300
 msgid "Sanaa"
 msgstr "سانا"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:300
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:300
 msgid "Yemen"
 msgstr "یمن"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:301
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:301
 msgid "Santiago"
 msgstr "سانتیاگو"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:302
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:302
 msgid "Santo Domingo"
 msgstr "سانتو دومینگو"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:302
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:302
 msgid "Dominican Republic"
 msgstr "جمهوری دومینیک"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:303
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:303
 msgid "São Paulo"
 msgstr "سائو پاولو"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:304
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:304
 msgid "São Tomé"
 msgstr "ساو توم"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:304
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:304
 msgid "São Tomé and Príncipe"
 msgstr "ساوتوم و پرینسیپ"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:305
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:305
 msgid "Sarajevo"
 msgstr "سارایوو"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:305
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:305
 msgid "Bosnia and Herzegovina"
 msgstr "بوسنی و هرزگوین"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:306
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:306
 msgid "Saskatchewan"
 msgstr "ساسکاچوان"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:307
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:307
 msgid "Seattle"
 msgstr "سیاتل"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:308
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:308
 msgid "Seoul"
 msgstr "سئول"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:308
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:308
 msgid "South Korea"
 msgstr "کره‌ی جنوبی"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:309
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:309
 msgid "Shanghai"
 msgstr "شانگهای"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:310
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:310
 msgid "Singapore"
 msgstr "سنگاپور"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:311
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:311
 msgid "Simferopol"
 msgstr "سیمفروپول"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:312
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:312
 msgid "Skopje"
 msgstr "اسکوپیه"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:312
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:312
 msgid "Macedonia"
 msgstr "مقدونیه"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:313
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:313
 msgid "Sofia"
 msgstr "صوفیه"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:313
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:313
 msgid "Bulgaria"
 msgstr "بلغارستان"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:314
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:314
 msgid "St.Johns"
 msgstr "سن ژونز"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:315
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:315
 msgid "St.Kitts"
 msgstr "سن کیتس"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:315
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:315
 msgid "Saint Kitts and Nevis"
 msgstr "سن کیتس و نویس"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:316
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:316
 msgid "St.Louis"
 msgstr "سن لوییس"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:317
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:317
 msgid "Stanley"
 msgstr "استنلی"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:317
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:317
 msgid "Falkland Islands"
 msgstr "جزایر فالکلند"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:318
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:318
 msgid "Stockholm"
 msgstr "استکهلم"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:318
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:318
 msgid "Sweden"
 msgstr "سوئد"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:319
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:319
 msgid "Suva"
 msgstr "سوا"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:320
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:320
 msgid "Sydney"
 msgstr "سیدنی"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:322
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:322
 msgid "Taipei"
 msgstr "تایپه"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:322
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:322
 msgid "Taiwan"
 msgstr "تایوان"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:323
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:323
 msgid "Tallinn"
 msgstr "تالین"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:323
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:323
 msgid "Estonia"
 msgstr "استونی"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:324
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:324
 msgid "Tehran"
 msgstr "تهران"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:324
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:324
 msgid "Iran"
 msgstr "ایران"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:325
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:325
 msgid "Tokyo"
 msgstr "توکیو"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:326
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:326
 msgid "Toronto"
 msgstr "تورنتو"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:327
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:327
 msgid "Tripoli"
 msgstr "طرابلس"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:327
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:327
 msgid "Libya"
 msgstr "لیبی"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:328
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:328
 msgid "Tunis"
 msgstr "تونس"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:328
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:328
 msgid "Tunisia"
 msgstr "تونس"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:330
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:330
 msgid "Ulan Bator"
 msgstr "اولان باتور"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:330
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:330
 msgid "Mongolia"
 msgstr "مغولستان"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:331
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:331
 msgid "UTC"
 msgstr "ساعت گرینویچ"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:333
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:333
 msgid "Vancouver"
 msgstr "ونکوور"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:334
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:334
 msgid "Vatican City"
 msgstr "واتیکان"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:335
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:335
 msgid "Vevay"
 msgstr "ویوی"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:336
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:336
 msgid "Vienna"
 msgstr "وین"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:336
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:336
 msgid "Austria"
 msgstr "اتریش"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:337
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:337
 msgid "Vilnius"
 msgstr "ویلنیوس"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:337
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:337
 msgid "Lithuania"
 msgstr "لیتوانی"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:338
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:338
 msgid "Vincennes"
 msgstr "وینسنس"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:340
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:340
 msgid "Warsaw"
 msgstr "ورشو"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:341
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:341
 msgid "Washington D.C."
 msgstr "واشنگتن دی‌سی"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:342
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:342
 msgid "Winamac"
 msgstr "ویناماک"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:343
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:343
 msgid "Winnipeg"
 msgstr "وینیپگ"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:344
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:344
 msgid "Wrocław"
 msgstr "روکلو"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:346
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:346
 msgid "Zagreb"
 msgstr "زاگرب"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:346
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:346
 msgid "Croatia"
 msgstr "کرواسی"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:347
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:347
 msgid "Zürich"
 msgstr "زوریخ"
 
-#: ../backend/modules/Timezone/statictimezonemodel.cpp:347
+#: ../backend/modules/WorldClock/statictimezonemodel.cpp:347
 msgid "Switzerland"
 msgstr "سوئیس"
 
