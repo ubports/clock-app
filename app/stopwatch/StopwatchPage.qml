@@ -24,51 +24,43 @@ Item {
     id: _stopwatchPage
     objectName: "stopwatchPage"
 
-    property date startTime: getUTCDate()
-    property date snapshot: startTime
+
+    StopwatchFormatTime {
+        id: stopwatchFormatTime
+    }
+
+    //property date startTime: getUTCDate()
+    //property date snapshot: startTime
     property bool running: false
 
-    property int timeDiff: snapshot - startTime
-    property int oldDiff: 0
+    property int lapTime: 0
+    property int previousLapsTime: 0
 
-    property int totalTimeDiff: timeDiff + oldDiff
+    property int totalTime: lapTime + previousLapsTime
 
     Component.onCompleted: {
         console.log("[LOG]: Stopwatch Page Loaded")
     }
 
-    function getUTCDate() {
-        var localDate = new Date()
-        return new Date(localDate.getUTCFullYear(),
-                        localDate.getUTCMonth(),
-                        localDate.getUTCDate(),
-                        localDate.getUTCHours(),
-                        localDate.getUTCMinutes(),
-                        localDate.getUTCSeconds(),
-                        localDate.getUTCMilliseconds())
-    }
-
     function start() {
-        startTime = getUTCDate()
-        snapshot = startTime
+        if (lapTime === 0) {
+            lapHistory.startStopwatch();
+        }
         running = true
     }
 
     function stop() {
-        oldDiff += timeDiff
-        startTime = getUTCDate()
-        snapshot = startTime
         running = false
     }
 
     function update() {
-        snapshot = getUTCDate()
+        lapTime = lapHistory.updateStopwatch();
     }
 
     function clear() {
-        oldDiff = 0
-        startTime = getUTCDate()
-        snapshot = startTime
+        running = false
+        lapTime = 0
+        previousLapsTime = 0
         lapHistory.clear()
     }
 
@@ -86,7 +78,7 @@ Item {
         id: stopwatch
         objectName: "stopwatch"
 
-        milliseconds: _stopwatchPage.totalTimeDiff
+        milliseconds: _stopwatchPage.totalTime
 
         anchors {
             top: parent.top
@@ -109,9 +101,9 @@ Item {
 
         Button {
             id: stopButton
-            width: oldDiff !== 0 || running ? (parent.width - parent.spacing) / 2 : parent.width
+            width: previousLapsTime !== 0 || running ? (parent.width - parent.spacing) / 2 : parent.width
             color: !_stopwatchPage.running ? UbuntuColors.green : UbuntuColors.red
-            text: _stopwatchPage.running ? i18n.tr("Stop") : (oldDiff === 0 ? i18n.tr("Start") : i18n.tr("Resume"))
+            text: _stopwatchPage.running ? i18n.tr("Stop") : (previousLapsTime === 0 ? i18n.tr("Start") : i18n.tr("Resume"))
             onClicked: {
                 if (_stopwatchPage.running) {
                     _stopwatchPage.stop()
@@ -129,13 +121,13 @@ Item {
         Button {
             id: lapButton
             text: _stopwatchPage.running ? i18n.tr("Lap") : i18n.tr("Clear")
-            width: oldDiff !== 0 || running ? (parent.width - parent.spacing) / 2 : 0
+            width: previousLapsTime !== 0 || running ? (parent.width - parent.spacing) / 2 : 0
             strokeColor: UbuntuColors.lightGrey
-            visible: oldDiff !== 0 || running
+            visible: previousLapsTime !== 0 || running
             onClicked: {
                 if (_stopwatchPage.running) {
                     _stopwatchPage.update()
-                    lapHistory.addLap(_stopwatchPage.totalTimeDiff)
+                    lapHistory.addLap(_stopwatchPage.totalTime)
                 } else {
                     _stopwatchPage.clear()
                 }
@@ -162,7 +154,7 @@ Item {
         Loader {
             id: lapListViewLoader
             anchors.fill: parent
-            sourceComponent: !_stopwatchPage.running && _stopwatchPage.totalTimeDiff == 0 ? undefined : lapListViewComponent
+            sourceComponent: !_stopwatchPage.running && _stopwatchPage.totalTime == 0 ? undefined : lapListViewComponent
         }
     }
 

@@ -21,6 +21,7 @@
 
 #include <QAbstractListModel>
 #include <QSettings>
+#include <QDateTime>
 
 class LapHistory : public QAbstractListModel
 {
@@ -48,6 +49,7 @@ public:
     QHash<int, QByteArray> roleNames() const override;
 
 public slots:
+
     // Function to add a stopwatch lap
     void addLap(int timeDiff);
 
@@ -57,8 +59,12 @@ public slots:
     // Function to clear all stopwatch laps
     void clear();
 
+    void startStopwatch();
+    int updateStopwatch();
+
 private:
     QSettings m_settings;
+    QDateTime m_stopwatchStartDateTime;
 };
 
 #endif // HISTORY_H

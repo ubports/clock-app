@@ -31,6 +31,15 @@ LapHistory::LapHistory(QObject *parent) :
     m_settings(QStandardPaths::standardLocations(QStandardPaths::ConfigLocation).first() + "/com.ubuntu.clock/com.ubuntu.clock.conf", QSettings::IniFormat)
 {
     qDebug() << "[LOG] Loading laps from " << m_settings.fileName();
+    QDateTime startTime = m_settings.value("Stopwatch/startDateTime").toDateTime();
+    if(startTime.isValid())
+    {
+        m_stopwatchStartDateTime = startTime;
+    }
+    else
+    {
+        startStopwatch();
+    }
 }
 
 int LapHistory::rowCount(const QModelIndex &parent) const
@@ -95,3 +104,15 @@ void LapHistory::clear()
     m_settings.setValue("Stopwatch/laps", QVariantList());
     endResetModel();
 }
+
+void LapHistory::startStopwatch()
+{
+    m_stopwatchStartDateTime = QDateTime::currentDateTimeUtc();
+    m_settings.setValue("Stopwatch/startDateTime", m_stopwatchStartDateTime);
+}
+
+int LapHistory::updateStopwatch()
+{
+    return m_stopwatchStartDateTime.msecsTo(QDateTime::currentDateTimeUtc());
+}
+

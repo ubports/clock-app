@@ -63,9 +63,8 @@ PageWithBottomEdge {
     Settings {
         id: stopwatchState
         category: "Stopwatch"
-        property alias startTime: stopwatchPage.startTime
         property alias running: stopwatchPage.running
-        property alias oldDiff: stopwatchPage.oldDiff
+        property alias oldDiff: stopwatchPage.previousLapsTime
     }
 
     VisualItemModel {
