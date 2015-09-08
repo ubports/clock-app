@@ -49,7 +49,6 @@ public:
     QHash<int, QByteArray> roleNames() const override;
 
 public slots:
-
     // Function to add a stopwatch lap
     void addLap(int timeDiff);
 
