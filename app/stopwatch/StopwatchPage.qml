@@ -36,13 +36,15 @@ Item {
     }
 
     function start() {
-        if (lapTime === 0) {
+        if (running === false) {
             lapHistory.startStopwatch();
         }
         running = true
     }
 
     function stop() {
+        previousLapsTime += lapTime
+        lapTime = 0
         running = false
     }
 
@@ -119,7 +121,6 @@ Item {
             visible: previousLapsTime !== 0 || running
             onClicked: {
                 if (_stopwatchPage.running) {
-                    _stopwatchPage.update()
                     lapHistory.addLap(_stopwatchPage.totalTime)
                 } else {
                     _stopwatchPage.clear()
