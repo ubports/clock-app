@@ -24,13 +24,6 @@ Item {
     id: _stopwatchPage
     objectName: "stopwatchPage"
 
-
-    StopwatchFormatTime {
-        id: stopwatchFormatTime
-    }
-
-    //property date startTime: getUTCDate()
-    //property date snapshot: startTime
     property bool running: false
 
     property int lapTime: 0
