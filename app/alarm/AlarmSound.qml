@@ -21,6 +21,8 @@ import Alarm 1.0
 import QtMultimedia 5.0
 import Ubuntu.Content 1.1
 import Ubuntu.Components 1.2
+import QtQuick.Layouts 1.1
+import Qt.labs.folderlistmodel 2.1
 
 Page {
     id: _alarmSoundPage
@@ -38,12 +40,6 @@ Page {
 
     // Property to store the alarm object
     property var alarm
-
-    // Property to set the alarm sound model in the edit alarm page
-    property var defaultSoundModel
-
-    // Property to set the custom alarm sound model in the edit alarm page
-    property var customSoundModel
 
     /*
      Properties to store the previously set alarm sound values to detect
@@ -83,6 +79,19 @@ Page {
         }
     }
 
+    FolderListModel {
+        id: defaultSoundModel
+        showDirs: false
+        nameFilters: [ "*.ogg", "*.mp3" ]
+        folder: "/usr/share/sounds/ubuntu/ringtones"
+    }
+
+    FolderListModel {
+        id: customSoundModel
+        showDirs: false
+        folder: alarmSoundHelper.customAlarmSoundDirectory
+    }
+
     ContentTransferHint {
         anchors.fill: parent
         activeTransfer: _alarmSoundPage.activeTransfer
@@ -117,9 +126,9 @@ Page {
         for (var i=0; i<customSoundModel.count; i++) {
             if (soundUrl === customSoundModel.get(i, "fileURL")) {
                 alarmSound.subText = customSoundModel.get(i, "fileBaseName")
-                alarm.sound = soundUrl
-                previewAlarmSound.source = soundUrl
+                alarm.sound = soundUrl                
                 _customAlarmSounds.itemAt(i).isChecked = true
+                previewAlarmSound.controlPlayback(soundUrl)
                 return
             }
         }
@@ -162,7 +171,8 @@ Page {
         anchors.fill: parent
         contentHeight: defaultSoundModel.count * units.gu(7) +
                        customSoundModel.count * units.gu(7) +
-                       customSoundListItem.height
+                       customSoundListItem.height +
+                       2 * customSoundsHeader.implicitHeight + units.gu(4)
 
         Column {
             id: _alarmSoundColumn
@@ -170,11 +180,25 @@ Page {
             anchors.fill: parent
 
             ListItem {
+                height: customSoundsHeader.implicitHeight + units.gu(2)
+                Label {
+                    id: customSoundsHeader
+                    text: i18n.tr("Custom alarm sounds")
+                    font.weight: Font.DemiBold
+                    anchors {
+                        left: parent.left
+                        leftMargin: units.gu(2)
+                        verticalCenter: parent.verticalCenter
+                    }
+                }
+            }
+
+            ListItem {
                 id: customSoundListItem
                 height: units.gu(7)
                 Button {
                     id: customSoundButton
-                    text: i18n.tr("Add custom sound")
+                    text: i18n.tr("Add sound")
                     width: parent.width / 1.1
                     anchors.centerIn: parent
                     onClicked: {
@@ -191,10 +215,13 @@ Page {
 
                 ListItem {
                     id: _customAlarmSoundDelegate
+                    objectName: "customAlarmSoundDelegate" + index
 
-                    property alias isChecked: _customSoundStatus.checked
+                    property bool isChecked: alarmSound.subText === _customSoundName.text ? true
+                                                                                          : false
 
                     height: units.gu(7)
+                    color: isChecked ? Theme.palette.selected.background : "Transparent"
 
                     leadingActions: ListItemActions {
                         actions: [
@@ -219,9 +246,9 @@ Page {
                                             for (var i=0; i<defaultSoundModel.count; i++) {
                                                 if (defaultSoundModel.get(i, "fileBaseName") === alarmSound.subText) {
                                                     alarm.sound = defaultSoundModel.get(i, "fileURL")
-                                                    oldAlarmSoundUrl = alarm.sound
-                                                    previewAlarmSound.source = defaultSoundModel.get(i, "fileURL")
+                                                    oldAlarmSoundUrl = alarm.sound                                                    
                                                     _alarmSounds.itemAt(i).isChecked = true
+                                                    previewAlarmSound.controlPlayback(defaultSoundModel.get(i, "fileURL"))
                                                 }
                                             }
                                         }
@@ -229,7 +256,7 @@ Page {
                                         else {
                                             alarmSound.subText = oldAlarmSoundName
                                             alarm.sound = oldAlarmSoundUrl
-                                            previewAlarmSound.source = alarm.sound
+                                            previewAlarmSound.controlPlayback(alarm.sound)
 
                                             for (var j=0; j<defaultSoundModel.count; j++) {
                                                 if (defaultSoundModel.get(j, "fileBaseName") === alarmSound.subText) {
@@ -251,70 +278,84 @@ Page {
                         ]
                     }
 
-                    Label {
-                        id: _customSoundName
-                        objectName: "customSoundName" + index
+                    RowLayout {
+                        spacing: units.gu(2)
 
                         anchors {
-                            left: parent.left
+                            fill: parent
                             leftMargin: units.gu(2)
-                            right: _customSoundStatus.left
                             rightMargin: units.gu(2)
-                            verticalCenter: parent.verticalCenter
                         }
 
-                        elide: Text.ElideRight
-                        color: UbuntuColors.midAubergine
-                        fontSize: "medium"
-                        text: fileBaseName
+                        Label {
+                            id: _customSoundName
+                            objectName: "customSoundName" + index
+
+                            anchors.verticalCenter: parent.verticalCenter
+                            Layout.fillWidth: true
+
+                            elide: Text.ElideRight
+                            color: UbuntuColors.midAubergine
+                            fontSize: "medium"
+                            text: fileBaseName
+                        }
+
+                        Icon {
+                            width: units.gu(2)
+                            height: width
+                            name: "media-playback-pause"
+                            visible: _customAlarmSoundDelegate.isChecked &&
+                                     previewAlarmSound.playbackState === Audio.PlayingState
+                        }
+
+                        Icon {
+                            id: tickIcon
+                            width: units.gu(2)
+                            height: width
+                            name: "tick"
+                            visible: _customAlarmSoundDelegate.isChecked
+                            anchors.verticalCenter: parent.verticalCenter
+                        }
                     }
 
-                    CheckBox {
-                        id: _customSoundStatus
-                        objectName: "customSoundStatus" + index
+                    onIsCheckedChanged: {
+                        if (isChecked) {
+                            alarmSound.subText = _customSoundName.text
+                            alarm.sound = fileURL
 
-                        anchors {
-                            right: parent.right
-                            rightMargin: units.gu(2)
-                            verticalCenter: parent.verticalCenter
-                        }
-
-                        checked: alarmSound.subText === _customSoundName.text ? true
-                                                                              : false
-                        onCheckedChanged: {
-                            if (checked) {
-                                previewAlarmSound.controlPlayback(fileURL)
-                                alarmSound.subText = _customSoundName.text
-                                alarm.sound = fileURL
-
-                                // Ensures only one alarm sound is selected
-                                for(var i=0; i<customSoundModel.count; i++) {
-                                    if(_customAlarmSounds.itemAt(i).isChecked &&
-                                            i !== index) {
-                                        _customAlarmSounds.itemAt(i).isChecked = false
-                                    }
-                                }
-
-                                // Ensures only one alarm customSoundModelsound is selected
-                                for(i=0; i<defaultSoundModel.count; i++) {
-                                    _alarmSounds.itemAt(i).isChecked = false
+                            // Ensures only one custom alarm sound is selected
+                            for(var i=0; i<customSoundModel.count; i++) {
+                                if(_customAlarmSounds.itemAt(i).isChecked && i !== index) {
+                                    _customAlarmSounds.itemAt(i).isChecked = false
                                 }
                             }
-                        }
 
-                        onClicked: {
-                            if (!checked) {
-                                checked = true
+                            // Uncheck all the default alarm sounds
+                            for(i=0; i<defaultSoundModel.count; i++) {
+                                _alarmSounds.itemAt(i).isChecked = false
                             }
                         }
                     }
 
                     onClicked: {
-                        if (!_customSoundStatus.checked) {
-                            _customSoundStatus.checked = true
-                        } else {
-                            previewAlarmSound.controlPlayback(fileURL)
+                        if (!_customAlarmSoundDelegate.isChecked) {
+                            _customAlarmSoundDelegate.isChecked = true
                         }
+                        previewAlarmSound.controlPlayback(fileURL)
+                    }
+                }
+            }
+
+            ListItem {
+                height: defaultSoundsHeader.implicitHeight + units.gu(2)
+                Label {
+                    id: defaultSoundsHeader
+                    text: i18n.tr("Default alarm sounds")
+                    font.weight: Font.DemiBold
+                    anchors {
+                        left: parent.left
+                        leftMargin: units.gu(2)
+                        verticalCenter: parent.verticalCenter
                     }
                 }
             }
@@ -327,72 +368,77 @@ Page {
 
                 ListItem {
                     id: _alarmSoundDelegate
+                    objectName: "alarmSoundDelegate" + index
 
-                    property alias isChecked: _soundStatus.checked
+                    property bool isChecked: alarmSound.subText === _soundName.text ? true
+                                                                                    : false
 
                     height: units.gu(7)
+                    color: isChecked ? Theme.palette.selected.background : "Transparent"
 
-                    Label {
-                        id: _soundName
-                        objectName: "soundName" + index
+                    RowLayout {
+                        spacing: units.gu(2)
 
                         anchors {
-                            left: parent.left
+                            fill: parent
                             leftMargin: units.gu(2)
-                            verticalCenter: parent.verticalCenter
+                            rightMargin: units.gu(2)
                         }
 
-                        color: UbuntuColors.midAubergine
-                        fontSize: "medium"
-                        text: fileBaseName
+                        Label {
+                            id: _soundName
+                            objectName: "soundName" + index
+
+                            anchors.verticalCenter: parent.verticalCenter
+                            Layout.fillWidth: true
+
+                            color: UbuntuColors.midAubergine
+                            fontSize: "medium"
+                            text: fileBaseName
+                        }
+
+                        Icon {
+                            width: units.gu(2)
+                            height: width
+                            name: "media-playback-pause"
+                            visible: _alarmSoundDelegate.isChecked &&
+                                     previewAlarmSound.playbackState === Audio.PlayingState
+                        }
+
+                        Icon {
+                            width: units.gu(2)
+                            height: width
+                            name: "tick"
+                            visible: _alarmSoundDelegate.isChecked
+                            anchors.verticalCenter: parent.verticalCenter
+                        }
                     }
 
-                    CheckBox {
-                        id: _soundStatus
-                        objectName: "soundStatus" + index
+                    onIsCheckedChanged: {
+                        if (isChecked) {
+                            alarmSound.subText = _soundName.text
+                            alarm.sound = fileURL
 
-                        anchors {
-                            right: parent.right
-                            rightMargin: units.gu(2)
-                            verticalCenter: parent.verticalCenter
-                        }
-
-                        checked: alarmSound.subText === _soundName.text ? true
-                                                                        : false
-                        onCheckedChanged: {
-                            if (checked) {
-                                previewAlarmSound.controlPlayback(fileURL)
-                                alarmSound.subText = _soundName.text
-                                alarm.sound = fileURL
-
-                                // Ensures only one alarm sound is selected
-                                for(var i=0; i<defaultSoundModel.count; i++) {
-                                    if(_alarmSounds.itemAt(i).isChecked &&
-                                            i !== index) {
-                                        _alarmSounds.itemAt(i).isChecked = false
-                                    }
-                                }
-
-                                // Ensures only one alarm sound is selected
-                                for(i=0; i<customSoundModel.count; i++) {
-                                    _customAlarmSounds.itemAt(i).isChecked = false
+                            // Ensures only one alarm sound is selected
+                            for(var i=0; i<defaultSoundModel.count; i++) {
+                                if(_alarmSounds.itemAt(i).isChecked &&
+                                        i !== index) {
+                                    _alarmSounds.itemAt(i).isChecked = false
                                 }
                             }
-                        }
 
-                        onClicked: {
-                            if (!checked) {
-                                checked = true
+                            // Uncheck all the custom alarm sounds
+                            for(i=0; i<customSoundModel.count; i++) {
+                                _customAlarmSounds.itemAt(i).isChecked = false
                             }
                         }
                     }
 
                     onClicked: {
-                        if (!_soundStatus.checked) {
-                            _soundStatus.checked = true
-                        } else {
-                            previewAlarmSound.controlPlayback(fileURL)
+                        if (!_alarmSoundDelegate.isChecked) {
+                            _alarmSoundDelegate.isChecked = true
                         }
+                        previewAlarmSound.controlPlayback(fileURL)
                     }
                 }
             }

@@ -2,18 +2,21 @@ ubuntu-clock-app (3.6) UNRELEASED; urgency=medium
 
   [ Nekhelesh Ramananthan ]
   * Bumped version to 3.6
+  * Replaced checkboxes in alarm sound page with tick-marks (LP: #1487717)
+  * Added sections headers to separate custom and default alarm sounds (LP: #1487735)
   * Removed ListItemWithActions upstream component and also fixed the user
     world city list count never decreasing to 0. (LP: #1368393)
 
   [ Bartosz Kosiorek ]
   * Fix wrong time after changing timezone, when stopwatch is running (LP: #1491024)
+  * Reduce size of images (with tinypng.com) to decrease click image size (LP: #1492057)
   * Fix stopwatch issue appering during changing timezone during runtime (LP: #1493358)
 
  -- Bartosz Kosiorek <gang65@poczta.onet.pl>  Wed, 02 Sep 2015 15:16:29 +0200
 
 ubuntu-clock-app (3.5) vivid; urgency=medium
 
-  [Bartosz Kosiorek]
+  [ Bartosz Kosiorek ]
   * Disable automatic translation and update README.translations
   * Silent warning which is displayed during clock run
   * Change "Silence after" to "Alarm stops afer" according to UX design
@@ -23,7 +26,7 @@ ubuntu-clock-app (3.5) vivid; urgency=medium
   * Keep running stopwatch even when the clock or phone is turned off (LP: #1484942)
   * If custom sound file name already exists during changing alarm sound, then delete it.
 
-  [Nekhelesh Ramananthan]
+  [ Nekhelesh Ramananthan ]
   * Increase the height of times in the alarm screen (LP: #1365428)
   * Implement Stopwatch feature (LP: 1437313)
   * Added stopwatch keyword to the desktop file
@@ -44,14 +47,14 @@ ubuntu-clock-app (3.5) vivid; urgency=medium
   * Fixed edited alarms when saved not updating the alarms listview (LP: #1488439)
   * Reorganized backend c++ plugins with proper naming and folder structures.
 
-  [Victor Thompson]
+  [ Victor Thompson ]
   * Show all README files in QtCreator 
 
  -- Bartosz Kosiorek <gang65@poczta.onet.pl>  Thu, 13 Aug 2015 00:03:45 +0200
 
 ubuntu-clock-app (3.4) vivid; urgency=medium
 
-  [Nekhelesh Ramananthan]
+  [ Nekhelesh Ramananthan ]
   * Updated version to 3.4 to mark transition to vivid framework
   * Fixed bottom edge title showing incorrect status on app startup (LP: #1381432)
   * Migrate to Ubuntu 15.04 SDK Framework and QtQuick 2.4.
@@ -73,7 +76,7 @@ ubuntu-clock-app (3.4) vivid; urgency=medium
 
 ubuntu-clock-app (3.3) utopic; urgency=medium
 
-  [Nekhelesh Ramananthan]
+  [ Nekhelesh Ramananthan ]
   * Fixed alarm string not being translatable (LP: #1380248)
   * Bumped framework version to ubuntu-sdk-14.10
   * Fixed the incorrect overriding of alarm delegate model value.
@@ -98,21 +101,21 @@ ubuntu-clock-app (3.3) utopic; urgency=medium
   * Migrated to the 15.04 framework and also QtQuick 2.4
   * Locked clock app orientation to portrait (LP: #1465457)
 
-  [themeles]  
+  [ themeles ]  
   * Fixes alarms after midnight being incorrectly enabled for the next day. (LP: #1442518)
 
-  [Penk Chen]
+  [ Penk Chen ]
   * Fixed DigitalMode time being empty in chineese locale (LP: #1458808)
 
-  [Brendan Donegan]
+  [ Brendan Donegan ]
   * Fixed AP failure by waiting for the bottom edge tip visible property to be true
     before trying to swipe up the bottom edge.
 
-  [Riccardo Padovani]
+  [ Riccardo Padovani ]
   * Fixed one-time alarms not being able to be re-enabled using the alarm switch
     after they have gone off once (LP: #1413027)
 
-  [Victor Thompson]
+  [ Victor Thompson ]
   * Fixed a regression in vivid where clicking an alarm sound ListItem was not
     causing the CheckBox to be checked.
 
@@ -120,7 +123,7 @@ ubuntu-clock-app (3.3) utopic; urgency=medium
 
 ubuntu-clock-app (3.2) utopic; urgency=medium
 
-  [Nekhelesh Ramananthan]
+  [ Nekhelesh Ramananthan ]
   * Fixed bottom edge hint timeout which made it possible for new users to not notice
     the bottom edge action. (LP: #1357945)
   * Moved DateTime object to ubuntu-clock-app.qml so that it can be used in multiple
@@ -148,7 +151,7 @@ ubuntu-clock-app (3.2) utopic; urgency=medium
   * Customised splash screen (white background) (LP: #1377638)
   * Added manual test to check disabling of alarms.
 
-  [Akiva Shammai Avraham]
+  [ Akiva Shammai Avraham ]
   * Improved the analog clock performance by updating the clock hands every second
     rather than every 10 milliseconds. (LP: #1363968)
 
@@ -156,7 +159,7 @@ ubuntu-clock-app (3.2) utopic; urgency=medium
 
 ubuntu-clock-app (3.1) utopic; urgency=medium
 
-  [Nekhelesh Ramananthan]
+  [ Nekhelesh Ramananthan ]
   * Alarm name label no longer accepts predictive text and empty
     strings. (LP: #1355414)
   * Synced the fast scroll component with upstream changes
@@ -196,25 +199,25 @@ ubuntu-clock-app (3.1) utopic; urgency=medium
   * Automatically focus textfield (LP: #1372089)
   * Added alarm feature qml tests and alarm sound unit tests
 
-  [Zsombor Egri]
+  [ Zsombor Egri ]
   * Fixed alarm status toggle being reverted immediately (LP: #1272337)
   * Deleting an alarm causing the others to activate (if they were disabled) (LP: #1358315)
 
-  [David Planella]
+  [ David Planella ]
   * Added internationalization support (LP: #1354522)
 
-  [Riccardo Padovani]
+  [ Riccardo Padovani ]
   * Removed 'Today/Tomorow/Yesterday' text string from world clock, replaced
     'No time difference' with 'Same time' (LP: #1362093)
 
-  [Dennis O'Flaherty]
+  [ Dennis O'Flaherty ]
   * Show a message to the user when the alarm list is empty (LP: #1364555)
 
-  [Stefano Verzegnassi]
+  [ Stefano Verzegnassi ]
   * Fixed wrong alignment of "Add city" button when the application is not
     localized in English. (LP: #1371229)
 
-  [Leo Arias]
+  [ Leo Arias ]
   * Fixed CMake and debian/control to run the qml tests during a deb package build
 
  -- Nekhelesh Ramananthan <krnekhelesh@gmail.com>  Wed, 13 Aug 2014 15:46:12 +0200
@@ -265,31 +268,31 @@ ubuntu-clock-app (3.0-0ubuntu1) utopic; urgency=medium
 
 ubuntu-clock-app (2.9) utopic; urgency=medium
 
-  [Nekhelesh Ramananthan]
+  [ Nekhelesh Ramananthan ]
   * Added multiselect mode for alarms list as per design (LP: #1349882)
   * Fixed a small portion of the listitem behind left behind after
     deleting it. (LP: #1354617)
   * Added vibration settings option for alarms (LP: #1350017)
 
-  [Michael Zanetti]
+  [ Michael Zanetti ]
   * Improve the performance of the world city list by creating QTimeZone
     objects only once as they are really slow to create. (LP: #1350433)
 
-  [Nicholas Skaggs]
+  [ Nicholas Skaggs ]
   * Tweak AP setup and launching
 
  -- Nekhelesh Ramananthan <krnekhelesh@gmail.com>  Mon, 11 Aug 2014 16:20:00 +0200
 
 ubuntu-clock-app (2.8) utopic; urgency=medium
 
-  [Nekhelesh Ramananthan]
+  [ Nekhelesh Ramananthan ]
   * Implemented custom swipe delete for list items (LP: #1349881)
   * Synced bottom edge component with upstream code
   * Added fast scroll to the world city page (LP: #1349877)
   * Implemented the world clock UI in the main clock page
   * Added settings option to change system time in the clock app.
 
-  [Carla Sella]
+  [ Carla Sella ]
   * Setup autopilot infrastructure and added alarm test
   * Added objectNames required for the AP tests
   * Expanded alarm tests using scenarios to cover different days
@@ -298,7 +301,7 @@ ubuntu-clock-app (2.8) utopic; urgency=medium
 
 ubuntu-clock-app (2.7) utopic; urgency=medium
 
-  [Nekhelesh Ramananthan]
+  [ Nekhelesh Ramananthan ]
   * Expanded base TimeZoneModel to also take a u1db query model
   * Added more cities to the local world city list
   * Improved the accuracy of the clock hour hand by taking into account the
@@ -309,33 +312,33 @@ ubuntu-clock-app (2.7) utopic; urgency=medium
   * Encapsulated the settings icon into an abstract button to provide haptic
     feedback when pressed.
 
-  [Victor Thompson]
+  [ Victor Thompson ]
   * Resolve build warning related to unused variable in the AlarmSettings plugin
 
  -- Nekhelesh Ramananthan <krnekhelesh@gmail.com>  Mon, 04 Aug 2014 11:23:30 +0200
 
 ubuntu-clock-app (2.6) utopic; urgency=medium
 
-  [Nekhelesh Ramananthan]
+  [ Nekhelesh Ramananthan ]
   * Clock mode is now saved in u1db to remember the user preferences
   * Added support for alarm setting options like alarm duration and volume
   * Updated license headers
   * Added support to listen to Dbus changes to the alarm settings and update
     UI automatically.
 
-  [Victor Thompson]
+  [ Victor Thompson ]
   * Update digital time every second instead of every 60 seconds
 
  -- Nekhelesh Ramananthan <krnekhelesh@gmail.com>  Wed, 30 Jul 2014 10:10:23 +0200
 
 ubuntu-clock-app (2.5) utopic; urgency=medium
 
-  [Nekhelesh Ramananthan]
+  [ Nekhelesh Ramananthan ]
   * Added a page to select world cities.
   * World cities are filtered as the user types using the SDK SortFilterModel
   * Added a XML file with a list of popular cities
 
-  [Victor Thompson]
+  [ Victor Thompson ]
   * Center the plus icon in PullToAdd.qml
   * Use the ok icon instead of save in the edit alarm page
 
@@ -343,7 +346,7 @@ ubuntu-clock-app (2.5) utopic; urgency=medium
 
 ubuntu-clock-app (2.4) utopic; urgency=medium
 
-  [Nekhelesh Ramananthan]
+  [ Nekhelesh Ramananthan ]
   * Fixed some issues that were noticed while running on the device for the first time
   * Removed AddCityButton.qml since we use the pulltoadd component now
   * Pulltoadd animation is now more reliable since it uses grid units instead of pixels
