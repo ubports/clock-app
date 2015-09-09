@@ -40,6 +40,9 @@ StopwatchEngine::StopwatchEngine(QObject *parent) :
     {
         startStopwatch();
     }
+
+    m_isStopwatchRunning = m_settings.value("Stopwatch/isStopwatchRunning").toBool();
+    m_previousTimeInmsecs = m_settings.value("Stopwatch/previousTimeInmsecs").toInt();
 }
 
 int StopwatchEngine::rowCount(const QModelIndex &parent) const
@@ -98,21 +101,55 @@ void StopwatchEngine::removeLap(int lapIndex)
     endRemoveRows();
 }
 
-void StopwatchEngine::clearLaps()
+
+void StopwatchEngine::startStopwatch()
 {
+    if(m_isStopwatchRunning == false)
+    {
+        m_stopwatchStartDateTime = QDateTime::currentDateTimeUtc();
+        m_settings.setValue("Stopwatch/startDateTime", m_stopwatchStartDateTime);
+    }
+    m_isStopwatchRunning = true;
+    m_settings.setValue("Stopwatch/isStopwatchRunning", m_isStopwatchRunning);
+}
+
+int StopwatchEngine::getTotalTimeOfStopwatch()
+{
+    m_currentLapTimeInmsecs = m_stopwatchStartDateTime.msecsTo(QDateTime::currentDateTimeUtc());
+    return m_previousTimeInmsecs + m_currentLapTimeInmsecs;
+}
+
+
+void StopwatchEngine::stopStopwatch()
+{
+    m_isStopwatchRunning = false;
+    m_settings.setValue("Stopwatch/isStopwatchRunning", m_isStopwatchRunning);
+
+    m_previousTimeInmsecs = getTotalTimeOfStopwatch();
+    m_settings.setValue("Stopwatch/previousTimeInmsecs", m_isStopwatchRunning);
+    m_currentLapTimeInmsecs = 0;
+}
+
+void StopwatchEngine::clearStopwatch()
+{
+    m_isStopwatchRunning = false;
+    m_settings.setValue("Stopwatch/isStopwatchRunning", m_isStopwatchRunning);
+    m_currentLapTimeInmsecs = 0;
+    m_previousTimeInmsecs = 0;
+    m_settings.setValue("Stopwatch/previousTimeInmsecs", m_isStopwatchRunning);
+    m_totalTimeInmsecs = 0;
+
     beginResetModel();
     m_settings.setValue("Stopwatch/laps", QVariantList());
     endResetModel();
 }
 
-void StopwatchEngine::startStopwatch()
+bool StopwatchEngine::isRunning()
 {
-    m_stopwatchStartDateTime = QDateTime::currentDateTimeUtc();
-    m_settings.setValue("Stopwatch/startDateTime", m_stopwatchStartDateTime);
+    return m_isStopwatchRunning;
 }
 
-int StopwatchEngine::updateStopwatch()
+int StopwatchEngine::getPreviousTimeInmsecs()
 {
-    return m_stopwatchStartDateTime.msecsTo(QDateTime::currentDateTimeUtc());
+    return m_previousTimeInmsecs;
 }
-

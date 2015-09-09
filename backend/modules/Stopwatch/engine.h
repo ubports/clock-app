@@ -27,6 +27,10 @@ class StopwatchEngine : public QAbstractListModel
 {
     Q_OBJECT
 
+    Q_PROPERTY( int m_isStopwatchRunning
+                    READ isRunning
+                    )
+
 public:
     enum Role {
         RoleTotalTime,
@@ -55,15 +59,26 @@ public slots:
     // Function to remove a stopwatch lap
     void removeLap(int lapIndex);
 
-    // Function to clear all stopwatch laps
-    void clearLaps();
-
     void startStopwatch();
-    int updateStopwatch();
+
+    void stopStopwatch();
+
+    void clearStopwatch();
+
+    bool isRunning();
+
+    int getTotalTimeOfStopwatch();
+
+    int getPreviousTimeInmsecs();
 
 private:
     QSettings m_settings;
     QDateTime m_stopwatchStartDateTime;
+
+    bool m_isStopwatchRunning;
+    int m_currentLapTimeInmsecs;
+    int m_previousTimeInmsecs;
+    int m_totalTimeInmsecs;
 };
 
 #endif // ENGINE_H
