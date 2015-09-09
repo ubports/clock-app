@@ -19,7 +19,7 @@
 #include <QtQml>
 #include <QtQml/QQmlContext>
 #include "backend.h"
-#include "history.h"
+#include "engine.h"
 #include "formattime.h"
 
 void BackendPlugin::registerTypes(const char *uri)

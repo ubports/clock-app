@@ -16,8 +16,8 @@
  *                                                                           *
  ****************************************************************************/
 
-#ifndef HISTORY_H
-#define HISTORY_H
+#ifndef ENGINE_H
+#define ENGINE_H
 
 #include <QAbstractListModel>
 #include <QSettings>
@@ -66,4 +66,4 @@ private:
     QDateTime m_stopwatchStartDateTime;
 };
 
-#endif // HISTORY_H
+#endif // ENGINE_H

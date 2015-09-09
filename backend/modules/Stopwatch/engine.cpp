@@ -16,7 +16,7 @@
  *                                                                           *
  ****************************************************************************/
 
-#include "history.h"
+#include "engine.h"
 
 #include <QStandardPaths>
 #include <QDebug>
