@@ -22,6 +22,16 @@ from autopilot import logging as autopilot_logging
 from autopilot.introspection import dbus
 from testtools.matchers import GreaterThan
 
+
+from autopilot import introspection
+
+from ubuntuuitoolkit._custom_proxy_objects import (
+    _common,
+    popups,
+    _tabs,
+    _toolbar,
+)
+
 from ubuntuuitoolkit import pickers
 import ubuntuuitoolkit
 
@@ -40,7 +50,9 @@ class ClockApp(object):
     def __init__(self, app_proxy, test_type):
         self.app = app_proxy
         self.test_type = test_type
-        self.main_view = self.app.wait_select_single(MainView)
+        #self.app.print_tree()
+        self.main_view = self.app.wait_select_single(objectName="clockMainView")
+        #self.main_view = self.app.wait_select_single(MainView, objectName="clockMainView")
 
     @property
     def pointing_device(self):
@@ -49,9 +61,26 @@ class ClockApp(object):
 
 class MainView(ubuntuuitoolkit.MainView):
 
+    # bug 1341671 means AP sees this as MainView12
     @classmethod
     def get_type_query_name(cls):
-            return 'MainView12'
+        return 'MainView12'
+
+    #@classmethod
+    #def validate_dbus_object(cls, path, state):
+        #if super().validate_dbus_object(path, state):
+            ## This covers MainView 0.1/1.0/1.1 and possible components
+            ## derived from MainView (e.g. "CustomMainView") that have
+            ## their own CPO.
+            ## Using objectName for selecting a MainView is recommneded.
+            #return True
+
+        ##name = introspection.get_classname_from_path(path)
+        ##if name == b'MainView12':
+            ## MainView 1.2. Must be selected using objectName.
+        ##    return False
+
+        #return False
 
     @autopilot_logging.log_action(logger.info)
     def open_clock(self):
@@ -96,11 +125,12 @@ class Page(ubuntuuitoolkit.UbuntuUIToolkitCustomProxyObjectBase):
         self.main_view = self.get_root_instance().select_single(MainView)
 
 
-class PageWithBottomEdge(MainView):
+class PageWithBottomEdge(Page):
     """
     An emulator class that makes it easy to interact with the bottom edge
     swipe page
     """
+
     def __init__(self, *args):
         super(PageWithBottomEdge, self).__init__(*args)
 

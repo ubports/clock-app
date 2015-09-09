@@ -30,7 +30,7 @@ MainView {
     property bool applicationState: Qt.application.active
 
     // objectName for functional testing purposes (autopilot-qt5)
-    objectName: "clock"
+    objectName: "clockMainView"
 
     // applicationName for click packages (used as an unique app identifier)
     applicationName: "com.ubuntu.clock"
