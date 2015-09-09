@@ -25,8 +25,8 @@ class LocationServiceTestEnvironment(fixtures.Fixture):
 
     def setUp(self):
         super(LocationServiceTestEnvironment, self).setUp()
-        self._set_location_service_testing(True)
-        self.addCleanup(self._set_location_service_testing, False)
+        #self._set_location_service_testing(True)
+        #self.addCleanup(self._set_location_service_testing, False)
 
     def _set_location_service_testing(self, test_mode):
         test = 'true' if test_mode else 'false'
