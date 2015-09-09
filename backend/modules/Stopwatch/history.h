@@ -23,7 +23,7 @@
 #include <QSettings>
 #include <QDateTime>
 
-class LapHistory : public QAbstractListModel
+class StopwatchEngine : public QAbstractListModel
 {
     Q_OBJECT
 
@@ -33,7 +33,7 @@ public:
         RoleDiffToPrevious
     };
 
-    explicit LapHistory(QObject *parent = 0);
+    explicit StopwatchEngine(QObject *parent = 0);
 
     /*
      Let's override the pure virtual functions (the ones marked as
@@ -56,7 +56,7 @@ public slots:
     void removeLap(int lapIndex);
 
     // Function to clear all stopwatch laps
-    void clear();
+    void clearLaps();
 
     void startStopwatch();
     int updateStopwatch();

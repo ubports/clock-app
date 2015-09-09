@@ -26,7 +26,7 @@ void BackendPlugin::registerTypes(const char *uri)
 {
     Q_ASSERT(uri == QLatin1String("Stopwatch"));
 
-    qmlRegisterType<LapHistory>(uri, 1, 0, "LapHistory");
+    qmlRegisterType<StopwatchEngine>(uri, 1, 0, "StopwatchEngine");
     qmlRegisterType<FormatTime>(uri, 1, 0, "StopwatchFormatTime");
 }
 

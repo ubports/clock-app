@@ -37,7 +37,7 @@ Item {
 
     function start() {
         if (running === false) {
-            lapHistory.startStopwatch();
+            stopwatchEngine.startStopwatch();
         }
         running = true
     }
@@ -49,14 +49,14 @@ Item {
     }
 
     function update() {
-        lapTime = lapHistory.updateStopwatch();
+        lapTime = stopwatchEngine.updateStopwatch();
     }
 
     function clear() {
         running = false
         lapTime = 0
         previousLapsTime = 0
-        lapHistory.clear()
+        stopwatchEngine.clear()
     }
 
     Timer {
@@ -121,7 +121,7 @@ Item {
             visible: previousLapsTime !== 0 || running
             onClicked: {
                 if (_stopwatchPage.running) {
-                    lapHistory.addLap(_stopwatchPage.totalTime)
+                    stopwatchEngine.addLap(_stopwatchPage.totalTime)
                 } else {
                     _stopwatchPage.clear()
                 }
@@ -152,15 +152,15 @@ Item {
         }
     }
 
-    LapHistory {
-        id: lapHistory
+    StopwatchEngine {
+        id: stopwatchEngine
     }
 
     Component {
         id: lapListViewComponent
         LapListView {
             id: lapListView
-            model: lapHistory
+            model: stopwatchEngine
         }
     }
 }

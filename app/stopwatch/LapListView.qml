@@ -82,7 +82,7 @@ ListView {
                 Action {
                     iconName: "delete"
                     onTriggered: {
-                        lapHistory.removeLap(index)
+                        stopwatchEngine.removeLap(index)
                     }
                 }
             ]
