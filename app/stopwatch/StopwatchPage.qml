@@ -56,7 +56,7 @@ Item {
         running = false
         lapTime = 0
         previousLapsTime = 0
-        stopwatchEngine.clear()
+        stopwatchEngine.clearLaps()
     }
 
     Timer {
