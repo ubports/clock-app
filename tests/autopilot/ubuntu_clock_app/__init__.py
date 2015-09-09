@@ -50,9 +50,7 @@ class ClockApp(object):
     def __init__(self, app_proxy, test_type):
         self.app = app_proxy
         self.test_type = test_type
-        #self.app.print_tree()
-        self.main_view = self.app.wait_select_single(objectName="clockMainView")
-        #self.main_view = self.app.wait_select_single(MainView, objectName="clockMainView")
+        self.main_view = self.app.wait_select_single(MainView)
 
     @property
     def pointing_device(self):
@@ -65,22 +63,6 @@ class MainView(ubuntuuitoolkit.MainView):
     @classmethod
     def get_type_query_name(cls):
         return 'MainView12'
-
-    #@classmethod
-    #def validate_dbus_object(cls, path, state):
-        #if super().validate_dbus_object(path, state):
-            ## This covers MainView 0.1/1.0/1.1 and possible components
-            ## derived from MainView (e.g. "CustomMainView") that have
-            ## their own CPO.
-            ## Using objectName for selecting a MainView is recommneded.
-            #return True
-
-        ##name = introspection.get_classname_from_path(path)
-        ##if name == b'MainView12':
-            ## MainView 1.2. Must be selected using objectName.
-        ##    return False
-
-        #return False
 
     @autopilot_logging.log_action(logger.info)
     def open_clock(self):
