@@ -24,8 +24,6 @@ Item {
     id: _stopwatchPage
     objectName: "stopwatchPage"
 
-    property int totalTime: 0
-
     Component.onCompleted: {
         console.log("[LOG]: Stopwatch Page Loaded")
     }
@@ -34,9 +32,9 @@ Item {
         id: refreshTimer
         interval: 45
         repeat: true
-        running: stopwatchEngine.isRunning()
+        running: stopwatchEngine.isRunning
         onTriggered: {
-             _stopwatchPage.totalTime = stopwatchEngine.getTotalTimeOfStopwatch()
+             stopwatch.milliseconds = stopwatchEngine.totalTimeOfStopwatch
         }
     }
 
@@ -44,7 +42,7 @@ Item {
         id: stopwatch
         objectName: "stopwatch"
 
-        milliseconds: _stopwatchPage.totalTime
+        milliseconds: stopwatchEngine.totalTimeOfStopwatch
 
         anchors {
             top: parent.top
@@ -67,12 +65,12 @@ Item {
 
         Button {
             id: stopButton
-            width: stopwatchEngine.getPreviousTimeInmsecs() !== 0 || stopwatchEngine.isRunning ? (parent.width - parent.spacing) / 2 : parent.width
-            color: !stopwatchEngine.isRunning() ? UbuntuColors.green : UbuntuColors.red
-            text: stopwatchEngine.isRunning ? i18n.tr("Stop") : (stopwatchEngine.getPreviousTimeInmsecs() === 0 ? i18n.tr("Start") : i18n.tr("Resume"))
+            width: stopwatchEngine.previousTimeOfStopwatch !== 0 || stopwatchEngine.isRunning ? (parent.width - parent.spacing) / 2 : parent.width
+            color: !stopwatchEngine.isRunning ? UbuntuColors.green : UbuntuColors.red
+            text: stopwatchEngine.isRunning ? i18n.tr("Stop") : (stopwatchEngine.previousTimeOfStopwatch === 0 ? i18n.tr("Start") : i18n.tr("Resume"))
             onClicked: {
-                if (stopwatchEngine.isRunning()) {
-                    stopwatchEngine.stopStopwatch();
+                if (stopwatchEngine.isRunning) {
+                    stopwatchEngine.pauseStopwatch();
                 } else {
                     stopwatchEngine.startStopwatch();
                 }
@@ -86,13 +84,13 @@ Item {
 
         Button {
             id: lapButton
-            text: stopwatchEngine.isRunning() ? i18n.tr("Lap") : i18n.tr("Clear")
-            width:  stopwatchEngine.getPreviousTimeInmsecs() !== 0 || stopwatchEngine.isRunning() ? (parent.width - parent.spacing) / 2 : 0
+            text: stopwatchEngine.isRunning ? i18n.tr("Lap") : i18n.tr("Clear")
+            width:  stopwatchEngine.previousTimeOfStopwatch !== 0 || stopwatchEngine.isRunning ? (parent.width - parent.spacing) / 2 : 0
             strokeColor: UbuntuColors.lightGrey
-            visible:  stopwatchEngine.getPreviousTimeInmsecs() !== 0 || stopwatchEngine.isRunning()
+            visible:  stopwatchEngine.previousTimeOfStopwatch !== 0 || stopwatchEngine.isRunning
             onClicked: {
-                if (stopwatchEngine.isRunning()) {
-                    stopwatchEngine.addLap(_stopwatchPage.totalTime)
+                if (stopwatchEngine.isRunning) {
+                    stopwatchEngine.addLap()
                 } else {
                     stopwatchEngine.clearStopwatch()
                 }
@@ -119,7 +117,7 @@ Item {
         Loader {
             id: lapListViewLoader
             anchors.fill: parent
-            sourceComponent: !stopwatchEngine.isRunning() && _stopwatchPage.totalTime == 0 ? undefined : lapListViewComponent
+            sourceComponent: !stopwatchEngine.isRunning && stopwatchEngine.totalTimeOfStopwatch === 0 ? undefined : lapListViewComponent
         }
     }
 

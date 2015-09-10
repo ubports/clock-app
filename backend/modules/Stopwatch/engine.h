@@ -27,9 +27,27 @@ class StopwatchEngine : public QAbstractListModel
 {
     Q_OBJECT
 
-    Q_PROPERTY( int m_isStopwatchRunning
-                    READ isRunning
-                    )
+    Q_PROPERTY( bool isRunning
+                READ isRunning
+                NOTIFY isRunningChanged)
+
+    Q_PROPERTY( int totalTimeOfStopwatch
+                READ getTotalTimeOfStopwatch
+                NOTIFY totalTimeOfStopwatchChanged)
+
+    Q_PROPERTY( int previousTimeOfStopwatch
+                READ getPreviousTimeOfStopwatch
+                NOTIFY previousTimeOfStopwatchChanged)
+
+signals:
+    // Signal to notify the running status change to QML
+    void isRunningChanged();
+
+    // Signal to notify the total time change to QML
+    void totalTimeOfStopwatchChanged();
+
+    // Signal to notify the total time change to QML
+    void previousTimeOfStopwatchChanged();
 
 public:
     enum Role {
@@ -54,14 +72,14 @@ public:
 
 public slots:
     // Function to add a stopwatch lap
-    void addLap(int timeDiff);
+    void addLap();
 
     // Function to remove a stopwatch lap
     void removeLap(int lapIndex);
 
     void startStopwatch();
 
-    void stopStopwatch();
+    void pauseStopwatch();
 
     void clearStopwatch();
 
@@ -69,14 +87,13 @@ public slots:
 
     int getTotalTimeOfStopwatch();
 
-    int getPreviousTimeInmsecs();
+    int getPreviousTimeOfStopwatch();
 
 private:
     QSettings m_settings;
     QDateTime m_stopwatchStartDateTime;
 
     bool m_isStopwatchRunning;
-    int m_currentLapTimeInmsecs;
     int m_previousTimeInmsecs;
     int m_totalTimeInmsecs;
 };
