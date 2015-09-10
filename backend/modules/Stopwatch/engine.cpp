@@ -28,7 +28,10 @@ StopwatchEngine::StopwatchEngine(QObject *parent) :
      when Ubuntu Touch moves over to Qt 5.5. AppConfigLocation will directly return
      /home/phablet/.config/com.ubuntu.clock path.
     */
-    m_settings(QStandardPaths::standardLocations(QStandardPaths::ConfigLocation).first() + "/com.ubuntu.clock/com.ubuntu.clock.conf", QSettings::IniFormat)
+    m_settings(QStandardPaths::standardLocations(QStandardPaths::ConfigLocation).first() + "/com.ubuntu.clock/com.ubuntu.clock.conf", QSettings::IniFormat),
+    m_isStopwatchRunning(false),
+    m_previousTimeInmsecs(0),
+    m_totalTimeInmsecs(0)
 {
     qDebug() << "[LOG] Loading laps from " << m_settings.fileName();
     QDateTime startTime = m_settings.value("Stopwatch/startDateTime").toDateTime();
@@ -36,13 +39,12 @@ StopwatchEngine::StopwatchEngine(QObject *parent) :
     {
         m_stopwatchStartDateTime = startTime;
     }
-    else
-    {
-        startStopwatch();
-    }
 
     m_isStopwatchRunning = m_settings.value("Stopwatch/isStopwatchRunning").toBool();
     m_previousTimeInmsecs = m_settings.value("Stopwatch/previousTimeInmsecs").toInt();
+    if(m_previousTimeInmsecs != 0) {
+        setTotalTimeOfStopwatch(m_previousTimeInmsecs);
+    }
 }
 
 int StopwatchEngine::rowCount(const QModelIndex &parent) const
@@ -102,36 +104,41 @@ void StopwatchEngine::removeLap(int lapIndex)
     endRemoveRows();
 }
 
+void StopwatchEngine::setStopwatchStartDateTime()
+{
+    m_stopwatchStartDateTime = QDateTime::currentDateTimeUtc();
+    m_settings.setValue("Stopwatch/startDateTime", m_stopwatchStartDateTime);
+}
+
 void StopwatchEngine::startStopwatch()
 {
-    if(m_isStopwatchRunning == false)
-    {
-        m_stopwatchStartDateTime = QDateTime::currentDateTimeUtc();
-        m_settings.setValue("Stopwatch/startDateTime", m_stopwatchStartDateTime);
+    setStopwatchStartDateTime();
+    setRunning(true);
+}
 
-        setIsRunning(true);
-    }
+void StopwatchEngine::updateStopwatch()
+{
+    setTotalTimeOfStopwatch(m_previousTimeInmsecs + m_stopwatchStartDateTime.msecsTo(QDateTime::currentDateTimeUtc()));
 }
 
 void StopwatchEngine::pauseStopwatch()
 {
     setPreviousTimeOfStopwatch(m_previousTimeInmsecs + m_stopwatchStartDateTime.msecsTo(QDateTime::currentDateTimeUtc()));
-    setIsRunning(false);
+    setTotalTimeOfStopwatch(m_previousTimeInmsecs);
+    setRunning(false);
 }
 
 void StopwatchEngine::clearStopwatch()
 {
-    setTotalTimeOfStopwatch(0);
     setPreviousTimeOfStopwatch(0);
+    setTotalTimeOfStopwatch(0);
 
     beginResetModel();
     m_settings.setValue("Stopwatch/laps", QVariantList());
     endResetModel();
-
-    setIsRunning(false);
 }
 
-bool StopwatchEngine::getIsRunning()
+bool StopwatchEngine::getRunning()
 {
     return m_isStopwatchRunning;
 }
@@ -143,22 +150,14 @@ int StopwatchEngine::getPreviousTimeOfStopwatch()
 
 int StopwatchEngine::getTotalTimeOfStopwatch()
 {
-    if(m_isStopwatchRunning == false)
-    {
-        m_totalTimeInmsecs = m_previousTimeInmsecs;
-    }
-    else
-    {
-        m_totalTimeInmsecs = m_previousTimeInmsecs + m_stopwatchStartDateTime.msecsTo(QDateTime::currentDateTimeUtc());
-    }
     return m_totalTimeInmsecs;
 }
 
-void StopwatchEngine::setIsRunning(bool value)
+void StopwatchEngine::setRunning(bool value)
 {
     m_isStopwatchRunning = value;
     m_settings.setValue("Stopwatch/isStopwatchRunning", m_isStopwatchRunning);
-    emit isRunningChanged();
+    emit runningChanged();
 }
 
 void StopwatchEngine::setPreviousTimeOfStopwatch(int value)

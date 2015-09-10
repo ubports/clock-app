@@ -31,9 +31,9 @@ Item {
         id: refreshTimer
         interval: 45
         repeat: true
-        running: stopwatchEngine.isRunning
+        running: stopwatchEngine.running
         onTriggered: {
-             stopwatch.milliseconds = stopwatchEngine.totalTimeOfStopwatch
+             stopwatchEngine.updateStopwatch();
         }
     }
 
@@ -64,11 +64,11 @@ Item {
 
         Button {
             id: stopButton
-            width: stopwatchEngine.previousTimeOfStopwatch !== 0 || stopwatchEngine.isRunning ? (parent.width - parent.spacing) / 2 : parent.width
-            color: !stopwatchEngine.isRunning ? UbuntuColors.green : UbuntuColors.red
-            text: stopwatchEngine.isRunning ? i18n.tr("Stop") : (stopwatchEngine.previousTimeOfStopwatch === 0 ? i18n.tr("Start") : i18n.tr("Resume"))
+            width: stopwatchEngine.previousTimeOfStopwatch !== 0 || stopwatchEngine.running ? (parent.width - parent.spacing) / 2 : parent.width
+            color: !stopwatchEngine.running ? UbuntuColors.green : UbuntuColors.red
+            text: stopwatchEngine.running ? i18n.tr("Stop") : (stopwatchEngine.previousTimeOfStopwatch === 0 ? i18n.tr("Start") : i18n.tr("Resume"))
             onClicked: {
-                if (stopwatchEngine.isRunning) {
+                if (stopwatchEngine.running) {
                     stopwatchEngine.pauseStopwatch();
                 } else {
                     stopwatchEngine.startStopwatch();
@@ -83,12 +83,12 @@ Item {
 
         Button {
             id: lapButton
-            text: stopwatchEngine.isRunning ? i18n.tr("Lap") : i18n.tr("Clear")
-            width:  stopwatchEngine.previousTimeOfStopwatch !== 0 || stopwatchEngine.isRunning ? (parent.width - parent.spacing) / 2 : 0
+            text: stopwatchEngine.running ? i18n.tr("Lap") : i18n.tr("Clear")
+            width:  stopwatchEngine.previousTimeOfStopwatch !== 0 || stopwatchEngine.running ? (parent.width - parent.spacing) / 2 : 0
             strokeColor: UbuntuColors.lightGrey
-            visible:  stopwatchEngine.previousTimeOfStopwatch !== 0 || stopwatchEngine.isRunning
+            visible:  stopwatchEngine.previousTimeOfStopwatch !== 0 || stopwatchEngine.running
             onClicked: {
-                if (stopwatchEngine.isRunning) {
+                if (stopwatchEngine.running) {
                     stopwatchEngine.addLap()
                 } else {
                     stopwatchEngine.clearStopwatch()
@@ -116,7 +116,7 @@ Item {
         Loader {
             id: lapListViewLoader
             anchors.fill: parent
-            sourceComponent: !stopwatchEngine.isRunning && stopwatchEngine.totalTimeOfStopwatch === 0 ? undefined : lapListViewComponent
+            sourceComponent: !stopwatchEngine.running && stopwatchEngine.totalTimeOfStopwatch === 0 ? undefined : lapListViewComponent
         }
     }
 
