@@ -97,7 +97,7 @@ PageWithBottomEdge {
 
         // Show the stopwatch page on app startup if it is running
         Component.onCompleted: {
-            if (stopwatchEngine.isRunning) {
+            if (stopwatchEngine.running) {
                 positionViewAtIndex(1, ListView.SnapPosition)
             }
         }

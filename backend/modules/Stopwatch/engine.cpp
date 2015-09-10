@@ -29,7 +29,6 @@ StopwatchEngine::StopwatchEngine(QObject *parent) :
      /home/phablet/.config/com.ubuntu.clock path.
     */
     m_settings(QStandardPaths::standardLocations(QStandardPaths::ConfigLocation).first() + "/com.ubuntu.clock/com.ubuntu.clock.conf", QSettings::IniFormat),
-    m_isStopwatchRunning(false),
     m_previousTimeInmsecs(0),
     m_totalTimeInmsecs(0)
 {
@@ -42,6 +41,7 @@ StopwatchEngine::StopwatchEngine(QObject *parent) :
 
     m_isStopwatchRunning = m_settings.value("Stopwatch/isStopwatchRunning").toBool();
     m_previousTimeInmsecs = m_settings.value("Stopwatch/previousTimeInmsecs").toInt();
+
     if(m_previousTimeInmsecs != 0) {
         setTotalTimeOfStopwatch(m_previousTimeInmsecs);
     }
