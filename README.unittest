@@ -10,11 +10,11 @@ following steps below to check whether that all tests pass before proposing a
 merge request.
 
 * Branch the clock app code, 
-   $ bzr branch lp:ubuntu-clock-app/reboot
-   
+   $ bzr branch lp:ubuntu-clock-app
+
 * Build the clock app,
    $ mkdir builddir && cd builddir
-   $ cmake ..  && make
+   $ cmake ..  && cmake --build .
    
 Running all unit test at once
 =============================
