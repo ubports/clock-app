@@ -83,12 +83,6 @@ public slots:
 
     void clearStopwatch();
 
-    void setIsRunning(bool value);
-
-    void setTotalTimeOfStopwatch(int value);
-
-    void setPreviousTimeOfStopwatch(int value);
-
     bool getIsRunning();
 
     int getTotalTimeOfStopwatch();
@@ -96,6 +90,12 @@ public slots:
     int getPreviousTimeOfStopwatch();
 
 private:
+    void setIsRunning(bool value);
+
+    void setTotalTimeOfStopwatch(int value);
+
+    void setPreviousTimeOfStopwatch(int value);
+
     QSettings m_settings;
 
     QDateTime m_stopwatchStartDateTime;
