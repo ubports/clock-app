@@ -89,7 +89,7 @@ void StopwatchEngine::addLap()
 {
     QVariantList laps = m_settings.value("Stopwatch/laps").toList();
     beginInsertRows(QModelIndex(), 0, 0);
-    int timeDiff = getTotalTimeOfStopwatch();
+    int timeDiff = m_totalTimeInmsecs;
     laps.prepend(timeDiff);
     m_settings.setValue("Stopwatch/laps", laps);
     endInsertRows();
@@ -138,23 +138,28 @@ void StopwatchEngine::clearStopwatch()
     endResetModel();
 }
 
-bool StopwatchEngine::getRunning()
+bool StopwatchEngine::running() const
 {
     return m_isStopwatchRunning;
 }
 
-int StopwatchEngine::getPreviousTimeOfStopwatch()
+int StopwatchEngine::previousTimeOfStopwatch() const
 {
     return m_previousTimeInmsecs;
 }
 
-int StopwatchEngine::getTotalTimeOfStopwatch()
+int StopwatchEngine::totalTimeOfStopwatch() const
 {
     return m_totalTimeInmsecs;
 }
 
 void StopwatchEngine::setRunning(bool value)
 {
+    if(value == m_isStopwatchRunning)
+    {
+        return;
+    }
+
     m_isStopwatchRunning = value;
     m_settings.setValue("Stopwatch/isStopwatchRunning", m_isStopwatchRunning);
     emit runningChanged();
@@ -162,6 +167,11 @@ void StopwatchEngine::setRunning(bool value)
 
 void StopwatchEngine::setPreviousTimeOfStopwatch(int value)
 {
+    if(value == m_previousTimeInmsecs)
+    {
+        return;
+    }
+
     m_previousTimeInmsecs = value;
     m_settings.setValue("Stopwatch/previousTimeInmsecs", m_previousTimeInmsecs);
     emit previousTimeOfStopwatchChanged();
@@ -169,6 +179,11 @@ void StopwatchEngine::setPreviousTimeOfStopwatch(int value)
 
 void StopwatchEngine::setTotalTimeOfStopwatch(int value)
 {
+    if(value == m_totalTimeInmsecs)
+    {
+        return;
+    }
+
     m_totalTimeInmsecs = value;
     emit totalTimeOfStopwatchChanged();
 }

@@ -28,15 +28,15 @@ class StopwatchEngine : public QAbstractListModel
     Q_OBJECT
 
     Q_PROPERTY( bool running
-                READ getRunning
+                READ running
                 NOTIFY runningChanged)
 
     Q_PROPERTY( int totalTimeOfStopwatch
-                READ getTotalTimeOfStopwatch
+                READ totalTimeOfStopwatch
                 NOTIFY totalTimeOfStopwatchChanged)
 
     Q_PROPERTY( int previousTimeOfStopwatch
-                READ getPreviousTimeOfStopwatch
+                READ previousTimeOfStopwatch
                 NOTIFY previousTimeOfStopwatchChanged)
 
 signals:
@@ -79,9 +79,10 @@ public slots:
     void clearStopwatch();
     void updateStopwatch();
 
-    bool getRunning();
-    int getTotalTimeOfStopwatch();
-    int getPreviousTimeOfStopwatch();
+    // Getter functions for the properties
+    bool running() const;
+    int totalTimeOfStopwatch() const;
+    int previousTimeOfStopwatch() const;
 
 private:
     void setStopwatchStartDateTime();
