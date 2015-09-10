@@ -17,7 +17,6 @@
  */
 
 import QtQuick 2.4
-import Stopwatch 1.0
 import Ubuntu.Components 1.2
 
 Item {
@@ -119,10 +118,6 @@ Item {
             anchors.fill: parent
             sourceComponent: !stopwatchEngine.isRunning && stopwatchEngine.totalTimeOfStopwatch === 0 ? undefined : lapListViewComponent
         }
-    }
-
-    StopwatchEngine {
-        id: stopwatchEngine
     }
 
     Component {
