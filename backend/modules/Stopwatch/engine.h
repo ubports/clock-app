@@ -28,7 +28,7 @@ class StopwatchEngine : public QAbstractListModel
     Q_OBJECT
 
     Q_PROPERTY( bool isRunning
-                READ isRunning
+                READ getIsRunning
                 NOTIFY isRunningChanged)
 
     Q_PROPERTY( int totalTimeOfStopwatch
@@ -83,7 +83,13 @@ public slots:
 
     void clearStopwatch();
 
-    bool isRunning();
+    void setIsRunning(bool value);
+
+    void setTotalTimeOfStopwatch(int value);
+
+    void setPreviousTimeOfStopwatch(int value);
+
+    bool getIsRunning();
 
     int getTotalTimeOfStopwatch();
 
@@ -91,8 +97,8 @@ public slots:
 
 private:
     QSettings m_settings;
-    QDateTime m_stopwatchStartDateTime;
 
+    QDateTime m_stopwatchStartDateTime;
     bool m_isStopwatchRunning;
     int m_previousTimeInmsecs;
     int m_totalTimeInmsecs;

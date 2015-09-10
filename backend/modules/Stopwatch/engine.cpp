@@ -43,7 +43,6 @@ StopwatchEngine::StopwatchEngine(QObject *parent) :
 
     m_isStopwatchRunning = m_settings.value("Stopwatch/isStopwatchRunning").toBool();
     m_previousTimeInmsecs = m_settings.value("Stopwatch/previousTimeInmsecs").toInt();
-    emit isRunningChanged();
 }
 
 int StopwatchEngine::rowCount(const QModelIndex &parent) const
@@ -103,7 +102,6 @@ void StopwatchEngine::removeLap(int lapIndex)
     endRemoveRows();
 }
 
-
 void StopwatchEngine::startStopwatch()
 {
     if(m_isStopwatchRunning == false)
@@ -111,15 +109,40 @@ void StopwatchEngine::startStopwatch()
         m_stopwatchStartDateTime = QDateTime::currentDateTimeUtc();
         m_settings.setValue("Stopwatch/startDateTime", m_stopwatchStartDateTime);
 
-        m_isStopwatchRunning = true;
-        m_settings.setValue("Stopwatch/isStopwatchRunning", m_isStopwatchRunning);
-        emit isRunningChanged();
+        setIsRunning(true);
     }
+}
 
+void StopwatchEngine::pauseStopwatch()
+{
+    setPreviousTimeOfStopwatch(m_previousTimeInmsecs + m_stopwatchStartDateTime.msecsTo(QDateTime::currentDateTimeUtc()));
+    setIsRunning(false);
+}
+
+void StopwatchEngine::clearStopwatch()
+{
+    setTotalTimeOfStopwatch(0);
+    setPreviousTimeOfStopwatch(0);
+
+    beginResetModel();
+    m_settings.setValue("Stopwatch/laps", QVariantList());
+    endResetModel();
+
+    setIsRunning(false);
+}
+
+bool StopwatchEngine::getIsRunning()
+{
+    return m_isStopwatchRunning;
+}
+
+int StopwatchEngine::getPreviousTimeOfStopwatch()
+{
+    return m_previousTimeInmsecs;
 }
 
 int StopwatchEngine::getTotalTimeOfStopwatch()
-{    
+{
     if(m_isStopwatchRunning == false)
     {
         m_totalTimeInmsecs = m_previousTimeInmsecs;
@@ -129,46 +152,24 @@ int StopwatchEngine::getTotalTimeOfStopwatch()
         m_totalTimeInmsecs = m_previousTimeInmsecs + m_stopwatchStartDateTime.msecsTo(QDateTime::currentDateTimeUtc());
     }
     return m_totalTimeInmsecs;
-    emit totalTimeOfStopwatchChanged();
 }
 
-
-void StopwatchEngine::stopStopwatch()
+void StopwatchEngine::setIsRunning(bool value)
 {
-    m_isStopwatchRunning = false;
+    m_isStopwatchRunning = value;
     m_settings.setValue("Stopwatch/isStopwatchRunning", m_isStopwatchRunning);
-
-    m_previousTimeInmsecs = m_previousTimeInmsecs + m_stopwatchStartDateTime.msecsTo(QDateTime::currentDateTimeUtc());
-    m_settings.setValue("Stopwatch/previousTimeInmsecs", m_previousTimeInmsecs);
-
     emit isRunningChanged();
+}
+
+void StopwatchEngine::setPreviousTimeOfStopwatch(int value)
+{
+    m_previousTimeInmsecs = value;
+    m_settings.setValue("Stopwatch/previousTimeInmsecs", m_previousTimeInmsecs);
     emit previousTimeOfStopwatchChanged();
 }
 
-void StopwatchEngine::clearStopwatch()
+void StopwatchEngine::setTotalTimeOfStopwatch(int value)
 {
-    m_previousTimeInmsecs = 0;
-    m_settings.setValue("Stopwatch/previousTimeInmsecs", m_previousTimeInmsecs);
-    m_totalTimeInmsecs = 0;
-
-    emit previousTimeOfStopwatchChanged();
+    m_totalTimeInmsecs = value;
     emit totalTimeOfStopwatchChanged();
-
-    m_isStopwatchRunning = false;
-    m_settings.setValue("Stopwatch/isStopwatchRunning", m_isStopwatchRunning);
-    emit isRunningChanged();
-
-    beginResetModel();
-    m_settings.setValue("Stopwatch/laps", QVariantList());
-    endResetModel();
-}
-
-bool StopwatchEngine::isRunning()
-{
-    return m_isStopwatchRunning;
-}
-
-int StopwatchEngine::getPreviousTimeOfStopwatch()
-{
-    return m_previousTimeInmsecs;
 }
