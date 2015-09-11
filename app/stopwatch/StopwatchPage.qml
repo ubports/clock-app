@@ -17,24 +17,21 @@
  */
 
 import QtQuick 2.4
+import Stopwatch 1.0
 import Ubuntu.Components 1.2
 
 Item {
     id: _stopwatchPage
     objectName: "stopwatchPage"
 
+    property alias isRunning: stopwatchEngine.running
+
     Component.onCompleted: {
         console.log("[LOG]: Stopwatch Page Loaded")
     }
 
-    Timer {
-        id: refreshTimer
-        interval: 45
-        repeat: true
-        running: stopwatchEngine.running
-        onTriggered: {
-             stopwatchEngine.updateStopwatch();
-        }
+    StopwatchEngine {
+        id: stopwatchEngine
     }
 
     StopwatchFace {
