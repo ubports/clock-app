@@ -272,7 +272,7 @@ void StaticTimeZoneModel::loadDefaultCityList()
     addCity("Port of Spain", _("Port of Spain"), "America/Port_of_Spain", _("Trinidad and Tobago"));
     addCity("Port au Prince", _("Port au Prince"), "America/Port-au-Prince", _("Haiti"));
     addCity("Portland", _("Portland"), "America/Los_Angeles", _("United States"));
-    addCity("Prague", _("Prague"), "Europe/Prague", _("Czech"));
+    addCity("Prague", _("Prague"), "Europe/Prague", _("Czech Republic"));
     addCity("Pyongyang", _("Pyongyang"), "Asia/Pyongyang", _("North Korea"));
 
     addCity("Queensland", _("Queensland"), "Australia/Brisbane", _("United States"));

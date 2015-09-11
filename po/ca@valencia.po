@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2015-09-03 23:10+0200\n"
+"POT-Creation-Date: 2015-09-10 13:06+0200\n"
 "PO-Revision-Date: 2014-10-17 05:38+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Catalan (Valencian) <ca@valencia@li.org>\n"
@@ -15,8 +15,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2015-09-04 05:38+0000\n"
-"X-Generator: Launchpad (build 17706)\n"
+"X-Launchpad-Export-Date: 2015-09-11 06:06+0000\n"
+"X-Generator: Launchpad (build 17720)\n"
 
 #: ../app/MainPage.qml:47 ../app/alarm/AlarmUtils.qml:55
 msgid "No active alarms"
@@ -1655,7 +1655,7 @@ msgid "Prague"
 msgstr ""
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:275
-msgid "Czech"
+msgid "Czech Republic"
 msgstr ""
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:276
