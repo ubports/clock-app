@@ -21,6 +21,7 @@ import QtQuick.Layouts 1.1
 import WorldClock 1.0
 import Alarm 1.0
 import Ubuntu.Components 1.2
+import Ubuntu.Settings.Menus 0.1 as Menus
 import "../components"
 
 Page {
@@ -100,7 +101,7 @@ Page {
                     }
                 }
 
-                Slider {
+                Menus.SliderMenu {
                     anchors {
                         left: parent.left
                         right: parent.right
@@ -110,10 +111,11 @@ Page {
 
                     minimumValue: 1
                     maximumValue: 100
+                    live: true
                     value: alarmSettings.volume
 
                     onValueChanged: {
-                        alarmSettings.volume = formatValue(value)
+                        alarmSettings.volume = value
                     }
                 }
             }

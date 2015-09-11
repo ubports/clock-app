@@ -11,6 +11,7 @@ ubuntu-clock-app (3.6) UNRELEASED; urgency=medium
   * Fix wrong time after changing timezone, when stopwatch is running (LP: #1491024)
   * Reduce size of images (with tinypng.com) to decrease click image size (LP: #1492057)
   * Fix Czech Republic country name (LP: #1494004) 
+  * Fix continously move the alarm volume slider to the desired value (LP: #1492584)
 
  -- Bartosz Kosiorek <gang65@poczta.onet.pl>  Wed, 02 Sep 2015 15:16:29 +0200
 
@@ -367,7 +368,7 @@ ubuntu-clock-app (2.3) utopic; urgency=medium
 
 ubuntu-clock-app (2.2) utopic; urgency=medium
 
-  [Nekhelesh Ramananthan]
+  [ Nekhelesh Ramananthan ]
   * Split labels to allow for a different color time divider.
   * Added support for 12-hour time display.
   * Fixed CMakeList.txt for apparmor file
@@ -378,7 +379,7 @@ ubuntu-clock-app (2.2) utopic; urgency=medium
 
 ubuntu-clock-app (2.1) utopic; urgency=medium
 
-  [Nekhelesh Ramananthan]
+  [ Nekhelesh Ramananthan ]
   * Added support for creating new alarms
   * Added bottom edge for alarms
   * Added tug down add city animation
@@ -388,7 +389,7 @@ ubuntu-clock-app (2.1) utopic; urgency=medium
 
 ubuntu-clock-app (2.0) utopic; urgency=medium
 
-  [Nekhelesh Ramananthan]
+  [ Nekhelesh Ramananthan ]
   * First release of the clock app reboot
   * Implemented Digital Mode (LP: #1267146)
   * Fixed scrollable lists on scrollable pages (LP: #1227418)
@@ -406,24 +407,24 @@ ubuntu-clock-app (1.1) raring; urgency=medium
 
 ubuntu-clock-app (1.0) saucy; urgency=low
 
-  [Nekhelesh Ramananthan]
+  [ Nekhelesh Ramananthan ]
   * World Clock list needs to inform user when results cannot be retrieved due to network error (LP: #1231106)
   * Load premade presets for new user so user doesn't end up in blank app (LP: #1226131)
   * Return more fine-grained territorial divisions for city search results (LP: #1230153)
   * Improve the visual appearance of the clock, timer, stopwatch and alarm
   * Removed hour support from timer
 
-  [Sergio Schvezov]
+  [ Sergio Schvezov ]
   * Translation for desktop and debian package
   * Fix click package confinement issues
 
-  [Riccardo Padovani]
+  [ Riccardo Padovani ]
   * Alarm notifications do not appear when an alarm is triggered (LP: #1233176)
 
-  [Nicholas Skaggs]
+  [ Nicholas Skaggs ]
   * Several apps have failing tests with 20131003 ui-toolkit (LP: #1234544)
 
-  [Andrea Cerisara]
+  [ Andrea Cerisara ]
   * Autopilot Testcase Needed: Test Add World Clock (LP: #1210196)
   * Autopilot Testcase Needed: Test Delete World Clock (LP: #1210197)
 
