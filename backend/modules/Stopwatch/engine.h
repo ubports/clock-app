@@ -20,6 +20,7 @@
 #define ENGINE_H
 
 #include <QAbstractListModel>
+#include <QTimer>
 #include <QSettings>
 #include <QDateTime>
 
@@ -94,6 +95,7 @@ private:
     QSettings m_settings;
 
     QDateTime m_stopwatchStartDateTime;
+    QTimer *m_timer;
 
     bool m_isStopwatchRunning;
     int m_previousTimeInmsecs;

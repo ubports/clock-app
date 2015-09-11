@@ -27,16 +27,6 @@ Item {
         console.log("[LOG]: Stopwatch Page Loaded")
     }
 
-    Timer {
-        id: refreshTimer
-        interval: 45
-        repeat: true
-        running: stopwatchEngine.running
-        onTriggered: {
-             stopwatchEngine.updateStopwatch();
-        }
-    }
-
     StopwatchFace {
         id: stopwatch
         objectName: "stopwatch"
