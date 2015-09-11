@@ -6,6 +6,7 @@ ubuntu-clock-app (3.6) UNRELEASED; urgency=medium
   * Added sections headers to separate custom and default alarm sounds (LP: #1487735)
   * Removed ListItemWithActions upstream component and also fixed the user
     world city list count never decreasing to 0. (LP: #1368393)
+  * Fixed incorrect usage of public slots and Q_INVOKABLE in c++ classes (LP: #1494756)
 
   [ Bartosz Kosiorek ]
   * Fix wrong time after changing timezone, when stopwatch is running (LP: #1491024)
