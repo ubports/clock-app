@@ -17,14 +17,21 @@
  */
 
 import QtQuick 2.4
+import Stopwatch 1.0
 import Ubuntu.Components 1.2
 
 Item {
     id: _stopwatchPage
     objectName: "stopwatchPage"
 
+    property alias isRunning: stopwatchEngine.running
+
     Component.onCompleted: {
         console.log("[LOG]: Stopwatch Page Loaded")
+    }
+
+    StopwatchEngine {
+        id: stopwatchEngine
     }
 
     StopwatchFace {

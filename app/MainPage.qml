@@ -19,7 +19,6 @@
 import QtQuick 2.4
 import Ubuntu.Components 1.2
 import QtSystemInfo 5.0
-import Stopwatch 1.0
 import Qt.labs.settings 1.0
 import "upstreamcomponents"
 import "alarm"
@@ -58,12 +57,8 @@ PageWithBottomEdge {
 
     ScreenSaver {
         // Disable screen dimming/off when stopwatch is running
-        screenSaverEnabled: !stopwatchEngine.running
-    }
-
-    StopwatchEngine {
-        id: stopwatchEngine
-    }
+        screenSaverEnabled: !stopwatchPage.isRunning
+    }    
 
     VisualItemModel {
         id: navigationModel
@@ -97,7 +92,7 @@ PageWithBottomEdge {
 
         // Show the stopwatch page on app startup if it is running
         Component.onCompleted: {
-            if (stopwatchEngine.running) {
+            if (stopwatchPage.isRunning) {
                 positionViewAtIndex(1, ListView.SnapPosition)
             }
         }
