@@ -35,6 +35,7 @@ StopwatchEngine::StopwatchEngine(QObject *parent) :
     qDebug() << "[LOG] Loading laps from " << m_settings.fileName();
 
     m_timer = new QTimer(this);
+    m_timer->setInterval(45);
     connect(m_timer, SIGNAL(timeout()), this, SLOT(updateStopwatch()));
 
     QDateTime startTime = m_settings.value("Stopwatch/startDateTime").toDateTime();
@@ -52,7 +53,7 @@ StopwatchEngine::StopwatchEngine(QObject *parent) :
 
     if(m_isStopwatchRunning == true)
     {
-        m_timer->start(45);
+        m_timer->start();
     }
 }
 
@@ -123,7 +124,7 @@ void StopwatchEngine::startStopwatch()
 {
     setStopwatchStartDateTime();
     setRunning(true);
-    m_timer->start(45);
+    m_timer->start();
 }
 
 void StopwatchEngine::updateStopwatch()
