@@ -58,7 +58,7 @@ PageWithBottomEdge {
 
     ScreenSaver {
         // Disable screen dimming/off when stopwatch is running
-        screenSaverEnabled: !stopwatchEngine.isRunning
+        screenSaverEnabled: !stopwatchEngine.running
     }
 
     StopwatchEngine {
@@ -97,7 +97,7 @@ PageWithBottomEdge {
 
         // Show the stopwatch page on app startup if it is running
         Component.onCompleted: {
-            if (stopwatchEngine.isRunning) {
+            if (stopwatchEngine.running) {
                 positionViewAtIndex(1, ListView.SnapPosition)
             }
         }
