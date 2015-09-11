@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2015-09-03 23:10+0200\n"
-"PO-Revision-Date: 2015-09-08 10:30+0000\n"
+"POT-Creation-Date: 2015-09-10 13:06+0200\n"
+"PO-Revision-Date: 2015-09-10 11:02+0000\n"
 "Last-Translator: Bartosz Kosiorek <Unknown>\n"
 "Language-Team: Polish <pl@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -16,8 +16,8 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2;\n"
-"X-Launchpad-Export-Date: 2015-09-09 05:45+0000\n"
-"X-Generator: Launchpad (build 17706)\n"
+"X-Launchpad-Export-Date: 2015-09-11 06:05+0000\n"
+"X-Generator: Launchpad (build 17720)\n"
 
 #: ../app/MainPage.qml:47 ../app/alarm/AlarmUtils.qml:55
 msgid "No active alarms"
@@ -199,7 +199,7 @@ msgstr "Czas całkowity"
 
 #: ../app/stopwatch/StopwatchPage.qml:114
 msgid "Stop"
-msgstr "Stop"
+msgstr "Zatrzymaj"
 
 #: ../app/stopwatch/StopwatchPage.qml:114
 msgid "Start"
@@ -1657,8 +1657,8 @@ msgid "Prague"
 msgstr "Praga"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:275
-msgid "Czech"
-msgstr "Czechy"
+msgid "Czech Republic"
+msgstr ""
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:276
 msgid "Pyongyang"
