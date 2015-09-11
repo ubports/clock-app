@@ -58,7 +58,7 @@ Item {
         
         Rectangle {
             height: parent.height
-            x: listview.currentIndex == 0 ? 0 : parent.width-width
+            x: listview.currentIndex == 0 ? 0 : parent.width - width
             width: units.gu(5.5)
             color: UbuntuColors.orange
             Behavior on x {

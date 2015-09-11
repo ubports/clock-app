@@ -56,13 +56,13 @@ PageWithBottomEdge {
         id: alarmUtils
     }
 
+    StopwatchEngine {
+        id: stopwatchEngine
+    }
+
     ScreenSaver {
         // Disable screen dimming/off when stopwatch is running
         screenSaverEnabled: !stopwatchEngine.running
-    }
-
-    StopwatchEngine {
-        id: stopwatchEngine
     }
 
     VisualItemModel {
@@ -95,13 +95,6 @@ PageWithBottomEdge {
     ListView {
         id: listview
 
-        // Show the stopwatch page on app startup if it is running
-        Component.onCompleted: {
-            if (stopwatchEngine.running) {
-                positionViewAtIndex(1, ListView.SnapPosition)
-            }
-        }
-
         anchors {
             top: headerRow.bottom
             left: parent.left
@@ -115,5 +108,12 @@ PageWithBottomEdge {
         interactive: false
         highlightMoveDuration: UbuntuAnimation.BriskDuration
         highlightRangeMode: ListView.StrictlyEnforceRange
+
+        // Show the stopwatch page on app startup if it is running
+        Component.onCompleted: {
+            if (stopwatchEngine.running) {
+                positionViewAtIndex(1, ListView.SnapPosition)
+            }
+        }
     }
 }

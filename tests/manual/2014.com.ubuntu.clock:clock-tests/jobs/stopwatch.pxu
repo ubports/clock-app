@@ -6,15 +6,16 @@ _description:
     Test to check if stopwatch is working properly after timezone change, without closing Stopwatch
     1. Launch the clock app.
         Clock app opens showing the current local time.
-    2. Press stopwatch icon on the top of the screen.
-        Stopwatch opens, it is not running. The stopwatch main display shows 00:00:00 000.
-    3. Press Start button.
-        The main display caunting time. The Start button disappers and the buttons Stop and Lap appear.
-    4. Press Lap button.
-        New lap row is appering together with header.
+    2. Press the Stopwatch icon on the top of the screen.
+        Stopwatch is visible and is not running. The Stopwatch main display shows 00:00:00 000.
+    3. Press the Start button.
+        The main display starts counting time. The Start button disappears and the buttons Stop and Lap appear.
+    4. Press the Lap button.
+        New lap row appears together with the lap header.    
     5. Switch to the system settings app. Navigate to Date & Time.
         The field with current timezone should be visible. Remember current timezone setting.
-    6. Press current timezone field and change timezone to some different.
-        The field Time zone: was changed to selected timezone.
+    6. Press the current timezone field and change system timezone to something different.
+        The timezone field now shows the newly selected timezone.
     7. Switch to clock app.
-        Stopwatch should appearing instantly. Hours in stopwatch was not changed to different values 
+        The stopwatch hours has not changed. The stopwatch should have incremented by just a few seconds (at most a minute).
+
