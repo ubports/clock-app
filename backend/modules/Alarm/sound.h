@@ -36,21 +36,20 @@ public:
 
     QString customAlarmSoundDirectory() const;
 
-public slots:
-    void deleteCustomAlarmSound(const QString &soundName);
+    Q_INVOKABLE void deleteCustomAlarmSound(const QString &soundName);
 
     // Function to delete old alarm file sound according to file name from full path.
     // It will able to replace sound alarm with new version
-    void prepareToAddAlarmSound(const QString &soundPath);
+    Q_INVOKABLE void prepareToAddAlarmSound(const QString &soundPath);
 
-    void createCustomAlarmSoundDirectory();
+    Q_INVOKABLE void createCustomAlarmSoundDirectory();
 
-    bool isAlarmSoundValid(const QString &soundFileName);
-    bool isAlarmSoundValid(const QUrl &soundUrl);
+    Q_INVOKABLE bool isAlarmSoundValid(const QString &soundFileName);
+    Q_INVOKABLE bool isAlarmSoundValid(const QUrl &soundUrl);
 
-    QString getDefaultAlarmSoundPath(const QString &soundFileName) const;
+    Q_INVOKABLE QString getDefaultAlarmSoundPath(const QString &soundFileName) const;
 
-    QString getSoundName(const QString &soundPath) const;
+    Q_INVOKABLE QString getSoundName(const QString &soundPath) const;
 
 private:
     QString m_customAlarmDir;
