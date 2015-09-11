@@ -71,19 +71,20 @@ public:
     */
     QHash<int, QByteArray> roleNames() const override;
 
-public slots:
-    void addLap();
-    void removeLap(int lapIndex);
-
-    void startStopwatch();
-    void pauseStopwatch();
-    void clearStopwatch();
-    void updateStopwatch();
-
     // Getter functions for the properties
     bool running() const;
     int totalTimeOfStopwatch() const;
     int previousTimeOfStopwatch() const;
+
+    Q_INVOKABLE void addLap();
+    Q_INVOKABLE void removeLap(int lapIndex);
+
+    Q_INVOKABLE void startStopwatch();
+    Q_INVOKABLE void pauseStopwatch();
+    Q_INVOKABLE void clearStopwatch();
+
+private slots:
+    void updateStopwatch();    
 
 private:
     void setStopwatchStartDateTime();
