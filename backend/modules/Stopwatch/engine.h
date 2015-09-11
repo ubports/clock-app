@@ -96,7 +96,7 @@ private:
     QSettings m_settings;
 
     QDateTime m_stopwatchStartDateTime;
-    QTimer *m_timer;
+    QTimer m_timer;
 
     bool m_isStopwatchRunning;
     int m_previousTimeInmsecs;
