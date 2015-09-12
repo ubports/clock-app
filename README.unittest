@@ -14,7 +14,7 @@ merge request.
 
 * Build the clock app,
    $ mkdir builddir && cd builddir
-   $ cmake ..  && cmake --build .
+   $ cmake ..  && cmake --build . -- -j 3
    
 Running all unit test at once
 =============================
