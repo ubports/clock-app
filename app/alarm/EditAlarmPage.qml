@@ -246,13 +246,14 @@ Page {
             mode: "Hours|Minutes"
             date: {
                 if(isNewAlarm) {
+                    var date = new Date();
                     return new Date
                             (
-                                currentTime.localDateString.split(":")[0],
-                                currentTime.localDateString.split(":")[1] - 1,
-                                currentTime.localDateString.split(":")[2],
-                                currentTime.localTimeString.split(":")[0],
-                                Math.ceil((parseInt(currentTime.localTimeString
+                                date.getFullYear(),
+                                date.getMonth(),
+                                date.getDate(),
+                                currentTime.localAnalogTimeString.split(":")[0],
+                                Math.ceil((parseInt(currentTime.localAnalogTimeString
                                                    .split(":")[1]) + 1) / 5) * 5,
                                 0,
                                 0
