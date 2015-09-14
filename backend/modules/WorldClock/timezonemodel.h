@@ -53,6 +53,7 @@ public:
         RoleCityName,
         RoleCountryName,
         RoleTimeZoneId,
+        RoleAnalogTimeString,
         RoleTimeString,
         RoleTimeTo,
     };
