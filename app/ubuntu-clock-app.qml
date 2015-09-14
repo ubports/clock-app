@@ -143,7 +143,7 @@ MainView {
 
             alarmModel: alarmModelLoader.item
             bottomEdgeEnabled: alarmModelLoader.status === Loader.Ready && alarmModelLoader.item.isReady && isClockPage
-            clockTime: new Date
+            clockTimeInMain: new Date
                        (
                            localTimeSource.localDateString.split(":")[0],
                            localTimeSource.localDateString.split(":")[1]-1,

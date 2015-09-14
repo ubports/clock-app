@@ -31,7 +31,7 @@ PageWithBottomEdge {
     objectName: "mainPage"
 
     // Property to keep track of the clock time
-    property var clockTime: new Date()
+    property var clockTimeInMain: new Date()
 
     // Property to keep track of an app cold start status
     property alias isColdStart: clockPage.isColdStart
@@ -43,7 +43,7 @@ PageWithBottomEdge {
     property var alarmModel
 
     flickable: null
-    bottomEdgeTitle: _mainPage.visible ? alarmUtils.set_bottom_edge_title(alarmModel, clockTime)
+    bottomEdgeTitle: _mainPage.visible ? alarmUtils.set_bottom_edge_title(alarmModel, clockTimeInMain)
                                        : i18n.tr("No active alarms")
 
     Component.onCompleted: {
@@ -72,7 +72,7 @@ PageWithBottomEdge {
         id: navigationModel
         ClockPage {
             id: clockPage
-            clockTime: _mainPage.clockTime
+            clockTimeInClockPage: _mainPage.clockTimeInMain
             width: clockApp.width
             height: listview.height
         }

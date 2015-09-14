@@ -32,7 +32,7 @@ Item {
     property alias isDigital: clock.isDigital
 
     // Property to keep track of the clock time
-    property var clockTime: new Date()
+    property var clockTimeInClockPage: new Date()
 
     // Property to keep track of app cold start status
     property alias isColdStart: clock.isColdStart
@@ -164,7 +164,7 @@ Item {
             geoposition.lastUpdate = analogTime
         }
 
-        analogTime: clockTime
+        analogTime: clockTimeInClockPage
 
         anchors {
             verticalCenter: parent.top
