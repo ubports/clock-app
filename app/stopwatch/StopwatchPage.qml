@@ -24,69 +24,21 @@ Item {
     id: _stopwatchPage
     objectName: "stopwatchPage"
 
-    property date startTime: getUTCDate()
-    property date snapshot: startTime
-    property bool running: false
-
-    property int timeDiff: snapshot - startTime
-    property int oldDiff: 0
-
-    property int totalTimeDiff: timeDiff + oldDiff
+    property alias isRunning: stopwatchEngine.running
 
     Component.onCompleted: {
         console.log("[LOG]: Stopwatch Page Loaded")
     }
 
-    function getUTCDate() {
-        var localDate = new Date()
-        return new Date(localDate.getUTCFullYear(),
-                        localDate.getUTCMonth(),
-                        localDate.getUTCDate(),
-                        localDate.getUTCHours(),
-                        localDate.getUTCMinutes(),
-                        localDate.getUTCSeconds(),
-                        localDate.getUTCMilliseconds())
-    }
-
-    function start() {
-        startTime = getUTCDate()
-        snapshot = startTime
-        running = true
-    }
-
-    function stop() {
-        oldDiff += timeDiff
-        startTime = getUTCDate()
-        snapshot = startTime
-        running = false
-    }
-
-    function update() {
-        snapshot = getUTCDate()
-    }
-
-    function clear() {
-        oldDiff = 0
-        startTime = getUTCDate()
-        snapshot = startTime
-        lapHistory.clear()
-    }
-
-    Timer {
-        id: refreshTimer
-        interval: 45
-        repeat: true
-        running: _stopwatchPage.running
-        onTriggered: {
-            _stopwatchPage.update()
-        }
+    StopwatchEngine {
+        id: stopwatchEngine
     }
 
     StopwatchFace {
         id: stopwatch
         objectName: "stopwatch"
 
-        milliseconds: _stopwatchPage.totalTimeDiff
+        milliseconds: stopwatchEngine.totalTimeOfStopwatch
 
         anchors {
             top: parent.top
@@ -109,14 +61,14 @@ Item {
 
         Button {
             id: stopButton
-            width: oldDiff !== 0 || running ? (parent.width - parent.spacing) / 2 : parent.width
-            color: !_stopwatchPage.running ? UbuntuColors.green : UbuntuColors.red
-            text: _stopwatchPage.running ? i18n.tr("Stop") : (oldDiff === 0 ? i18n.tr("Start") : i18n.tr("Resume"))
+            width: stopwatchEngine.previousTimeOfStopwatch !== 0 || stopwatchEngine.running ? (parent.width - parent.spacing) / 2 : parent.width
+            color: !stopwatchEngine.running ? UbuntuColors.green : UbuntuColors.red
+            text: stopwatchEngine.running ? i18n.tr("Stop") : (stopwatchEngine.previousTimeOfStopwatch === 0 ? i18n.tr("Start") : i18n.tr("Resume"))
             onClicked: {
-                if (_stopwatchPage.running) {
-                    _stopwatchPage.stop()
+                if (stopwatchEngine.running) {
+                    stopwatchEngine.pauseStopwatch();
                 } else {
-                    _stopwatchPage.start()
+                    stopwatchEngine.startStopwatch();
                 }
             }
             Behavior on width {
@@ -128,16 +80,15 @@ Item {
 
         Button {
             id: lapButton
-            text: _stopwatchPage.running ? i18n.tr("Lap") : i18n.tr("Clear")
-            width: oldDiff !== 0 || running ? (parent.width - parent.spacing) / 2 : 0
+            text: stopwatchEngine.running ? i18n.tr("Lap") : i18n.tr("Clear")
+            width:  stopwatchEngine.previousTimeOfStopwatch !== 0 || stopwatchEngine.running ? (parent.width - parent.spacing) / 2 : 0
             strokeColor: UbuntuColors.lightGrey
-            visible: oldDiff !== 0 || running
+            visible:  stopwatchEngine.previousTimeOfStopwatch !== 0 || stopwatchEngine.running
             onClicked: {
-                if (_stopwatchPage.running) {
-                    _stopwatchPage.update()
-                    lapHistory.addLap(_stopwatchPage.totalTimeDiff)
+                if (stopwatchEngine.running) {
+                    stopwatchEngine.addLap()
                 } else {
-                    _stopwatchPage.clear()
+                    stopwatchEngine.clearStopwatch()
                 }
             }
             Behavior on width {
@@ -162,19 +113,15 @@ Item {
         Loader {
             id: lapListViewLoader
             anchors.fill: parent
-            sourceComponent: !_stopwatchPage.running && _stopwatchPage.totalTimeDiff == 0 ? undefined : lapListViewComponent
+            sourceComponent: !stopwatchEngine.running && stopwatchEngine.totalTimeOfStopwatch === 0 ? undefined : lapListViewComponent
         }
-    }
-
-    LapHistory {
-        id: lapHistory
     }
 
     Component {
         id: lapListViewComponent
         LapListView {
             id: lapListView
-            model: lapHistory
+            model: stopwatchEngine
         }
     }
 }

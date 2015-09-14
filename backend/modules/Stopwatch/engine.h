@@ -16,15 +16,39 @@
  *                                                                           *
  ****************************************************************************/
 
-#ifndef HISTORY_H
-#define HISTORY_H
+#ifndef ENGINE_H
+#define ENGINE_H
 
 #include <QAbstractListModel>
+#include <QTimer>
 #include <QSettings>
+#include <QDateTime>
 
-class LapHistory : public QAbstractListModel
+class StopwatchEngine : public QAbstractListModel
 {
     Q_OBJECT
+
+    Q_PROPERTY( bool running
+                READ running
+                NOTIFY runningChanged)
+
+    Q_PROPERTY( int totalTimeOfStopwatch
+                READ totalTimeOfStopwatch
+                NOTIFY totalTimeOfStopwatchChanged)
+
+    Q_PROPERTY( int previousTimeOfStopwatch
+                READ previousTimeOfStopwatch
+                NOTIFY previousTimeOfStopwatchChanged)
+
+signals:
+    // Signal to notify the running status change to QML
+    void runningChanged();
+
+    // Signal to notify the total time change to QML
+    void totalTimeOfStopwatchChanged();
+
+    // Signal to notify the total time change to QML
+    void previousTimeOfStopwatchChanged();
 
 public:
     enum Role {
@@ -32,7 +56,7 @@ public:
         RoleDiffToPrevious
     };
 
-    explicit LapHistory(QObject *parent = 0);
+    explicit StopwatchEngine(QObject *parent = 0);
 
     /*
      Let's override the pure virtual functions (the ones marked as
@@ -47,18 +71,36 @@ public:
     */
     QHash<int, QByteArray> roleNames() const override;
 
-public slots:
-    // Function to add a stopwatch lap
-    void addLap(int timeDiff);
+    // Getter functions for the properties
+    bool running() const;
+    int totalTimeOfStopwatch() const;
+    int previousTimeOfStopwatch() const;
 
-    // Function to remove a stopwatch lap
-    void removeLap(int lapIndex);
+    Q_INVOKABLE void addLap();
+    Q_INVOKABLE void removeLap(int lapIndex);
 
-    // Function to clear all stopwatch laps
-    void clear();
+    Q_INVOKABLE void startStopwatch();
+    Q_INVOKABLE void pauseStopwatch();
+    Q_INVOKABLE void clearStopwatch();
+
+private slots:
+    void updateStopwatch();    
 
 private:
+    void setStopwatchStartDateTime();
+
+    void setRunning(bool value);
+    void setTotalTimeOfStopwatch(int value);
+    void setPreviousTimeOfStopwatch(int value);
+
     QSettings m_settings;
+
+    QDateTime m_stopwatchStartDateTime;
+    QTimer m_timer;
+
+    bool m_isStopwatchRunning;
+    int m_previousTimeInmsecs;
+    int m_totalTimeInmsecs;
 };
 
-#endif // HISTORY_H
+#endif // ENGINE_H
