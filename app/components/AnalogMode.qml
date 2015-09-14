@@ -53,7 +53,7 @@ ClockCircle {
         smooth: true
         source: "../graphics/Hour_Hand.png"
         fillMode: Image.PreserveAspectFit
-        rotation: (analogTime.getHours() * 30) + (analogTime.getMinutes() / 2)
+        rotation: (parseInt(analogTime.split(":")[0]) * 30) + (parseInt(analogTime.split(":")[1]) / 2)
     }
 
     Image {
@@ -65,7 +65,7 @@ ClockCircle {
         smooth: true
         source: "../graphics/Minute_Hand.png"
         fillMode: Image.PreserveAspectFit
-        rotation: (analogTime.getMinutes() * 6) + (analogTime.getSeconds() / 10)
+        rotation: (parseInt(analogTime.split(":")[1]) * 6) + (parseInt(analogTime.split(":")[2]) / 10)
     }
 
     Image {
@@ -78,7 +78,7 @@ ClockCircle {
         visible: showSeconds
         source: "../graphics/Second_Hand.png"
         fillMode: Image.PreserveAspectFit
-        rotation: visible ? analogTime.getSeconds() * 6 : 0
+        rotation: visible ? parseInt(analogTime.split(":")[2]) * 6 : 0
     }
 
     Image {

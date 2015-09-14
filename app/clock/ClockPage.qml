@@ -106,7 +106,7 @@ Item {
              If Clock App is brought from background after more than 30 mins,
              query the user location to ensure it is up to date.
             */
-            if(applicationState
+            /*if(applicationState
                     && Math.abs(clock.analogTime - geoposition.lastUpdate) > 1800000) {
                 if(!geoposition.active)
                     geoposition.start()
@@ -114,7 +114,7 @@ Item {
 
             else if (!applicationState) {
                 geoposition.lastUpdate = clock.analogTime
-            }
+            }*/
         }
     }
 
@@ -182,7 +182,7 @@ Item {
             horizontalCenter: parent.horizontalCenter
         }
 
-        text: clock.analogTime.toLocaleDateString()
+        text: clock.analogTime
 
         opacity: 0
         color: locationRow.visible ? Theme.palette.normal.baseText : UbuntuColors.midAubergine

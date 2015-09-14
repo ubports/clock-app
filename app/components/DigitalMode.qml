@@ -55,7 +55,7 @@ ClockCircle {
 
         color: UbuntuColors.midAubergine
         font.pixelSize: units.dp(1)
-        text: {
+        text: analogTime/*{
             if (time.search(Qt.locale().amText) !== -1) {
                 // 12 hour format detected with the localised AM text
                 return time.replace(Qt.locale().amText, "").trim()
@@ -68,7 +68,7 @@ ClockCircle {
                 // 24-hour format detected, return full time string
                 return time
             }
-        }
+        }*/
     }
 
     Label {
@@ -80,7 +80,7 @@ ClockCircle {
         color: UbuntuColors.midAubergine
         font.pixelSize: units.dp(1)
         visible: text !== ""
-        text: {
+        text: analogTime/*{
             if (time.search(Qt.locale().amText) !== -1) {
                 // 12 hour format detected with the localised AM text
                 return Qt.locale().amText
@@ -93,7 +93,7 @@ ClockCircle {
                 // 24-hour format detected
                 return ""
             }
-        }
+        }*/
     }
 
     SequentialAnimation {

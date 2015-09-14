@@ -120,7 +120,7 @@ Page {
         id: alarmListView
         model: alarmModel
         anchors.fill: parent
-        localTime: clockTime
+        localTime: clockTimeInMain
     }
 
     Loader {

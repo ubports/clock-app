@@ -24,7 +24,7 @@ DateTime::DateTime(QObject *parent) :
     QObject(parent)
 {
     // Initialise the date and time at start rather than wait for a sec to do so.
-    m_localtime = QDateTime::currentDateTime().toString("hh:mm:ss:z");
+    m_localtime = QDateTime::currentDateTime().toString("hh:mm:ss");
     m_localdate = QDateTime::currentDateTime().toString("yyyy:M:d");
 
     m_updateTimer.setInterval(1000);
@@ -45,7 +45,7 @@ QString DateTime::localDateString() const
 
 void DateTime::update()
 {
-    m_localtime = QDateTime::currentDateTime().toString("hh:mm:ss:z");
+    m_localtime = QDateTime::currentDateTime().toString("hh:mm:ss");
     emit localTimeStringChanged();
 
     m_localdate = QDateTime::currentDateTime().toString("yyyy:M:d");

@@ -93,7 +93,7 @@ ListItem {
             innerCircleWidth: units.gu(5)
             width: units.gu(7)
 
-            analogTime: getTime(model.localTime)
+            analogTime: model.localTime
 
             anchors.centerIn: parent
 
