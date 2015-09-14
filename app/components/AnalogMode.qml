@@ -65,7 +65,7 @@ ClockCircle {
         smooth: true
         source: "../graphics/Minute_Hand.png"
         fillMode: Image.PreserveAspectFit
-        rotation: (parseInt(analogTime.split(":")[1]) * 6) + (parseInt(analogTime.split(":")[2]) / 10)
+        rotation: (parseInt(analogTime.split(":")[1]) * 6)
     }
 
     Image {

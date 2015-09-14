@@ -81,6 +81,7 @@ ListItem {
                  into a time object here.
                 */
             function getTime(timeString) {
+
                 var properTime = new Date()
                 properTime.setHours(timeString.split(":")[0])
                 properTime.setMinutes(timeString.split(":")[1])
@@ -94,6 +95,7 @@ ListItem {
             width: units.gu(7)
 
             analogTime: model.localTime
+            localizedTimeString: model.localTime
 
             anchors.centerIn: parent
 

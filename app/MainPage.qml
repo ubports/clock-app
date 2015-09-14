@@ -31,6 +31,7 @@ PageWithBottomEdge {
     objectName: "mainPage"
 
     // Property to keep track of the clock time
+    property var clockAnalogTimeInMain
     property var clockTimeInMain
 
     property var clockDateInMain
@@ -74,6 +75,7 @@ PageWithBottomEdge {
         id: navigationModel
         ClockPage {
             id: clockPage
+            clockAnalogTimeInClockPage: _mainPage.clockAnalogTimeInMain
             clockTimeInClockPage: _mainPage.clockTimeInMain
             clockDateInClockPage: _mainPage.clockDateInMain
             width: clockApp.width

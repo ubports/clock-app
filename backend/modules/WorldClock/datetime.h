@@ -42,11 +42,16 @@ class DateTime : public QObject
     */
 
     // Property to determine the local time string (format hh:mm:ss)
+    Q_PROPERTY(QString localAnalogTimeString
+               READ localAnalogTimeString
+               NOTIFY localAnalogTimeStringChanged)
+
+    // Property to determine the local time string (format Qt::DefaultLocaleShortDate)
     Q_PROPERTY(QString localTimeString
                READ localTimeString
                NOTIFY localTimeStringChanged)
 
-    // Property to determine the local date string (format yyyy:M:d)
+    // Property to determine the local date string (format Qt::DefaultLocaleLongDate)
     Q_PROPERTY(QString localDateString
                READ localDateString
                NOTIFY localDateStringChanged)
@@ -59,6 +64,8 @@ public:
     // Function to set the update interval
     void setUpdateInterval(int updateInterval);
 
+    QString localAnalogTimeString() const;
+
     // Function to read the local time string
     QString localTimeString() const;
 
@@ -66,6 +73,9 @@ public:
     QString localDateString() const;
 
 signals:
+
+    void localAnalogTimeStringChanged();
+
     // Signal to notify the local time string change to QML
     void localTimeStringChanged();
 
@@ -84,6 +94,7 @@ public slots:
 
 private:
     // Private copies of the local time and date
+    QString m_localanalogtime;
     QString m_localtime;
     QString m_localdate;
 
