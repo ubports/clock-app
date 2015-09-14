@@ -22,16 +22,6 @@ from autopilot import logging as autopilot_logging
 from autopilot.introspection import dbus
 from testtools.matchers import GreaterThan
 
-
-from autopilot import introspection
-
-from ubuntuuitoolkit._custom_proxy_objects import (
-    _common,
-    popups,
-    _tabs,
-    _toolbar,
-)
-
 from ubuntuuitoolkit import pickers
 import ubuntuuitoolkit
 
