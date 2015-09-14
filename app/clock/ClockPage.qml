@@ -32,7 +32,9 @@ Item {
     property alias isDigital: clock.isDigital
 
     // Property to keep track of the clock time
-    property var clockTimeInClockPage: new Date()
+    property var clockTimeInClockPage
+
+    property var clockDateInClockPage
 
     // Property to keep track of app cold start status
     property alias isColdStart: clock.isColdStart
@@ -165,6 +167,7 @@ Item {
         }
 
         analogTime: clockTimeInClockPage
+        localizedDateString: clockDateInClockPage
 
         anchors {
             verticalCenter: parent.top
@@ -182,7 +185,7 @@ Item {
             horizontalCenter: parent.horizontalCenter
         }
 
-        text: clock.analogTime
+        text: clock.localizedDateString
 
         opacity: 0
         color: locationRow.visible ? Theme.palette.normal.baseText : UbuntuColors.midAubergine

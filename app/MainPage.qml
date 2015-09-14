@@ -31,7 +31,9 @@ PageWithBottomEdge {
     objectName: "mainPage"
 
     // Property to keep track of the clock time
-    property var clockTimeInMain: new Date()
+    property var clockTimeInMain
+
+    property var clockDateInMain
 
     // Property to keep track of an app cold start status
     property alias isColdStart: clockPage.isColdStart
@@ -73,6 +75,7 @@ PageWithBottomEdge {
         ClockPage {
             id: clockPage
             clockTimeInClockPage: _mainPage.clockTimeInMain
+            clockDateInClockPage: _mainPage.clockDateInMain
             width: clockApp.width
             height: listview.height
         }

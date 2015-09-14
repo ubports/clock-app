@@ -44,6 +44,8 @@ ClockCircle {
     // Property to set the analog time
     property var analogTime
 
+    property var localizedDateString
+
     // Property to set the digital time label
     property string time: Qt.formatTime(analogTime)
 
