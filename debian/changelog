@@ -12,6 +12,7 @@ ubuntu-clock-app (3.6) UNRELEASED; urgency=medium
   * Fix wrong time after changing timezone, when stopwatch is running (LP: #1491024)
   * Reduce size of images (with tinypng.com) to decrease click image size (LP: #1492057)
   * Fix Czech Republic country name (LP: #1494004) 
+  * Fix stopwatch issue appering during changing timezone during runtime (LP: #1493358)
 
  -- Bartosz Kosiorek <gang65@poczta.onet.pl>  Wed, 02 Sep 2015 15:16:29 +0200
 

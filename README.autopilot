@@ -32,7 +32,7 @@ Using terminal:
 
 *  Build the clock app,
     $ mkdir builddir && cd builddir
-    $ cmake .. && make
+    $ cmake .. && cmake --build . -- -j 3
     $ cd ..
 
 *  Navigate to the tests/autopilot directory.

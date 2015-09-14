@@ -57,15 +57,7 @@ PageWithBottomEdge {
 
     ScreenSaver {
         // Disable screen dimming/off when stopwatch is running
-        screenSaverEnabled: !stopwatchPage.running
-    }
-
-    Settings {
-        id: stopwatchState
-        category: "Stopwatch"
-        property alias startTime: stopwatchPage.startTime
-        property alias running: stopwatchPage.running
-        property alias oldDiff: stopwatchPage.oldDiff
+        screenSaverEnabled: !stopwatchPage.isRunning
     }
 
     VisualItemModel {
@@ -100,8 +92,9 @@ PageWithBottomEdge {
 
         // Show the stopwatch page on app startup if it is running
         Component.onCompleted: {
-            if (stopwatchState.running)
+            if (stopwatchPage.isRunning) {
                 positionViewAtIndex(1, ListView.SnapPosition)
+            }
         }
 
         anchors {
