@@ -120,7 +120,7 @@ Page {
         id: alarmListView
         model: alarmModel
         anchors.fill: parent
-        localTime: clockTimeInMain
+        localTime: new Date //FIXME clockTimeInMain
     }
 
     Loader {
