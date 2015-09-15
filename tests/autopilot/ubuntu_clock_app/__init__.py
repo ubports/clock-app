@@ -49,6 +49,11 @@ class ClockApp(object):
 
 class MainView(ubuntuuitoolkit.MainView):
 
+    # bug 1341671 means AP sees this as MainView12
+    @classmethod
+    def get_type_query_name(cls):
+        return 'MainView12'
+
     @autopilot_logging.log_action(logger.info)
     def open_clock(self):
         """Open the Clock Page.
@@ -68,7 +73,7 @@ class MainView(ubuntuuitoolkit.MainView):
         clockPage = self.open_clock()
         clockPage.reveal_bottom_edge_page()
         self.get_header().visible.wait_for(True)
-        return self.wait_select_single(Page11)
+        return self.wait_select_single(AlarmPage)
 
     def get_AlarmList(self):
         """ Get the AlarmList object. """
@@ -92,11 +97,12 @@ class Page(ubuntuuitoolkit.UbuntuUIToolkitCustomProxyObjectBase):
         self.main_view = self.get_root_instance().select_single(MainView)
 
 
-class PageWithBottomEdge(MainView):
+class PageWithBottomEdge(Page):
     """
     An emulator class that makes it easy to interact with the bottom edge
     swipe page
     """
+
     def __init__(self, *args):
         super(PageWithBottomEdge, self).__init__(*args)
 
@@ -191,7 +197,7 @@ class ClockPage(PageWithBottomEdge):
         self.pointing_device.click_object(deleteButton)
 
 
-class Page11(Page):
+class AlarmPage(Page):
     """Autopilot helper for the Alarm page."""
 
     @autopilot_logging.log_action(logger.info)
