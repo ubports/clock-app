@@ -51,9 +51,20 @@ QtObject {
     }
 
     // Function to set the bottom edge title with "Next Active in..."
-    function set_bottom_edge_title(alarmModel, clockTime) {
+    function set_bottom_edge_title(alarmModel, clockTimeString) {
         var bottom_edge_title = i18n.tr("No active alarms")
 
+        var date = new Date();
+        var clockTime = new Date
+                (
+                    date.getFullYear(),
+                    date.getMonth(),
+                    date.getDate(),
+                    clockTimeString.split(":")[0],
+                    clockTimeString.split(":")[1],
+                    clockTimeString.split(":")[2],
+                    0
+                    )
         /*
          Check if alarm model received is valid and has saved alarms and only
          then proceed to find the next active alarm.

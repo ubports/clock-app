@@ -120,7 +120,19 @@ Page {
         id: alarmListView
         model: alarmModel
         anchors.fill: parent
-        localTime: new Date //FIXME clockTimeInMain
+        localTime: {
+            var date = new Date();
+            return new Date
+                (
+                    date.getFullYear(),
+                    date.getMonth(),
+                    date.getDate(),
+                    clockAnalogTimeInMain.split(":")[0],
+                    clockAnalogTimeInMain.split(":")[1],
+                    clockAnalogTimeInMain.split(":")[2],
+                    0
+                    )
+        }
     }
 
     Loader {

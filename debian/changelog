@@ -15,6 +15,7 @@ ubuntu-clock-app (3.6) UNRELEASED; urgency=medium
   * Fix wrong date and time after changing timezone while clock running (LP: #1480546)
   * Fix stopwatch issue appering during changing timezone during runtime (LP: #1493358)
   * Fix Daylight Saving Time issues (LP: #1437805)
+  * Fix incorrect digital time display for English (Australia) (LP: #1384739)
 
  -- Bartosz Kosiorek <gang65@poczta.onet.pl>  Wed, 02 Sep 2015 15:16:29 +0200
 
