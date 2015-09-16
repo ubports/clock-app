@@ -55,7 +55,20 @@ ClockCircle {
 
         color: UbuntuColors.midAubergine
         font.pixelSize: units.dp(1)
-        text: localizedTimeString.split(" ")[0]
+        text: {
+            if (localizedTimeString.search(Qt.locale().amText) !== -1) {
+                // 12 hour format detected with the localised AM text
+                return localizedTimeString.replace(Qt.locale().amText, "").trim()
+            }
+            else if (localizedTimeString.search(Qt.locale().pmText) !== -1) {
+                // 12 hour format detected with the localised PM text
+                return localizedTimeString.replace(Qt.locale().pmText, "").trim()
+            }
+            else {
+                // 24-hour format detected, return full time string
+                return localizedTimeString
+            }
+        }
     }
 
     Label {
@@ -67,7 +80,20 @@ ClockCircle {
         color: UbuntuColors.midAubergine
         font.pixelSize: units.dp(1)
         visible: text !== ""
-        text: localizedTimeString.split(" ").length > 1 ? localizedTimeString.split(" ")[1] : ""
+        text: {
+            if (localizedTimeString.search(Qt.locale().amText) !== -1) {
+                // 12 hour format detected with the localised AM text
+                return Qt.locale().amText
+            }
+            else if (localizedTimeString.search(Qt.locale().pmText) !== -1) {
+                // 12 hour format detected with the localised PM text
+                return Qt.locale().pmText
+            }
+            else {
+                // 24-hour format detected
+                return ""
+            }
+        }
     }
 
     SequentialAnimation {
