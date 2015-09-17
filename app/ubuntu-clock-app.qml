@@ -144,6 +144,11 @@ MainView {
             alarmModel: alarmModelLoader.item
             bottomEdgeEnabled: alarmModelLoader.status === Loader.Ready && alarmModelLoader.item.isReady && isClockPage
 
+            /*
+               FIXME: When the upstream QT bug at
+               https://bugreports.qt-project.org/browse/QTBUG-40275 is fixed
+               it will be possible to receive a datetime object directly for notLocalizedTimeString variable.
+            */
             notLocalizedTimeString: localTimeSource.localAnalogTimeString
             localizedTimeString: localTimeSource.localTimeString
             localizedDateString: localTimeSource.localDateString
