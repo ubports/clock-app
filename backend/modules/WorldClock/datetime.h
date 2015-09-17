@@ -41,20 +41,20 @@ class DateTime : public QObject
      in the correct user locale.
     */
 
-    // Property to determine the local time string (format hh:mm:ss)
-    Q_PROPERTY(QString localAnalogTimeString
-               READ localAnalogTimeString
-               NOTIFY localAnalogTimeStringChanged)
+    // Property to determine not localized string of local time (format hh:mm:ss)
+    Q_PROPERTY(QString notLocalizedStringOfLocalTime
+               READ notLocalizedStringOfLocalTime
+               NOTIFY notLocalizedStringOfLocalTimeChanged)
 
-    // Property to determine the local time string (format Qt::DefaultLocaleShortDate)
-    Q_PROPERTY(QString localTimeString
-               READ localTimeString
-               NOTIFY localTimeStringChanged)
+    // Property to determine the localized string of local time (format Qt::DefaultLocaleShortDate)
+    Q_PROPERTY(QString localizedStringOfLocalTime
+               READ localizedStringOfLocalTime
+               NOTIFY localizedStringOfLocalTimeChanged)
 
-    // Property to determine the local date string (format Qt::DefaultLocaleLongDate)
-    Q_PROPERTY(QString localDateString
-               READ localDateString
-               NOTIFY localDateStringChanged)
+    // Property to determine the localized string of local date (format Qt::DefaultLocaleLongDate)
+    Q_PROPERTY(QString localizedStringOfLocalDate
+               READ localizedStringOfLocalDate
+               NOTIFY localizedStringOfLocalDateChanged)
 public:
     DateTime(QObject *parent = 0);
 
@@ -64,23 +64,23 @@ public:
     // Function to set the update interval
     void setUpdateInterval(int updateInterval);
 
-    QString localAnalogTimeString() const;
+    QString notLocalizedStringOfLocalTime() const;
 
     // Function to read the local time string
-    QString localTimeString() const;
+    QString localizedStringOfLocalTime() const;
 
     // Function to read the local date string
-    QString localDateString() const;
+    QString localizedStringOfLocalDate() const;
 
 signals:
 
-    void localAnalogTimeStringChanged();
+    void notLocalizedStringOfLocalTimeChanged();
 
     // Signal to notify the local time string change to QML
-    void localTimeStringChanged();
+    void localizedStringOfLocalTimeChanged();
 
     // Signal to notify the local date string change in QML
-    void localDateStringChanged();
+    void localizedStringOfLocalDateChanged();
 
     // Signal to notify the updateInterval change to QML
     void updateIntervalChanged();
@@ -94,9 +94,9 @@ public slots:
 
 private:
     // Private copies of the local time and date
-    QString m_localanalogtime;
-    QString m_localtime;
-    QString m_localdate;
+    QString m_notLocalizedLocalTime;
+    QString m_localizedLocalTime;
+    QString m_localizedLocalDate;
 
     // Private internal timer to update the values at a specified interval
     QTimer m_updateTimer;

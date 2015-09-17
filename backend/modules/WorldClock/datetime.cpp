@@ -25,9 +25,9 @@ DateTime::DateTime(QObject *parent) :
 {
     // Initialise the date and time at start rather than wait for a sec to do so.
 
-    m_localanalogtime = QTime::currentTime().toString("hh:mm:ss");
-    m_localtime = QTime::currentTime().toString(Qt::DefaultLocaleShortDate);
-    m_localdate = QDate::currentDate().toString(Qt::DefaultLocaleLongDate);
+    m_notLocalizedLocalTime = QTime::currentTime().toString("hh:mm:ss");
+    m_localizedLocalTime = QTime::currentTime().toString(Qt::DefaultLocaleShortDate);
+    m_localizedLocalDate = QDate::currentDate().toString(Qt::DefaultLocaleLongDate);
 
     m_updateTimer.setInterval(1000);
     connect(&m_updateTimer, &QTimer::timeout, this, &DateTime::update);
@@ -35,31 +35,31 @@ DateTime::DateTime(QObject *parent) :
     m_updateTimer.start();
 }
 
-QString DateTime::localAnalogTimeString() const
+QString DateTime::notLocalizedStringOfLocalTime() const
 {
-    return m_localanalogtime;
+    return m_notLocalizedLocalTime;
 }
 
-QString DateTime::localTimeString() const
+QString DateTime::localizedStringOfLocalTime() const
 {
-    return m_localtime;
+    return m_localizedLocalTime;
 }
 
-QString DateTime::localDateString() const
+QString DateTime::localizedStringOfLocalDate() const
 {
-    return m_localdate;
+    return m_localizedLocalDate;
 }
 
 void DateTime::update()
 {
-    m_localanalogtime = QTime::currentTime().toString("hh:mm:ss");
-    emit localAnalogTimeStringChanged();
+    m_notLocalizedLocalTime = QTime::currentTime().toString("hh:mm:ss");
+    emit notLocalizedStringOfLocalTimeChanged();
 
-    m_localtime = QTime::currentTime().toString(Qt::DefaultLocaleShortDate);
-    emit localTimeStringChanged();
+    m_localizedLocalTime = QTime::currentTime().toString(Qt::DefaultLocaleShortDate);
+    emit localizedStringOfLocalTimeChanged();
 
-    m_localdate = QDate::currentDate().toString(Qt::DefaultLocaleLongDate);
-    emit localDateStringChanged();
+    m_localizedLocalDate = QDate::currentDate().toString(Qt::DefaultLocaleLongDate);
+    emit localizedStringOfLocalDateChanged();
 }
 
 int DateTime::updateInterval() const
