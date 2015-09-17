@@ -9,7 +9,7 @@ find_program(XVFB_RUN_BIN
 )
 
 macro(DECLARE_QML_TEST TST_NAME TST_QML_FILE)
-    if(USE_XVFB)
+    if(USE_XVFB AND XVFB_RUN_BIN)
         set(COMMAND_PREFIX ${XVFB_RUN_BIN} -a -s "-screen 0 400x600x24")
     else()
         set(COMMAND_PREFIX "")
@@ -20,7 +20,7 @@ macro(DECLARE_QML_TEST TST_NAME TST_QML_FILE)
     )
 endmacro()
 
-if(QMLTESTRUNNER_BIN AND XVFB_RUN_BIN)
+if(QMLTESTRUNNER_BIN)
     declare_qml_test("AlarmLabel" tst_alarmLabel.qml)
     declare_qml_test("AlarmRepeat" tst_alarmRepeat.qml)
     declare_qml_test("Alarm" tst_alarm.qml)

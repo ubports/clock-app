@@ -82,16 +82,9 @@ MainView {
 
             alarmModel: alarmModelLoader.item
             bottomEdgeEnabled: alarmModelLoader.status === Loader.Ready && alarmModelLoader.item.isReady && isClockPage
-            clockTime: new Date
-                       (
-                           localTimeSource.localDateString.split(":")[0],
-                           localTimeSource.localDateString.split(":")[1]-1,
-                           localTimeSource.localDateString.split(":")[2],
-                           localTimeSource.localTimeString.split(":")[0],
-                           localTimeSource.localTimeString.split(":")[1],
-                           localTimeSource.localTimeString.split(":")[2],
-                           localTimeSource.localTimeString.split(":")[3]
-                       )
+            notLocalizedTimeString: localTimeSource.notLocalizedCurrentTimeString
+            localizedTimeString: localTimeSource.localizedCurrentTimeString
+            localizedDateString: localTimeSource.localizedCurrentDateString
         }
     }
 }
