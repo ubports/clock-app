@@ -74,7 +74,7 @@ QVariant TimeZoneModel::data(const QModelIndex &index, int role) const
         return m_citiesData.at(row).cityName;
     case RoleCountryName:
         return m_citiesData.at(row).countryName;
-    case RoleTimeZoneId:
+    case RoleTimezoneId:
         return m_citiesData.at(row).timeZone.id();
     }
 
@@ -111,9 +111,9 @@ QHash<int, QByteArray> TimeZoneModel::roleNames() const
     roles.insert(RoleCityId, "cityId");
     roles.insert(RoleCityName, "cityName");
     roles.insert(RoleCountryName, "countryName");
-    roles.insert(RoleTimeZoneId, "timezoneID");
-    roles.insert(RoleNotLocalizedTimeString, "localAnalogTime");
-    roles.insert(RoleLocalizedTimeString, "localTime");
+    roles.insert(RoleTimezoneId, "timezoneID");
+    roles.insert(RoleNotLocalizedTimeString, "notLocalizedZoneTime");
+    roles.insert(RoleLocalizedTimeString, "localizedZoneTime");
     roles.insert(RoleTimeTo, "timeTo");
     return roles;
 }

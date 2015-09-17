@@ -94,8 +94,8 @@ ListItem {
             innerCircleWidth: units.gu(5)
             width: units.gu(7)
 
-            notLocalizedTimeString: model.localAnalogTime
-            localizedTimeString: model.localTime
+            notLocalizedTimeString: model.notLocalizedZoneTime
+            localizedTimeString: model.localizedZoneTime
 
             anchors.centerIn: parent
 

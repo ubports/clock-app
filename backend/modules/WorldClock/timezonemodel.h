@@ -52,7 +52,7 @@ public:
         RoleCityId,
         RoleCityName,
         RoleCountryName,
-        RoleTimeZoneId,
+        RoleTimezoneId,
         RoleNotLocalizedTimeString,
         RoleLocalizedTimeString,
         RoleTimeTo,
