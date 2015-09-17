@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" xmlns="http://www.w3.org/2000/svg" height="100px" width="100px" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100"><!-- Generator: Sketch 3.3.3 (12072) - http://www.bohemiancoding.com/sketch -->
- <title>Placeholder Icons</title>
- <desc>Created with Sketch.</desc>
- <g id="Page-1" fill-rule="evenodd" sketch:type="MSPage" fill="none">
-  <g id="Placeholder-Icons" stroke="#5B5B5B" sketch:type="MSArtboardGroup">
-   <g id="Timer-+-Stopwatch-+-Clock-icon" transform="translate(19 17)" sketch:type="MSLayerGroup">
-    <g id="Stopwatch" sketch:type="MSShapeGroup" transform="translate(3)">
-     <circle id="Oval-125-Copy" cx="28.5" cy="37.5" stroke-width="3" r="28.5"/>
-     <path id="Line-Copy-3" stroke-width="5" stroke-linecap="square" d="m22 1l12.03 0.0015"/>
-     <path id="Line-Copy-4" stroke-width="5" stroke-linecap="square" d="m26 6l4.03 0.0015"/>
-     <path id="Line-Copy-5" stroke-width="3" stroke-linecap="square" d="m34.69 37.702v-15.206" transform="translate(34.69 30.099) rotate(45) translate(-34.69 -30.099)"/>
+<svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.3 (12072) - http://www.bohemiancoding.com/sketch -->
+    <title>Placeholder Icons</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Placeholder-Icons" sketch:type="MSArtboardGroup" stroke="#5B5B5B">
+            <g id="Timer-+-Stopwatch-+-Clock-icon" sketch:type="MSLayerGroup" transform="translate(19.000000, 17.000000)">
+                <g id="Stopwatch" transform="translate(3.000000, 0.000000)" sketch:type="MSShapeGroup">
+                    <circle id="Oval-125-Copy" stroke-width="3" cx="28.5" cy="37.5" r="28.5"></circle>
+                    <path d="M22,1 L34.0300293,1.00149091" id="Line-Copy-3" stroke-width="5" stroke-linecap="square"></path>
+                    <path d="M26,6 L30.0300293,6.00149091" id="Line-Copy-4" stroke-width="5" stroke-linecap="square"></path>
+                    <path d="M34.6896914,37.7022985 L34.6896914,22.495895" id="Line-Copy-5" stroke-width="3" stroke-linecap="square" transform="translate(34.689691, 30.099097) rotate(-315.000000) translate(-34.689691, -30.099097) "></path>
+                </g>
+            </g>
+        </g>
     </g>
-   </g>
-  </g>
- </g>
 </svg>
