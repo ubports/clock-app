@@ -21,11 +21,11 @@ Running all unit test at once
 
 If you want to run all tests, then run the following command from the builddir,
 
-   $ make test
+   $ ctest --output-on-failure
    
 If you want more verbose output, then run,
 
-   $ ctest -V
+   $ ctest -VV
 
 Running individual test cases,
 ==============================
@@ -34,7 +34,7 @@ If you want to run testcases individually, you can do so by navigating to the
 unit tests folder by,
 
 * Navigate to the tests/unit directory
-   $ cd reboot/tests/unit
+   $ cd tests/unit
    
 * Run the test by providing their filenames
    $ qmltestrunner -input tst_alarmLabel.qml
