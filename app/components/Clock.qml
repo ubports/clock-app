@@ -42,13 +42,13 @@ ClockCircle {
     id: _outerCircle
 
     // String with not localized time in format "hh:mm:ss", eg.: "16:10:15"
-    property var notLocalizedTimeString
+    property string notLocalizedTimeString
 
     // String with localized time, eg.: "4:10 PM"
-    property var localizedTimeString  
+    property string localizedTimeString
 
     // String with localized date, eg.: "Thursday, 17 September 2015"
-    property var localizedDateString
+    property string localizedDateString
 
     // Property to keep track of the clock mode
     property alias isDigital: clockModeFlipable.isDigital

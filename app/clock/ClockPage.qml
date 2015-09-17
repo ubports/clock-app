@@ -32,13 +32,13 @@ Item {
     property alias isDigital: clock.isDigital
 
     // String with not localized time in format "hh:mm:ss", eg.: "16:10:15"
-    property var notLocalizedClockTimeString
+    property string notLocalizedClockTimeString
 
     // String with localized time, eg.: "4:10 PM"
-    property var localizedClockTimeString
+    property string localizedClockTimeString
 
     // String with localized date, eg.: "Thursday, 17 September 2015"
-    property var localizedClockDateString
+    property string localizedClockDateString
 
     // Property to keep track of app cold start status
     property alias isColdStart: clock.isColdStart
