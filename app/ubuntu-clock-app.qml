@@ -135,12 +135,6 @@ MainView {
               is required.
             */
 
-            /*
-              #FIXME: When the upstream QT bug at
-              https://bugreports.qt-project.org/browse/QTBUG-40275 is fixed it will be
-              possible to receive a datetime object directly instead of using this hack.
-            */
-
             alarmModel: alarmModelLoader.item
             bottomEdgeEnabled: alarmModelLoader.status === Loader.Ready && alarmModelLoader.item.isReady && isClockPage
 
