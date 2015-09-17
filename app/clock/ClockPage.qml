@@ -43,6 +43,19 @@ Item {
     // Property to keep track of app cold start status
     property alias isColdStart: clock.isColdStart
 
+    function get_current_utc_time() {
+        var localDate = new Date()
+        // FIXME Date() is not working correctly in runtime, when timezone is changed.
+        // To avoid issues with Date(), clock app needs to be restarted every timezone is changed
+        return new Date(localDate.getUTCFullYear(),
+                        localDate.getUTCMonth(),
+                        localDate.getUTCDate(),
+                        localDate.getUTCHours(),
+                        localDate.getUTCMinutes(),
+                        localDate.getUTCSeconds(),
+                        localDate.getUTCMilliseconds())
+    }
+
     Component.onCompleted: {
         console.log("[LOG]: Clock Page loaded")
         otherElementsStartUpAnimation.start()
@@ -112,15 +125,18 @@ Item {
              If Clock App is brought from background after more than 30 mins,
              query the user location to ensure it is up to date.
             */
-            /*if(applicationState
-                    && Math.abs(clock.analogTime - geoposition.lastUpdate) > 1800000) {
-                if(!geoposition.active)
+            // FIXME Date() is not working correctly in runtime, when timezone is changed.
+            // To avoid issues with Date(), clock app needs to be restarted every timezone is changed
+            var currentUTCTime = get_current_utc_time()
+            if(applicationState
+                    && Math.abs(currentUTCTime - geoposition.lastUpdate) > 1800000) {
+                if(!geoposition.active) {
+                    console.log("[LOG]: Starting geolocation update service at UTC time: " + currentUTCTime)
                     geoposition.start()
+                }
+            } else if (!applicationState) {
+                geoposition.lastUpdate = currentUTCTime
             }
-
-            else if (!applicationState) {
-                geoposition.lastUpdate = clock.analogTime
-            }*/
         }
     }
 
@@ -167,7 +183,7 @@ Item {
         objectName: "clock"
 
         Component.onCompleted: {
-            geoposition.lastUpdate = notLocalizedTimeString
+            geoposition.lastUpdate = get_current_utc_time()
         }
 
         notLocalizedTimeString: notLocalizedClockTimeString
