@@ -25,9 +25,9 @@ DateTime::DateTime(QObject *parent) :
 {
     // Initialise the date and time at start rather than wait for a sec to do so.
 
-    m_notLocalizedLocalTime = QTime::currentTime().toString("hh:mm:ss");
-    m_localizedLocalTime = QTime::currentTime().toString(Qt::DefaultLocaleShortDate);
-    m_localizedLocalDate = QDate::currentDate().toString(Qt::DefaultLocaleLongDate);
+    m_notLocalizedCurrentTime = QTime::currentTime().toString("hh:mm:ss");
+    m_localizedCurrentTime = QTime::currentTime().toString(Qt::DefaultLocaleShortDate);
+    m_localizedCurrentDate = QDate::currentDate().toString(Qt::DefaultLocaleLongDate);
 
     m_updateTimer.setInterval(1000);
     connect(&m_updateTimer, &QTimer::timeout, this, &DateTime::update);
@@ -35,31 +35,31 @@ DateTime::DateTime(QObject *parent) :
     m_updateTimer.start();
 }
 
-QString DateTime::notLocalizedStringOfLocalTime() const
+QString DateTime::notLocalizedCurrentTimeString() const
 {
-    return m_notLocalizedLocalTime;
+    return m_notLocalizedCurrentTime;
 }
 
-QString DateTime::localizedStringOfLocalTime() const
+QString DateTime::localizedCurrentTimeString() const
 {
-    return m_localizedLocalTime;
+    return m_localizedCurrentTime;
 }
 
-QString DateTime::localizedStringOfLocalDate() const
+QString DateTime::localizedCurrentDateString() const
 {
-    return m_localizedLocalDate;
+    return m_localizedCurrentDate;
 }
 
 void DateTime::update()
 {
-    m_notLocalizedLocalTime = QTime::currentTime().toString("hh:mm:ss");
-    emit notLocalizedStringOfLocalTimeChanged();
+    m_notLocalizedCurrentTime = QTime::currentTime().toString("hh:mm:ss");
+    emit notLocalizedCurrentTimeStringChanged();
 
-    m_localizedLocalTime = QTime::currentTime().toString(Qt::DefaultLocaleShortDate);
-    emit localizedStringOfLocalTimeChanged();
+    m_localizedCurrentTime = QTime::currentTime().toString(Qt::DefaultLocaleShortDate);
+    emit localizedCurrentTimeStringChanged();
 
-    m_localizedLocalDate = QDate::currentDate().toString(Qt::DefaultLocaleLongDate);
-    emit localizedStringOfLocalDateChanged();
+    m_localizedCurrentDate = QDate::currentDate().toString(Qt::DefaultLocaleLongDate);
+    emit localizedCurrentDateStringChanged();
 }
 
 int DateTime::updateInterval() const

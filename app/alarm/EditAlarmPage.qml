@@ -252,8 +252,8 @@ Page {
                                 date.getFullYear(),
                                 date.getMonth(),
                                 date.getDate(),
-                                currentTime.notLocalizedStringOfLocalTime.split(":")[0],
-                                Math.ceil((parseInt(currentTime.notLocalizedStringOfLocalTime
+                                currentTime.notLocalizedCurrentTimeString.split(":")[0],
+                                Math.ceil((parseInt(currentTime.notLocalizedCurrentTimeString
                                                    .split(":")[1]) + 1) / 5) * 5,
                                 0,
                                 0
