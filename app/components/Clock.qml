@@ -41,9 +41,13 @@ import Ubuntu.Components 1.2
 ClockCircle {
     id: _outerCircle
 
-    // Property to set the analog time
-    property var analogTime
-    property var localizedTimeString
+    // String with not localized time in format "hh:mm:ss", eg.: "16:10:15"
+    property var notLocalizedTimeString
+
+    // String with localized time, eg.: "4:10 PM"
+    property var localizedTimeString  
+
+    // String with localized date, eg.: "Thursday, 17 September 2015"
     property var localizedDateString
 
     // Property to keep track of the clock mode

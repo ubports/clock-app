@@ -127,9 +127,9 @@ Page {
                     date.getFullYear(),
                     date.getMonth(),
                     date.getDate(),
-                    clockAnalogTimeInMain.split(":")[0],
-                    clockAnalogTimeInMain.split(":")[1],
-                    clockAnalogTimeInMain.split(":")[2],
+                    notLocalizedTimeString.split(":")[0],
+                    notLocalizedTimeString.split(":")[1],
+                    notLocalizedTimeString.split(":")[2],
                     0
                     )
         }

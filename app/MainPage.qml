@@ -30,11 +30,14 @@ PageWithBottomEdge {
     id: _mainPage
     objectName: "mainPage"
 
-    // Property to keep track of the clock time
-    property var clockAnalogTimeInMain
-    property var clockTimeInMain
+    // String with not localized time in format "hh:mm:ss", eg.: "16:10:15"
+    property var notLocalizedTimeString
 
-    property var clockDateInMain
+    // String with localized time, eg.: "4:10 PM"
+    property var localizedTimeString
+
+    // String with localized date, eg.: "Thursday, 17 September 2015"
+    property var localizedDateString
 
     // Property to keep track of an app cold start status
     property alias isColdStart: clockPage.isColdStart
@@ -46,7 +49,7 @@ PageWithBottomEdge {
     property var alarmModel
 
     flickable: null
-    bottomEdgeTitle: _mainPage.visible ? alarmUtils.set_bottom_edge_title(alarmModel, clockAnalogTimeInMain)
+    bottomEdgeTitle: _mainPage.visible ? alarmUtils.set_bottom_edge_title(alarmModel, notLocalizedTimeString)
                                        : i18n.tr("No active alarms")
 
     Component.onCompleted: {
@@ -67,9 +70,9 @@ PageWithBottomEdge {
         id: navigationModel
         ClockPage {
             id: clockPage
-            clockAnalogTimeInClockPage: _mainPage.clockAnalogTimeInMain
-            clockTimeInClockPage: _mainPage.clockTimeInMain
-            clockDateInClockPage: _mainPage.clockDateInMain
+            notLocalizedClockTimeString: _mainPage.notLocalizedTimeString
+            localizedClockTimeString: _mainPage.localizedTimeString
+            localizedClockDateString: _mainPage.localizedDateString
             width: clockApp.width
             height: listview.height
         }

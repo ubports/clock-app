@@ -31,10 +31,14 @@ Item {
     // Property to keep track of the clock mode
     property alias isDigital: clock.isDigital
 
-    // Property to keep track of the clock time
-    property var clockAnalogTimeInClockPage
-    property var clockTimeInClockPage
-    property var clockDateInClockPage
+    // String with not localized time in format "hh:mm:ss", eg.: "16:10:15"
+    property var notLocalizedClockTimeString
+
+    // String with localized time, eg.: "4:10 PM"
+    property var localizedClockTimeString
+
+    // String with localized date, eg.: "Thursday, 17 September 2015"
+    property var localizedClockDateString
 
     // Property to keep track of app cold start status
     property alias isColdStart: clock.isColdStart
@@ -163,12 +167,12 @@ Item {
         objectName: "clock"
 
         Component.onCompleted: {
-            geoposition.lastUpdate = analogTime
+            geoposition.lastUpdate = notLocalizedTimeString
         }
 
-        analogTime: clockAnalogTimeInClockPage
-        localizedTimeString: clockTimeInClockPage
-        localizedDateString: clockDateInClockPage
+        notLocalizedTimeString: notLocalizedClockTimeString
+        localizedTimeString: localizedClockTimeString
+        localizedDateString: localizedClockDateString
 
         anchors {
             verticalCenter: parent.top

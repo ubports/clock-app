@@ -144,9 +144,9 @@ MainView {
             alarmModel: alarmModelLoader.item
             bottomEdgeEnabled: alarmModelLoader.status === Loader.Ready && alarmModelLoader.item.isReady && isClockPage
 
-            clockAnalogTimeInMain: localTimeSource.localAnalogTimeString
-            clockTimeInMain: localTimeSource.localTimeString
-            clockDateInMain: localTimeSource.localDateString
+            notLocalizedTimeString: localTimeSource.localAnalogTimeString
+            localizedTimeString: localTimeSource.localTimeString
+            localizedDateString: localTimeSource.localDateString
 
         }
     }
