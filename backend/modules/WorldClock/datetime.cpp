@@ -25,7 +25,7 @@ DateTime::DateTime(QObject *parent) :
 {
     // Initialise the date and time at start rather than wait for a sec to do so.
 
-    m_notLocalizedCurrentTime = QTime::currentTime().toString("hh:mm:ss");
+    m_notLocalizedCurrentDateTime = QDateTime::currentDateTime().toString("yyyy:MM:dd:hh:mm:ss");
     m_localizedCurrentTime = QTime::currentTime().toString(Qt::DefaultLocaleShortDate);
     m_localizedCurrentDate = QDate::currentDate().toString(Qt::DefaultLocaleLongDate);
 
@@ -37,7 +37,7 @@ DateTime::DateTime(QObject *parent) :
 
 QString DateTime::notLocalizedCurrentTimeString() const
 {
-    return m_notLocalizedCurrentTime;
+    return m_notLocalizedCurrentDateTime;
 }
 
 QString DateTime::localizedCurrentTimeString() const
@@ -52,7 +52,7 @@ QString DateTime::localizedCurrentDateString() const
 
 void DateTime::update()
 {
-    m_notLocalizedCurrentTime = QTime::currentTime().toString("hh:mm:ss");
+    m_notLocalizedCurrentDateTime = QDateTime::currentDateTime().toString("yyyy:MM:dd:hh:mm:ss");
     emit notLocalizedCurrentTimeStringChanged();
 
     m_localizedCurrentTime = QTime::currentTime().toString(Qt::DefaultLocaleShortDate);

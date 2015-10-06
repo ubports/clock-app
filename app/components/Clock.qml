@@ -41,7 +41,7 @@ import Ubuntu.Components 1.2
 ClockCircle {
     id: _outerCircle
 
-    // String with not localized time in format "hh:mm:ss", eg.: "16:10:15"
+    // String with not localized date and time in format "yyyy:MM:dd:hh:mm:ss", eg.: "2015:10:05:16:10:15"
     property string notLocalizedTimeString
 
     // String with localized time, eg.: "4:10 PM"

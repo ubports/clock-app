@@ -57,12 +57,12 @@ QtObject {
         var date = new Date();
         var clockTime = new Date
                 (
-                    date.getFullYear(),
-                    date.getMonth(),
-                    date.getDate(),
                     clockTimeString.split(":")[0],
                     clockTimeString.split(":")[1],
-                    clockTimeString.split(":")[2],
+                    clockTimeString.split(":")[2],                    
+                    clockTimeString.split(":")[3],
+                    clockTimeString.split(":")[4],
+                    clockTimeString.split(":")[5],
                     0
                     )
         /*

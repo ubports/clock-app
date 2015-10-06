@@ -87,7 +87,7 @@ QVariant TimeZoneModel::data(const QModelIndex &index, int role) const
          FIXME: Until https://bugreports.qt-project.org/browse/QTBUG-40275
          is fixed, we will have to return a string.
         */
-        return worldCityTime.toString("hh:mm:ss");
+        return worldCityTime.toString("yyyy:MM:dd:hh:mm:ss");
     case RoleLocalizedTimeString:
         return worldCityTime.time().toString(Qt::DefaultLocaleShortDate);
     case RoleTimeTo:

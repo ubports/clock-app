@@ -249,12 +249,12 @@ Page {
                     var date = new Date();
                     return new Date
                             (
-                                date.getFullYear(),
-                                date.getMonth(),
-                                date.getDate(),
                                 currentTime.notLocalizedCurrentTimeString.split(":")[0],
+                                currentTime.notLocalizedCurrentTimeString.split(":")[1],
+                                currentTime.notLocalizedCurrentTimeString.split(":")[2],
+                                currentTime.notLocalizedCurrentTimeString.split(":")[3],
                                 Math.ceil((parseInt(currentTime.notLocalizedCurrentTimeString
-                                                   .split(":")[1]) + 1) / 5) * 5,
+                                                   .split(":")[4]) + 1) / 5) * 5,
                                 0,
                                 0
                                 )

@@ -83,8 +83,11 @@ ListItem {
             function getTime(timeString) {
 
                 var properTime = new Date()
-                properTime.setHours(timeString.split(":")[0])
-                properTime.setMinutes(timeString.split(":")[1])
+                properTime.setFullYear(timeString.split(":")[0])
+                properTime.setMonth(timeString.split(":")[1])
+                properTime.setDate(timeString.split(":")[2])
+                properTime.setHours(timeString.split(":")[3])
+                properTime.setMinutes(timeString.split(":")[4])
                 properTime.setSeconds(0)
                 return properTime
             }

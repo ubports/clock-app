@@ -30,8 +30,8 @@ PageWithBottomEdge {
     id: _mainPage
     objectName: "mainPage"
 
-    // String with not localized time in format "hh:mm:ss", eg.: "16:10:15"
-    property string notLocalizedTimeString
+    // String with not localized date and time in format "yyyy:MM:dd:hh:mm:ss", eg.: "2015:10:05:16:10:15"
+    property string notLocalizedDateTimeString
 
     // String with localized time, eg.: "4:10 PM"
     property string localizedTimeString
@@ -49,7 +49,7 @@ PageWithBottomEdge {
     property var alarmModel
 
     flickable: null
-    bottomEdgeTitle: _mainPage.visible ? alarmUtils.set_bottom_edge_title(alarmModel, notLocalizedTimeString)
+    bottomEdgeTitle: _mainPage.visible ? alarmUtils.set_bottom_edge_title(alarmModel, notLocalizedDateTimeString)
                                        : i18n.tr("No active alarms")
 
     Component.onCompleted: {
@@ -70,7 +70,7 @@ PageWithBottomEdge {
         id: navigationModel
         ClockPage {
             id: clockPage
-            notLocalizedClockTimeString: _mainPage.notLocalizedTimeString
+            notLocalizedClockTimeString: _mainPage.notLocalizedDateTimeString
             localizedClockTimeString: _mainPage.localizedTimeString
             localizedClockDateString: _mainPage.localizedDateString
             width: clockApp.width

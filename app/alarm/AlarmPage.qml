@@ -124,12 +124,12 @@ Page {
             var date = new Date();
             return new Date
                 (
-                    date.getFullYear(),
-                    date.getMonth(),
-                    date.getDate(),
                     notLocalizedTimeString.split(":")[0],
                     notLocalizedTimeString.split(":")[1],
                     notLocalizedTimeString.split(":")[2],
+                    notLocalizedTimeString.split(":")[3],
+                    notLocalizedTimeString.split(":")[4],
+                    notLocalizedTimeString.split(":")[5],
                     0
                     )
         }

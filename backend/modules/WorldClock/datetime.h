@@ -41,7 +41,7 @@ class DateTime : public QObject
      in the correct user locale.
     */
 
-    // Property to determine not localized string of local time (format hh:mm:ss)
+    // Property to determine not localized string of local time (format yyyy:MM:dd:hh:mm:ss)
     Q_PROPERTY(QString notLocalizedCurrentTimeString
                READ notLocalizedCurrentTimeString
                NOTIFY notLocalizedCurrentTimeStringChanged)
@@ -94,7 +94,7 @@ public slots:
 
 private:
     // Private copies of the local time and date
-    QString m_notLocalizedCurrentTime;
+    QString m_notLocalizedCurrentDateTime;
     QString m_localizedCurrentTime;
     QString m_localizedCurrentDate;
 
