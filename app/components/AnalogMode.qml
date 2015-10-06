@@ -53,12 +53,12 @@ ClockCircle {
         smooth: true
         source: "../graphics/Hour_Hand.png"
         fillMode: Image.PreserveAspectFit
-        // notLocalizedTimeString.split(":")[3] is hours
-        // notLocalizedTimeString.split(":")[4] is minutes
+        // notLocalizedDateTimeString.split(":")[3] is hours
+        // notLocalizedDateTimeString.split(":")[4] is minutes
         // We need to calculate degree number for rotation (0 degrees means no rotation).
         // Full rotate has 360 degrees and we have 12 hours in clock face,
         // For hours: 360deg/12h=30 deg/h, for minutes 30deg/60min= 0.5 deg/min
-        rotation: (parseInt(notLocalizedTimeString.split(":")[3]) * 30) + (parseInt(notLocalizedTimeString.split(":")[4]) * 0.5)
+        rotation: (parseInt(notLocalizedDateTimeString.split(":")[3]) * 30) + (parseInt(notLocalizedDateTimeString.split(":")[4]) * 0.5)
     }
 
     Image {
@@ -70,12 +70,12 @@ ClockCircle {
         smooth: true
         source: "../graphics/Minute_Hand.png"
         fillMode: Image.PreserveAspectFit
-        // notLocalizedTimeString.split(":")[4] is minutes
-        // notLocalizedTimeString.split(":")[5] is seconds
+        // notLocalizedDateTimeString.split(":")[4] is minutes
+        // notLocalizedDateTimeString.split(":")[5] is seconds
         // We need to calculate degree number for rotation (0 degrees means no rotation).
         // Full rotate has 360 degrees and we have 60 miutes in clock face,
         // For minutes: 360deg/60min=6 deg/min, for seconds 6deg/60sec= 0.1 deg/sec
-        rotation: (parseInt(notLocalizedTimeString.split(":")[4]) * 6) + (parseInt(notLocalizedTimeString.split(":")[5]) * 0.1)
+        rotation: (parseInt(notLocalizedDateTimeString.split(":")[4]) * 6) + (parseInt(notLocalizedDateTimeString.split(":")[5]) * 0.1)
     }
 
     Image {
@@ -88,11 +88,11 @@ ClockCircle {
         visible: showSeconds
         source: "../graphics/Second_Hand.png"
         fillMode: Image.PreserveAspectFit
-        // notLocalizedTimeString.split(":")[5] is seconds
+        // notLocalizedDateTimeString.split(":")[5] is seconds
         // We need to calculate degree number for rotation (0 degrees means no rotation).
         // Full rotate has 360 degrees and we have 60 seconds in clock face,
         // For seconds 360deg/60sec= 6 deg/sec
-        rotation: visible ? parseInt(notLocalizedTimeString.split(":")[5]) * 6 : 0
+        rotation: visible ? parseInt(notLocalizedDateTimeString.split(":")[5]) * 6 : 0
     }
 
     Image {

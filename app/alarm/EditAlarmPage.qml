@@ -249,11 +249,11 @@ Page {
                     var date = new Date();
                     return new Date
                             (
-                                currentTime.notLocalizedCurrentTimeString.split(":")[0],
-                                currentTime.notLocalizedCurrentTimeString.split(":")[1],
-                                currentTime.notLocalizedCurrentTimeString.split(":")[2],
-                                currentTime.notLocalizedCurrentTimeString.split(":")[3],
-                                Math.ceil((parseInt(currentTime.notLocalizedCurrentTimeString
+                                currentTime.notLocalizedCurrentDateTimeString.split(":")[0],
+                                currentTime.notLocalizedCurrentDateTimeString.split(":")[1] - 1,
+                                currentTime.notLocalizedCurrentDateTimeString.split(":")[2],
+                                currentTime.notLocalizedCurrentDateTimeString.split(":")[3],
+                                Math.ceil((parseInt(currentTime.notLocalizedCurrentDateTimeString
                                                    .split(":")[4]) + 1) / 5) * 5,
                                 0,
                                 0

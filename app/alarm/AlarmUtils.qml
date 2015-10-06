@@ -58,7 +58,7 @@ QtObject {
         var clockTime = new Date
                 (
                     clockTimeString.split(":")[0],
-                    clockTimeString.split(":")[1],
+                    clockTimeString.split(":")[1] - 1,
                     clockTimeString.split(":")[2],                    
                     clockTimeString.split(":")[3],
                     clockTimeString.split(":")[4],

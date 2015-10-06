@@ -35,7 +35,7 @@ DateTime::DateTime(QObject *parent) :
     m_updateTimer.start();
 }
 
-QString DateTime::notLocalizedCurrentTimeString() const
+QString DateTime::notLocalizedCurrentDateTimeString() const
 {
     return m_notLocalizedCurrentDateTime;
 }
@@ -53,7 +53,7 @@ QString DateTime::localizedCurrentDateString() const
 void DateTime::update()
 {
     m_notLocalizedCurrentDateTime = QDateTime::currentDateTime().toString("yyyy:MM:dd:hh:mm:ss");
-    emit notLocalizedCurrentTimeStringChanged();
+    emit notLocalizedCurrentDateTimeStringChanged();
 
     m_localizedCurrentTime = QTime::currentTime().toString(Qt::DefaultLocaleShortDate);
     emit localizedCurrentTimeStringChanged();

@@ -186,7 +186,7 @@ Item {
             geoposition.lastUpdate = get_current_utc_time()
         }
 
-        notLocalizedTimeString: notLocalizedClockTimeString
+        notLocalizedDateTimeString: notLocalizedClockTimeString
         localizedTimeString: localizedClockTimeString
         localizedDateString: localizedClockDateString
 

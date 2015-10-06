@@ -82,7 +82,7 @@ MainView {
 
             alarmModel: alarmModelLoader.item
             bottomEdgeEnabled: alarmModelLoader.status === Loader.Ready && alarmModelLoader.item.isReady && isClockPage
-            notLocalizedDateTimeString: localTimeSource.notLocalizedCurrentTimeString
+            notLocalizedDateTimeString: localTimeSource.notLocalizedCurrentDateTimeString
             localizedTimeString: localTimeSource.localizedCurrentTimeString
             localizedDateString: localTimeSource.localizedCurrentDateString
         }

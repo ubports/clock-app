@@ -141,9 +141,9 @@ MainView {
             /*
                FIXME: When the upstream QT bug at
                https://bugreports.qt-project.org/browse/QTBUG-40275 is fixed
-               it will be possible to receive a datetime object directly for notLocalizedTimeString variable.
+               it will be possible to receive a datetime object directly for notLocalizedDateTimeString variable.
             */
-            notLocalizedDateTimeString: localTimeSource.notLocalizedCurrentTimeString
+            notLocalizedDateTimeString: localTimeSource.notLocalizedCurrentDateTimeString
             localizedTimeString: localTimeSource.localizedCurrentTimeString
             localizedDateString: localTimeSource.localizedCurrentDateString
         }

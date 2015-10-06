@@ -84,7 +84,7 @@ ListItem {
 
                 var properTime = new Date()
                 properTime.setFullYear(timeString.split(":")[0])
-                properTime.setMonth(timeString.split(":")[1])
+                properTime.setMonth(timeString.split(":")[1] - 1)
                 properTime.setDate(timeString.split(":")[2])
                 properTime.setHours(timeString.split(":")[3])
                 properTime.setMinutes(timeString.split(":")[4])
@@ -97,7 +97,7 @@ ListItem {
             innerCircleWidth: units.gu(5)
             width: units.gu(7)
 
-            notLocalizedTimeString: model.notLocalizedZoneTime
+            notLocalizedDateTimeString: model.notLocalizedZoneTime
             localizedTimeString: model.localizedZoneTime
 
             anchors.centerIn: parent

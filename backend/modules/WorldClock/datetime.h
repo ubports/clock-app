@@ -42,9 +42,9 @@ class DateTime : public QObject
     */
 
     // Property to determine not localized string of local time (format yyyy:MM:dd:hh:mm:ss)
-    Q_PROPERTY(QString notLocalizedCurrentTimeString
-               READ notLocalizedCurrentTimeString
-               NOTIFY notLocalizedCurrentTimeStringChanged)
+    Q_PROPERTY(QString notLocalizedCurrentDateTimeString
+               READ notLocalizedCurrentDateTimeString
+               NOTIFY notLocalizedCurrentDateTimeStringChanged)
 
     // Property to determine the localized string of local time (format Qt::DefaultLocaleShortDate)
     Q_PROPERTY(QString localizedCurrentTimeString
@@ -64,7 +64,7 @@ public:
     // Function to set the update interval
     void setUpdateInterval(int updateInterval);
 
-    QString notLocalizedCurrentTimeString() const;
+    QString notLocalizedCurrentDateTimeString() const;
 
     // Function to read the local time string
     QString localizedCurrentTimeString() const;
@@ -74,7 +74,7 @@ public:
 
 signals:
 
-    void notLocalizedCurrentTimeStringChanged();
+    void notLocalizedCurrentDateTimeStringChanged();
 
     // Signal to notify the local time string change to QML
     void localizedCurrentTimeStringChanged();
