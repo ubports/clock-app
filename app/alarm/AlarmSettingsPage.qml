@@ -231,7 +231,7 @@ Page {
 
             SubtitledListItem {
                 text: i18n.tr("Change time and date")
-                subText: localTimeSource.localTimeString + " " + localTimeSource.localDateString
+                subText: localTimeSource.localizedCurrentDateString + " " + localTimeSource.localizedCurrentTimeString
                 onClicked: {
                     Qt.openUrlExternally("settings:///system/time-date")
                 }
