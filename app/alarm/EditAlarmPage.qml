@@ -246,7 +246,6 @@ Page {
             mode: "Hours|Minutes"
             date: {
                 if(isNewAlarm) {
-                    var date = new Date();
                     return new Date
                             (
                                 currentTime.notLocalizedCurrentDateTimeString.split(":")[0],

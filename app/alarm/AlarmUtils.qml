@@ -54,7 +54,6 @@ QtObject {
     function set_bottom_edge_title(alarmModel, clockTimeString) {
         var bottom_edge_title = i18n.tr("No active alarms")
 
-        var date = new Date();
         var clockTime = new Date
                 (
                     clockTimeString.split(":")[0],

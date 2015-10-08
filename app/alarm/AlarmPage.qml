@@ -121,7 +121,6 @@ Page {
         model: alarmModel
         anchors.fill: parent
         localTime: {
-            var date = new Date();
             return new Date
                 (
                     notLocalizedDateTimeString.split(":")[0],
@@ -131,7 +130,7 @@ Page {
                     notLocalizedDateTimeString.split(":")[4],
                     notLocalizedDateTimeString.split(":")[5],
                     0
-                    )
+                )
         }
     }
 
