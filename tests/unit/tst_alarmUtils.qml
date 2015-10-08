@@ -49,7 +49,7 @@ TestCase {
         mockAlarmDatabase.append({"name": "Alarm1", "date": futureTime, "enabled": false})
         futureTime.setHours((futureTime.getHours() + 5))
         mockAlarmDatabase.append({"name": "Alarm2", "date": futureTime, "enabled": true})
-        mock_notLocalizedDateTimeString = currentTime.getHours().toString() + ":" + currentTime.getMinutes().toString() + ":" +currentTime.getSeconds().toString()
+        mock_notLocalizedDateTimeString = currentTime.getFullYear().toString() + ":" + (currentTime.getMonth() + 1).toString() + ":" + currentTime.getDate().toString() + ":" + currentTime.getHours().toString() + ":" + currentTime.getMinutes().toString() + ":" +currentTime.getSeconds().toString()
     }
 
     /*
