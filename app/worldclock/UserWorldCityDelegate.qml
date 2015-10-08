@@ -73,25 +73,6 @@ ListItem {
             id: localTimeVisual
             objectName: "localTimeVisual" + index
 
-            /*
-                 This function would not be required once the upstream QT bug at
-                 https://bugreports.qt-project.org/browse/QTBUG-40275 is fixed.
-                 Due to this bug we are returning a time string instead of a
-                 time object which forces us to parse the string and convert it
-                 into a time object here.
-                */
-            function getTime(timeString) {
-
-                var properTime = new Date()
-                properTime.setFullYear(timeString.split(":")[0])
-                properTime.setMonth(timeString.split(":")[1] - 1)
-                properTime.setDate(timeString.split(":")[2])
-                properTime.setHours(timeString.split(":")[3])
-                properTime.setMinutes(timeString.split(":")[4])
-                properTime.setSeconds(0)
-                return properTime
-            }
-
             fontSize: units.dp(14)
             periodFontSize: units.dp(7)
             innerCircleWidth: units.gu(5)
