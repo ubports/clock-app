@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2015-09-10 13:06+0200\n"
-"PO-Revision-Date: 2015-07-14 11:19+0000\n"
+"PO-Revision-Date: 2015-10-09 13:18+0000\n"
 "Last-Translator: Ibrahim Saed <ibraheem5000@gmail.com>\n"
 "Language-Team: Arabic <ar@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -16,12 +16,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n % 100 >= "
 "3 && n % 100 <= 10 ? 3 : n % 100 >= 11 && n % 100 <= 99 ? 4 : 5;\n"
-"X-Launchpad-Export-Date: 2015-09-11 06:04+0000\n"
-"X-Generator: Launchpad (build 17720)\n"
+"X-Launchpad-Export-Date: 2015-10-10 05:59+0000\n"
+"X-Generator: Launchpad (build 17802)\n"
 
 #: ../app/MainPage.qml:47 ../app/alarm/AlarmUtils.qml:55
 msgid "No active alarms"
-msgstr ""
+msgstr "لا توجد منبهات نشطة"
 
 #: ../app/alarm/AlarmLabel.qml:33 ../app/alarm/AlarmLabel.qml:71
 #: ../app/alarm/EditAlarmPage.qml:283
@@ -82,56 +82,60 @@ msgstr "الإعدادات"
 #, qt-format
 msgid "%1 minute"
 msgid_plural "%1 minutes"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "أقل من دقيقة (%1)"
+msgstr[1] "دقيقة واحدة (%1)"
+msgstr[2] "دقيقتان (%1)"
+msgstr[3] "%1 دقائق"
+msgstr[4] "%1 دقيقة"
+msgstr[5] "%1 دقيقة"
 
 #: ../app/alarm/AlarmSettingsPage.qml:94
 msgid "Alarm volume"
-msgstr ""
+msgstr "مستوى صوت المنبه"
 
 #: ../app/alarm/AlarmSettingsPage.qml:125
 msgid "Alarm stops after"
-msgstr ""
+msgstr "وقف المنبه بعد"
 
 #: ../app/alarm/AlarmSettingsPage.qml:163
 msgid "Snooze for"
-msgstr ""
+msgstr "الغفوة لـ"
 
 #: ../app/alarm/AlarmSettingsPage.qml:199
 msgid "Vibration"
-msgstr ""
+msgstr "اهتزاز"
 
 #: ../app/alarm/AlarmSettingsPage.qml:233
 msgid "Change time and date"
-msgstr ""
+msgstr "تغيير الوقت والتاريخ"
 
 #: ../app/alarm/AlarmSound.qml:31 ../app/alarm/EditAlarmPage.qml:296
 msgid "Sound"
-msgstr ""
+msgstr "الصوت"
 
 #: ../app/alarm/AlarmSound.qml:186
 msgid "Custom alarm sounds"
-msgstr ""
+msgstr "أصوات مخصصة للمنبه"
 
 #: ../app/alarm/AlarmSound.qml:201
 msgid "Add sound"
-msgstr ""
+msgstr "إضافة صوت"
 
 #: ../app/alarm/AlarmSound.qml:353
 msgid "Default alarm sounds"
-msgstr ""
+msgstr "الأصوات الافتراضية للمنبه"
 
 #: ../app/alarm/AlarmUtils.qml:31
 msgid "Never"
-msgstr ""
+msgstr "أبدا"
 
 #: ../app/alarm/AlarmUtils.qml:37
 msgid "Weekdays"
-msgstr ""
+msgstr "أيام الأسبوع"
 
 #: ../app/alarm/AlarmUtils.qml:41
 msgid "Weekends"
-msgstr ""
+msgstr "عُطل نهاية الأسبوع"
 
 #: ../app/alarm/AlarmUtils.qml:45
 msgid "Daily"
@@ -140,43 +144,43 @@ msgstr "يوميًا"
 #: ../app/alarm/AlarmUtils.qml:72
 #, qt-format
 msgid "Next Alarm %1"
-msgstr ""
+msgstr "المنبه التالي %1"
 
 #: ../app/alarm/AlarmUtils.qml:79
 msgid "Alarm Passed"
-msgstr ""
+msgstr "المنبه مُلبث"
 
 #: ../app/alarm/AlarmUtils.qml:89
 #, no-c-format, qt-format
 msgid "in %1d %2h %3m"
-msgstr ""
+msgstr "في %1ي %2س %3د"
 
 #: ../app/alarm/AlarmUtils.qml:99
 #, no-c-format, qt-format
 msgid "in %1h %2m"
-msgstr ""
+msgstr "في %1س %2د"
 
 #: ../app/alarm/AlarmUtils.qml:108
 #, no-c-format, qt-format
 msgid "in %1m"
-msgstr ""
+msgstr "في %1د"
 
 #: ../app/alarm/EditAlarmPage.qml:34
 msgid "New alarm"
-msgstr ""
+msgstr "منبه جديد"
 
 #: ../app/alarm/EditAlarmPage.qml:34
 msgid "Edit alarm"
-msgstr ""
+msgstr "تعديل المنبه"
 
 #: ../app/alarm/EditAlarmPage.qml:316
 msgid "Delete alarm"
-msgstr ""
+msgstr "حذف المنبه"
 
 #. TRANSLATORS: This is the page title. Please keep the translation length to 3 words if possible
 #: ../app/alarm/SoundPeerPicker.qml:27
 msgid "Add sound from"
-msgstr ""
+msgstr "إضافة منبه جديد"
 
 #: ../app/clock/ClockPage.qml:225
 msgid "Retrieving location..."
@@ -194,11 +198,11 @@ msgstr ""
 
 #: ../app/stopwatch/LapListView.qml:64
 msgid "Total Time"
-msgstr ""
+msgstr "إجمالي الوقت"
 
 #: ../app/stopwatch/StopwatchPage.qml:114
 msgid "Stop"
-msgstr "أوقف"
+msgstr "إيقاف"
 
 #: ../app/stopwatch/StopwatchPage.qml:114
 msgid "Start"
@@ -206,20 +210,20 @@ msgstr "ابدأ"
 
 #: ../app/stopwatch/StopwatchPage.qml:114
 msgid "Resume"
-msgstr ""
+msgstr "استئناف"
 
 #: ../app/stopwatch/StopwatchPage.qml:131
 msgid "Clear"
-msgstr ""
+msgstr "مسح"
 
 #: ../app/worldclock/AddWorldCityButton.qml:30
 msgid "Add"
-msgstr ""
+msgstr "إضافة"
 
 #: ../app/worldclock/AddWorldCityButton.qml:65
 #: ../app/worldclock/WorldCityList.qml:63
 msgid "City"
-msgstr ""
+msgstr "المدينة"
 
 #. TRANSLATORS: this indicates if the time in a world clock
 #. is behind or ahead of the time at the current location
@@ -237,49 +241,49 @@ msgstr ""
 #: ../app/worldclock/UserWorldCityDelegate.qml:158
 #, qt-format
 msgid "%1h %2m %3"
-msgstr ""
+msgstr "%1س %2د %3"
 
 #. TRANSLATORS: the first argument is hour, followed by the
 #. translation for either 'behind' or 'ahead'
 #: ../app/worldclock/UserWorldCityDelegate.qml:167
 #, qt-format
 msgid "%1h %2"
-msgstr ""
+msgstr "%1س %2"
 
 #. TRANSLATORS: the first argument is minute, followed by the
 #. translation for either 'behind' or 'ahead'
 #: ../app/worldclock/UserWorldCityDelegate.qml:175
 #, qt-format
 msgid "%1m %2"
-msgstr ""
+msgstr "%1د %2"
 
 #: ../app/worldclock/UserWorldCityDelegate.qml:181
 msgid "Same time"
-msgstr ""
+msgstr "نفس الوقت"
 
 #: ../app/worldclock/WorldCityList.qml:50
 msgid "Select a city"
-msgstr ""
+msgstr "اختر مدينة"
 
 #: ../app/worldclock/WorldCityList.qml:108
 msgid "Search..."
-msgstr ""
+msgstr "بحث..."
 
 #: ../app/worldclock/WorldCityList.qml:212
 msgid "Searching for a city"
-msgstr ""
+msgstr "يبحث عن مدينة"
 
 #: ../app/worldclock/WorldCityList.qml:217
 msgid "No City Found"
-msgstr ""
+msgstr "لم يُعثر على المدينة"
 
 #: ../app/worldclock/WorldCityList.qml:223
 msgid "Unable to connect."
-msgstr ""
+msgstr "تعذّر الاتصال."
 
 #: ../app/worldclock/WorldCityList.qml:224
 msgid "Please check your network connection and try again"
-msgstr ""
+msgstr "برجاء التحقق من اتصالك بالإنترنت والمحاولة مجددا"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:48
 msgid "Abidjan"
