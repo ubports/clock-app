@@ -120,7 +120,18 @@ Page {
         id: alarmListView
         model: alarmModel
         anchors.fill: parent
-        localTime: clockTime
+        localTime: {
+            return new Date
+                (
+                    notLocalizedDateTimeString.split(":")[0],
+                    notLocalizedDateTimeString.split(":")[1] - 1,
+                    notLocalizedDateTimeString.split(":")[2],
+                    notLocalizedDateTimeString.split(":")[3],
+                    notLocalizedDateTimeString.split(":")[4],
+                    notLocalizedDateTimeString.split(":")[5],
+                    0
+                )
+        }
     }
 
     Loader {

@@ -355,7 +355,7 @@ Page {
 
             Label {
                 id: _localTime
-                text: localTime
+                text: localizedZoneTime
                 anchors {
                     right: parent.right
                     rightMargin: units.gu(2)

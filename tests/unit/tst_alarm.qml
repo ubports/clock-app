@@ -27,17 +27,6 @@ MainView {
     width: units.gu(40)
     height: units.gu(70)
 
-    property var clockTime: new Date
-                            (
-                                localTimeSource.localDateString.split(":")[0],
-                                localTimeSource.localDateString.split(":")[1]-1,
-                                localTimeSource.localDateString.split(":")[2],
-                                localTimeSource.localTimeString.split(":")[0],
-                                localTimeSource.localTimeString.split(":")[1],
-                                localTimeSource.localTimeString.split(":")[2],
-                                localTimeSource.localTimeString.split(":")[3]
-                            )
-
     AlarmModel {
         id: alarmModel
     }

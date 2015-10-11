@@ -74,7 +74,7 @@ QVariant TimeZoneModel::data(const QModelIndex &index, int role) const
         return m_citiesData.at(row).cityName;
     case RoleCountryName:
         return m_citiesData.at(row).countryName;
-    case RoleTimeZoneId:
+    case RoleTimezoneId:
         return m_citiesData.at(row).timeZone.id();
     }
 
@@ -82,12 +82,14 @@ QVariant TimeZoneModel::data(const QModelIndex &index, int role) const
     QDateTime worldCityTime(currentDateTime.toTimeZone(m_citiesData.at(row).timeZone));
 
     switch (role) {
-    case RoleTimeString:
+    case RoleNotLocalizedTimeString:
         /*
          FIXME: Until https://bugreports.qt-project.org/browse/QTBUG-40275
          is fixed, we will have to return a string.
         */
-        return worldCityTime.toString("hh:mm");
+        return worldCityTime.toString("yyyy:MM:dd:hh:mm:ss");
+    case RoleLocalizedTimeString:
+        return worldCityTime.time().toString(Qt::DefaultLocaleShortDate);
     case RoleTimeTo:
         /*
          FIXME: Workaround for currentDateTime.secsTo(worldCityTime) which returns
@@ -109,8 +111,9 @@ QHash<int, QByteArray> TimeZoneModel::roleNames() const
     roles.insert(RoleCityId, "cityId");
     roles.insert(RoleCityName, "cityName");
     roles.insert(RoleCountryName, "countryName");
-    roles.insert(RoleTimeZoneId, "timezoneID");
-    roles.insert(RoleTimeString, "localTime");
+    roles.insert(RoleTimezoneId, "timezoneID");
+    roles.insert(RoleNotLocalizedTimeString, "notLocalizedZoneTime");
+    roles.insert(RoleLocalizedTimeString, "localizedZoneTime");
     roles.insert(RoleTimeTo, "timeTo");
     return roles;
 }
@@ -150,7 +153,7 @@ void TimeZoneModel::update()
     QModelIndex startIndex = index(0);
     QModelIndex endIndex = index(m_citiesData.count() - 1);
     QVector<int> roles;
-    roles << RoleTimeString << RoleTimeTo;
+    roles << RoleLocalizedTimeString << RoleNotLocalizedTimeString << RoleTimeTo;
     emit dataChanged(startIndex, endIndex, roles);
 }
 

@@ -24,8 +24,10 @@ DateTime::DateTime(QObject *parent) :
     QObject(parent)
 {
     // Initialise the date and time at start rather than wait for a sec to do so.
-    m_localtime = QDateTime::currentDateTime().toString("hh:mm:ss:z");
-    m_localdate = QDateTime::currentDateTime().toString("yyyy:M:d");
+
+    m_notLocalizedCurrentDateTime = QDateTime::currentDateTime().toString("yyyy:MM:dd:hh:mm:ss");
+    m_localizedCurrentTime = QTime::currentTime().toString(Qt::DefaultLocaleShortDate);
+    m_localizedCurrentDate = QDate::currentDate().toString(Qt::DefaultLocaleLongDate);
 
     m_updateTimer.setInterval(1000);
     connect(&m_updateTimer, &QTimer::timeout, this, &DateTime::update);
@@ -33,23 +35,31 @@ DateTime::DateTime(QObject *parent) :
     m_updateTimer.start();
 }
 
-QString DateTime::localTimeString() const
+QString DateTime::notLocalizedCurrentDateTimeString() const
 {
-    return m_localtime;
+    return m_notLocalizedCurrentDateTime;
 }
 
-QString DateTime::localDateString() const
+QString DateTime::localizedCurrentTimeString() const
 {
-    return m_localdate;
+    return m_localizedCurrentTime;
+}
+
+QString DateTime::localizedCurrentDateString() const
+{
+    return m_localizedCurrentDate;
 }
 
 void DateTime::update()
 {
-    m_localtime = QDateTime::currentDateTime().toString("hh:mm:ss:z");
-    emit localTimeStringChanged();
+    m_notLocalizedCurrentDateTime = QDateTime::currentDateTime().toString("yyyy:MM:dd:hh:mm:ss");
+    emit notLocalizedCurrentDateTimeStringChanged();
 
-    m_localdate = QDateTime::currentDateTime().toString("yyyy:M:d");
-    emit localDateStringChanged();
+    m_localizedCurrentTime = QTime::currentTime().toString(Qt::DefaultLocaleShortDate);
+    emit localizedCurrentTimeStringChanged();
+
+    m_localizedCurrentDate = QDate::currentDate().toString(Qt::DefaultLocaleLongDate);
+    emit localizedCurrentDateStringChanged();
 }
 
 int DateTime::updateInterval() const

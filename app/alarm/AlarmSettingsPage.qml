@@ -231,26 +231,7 @@ Page {
 
             SubtitledListItem {
                 text: i18n.tr("Change time and date")
-                subText: {
-                    /*
-                  FIXME: When the upstream QT bug at
-                  https://bugreports.qt-project.org/browse/QTBUG-40275 is fixed
-                  it will be possible to receive a datetime object directly
-                  instead of using this hack.
-                */
-                    var localTime = new Date
-                            (
-                                localTimeSource.localDateString.split(":")[0],
-                                localTimeSource.localDateString.split(":")[1]-1,
-                                localTimeSource.localDateString.split(":")[2],
-                                localTimeSource.localTimeString.split(":")[0],
-                                localTimeSource.localTimeString.split(":")[1],
-                                localTimeSource.localTimeString.split(":")[2],
-                                localTimeSource.localTimeString.split(":")[3]
-                                )
-                    return localTime.toLocaleString()
-                }
-
+                subText: localTimeSource.localizedCurrentDateString + " " + localTimeSource.localizedCurrentTimeString
                 onClicked: {
                     Qt.openUrlExternally("settings:///system/time-date")
                 }

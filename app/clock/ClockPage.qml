@@ -31,11 +31,30 @@ Item {
     // Property to keep track of the clock mode
     property alias isDigital: clock.isDigital
 
-    // Property to keep track of the clock time
-    property var clockTime: new Date()
+    // String with not localized date and time in format "yyyy:MM:dd:hh:mm:ss", eg.: "2015:10:05:16:10:15"
+    property string notLocalizedClockTimeString
+
+    // String with localized time, eg.: "4:10 PM"
+    property string localizedClockTimeString
+
+    // String with localized date, eg.: "Thursday, 17 September 2015"
+    property string localizedClockDateString
 
     // Property to keep track of app cold start status
     property alias isColdStart: clock.isColdStart
+
+    function get_current_utc_time() {
+        var localDate = new Date()
+        // FIXME Date() is not working correctly in runtime, when timezone is changed.
+        // To avoid issues with Date(), clock app needs to be restarted every timezone is changed
+        return new Date(localDate.getUTCFullYear(),
+                        localDate.getUTCMonth(),
+                        localDate.getUTCDate(),
+                        localDate.getUTCHours(),
+                        localDate.getUTCMinutes(),
+                        localDate.getUTCSeconds(),
+                        localDate.getUTCMilliseconds())
+    }
 
     Component.onCompleted: {
         console.log("[LOG]: Clock Page loaded")
@@ -106,14 +125,17 @@ Item {
              If Clock App is brought from background after more than 30 mins,
              query the user location to ensure it is up to date.
             */
+            // FIXME Date() is not working correctly in runtime, when timezone is changed.
+            // To avoid issues with Date(), clock app needs to be restarted every timezone is changed
+            var currentUTCTime = get_current_utc_time()
             if(applicationState
-                    && Math.abs(clock.analogTime - geoposition.lastUpdate) > 1800000) {
-                if(!geoposition.active)
+                    && Math.abs(currentUTCTime - geoposition.lastUpdate) > 1800000) {
+                if(!geoposition.active) {
+                    console.log("[LOG]: Starting geolocation update service at UTC time: " + currentUTCTime)
                     geoposition.start()
-            }
-
-            else if (!applicationState) {
-                geoposition.lastUpdate = clock.analogTime
+                }
+            } else if (!applicationState) {
+                geoposition.lastUpdate = currentUTCTime
             }
         }
     }
@@ -161,10 +183,12 @@ Item {
         objectName: "clock"
 
         Component.onCompleted: {
-            geoposition.lastUpdate = analogTime
+            geoposition.lastUpdate = get_current_utc_time()
         }
 
-        analogTime: clockTime
+        notLocalizedDateTimeString: notLocalizedClockTimeString
+        localizedTimeString: localizedClockTimeString
+        localizedDateString: localizedClockDateString
 
         anchors {
             verticalCenter: parent.top
@@ -182,7 +206,7 @@ Item {
             horizontalCenter: parent.horizontalCenter
         }
 
-        text: clock.analogTime.toLocaleDateString()
+        text: clock.localizedDateString
 
         opacity: 0
         color: locationRow.visible ? Theme.palette.normal.baseText : UbuntuColors.midAubergine
