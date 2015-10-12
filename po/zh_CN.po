@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2015-09-10 13:06+0200\n"
-"PO-Revision-Date: 2015-08-31 01:57+0000\n"
+"PO-Revision-Date: 2015-10-11 15:02+0000\n"
 "Last-Translator: Ian Li <Unknown>\n"
 "Language-Team: Chinese (Simplified) <zh_CN@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Launchpad-Export-Date: 2015-09-11 06:06+0000\n"
-"X-Generator: Launchpad (build 17720)\n"
+"X-Launchpad-Export-Date: 2015-10-12 05:38+0000\n"
+"X-Generator: Launchpad (build 17802)\n"
 
 #: ../app/MainPage.qml:47 ../app/alarm/AlarmUtils.qml:55
 msgid "No active alarms"
@@ -109,15 +109,15 @@ msgstr "声音"
 
 #: ../app/alarm/AlarmSound.qml:186
 msgid "Custom alarm sounds"
-msgstr ""
+msgstr "自定义闹铃声音"
 
 #: ../app/alarm/AlarmSound.qml:201
 msgid "Add sound"
-msgstr ""
+msgstr "添加声音"
 
 #: ../app/alarm/AlarmSound.qml:353
 msgid "Default alarm sounds"
-msgstr ""
+msgstr "默认闹铃声音"
 
 #: ../app/alarm/AlarmUtils.qml:31
 msgid "Never"
@@ -1655,7 +1655,7 @@ msgstr "布拉格"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:275
 msgid "Czech Republic"
-msgstr ""
+msgstr "捷克共和国"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:276
 msgid "Pyongyang"
