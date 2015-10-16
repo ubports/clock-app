@@ -138,7 +138,6 @@ ListItem {
 
                 /*
                  Calculate the alarm time if it is a one-time alarm.
-                 It is important to keep the alarm list in order of occurrence (also for disabled alarms).
                  Repeating alarms do this automatically.
                 */
                 if(type === Alarm.OneTime) {
