@@ -137,11 +137,11 @@ ListItem {
                 alarmData.enabled = checked
 
                 /*
-                 Calculate the new alarm time if it is a one-time alarm and has
-                 gone-off and the user is re-enabling the alarm. Repeating
-                 alarms do this automatically.
+                 Calculate the alarm time if it is a one-time alarm.
+                 It is important to keep the alarm list in order of occurence (also for disabled alarms).
+                 Repeating alarms do this automatically.
                 */
-                if(checked && type === Alarm.OneTime) {
+                if(type === Alarm.OneTime) {
                     alarmData.daysOfWeek = Alarm.AutoDetect
                     var now = new Date()
                     if (alarmData.date.getHours()*60+alarmData.date.getMinutes() <= now.getHours()*60+now.getMinutes()) {
