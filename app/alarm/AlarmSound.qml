@@ -20,7 +20,7 @@ import QtQuick 2.4
 import Alarm 1.0
 import QtMultimedia 5.0
 import Ubuntu.Content 1.1
-import Ubuntu.Components 1.2
+import Ubuntu.Components 1.3
 import QtQuick.Layouts 1.1
 import Qt.labs.folderlistmodel 2.1
 
