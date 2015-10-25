@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2015-10-19 04:17+0200\n"
-"PO-Revision-Date: 2015-10-12 15:01+0000\n"
+"PO-Revision-Date: 2015-10-25 04:17+0000\n"
 "Last-Translator: Eltikin <eltikinuyghur@hotmail.com>\n"
 "Language-Team: Uyghur <ug@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Launchpad-Export-Date: 2015-10-20 05:48+0000\n"
+"X-Launchpad-Export-Date: 2015-10-25 05:45+0000\n"
 "X-Generator: Launchpad (build 17812)\n"
 
 #: ../app/MainPage.qml:53 ../app/alarm/AlarmUtils.qml:55
@@ -85,7 +85,7 @@ msgstr[0] "%1 مىنۇت"
 
 #: ../app/alarm/AlarmSettingsPage.qml:94
 msgid "Alarm volume"
-msgstr ""
+msgstr "قوڭغۇراق ئاۋاز مىقدارى"
 
 #: ../app/alarm/AlarmSettingsPage.qml:125
 msgid "Alarm stops after"
@@ -97,11 +97,11 @@ msgstr ""
 
 #: ../app/alarm/AlarmSettingsPage.qml:199
 msgid "Vibration"
-msgstr ""
+msgstr "تىتىرەش"
 
 #: ../app/alarm/AlarmSettingsPage.qml:233
 msgid "Change time and date"
-msgstr ""
+msgstr "ۋاقىت ۋە چېسلا ئۆزگەرتىش"
 
 #: ../app/alarm/AlarmSound.qml:31 ../app/alarm/EditAlarmPage.qml:296
 msgid "Sound"
@@ -113,11 +113,11 @@ msgstr ""
 
 #: ../app/alarm/AlarmSound.qml:201
 msgid "Add sound"
-msgstr ""
+msgstr "ئاۋاز قۇشۇش"
 
 #: ../app/alarm/AlarmSound.qml:353
 msgid "Default alarm sounds"
-msgstr ""
+msgstr "كۆڭۈلدىكى قوڭغۇراق ئاۋازى"
 
 #: ../app/alarm/AlarmUtils.qml:31
 msgid "Never"
@@ -138,11 +138,11 @@ msgstr "كۈندە"
 #: ../app/alarm/AlarmUtils.qml:82
 #, qt-format
 msgid "Next Alarm %1"
-msgstr ""
+msgstr "كېيىنكى قېتىمقى قوڭغۇراق %1"
 
 #: ../app/alarm/AlarmUtils.qml:89
 msgid "Alarm Passed"
-msgstr ""
+msgstr "قوڭغۇراق ئاخىرلاشتى"
 
 #: ../app/alarm/AlarmUtils.qml:99
 #, no-c-format, qt-format
@@ -161,20 +161,20 @@ msgstr ""
 
 #: ../app/alarm/EditAlarmPage.qml:34
 msgid "New alarm"
-msgstr ""
+msgstr "قوڭغۇراق قۇرۇش"
 
 #: ../app/alarm/EditAlarmPage.qml:34
 msgid "Edit alarm"
-msgstr ""
+msgstr "قۇڭغۇراق تەھىرىرلەش"
 
 #: ../app/alarm/EditAlarmPage.qml:316
 msgid "Delete alarm"
-msgstr ""
+msgstr "قوڭغۇراق ئۈچۈرۈش"
 
 #. TRANSLATORS: This is the page title. Please keep the translation length to 3 words if possible
 #: ../app/alarm/SoundPeerPicker.qml:27
 msgid "Add sound from"
-msgstr ""
+msgstr "ئۈزى خالىغان ئاۋاز قۇشۇش"
 
 #: ../app/clock/ClockPage.qml:249
 msgid "Retrieving location..."
@@ -223,11 +223,11 @@ msgstr "شەھەر"
 #. is behind or ahead of the time at the current location
 #: ../app/worldclock/UserWorldCityDelegate.qml:133
 msgid "behind"
-msgstr ""
+msgstr "كەينى"
 
 #: ../app/worldclock/UserWorldCityDelegate.qml:134
 msgid "ahead"
-msgstr ""
+msgstr "ئالدى"
 
 #. TRANSLATORS: the first argument is hour, followed by
 #. minute, and the translation for either 'behind' or
@@ -253,11 +253,11 @@ msgstr ""
 
 #: ../app/worldclock/UserWorldCityDelegate.qml:167
 msgid "Same time"
-msgstr ""
+msgstr "ئوخشاش ۋاقىت"
 
 #: ../app/worldclock/WorldCityList.qml:50
 msgid "Select a city"
-msgstr ""
+msgstr "شەھىرىنى تاللاڭ"
 
 #: ../app/worldclock/WorldCityList.qml:108
 msgid "Search..."
@@ -273,7 +273,7 @@ msgstr ""
 
 #: ../app/worldclock/WorldCityList.qml:223
 msgid "Unable to connect."
-msgstr ""
+msgstr "ئۇلانمىدى"
 
 #: ../app/worldclock/WorldCityList.qml:224
 msgid "Please check your network connection and try again"
@@ -810,56 +810,56 @@ msgstr "چىۋاۋا"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:115
 msgid "Chişinău"
-msgstr ""
+msgstr "كىشىنېۋ"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:115
 msgid "Moldova"
-msgstr ""
+msgstr "مولدوۋا"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:116
 msgid "Cincinnati"
-msgstr ""
+msgstr "كىنكىنناتى"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:117
 msgid "Cleveland"
-msgstr ""
+msgstr "كىلېۋېلاند"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:118
 msgid "Colombo"
-msgstr ""
+msgstr "كولومبو"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:118
 msgid "Sri Lanka"
-msgstr ""
+msgstr "سىرىلانكا"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:119
 msgid "Columbus"
-msgstr ""
+msgstr "كولۇمبۇس"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:120
 msgid "Conakry"
-msgstr ""
+msgstr "كوناكرى"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:120
 msgid "Guinea"
-msgstr ""
+msgstr "گىۋىنېيە"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:121
 msgid "Copenhagen"
-msgstr ""
+msgstr "كوپېنھاگېن"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:121
 msgid "Denmark"
-msgstr ""
+msgstr "دانىيە"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:122
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:296
 msgid "Costa Rica"
-msgstr ""
+msgstr "كوستارىكا"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:123
 msgid "Curaçao"
-msgstr ""
+msgstr "كۇراسو"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:123
 msgid "Curacao"
@@ -867,35 +867,35 @@ msgstr ""
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:125
 msgid "Dakar"
-msgstr ""
+msgstr "داكار"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:125
 msgid "Senegal"
-msgstr ""
+msgstr "سېنېگال"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:126
 msgid "Dallas"
-msgstr ""
+msgstr "داللاس"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:127
 msgid "Damascus"
-msgstr ""
+msgstr "دەمەشق"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:127
 msgid "Syria"
-msgstr ""
+msgstr "سۈرىيە"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:128
 msgid "Dar es Salaam"
-msgstr ""
+msgstr "دارېسسالام"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:128
 msgid "Tanzania"
-msgstr ""
+msgstr "تانزانىيە"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:129
 msgid "Darwin"
-msgstr ""
+msgstr "دارۋىن"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:130
 msgid "Dawson Creek"
@@ -903,19 +903,19 @@ msgstr ""
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:131
 msgid "Delhi"
-msgstr ""
+msgstr "دېھلى"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:132
 msgid "Denver"
-msgstr ""
+msgstr "دېنۋېر"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:133
 msgid "Detroit"
-msgstr ""
+msgstr "دېترويت"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:134
 msgid "Dhaka"
-msgstr ""
+msgstr "داككا"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:134
 msgid "Bangladesh"
