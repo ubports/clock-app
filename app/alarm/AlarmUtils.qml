@@ -79,12 +79,26 @@ QtObject {
           return bottom_edge_title
         }
 
-        bottom_edge_title = i18n.tr("Next Alarm %1").arg(get_time_to_next_alarm(activeAlarmDate - clockTime))
+        bottom_edge_title = i18n.tr("Next Alarm %1").arg(get_time_to_alarm(activeAlarmDate, clockTime))
         return bottom_edge_title
     }
 
-    // Function to format the time to next alarm into a string
-    function get_time_to_next_alarm(totalTime) {
+    function get_utc_time(dateTime) {
+        return new Date(dateTime.getUTCFullYear(),
+                        dateTime.getUTCMonth(),
+                        dateTime.getUTCDate(),
+                        dateTime.getUTCHours(),
+                        dateTime.getUTCMinutes(),
+                        dateTime.getUTCSeconds(),
+                        dateTime.getUTCMilliseconds())
+    }
+
+    // Function to format the time to specific alarm into a string
+    function get_time_to_alarm(alarmDate, currentDateTime) {
+        // Discard the time and time-zone information, so it will be properly calculate time,
+        // even with different timezones (eg. during daylight saving change)
+        var totalTime = get_utc_time(alarmDate) - get_utc_time(currentDateTime);
+
         if(totalTime < 0) {
             return i18n.tr("Alarm Passed")
         }
