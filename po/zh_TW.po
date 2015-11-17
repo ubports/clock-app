@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2015-10-19 04:17+0200\n"
-"PO-Revision-Date: 2015-03-06 15:46+0000\n"
-"Last-Translator: Cheng-Chia Tseng <pswo10680@gmail.com>\n"
+"PO-Revision-Date: 2015-11-17 03:31+0000\n"
+"Last-Translator: Po-Hsu Lin <po-hsu.lin@canonical.com>\n"
 "Language-Team: Chinese (Traditional) <zh_TW@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Launchpad-Export-Date: 2015-10-20 05:48+0000\n"
-"X-Generator: Launchpad (build 17812)\n"
+"X-Launchpad-Export-Date: 2015-11-17 05:54+0000\n"
+"X-Generator: Launchpad (build 17847)\n"
 
 #: ../app/MainPage.qml:53 ../app/alarm/AlarmUtils.qml:55
 msgid "No active alarms"
@@ -81,8 +81,7 @@ msgstr "設定"
 #, qt-format
 msgid "%1 minute"
 msgid_plural "%1 minutes"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1 分鐘"
 
 #: ../app/alarm/AlarmSettingsPage.qml:94
 msgid "Alarm volume"
@@ -106,7 +105,7 @@ msgstr "變更時間和日期"
 
 #: ../app/alarm/AlarmSound.qml:31 ../app/alarm/EditAlarmPage.qml:296
 msgid "Sound"
-msgstr "聲音"
+msgstr "音效"
 
 #: ../app/alarm/AlarmSound.qml:186
 msgid "Custom alarm sounds"
@@ -122,11 +121,11 @@ msgstr ""
 
 #: ../app/alarm/AlarmUtils.qml:31
 msgid "Never"
-msgstr "不會"
+msgstr "永不"
 
 #: ../app/alarm/AlarmUtils.qml:37
 msgid "Weekdays"
-msgstr "週日"
+msgstr "平日"
 
 #: ../app/alarm/AlarmUtils.qml:41
 msgid "Weekends"
@@ -282,7 +281,7 @@ msgstr "請檢查網路然後再試一次"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:48
 msgid "Abidjan"
-msgstr ""
+msgstr "Abidjan (阿必尚)"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:48
 msgid "Ivory Coast"
@@ -290,7 +289,7 @@ msgstr "象牙海岸"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:49
 msgid "Accra"
-msgstr ""
+msgstr "Accra (阿克拉)"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:49
 msgid "Ghana"
@@ -298,7 +297,7 @@ msgstr "迦納"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:50
 msgid "Addis Ababa"
-msgstr ""
+msgstr "Addis Ababa (阿迪斯阿貝巴)"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:50
 msgid "Ethiopia"
@@ -429,7 +428,7 @@ msgstr "俄羅斯"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:58
 msgid "Anchorage"
-msgstr ""
+msgstr "安克拉治 (Anchorage)"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:59
 msgid "Andorra"
@@ -442,7 +441,7 @@ msgstr "安卡拉"
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:60
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:178
 msgid "Turkey"
-msgstr ""
+msgstr "土耳其 (Turkey)"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:61
 msgid "Ann Arbor"
@@ -474,7 +473,7 @@ msgstr ""
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:66
 msgid "Athens"
-msgstr ""
+msgstr "雅典 (Athens)"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:66
 msgid "Greece"
@@ -494,11 +493,11 @@ msgstr "紐西蘭"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:69
 msgid "Austin"
-msgstr ""
+msgstr "奧斯汀 (Austin)"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:71
 msgid "Baghdad"
-msgstr ""
+msgstr "巴格達 (Baghdad)"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:71
 msgid "Iraq"
@@ -514,11 +513,11 @@ msgstr ""
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:73
 msgid "Azerbaijan"
-msgstr ""
+msgstr "亞塞拜然 (Azerbaijan)"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:74
 msgid "Baltimore"
-msgstr ""
+msgstr "巴爾的摩 (Baltimore)"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:75
 msgid "Bangalore"
@@ -547,7 +546,7 @@ msgstr ""
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:78
 msgid "Barcelona"
-msgstr ""
+msgstr "巴塞隆納 (Barcelona)"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:78
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:215
@@ -593,7 +592,7 @@ msgstr "塞爾維亞"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:83
 msgid "Belize"
-msgstr ""
+msgstr "貝里斯 (Belize)"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:84
 msgid "Belo Horizonte"
@@ -705,7 +704,7 @@ msgstr "匈牙利"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:100
 msgid "Buenos Aires"
-msgstr ""
+msgstr "布宜諾斯艾利斯 (Buenos Aires)"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:100
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:226
@@ -799,7 +798,7 @@ msgstr ""
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:112
 msgid "Cayman Islands"
-msgstr ""
+msgstr "開曼群島 (Cayman Islands)"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:113
 msgid "Chicago"
@@ -819,11 +818,11 @@ msgstr ""
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:116
 msgid "Cincinnati"
-msgstr ""
+msgstr "辛辛那提 (Cincinnati)"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:117
 msgid "Cleveland"
-msgstr ""
+msgstr "克里夫蘭 (Cleveland)"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:118
 msgid "Colombo"
@@ -1912,7 +1911,7 @@ msgstr "愛沙尼亞"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:324
 msgid "Tehran"
-msgstr ""
+msgstr "德黑蘭 (Tehran)"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:324
 msgid "Iran"
@@ -1928,7 +1927,7 @@ msgstr "多倫多"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:327
 msgid "Tripoli"
-msgstr ""
+msgstr "的黎波里 (Tripoli)"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:327
 msgid "Libya"
@@ -1968,7 +1967,7 @@ msgstr ""
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:336
 msgid "Vienna"
-msgstr ""
+msgstr "維也納 (Vienna)"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:336
 msgid "Austria"
@@ -1992,7 +1991,7 @@ msgstr "華沙"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:341
 msgid "Washington D.C."
-msgstr ""
+msgstr "華盛頓特區 (Washington D.C.)"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:342
 msgid "Winamac"
@@ -2000,7 +1999,7 @@ msgstr ""
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:343
 msgid "Winnipeg"
-msgstr ""
+msgstr "溫尼伯 (Winnipeg)"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:344
 msgid "Wrocław"
