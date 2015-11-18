@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2015-10-19 04:17+0200\n"
-"PO-Revision-Date: 2015-11-17 03:31+0000\n"
+"PO-Revision-Date: 2015-11-17 16:26+0000\n"
 "Last-Translator: Po-Hsu Lin <po-hsu.lin@canonical.com>\n"
 "Language-Team: Chinese (Traditional) <zh_TW@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Launchpad-Export-Date: 2015-11-17 05:54+0000\n"
+"X-Launchpad-Export-Date: 2015-11-18 05:34+0000\n"
 "X-Generator: Launchpad (build 17847)\n"
 
 #: ../app/MainPage.qml:53 ../app/alarm/AlarmUtils.qml:55
@@ -109,7 +109,7 @@ msgstr "音效"
 
 #: ../app/alarm/AlarmSound.qml:186
 msgid "Custom alarm sounds"
-msgstr ""
+msgstr "自訂鬧鐘音效"
 
 #: ../app/alarm/AlarmSound.qml:201
 msgid "Add sound"
@@ -117,7 +117,7 @@ msgstr ""
 
 #: ../app/alarm/AlarmSound.qml:353
 msgid "Default alarm sounds"
-msgstr ""
+msgstr "預設鬧鐘音效"
 
 #: ../app/alarm/AlarmUtils.qml:31
 msgid "Never"
@@ -147,17 +147,17 @@ msgstr "鬧鐘已過時"
 #: ../app/alarm/AlarmUtils.qml:99
 #, no-c-format, qt-format
 msgid "in %1d %2h %3m"
-msgstr "於 %1d %2h %3m"
+msgstr "於 %1天 %2小時 %3分鐘後"
 
 #: ../app/alarm/AlarmUtils.qml:109
 #, no-c-format, qt-format
 msgid "in %1h %2m"
-msgstr "於 %1h %2m"
+msgstr "於 %1小時 %2分鐘後"
 
 #: ../app/alarm/AlarmUtils.qml:118
 #, no-c-format, qt-format
 msgid "in %1m"
-msgstr "於 %1m"
+msgstr "於 %1分鐘後"
 
 #: ../app/alarm/EditAlarmPage.qml:34
 msgid "New alarm"
@@ -204,11 +204,11 @@ msgstr "開始"
 
 #: ../app/stopwatch/StopwatchPage.qml:66
 msgid "Resume"
-msgstr ""
+msgstr "繼續"
 
 #: ../app/stopwatch/StopwatchPage.qml:83
 msgid "Clear"
-msgstr ""
+msgstr "清除"
 
 #: ../app/worldclock/AddWorldCityButton.qml:30
 msgid "Add"
@@ -235,21 +235,21 @@ msgstr "早"
 #: ../app/worldclock/UserWorldCityDelegate.qml:144
 #, qt-format
 msgid "%1h %2m %3"
-msgstr "%3 %1h %2m"
+msgstr "%3 %1 小時 %2 分鐘"
 
 #. TRANSLATORS: the first argument is hour, followed by the
 #. translation for either 'behind' or 'ahead'
 #: ../app/worldclock/UserWorldCityDelegate.qml:153
 #, qt-format
 msgid "%1h %2"
-msgstr "%2 %1h"
+msgstr "%2 %1 小時"
 
 #. TRANSLATORS: the first argument is minute, followed by the
 #. translation for either 'behind' or 'ahead'
 #: ../app/worldclock/UserWorldCityDelegate.qml:161
 #, qt-format
 msgid "%1m %2"
-msgstr "%2 %1m"
+msgstr "%2 %1 分鐘"
 
 #: ../app/worldclock/UserWorldCityDelegate.qml:167
 msgid "Same time"
@@ -305,7 +305,7 @@ msgstr "衣索比亞"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:51
 msgid "Adelaide"
-msgstr "阿得雷德"
+msgstr "Adelaide (阿德萊德)"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:51
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:96
@@ -322,7 +322,7 @@ msgstr "澳大利亞"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:52
 msgid "Albuquerque"
-msgstr ""
+msgstr "Albuquerque (阿布奎基)"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:52
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:58
@@ -385,7 +385,7 @@ msgstr "美國"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:53
 msgid "Algiers"
-msgstr ""
+msgstr "Algiers (阿爾及爾)"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:53
 msgid "Algeria"
@@ -393,16 +393,16 @@ msgstr "阿爾及利亞"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:54
 msgid "Almaty"
-msgstr ""
+msgstr "Almaty (阿拉木圖)"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:54
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:63
 msgid "Kazakhstan"
-msgstr ""
+msgstr "哈薩克"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:55
 msgid "Amman"
-msgstr ""
+msgstr "Amman (安曼)"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:55
 msgid "Jordan"
@@ -410,7 +410,7 @@ msgstr "約旦"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:56
 msgid "Amsterdam"
-msgstr "阿姆斯特丹"
+msgstr "Amsterdam (阿姆斯特丹)"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:56
 msgid "Netherlands"
@@ -418,7 +418,7 @@ msgstr "荷蘭"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:57
 msgid "Anadyr"
-msgstr ""
+msgstr "Anadyr (阿納德爾)"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:57
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:240
@@ -428,7 +428,7 @@ msgstr "俄羅斯"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:58
 msgid "Anchorage"
-msgstr "安克拉治 (Anchorage)"
+msgstr "Anchorage (安克拉治)"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:59
 msgid "Andorra"
@@ -436,12 +436,12 @@ msgstr ""
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:60
 msgid "Ankara"
-msgstr "安卡拉"
+msgstr "Ankara (安卡拉)"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:60
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:178
 msgid "Turkey"
-msgstr "土耳其 (Turkey)"
+msgstr "土耳其"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:61
 msgid "Ann Arbor"
