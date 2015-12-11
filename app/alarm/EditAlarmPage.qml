@@ -20,7 +20,7 @@ import QtQuick 2.4
 import WorldClock 1.0
 import Alarm 1.0
 import Ubuntu.Components 1.3
-import Ubuntu.Components.Pickers 1.0
+import Ubuntu.Components.Pickers 1.3
 import "../components"
 
 Page {

@@ -29,7 +29,6 @@ import "components"
 PageWithBottomEdge {
     id: _mainPage
     objectName: "mainPage"
-    title: i18n.tr("Clock")
 
     // String with not localized date and time in format "yyyy:MM:dd:hh:mm:ss", eg.: "2015:10:05:16:10:15"
     property string notLocalizedDateTimeString
