@@ -88,7 +88,7 @@ ListItem {
                 visible: !(type === Alarm.OneTime && !model.enabled)
                 elide: Text.ElideRight
                 text: type === Alarm.Repeating ? alarmUtils.format_day_string(daysOfWeek, type)
-                                               : model.enabled ? alarmUtils.get_time_to_next_alarm(model.date - localTime)
+                                               : model.enabled ? alarmUtils.get_time_to_alarm(model.date, localTime)
                                                                : "Alarm Disabled"
 
                 function animateTextChange() {
@@ -107,7 +107,7 @@ ListItem {
 
                     ScriptAction {
                         script: alarmSubtitle.text = showAlarmFrequency ? alarmUtils.format_day_string(daysOfWeek, type)
-                                                                        : alarmUtils.get_time_to_next_alarm(model.date - localTime)
+                                                                        : alarmUtils.get_time_to_alarm(model.date, localTime)
                     }
 
                     PropertyAnimation {

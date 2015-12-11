@@ -149,7 +149,6 @@ Page {
 
     Audio {
         id: previewAlarmSound
-        audioRole: MediaPlayer.alert
 
         function controlPlayback(fileURL) {
             source = fileURL

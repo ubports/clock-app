@@ -1,4 +1,12 @@
-ubuntu-clock-app (3.6) UNRELEASED; urgency=medium
+ubuntu-clock-app (3.7) UNRELEASED; urgency=medium
+
+  [ Bartosz Kosiorek ]
+  * Fix alarm difference time description, during DST change (LP: #1510694)
+  * Move to use the new SDK components v1.3 (LP: #1508363)
+
+ -- Bartosz Kosiorek <gang65@poczta.onet.pl>  Tue, 27 Oct 2015 23:49:19 +0100
+
+ubuntu-clock-app (3.6)  vivid; urgency=medium
 
   [ Nekhelesh Ramananthan ]
   * Bumped version to 3.6
