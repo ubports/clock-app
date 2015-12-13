@@ -52,8 +52,9 @@ public:
         RoleCityId,
         RoleCityName,
         RoleCountryName,
-        RoleTimeZoneId,
-        RoleTimeString,
+        RoleTimezoneId,
+        RoleNotLocalizedTimeString,
+        RoleLocalizedTimeString,
         RoleTimeTo,
     };
 

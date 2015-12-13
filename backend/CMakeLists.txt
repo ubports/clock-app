@@ -28,7 +28,7 @@ set(
 set(
     stopwatch_SRCS
     modules/Stopwatch/backend.cpp
-    modules/Stopwatch/history.cpp
+    modules/Stopwatch/engine.cpp
     modules/Stopwatch/formattime.cpp
 )
 

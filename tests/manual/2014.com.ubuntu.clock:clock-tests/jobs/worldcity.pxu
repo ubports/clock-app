@@ -23,3 +23,30 @@ _description:
     7. Press the add city button.
         The add world city page is shown with a list of cities in Espanol
 
+id: worldcity/timezone-change
+plugin: manual
+_summary: Test to check if clock time and world city times are correct after changing timezone during runtime
+estimated_duration: 600
+_description:
+    Test to check if clock time and world city times are correct after changing timezone during runtime
+    1. Launch the clock app.
+        Clock app opens showing the current local time. 
+    2. Press on clock face and switch to Digital mode.
+        Main clock is showing current time in digital mode.
+    3. Press the add city button.
+        The add world city page is shown with a list of cities.
+    4. Select a city from different timezone.
+        The main clock page will be shown with the city you selected.
+    5. Press the add city button.
+        The add world city page is shown with a list of cities.
+    6. Select a city from current timezone.
+        The main clock page will be shown with the city you selected.
+    7. Remeber time of World Cities and Main Clock
+    8. Switch to the system settings app. Navigate to Date & Time.
+        The field with current timezone should be visible. Remember current timezone setting.
+    9. Press the current timezone field and change system timezone to something different.
+        The timezone field now shows the newly selected timezone.
+   10. Switch to clock app.
+        The Main Clock hours have not been changed. 
+        The Main Clock shows the same time as on top bar (system time).
+        The World Clocks hours should remains unchanged.

@@ -88,7 +88,7 @@ ListItem {
                 visible: !(type === Alarm.OneTime && !model.enabled)
                 elide: Text.ElideRight
                 text: type === Alarm.Repeating ? alarmUtils.format_day_string(daysOfWeek, type)
-                                               : model.enabled ? alarmUtils.get_time_to_next_alarm(model.date - localTime)
+                                               : model.enabled ? alarmUtils.get_time_to_alarm(model.date, localTime)
                                                                : "Alarm Disabled"
 
                 function animateTextChange() {
@@ -107,7 +107,7 @@ ListItem {
 
                     ScriptAction {
                         script: alarmSubtitle.text = showAlarmFrequency ? alarmUtils.format_day_string(daysOfWeek, type)
-                                                                        : alarmUtils.get_time_to_next_alarm(model.date - localTime)
+                                                                        : alarmUtils.get_time_to_alarm(model.date, localTime)
                     }
 
                     PropertyAnimation {
@@ -137,11 +137,10 @@ ListItem {
                 alarmData.enabled = checked
 
                 /*
-                 Calculate the new alarm time if it is a one-time alarm and has
-                 gone-off and the user is re-enabling the alarm. Repeating
-                 alarms do this automatically.
+                 Calculate the alarm time if it is a one-time alarm.
+                 Repeating alarms do this automatically.
                 */
-                if(checked && type === Alarm.OneTime) {
+                if(type === Alarm.OneTime) {
                     alarmData.daysOfWeek = Alarm.AutoDetect
                     var now = new Date()
                     if (alarmData.date.getHours()*60+alarmData.date.getMinutes() <= now.getHours()*60+now.getMinutes()) {

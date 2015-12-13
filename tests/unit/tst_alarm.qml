@@ -27,17 +27,6 @@ MainView {
     width: units.gu(40)
     height: units.gu(70)
 
-    property var clockTime: new Date
-                            (
-                                localTimeSource.localDateString.split(":")[0],
-                                localTimeSource.localDateString.split(":")[1]-1,
-                                localTimeSource.localDateString.split(":")[2],
-                                localTimeSource.localTimeString.split(":")[0],
-                                localTimeSource.localTimeString.split(":")[1],
-                                localTimeSource.localTimeString.split(":")[2],
-                                localTimeSource.localTimeString.split(":")[3]
-                            )
-
     AlarmModel {
         id: alarmModel
     }
@@ -76,13 +65,16 @@ MainView {
             //delete all current alarms
             waitForRendering(alarmPage)
             var alarmsList = findChild(alarmPage, "alarmListView")
-            verify(alarmsList != null)
+            verify(alarmsList !== null)
             print("Found " + alarmsList.count + " pre-existing alarms")
 
             for (var i=0; i<alarmsList.count; i++) {
-                print("Deleting Alarm " + i)
+
                 var alarmObject = findChild(alarmsList, "alarm"+i)
-                swipeToDeleteItem(alarmObject)
+                if (alarmObject !== null) {
+                    print("Deleting Alarm " + i)
+                    swipeToDeleteItem(alarmObject)
+                }
                 waitForRendering(alarmPage)
             }
         }

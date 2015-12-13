@@ -248,12 +248,12 @@ Page {
                 if(isNewAlarm) {
                     return new Date
                             (
-                                currentTime.localDateString.split(":")[0],
-                                currentTime.localDateString.split(":")[1] - 1,
-                                currentTime.localDateString.split(":")[2],
-                                currentTime.localTimeString.split(":")[0],
-                                Math.ceil((parseInt(currentTime.localTimeString
-                                                   .split(":")[1]) + 1) / 5) * 5,
+                                currentTime.notLocalizedCurrentDateTimeString.split(":")[0],
+                                currentTime.notLocalizedCurrentDateTimeString.split(":")[1] - 1,
+                                currentTime.notLocalizedCurrentDateTimeString.split(":")[2],
+                                currentTime.notLocalizedCurrentDateTimeString.split(":")[3],
+                                Math.ceil((parseInt(currentTime.notLocalizedCurrentDateTimeString
+                                                   .split(":")[4]) + 1) / 5) * 5,
                                 0,
                                 0
                                 )

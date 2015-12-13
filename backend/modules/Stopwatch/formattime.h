@@ -28,11 +28,10 @@ class FormatTime: public QObject
 public:
     FormatTime(QObject *parent=0);
 
-public slots:
-    QString millisToString(int millis) const;
-    QString millisToTimeString(int millis, bool showHours) const;
-    QString addZeroPrefix(QString str, int totalLength) const;
-    QString lapTimeToString(int millis) const;
+    Q_INVOKABLE QString millisToString(int millis) const;
+    Q_INVOKABLE QString millisToTimeString(int millis, bool showHours) const;
+    Q_INVOKABLE QString addZeroPrefix(QString str, int totalLength) const;
+    Q_INVOKABLE QString lapTimeToString(int millis) const;
 };
 
 #endif

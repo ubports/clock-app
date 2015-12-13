@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2015-09-10 13:06+0200\n"
+"POT-Creation-Date: 2015-10-19 04:17+0200\n"
 "PO-Revision-Date: 2015-07-10 15:05+0000\n"
 "Last-Translator: Rockworld <sumoisrock@gmail.com>\n"
 "Language-Team: Khmer <km@li.org>\n"
@@ -15,10 +15,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Launchpad-Export-Date: 2015-09-11 06:05+0000\n"
-"X-Generator: Launchpad (build 17720)\n"
+"X-Launchpad-Export-Date: 2015-10-20 05:47+0000\n"
+"X-Generator: Launchpad (build 17812)\n"
 
-#: ../app/MainPage.qml:47 ../app/alarm/AlarmUtils.qml:55
+#: ../app/MainPage.qml:53 ../app/alarm/AlarmUtils.qml:55
 msgid "No active alarms"
 msgstr ""
 
@@ -54,11 +54,11 @@ msgstr "មិន​ជ្រើស​អ្វី​ទាំងអស់"
 msgid "Select All"
 msgstr "ជ្រើស​ទាំងអស់"
 
-#: ../app/alarm/AlarmPage.qml:141
+#: ../app/alarm/AlarmPage.qml:152
 msgid "No saved alarms"
 msgstr ""
 
-#: ../app/alarm/AlarmPage.qml:142
+#: ../app/alarm/AlarmPage.qml:153
 msgid "Tap the + icon to add an alarm"
 msgstr ""
 
@@ -135,26 +135,26 @@ msgstr ""
 msgid "Daily"
 msgstr "រាល់​ថ្ងៃ"
 
-#: ../app/alarm/AlarmUtils.qml:72
+#: ../app/alarm/AlarmUtils.qml:82
 #, qt-format
 msgid "Next Alarm %1"
 msgstr ""
 
-#: ../app/alarm/AlarmUtils.qml:79
-msgid "Alarm Passed"
-msgstr ""
-
 #: ../app/alarm/AlarmUtils.qml:89
-#, no-c-format, qt-format
-msgid "in %1d %2h %3m"
+msgid "Alarm Passed"
 msgstr ""
 
 #: ../app/alarm/AlarmUtils.qml:99
 #, no-c-format, qt-format
+msgid "in %1d %2h %3m"
+msgstr ""
+
+#: ../app/alarm/AlarmUtils.qml:109
+#, no-c-format, qt-format
 msgid "in %1h %2m"
 msgstr ""
 
-#: ../app/alarm/AlarmUtils.qml:108
+#: ../app/alarm/AlarmUtils.qml:118
 #, no-c-format, qt-format
 msgid "in %1m"
 msgstr ""
@@ -176,13 +176,13 @@ msgstr "លុប​ការជូនដំណឹង"
 msgid "Add sound from"
 msgstr ""
 
-#: ../app/clock/ClockPage.qml:225
+#: ../app/clock/ClockPage.qml:249
 msgid "Retrieving location..."
 msgstr ""
 
 #. TRANSLATORS: This refers to the stopwatch lap and is shown as a header where space is limited. Constrain
 #. translation length to a few characters.
-#: ../app/stopwatch/LapListView.qml:46 ../app/stopwatch/StopwatchPage.qml:131
+#: ../app/stopwatch/LapListView.qml:46 ../app/stopwatch/StopwatchPage.qml:83
 msgid "Lap"
 msgstr ""
 
@@ -194,19 +194,19 @@ msgstr ""
 msgid "Total Time"
 msgstr ""
 
-#: ../app/stopwatch/StopwatchPage.qml:114
+#: ../app/stopwatch/StopwatchPage.qml:66
 msgid "Stop"
 msgstr "បញ្ឈប់"
 
-#: ../app/stopwatch/StopwatchPage.qml:114
+#: ../app/stopwatch/StopwatchPage.qml:66
 msgid "Start"
 msgstr "ចាប់ផ្ដើម"
 
-#: ../app/stopwatch/StopwatchPage.qml:114
+#: ../app/stopwatch/StopwatchPage.qml:66
 msgid "Resume"
 msgstr ""
 
-#: ../app/stopwatch/StopwatchPage.qml:131
+#: ../app/stopwatch/StopwatchPage.qml:83
 msgid "Clear"
 msgstr ""
 
@@ -221,37 +221,37 @@ msgstr "ទីក្រុង"
 
 #. TRANSLATORS: this indicates if the time in a world clock
 #. is behind or ahead of the time at the current location
-#: ../app/worldclock/UserWorldCityDelegate.qml:147
+#: ../app/worldclock/UserWorldCityDelegate.qml:133
 msgid "behind"
 msgstr ""
 
-#: ../app/worldclock/UserWorldCityDelegate.qml:148
+#: ../app/worldclock/UserWorldCityDelegate.qml:134
 msgid "ahead"
 msgstr ""
 
 #. TRANSLATORS: the first argument is hour, followed by
 #. minute, and the translation for either 'behind' or
 #. 'ahead'
-#: ../app/worldclock/UserWorldCityDelegate.qml:158
+#: ../app/worldclock/UserWorldCityDelegate.qml:144
 #, qt-format
 msgid "%1h %2m %3"
 msgstr ""
 
 #. TRANSLATORS: the first argument is hour, followed by the
 #. translation for either 'behind' or 'ahead'
-#: ../app/worldclock/UserWorldCityDelegate.qml:167
+#: ../app/worldclock/UserWorldCityDelegate.qml:153
 #, qt-format
 msgid "%1h %2"
 msgstr ""
 
 #. TRANSLATORS: the first argument is minute, followed by the
 #. translation for either 'behind' or 'ahead'
-#: ../app/worldclock/UserWorldCityDelegate.qml:175
+#: ../app/worldclock/UserWorldCityDelegate.qml:161
 #, qt-format
 msgid "%1m %2"
 msgstr ""
 
-#: ../app/worldclock/UserWorldCityDelegate.qml:181
+#: ../app/worldclock/UserWorldCityDelegate.qml:167
 msgid "Same time"
 msgstr ""
 

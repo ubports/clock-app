@@ -30,7 +30,7 @@ MainView {
     property bool applicationState: Qt.application.active
 
     // objectName for functional testing purposes (autopilot-qt5)
-    objectName: "clock"
+    objectName: "clockMainView"
 
     // applicationName for click packages (used as an unique app identifier)
     applicationName: "com.ubuntu.clock"
@@ -135,24 +135,17 @@ MainView {
               is required.
             */
 
-            /*
-              #FIXME: When the upstream QT bug at
-              https://bugreports.qt-project.org/browse/QTBUG-40275 is fixed it will be
-              possible to receive a datetime object directly instead of using this hack.
-            */
-
             alarmModel: alarmModelLoader.item
             bottomEdgeEnabled: alarmModelLoader.status === Loader.Ready && alarmModelLoader.item.isReady && isClockPage
-            clockTime: new Date
-                       (
-                           localTimeSource.localDateString.split(":")[0],
-                           localTimeSource.localDateString.split(":")[1]-1,
-                           localTimeSource.localDateString.split(":")[2],
-                           localTimeSource.localTimeString.split(":")[0],
-                           localTimeSource.localTimeString.split(":")[1],
-                           localTimeSource.localTimeString.split(":")[2],
-                           localTimeSource.localTimeString.split(":")[3]
-                       )
+
+            /*
+               FIXME: When the upstream QT bug at
+               https://bugreports.qt-project.org/browse/QTBUG-40275 is fixed
+               it will be possible to receive a datetime object directly for notLocalizedDateTimeString variable.
+            */
+            notLocalizedDateTimeString: localTimeSource.notLocalizedCurrentDateTimeString
+            localizedTimeString: localTimeSource.localizedCurrentTimeString
+            localizedDateString: localTimeSource.localizedCurrentDateString
         }
     }
 }

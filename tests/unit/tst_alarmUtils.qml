@@ -25,8 +25,7 @@ TestCase {
     id: alarmUtilsTest
     name: "AlarmUtilsLibrary"
 
-    property var futureTime: new Date()
-    property var currentTime: new Date()
+    property string mock_notLocalizedDateTimeString: ""
 
     AlarmUtils {
         id: alarmUtils
@@ -44,10 +43,14 @@ TestCase {
          Alarm1, currentTime+2hrs, not enabled
          Alarm2, currentTime+7hrs, enabled
         */
+
+        var currentTime = new Date()
+        var futureTime = new Date()
         futureTime.setHours((futureTime.getHours() + 2))
         mockAlarmDatabase.append({"name": "Alarm1", "date": futureTime, "enabled": false})
         futureTime.setHours((futureTime.getHours() + 5))
         mockAlarmDatabase.append({"name": "Alarm2", "date": futureTime, "enabled": true})
+        mock_notLocalizedDateTimeString = currentTime.getFullYear().toString() + ":" + (currentTime.getMonth() + 1).toString() + ":" + currentTime.getDate().toString() + ":" + currentTime.getHours().toString() + ":" + currentTime.getMinutes().toString() + ":" +currentTime.getSeconds().toString()
     }
 
     /*
@@ -55,7 +58,7 @@ TestCase {
      to the active alarms amongst other disabled alarms.
     */
     function test_bottomEdgeTitleMustDisplayActiveAlarm() {
-        var result = alarmUtils.set_bottom_edge_title(mockAlarmDatabase, currentTime)
+        var result = alarmUtils.set_bottom_edge_title(mockAlarmDatabase, mock_notLocalizedDateTimeString)
         compare(result, "Next Alarm in 7h 1m", "Bottom edge title is incorrect")
     }
 
@@ -65,7 +68,7 @@ TestCase {
     */
     function test_bottomEdgeTitleMustDisplayNoActiveAlarm() {
         mockAlarmDatabase.set(1, {"enabled": false})
-        var result = alarmUtils.set_bottom_edge_title(mockAlarmDatabase, currentTime)
+        var result = alarmUtils.set_bottom_edge_title(mockAlarmDatabase, mock_notLocalizedDateTimeString)
         compare(result, "No active alarms", "Bottom edge title is not correctly set when there are no enabled alarms")
         mockAlarmDatabase.set(1, {"enabled": true})
     }
@@ -76,7 +79,7 @@ TestCase {
     */
     function test_bottomEdgeTitleMustDisplayNextActiveAlarm() {
         mockAlarmDatabase.set(0, {"enabled": true})
-        var result = alarmUtils.set_bottom_edge_title(mockAlarmDatabase, currentTime)
+        var result = alarmUtils.set_bottom_edge_title(mockAlarmDatabase, mock_notLocalizedDateTimeString)
         compare(result, "Next Alarm in 2h 1m", "Bottom edge title is not correctly set to the next immediate active alarm where there are multiple active alarms.")
         mockAlarmDatabase.set(0, {"enabled": false})
     }
@@ -94,35 +97,42 @@ TestCase {
     }
 
     /*
-     This test checks if the get_time_to_next_alarm() function takes a time in
+     This test checks if the get_time_to_alarm() function takes a time in
      milliseconds and writtens a user readable string e.g "in 2d 15h 10m" after
      correct calculation.
     */
     function test_timeToNextAlarmStringMustShowAll() {
-        var timeInMilliseconds = 440100000; // 5 days, 2 hrs, 16 mins
-        var result = alarmUtils.get_time_to_next_alarm(timeInMilliseconds)
+        var currentDateTime = new Date()
+        var timeInMilliseconds = ((5 * 24 + 2)* 60 + 15) * 60 * 1000; // 5 days, 2 hrs, 16 mins
+
+        var alarmDate = new Date(currentDateTime.getTime() + timeInMilliseconds);
+        var result = alarmUtils.get_time_to_alarm(alarmDate, currentDateTime)
         compare(result, "in 5d 2h 16m", "Time to next alarm string is incorrect")
     }
 
     /*
-     This test checks if the get_time_to_next_alarm() function takes a time in
+     This test checks if the get_time_to_alarm() function takes a time in
      milliseconds and writtens a user readable string without days e.g "in 15h 10m"
      after correct calculation.
     */
     function test_timeToNextAlarmStringMustNotShowDays() {
-        var timeInMilliseconds = 36000000 // 10 hours, 1 min
-        var result = alarmUtils.get_time_to_next_alarm(timeInMilliseconds)
+        var timeInMilliseconds = 10 * 60 * 60 * 1000 // 10 hours, 1 min
+        var currentDateTime = new Date()
+        var alarmDate = new Date(currentDateTime.getTime() + timeInMilliseconds);
+        var result = alarmUtils.get_time_to_alarm(alarmDate, currentDateTime)
         compare(result, "in 10h 1m", "Time to next alarm string is incorrect")
     }
 
     /*
-     This test checks if the get_time_to_next_alarm() function takes a time in
+     This test checks if the get_time_to_alarm() function takes a time in
      milliseconds and writtens a user readable string with only mins e.g "in 10m"
      after correct calculation.
     */
     function test_timeToNextAlarmStringMustOnlyShowMinutes() {
-        var timeInMilliseconds = 1080000 // 19 mins
-        var result = alarmUtils.get_time_to_next_alarm(timeInMilliseconds)
+        var timeInMilliseconds = 18 * 60 * 1000 // 19 mins
+        var currentDateTime = new Date()
+        var alarmDate = new Date(currentDateTime.getTime() + timeInMilliseconds);
+        var result = alarmUtils.get_time_to_alarm(alarmDate, currentDateTime)
         compare(result, "in 19m", "Time to next alarm string is incorrect")
     }
 

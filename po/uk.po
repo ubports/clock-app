@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2015-09-10 13:06+0200\n"
-"PO-Revision-Date: 2015-08-22 06:47+0000\n"
+"POT-Creation-Date: 2015-10-19 04:17+0200\n"
+"PO-Revision-Date: 2015-10-09 12:23+0000\n"
 "Last-Translator: Yuri Chornoivan <yurchor@gmail.com>\n"
 "Language-Team: Ukrainian <uk@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -17,11 +17,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Launchpad-Export-Date: 2015-09-11 06:05+0000\n"
-"X-Generator: Launchpad (build 17720)\n"
+"X-Launchpad-Export-Date: 2015-10-20 05:48+0000\n"
+"X-Generator: Launchpad (build 17812)\n"
 "Language: uk\n"
 
-#: ../app/MainPage.qml:47 ../app/alarm/AlarmUtils.qml:55
+#: ../app/MainPage.qml:53 ../app/alarm/AlarmUtils.qml:55
 msgid "No active alarms"
 msgstr "Немає активних нагадувань"
 
@@ -57,11 +57,11 @@ msgstr "Не обирати жодного"
 msgid "Select All"
 msgstr "Вибрати все"
 
-#: ../app/alarm/AlarmPage.qml:141
+#: ../app/alarm/AlarmPage.qml:152
 msgid "No saved alarms"
 msgstr "Немає збережених нагадувань"
 
-#: ../app/alarm/AlarmPage.qml:142
+#: ../app/alarm/AlarmPage.qml:153
 msgid "Tap the + icon to add an alarm"
 msgstr "Натисніть піктограму «+», щоб додати нагадування"
 
@@ -114,15 +114,15 @@ msgstr "Звук"
 
 #: ../app/alarm/AlarmSound.qml:186
 msgid "Custom alarm sounds"
-msgstr ""
+msgstr "Нетипові звуки нагадувань"
 
 #: ../app/alarm/AlarmSound.qml:201
 msgid "Add sound"
-msgstr ""
+msgstr "Додати звук"
 
 #: ../app/alarm/AlarmSound.qml:353
 msgid "Default alarm sounds"
-msgstr ""
+msgstr "Типові звуки нагадувань"
 
 #: ../app/alarm/AlarmUtils.qml:31
 msgid "Never"
@@ -140,26 +140,26 @@ msgstr "Вихідні"
 msgid "Daily"
 msgstr "Щодня"
 
-#: ../app/alarm/AlarmUtils.qml:72
+#: ../app/alarm/AlarmUtils.qml:82
 #, qt-format
 msgid "Next Alarm %1"
 msgstr "Наступне нагадування %1"
 
-#: ../app/alarm/AlarmUtils.qml:79
+#: ../app/alarm/AlarmUtils.qml:89
 msgid "Alarm Passed"
 msgstr "Нагадування пропущено"
 
-#: ../app/alarm/AlarmUtils.qml:89
+#: ../app/alarm/AlarmUtils.qml:99
 #, no-c-format, qt-format
 msgid "in %1d %2h %3m"
 msgstr "за %1д %2г %3хв"
 
-#: ../app/alarm/AlarmUtils.qml:99
+#: ../app/alarm/AlarmUtils.qml:109
 #, no-c-format, qt-format
 msgid "in %1h %2m"
 msgstr "за %1г %2хв"
 
-#: ../app/alarm/AlarmUtils.qml:108
+#: ../app/alarm/AlarmUtils.qml:118
 #, no-c-format, qt-format
 msgid "in %1m"
 msgstr "за %1хв"
@@ -181,13 +181,13 @@ msgstr "Вилучити нагадування"
 msgid "Add sound from"
 msgstr "Додавання звуку з"
 
-#: ../app/clock/ClockPage.qml:225
+#: ../app/clock/ClockPage.qml:249
 msgid "Retrieving location..."
 msgstr "Отримуємо дані місця перебування…"
 
 #. TRANSLATORS: This refers to the stopwatch lap and is shown as a header where space is limited. Constrain
 #. translation length to a few characters.
-#: ../app/stopwatch/LapListView.qml:46 ../app/stopwatch/StopwatchPage.qml:131
+#: ../app/stopwatch/LapListView.qml:46 ../app/stopwatch/StopwatchPage.qml:83
 msgid "Lap"
 msgstr "Коло"
 
@@ -199,19 +199,19 @@ msgstr "Час кола"
 msgid "Total Time"
 msgstr "Загальний час"
 
-#: ../app/stopwatch/StopwatchPage.qml:114
+#: ../app/stopwatch/StopwatchPage.qml:66
 msgid "Stop"
 msgstr "Зупинити"
 
-#: ../app/stopwatch/StopwatchPage.qml:114
+#: ../app/stopwatch/StopwatchPage.qml:66
 msgid "Start"
 msgstr "Почати"
 
-#: ../app/stopwatch/StopwatchPage.qml:114
+#: ../app/stopwatch/StopwatchPage.qml:66
 msgid "Resume"
 msgstr "Продовжити"
 
-#: ../app/stopwatch/StopwatchPage.qml:131
+#: ../app/stopwatch/StopwatchPage.qml:83
 msgid "Clear"
 msgstr "Спорожнити"
 
@@ -226,37 +226,37 @@ msgstr "Місто"
 
 #. TRANSLATORS: this indicates if the time in a world clock
 #. is behind or ahead of the time at the current location
-#: ../app/worldclock/UserWorldCityDelegate.qml:147
+#: ../app/worldclock/UserWorldCityDelegate.qml:133
 msgid "behind"
 msgstr "за"
 
-#: ../app/worldclock/UserWorldCityDelegate.qml:148
+#: ../app/worldclock/UserWorldCityDelegate.qml:134
 msgid "ahead"
 msgstr "перед"
 
 #. TRANSLATORS: the first argument is hour, followed by
 #. minute, and the translation for either 'behind' or
 #. 'ahead'
-#: ../app/worldclock/UserWorldCityDelegate.qml:158
+#: ../app/worldclock/UserWorldCityDelegate.qml:144
 #, qt-format
 msgid "%1h %2m %3"
 msgstr "%1г %2хв %3"
 
 #. TRANSLATORS: the first argument is hour, followed by the
 #. translation for either 'behind' or 'ahead'
-#: ../app/worldclock/UserWorldCityDelegate.qml:167
+#: ../app/worldclock/UserWorldCityDelegate.qml:153
 #, qt-format
 msgid "%1h %2"
 msgstr "%1г %2"
 
 #. TRANSLATORS: the first argument is minute, followed by the
 #. translation for either 'behind' or 'ahead'
-#: ../app/worldclock/UserWorldCityDelegate.qml:175
+#: ../app/worldclock/UserWorldCityDelegate.qml:161
 #, qt-format
 msgid "%1m %2"
 msgstr "%1хв %2"
 
-#: ../app/worldclock/UserWorldCityDelegate.qml:181
+#: ../app/worldclock/UserWorldCityDelegate.qml:167
 msgid "Same time"
 msgstr "Той самий час"
 
@@ -1662,7 +1662,7 @@ msgstr "Прага"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:275
 msgid "Czech Republic"
-msgstr ""
+msgstr "Чеська республіка"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:276
 msgid "Pyongyang"

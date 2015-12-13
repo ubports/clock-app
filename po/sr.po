@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2015-09-10 13:06+0200\n"
-"PO-Revision-Date: 2015-09-09 20:22+0000\n"
+"POT-Creation-Date: 2015-10-19 04:17+0200\n"
+"PO-Revision-Date: 2015-09-13 18:41+0000\n"
 "Last-Translator: Bojan Bogdanović <Unknown>\n"
 "Language-Team: Serbian <sr@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -16,12 +16,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Launchpad-Export-Date: 2015-09-11 06:05+0000\n"
-"X-Generator: Launchpad (build 17720)\n"
+"X-Launchpad-Export-Date: 2015-10-20 05:47+0000\n"
+"X-Generator: Launchpad (build 17812)\n"
 
-#: ../app/MainPage.qml:47 ../app/alarm/AlarmUtils.qml:55
+#: ../app/MainPage.qml:53 ../app/alarm/AlarmUtils.qml:55
 msgid "No active alarms"
-msgstr "Нема активних аларма"
+msgstr "Нема активних будилника"
 
 #: ../app/alarm/AlarmLabel.qml:33 ../app/alarm/AlarmLabel.qml:71
 #: ../app/alarm/EditAlarmPage.qml:283
@@ -35,7 +35,7 @@ msgstr "Обриши"
 
 #: ../app/alarm/AlarmPage.qml:27
 msgid "Alarms"
-msgstr "Аларми"
+msgstr "Будилници"
 
 #: ../app/alarm/AlarmPage.qml:41 ../app/alarm/AlarmPage.qml:66
 #: ../app/worldclock/WorldCityList.qml:79
@@ -45,7 +45,7 @@ msgstr "Назад"
 #: ../app/alarm/AlarmPage.qml:51 ../app/alarm/EditAlarmPage.qml:41
 #: ../app/alarm/EditAlarmPage.qml:185
 msgid "Alarm"
-msgstr "Аларм"
+msgstr "Будилник"
 
 #: ../app/alarm/AlarmPage.qml:76
 msgid "Select None"
@@ -55,13 +55,13 @@ msgstr "Поништи избор"
 msgid "Select All"
 msgstr "Изабери све"
 
-#: ../app/alarm/AlarmPage.qml:141
+#: ../app/alarm/AlarmPage.qml:152
 msgid "No saved alarms"
-msgstr "Нема сачуваних аларма"
+msgstr "Нема сачуваних будилника"
 
-#: ../app/alarm/AlarmPage.qml:142
+#: ../app/alarm/AlarmPage.qml:153
 msgid "Tap the + icon to add an alarm"
-msgstr "Додирните + иконицу да додате аларм"
+msgstr "Додирните + иконицу да додате будилник"
 
 #: ../app/alarm/AlarmRepeat.qml:36 ../app/alarm/EditAlarmPage.qml:273
 msgid "Repeat"
@@ -88,11 +88,11 @@ msgstr[2] "%1 минута"
 
 #: ../app/alarm/AlarmSettingsPage.qml:94
 msgid "Alarm volume"
-msgstr "Јачина аларма"
+msgstr "Јачина будилника"
 
 #: ../app/alarm/AlarmSettingsPage.qml:125
 msgid "Alarm stops after"
-msgstr "Аларм се прекида након"
+msgstr "Будилник се прекида након"
 
 #: ../app/alarm/AlarmSettingsPage.qml:163
 msgid "Snooze for"
@@ -112,7 +112,7 @@ msgstr "Мелодија"
 
 #: ../app/alarm/AlarmSound.qml:186
 msgid "Custom alarm sounds"
-msgstr "Прилагођена мелодија аларма"
+msgstr "Прилагођена мелодија будилника"
 
 #: ../app/alarm/AlarmSound.qml:201
 msgid "Add sound"
@@ -120,7 +120,7 @@ msgstr "Додајте мелодију"
 
 #: ../app/alarm/AlarmSound.qml:353
 msgid "Default alarm sounds"
-msgstr "Подразумеване мелодије аларма"
+msgstr "Подразумеване мелодије будилника"
 
 #: ../app/alarm/AlarmUtils.qml:31
 msgid "Never"
@@ -138,54 +138,54 @@ msgstr "Викенд"
 msgid "Daily"
 msgstr "Сваки дан"
 
-#: ../app/alarm/AlarmUtils.qml:72
+#: ../app/alarm/AlarmUtils.qml:82
 #, qt-format
 msgid "Next Alarm %1"
-msgstr "Наредни аларм %1"
-
-#: ../app/alarm/AlarmUtils.qml:79
-msgid "Alarm Passed"
-msgstr "Аларм је прошао"
+msgstr "Наредни будилник %1"
 
 #: ../app/alarm/AlarmUtils.qml:89
+msgid "Alarm Passed"
+msgstr "Будилник је прошао"
+
+#: ../app/alarm/AlarmUtils.qml:99
 #, no-c-format, qt-format
 msgid "in %1d %2h %3m"
 msgstr "за %1д %2ч %3м"
 
-#: ../app/alarm/AlarmUtils.qml:99
+#: ../app/alarm/AlarmUtils.qml:109
 #, no-c-format, qt-format
 msgid "in %1h %2m"
 msgstr "за %1ч %2м"
 
-#: ../app/alarm/AlarmUtils.qml:108
+#: ../app/alarm/AlarmUtils.qml:118
 #, no-c-format, qt-format
 msgid "in %1m"
 msgstr "за %1м"
 
 #: ../app/alarm/EditAlarmPage.qml:34
 msgid "New alarm"
-msgstr "Нови аларм"
+msgstr "Нови будилник"
 
 #: ../app/alarm/EditAlarmPage.qml:34
 msgid "Edit alarm"
-msgstr "Уреди аларм"
+msgstr "Уреди будилник"
 
 #: ../app/alarm/EditAlarmPage.qml:316
 msgid "Delete alarm"
-msgstr "Обриши аларм"
+msgstr "Обриши будилник"
 
 #. TRANSLATORS: This is the page title. Please keep the translation length to 3 words if possible
 #: ../app/alarm/SoundPeerPicker.qml:27
 msgid "Add sound from"
 msgstr "Додај мелодију из"
 
-#: ../app/clock/ClockPage.qml:225
+#: ../app/clock/ClockPage.qml:249
 msgid "Retrieving location..."
 msgstr "Преузимам положај..."
 
 #. TRANSLATORS: This refers to the stopwatch lap and is shown as a header where space is limited. Constrain
 #. translation length to a few characters.
-#: ../app/stopwatch/LapListView.qml:46 ../app/stopwatch/StopwatchPage.qml:131
+#: ../app/stopwatch/LapListView.qml:46 ../app/stopwatch/StopwatchPage.qml:83
 msgid "Lap"
 msgstr "Круг"
 
@@ -197,19 +197,19 @@ msgstr "Време круга"
 msgid "Total Time"
 msgstr "Укупно време"
 
-#: ../app/stopwatch/StopwatchPage.qml:114
+#: ../app/stopwatch/StopwatchPage.qml:66
 msgid "Stop"
 msgstr "Заустави"
 
-#: ../app/stopwatch/StopwatchPage.qml:114
+#: ../app/stopwatch/StopwatchPage.qml:66
 msgid "Start"
 msgstr "Почни"
 
-#: ../app/stopwatch/StopwatchPage.qml:114
+#: ../app/stopwatch/StopwatchPage.qml:66
 msgid "Resume"
 msgstr "Настави"
 
-#: ../app/stopwatch/StopwatchPage.qml:131
+#: ../app/stopwatch/StopwatchPage.qml:83
 msgid "Clear"
 msgstr "Очисти"
 
@@ -224,37 +224,37 @@ msgstr "Град"
 
 #. TRANSLATORS: this indicates if the time in a world clock
 #. is behind or ahead of the time at the current location
-#: ../app/worldclock/UserWorldCityDelegate.qml:147
+#: ../app/worldclock/UserWorldCityDelegate.qml:133
 msgid "behind"
 msgstr "после"
 
-#: ../app/worldclock/UserWorldCityDelegate.qml:148
+#: ../app/worldclock/UserWorldCityDelegate.qml:134
 msgid "ahead"
 msgstr "пре"
 
 #. TRANSLATORS: the first argument is hour, followed by
 #. minute, and the translation for either 'behind' or
 #. 'ahead'
-#: ../app/worldclock/UserWorldCityDelegate.qml:158
+#: ../app/worldclock/UserWorldCityDelegate.qml:144
 #, qt-format
 msgid "%1h %2m %3"
 msgstr "%1ч %2м %3"
 
 #. TRANSLATORS: the first argument is hour, followed by the
 #. translation for either 'behind' or 'ahead'
-#: ../app/worldclock/UserWorldCityDelegate.qml:167
+#: ../app/worldclock/UserWorldCityDelegate.qml:153
 #, qt-format
 msgid "%1h %2"
 msgstr "%1ч %2"
 
 #. TRANSLATORS: the first argument is minute, followed by the
 #. translation for either 'behind' or 'ahead'
-#: ../app/worldclock/UserWorldCityDelegate.qml:175
+#: ../app/worldclock/UserWorldCityDelegate.qml:161
 #, qt-format
 msgid "%1m %2"
 msgstr "%1м %2"
 
-#: ../app/worldclock/UserWorldCityDelegate.qml:181
+#: ../app/worldclock/UserWorldCityDelegate.qml:167
 msgid "Same time"
 msgstr "Исто време"
 
@@ -1658,7 +1658,7 @@ msgstr "Праг"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:275
 msgid "Czech Republic"
-msgstr ""
+msgstr "Чешка Република"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:276
 msgid "Pyongyang"
@@ -2034,8 +2034,8 @@ msgid ""
 "functionality."
 msgstr ""
 "Софистицирана апликација часовника која пружа функције светсог часовника, "
-"аларма и штоперице."
+"будилника и штоперице."
 
 #: ubuntu-clock-app.desktop.in.in.h:3
 msgid "time;alarm;alert;clock;world;stopwatch;"
-msgstr "време;аларм;упозорење;часовник;свет;штоперица;"
+msgstr "време;будилник;упозорење;часовник;свет;штоперица;"
