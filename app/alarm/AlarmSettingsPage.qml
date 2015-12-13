@@ -85,41 +85,33 @@ Page {
                 top: parent.top
                 left: parent.left
                 right: parent.right
+                topMargin: units.gu(2)
             }
 
-            ListItem {
-                height: 2 * implicitHeight
-
-                Label {
-                    color: UbuntuColors.midAubergine
-                    text: i18n.tr("Alarm volume")
-                    anchors {
-                        left: parent.left
-                        leftMargin: units.gu(2)
-                        top: parent.top
-                        topMargin: units.gu(1)
-                    }
-                }
-
-                Menus.SliderMenu {
-                    anchors {
-                        left: parent.left
-                        right: parent.right
-                        margins: units.gu(2)
-                        verticalCenter: parent.verticalCenter
-                    }
-
-                    minimumValue: 1
-                    maximumValue: 100
-                    live: true
-                    value: alarmSettings.volume
-
-                    onValueChanged: {
-                        alarmSettings.volume = value
-                    }
+            
+            Label {
+                color: UbuntuColors.midAubergine
+                text: i18n.tr("Alarm volume")
+                anchors {
+                    left: parent.left
+                    leftMargin: units.gu(2)
                 }
             }
 
+            Menus.SliderMenu {
+                anchors {
+                    left: parent.left
+                    right: parent.right
+                }
+                minimumValue: 1
+                maximumValue: 100
+                live: true
+                value: alarmSettings.volume
+
+                onValueChanged: {
+                    alarmSettings.volume = value
+                }
+            }          
             ExpandableListItem {
                 id: _alarmDuration
 
