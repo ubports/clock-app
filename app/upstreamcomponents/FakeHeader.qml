@@ -17,22 +17,22 @@
  */
 
 import QtQuick 2.4
-import Ubuntu.Components 1.2
+import Ubuntu.Components 1.3
 
 Column {
     id: fakeHeader
 
-    height: units.gu(9)
+    height: units.gu(6.125)
 
     Rectangle {
-        height: units.gu(7)
+        height: units.gu(6)
         width: parent.width
         color: Theme.palette.normal.background
     }
     
     Rectangle {
         color: "#C9C9C9"
-        height: units.gu(2)
+        height: units.gu(0.125)
         anchors.left: parent.left
         anchors.right: parent.right
     }
