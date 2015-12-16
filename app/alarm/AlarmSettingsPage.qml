@@ -20,8 +20,8 @@ import QtQuick 2.4
 import QtQuick.Layouts 1.1
 import WorldClock 1.0
 import Alarm 1.0
-import Ubuntu.Components 1.2
 import Ubuntu.Settings.Menus 0.1 as Menus
+import Ubuntu.Components 1.3
 import "../components"
 
 Page {
