@@ -3,19 +3,19 @@
 [welcome]
 text= Welcome to Clock App Manual Tests!
     This application will guide you through some manual test cases which
-    confirm the workings of the Clock application (part of Ubuntu Core 
+    confirm the workings of the Clock application (part of Ubuntu Core
     Applications) and its interaction with the system. The test suites are
-    split into various groups based on their functionality like alarm, 
+    split into various groups based on their functionality like alarm,
     settings etc.
-    
+
     If all the actions produce the expected results listed, please submit
     a 'passed' result.
-    
+
     If an action fails, or produces an unexpected results, please submit a
     'failed' result and file a bug. Please be sure to include the bug number
     when you submit your result.
 
 [suite]
-whitelist_filter = clock-app-.*
+whitelist_filter = clock-.*
 whitelist_selection=.*
 skip_test_selection = True
