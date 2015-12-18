@@ -1,4 +1,11 @@
-id: worldcity/language-change
+plugin: resource
+id: clock-worldcity/system-image
+_summary: [Automated] gather system information
+command: system-image-cli -i
+_description:
+ Gather system info
+
+id: clock-worldcity/language-change
 plugin: manual
 _summary: Test to check if world city language changes when the system language is changed
 estimated_duration: 600

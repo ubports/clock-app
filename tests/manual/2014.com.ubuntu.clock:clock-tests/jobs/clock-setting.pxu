@@ -1,11 +1,18 @@
-id: setting/timezone-change
+plugin: resource
+id: clock-setting/system-image
+_summary: [Automated] gather system information
+command: system-image-cli -i
+_description:
+ Gather system info
+
+id: clock-setting/timezone-change
 plugin: manual
 _summary: Test to check if system timezone change is also done in the clock app
 estimated_duration: 60
 _description:
     Test to check if system timezone change also updates the time in the clock app.
     1. Launch the clock app.
-        Clock app opens showing the current local time. 
+        Clock app opens showing the current local time.
     2. Click the settings icon shown in the top right.
         The settings page is visible showing the alarm settings.
     3. Press the "Change time and date" settings option.
@@ -19,4 +26,4 @@ _description:
         the new timezone time.
     6. Press the back button.
         The main clock page is shown and the main clock also shows the new
-        timezone time.   
+        timezone time.

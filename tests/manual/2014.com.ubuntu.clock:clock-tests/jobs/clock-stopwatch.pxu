@@ -1,4 +1,11 @@
-id: stopwatch/language-change
+plugin: resource
+id: clock-stopwatch/system-image
+_summary: [Automated] gather system information
+command: system-image-cli -i
+_description:
+ Gather system info
+
+id: clock-stopwatch/language-change
 plugin: manual
 _summary: Test to check if stopwatch is working properly after timezone change, without closing Stopwatch
 estimated_duration: 600
@@ -11,7 +18,7 @@ _description:
     3. Press the Start button.
         The main display starts counting time. The Start button disappears and the buttons Stop and Lap appear.
     4. Press the Lap button.
-        New lap row appears together with the lap header.    
+        New lap row appears together with the lap header.
     5. Switch to the system settings app. Navigate to Date & Time.
         The field with current timezone should be visible. Remember current timezone setting.
     6. Press the current timezone field and change system timezone to something different.
