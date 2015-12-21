@@ -20,6 +20,7 @@ import QtQuick 2.4
 import QtQuick.Layouts 1.1
 import WorldClock 1.0
 import Alarm 1.0
+import Ubuntu.Settings.Menus 0.1 as Menus
 import Ubuntu.Components 1.3
 import "../components"
 
@@ -84,40 +85,33 @@ Page {
                 top: parent.top
                 left: parent.left
                 right: parent.right
+                topMargin: units.gu(2)
             }
 
-            ListItem {
-                height: 2 * implicitHeight
-
-                Label {
-                    color: UbuntuColors.midAubergine
-                    text: i18n.tr("Alarm volume")
-                    anchors {
-                        left: parent.left
-                        leftMargin: units.gu(2)
-                        top: parent.top
-                        topMargin: units.gu(1)
-                    }
-                }
-
-                Slider {
-                    anchors {
-                        left: parent.left
-                        right: parent.right
-                        margins: units.gu(2)
-                        verticalCenter: parent.verticalCenter
-                    }
-
-                    minimumValue: 1
-                    maximumValue: 100
-                    value: alarmSettings.volume
-
-                    onValueChanged: {
-                        alarmSettings.volume = formatValue(value)
-                    }
+            Label {
+                color: UbuntuColors.midAubergine
+                text: i18n.tr("Alarm volume")
+                anchors {
+                    left: parent.left
+                    leftMargin: units.gu(2)
                 }
             }
 
+            Menus.SliderMenu {
+                anchors {
+                    left: parent.left
+                    right: parent.right
+                }
+                minimumValue: 1
+                maximumValue: 100
+                live: true
+                value: alarmSettings.volume
+
+                onValueChanged: {
+                    alarmSettings.volume = value
+                }
+            }       
+   
             ExpandableListItem {
                 id: _alarmDuration
 
