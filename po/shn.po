@@ -15,8 +15,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n == 1) ? 0 : 1;\n"
-"X-Launchpad-Export-Date: 2015-11-11 05:49+0000\n"
-"X-Generator: Launchpad (build 17843)\n"
+"X-Launchpad-Export-Date: 2015-12-28 05:29+0000\n"
+"X-Generator: Launchpad (build 17865)\n"
 
 #: ../app/MainPage.qml:53 ../app/alarm/AlarmUtils.qml:55
 msgid "No active alarms"
