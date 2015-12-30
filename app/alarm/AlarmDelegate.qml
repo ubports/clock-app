@@ -85,7 +85,7 @@ ListItem {
 
                 fontSize: "small"
                 Layout.fillWidth: true
-                visible: model.enabled && (model.status === Alarm.Ready)
+                visible: ((type === Alarm.Repeating) || model.enabled) && (model.status === Alarm.Ready)
                 elide: Text.ElideRight
                 text: type === Alarm.Repeating ? alarmUtils.format_day_string(daysOfWeek, type)
                                                : alarmUtils.get_time_to_alarm(model.date, localTime)
