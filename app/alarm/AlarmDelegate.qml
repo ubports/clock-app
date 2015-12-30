@@ -123,6 +123,7 @@ ListItem {
     Switch {
         id: alarmStatus
         objectName: "listAlarmStatus" + index
+        checked: model.enabled && (model.status === Alarm.Ready)
 
         anchors {
             right: parent.right
@@ -152,24 +153,5 @@ ListItem {
                 alarmData.save()
             }
         }
-
-        Connections {
-            target: model
-            onStatusChanged: {
-                /*
-                 Update switch value only when the alarm save() operation
-                 is complete to avoid switching it back.
-                */
-                if (model.status === Alarm.Ready) {
-                    alarmStatus.checked = model.enabled;
-                }
-            }
-        }
-
-        /*
-         Assign switch value only once at startup. After this, the switch will
-         be updated after the alarm save() operations only.
-        */
-        Component.onCompleted: alarmStatus.checked = model.enabled
     }
 }
