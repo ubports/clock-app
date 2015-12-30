@@ -85,11 +85,10 @@ ListItem {
 
                 fontSize: "small"
                 Layout.fillWidth: true
-                visible: !(type === Alarm.OneTime && !model.enabled)
+                visible: model.enabled
                 elide: Text.ElideRight
                 text: type === Alarm.Repeating ? alarmUtils.format_day_string(daysOfWeek, type)
-                                               : model.enabled ? alarmUtils.get_time_to_alarm(model.date, localTime)
-                                                               : "Alarm Disabled"
+                                               : alarmUtils.get_time_to_alarm(model.date, localTime)
 
                 function animateTextChange() {
                     textChangeAnimation.start()
