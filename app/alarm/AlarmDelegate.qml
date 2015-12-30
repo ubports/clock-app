@@ -56,7 +56,7 @@ ListItem {
 
             color: UbuntuColors.midAubergine
             fontSize: "x-large"
-            text: Qt.formatTime(date)
+            text: Qt.formatTime(model.date)
         }
 
         RowLayout {
