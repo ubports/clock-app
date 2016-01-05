@@ -87,8 +87,8 @@ ListItem {
                 Layout.fillWidth: true
                 visible: ((type === Alarm.Repeating) || model.enabled) && (model.status === Alarm.Ready)
                 elide: Text.ElideRight
-                text: type === Alarm.Repeating ? alarmUtils.format_day_string(daysOfWeek, type)
-                                               : alarmUtils.get_time_to_alarm(model.date, localTime)
+                text: type === Alarm.Repeating ? alarmUtils.format_day_string(daysOfWeek, type) :
+                                                 alarmUtils.get_time_to_alarm(model.date, localTime)
 
                 function animateTextChange() {
                     textChangeAnimation.start()
@@ -133,24 +133,25 @@ ListItem {
 
         onCheckedChanged: {
             if (checked !== model.enabled) {
-                var alarmData = model
-                alarmData.enabled = checked
-
                 /*
                  Calculate the alarm time if it is a one-time alarm.
                  Repeating alarms do this automatically.
                 */
                 if(type === Alarm.OneTime) {
-                    alarmData.daysOfWeek = Alarm.AutoDetect
-                    var now = new Date()
-                    if (alarmData.date.getHours()*60+alarmData.date.getMinutes() <= now.getHours()*60+now.getMinutes()) {
-                        alarmData.date = new Date(now.getFullYear(), now.getMonth(), now.getDate()+1, alarmData.date.getHours(), alarmData.date.getMinutes(), 0, 0)
-                    } else {
-                        alarmData.date = new Date(now.getFullYear(), now.getMonth(), now.getDate(), alarmData.date.getHours(), alarmData.date.getMinutes(), 0, 0)
-                    }
-                }
+                    var date = new Date()
+                    date.setHours(model.date.getHours(), model.date.getMinutes(), 0)
 
-                alarmData.save()
+                    model.daysOfWeek = Alarm.AutoDetect
+                    if (date < new Date()) {
+                        var tomorrow = new Date()
+                        tomorrow.setDate(tomorrow.getDate() + 1)
+                        model.daysOfWeek = alarmUtils.get_alarm_day(tomorrow.getDay())
+                    }
+                    model.date = date
+
+                }
+                model.enabled = checked
+                model.save()
             }
         }
     }
