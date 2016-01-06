@@ -192,7 +192,7 @@ Item {
 
         anchors {
             verticalCenter: parent.top
-            verticalCenterOffset: units.gu(18)
+            verticalCenterOffset: units.gu(16)
             horizontalCenter: parent.horizontalCenter
         }
     }
@@ -202,7 +202,7 @@ Item {
 
         anchors {
             top: parent.top
-            topMargin: units.gu(41)
+            //topMargin: units.gu(41)
             horizontalCenter: parent.horizontalCenter
         }
 

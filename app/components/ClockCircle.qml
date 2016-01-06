@@ -47,37 +47,6 @@ Rectangle {
     antialiasing: true
     color: isOuter ? Qt.rgba(1,1,1,0.3) : Qt.rgba(0,0,0,0.03)
 
-    /*
-      Rectangle with a gradient background which will be used as a source for
-      the opacity mask. It starts of transparent and then gradually turns
-      gray at the bottom.
-     */
-    Rectangle {
-        id: _source
-
-        radius: width / 2
-        anchors.fill: parent
-
-        antialiasing: true
-
-        gradient: Gradient {
-            GradientStop {
-                position: 0.0
-                color: isOuter ? "#6E6E6E" : "Transparent"
-            }
-
-            GradientStop {
-                position: isOuter ? 0.7 : 0.3
-                color: "Transparent"
-            }
-
-            GradientStop {
-                position: 1.0
-                color: isOuter ? "Transparent" : "#6E6E6E"
-            }
-        }
-    }
-
     Loader {
         id: _innerBackgroundLoader
         anchors.fill: parent
@@ -93,32 +62,4 @@ Rectangle {
         }
     }
 
-    /*
-      Rectangle which will be masked over by the source rectangle. This
-      rectangle is required for the border effect which results in the
-      shadow.
-     */
-    Rectangle {
-        id: _mask
-
-        radius: (width / 2)
-        anchors.fill: _source
-
-        antialiasing: true
-        color: "Transparent"
-        border { width: units.gu(0.2) }
-    }
-    
-    OpacityMask {
-        opacity: 0.65
-        anchors.fill: _source
-        source: ShaderEffectSource {
-            sourceItem: _source
-            hideSource: true
-        }
-        maskSource: ShaderEffectSource {
-            sourceItem: _mask
-            hideSource: true
-        }
-    }
 }

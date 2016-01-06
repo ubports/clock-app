@@ -49,11 +49,9 @@ MainView {
     width: units.gu(40)
     height: units.gu(70)
 
-    backgroundColor: "#F5F5F5"
+    backgroundColor: "#FFFFFF"
 
     anchorToKeyboard: true
-
-    Background {}
 
     // Database to store the user preferences locally
     U1db.Database {
