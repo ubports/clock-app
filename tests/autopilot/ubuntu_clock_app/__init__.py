@@ -49,10 +49,10 @@ class ClockApp(object):
 
 class MainView(ubuntuuitoolkit.MainView):
 
-    # bug 1341671 means AP sees this as MainView12
+    # bug 1341671 means AP sees this as MainView13
     @classmethod
     def get_type_query_name(cls):
-        return 'MainView12'
+        return 'MainView13'
 
     @autopilot_logging.log_action(logger.info)
     def open_clock(self):
