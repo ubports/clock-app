@@ -53,7 +53,7 @@ ClockCircle {
 
         anchors.centerIn: parent
 
-        color: UbuntuColors.midAubergine
+        color: "#5d5d5d"
         font.pixelSize: units.dp(1)
         text: {
             if (localizedTimeString.search(Qt.locale().amText) !== -1) {
