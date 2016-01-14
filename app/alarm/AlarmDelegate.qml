@@ -25,156 +25,95 @@ ListItem {
 
     property var localTime
     property bool showAlarmFrequency
+    property string  alarmOccurrence: type === Alarm.Repeating ? alarmUtils.format_day_string(daysOfWeek, type)
+                                                            : model.enabled ? alarmUtils.get_time_to_alarm(model.date, localTime)
+                                                                            : "Alarm Disabled"
 
-    width: parent ? parent.width : 0
-    height: units.gu(9)
-    divider.visible: true
+    height: mainLayout.height + divider.height
 
     onShowAlarmFrequencyChanged: {
         if (type === Alarm.Repeating && model.enabled) {
-            alarmSubtitle.animateTextChange()
+            animateTextChange()
         }
     }
 
-    Column {
-        id: alarmDetailsColumn
+    function animateTextChange() {
+        textChangeAnimation.start()
+    }
 
-        spacing: units.gu(1)
-        opacity: model.enabled ? 1.0 : 0.8
-
-        anchors {
-            left: parent.left
-            leftMargin: units.gu(2)
-            right: alarmStatus.left
-            rightMargin: units.gu(1)
-            verticalCenter: parent.verticalCenter
+    SequentialAnimation {
+        id: textChangeAnimation
+        PropertyAnimation {
+            target: mainLayout.summary
+            property: "opacity"
+            to: 0
+            duration: UbuntuAnimation.BriskDuration
         }
-
-        Label {
-            id: alarmTime
-            objectName: "listAlarmTime" + index
-
-            color: UbuntuColors.midAubergine
-            fontSize: "x-large"
-            text: Qt.formatTime(date)
+        ScriptAction {
+            script:  alarmOccurrence = showAlarmFrequency ? alarmUtils.format_day_string(daysOfWeek, type)
+                                                       : alarmUtils.get_time_to_alarm(model.date, localTime)
         }
-
-        RowLayout {
-            width: parent.width
-            spacing: units.gu(1)
-
-            Label {
-                id: alarmLabel
-                objectName: "listAlarmLabel" + index
-
-                text: message
-                fontSize: "small"
-                elide: Text.ElideRight
-                Layout.maximumWidth: parent.width > alarmLabel.contentWidth + alarmSubtitle.contentWidth ? (parent.width - alarmSubtitle.contentWidth - units.gu(4))
-                                                                                                         : contentWidth
-            }
-
-            Label {
-                text: "|"
-                visible: alarmSubtitle.visible
-            }
-
-            Label {
-                id: alarmSubtitle
-                objectName: "listAlarmSubtitle" + index
-
-                fontSize: "small"
-                Layout.fillWidth: true
-                visible: !(type === Alarm.OneTime && !model.enabled)
-                elide: Text.ElideRight
-                text: type === Alarm.Repeating ? alarmUtils.format_day_string(daysOfWeek, type)
-                                               : model.enabled ? alarmUtils.get_time_to_alarm(model.date, localTime)
-                                                               : "Alarm Disabled"
-
-                function animateTextChange() {
-                    textChangeAnimation.start()
-                }
-
-
-                SequentialAnimation {
-                    id: textChangeAnimation
-                    PropertyAnimation {
-                        target: alarmSubtitle
-                        property: "opacity"
-                        to: 0
-                        duration: UbuntuAnimation.BriskDuration
-                    }
-
-                    ScriptAction {
-                        script: alarmSubtitle.text = showAlarmFrequency ? alarmUtils.format_day_string(daysOfWeek, type)
-                                                                        : alarmUtils.get_time_to_alarm(model.date, localTime)
-                    }
-
-                    PropertyAnimation {
-                        target: alarmSubtitle
-                        property: "opacity"
-                        to: 1.0
-                        duration: UbuntuAnimation.BriskDuration
-                    }
-                }
-            }
+        PropertyAnimation {
+            target: mainLayout.summary
+            property: "opacity"
+            to: 1.0
+            duration: UbuntuAnimation.BriskDuration
         }
     }
 
-    Switch {
-        id: alarmStatus
-        objectName: "listAlarmStatus" + index
+    ListItemLayout {
+        id: mainLayout
 
-        anchors {
-            right: parent.right
-            rightMargin: units.gu(2)
-            verticalCenter: parent.verticalCenter
-        }
+        title.text: Qt.formatTime(date) // Alarm time
+        subtitle.text: message // Alarm name
+        summary.text:  alarmOccurrence
 
-        onCheckedChanged: {
-            if (checked !== model.enabled) {
-                var alarmData = model
-                alarmData.enabled = checked
+        Switch {
+            id: alarmStatus
 
-                /*
-                 Calculate the alarm time if it is a one-time alarm.
-                 Repeating alarms do this automatically.
-                */
-                if(type === Alarm.OneTime) {
-                    alarmData.daysOfWeek = Alarm.AutoDetect
-                    var now = new Date()
-                    if (alarmData.date.getHours()*60+alarmData.date.getMinutes() <= now.getHours()*60+now.getMinutes()) {
-                        alarmData.date = new Date(now.getFullYear(), now.getMonth(), now.getDate()+1, alarmData.date.getHours(), alarmData.date.getMinutes(), 0, 0)
-                    } else {
-                        alarmData.date = new Date(now.getFullYear(), now.getMonth(), now.getDate(), alarmData.date.getHours(), alarmData.date.getMinutes(), 0, 0)
+            anchors.verticalCenter: parent.verticalCenter
+            SlotsLayout.position: SlotsLayout.Trailing
+            SlotsLayout.overrideVerticalPositioning: true
+            checked: model.enabled
+            onCheckedChanged: {
+                if (checked !== model.enabled) {
+                    var alarmData = model
+                    alarmData.enabled = checked
+
+                    /*
+                     Calculate the alarm time if it is a one-time alarm.
+                     Repeating alarms do this automatically.
+                    */
+                    if(type === Alarm.OneTime) {
+                        alarmData.daysOfWeek = Alarm.AutoDetect
+                        var now = new Date()
+                        if (alarmData.date.getHours()*60+alarmData.date.getMinutes() <= now.getHours()*60+now.getMinutes()) {
+                            alarmData.date = new Date(now.getFullYear(), now.getMonth(), now.getDate()+1, alarmData.date.getHours(), alarmData.date.getMinutes(), 0, 0)
+                        } else {
+                            alarmData.date = new Date(now.getFullYear(), now.getMonth(), now.getDate(), alarmData.date.getHours(), alarmData.date.getMinutes(), 0, 0)
+                        }
                     }
-                }
 
-                alarmData.save()
-            }
-        }
-
-        Connections {
-            target: model
-            onStatusChanged: {
-                /*
-                 Update switch value only when the alarm save() operation
-                 is complete to avoid switching it back.
-                */
-                if (model.status === Alarm.Ready) {
-                    alarmStatus.checked = model.enabled;
-
-                    if (!alarmStatus.checked && type === Alarm.Repeating) {
-                        alarmSubtitle.text = alarmUtils.format_day_string(daysOfWeek, type)
-                    }
+                    alarmData.save()
                 }
             }
-        }
 
-        /*
-         Assign switch value only once at startup. After this, the switch will
-         be updated after the alarm save() operations only.
-        */
-        Component.onCompleted: alarmStatus.checked = model.enabled
+            Connections {
+                target: model
+                onStatusChanged: {
+                    /*
+                                 Update switch value only when the alarm save() operation
+                                 is complete to avoid switching it back.
+                                */
+                    if (model.status === Alarm.Ready) {
+                        alarmStatus.checked = model.enabled;
+
+                        if (!alarmStatus.checked && type === Alarm.Repeating) {
+                             alarmOccurrence = alarmUtils.format_day_string(daysOfWeek, type)
+                        }
+                    }
+                }
+            }
+        }
     }
 }
