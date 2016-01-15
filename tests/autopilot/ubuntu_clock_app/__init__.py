@@ -40,7 +40,9 @@ class ClockApp(object):
     def __init__(self, app_proxy, test_type):
         self.app = app_proxy
         self.test_type = test_type
-        self.main_view = self.app.wait_select_single(MainView)
+        # Use only objectName due to bug 1350532 as it is MainView12
+        self.main_view = self.app.wait_select_single(
+            objectName="clockMainView")
 
     @property
     def pointing_device(self):
@@ -48,11 +50,6 @@ class ClockApp(object):
 
 
 class MainView(ubuntuuitoolkit.MainView):
-
-    # bug 1341671 means AP sees this as MainView13
-    @classmethod
-    def get_type_query_name(cls):
-        return 'MainView13'
 
     @autopilot_logging.log_action(logger.info)
     def open_clock(self):
@@ -94,7 +91,10 @@ class Page(ubuntuuitoolkit.UbuntuUIToolkitCustomProxyObjectBase):
         super(Page, self).__init__(*args)
         # XXX we need a better way to keep reference to the main view.
         # --elopio - 2014-01-31
-        self.main_view = self.get_root_instance().select_single(MainView)
+
+        # Use only objectName due to bug 1350532 as it is MainView12
+        self.main_view = self.get_root_instance().select_single(
+            objectName="clockMainView")
 
 
 class PageWithBottomEdge(Page):
