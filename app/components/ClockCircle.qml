@@ -55,8 +55,6 @@ Circle {
         smooth: true
         fillMode: Image.PreserveAspectFit
         source: !isOuter ? "../graphics/Inner_Clock_Texture.png" : ""
-        sourceSize.width: width
-        sourceSize.height: height
         cache: false
     }
 }
