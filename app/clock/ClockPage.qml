@@ -252,14 +252,24 @@ Item {
         }
     }
 
+    Rectangle {
+        id: divider
+        width: parent.width
+        height: 1
+        color: "#cdcdcd"
+        anchors {
+            top: locationRow.bottom
+            topMargin: units.gu(3)
+        }
+    }
+
     MouseArea {
         id: worldCityListMouseArea
 
         preventStealing: true
 
         anchors {
-            top: locationRow.bottom
-            topMargin: units.gu(2)
+            top: divider.bottom
             bottom: parent.bottom
             left: parent.left
             right: parent.right
