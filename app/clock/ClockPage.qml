@@ -192,7 +192,7 @@ Item {
 
         anchors {
             verticalCenter: parent.top
-            verticalCenterOffset: units.gu(16)
+            verticalCenterOffset: units.gu(14)
             horizontalCenter: parent.horizontalCenter
         }
     }
@@ -202,7 +202,7 @@ Item {
 
         anchors {
             top: parent.top
-            //topMargin: units.gu(41)
+            //topMargin: units.gu(29)
             horizontalCenter: parent.horizontalCenter
         }
 
@@ -317,7 +317,7 @@ Item {
             target: date
             property: "anchors.topMargin"
             from: units.gu(41)
-            to: units.gu(37)
+            to: units.gu(30)
             duration: 900
         }
     }

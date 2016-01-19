@@ -31,7 +31,7 @@ ListItem {
         return [hours, minutes]
     }
 
-    height: units.gu(9)
+    height: units.gu(10)
     divider.visible: false
 
     Item {

@@ -26,9 +26,9 @@ Clock {
     // Property to keep track of the cold start status of the app
     property bool isColdStart: true
 
-    fontSize: units.dp(62)
+    fontSize: units.dp(44)
     periodFontSize: units.dp(12)
-    innerCircleWidth: units.gu(23)
+    innerCircleWidth: units.gu(24)
 
     isMainClock: true
 
