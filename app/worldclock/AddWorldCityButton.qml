@@ -28,7 +28,6 @@ AbstractButton {
 
     Label {
         text: i18n.tr("Add")
-        color: UbuntuColors.midAubergine
         anchors {
             right: _addButton.left
             rightMargin: units.gu(1)
@@ -63,7 +62,6 @@ AbstractButton {
 
     Label {
         text: i18n.tr("City")
-        color: UbuntuColors.midAubergine
         anchors {
             left: _addButton.right
             leftMargin: units.gu(1)
