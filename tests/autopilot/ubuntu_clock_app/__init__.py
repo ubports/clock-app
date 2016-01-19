@@ -403,6 +403,9 @@ class AlarmRepeat(Page):
         """
         self.unselect_selected_days()
         index = 0
+
+        self.print_tree()  # Debug line
+
         for index in range(len(days)):
             for index2 in range(self._get_num_of_days()):
                 if self.wait_select_single(
