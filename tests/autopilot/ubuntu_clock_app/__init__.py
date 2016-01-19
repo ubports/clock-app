@@ -40,7 +40,9 @@ class ClockApp(object):
     def __init__(self, app_proxy, test_type):
         self.app = app_proxy
         self.test_type = test_type
-        self.main_view = self.app.wait_select_single(MainView)
+        # Use only objectName due to bug 1350532 as it is MainView12
+        self.main_view = self.app.wait_select_single(
+            objectName="clockMainView")
 
     @property
     def pointing_device(self):
@@ -48,11 +50,6 @@ class ClockApp(object):
 
 
 class MainView(ubuntuuitoolkit.MainView):
-
-    # bug 1341671 means AP sees this as MainView12
-    @classmethod
-    def get_type_query_name(cls):
-        return 'MainView12'
 
     @autopilot_logging.log_action(logger.info)
     def open_clock(self):
@@ -70,14 +67,17 @@ class MainView(ubuntuuitoolkit.MainView):
         :return: the Alarm Page.
 
         """
-        clockPage = self.open_clock()
-        clockPage.reveal_bottom_edge_page()
+        mainPage = self.get_main_page()
+        mainPage.reveal_bottom_edge_page()
         self.get_header().visible.wait_for(True)
         return self.wait_select_single(AlarmPage)
 
     def get_AlarmList(self):
         """ Get the AlarmList object. """
         return AlarmList.select(self)
+
+    def get_main_page(self):
+        return self.wait_select_single(MainPage, objectName="mainPage")
 
     @autopilot_logging.log_action(logger.info)
     def get_worldCityList(self):
@@ -94,7 +94,10 @@ class Page(ubuntuuitoolkit.UbuntuUIToolkitCustomProxyObjectBase):
         super(Page, self).__init__(*args)
         # XXX we need a better way to keep reference to the main view.
         # --elopio - 2014-01-31
-        self.main_view = self.get_root_instance().select_single(MainView)
+
+        # Use only objectName due to bug 1350532 as it is MainView12
+        self.main_view = self.get_root_instance().select_single(
+            objectName="clockMainView")
 
 
 class PageWithBottomEdge(Page):
@@ -126,7 +129,11 @@ class PageWithBottomEdge(Page):
             raise
 
 
-class ClockPage(PageWithBottomEdge):
+class MainPage(PageWithBottomEdge):
+    pass
+
+
+class ClockPage(Page):
     """Autopilot helper for the Clock page."""
 
     @autopilot_logging.log_action(logger.info)
@@ -134,7 +141,7 @@ class ClockPage(PageWithBottomEdge):
         """Swipe to reveal WorldCityList"""
 
         addWorldCityButton = self.wait_select_single(
-            "AbstractButton", objectName="addWorldCityButton")
+            "UCAbstractButton", objectName="addWorldCityButton")
         self.pointing_device.click_object(addWorldCityButton)
 
     def get_num_of_saved_cities(self):
@@ -144,7 +151,7 @@ class ClockPage(PageWithBottomEdge):
     def _get_saved_world_city_list(self):
         """Return the saved world city listview object"""
         return self.wait_select_single(
-            "QQuickRepeater", objectName='userWorldCityRepeater')
+            "QQuickListView", objectName='userWorldCityRepeater')
 
     @autopilot_logging.log_action(logger.info)
     def delete_added_world_city(self, city_Name, country_Name):

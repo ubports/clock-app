@@ -5,6 +5,9 @@ ubuntu-clock-app (3.7) UNRELEASED; urgency=medium
   * Move to use the new SDK components v1.3 (LP: #1508363)
   * Fix continously move the alarm volume slider to the desired value (LP: #1492584)  
 
+  [ Andrew Hayzen ]
+  * Fixes for various autopilot issues (LP: #1535488)
+
  -- Bartosz Kosiorek <gang65@poczta.onet.pl>  Wed, 16 Dec 2015 22:44:49 +0100
 
 ubuntu-clock-app (3.6)  vivid; urgency=medium
