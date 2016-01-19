@@ -130,6 +130,7 @@ class PageWithBottomEdge(Page):
 
 
 class MainPage(PageWithBottomEdge):
+    """Autopilot helper for the Main page."""
     pass
 
 
@@ -290,13 +291,15 @@ class WorldCityList(Page):
 
         cityList.count.wait_for(GreaterThan(0))
 
+        cityList.print_tree()  # Debug line
+
         for index in range(int(cityList.count)):
             world_city_item = self.wait_select_single(
                 objectName='defaultWorldCityItem{}'.format(index))
             city_name_label = world_city_item.wait_select_single(
-                'Label', objectName='defaultCityNameText')
+                'UCLabel', objectName='defaultCityNameText')
             country_name_label = world_city_item.wait_select_single(
-                'Label', objectName='defaultCountryNameText')
+                'UCLabel', objectName='defaultCountryNameText')
             if (city_name_label.text == city_Name and
                     country_name_label.text == country_Name):
                 cityList.click_element(
