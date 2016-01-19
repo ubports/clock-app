@@ -65,6 +65,8 @@ ListItem {
         id: mainLayout
 
         title.text: Qt.formatTime(date) // Alarm time
+//        title.font.weight: Font.DemiBold
+        title.textSize: Label.Large
         subtitle.text: message // Alarm name
         summary.text:  alarmOccurrence
 

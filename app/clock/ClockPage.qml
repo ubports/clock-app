@@ -207,10 +207,8 @@ Item {
         }
 
         text: clock.localizedDateString
-
+        fontSize: "small"
         opacity: 0
-        color: locationRow.visible ? Theme.palette.normal.baseText : UbuntuColors.midAubergine
-        fontSize: "medium"
     }
 
     Row {
@@ -223,7 +221,7 @@ Item {
 
         anchors {
             top: date.bottom
-            topMargin: units.gu(1)
+            topMargin: units.gu(2)
             horizontalCenter: parent.horizontalCenter
         }
 
@@ -231,16 +229,14 @@ Item {
             id: locationIcon
             name: "location"
             height: units.gu(2.2)
-            color: "Grey"
+            color: location.color
         }
 
         Label {
             id: location
             objectName: "location"
 
-            fontSize: "medium"
             anchors.verticalCenter: locationIcon.verticalCenter
-            color: UbuntuColors.midAubergine
 
             text: {
                 if (userLocationDocument.contents.location === "Null"
