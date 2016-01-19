@@ -321,45 +321,16 @@ Page {
         }
 
         delegate: ListItem {
-            height: worldCityDelegateColumn.height + units.gu(2)
             divider.visible: false
             objectName: "defaultWorldCityItem" + index
-
-            Column {
-                id: worldCityDelegateColumn
-
-                anchors {
-                    left: parent.left
-                    leftMargin: units.gu(2)
-                    right: _localTime.left
-                    rightMargin: units.gu(1)
-                    verticalCenter: parent.verticalCenter
-                }
+            ListItemLayout {
+                title.text: cityName
+                subtitle.text: countryName
 
                 Label {
-                    text: cityName
-                    objectName: "defaultCityNameText"
-                    width: parent.width
-                    elide: Text.ElideRight
-                    color: UbuntuColors.midAubergine
-                }
-
-                Label {
-                    text: countryName
-                    objectName: "defaultCountryNameText"
-                    fontSize: "xx-small"
-                    width: parent.width
-                    elide: Text.ElideRight
-                }
-            }
-
-            Label {
-                id: _localTime
-                text: localizedZoneTime
-                anchors {
-                    right: parent.right
-                    rightMargin: units.gu(2)
-                    verticalCenter: parent.verticalCenter
+                    id: _localTime
+                    text: localizedZoneTime
+                    SlotsLayout.position: SlotsLayout.Trailing
                 }
             }
 
