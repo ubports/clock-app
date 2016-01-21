@@ -163,9 +163,9 @@ class ClockPage(Page):
             world_city_item = self.wait_select_single(
                 objectName='userWorldCityItem{}'.format(index))
             city_name_label = world_city_item.wait_select_single(
-                'Label', objectName='userCityNameText')
+                'UCLabel', objectName='userCityNameText')
             country_name_label = world_city_item.wait_select_single(
-                'Label', objectName='userCountryNameText')
+                'UCLabel', objectName='userCountryNameText')
             if (city_name_label.text == city_Name and
                     country_name_label.text == country_Name):
                 self._delete_userWorldCityItem(index)
@@ -409,7 +409,7 @@ class AlarmRepeat(Page):
         for index in range(len(days)):
             for index2 in range(self._get_num_of_days()):
                 if self.wait_select_single(
-                        'Label', objectName='alarmDay{}'.format(index2)).text\
+                        'UCLabel', objectName='alarmDay{}'.format(index2)).text\
                         == days[index]:
                     self._select_single_alarm_day(index2)
                     break
@@ -449,7 +449,7 @@ class AlarmSound(Page):
         """
         for index in range(self._get_num_of_sounds()):
             if self.wait_select_single(
-                    'Label', objectName='soundName{}'.format(index)).\
+                    'UCLabel', objectName='soundName{}'.format(index)).\
                     text == test_sound_name:
                 self._select_alarm_sound(index)
                 break
@@ -531,11 +531,11 @@ class AlarmList(object):
         alarms = []
         for index in range(self.get_num_of_alarms()):
             name = self.proxy_object.wait_select_single(
-                'Label', objectName='listAlarmLabel{}'.format(index)).text
+                'UCLabel', objectName='listAlarmLabel{}'.format(index)).text
             recurrence = self.proxy_object.wait_select_single(
-                'Label', objectName='listAlarmSubtitle{}'.format(index)).text
+                'UCLabel', objectName='listAlarmSubtitle{}'.format(index)).text
             time = self.proxy_object.wait_select_single(
-                'Label', objectName='listAlarmTime{}'.format(index)).text
+                'UCLabel', objectName='listAlarmTime{}'.format(index)).text
             enabled = self.proxy_object.wait_select_single(
                 ubuntuuitoolkit.CheckBox,
                 objectName='listAlarmStatus{}'.format(index)).checked
