@@ -248,13 +248,11 @@ class AlarmPage(Page):
 
     def _click_header_customBackButton(self):
         """Click the  header button:  'customBackButton' """
-        header = self.main_view.get_header()
-        header.click_custom_back_button()
+        self.main_view.go_back()
 
     def _click_header_backButton(self):
         """Click the  header button:  'backButton' """
-        header = self.main_view.get_header()
-        header.click_back_button()
+        self.main_view.go_back()
 
     def _click_save(self):
         """Click the save timer header button"""
