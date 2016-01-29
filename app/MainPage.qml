@@ -51,11 +51,7 @@ PageWithBottomEdge {
     flickable: null
     bottomEdgeTitle: _mainPage.visible ? alarmUtils.set_bottom_edge_title(alarmModel, notLocalizedDateTimeString)
                                        : i18n.tr("No active alarms")
-
-    Component.onCompleted: {
-        console.log("[LOG]: Main Page loaded")
-        _mainPage.setBottomEdgePage(Qt.resolvedUrl("alarm/AlarmPage.qml"), {})
-    }
+    bottomEdgePageComponent: AlarmPage {}
 
     AlarmUtils {
         id: alarmUtils

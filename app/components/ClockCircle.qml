@@ -34,7 +34,7 @@ import QtGraphicalEffects 1.0
   The circle position is set by the public property "isOuter". If true, the
   outer circle characteristics are set and vice-versa.
  */
-Rectangle {
+Circle {
     id: _innerCircle
 
     /*
@@ -42,83 +42,19 @@ Rectangle {
      */
     property bool isOuter: false
 
-    height: width
-    radius: width / 2
-    antialiasing: true
-    color: isOuter ? Qt.rgba(1,1,1,0.3) : Qt.rgba(0,0,0,0.03)
+    color: isOuter ? "#4DFFFFFF" : "#08000000"
+    borderWidth: units.gu(0.2)
+    borderColorTop: isOuter ? "#6E6E6E" : "#00000000"
+    borderColorBottom: isOuter ? "#00000000" : "#6E6E6E"
+    borderOpacity: 0.65
+    borderGradientPosition: isOuter ? 0.7 : 0.2
 
-    /*
-      Rectangle with a gradient background which will be used as a source for
-      the opacity mask. It starts of transparent and then gradually turns
-      gray at the bottom.
-     */
-    Rectangle {
-        id: _source
-
-        radius: width / 2
+    Image {
         anchors.fill: parent
-
-        antialiasing: true
-
-        gradient: Gradient {
-            GradientStop {
-                position: 0.0
-                color: isOuter ? "#6E6E6E" : "Transparent"
-            }
-
-            GradientStop {
-                position: isOuter ? 0.7 : 0.3
-                color: "Transparent"
-            }
-
-            GradientStop {
-                position: 1.0
-                color: isOuter ? "Transparent" : "#6E6E6E"
-            }
-        }
-    }
-
-    Loader {
-        id: _innerBackgroundLoader
-        anchors.fill: parent
-        sourceComponent: !isOuter ? _innerBackground : undefined
-    }
-
-    Component {
-        id: _innerBackground
-        Image {
-            smooth: false
-            fillMode: Image.PreserveAspectFit
-            source: "../graphics/Inner_Clock_Texture.png"
-        }
-    }
-
-    /*
-      Rectangle which will be masked over by the source rectangle. This
-      rectangle is required for the border effect which results in the
-      shadow.
-     */
-    Rectangle {
-        id: _mask
-
-        radius: (width / 2)
-        anchors.fill: _source
-
-        antialiasing: true
-        color: "Transparent"
-        border { width: units.gu(0.2) }
-    }
-    
-    OpacityMask {
-        opacity: 0.65
-        anchors.fill: _source
-        source: ShaderEffectSource {
-            sourceItem: _source
-            hideSource: true
-        }
-        maskSource: ShaderEffectSource {
-            sourceItem: _mask
-            hideSource: true
-        }
+        anchors.margins: borderWidth / 2.0
+        smooth: true
+        fillMode: Image.PreserveAspectFit
+        source: !isOuter ? "../graphics/Inner_Clock_Texture.png" : ""
+        cache: false
     }
 }

@@ -3,6 +3,7 @@ set(COMPONENTS_QML_JS_FILES
     AnalogMode.qml
     AnalogShadow.qml
     Background.qml
+    Circle.qml
     Clock.qml
     ClockCircle.qml
     DigitalMode.qml
