@@ -40,7 +40,9 @@ class ClockApp(object):
     def __init__(self, app_proxy, test_type):
         self.app = app_proxy
         self.test_type = test_type
-        self.main_view = self.app.wait_select_single(MainView)
+        # Use only objectName due to bug 1350532 as it is MainView12
+        self.main_view = self.app.wait_select_single(
+            objectName="clockMainView")
 
     @property
     def pointing_device(self):
@@ -48,11 +50,6 @@ class ClockApp(object):
 
 
 class MainView(ubuntuuitoolkit.MainView):
-
-    # bug 1341671 means AP sees this as MainView12
-    @classmethod
-    def get_type_query_name(cls):
-        return 'MainView12'
 
     @autopilot_logging.log_action(logger.info)
     def open_clock(self):
@@ -70,14 +67,17 @@ class MainView(ubuntuuitoolkit.MainView):
         :return: the Alarm Page.
 
         """
-        clockPage = self.open_clock()
-        clockPage.reveal_bottom_edge_page()
+        mainPage = self.get_main_page()
+        mainPage.reveal_bottom_edge_page()
         self.get_header().visible.wait_for(True)
         return self.wait_select_single(AlarmPage)
 
     def get_AlarmList(self):
         """ Get the AlarmList object. """
         return AlarmList.select(self)
+
+    def get_main_page(self):
+        return self.wait_select_single(MainPage, objectName="mainPage")
 
     @autopilot_logging.log_action(logger.info)
     def get_worldCityList(self):
@@ -94,7 +94,10 @@ class Page(ubuntuuitoolkit.UbuntuUIToolkitCustomProxyObjectBase):
         super(Page, self).__init__(*args)
         # XXX we need a better way to keep reference to the main view.
         # --elopio - 2014-01-31
-        self.main_view = self.get_root_instance().select_single(MainView)
+
+        # Use only objectName due to bug 1350532 as it is MainView12
+        self.main_view = self.get_root_instance().select_single(
+            objectName="clockMainView")
 
 
 class PageWithBottomEdge(Page):
@@ -126,7 +129,12 @@ class PageWithBottomEdge(Page):
             raise
 
 
-class ClockPage(PageWithBottomEdge):
+class MainPage(PageWithBottomEdge):
+    """Autopilot helper for the Main page."""
+    pass
+
+
+class ClockPage(Page):
     """Autopilot helper for the Clock page."""
 
     @autopilot_logging.log_action(logger.info)
@@ -134,7 +142,7 @@ class ClockPage(PageWithBottomEdge):
         """Swipe to reveal WorldCityList"""
 
         addWorldCityButton = self.wait_select_single(
-            "AbstractButton", objectName="addWorldCityButton")
+            "UCAbstractButton", objectName="addWorldCityButton")
         self.pointing_device.click_object(addWorldCityButton)
 
     def get_num_of_saved_cities(self):
@@ -144,7 +152,7 @@ class ClockPage(PageWithBottomEdge):
     def _get_saved_world_city_list(self):
         """Return the saved world city listview object"""
         return self.wait_select_single(
-            "QQuickRepeater", objectName='userWorldCityRepeater')
+            "QQuickListView", objectName='userWorldCityRepeater')
 
     @autopilot_logging.log_action(logger.info)
     def delete_added_world_city(self, city_Name, country_Name):
@@ -155,9 +163,9 @@ class ClockPage(PageWithBottomEdge):
             world_city_item = self.wait_select_single(
                 objectName='userWorldCityItem{}'.format(index))
             city_name_label = world_city_item.wait_select_single(
-                'Label', objectName='userCityNameText')
+                'UCLabel', objectName='userCityNameText')
             country_name_label = world_city_item.wait_select_single(
-                'Label', objectName='userCountryNameText')
+                'UCLabel', objectName='userCountryNameText')
             if (city_name_label.text == city_Name and
                     country_name_label.text == country_Name):
                 self._delete_userWorldCityItem(index)
@@ -240,13 +248,11 @@ class AlarmPage(Page):
 
     def _click_header_customBackButton(self):
         """Click the  header button:  'customBackButton' """
-        header = self.main_view.get_header()
-        header.click_custom_back_button()
+        self.main_view.go_back()
 
     def _click_header_backButton(self):
         """Click the  header button:  'backButton' """
-        header = self.main_view.get_header()
-        header.click_back_button()
+        self.main_view.go_back()
 
     def _click_save(self):
         """Click the save timer header button"""
@@ -283,13 +289,15 @@ class WorldCityList(Page):
 
         cityList.count.wait_for(GreaterThan(0))
 
+        cityList.print_tree()  # Debug line
+
         for index in range(int(cityList.count)):
             world_city_item = self.wait_select_single(
                 objectName='defaultWorldCityItem{}'.format(index))
             city_name_label = world_city_item.wait_select_single(
-                'Label', objectName='defaultCityNameText')
+                'UCLabel', objectName='defaultCityNameText')
             country_name_label = world_city_item.wait_select_single(
-                'Label', objectName='defaultCountryNameText')
+                'UCLabel', objectName='defaultCountryNameText')
             if (city_name_label.text == city_Name and
                     country_name_label.text == country_Name):
                 cityList.click_element(
@@ -393,10 +401,13 @@ class AlarmRepeat(Page):
         """
         self.unselect_selected_days()
         index = 0
+
+        self.print_tree()  # Debug line
+
         for index in range(len(days)):
             for index2 in range(self._get_num_of_days()):
                 if self.wait_select_single(
-                        'Label', objectName='alarmDay{}'.format(index2)).text\
+                        'UCLabel', objectName='alarmDay{}'.format(index2)).text\
                         == days[index]:
                     self._select_single_alarm_day(index2)
                     break
@@ -436,7 +447,7 @@ class AlarmSound(Page):
         """
         for index in range(self._get_num_of_sounds()):
             if self.wait_select_single(
-                    'Label', objectName='soundName{}'.format(index)).\
+                    'UCLabel', objectName='soundName{}'.format(index)).\
                     text == test_sound_name:
                 self._select_alarm_sound(index)
                 break
@@ -518,11 +529,11 @@ class AlarmList(object):
         alarms = []
         for index in range(self.get_num_of_alarms()):
             name = self.proxy_object.wait_select_single(
-                'Label', objectName='listAlarmLabel{}'.format(index)).text
+                'UCLabel', objectName='listAlarmLabel{}'.format(index)).text
             recurrence = self.proxy_object.wait_select_single(
-                'Label', objectName='listAlarmSubtitle{}'.format(index)).text
+                'UCLabel', objectName='listAlarmSubtitle{}'.format(index)).text
             time = self.proxy_object.wait_select_single(
-                'Label', objectName='listAlarmTime{}'.format(index)).text
+                'UCLabel', objectName='listAlarmTime{}'.format(index)).text
             enabled = self.proxy_object.wait_select_single(
                 ubuntuuitoolkit.CheckBox,
                 objectName='listAlarmStatus{}'.format(index)).checked
