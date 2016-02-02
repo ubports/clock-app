@@ -73,7 +73,7 @@ Clock {
         }
 
         ParallelAnimation {
-            PropertyAnimation {
+            UbuntuNumberAnimation {
                 target: mainClock
                 property: "width"
                 to: units.gu(32)

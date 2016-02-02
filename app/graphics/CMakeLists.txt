@@ -1,7 +1,7 @@
 set(GRAPHICS_FILES
     Background_Texture.jpg
     Hour_Hand@27.png
-    Inner_Clock_Texture.png
+    Inner_Clock_Texture@27.png
     Knob@27.png
     Minute_Hand@27.png
     Second_Hand@27.png

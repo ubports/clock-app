@@ -31,17 +31,10 @@ ClockCircle {
     signal animationComplete()
 
     function startAnimation() {
-        _animationTimer.start()
+        _innerCircleAnimation.start()
     }
 
     width: units.gu(0)
-
-    Timer {
-        id: _animationTimer
-        interval: 200
-        repeat: false
-        onTriggered: _innerCircleAnimation.start()
-    }
 
     Image {
         id: hourHand
@@ -109,12 +102,16 @@ ClockCircle {
     SequentialAnimation {
         id: _innerCircleAnimation
 
-        PropertyAnimation {
+        PauseAnimation {
+            duration: 200
+        }
+
+        UbuntuNumberAnimation {
             target: _innerCircleAnalog
             property: "width"
             from: units.gu(0)
             to: maxWidth
-            duration: 900
+            duration: 700
         }
 
         // Fire signal that the animation is complete.
