@@ -56,7 +56,7 @@ ListItem {
 
             color: UbuntuColors.midAubergine
             fontSize: "x-large"
-            text: Qt.formatTime(date)
+            text: Qt.formatTime(model.date)
         }
 
         RowLayout {
@@ -85,11 +85,10 @@ ListItem {
 
                 fontSize: "small"
                 Layout.fillWidth: true
-                visible: !(type === Alarm.OneTime && !model.enabled)
+                visible: ((type === Alarm.Repeating) || model.enabled) && (model.status === Alarm.Ready)
                 elide: Text.ElideRight
-                text: type === Alarm.Repeating ? alarmUtils.format_day_string(daysOfWeek, type)
-                                               : model.enabled ? alarmUtils.get_time_to_alarm(model.date, localTime)
-                                                               : "Alarm Disabled"
+                text: type === Alarm.Repeating ? alarmUtils.format_day_string(daysOfWeek, type) :
+                                                 alarmUtils.get_time_to_alarm(model.date, localTime)
 
                 function animateTextChange() {
                     textChangeAnimation.start()
@@ -124,6 +123,7 @@ ListItem {
     Switch {
         id: alarmStatus
         objectName: "listAlarmStatus" + index
+        checked: model.enabled && (model.status === Alarm.Ready)
 
         anchors {
             right: parent.right
@@ -133,48 +133,26 @@ ListItem {
 
         onCheckedChanged: {
             if (checked !== model.enabled) {
-                var alarmData = model
-                alarmData.enabled = checked
-
                 /*
                  Calculate the alarm time if it is a one-time alarm.
                  Repeating alarms do this automatically.
                 */
                 if(type === Alarm.OneTime) {
-                    alarmData.daysOfWeek = Alarm.AutoDetect
-                    var now = new Date()
-                    if (alarmData.date.getHours()*60+alarmData.date.getMinutes() <= now.getHours()*60+now.getMinutes()) {
-                        alarmData.date = new Date(now.getFullYear(), now.getMonth(), now.getDate()+1, alarmData.date.getHours(), alarmData.date.getMinutes(), 0, 0)
-                    } else {
-                        alarmData.date = new Date(now.getFullYear(), now.getMonth(), now.getDate(), alarmData.date.getHours(), alarmData.date.getMinutes(), 0, 0)
-                    }
-                }
+                    var date = new Date()
+                    date.setHours(model.date.getHours(), model.date.getMinutes(), 0)
 
-                alarmData.save()
+                    model.daysOfWeek = Alarm.AutoDetect
+                    if (date < new Date()) {
+                        var tomorrow = new Date()
+                        tomorrow.setDate(tomorrow.getDate() + 1)
+                        model.daysOfWeek = alarmUtils.get_alarm_day(tomorrow.getDay())
+                    }
+                    model.date = date
+
+                }
+                model.enabled = checked
+                model.save()
             }
         }
-
-        Connections {
-            target: model
-            onStatusChanged: {
-                /*
-                 Update switch value only when the alarm save() operation
-                 is complete to avoid switching it back.
-                */
-                if (model.status === Alarm.Ready) {
-                    alarmStatus.checked = model.enabled;
-
-                    if (!alarmStatus.checked && type === Alarm.Repeating) {
-                        alarmSubtitle.text = alarmUtils.format_day_string(daysOfWeek, type)
-                    }
-                }
-            }
-        }
-
-        /*
-         Assign switch value only once at startup. After this, the switch will
-         be updated after the alarm save() operations only.
-        */
-        Component.onCompleted: alarmStatus.checked = model.enabled
     }
 }
