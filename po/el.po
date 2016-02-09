@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2015-10-19 04:17+0200\n"
-"PO-Revision-Date: 2015-12-08 19:26+0000\n"
+"PO-Revision-Date: 2016-02-08 17:05+0000\n"
 "Last-Translator: Aggelos Arnaoutis <angelosarn@hotmail.com>\n"
 "Language-Team: Greek <el@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2015-12-28 05:28+0000\n"
-"X-Generator: Launchpad (build 17865)\n"
+"X-Launchpad-Export-Date: 2016-02-09 05:57+0000\n"
+"X-Generator: Launchpad (build 17908)\n"
 
 #: ../app/MainPage.qml:53 ../app/alarm/AlarmUtils.qml:55
 msgid "No active alarms"
@@ -110,7 +110,7 @@ msgstr "Ήχος"
 
 #: ../app/alarm/AlarmSound.qml:186
 msgid "Custom alarm sounds"
-msgstr ""
+msgstr "Προσαρμοσμένοι ήχοι αφύπνισης"
 
 #: ../app/alarm/AlarmSound.qml:201
 msgid "Add sound"
@@ -118,7 +118,7 @@ msgstr "Προσθηκή ήχου"
 
 #: ../app/alarm/AlarmSound.qml:353
 msgid "Default alarm sounds"
-msgstr ""
+msgstr "Προεπιλεγμένοι ήχοι αφύπνισης"
 
 #: ../app/alarm/AlarmUtils.qml:31
 msgid "Never"
