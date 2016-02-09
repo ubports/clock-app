@@ -36,25 +36,20 @@ ClockCircle {
     signal animationComplete()
 
     function startAnimation() {
-        _animationTimer.start()
+        scale = 0
+        _innerCircleAnimation.start()
     }
 
-    width: units.gu(0)
-
-    Timer {
-        id: _animationTimer
-        interval: 200
-        repeat: false
-        onTriggered: _innerCircleAnimation.start()
-    }
+    width: maxWidth
 
     Label {
         id: _digitalTime
 
         anchors.centerIn: parent
 
-        color: "#5d5d5d"
-        font.pixelSize: units.dp(1)
+        color: UbuntuColors.midAubergine
+        font.pixelSize: maxTimeFontSize
+
         text: {
             if (localizedTimeString.search(Qt.locale().amText) !== -1) {
                 // 12 hour format detected with the localised AM text
@@ -78,7 +73,7 @@ ClockCircle {
         anchors.horizontalCenter: parent.horizontalCenter
 
         color: UbuntuColors.midAubergine
-        font.pixelSize: units.dp(1)
+        font.pixelSize: maxPeriodFontSize
         visible: text !== ""
         text: {
             if (localizedTimeString.search(Qt.locale().amText) !== -1) {
@@ -99,30 +94,16 @@ ClockCircle {
     SequentialAnimation {
         id: _innerCircleAnimation
 
-        ParallelAnimation {
-            PropertyAnimation {
-                target: _innerCircle
-                property: "width"
-                from: units.gu(0)
-                to: maxWidth
-                duration: 900
-            }
+        PauseAnimation {
+            duration: 200
+        }
 
-            PropertyAnimation {
-                target: _digitalTime
-                property: "font.pixelSize"
-                from: units.dp(1)
-                to: maxTimeFontSize
-                duration: 900
-            }
-
-            PropertyAnimation {
-                target: _digitalTimePeriod
-                property: "font.pixelSize"
-                from: units.dp(1)
-                to: maxPeriodFontSize
-                duration: 900
-            }
+        UbuntuNumberAnimation {
+            target: _innerCircle
+            property: "scale"
+            from: 0
+            to: 1
+            duration: 700
         }
 
         // Fire signal that the animation is complete.

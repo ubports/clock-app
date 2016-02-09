@@ -289,7 +289,7 @@ Item {
     ParallelAnimation {
         id: otherElementsStartUpAnimation
 
-        PropertyAnimation {
+        UbuntuNumberAnimation {
             target: headerRow
             property: "anchors.topMargin"
             from: units.gu(4)
@@ -297,7 +297,7 @@ Item {
             duration: 900
         }
 
-        PropertyAnimation {
+        UbuntuNumberAnimation {
             target: headerRow
             property: "opacity"
             from: 0
@@ -305,7 +305,7 @@ Item {
             duration: 900
         }
 
-        PropertyAnimation {
+        UbuntuNumberAnimation {
             target: date
             property: "opacity"
             from: 0
@@ -313,11 +313,11 @@ Item {
             duration: 900
         }
 
-        PropertyAnimation {
+        UbuntuNumberAnimation {
             target: date
             property: "anchors.topMargin"
-            from: units.gu(41)
-            to: units.gu(30)
+            from: units.gu(29)
+            to: units.gu(37)
             duration: 900
         }
     }

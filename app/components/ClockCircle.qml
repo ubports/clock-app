@@ -34,7 +34,7 @@ import QtGraphicalEffects 1.0
   The circle position is set by the public property "isOuter". If true, the
   outer circle characteristics are set and vice-versa.
  */
-Rectangle {
+Circle {
     id: _innerCircle
 
     /*
@@ -42,24 +42,19 @@ Rectangle {
      */
     property bool isOuter: false
 
-    height: width
-    radius: width / 2
-    antialiasing: true
-    color: isOuter ? Qt.rgba(1,1,1,0.3) : Qt.rgba(0,0,0,0.03)
+    color: isOuter ? "#4DFFFFFF" : "#08000000"
+    borderWidth: units.gu(0.2)
+    borderColorTop: isOuter ? "#6E6E6E" : "#00000000"
+    borderColorBottom: isOuter ? "#00000000" : "#6E6E6E"
+    borderOpacity: 0.65
+    borderGradientPosition: isOuter ? 0.7 : 0.2
 
-    Loader {
-        id: _innerBackgroundLoader
+    Image {
         anchors.fill: parent
-        sourceComponent: !isOuter ? _innerBackground : undefined
+        anchors.margins: borderWidth / 2.0
+        smooth: true
+        fillMode: Image.PreserveAspectFit
+        source: !isOuter ? "../graphics/Inner_Clock_Texture.png" : ""
+        cache: false
     }
-
-    Component {
-        id: _innerBackground
-        Image {
-            smooth: false
-            fillMode: Image.PreserveAspectFit
-            source: "../graphics/Inner_Clock_Texture.png"
-        }
-    }
-
 }
