@@ -47,7 +47,6 @@ ClockCircle {
 
         anchors.centerIn: parent
 
-        color: UbuntuColors.midAubergine
         font.pixelSize: maxTimeFontSize
 
         text: {
@@ -72,7 +71,6 @@ ClockCircle {
         anchors.top: _digitalTime.bottom
         anchors.horizontalCenter: parent.horizontalCenter
 
-        color: UbuntuColors.midAubergine
         font.pixelSize: maxPeriodFontSize
         visible: text !== ""
         text: {

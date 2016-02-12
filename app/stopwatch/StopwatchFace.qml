@@ -49,13 +49,11 @@ ClockCircle {
         Label {
             text: stopwatchFormatTime.millisToTimeString(milliseconds, true)
             font.pixelSize: units.dp(34)
-            color: UbuntuColors.midAubergine
         }
 
         Label {
             text: stopwatchFormatTime.millisToString(milliseconds)
             font.pixelSize: units.dp(18)
-            color: UbuntuColors.midAubergine
             anchors.horizontalCenter: parent.horizontalCenter
         }
     }
