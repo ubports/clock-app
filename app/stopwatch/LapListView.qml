@@ -46,7 +46,6 @@ ListView {
                 text: i18n.tr("Lap")
                 width: parent.width / 7
                 elide: Text.ElideRight
-                font.weight: Font.DemiBold
                 horizontalAlignment: Text.AlignHCenter
             }
 
@@ -54,7 +53,6 @@ ListView {
                 width: 3 * parent.width / 7
                 elide: Text.ElideRight
                 text: i18n.tr("Lap Time")
-                font.weight: Font.DemiBold
                 horizontalAlignment: Text.AlignHCenter
             }
 
@@ -62,7 +60,6 @@ ListView {
                 width: 3 * parent.width / 7
                 elide: Text.ElideRight
                 text: i18n.tr("Total Time")
-                font.weight: Font.DemiBold
                 horizontalAlignment: Text.AlignHCenter
             }
         }
@@ -97,7 +94,6 @@ ListView {
             }
 
             Label {
-                color: UbuntuColors.midAubergine
                 text: "#%1".arg(Number(count - index).toLocaleString(Qt.locale(), "f", 0))
                 width: parent.width / 7
                 horizontalAlignment: Text.AlignHCenter
