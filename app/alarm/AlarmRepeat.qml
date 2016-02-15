@@ -149,40 +149,29 @@ Page {
 
                 property alias isChecked: daySwitch.checked
 
-                Label {
+                height: _alarmDay.height + divider.height
+
+                ListItemLayout {
                     id: _alarmDay
                     objectName: 'alarmDay' + index
 
-                    anchors {
-                        left: parent.left
-                        leftMargin: units.gu(2)
-                        verticalCenter: parent.verticalCenter
-                    }
+                    title.text: day
 
-                    color: UbuntuColors.midAubergine
-                    text: day
-                }
+                    CheckBox {
+                        id: daySwitch
+                        objectName: 'daySwitch' + index
+                        SlotsLayout.position: SlotsLayout.Trailing
+                        checked: (alarm.daysOfWeek & flag) == flag
+                                 && alarm.type === Alarm.Repeating
+                        onCheckedChanged: {
+                            if (checked) {
+                                alarm.daysOfWeek |= flag
+                            } else {
+                                alarm.daysOfWeek &= ~flag
+                            }
 
-                CheckBox {
-                    id: daySwitch
-                    objectName: 'daySwitch' + index
-
-                    anchors {
-                        right: parent.right
-                        rightMargin: units.gu(2)
-                        verticalCenter: parent.verticalCenter
-                    }
-
-                    checked: (alarm.daysOfWeek & flag) == flag
-                             && alarm.type === Alarm.Repeating
-                    onCheckedChanged: {
-                        if (checked) {
-                            alarm.daysOfWeek |= flag
-                        } else {
-                            alarm.daysOfWeek &= ~flag
+                            detectAlarmType()
                         }
-
-                        detectAlarmType()
                     }
                 }
 

@@ -269,13 +269,15 @@ Page {
         ListItem {
             id: _alarmRepeat
             objectName: "alarmRepeat"
+
+            property string subText: alarmUtils.format_day_string(_alarm.daysOfWeek, _alarm.type)
             height: alarmRepeatLayout.height + divider.height
 
             ListItemLayout {
                 id: alarmRepeatLayout
 
                 title.text: i18n.tr("Repeat")
-                subtitle.text: alarmUtils.format_day_string(_alarm.daysOfWeek, _alarm.type)
+                subtitle.text: _alarmRepeat.subText
             }
             onClicked: pageStack.push(Qt.resolvedUrl("AlarmRepeat.qml"),
                                       {"alarm": _alarm, "alarmUtils": alarmUtils})
