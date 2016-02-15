@@ -28,7 +28,7 @@ Clock {
 
     fontSize: units.dp(44)
     periodFontSize: units.dp(12)
-    innerCircleWidth: units.gu(24)
+    innerCircleWidth: units.gu(23)
 
     isMainClock: true
 
@@ -76,7 +76,7 @@ Clock {
             UbuntuNumberAnimation {
                 target: mainClock
                 property: "width"
-                to: units.gu(32)
+                to: units.gu(23)
                 duration: 900
             }
 

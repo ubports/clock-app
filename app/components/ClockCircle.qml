@@ -30,24 +30,16 @@ import QtGraphicalEffects 1.0
 
   If used as the inner circle, a textured background image is set as part of
   the new design specs.
-
-  The circle position is set by the public property "isOuter". If true, the
-  outer circle characteristics are set and vice-versa.
  */
 Circle {
     id: _innerCircle
 
-    /*
-      Property to set if the circle is the outer or the inner circle
-     */
-    property bool isOuter: false
-
     color: "#f7f7f7"
-    borderWidth: 1/*units.gu(0.2)*/
+    borderWidth: units.dp(1)/*units.gu(0.2)*/
     borderColorTop: "#00000000"
     borderColorBottom: "#6E6E6E"
     borderOpacity: 0.65
-    borderGradientPosition: isOuter ? 0.7 : 0.2
+    borderGradientPosition: 0.2
 
 //    Image {
 //        anchors.fill: parent
