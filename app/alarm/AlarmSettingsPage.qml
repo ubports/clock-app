@@ -19,7 +19,6 @@
 import QtQuick 2.4
 import WorldClock 1.0
 import Alarm 1.0
-import Ubuntu.Settings.Menus 0.1 as Menus
 import Ubuntu.Components 1.3
 import "../components"
 
@@ -74,7 +73,7 @@ Page {
     Flickable {
         id: settingsPlugin
 
-        contentHeight: _settingsColumn.height + units.gu(2)
+        contentHeight: _settingsColumn.height
         anchors.fill: parent
 
         Column {
@@ -84,29 +83,30 @@ Page {
                 top: parent.top
                 left: parent.left
                 right: parent.right
-                topMargin: units.gu(2)
             }
 
-            Label {
-                text: i18n.tr("Alarm volume")
-                anchors {
-                    left: parent.left
-                    leftMargin: units.gu(2)
-                }
-            }
+            ListItem {
+                height: alarmVolumeSlot.height + divider.height
 
-            Menus.SliderMenu {
-                anchors {
-                    left: parent.left
-                    right: parent.right
-                }
-                minimumValue: 1
-                maximumValue: 100
-                live: true
-                value: alarmSettings.volume
+                SlotsLayout {
+                    id: alarmVolumeSlot
 
-                onValueChanged: {
-                    alarmSettings.volume = value
+                    mainSlot: Column {
+                        Label {
+                            text: i18n.tr("Alarm volume")
+                        }
+
+                        Slider {
+                            minimumValue: 1
+                            maximumValue: 100
+                            live: true
+                            value: alarmSettings.volume
+                            function formatValue(v) { return v = "" }
+                            onValueChanged: {
+                                alarmSettings.volume = value
+                            }
+                        }
+                    }
                 }
             }
 
