@@ -32,35 +32,38 @@ ListView {
 
     header: ListItem {
         visible: count !== 0
+        width: parent.width - units.gu(4)
+        anchors.horizontalCenter: parent.horizontalCenter
+
         Row {
             anchors {
                 left: parent.left
                 right: parent.right
                 verticalCenter: parent.verticalCenter
-                margins: units.gu(2)
+                margins: units.gu(1)
             }
 
             Label {
                 // #TRANSLATORS: This refers to the stopwatch lap and is shown as a header where space is limited. Constrain
                 // translation length to a few characters.
                 text: i18n.tr("Lap")
-                width: parent.width / 7
+                width: parent.width /5
                 elide: Text.ElideRight
-                horizontalAlignment: Text.AlignHCenter
+                horizontalAlignment: Text.AlignLeft
             }
 
             Label {
-                width: 3 * parent.width / 7
+                width: parent.width *2/5
                 elide: Text.ElideRight
                 text: i18n.tr("Lap Time")
                 horizontalAlignment: Text.AlignHCenter
             }
 
             Label {
-                width: 3 * parent.width / 7
+                width: parent.width *2/5
                 elide: Text.ElideRight
                 text: i18n.tr("Total Time")
-                horizontalAlignment: Text.AlignHCenter
+                horizontalAlignment: Text.AlignRight
             }
         }
     }
@@ -74,6 +77,9 @@ ListView {
 
     delegate: ListItem {
         divider.visible: true
+        width: parent.width - units.gu(4)
+        anchors.horizontalCenter: parent.horizontalCenter
+
         leadingActions: ListItemActions {
             actions: [
                 Action {
@@ -90,17 +96,17 @@ ListView {
                 left: parent.left
                 right: parent.right
                 verticalCenter: parent.verticalCenter
-                margins: units.gu(2)
+                leftMargin: units.gu(1)
             }
 
             Label {
                 text: "#%1".arg(Number(count - index).toLocaleString(Qt.locale(), "f", 0))
-                width: parent.width / 7
-                horizontalAlignment: Text.AlignHCenter
+                width: parent.width/5
+                horizontalAlignment: Text.AlignLeft
             }
 
             Item {
-                width: 3 * parent.width / 7
+                width:  parent.width *2/5
                 height: childrenRect.height
                 Row {
                     anchors.horizontalCenter: parent.horizontalCenter
@@ -108,27 +114,21 @@ ListView {
                         text: stopwatchFormatTime.lapTimeToString(model.laptime) + "."
                     }
                     Label {
-                        fontSize: "x-small"
                         text: stopwatchFormatTime.millisToString(model.laptime)
-                        anchors.bottom: parent.bottom
-                        anchors.bottomMargin: units.dp(1)
                     }
                 }
             }
 
             Item {
-                width: 3 * parent.width / 7
+                width:  parent.width *2/5
                 height: childrenRect.height
                 Row {
-                    anchors.horizontalCenter: parent.horizontalCenter
+                    anchors.right: parent.right
                     Label {
                         text: stopwatchFormatTime.lapTimeToString(model.totaltime) + "."
                     }
                     Label {
-                        fontSize: "x-small"
                         text: stopwatchFormatTime.millisToString(model.totaltime)
-                        anchors.bottom: parent.bottom
-                        anchors.bottomMargin: units.dp(1)
                     }
                 }
             }

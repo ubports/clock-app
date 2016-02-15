@@ -42,19 +42,19 @@ Circle {
      */
     property bool isOuter: false
 
-    color: isOuter ? "#4DFFFFFF" : "#08000000"
-    borderWidth: units.gu(0.2)
-    borderColorTop: isOuter ? "#6E6E6E" : "#00000000"
-    borderColorBottom: isOuter ? "#00000000" : "#6E6E6E"
+    color: "#f7f7f7"
+    borderWidth: 1/*units.gu(0.2)*/
+    borderColorTop: "#00000000"
+    borderColorBottom: "#6E6E6E"
     borderOpacity: 0.65
     borderGradientPosition: isOuter ? 0.7 : 0.2
 
-    Image {
-        anchors.fill: parent
-        anchors.margins: borderWidth / 2.0
-        smooth: true
-        fillMode: Image.PreserveAspectFit
-        source: !isOuter ? "../graphics/Inner_Clock_Texture.png" : ""
-        cache: false
-    }
+//    Image {
+//        anchors.fill: parent
+//        anchors.margins: borderWidth / 2.0
+//        smooth: true
+//        fillMode: Image.PreserveAspectFit
+//        source: !isOuter ? "../graphics/Inner_Clock_Texture.png" : ""
+//        cache: false
+//    }
 }
