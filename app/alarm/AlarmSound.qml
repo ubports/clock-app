@@ -21,7 +21,6 @@ import Alarm 1.0
 import QtMultimedia 5.0
 import Ubuntu.Content 1.1
 import Ubuntu.Components 1.3
-import QtQuick.Layouts 1.1
 import Qt.labs.folderlistmodel 2.1
 
 Page {
@@ -168,15 +167,16 @@ Page {
         id: _pageFlickable
 
         anchors.fill: parent
-        contentHeight: defaultSoundModel.count * units.gu(7) +
-                       customSoundModel.count * units.gu(7) +
-                       customSoundListItem.height +
-                       2 * customSoundsHeader.implicitHeight + units.gu(4)
+        contentHeight: _alarmSoundColumn.height
 
         Column {
             id: _alarmSoundColumn
 
-            anchors.fill: parent
+            anchors {
+                top: parent.top
+                right: parent.right
+                left: parent.left
+            }
 
             ListItem {
                 height: customSoundsHeader.implicitHeight + units.gu(2)
@@ -216,11 +216,10 @@ Page {
                     id: _customAlarmSoundDelegate
                     objectName: "customAlarmSoundDelegate" + index
 
-                    property bool isChecked: alarmSound.subText === _customSoundName.text ? true
+                    property bool isChecked: alarmSound.subText === _customSoundName.title.text ? true
                                                                                           : false
 
-                    height: units.gu(7)
-                    color: isChecked ? Theme.palette.selected.background : "Transparent"
+                    height: _customSoundName.height + divider.height
 
                     leadingActions: ListItemActions {
                         actions: [
@@ -277,29 +276,14 @@ Page {
                         ]
                     }
 
-                    RowLayout {
-                        spacing: units.gu(2)
+                    ListItemLayout {
+                        id: _customSoundName
+                        objectName: "customSoundName" + index
 
-                        anchors {
-                            fill: parent
-                            leftMargin: units.gu(2)
-                            rightMargin: units.gu(2)
-                        }
-
-                        Label {
-                            id: _customSoundName
-                            objectName: "customSoundName" + index
-
-                            anchors.verticalCenter: parent.verticalCenter
-                            Layout.fillWidth: true
-
-                            elide: Text.ElideRight
-                            color: UbuntuColors.midAubergine
-                            fontSize: "medium"
-                            text: fileBaseName
-                        }
+                        title.text: fileBaseName
 
                         Icon {
+                            SlotsLayout.position: SlotsLayout.Trailing
                             width: units.gu(2)
                             height: width
                             name: "media-playback-pause"
@@ -309,17 +293,17 @@ Page {
 
                         Icon {
                             id: tickIcon
+                            SlotsLayout.position: SlotsLayout.Last
+                            opacity: _customAlarmSoundDelegate.isChecked ? 1 : 0
                             width: units.gu(2)
                             height: width
                             name: "tick"
-                            visible: _customAlarmSoundDelegate.isChecked
-                            anchors.verticalCenter: parent.verticalCenter
                         }
                     }
 
                     onIsCheckedChanged: {
                         if (isChecked) {
-                            alarmSound.subText = _customSoundName.text
+                            alarmSound.subText = _customSoundName.title.text
                             alarm.sound = fileURL
 
                             // Ensures only one custom alarm sound is selected
@@ -369,34 +353,19 @@ Page {
                     id: _alarmSoundDelegate
                     objectName: "alarmSoundDelegate" + index
 
-                    property bool isChecked: alarmSound.subText === _soundName.text ? true
+                    property bool isChecked: alarmSound.subText === _soundName.title.text ? true
                                                                                     : false
 
-                    height: units.gu(7)
-                    color: isChecked ? Theme.palette.selected.background : "Transparent"
+                    height: _soundName.height + divider.height
 
-                    RowLayout {
-                        spacing: units.gu(2)
+                    ListItemLayout {
+                        id: _soundName
+                        objectName: "soundName" + index
 
-                        anchors {
-                            fill: parent
-                            leftMargin: units.gu(2)
-                            rightMargin: units.gu(2)
-                        }
-
-                        Label {
-                            id: _soundName
-                            objectName: "soundName" + index
-
-                            anchors.verticalCenter: parent.verticalCenter
-                            Layout.fillWidth: true
-
-                            color: UbuntuColors.midAubergine
-                            fontSize: "medium"
-                            text: fileBaseName
-                        }
+                        title.text: fileBaseName
 
                         Icon {
+                            SlotsLayout.position: SlotsLayout.Trailing
                             width: units.gu(2)
                             height: width
                             name: "media-playback-pause"
@@ -405,17 +374,18 @@ Page {
                         }
 
                         Icon {
+                            SlotsLayout.position: SlotsLayout.Last
+                            opacity: _alarmSoundDelegate.isChecked ? 1 : 0
                             width: units.gu(2)
                             height: width
                             name: "tick"
-                            visible: _alarmSoundDelegate.isChecked
                             anchors.verticalCenter: parent.verticalCenter
                         }
                     }
 
                     onIsCheckedChanged: {
                         if (isChecked) {
-                            alarmSound.subText = _soundName.text
+                            alarmSound.subText = _soundName.title.text
                             alarm.sound = fileURL
 
                             // Ensures only one alarm sound is selected
