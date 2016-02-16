@@ -11,7 +11,6 @@ set(COMPONENTS_QML_JS_FILES
     ExpandableListItem.qml
     HeaderNavigation.qml
     Shadow.qml
-    SubtitledListItem.qml
 )
 
 # make the files visible in the qtcreator tree
