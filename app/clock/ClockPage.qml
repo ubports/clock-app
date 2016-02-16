@@ -201,7 +201,7 @@ Item {
         id: date
 
         anchors {
-            top: parent.top
+            top: clock.bottom
             //topMargin: units.gu(29)
             horizontalCenter: parent.horizontalCenter
         }
@@ -317,7 +317,7 @@ Item {
             target: date
             property: "anchors.topMargin"
             from: units.gu(29)
-            to: units.gu(37)
+            to: units.gu(4)
             duration: 900
         }
     }

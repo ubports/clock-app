@@ -28,11 +28,12 @@ Clock {
 
     fontSize: units.dp(44)
     periodFontSize: units.dp(12)
-    innerCircleWidth: units.gu(23)
+    innerCircleWidth: units.gu(24)
 
     isMainClock: true
 
     isDigital: clockModeDocument.contents.digitalMode ? true : false
+    height: width
 
     Component.onCompleted: {
         clockOpenAnimation.start()
@@ -76,7 +77,7 @@ Clock {
             UbuntuNumberAnimation {
                 target: mainClock
                 property: "width"
-                to: units.gu(23)
+                to: units.gu(24)
                 duration: 900
             }
 

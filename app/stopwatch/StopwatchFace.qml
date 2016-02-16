@@ -27,7 +27,7 @@ ClockCircle {
     // Property to hold the total time (in milliseconds)
     property int milliseconds: 0
 
-    width: units.gu(23)
+    width: units.gu(24)
 
     StopwatchFormatTime {
         id: stopwatchFormatTime
