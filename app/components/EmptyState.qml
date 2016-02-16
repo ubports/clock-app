@@ -44,7 +44,7 @@ Item {
 
     Label {
         id: emptyLabel
-        fontSize: "large"
+        textSize: Label.Large
         font.bold: true
         width: parent.width
         wrapMode: Text.WordWrap

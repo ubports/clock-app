@@ -102,7 +102,7 @@ Item {
             horizontalAlignment: Text.AlignHCenter
             verticalAlignment: Text.AlignVCenter
             text: internal.desireSection
-            fontSize: "small"
+            textSize: Label.Small
         }
 
         Behavior on opacity {
@@ -179,7 +179,7 @@ Item {
                 verticalAlignment: Text.AlignVCenter
                 horizontalAlignment: Text.AlignHCenter
                 text: modelData
-                fontSize: "x-small"
+                textSize: Label.XSmall
                 color: cursor.y === y ? "white" : Theme.palette.selected.backgroundText
                 opacity: !internal.modelDirty && Sections.contains(text) ? 1.0 : 0.5
             }
