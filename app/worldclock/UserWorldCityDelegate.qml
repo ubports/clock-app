@@ -31,7 +31,7 @@ ListItem {
         return [hours, minutes]
     }
 
-    height: units.gu(10)
+    height: units.gu(9)
     divider.visible: false
 
     Item {
@@ -76,8 +76,8 @@ ListItem {
             objectName: "localTimeVisual" + index
 
             periodFontSize: units.dp(7)
-            innerCircleWidth: units.gu(7)
-            width: units.gu(7)
+            innerCircleWidth: units.gu(6)
+            width: units.gu(6)
 
             notLocalizedDateTimeString: model.notLocalizedZoneTime
             localizedTimeString: model.localizedZoneTime
