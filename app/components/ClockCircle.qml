@@ -34,6 +34,8 @@ import QtGraphicalEffects 1.0
 Circle {
     id: _innerCircle
 
+    property bool isFoldVisible: true
+
     color: "#f7f7f7"
     borderWidth: units.dp(1)/*units.gu(0.2)*/
     borderColorTop: "#00000000"
@@ -41,12 +43,16 @@ Circle {
     borderOpacity: 0.65
     borderGradientPosition: 0.2
 
-//    Image {
-//        anchors.fill: parent
-//        anchors.margins: borderWidth / 2.0
-//        smooth: true
-//        fillMode: Image.PreserveAspectFit
-//        source: !isOuter ? "../graphics/Inner_Clock_Texture.png" : ""
-//        cache: false
-//    }
+    Rectangle {
+        visible: isFoldVisible
+        anchors.fill: parent
+        anchors.margins: borderWidth
+        radius: height/2
+        gradient: Gradient {
+            GradientStop { position: 0.0; color: "#f7f7f7" }
+            GradientStop { position: 0.5; color: "#f7f7f7" }
+            GradientStop { position: 0.51; color: "#fdfdfd" }
+            GradientStop { position: 1.0; color: "#fdfdfd" }
+        }
+    }
 }

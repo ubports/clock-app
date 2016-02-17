@@ -34,6 +34,7 @@ ClockCircle {
         _innerCircleAnimation.start()
     }
 
+    isFoldVisible: isMainClock
     width: units.gu(0)
 
     Image {

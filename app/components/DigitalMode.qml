@@ -41,6 +41,7 @@ ClockCircle {
     }
 
     width: maxWidth
+    isFoldVisible: isMainClock
 
     Label {
         id: _digitalTime

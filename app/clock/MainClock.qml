@@ -59,7 +59,7 @@ Clock {
                              {
                                  "maxWidth": innerCircleWidth,
                                  "maxTimeFontSize": fontSize,
-                                 "maxPeriodFontSize": periodFontSize,
+                                 "maxPeriodFontSize": periodFontSize
                              })
                 }
                 else {

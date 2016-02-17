@@ -38,6 +38,7 @@ AbstractButton {
     ClockCircle {
         id: _addButton
 
+        isFoldVisible: false
         width: units.gu(5)
         anchors {
             horizontalCenter: parent.horizontalCenter
