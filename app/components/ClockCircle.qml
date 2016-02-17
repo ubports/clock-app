@@ -23,13 +23,6 @@ import QtGraphicalEffects 1.0
 /*
   Clock Circle with the shadows and background color set depending on the
   position of the circle.
-
-  If used as the outer circle, the shadows are at the top and the background
-  has a 30% white shade. On the other hand, if used as the inner clock circle
-  then the shadows are at the bottom and the background has a 3% darker shade.
-
-  If used as the inner circle, a textured background image is set as part of
-  the new design specs.
  */
 Circle {
     id: _innerCircle
@@ -37,7 +30,7 @@ Circle {
     property bool isFoldVisible: true
 
     color: "#f7f7f7"
-    borderWidth: units.dp(1)/*units.gu(0.2)*/
+    borderWidth: units.dp(1)
     borderColorTop: "#00000000"
     borderColorBottom: "#6E6E6E"
     borderOpacity: 0.65
@@ -47,7 +40,7 @@ Circle {
         visible: isFoldVisible
         anchors.fill: parent
         anchors.margins: borderWidth
-        radius: height/2
+        radius: height / 2
         gradient: Gradient {
             GradientStop { position: 0.0; color: "#f7f7f7" }
             GradientStop { position: 0.5; color: "#f7f7f7" }

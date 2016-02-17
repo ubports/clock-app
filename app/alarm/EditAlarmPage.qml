@@ -118,8 +118,7 @@ Page {
         if (alarmObject.error !== Alarm.NoError) {
             console.log("[ERROR]: Error saving alarm, code: " + alarmObject.error)
             return false
-        }
-        else {
+        } else {
             return true
         }
     }
@@ -319,7 +318,6 @@ Page {
                                           "alarm": _alarm
                                       })
         }
-
     }
 
     Button {

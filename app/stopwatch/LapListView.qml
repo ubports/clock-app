@@ -47,20 +47,20 @@ ListView {
                 // #TRANSLATORS: This refers to the stopwatch lap and is shown as a header where space is limited. Constrain
                 // translation length to a few characters.
                 text: i18n.tr("Lap")
-                width: parent.width /5
+                width: parent.width / 5
                 elide: Text.ElideRight
                 horizontalAlignment: Text.AlignLeft
             }
 
             Label {
-                width: parent.width *2/5
+                width: 2 * parent.width / 5
                 elide: Text.ElideRight
                 text: i18n.tr("Lap Time")
                 horizontalAlignment: Text.AlignHCenter
             }
 
             Label {
-                width: parent.width *2/5
+                width: 2 * parent.width / 5
                 elide: Text.ElideRight
                 text: i18n.tr("Total Time")
                 horizontalAlignment: Text.AlignRight
@@ -101,12 +101,12 @@ ListView {
 
             Label {
                 text: "#%1".arg(Number(count - index).toLocaleString(Qt.locale(), "f", 0))
-                width: parent.width/5
+                width: parent.width / 5
                 horizontalAlignment: Text.AlignLeft
             }
 
             Item {
-                width:  parent.width *2/5
+                width: 2* parent.width / 5
                 height: childrenRect.height
                 Row {
                     anchors.horizontalCenter: parent.horizontalCenter
@@ -120,7 +120,7 @@ ListView {
             }
 
             Item {
-                width:  parent.width *2/5
+                width: 2 * parent.width / 5
                 height: childrenRect.height
                 Row {
                     anchors.right: parent.right

@@ -41,12 +41,6 @@ Item {
             iconColor: listview.currentIndex == 1 ? "#19b6ee" : "#5d5d5d"
             onClicked: listview.currentIndex = 1
         }
-
-//        ActionIcon {
-//            iconName: "timer"
-//            iconColor: listview.currentIndex == 2 ? "#19b6ee" : "#5d5d5d"
-//            onClicked: listview.currentIndex = 2
-//        }
     }
     
 

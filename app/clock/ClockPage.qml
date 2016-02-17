@@ -202,7 +202,6 @@ Item {
 
         anchors {
             top: clock.bottom
-            //topMargin: units.gu(29)
             horizontalCenter: parent.horizontalCenter
         }
 

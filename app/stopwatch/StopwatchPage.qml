@@ -73,9 +73,9 @@ Item {
         Button {
             id: stopButton
 
-            width: parent.width/2 - units.gu(1)
+            width: parent.width / 2 - units.gu(1)
             height: units.gu(4)
-            x: stopwatchEngine.previousTimeOfStopwatch !== 0 || stopwatchEngine.running ? 0 : (parent.width - width)/2
+            x: stopwatchEngine.previousTimeOfStopwatch !== 0 || stopwatchEngine.running ? 0 : (parent.width - width) / 2
             color: !stopwatchEngine.running ? UbuntuColors.green : UbuntuColors.red
             text: stopwatchEngine.running ? i18n.tr("Stop") : (stopwatchEngine.previousTimeOfStopwatch === 0 ? i18n.tr("Start") : i18n.tr("Resume"))
             onClicked: {
@@ -96,7 +96,7 @@ Item {
             id: lapButton
 
             text: stopwatchEngine.running ? i18n.tr("Lap") : i18n.tr("Clear")
-            width: parent.width/2 - units.gu(1)
+            width: parent.width / 2 - units.gu(1)
             height: units.gu(4)
             x: stopwatchEngine.previousTimeOfStopwatch !== 0 || stopwatchEngine.running ? parent.width - width : parent.width
             color: "#f7f7f7"
