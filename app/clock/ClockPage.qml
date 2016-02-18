@@ -206,7 +206,7 @@ Item {
         }
 
         text: clock.localizedDateString
-        textSize: Label.Small
+        textSize: Label.Medium
         opacity: 0
     }
 
