@@ -44,7 +44,7 @@ Circle {
         gradient: Gradient {
             GradientStop { position: 0.0; color: "#f7f7f7" }
             GradientStop { position: 0.5; color: "#f7f7f7" }
-            GradientStop { position: 0.51; color: "#fdfdfd" }
+            GradientStop { position: 0.5; color: "#fdfdfd" }
             GradientStop { position: 1.0; color: "#fdfdfd" }
         }
     }
