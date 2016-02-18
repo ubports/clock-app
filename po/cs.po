@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2015-10-19 04:17+0200\n"
-"PO-Revision-Date: 2015-05-07 08:45+0000\n"
-"Last-Translator: Vojtěch Daněk <vdanek@outlook.com>\n"
+"PO-Revision-Date: 2016-02-17 22:30+0000\n"
+"Last-Translator: Dan <dhrabina@email.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Launchpad-Export-Date: 2015-12-28 05:28+0000\n"
-"X-Generator: Launchpad (build 17865)\n"
+"X-Launchpad-Export-Date: 2016-02-18 05:59+0000\n"
+"X-Generator: Launchpad (build 17925)\n"
 
 #: ../app/MainPage.qml:53 ../app/alarm/AlarmUtils.qml:55
 msgid "No active alarms"
@@ -91,7 +91,7 @@ msgstr "Hlasitost budíku"
 
 #: ../app/alarm/AlarmSettingsPage.qml:125
 msgid "Alarm stops after"
-msgstr ""
+msgstr "Budík se vypne po"
 
 #: ../app/alarm/AlarmSettingsPage.qml:163
 msgid "Snooze for"
@@ -111,15 +111,15 @@ msgstr "Zvuk"
 
 #: ../app/alarm/AlarmSound.qml:186
 msgid "Custom alarm sounds"
-msgstr ""
+msgstr "Vlastní zvuky budíku"
 
 #: ../app/alarm/AlarmSound.qml:201
 msgid "Add sound"
-msgstr ""
+msgstr "Přidat zvuk"
 
 #: ../app/alarm/AlarmSound.qml:353
 msgid "Default alarm sounds"
-msgstr ""
+msgstr "Výchozí zvuky budíku"
 
 #: ../app/alarm/AlarmUtils.qml:31
 msgid "Never"
@@ -176,7 +176,7 @@ msgstr "Smazat budík"
 #. TRANSLATORS: This is the page title. Please keep the translation length to 3 words if possible
 #: ../app/alarm/SoundPeerPicker.qml:27
 msgid "Add sound from"
-msgstr ""
+msgstr "Přidat zvuk z"
 
 #: ../app/clock/ClockPage.qml:249
 msgid "Retrieving location..."
@@ -186,15 +186,15 @@ msgstr "Získávám pozici..."
 #. translation length to a few characters.
 #: ../app/stopwatch/LapListView.qml:46 ../app/stopwatch/StopwatchPage.qml:83
 msgid "Lap"
-msgstr ""
+msgstr "Mezičas"
 
 #: ../app/stopwatch/LapListView.qml:56
 msgid "Lap Time"
-msgstr ""
+msgstr "Mezičas"
 
 #: ../app/stopwatch/LapListView.qml:64
 msgid "Total Time"
-msgstr ""
+msgstr "Celkový čas"
 
 #: ../app/stopwatch/StopwatchPage.qml:66
 msgid "Stop"
@@ -206,11 +206,11 @@ msgstr "Začít"
 
 #: ../app/stopwatch/StopwatchPage.qml:66
 msgid "Resume"
-msgstr ""
+msgstr "Pokračovat"
 
 #: ../app/stopwatch/StopwatchPage.qml:83
 msgid "Clear"
-msgstr ""
+msgstr "Smazat"
 
 #: ../app/worldclock/AddWorldCityButton.qml:30
 msgid "Add"
@@ -1658,7 +1658,7 @@ msgstr "Praha"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:275
 msgid "Czech Republic"
-msgstr ""
+msgstr "Česká republika"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:276
 msgid "Pyongyang"
@@ -2033,7 +2033,9 @@ msgid ""
 "A sophisticated clock app that provides world clock, alarm and stopwatch "
 "functionality."
 msgstr ""
+"Důmyslná aplikace Hodiny, která nabízí funkci hodin s různými časovými "
+"pásmy, budíku a stopek."
 
 #: ubuntu-clock-app.desktop.in.in.h:3
 msgid "time;alarm;alert;clock;world;stopwatch;"
-msgstr ""
+msgstr "čas;budík;upozornění;hodiny;svět;stopky;"
