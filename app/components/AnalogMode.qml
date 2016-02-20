@@ -38,6 +38,25 @@ ClockCircle {
     width: units.gu(0)
 
     Image {
+        id: hourHandShadow
+
+        z: minuteHand.z + 1
+        width: parent.width
+        anchors.centerIn: parent
+        anchors.verticalCenterOffset: -units.gu(1)
+
+        smooth: true
+        source: "../graphics/Hour_Hand_Shadow.png"
+        fillMode: Image.PreserveAspectFit
+        // notLocalizedDateTimeString.split(":")[3] is hours
+        // notLocalizedDateTimeString.split(":")[4] is minutes
+        // We need to calculate degree number for rotation (0 degrees means no rotation).
+        // Full rotate has 360 degrees and we have 12 hours in clock face,
+        // For hours: 360deg/12h=30 deg/h, for minutes 30deg/60min= 0.5 deg/min
+        rotation: (parseInt(notLocalizedDateTimeString.split(":")[3]) * 30) + (parseInt(notLocalizedDateTimeString.split(":")[4]) * 0.5)
+    }
+
+    Image {
         id: hourHand
 
         z: minuteHand.z + 1
@@ -53,6 +72,24 @@ ClockCircle {
         // Full rotate has 360 degrees and we have 12 hours in clock face,
         // For hours: 360deg/12h=30 deg/h, for minutes 30deg/60min= 0.5 deg/min
         rotation: (parseInt(notLocalizedDateTimeString.split(":")[3]) * 30) + (parseInt(notLocalizedDateTimeString.split(":")[4]) * 0.5)
+    }
+
+    Image {
+        id: minuteHandShadow
+
+        width: parent.width
+        anchors.centerIn: parent
+        anchors.verticalCenterOffset: -units.gu(1)
+
+        smooth: true
+        source: "../graphics/Minute_Hand_Shadow.png"
+        fillMode: Image.PreserveAspectFit
+        // notLocalizedDateTimeString.split(":")[4] is minutes
+        // notLocalizedDateTimeString.split(":")[5] is seconds
+        // We need to calculate degree number for rotation (0 degrees means no rotation).
+        // Full rotate has 360 degrees and we have 60 miutes in clock face,
+        // For minutes: 360deg/60min=6 deg/min, for seconds 6deg/60sec= 0.1 deg/sec
+        rotation: (parseInt(notLocalizedDateTimeString.split(":")[4]) * 6) + (parseInt(notLocalizedDateTimeString.split(":")[5]) * 0.1)
     }
 
     Image {
