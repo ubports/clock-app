@@ -43,9 +43,8 @@ ClockCircle {
         z: minuteHand.z + 1
         width: parent.width
         anchors.centerIn: parent
-        anchors.verticalCenterOffset: -units.gu(1)
+        anchors.verticalCenterOffset: -0.02 * _innerCircleAnalog.height
 
-        smooth: true
         source: "../graphics/Hour_Hand_Shadow.png"
         fillMode: Image.PreserveAspectFit
         // notLocalizedDateTimeString.split(":")[3] is hours
@@ -79,9 +78,8 @@ ClockCircle {
 
         width: parent.width
         anchors.centerIn: parent
-        anchors.verticalCenterOffset: -units.gu(1)
+        anchors.verticalCenterOffset: -0.02 * _innerCircleAnalog.height
 
-        smooth: true
         source: "../graphics/Minute_Hand_Shadow.png"
         fillMode: Image.PreserveAspectFit
         // notLocalizedDateTimeString.split(":")[4] is minutes
@@ -107,6 +105,23 @@ ClockCircle {
         // Full rotate has 360 degrees and we have 60 miutes in clock face,
         // For minutes: 360deg/60min=6 deg/min, for seconds 6deg/60sec= 0.1 deg/sec
         rotation: (parseInt(notLocalizedDateTimeString.split(":")[4]) * 6) + (parseInt(notLocalizedDateTimeString.split(":")[5]) * 0.1)
+    }
+
+    Image {
+        id: secondHandShadow
+
+        anchors.centerIn: parent
+        width: parent.width + units.gu(2)
+        anchors.verticalCenterOffset: -0.02 * _innerCircleAnalog.height
+
+        visible: showSeconds
+        source: "../graphics/Second_Hand_Shadow.png"
+        fillMode: Image.PreserveAspectFit
+        // notLocalizedDateTimeString.split(":")[5] is seconds
+        // We need to calculate degree number for rotation (0 degrees means no rotation).
+        // Full rotate has 360 degrees and we have 60 seconds in clock face,
+        // For seconds 360deg/60sec= 6 deg/sec
+        rotation: visible ? parseInt(notLocalizedDateTimeString.split(":")[5]) * 6 : 0
     }
 
     Image {

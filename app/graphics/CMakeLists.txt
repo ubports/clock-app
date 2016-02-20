@@ -4,7 +4,9 @@ set(GRAPHICS_FILES
     Inner_Clock_Texture@27.png
     Knob@27.png
     Minute_Hand@27.png
+    Minute_Hand_Shadow@27.png
     Second_Hand@27.png
+    Second_Hand_Shadow@27.png
     select-none.svg
     select.svg
 )
