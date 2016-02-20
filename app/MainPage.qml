@@ -80,8 +80,9 @@ PageWithBottomEdge {
         }
     }
 
-    head.visible: false
-    head.locked: true
+    header: PageHeader {
+        visible: false
+    }
 
     HeaderNavigation {
         id: headerRow
