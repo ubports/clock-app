@@ -43,7 +43,7 @@ ClockCircle {
         z: minuteHand.z + 1
         width: parent.width
         anchors.centerIn: parent
-        anchors.verticalCenterOffset: -0.02 * _innerCircleAnalog.height
+        anchors.verticalCenterOffset: 0.02 * _innerCircleAnalog.height
 
         source: "../graphics/Hour_Hand_Shadow.png"
         fillMode: Image.PreserveAspectFit
@@ -78,7 +78,7 @@ ClockCircle {
 
         width: parent.width
         anchors.centerIn: parent
-        anchors.verticalCenterOffset: -0.02 * _innerCircleAnalog.height
+        anchors.verticalCenterOffset: 0.02 * _innerCircleAnalog.height
 
         source: "../graphics/Minute_Hand_Shadow.png"
         fillMode: Image.PreserveAspectFit
@@ -112,7 +112,7 @@ ClockCircle {
 
         anchors.centerIn: parent
         width: parent.width + units.gu(2)
-        anchors.verticalCenterOffset: -0.02 * _innerCircleAnalog.height
+        anchors.verticalCenterOffset: 0.02 * _innerCircleAnalog.height
 
         visible: showSeconds
         source: "../graphics/Second_Hand_Shadow.png"
