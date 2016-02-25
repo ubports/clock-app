@@ -117,14 +117,6 @@ MainView {
             }
 
             /*
-              #FIXME: When the SDK support hiding the header, then enable the
-              clock page title. This will then set the correct window title on
-              the desktop.
-
-              title: i18n.tr("Clock")
-            */
-
-            /*
               Create a new Date() object and pass the date, month, year, hour, minute
               and second received from the DateTime plugin manually to ensure the
               timezone info is set correctly.
