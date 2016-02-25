@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2014-2015 Canonical Ltd
+ * Copyright (C) 2014-2016 Canonical Ltd
  *
  * This file is part of Ubuntu Clock App
  *
@@ -126,8 +126,6 @@ MainView {
             */
 
             alarmModel: alarmModelLoader.item
-            bottomEdgeEnabled: alarmModelLoader.status === Loader.Ready && alarmModelLoader.item.isReady && isClockPage
-
             /*
                FIXME: When the upstream QT bug at
                https://bugreports.qt-project.org/browse/QTBUG-40275 is fixed

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2014-2015 Canonical Ltd
+ * Copyright (C) 2014-2016 Canonical Ltd
  *
  * This file is part of Ubuntu Clock App
  *
@@ -21,12 +21,13 @@ import WorldClock 1.0
 import U1db 1.0 as U1db
 import Ubuntu.Components 1.3
 
-ListView {
+UbuntuListView {
     id: worldCityColumn
     objectName: "userWorldCityRepeater"
 
     clip: true
     anchors.fill: parent
+    currentIndex: -1
 
     onFlickStarted:  {
         forceActiveFocus()

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2014-2015 Canonical Ltd
+ * Copyright (C) 2014-2016 Canonical Ltd
  *
  * This file is part of Ubuntu Clock App
  *
@@ -31,13 +31,13 @@ Item {
     // Property to keep track of the clock mode
     property alias isDigital: clock.isDigital
 
-    // String with not localized date and time in format "yyyy:MM:dd:hh:mm:ss", eg.: "2015:10:05:16:10:15"
+    // String with not localized date and time in format "yyyy:MM:dd:hh:mm:ss", eg.: "2016:10:05:16:10:15"
     property string notLocalizedClockTimeString
 
     // String with localized time, eg.: "4:10 PM"
     property string localizedClockTimeString
 
-    // String with localized date, eg.: "Thursday, 17 September 2015"
+    // String with localized date, eg.: "Thursday, 17 September 2016"
     property string localizedClockDateString
 
     // Property to keep track of app cold start status

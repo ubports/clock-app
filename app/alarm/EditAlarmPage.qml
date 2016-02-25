@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2014-2015 Canonical Ltd
+ * Copyright (C) 2014-2016 Canonical Ltd
  *
  * This file is part of Ubuntu Clock App
  *
@@ -31,22 +31,26 @@ Page {
     property var tempAlarm
     property bool isNewAlarm: true
 
-    title: isNewAlarm ? i18n.tr("New alarm") : i18n.tr("Edit alarm")
     visible: false
 
-    head.actions: Action {
-        id: saveAlarmButton
-        iconName: "ok"
-        objectName: "saveAlarmAction"
-        text: i18n.tr("Alarm")
-        onTriggered: {
-            if(isNewAlarm) {
-                saveNewAlarm()
+    header: PageHeader {
+        title: isNewAlarm ? i18n.tr("New alarm") : i18n.tr("Edit alarm")
+        trailingActionBar.actions: [
+            Action {
+                id: saveAlarmButton
+                iconName: "ok"
+                objectName: "saveAlarmAction"
+                text: i18n.tr("Alarm")
+                onTriggered: {
+                    if(isNewAlarm) {
+                        saveNewAlarm()
+                    }
+                    else {
+                        updateAlarm()
+                    }
+                }
             }
-            else {
-                updateAlarm()
-            }
-        }
+        ]
     }
 
     Component.onCompleted: {
@@ -225,7 +229,7 @@ Page {
         id: _alarmColumn
 
         width: parent.width
-        anchors.top: parent.top
+        anchors.top: _addAlarmPage.header.bottom
 
         DatePicker {
             id: _timePicker

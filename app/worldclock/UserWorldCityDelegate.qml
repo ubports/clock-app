@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2014-2015 Canonical Ltd
+ * Copyright (C) 2014-2016 Canonical Ltd
  *
  * This file is part of Ubuntu Clock App
  *
@@ -33,6 +33,7 @@ ListItem {
 
     height: units.gu(9)
     divider.visible: false
+    highlightColor: "Transparent"
 
     Item {
         id: delegate

@@ -5,9 +5,25 @@ ubuntu-clock-app (3.7) UNRELEASED; urgency=medium
   * Move to use the new SDK components v1.3 (LP: #1508363)
   * Fix continously move the alarm volume slider to the desired value (LP: #1492584)
   * Fix wrong alarm caption which appears during high load (LP: #1530000)
+  * Implemented new UI design according to design specs (LP: #1528241)
+  * Removed SURU bar from all views (LP: #1543492)
+
+  [ Nicholas Skaggs ]
+  * Fixed test launching and added option for building with SDK
+  * Removed fixtures and debug_print_trees
 
   [ Andrew Hayzen ]
   * Fixes for various autopilot issues (LP: #1535488)
+
+  [ Michal Predotka ]
+  * Fix stopwatch start button being too wide (LP: #1543475)
+  * Updated all list items to the new ListItemLayout (LP: #1543472)
+  * Added ability to start/stop stopwatch by clicking on clock face (LP: #1543479)
+  * Fix settings page list items using the wrong font color (LP: #1543501)
+
+  [ Nekhelesh Ramananthan ]
+  * Fix 'Shutter' effect animation on title bar when opening bottom edge (LP: #1543496)
+  * Migrate to the new SDK Bottom edge (LP: #1549988)
 
  -- Bartosz Kosiorek <gang65@poczta.onet.pl>  Wed, 30 Dec 2015 01:43:24 +0100
 

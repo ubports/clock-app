@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2014-2015 Canonical Ltd
+ * Copyright (C) 2014-2016 Canonical Ltd
  *
  * This file is part of Ubuntu Clock App
  *
@@ -48,39 +48,6 @@ QtObject {
         else {
             return occurs
         }
-    }
-
-    // Function to set the bottom edge title with "Next Active in..."
-    function set_bottom_edge_title(alarmModel, clockTimeString) {
-        var bottom_edge_title = i18n.tr("No active alarms")
-
-        var clockTime = new Date
-                (
-                    clockTimeString.split(":")[0],
-                    clockTimeString.split(":")[1] - 1,
-                    clockTimeString.split(":")[2],                    
-                    clockTimeString.split(":")[3],
-                    clockTimeString.split(":")[4],
-                    clockTimeString.split(":")[5],
-                    0
-                    )
-        /*
-         Check if alarm model received is valid and has saved alarms and only
-         then proceed to find the next active alarm.
-        */
-        if (!alarmModel || !alarmModel.count) {
-            return bottom_edge_title
-        }
-
-        var activeAlarmDate = _get_next_active_alarm(alarmModel, clockTime)
-
-        // Return immediately if there are no active alarms found
-        if (!activeAlarmDate)  {
-          return bottom_edge_title
-        }
-
-        bottom_edge_title = i18n.tr("Next Alarm %1").arg(get_time_to_alarm(activeAlarmDate, clockTime))
-        return bottom_edge_title
     }
 
     function get_utc_time(dateTime) {
@@ -152,27 +119,6 @@ QtObject {
     /*
       INTERNAL FUNCTIONS
     */
-
-    /*
-     Function to get the next active alarm. This function ignores alarms in the
-     past and also iteratively looks through every alarm since the alarm model
-     does not always list the active alarms in chronological order.
-    */
-    function _get_next_active_alarm(alarmModel, clockTime) {
-        var activeAlarmDate = undefined
-
-        for (var i=0; i<alarmModel.count; i++) {
-            var currentAlarm = alarmModel.get(i)
-            if (currentAlarm.enabled && currentAlarm.date > clockTime) {
-                if (activeAlarmDate === undefined ||
-                        currentAlarm.date < activeAlarmDate) {
-                    activeAlarmDate = currentAlarm.date
-                }
-            }
-        }
-
-        return activeAlarmDate
-    }
 
     // Function to split time (in ms) into days, hours and minutes
     function _split_time(totalTime) {
