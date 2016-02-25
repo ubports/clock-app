@@ -26,7 +26,7 @@ import "clock"
 import "stopwatch"
 import "components"
 
-PageWithBottomEdge {
+Page {
     id: _mainPage
     objectName: "mainPage"
 
@@ -49,9 +49,16 @@ PageWithBottomEdge {
     property var alarmModel
 
     flickable: null
-    bottomEdgeTitle: _mainPage.visible ? alarmUtils.set_bottom_edge_title(alarmModel, notLocalizedDateTimeString)
-                                       : i18n.tr("No active alarms")
-    bottomEdgePageComponent: AlarmPage {}
+
+    BottomEdge {
+        id: bottomEdge
+        height: parent.height
+        hint.text: "Alarms"
+        contentComponent: AlarmPage {
+            width: bottomEdge.width
+            height: bottomEdge.height
+        }
+    }
 
     AlarmUtils {
         id: alarmUtils

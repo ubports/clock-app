@@ -31,7 +31,7 @@ UbuntuListView {
     signal selectAll()
 
     clip: true
-    anchors.fill: parent
+    currentIndex: -1
 
     Timer {
         id: alarmTimer
@@ -71,7 +71,7 @@ UbuntuListView {
             if (selectMode) {
                 selected = !selected
             } else {
-                pageStack.push(Qt.resolvedUrl("EditAlarmPage.qml"), {isNewAlarm: false, tempAlarm: model, alarmModel: alarmModel})
+                mainStack.push(Qt.resolvedUrl("EditAlarmPage.qml"), {isNewAlarm: false, tempAlarm: model, alarmModel: alarmModel})
             }
         }
 

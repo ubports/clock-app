@@ -126,8 +126,6 @@ MainView {
             */
 
             alarmModel: alarmModelLoader.item
-            bottomEdgeEnabled: alarmModelLoader.status === Loader.Ready && alarmModelLoader.item.isReady && isClockPage
-
             /*
                FIXME: When the upstream QT bug at
                https://bugreports.qt-project.org/browse/QTBUG-40275 is fixed

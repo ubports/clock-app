@@ -24,102 +24,105 @@ Page {
 
     readonly property bool isAlarmPage: true
 
-    title: i18n.tr("Alarms")
     objectName: 'AlarmPage'
-    flickable: null
+    header: standardHeader
 
     Component.onCompleted: console.log("[LOG]: Alarm Page loaded")
 
-    states: [
-        PageHeadState {
-            name: "default"
-            head: alarmPage.head
-            when: !alarmListView.ViewItems.selectMode
-
-            backAction: Action {
-                iconName: "down"
-                text: i18n.tr("Back")
+    PageHeader {
+        id: standardHeader
+        title: i18n.tr("Alarms")
+        leadingActionBar.actions: [
+            Action {
+                text: "close"
+                iconName: "go-down"
                 onTriggered: {
-                    pageStack.pop()
+                    bottomEdge.collapse()
                 }
             }
-
-            actions: [
-                Action {
-                    objectName: "addAlarmAction"
-                    iconName: "add"
-                    text: i18n.tr("Alarm")
-                    onTriggered: {
-                        pageStack.push(Qt.resolvedUrl("EditAlarmPage.qml"))
-                    }
+        ]
+        trailingActionBar.actions: [
+            Action {
+                objectName: "addAlarmAction"
+                iconName: "add"
+                text: i18n.tr("Alarm")
+                onTriggered: {
+                    mainStack.push(Qt.resolvedUrl("EditAlarmPage.qml"))
                 }
-            ]
-        },
+            }
+        ]
+    }
 
-        PageHeadState {
-            name: "selection"
-            head: alarmPage.head
-            when: alarmListView.ViewItems.selectMode
-
-            backAction: Action {
+    PageHeader {
+        id: selectionHeader
+        visible: alarmListView.ViewItems.selectMode
+        leadingActionBar.actions: [
+            Action {
                 iconName: "back"
                 text: i18n.tr("Back")
                 onTriggered: {
+                    alarmPage.header = standardHeader
                     alarmListView.ViewItems.selectMode = false
                 }
             }
+        ]
 
-            actions: [
-                Action {
-                    text: {
-                        if(alarmListView.ViewItems.selectedIndices.length === alarmListView.count) {
-                            return i18n.tr("Select None")
-                        } else {
-                            return i18n.tr("Select All")
-                        }
-                    }
-
-                    iconSource: {
-                        if(alarmListView.ViewItems.selectedIndices.length === alarmListView.count) {
-                            return Qt.resolvedUrl("../graphics/select-none.svg")
-                        } else {
-                            return Qt.resolvedUrl("../graphics/select.svg")
-                        }
-                    }
-
-                    onTriggered: {
-                        if(alarmListView.ViewItems.selectedIndices.length === alarmListView.count) {
-                            alarmListView.clearSelection()
-                        } else {
-                            alarmListView.selectAll()
-                        }
-                    }
-                },
-
-                Action {
-                    iconName: "delete"
-                    text: i18n.tr("Delete")
-                    enabled: alarmListView.ViewItems.selectedIndices.length !== 0
-
-                    onTriggered: {
-                        var items = alarmListView.ViewItems.selectedIndices
-
-                        for(var i=0; i < alarmListView.ViewItems.selectedIndices.length; i++) {
-                            var alarm = alarmModel.get(alarmListView.ViewItems.selectedIndices[i])
-                            alarm.cancel()
-                        }
-
-                        alarmListView.closeSelection()
+        trailingActionBar.actions: [
+            Action {
+                text: {
+                    if(alarmListView.ViewItems.selectedIndices.length === alarmListView.count) {
+                        return i18n.tr("Select None")
+                    } else {
+                        return i18n.tr("Select All")
                     }
                 }
-            ]
-        }
-    ]
+
+                iconSource: {
+                    if(alarmListView.ViewItems.selectedIndices.length === alarmListView.count) {
+                        return Qt.resolvedUrl("../graphics/select-none.svg")
+                    } else {
+                        return Qt.resolvedUrl("../graphics/select.svg")
+                    }
+                }
+
+                onTriggered: {
+                    if(alarmListView.ViewItems.selectedIndices.length === alarmListView.count) {
+                        alarmListView.clearSelection()
+                    } else {
+                        alarmListView.selectAll()
+                    }
+                }
+            },
+
+            Action {
+                iconName: "delete"
+                text: i18n.tr("Delete")
+                enabled: alarmListView.ViewItems.selectedIndices.length !== 0
+
+                onTriggered: {
+                    var items = alarmListView.ViewItems.selectedIndices
+
+                    for(var i=0; i < alarmListView.ViewItems.selectedIndices.length; i++) {
+                        var alarm = alarmModel.get(alarmListView.ViewItems.selectedIndices[i])
+                        alarm.cancel()
+                    }
+
+                    alarmListView.closeSelection()
+                }
+            }
+        ]
+    }
 
     AlarmList {
         id: alarmListView
         model: alarmModel
-        anchors.fill: parent
+        anchors {
+            top: alarmPage.header.bottom
+            left: parent.left
+            right: parent.right
+            bottom: parent.bottom
+        }
+
         localTime: {
             return new Date
                 (
@@ -137,7 +140,7 @@ Page {
     Loader {
         id: emptyStateLoader
         anchors {
-            top: parent.top
+            top: alarmPage.header.bottom
             topMargin: units.gu(5)
             left: parent.left
             right: parent.right
