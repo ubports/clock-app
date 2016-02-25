@@ -53,7 +53,7 @@ Page {
     BottomEdge {
         id: bottomEdge
         height: parent.height
-        hint.text: "Alarms"
+        hint.text: i18n.tr("Alarms")
         contentComponent: AlarmPage {
             width: bottomEdge.width
             height: bottomEdge.height
