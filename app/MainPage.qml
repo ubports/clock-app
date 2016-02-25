@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015 Canonical Ltd
+ * Copyright (C) 2015-2016 Canonical Ltd
  *
  * This file is part of Ubuntu Clock App
  *
@@ -30,13 +30,13 @@ Page {
     id: _mainPage
     objectName: "mainPage"
 
-    // String with not localized date and time in format "yyyy:MM:dd:hh:mm:ss", eg.: "2015:10:05:16:10:15"
+    // String with not localized date and time in format "yyyy:MM:dd:hh:mm:ss", eg.: "2016:10:05:16:10:15"
     property string notLocalizedDateTimeString
 
     // String with localized time, eg.: "4:10 PM"
     property string localizedTimeString
 
-    // String with localized date, eg.: "Thursday, 17 September 2015"
+    // String with localized date, eg.: "Thursday, 17 September 2016"
     property string localizedDateString
 
     // Property to keep track of an app cold start status
