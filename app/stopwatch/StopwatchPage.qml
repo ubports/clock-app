@@ -45,15 +45,26 @@ Item {
             topMargin: units.gu(2)
             horizontalCenter: parent.horizontalCenter
         }
+        MouseArea {
+            anchors.fill: parent
+            onClicked: {
+                if (stopwatchEngine.running) {
+                    stopwatchEngine.pauseStopwatch();
+                } else {
+                    stopwatchEngine.startStopwatch();
+                }
+            }
+        }
     }
 
-    Row {
+    Item {
         id: buttonRow
 
-        spacing: units.gu(2)
+        width: parent.width - units.gu(4)
+        height: units.gu(4)
         anchors {
             top: stopwatch.bottom
-            topMargin: units.gu(3)
+            topMargin: units.gu(4)
             left: parent.left
             right: parent.right
             margins: units.gu(2)
@@ -61,7 +72,10 @@ Item {
 
         Button {
             id: stopButton
-            width: stopwatchEngine.previousTimeOfStopwatch !== 0 || stopwatchEngine.running ? (parent.width - parent.spacing) / 2 : parent.width
+
+            width: parent.width / 2 - units.gu(1)
+            height: units.gu(4)
+            x: stopwatchEngine.previousTimeOfStopwatch !== 0 || stopwatchEngine.running ? 0 : (parent.width - width) / 2
             color: !stopwatchEngine.running ? UbuntuColors.green : UbuntuColors.red
             text: stopwatchEngine.running ? i18n.tr("Stop") : (stopwatchEngine.previousTimeOfStopwatch === 0 ? i18n.tr("Start") : i18n.tr("Resume"))
             onClicked: {
@@ -71,7 +85,7 @@ Item {
                     stopwatchEngine.startStopwatch();
                 }
             }
-            Behavior on width {
+            Behavior on x {
                 UbuntuNumberAnimation{
                     duration: UbuntuAnimation.BriskDuration
                 }
@@ -80,9 +94,12 @@ Item {
 
         Button {
             id: lapButton
+
             text: stopwatchEngine.running ? i18n.tr("Lap") : i18n.tr("Clear")
-            width:  stopwatchEngine.previousTimeOfStopwatch !== 0 || stopwatchEngine.running ? (parent.width - parent.spacing) / 2 : 0
-            strokeColor: UbuntuColors.lightGrey
+            width: parent.width / 2 - units.gu(1)
+            height: units.gu(4)
+            x: stopwatchEngine.previousTimeOfStopwatch !== 0 || stopwatchEngine.running ? parent.width - width : parent.width
+            color: "#f7f7f7"
             visible:  stopwatchEngine.previousTimeOfStopwatch !== 0 || stopwatchEngine.running
             onClicked: {
                 if (stopwatchEngine.running) {
@@ -91,7 +108,7 @@ Item {
                     stopwatchEngine.clearStopwatch()
                 }
             }
-            Behavior on width {
+            Behavior on x {
                 UbuntuNumberAnimation{
                     duration: UbuntuAnimation.BriskDuration
                 }

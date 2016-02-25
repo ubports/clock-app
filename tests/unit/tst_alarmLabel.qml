@@ -51,7 +51,7 @@ MainView {
             header = findChild(mainView, "MainView_Header")
             alarmLabel = findChild(alarmLabelPage, "labelEntry")
             backButton = findChild(header, "customBackButton")
-            saveButton = findChild(header, "saveAction_header_button")
+            saveButton = findChild(header, "saveAction_button")
         }
 
         /*

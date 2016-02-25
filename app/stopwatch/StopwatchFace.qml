@@ -22,41 +22,35 @@ import Ubuntu.Components 1.3
 import "../components"
 
 ClockCircle {
-    id: outerCirle
+    id: stopwatchCircle
 
     // Property to hold the total time (in milliseconds)
     property int milliseconds: 0
 
-    isOuter: true
-    width: units.gu(32)
+    width: units.gu(24)
 
     StopwatchFormatTime {
         id: stopwatchFormatTime
     }
 
-    ClockCircle {
-        id: innerCircle
+    Label {
+        id: time
 
-        width: units.gu(23)
+        text: stopwatchFormatTime.millisToTimeString(milliseconds, true)
+        font.pixelSize: units.dp(36)
         anchors.centerIn: parent
     }
 
-    Column {
-        id: text
+    Label {
+        id: miliseconds
 
-        anchors.centerIn: parent
-
-        Label {
-            text: stopwatchFormatTime.millisToTimeString(milliseconds, true)
-            font.pixelSize: units.dp(34)
-            color: UbuntuColors.midAubergine
-        }
-
-        Label {
-            text: stopwatchFormatTime.millisToString(milliseconds)
-            font.pixelSize: units.dp(18)
-            color: UbuntuColors.midAubergine
-            anchors.horizontalCenter: parent.horizontalCenter
+        text: stopwatchFormatTime.millisToString(milliseconds)
+        textSize: Label.Large
+        anchors {
+            top: time.bottom
+            topMargin: units.gu(1.5)
+            horizontalCenter: parent.horizontalCenter
         }
     }
+
 }

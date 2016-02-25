@@ -38,8 +38,8 @@ import Ubuntu.Components 1.3
  - Disable the clock hand in the child elements (world clock) as per the design
    spec.
 */
-ClockCircle {
-    id: _outerCircle
+Item {
+    id: _clockContainer
 
     // String with not localized date and time in format "yyyy:MM:dd:hh:mm:ss", eg.: "2015:10:05:16:10:15"
     property string notLocalizedDateTimeString
@@ -71,9 +71,6 @@ ClockCircle {
     function flipClock() {
         clockFlipAnimation.start()
     }
-
-    // Sets the style to outer circle
-    isOuter: true
 
     Shadow {
         id: upperShadow

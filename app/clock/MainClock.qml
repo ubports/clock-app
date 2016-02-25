@@ -26,13 +26,14 @@ Clock {
     // Property to keep track of the cold start status of the app
     property bool isColdStart: true
 
-    fontSize: units.dp(62)
+    fontSize: units.dp(44)
     periodFontSize: units.dp(12)
-    innerCircleWidth: units.gu(23)
+    innerCircleWidth: units.gu(24)
 
     isMainClock: true
 
     isDigital: clockModeDocument.contents.digitalMode ? true : false
+    height: width
 
     Component.onCompleted: {
         clockOpenAnimation.start()
@@ -58,7 +59,7 @@ Clock {
                              {
                                  "maxWidth": innerCircleWidth,
                                  "maxTimeFontSize": fontSize,
-                                 "maxPeriodFontSize": periodFontSize,
+                                 "maxPeriodFontSize": periodFontSize
                              })
                 }
                 else {
@@ -76,7 +77,7 @@ Clock {
             UbuntuNumberAnimation {
                 target: mainClock
                 property: "width"
-                to: units.gu(32)
+                to: units.gu(24)
                 duration: 900
             }
 

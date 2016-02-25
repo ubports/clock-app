@@ -49,11 +49,9 @@ MainView {
     width: units.gu(40)
     height: units.gu(70)
 
-    backgroundColor: "#F5F5F5"
+    backgroundColor: "#FFFFFF"
 
     anchorToKeyboard: true
-
-    Background {}
 
     // Database to store the user preferences locally
     U1db.Database {
@@ -117,14 +115,6 @@ MainView {
                 id: alarmModelLoader
                 asynchronous: false
             }
-
-            /*
-              #FIXME: When the SDK support hiding the header, then enable the
-              clock page title. This will then set the correct window title on
-              the desktop.
-
-              title: i18n.tr("Clock")
-            */
 
             /*
               Create a new Date() object and pass the date, month, year, hour, minute

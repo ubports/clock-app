@@ -41,14 +41,15 @@ ClockCircle {
     }
 
     width: maxWidth
+    isFoldVisible: isMainClock
 
     Label {
         id: _digitalTime
 
         anchors.centerIn: parent
 
-        color: UbuntuColors.midAubergine
         font.pixelSize: maxTimeFontSize
+
         text: {
             if (localizedTimeString.search(Qt.locale().amText) !== -1) {
                 // 12 hour format detected with the localised AM text
@@ -71,7 +72,6 @@ ClockCircle {
         anchors.top: _digitalTime.bottom
         anchors.horizontalCenter: parent.horizontalCenter
 
-        color: UbuntuColors.midAubergine
         font.pixelSize: maxPeriodFontSize
         visible: text !== ""
         text: {

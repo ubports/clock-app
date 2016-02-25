@@ -25,8 +25,9 @@ AbstractButton {
     property alias iconName: _icon.name
     property alias iconSource: _icon.source
     property alias iconWidth: _icon.width
+    property alias iconColor: _icon.color
 
-    width: units.gu(5)
+    width: units.gu(4)
     height: width
 
     Rectangle {
@@ -37,9 +38,9 @@ AbstractButton {
 
     Icon {
         id: _icon
-        width: units.gu(3)
+        width: units.gu(2)
         height: width
         anchors.centerIn: parent
-        color: "#5B5B5B"
+        color: "#5d5d5d"
     }
 }

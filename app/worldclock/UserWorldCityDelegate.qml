@@ -55,17 +55,19 @@ ListItem {
             Label {
                 text: model.cityName
                 objectName: "userCityNameText"
+                textSize: Label.Small
                 width: parent.width
                 elide: Text.ElideRight
-                color: UbuntuColors.midAubergine
+                color: "#5d5d5d"
             }
 
             Label {
                 text: model.countryName
                 objectName: "userCountryNameText"
-                fontSize: "xx-small"
+                textSize: Label.Small
                 width: parent.width
                 elide: Text.ElideRight
+                color: "#888888"
             }
         }
 
@@ -73,10 +75,9 @@ ListItem {
             id: localTimeVisual
             objectName: "localTimeVisual" + index
 
-            fontSize: units.dp(14)
             periodFontSize: units.dp(7)
-            innerCircleWidth: units.gu(5)
-            width: units.gu(7)
+            innerCircleWidth: units.gu(6)
+            width: units.gu(6)
 
             notLocalizedDateTimeString: model.notLocalizedZoneTime
             localizedTimeString: model.localizedZoneTime
@@ -120,7 +121,8 @@ ListItem {
             anchors.right: parent.right
             anchors.verticalCenter: parent.verticalCenter
 
-            fontSize: "xx-small"
+            color: "#5d5d5d"
+            textSize: Label.Small
             wrapMode: Text.WordWrap
             maximumLineCount: 2
             elide: Text.ElideRight

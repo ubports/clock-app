@@ -17,10 +17,8 @@
  */
 
 import QtQuick 2.4
-import QtQuick.Layouts 1.1
 import WorldClock 1.0
 import Alarm 1.0
-import Ubuntu.Settings.Menus 0.1 as Menus
 import Ubuntu.Components 1.3
 import "../components"
 
@@ -85,67 +83,58 @@ Page {
                 top: parent.top
                 left: parent.left
                 right: parent.right
-                topMargin: units.gu(2)
             }
 
-            Label {
-                color: UbuntuColors.midAubergine
-                text: i18n.tr("Alarm volume")
-                anchors {
-                    left: parent.left
-                    leftMargin: units.gu(2)
+            ListItem {
+                height: alarmVolumeSlot.height + divider.height
+
+                SlotsLayout {
+                    id: alarmVolumeSlot
+
+                    mainSlot: Column {
+                        Label {
+                            text: i18n.tr("Alarm volume")
+                        }
+
+                        Slider {
+                            minimumValue: 1
+                            maximumValue: 100
+                            live: true
+                            value: alarmSettings.volume
+                            function formatValue(v) { return v = "" }
+                            onValueChanged: {
+                                alarmSettings.volume = value
+                            }
+                        }
+                    }
                 }
             }
 
-            Menus.SliderMenu {
-                anchors {
-                    left: parent.left
-                    right: parent.right
-                }
-                minimumValue: 1
-                maximumValue: 100
-                live: true
-                value: alarmSettings.volume
-
-                onValueChanged: {
-                    alarmSettings.volume = value
-                }
-            }       
-   
             ExpandableListItem {
                 id: _alarmDuration
 
                 listViewHeight: units.gu(28)
-                text: i18n.tr("Alarm stops after")
-                subText: i18n.tr("%1 minute", "%1 minutes", alarmSettings.duration).arg(alarmSettings.duration)
+                titleText.text: i18n.tr("Alarm stops after")
+                subText.text: i18n.tr("%1 minute", "%1 minutes", alarmSettings.duration).arg(alarmSettings.duration)
 
                 model: durationModel
 
                 delegate: ListItem {
-                    RowLayout {
-                        anchors {
-                            left: parent.left
-                            right: parent.right
-                            margins: units.gu(2)
-                            verticalCenter: parent.verticalCenter
-                        }
-
-                        Label {
-                            text: model.text
-                            Layout.fillWidth: true
-                        }
+                    ListItemLayout {
+                        title.text: model.text
 
                         Icon {
+                            SlotsLayout.position: SlotsLayout.Trailing
                             width: units.gu(2)
                             height: width
-                            name: "ok"
+                            name: "tick"
                             visible: alarmSettings.duration === duration
                         }
                     }
 
                     onClicked: {
                         alarmSettings.duration = duration
-                        _alarmDuration.expanded = false
+                        _alarmDuration.expansion.expanded = false
                     }
                 }
             }
@@ -154,66 +143,47 @@ Page {
                 id: _alarmSnooze
 
                 listViewHeight: units.gu(28)
-                text: i18n.tr("Snooze for")
-                subText: i18n.tr("%1 minute", "%1 minutes", alarmSettings.snoozeDuration).arg(alarmSettings.snoozeDuration)
+                titleText.text: i18n.tr("Snooze for")
+                subText.text: i18n.tr("%1 minute", "%1 minutes", alarmSettings.snoozeDuration).arg(alarmSettings.snoozeDuration)
 
                 model: snoozeModel
 
                 delegate: ListItem {
-                    RowLayout {
-                        anchors {
-                            left: parent.left
-                            right: parent.right
-                            margins: units.gu(2)
-                            verticalCenter: parent.verticalCenter
-                        }
-
-                        Label {
-                            text: model.text
-                            Layout.fillWidth: true
-                        }
+                    ListItemLayout {
+                        title.text: model.text
 
                         Icon {
+                            SlotsLayout.position: SlotsLayout.Trailing
                             width: units.gu(2)
                             height: width
-                            name: "ok"
+                            name: "tick"
                             visible: alarmSettings.snoozeDuration === duration
                         }
                     }
 
                     onClicked: {
                         alarmSettings.snoozeDuration = duration
-                        _alarmSnooze.expanded = false
+                        _alarmSnooze.expansion.expanded = false
                     }
                 }
             }
 
             ListItem {
-                Label {
-                    text: i18n.tr("Vibration")
-                    color: UbuntuColors.midAubergine
-                    anchors {
-                        left: parent.left
-                        leftMargin: units.gu(2)
-                        verticalCenter: parent.verticalCenter
-                    }
-                }
+                height: vibrationLayout.height + divider.height
+                ListItemLayout {
+                    id: vibrationLayout
+                    title.text: i18n.tr("Vibration")
 
-                Switch {
-                    id: vibrateSwitch
-
-                    anchors {
-                        right: parent.right
-                        rightMargin: units.gu(2)
-                        verticalCenter: parent.verticalCenter
-                    }
-
-                    checked: alarmSettings.vibration === "pulse"
-                    onCheckedChanged: {
-                        if(checked) {
-                            alarmSettings.vibration = "pulse"
-                        } else {
-                            alarmSettings.vibration = "none"
+                    Switch {
+                        id: vibrateSwitch
+                        SlotsLayout.position: SlotsLayout.Trailing
+                        checked: alarmSettings.vibration === "pulse"
+                        onCheckedChanged: {
+                            if(checked) {
+                                alarmSettings.vibration = "pulse"
+                            } else {
+                                alarmSettings.vibration = "none"
+                            }
                         }
                     }
                 }
@@ -223,13 +193,28 @@ Page {
                 }
             }
 
-            SubtitledListItem {
-                text: i18n.tr("Change time and date")
-                subText: localTimeSource.localizedCurrentDateString + " " + localTimeSource.localizedCurrentTimeString
+            ListItem {
+                height: timeAndDateLayout.height + divider.height
+                ListItemLayout {
+                    id: timeAndDateLayout
+                    title.text: i18n.tr("Change time and date")
+                    subtitle.text: localTimeSource.localizedCurrentDateString + " " + localTimeSource.localizedCurrentTimeString
+
+                    Icon {
+                        SlotsLayout.position: SlotsLayout.Trailing
+                        SlotsLayout.overrideVerticalPositioning: true
+                        anchors.verticalCenter: parent.verticalCenter
+                        width: units.gu(2)
+                        height: width
+                        name: "go-next"
+                    }
+                }
+
                 onClicked: {
                     Qt.openUrlExternally("settings:///system/time-date")
                 }
             }
+
         }
     }
 }

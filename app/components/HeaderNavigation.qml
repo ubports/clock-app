@@ -22,51 +22,28 @@ import Ubuntu.Components 1.3
 Item {
     id: headerRow
     
-    height: units.gu(7)
+    height: units.gu(6)
 
     Row {
         id: iconContainer
         
         anchors.centerIn: parent
+        spacing: units.gu(2)
 
         ActionIcon {
-            width: units.gu(5.5)
-            height: units.gu(4)
-            iconWidth: units.gu(4)
-            iconSource: Qt.resolvedUrl("../graphics/WorldClock_Placeholder.svg")
+            iconName: "clock"
+            iconColor: listview.currentIndex == 0 ? "#19b6ee" : "#5d5d5d"
             onClicked: listview.currentIndex = 0
         }
         
         ActionIcon {
-            width: units.gu(5.5)
-            height: units.gu(4)
-            iconWidth: units.gu(4)
-            iconSource: Qt.resolvedUrl("../graphics/Stopwatch_Placeholder.svg")
+            iconName: "stopwatch"
+            iconColor: listview.currentIndex == 1 ? "#19b6ee" : "#5d5d5d"
             onClicked: listview.currentIndex = 1
         }
     }
     
-    Rectangle {
-        id: outerProgressRectangle
-        anchors {
-            left: iconContainer.left
-            right: iconContainer.right
-            top: iconContainer.bottom
-        }
-        height: units.gu(0.3)
-        color: UbuntuColors.lightGrey
-        
-        Rectangle {
-            height: parent.height
-            x: listview.currentIndex == 0 ? 0 : parent.width - width
-            width: units.gu(5.5)
-            color: UbuntuColors.orange
-            Behavior on x {
-                UbuntuNumberAnimation {}
-            }
-        }
-    }
-    
+
     ActionIcon {
         id: settingsIcon
         objectName: "settingsIcon"
@@ -74,7 +51,7 @@ Item {
         anchors {
             verticalCenter: parent.verticalCenter
             right: parent.right
-            rightMargin: units.gu(2)
+            rightMargin: units.gu(1)
         }
 
         iconName: "settings"

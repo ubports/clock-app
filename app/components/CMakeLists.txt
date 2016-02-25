@@ -2,7 +2,6 @@ set(COMPONENTS_QML_JS_FILES
     ActionIcon.qml
     AnalogMode.qml
     AnalogShadow.qml
-    Background.qml
     Circle.qml
     Clock.qml
     ClockCircle.qml
@@ -12,7 +11,6 @@ set(COMPONENTS_QML_JS_FILES
     ExpandableListItem.qml
     HeaderNavigation.qml
     Shadow.qml
-    SubtitledListItem.qml
 )
 
 # make the files visible in the qtcreator tree

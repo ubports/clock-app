@@ -70,7 +70,7 @@ MainView {
             spy.target = alarmRepeatPageLoader.item.Component
             header = findChild(mainView, "MainView_Header")
             backButton = findChild(header, "customBackButton")
-            saveButton = findChild(header, "saveAction_header_button")
+            saveButton = findChild(header, "saveAction_button")
             repeater = findChild(alarmRepeatPageLoader.item, "alarmDays")
         }
 

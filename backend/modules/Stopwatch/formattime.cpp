@@ -65,14 +65,5 @@ QString FormatTime::addZeroPrefix(QString str, int totalLength) const
 
 QString FormatTime::lapTimeToString(int millis) const
 {
-    int hours = qFloor(millis / 1000 / 60 / 60);
-
-    if (hours > 0)
-    {
-        return millisToTimeString(millis, true);
-    }
-
-    else {
-        return millisToTimeString(millis, false);
-    }
+    return millisToTimeString(millis, true);
 }

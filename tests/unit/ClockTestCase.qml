@@ -48,7 +48,7 @@ UbuntuTestCase {
     id: testUtils
 
     function pressHeaderButton(header, objectName) {
-        var headerButton = findChild(header, objectName + "_header_button")
+        var headerButton = findChild(header, objectName + "_button")
         mouseClick(headerButton, centerOf(headerButton).x, centerOf(headerButton).y)
     }
 

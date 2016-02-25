@@ -192,7 +192,7 @@ Item {
 
         anchors {
             verticalCenter: parent.top
-            verticalCenterOffset: units.gu(18)
+            verticalCenterOffset: units.gu(14)
             horizontalCenter: parent.horizontalCenter
         }
     }
@@ -201,16 +201,13 @@ Item {
         id: date
 
         anchors {
-            top: parent.top
-            topMargin: units.gu(41)
+            top: clock.bottom
             horizontalCenter: parent.horizontalCenter
         }
 
         text: clock.localizedDateString
-
+        textSize: Label.Medium
         opacity: 0
-        color: locationRow.visible ? Theme.palette.normal.baseText : UbuntuColors.midAubergine
-        fontSize: "medium"
     }
 
     Row {
@@ -223,7 +220,7 @@ Item {
 
         anchors {
             top: date.bottom
-            topMargin: units.gu(1)
+            topMargin: units.gu(2)
             horizontalCenter: parent.horizontalCenter
         }
 
@@ -231,16 +228,14 @@ Item {
             id: locationIcon
             name: "location"
             height: units.gu(2.2)
-            color: "Grey"
+            color: location.color
         }
 
         Label {
             id: location
             objectName: "location"
 
-            fontSize: "medium"
             anchors.verticalCenter: locationIcon.verticalCenter
-            color: UbuntuColors.midAubergine
 
             text: {
                 if (userLocationDocument.contents.location === "Null"
@@ -256,14 +251,24 @@ Item {
         }
     }
 
+    Rectangle {
+        id: divider
+        width: parent.width
+        height: 1
+        color: "#cdcdcd"
+        anchors {
+            top: locationRow.bottom
+            topMargin: units.gu(3)
+        }
+    }
+
     MouseArea {
         id: worldCityListMouseArea
 
         preventStealing: true
 
         anchors {
-            top: locationRow.bottom
-            topMargin: units.gu(2)
+            top: divider.bottom
             bottom: parent.bottom
             left: parent.left
             right: parent.right
@@ -311,7 +316,7 @@ Item {
             target: date
             property: "anchors.topMargin"
             from: units.gu(29)
-            to: units.gu(37)
+            to: units.gu(4)
             duration: 900
         }
     }

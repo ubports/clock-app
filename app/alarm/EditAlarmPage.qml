@@ -118,8 +118,7 @@ Page {
         if (alarmObject.error !== Alarm.NoError) {
             console.log("[ERROR]: Error saving alarm, code: " + alarmObject.error)
             return false
-        }
-        else {
+        } else {
             return true
         }
     }
@@ -266,34 +265,54 @@ Page {
             }
         }
 
-        SubtitledListItem {
+        ListItem {
             id: _alarmRepeat
             objectName: "alarmRepeat"
 
-            text: i18n.tr("Repeat")
-            subText: alarmUtils.format_day_string(_alarm.daysOfWeek, _alarm.type)
+            property string subText: alarmUtils.format_day_string(_alarm.daysOfWeek, _alarm.type)
+            height: alarmRepeatLayout.height + divider.height
+
+            ListItemLayout {
+                id: alarmRepeatLayout
+
+                title.text: i18n.tr("Repeat")
+                subtitle.text: _alarmRepeat.subText
+            }
             onClicked: pageStack.push(Qt.resolvedUrl("AlarmRepeat.qml"),
                                       {"alarm": _alarm, "alarmUtils": alarmUtils})
         }
 
-        SubtitledListItem {
+        ListItem {
             id: _alarmLabel
             objectName: "alarmLabel"
+            height: alarmLabelLayout.height + divider.height
 
-            text: i18n.tr("Label")
-            subText: _alarm.message
+            ListItemLayout {
+                id: alarmLabelLayout
+
+                title.text: i18n.tr("Label")
+                subtitle.text: _alarm.message
+            }
             onClicked: pageStack.push(Qt.resolvedUrl("AlarmLabel.qml"),
                                       {"alarm": _alarm})
         }
 
-        SubtitledListItem {
+        ListItem {
             id: _alarmSound
             objectName: "alarmSound"
 
             readonly property string defaultAlarmSound: "Alarm clock"
             readonly property string defaultAlarmSoundFileName: "Alarm clock.ogg"
+            property string subText
 
-            text: i18n.tr("Sound")
+            height: alarmSoundLayout.height + divider.height
+
+            ListItemLayout {
+                id: alarmSoundLayout
+
+                title.text: i18n.tr("Sound")
+                subtitle.text: _alarmSound.subText
+            }
             onClicked: pageStack.push(Qt.resolvedUrl("AlarmSound.qml"), {
                                           "alarmSound": _alarmSound,
                                           "alarm": _alarm

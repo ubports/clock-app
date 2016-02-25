@@ -28,7 +28,6 @@ AbstractButton {
 
     Label {
         text: i18n.tr("Add")
-        color: UbuntuColors.midAubergine
         anchors {
             right: _addButton.left
             rightMargin: units.gu(1)
@@ -39,7 +38,7 @@ AbstractButton {
     ClockCircle {
         id: _addButton
 
-        isOuter: true
+        isFoldVisible: false
         width: units.gu(5)
         anchors {
             horizontalCenter: parent.horizontalCenter
@@ -47,23 +46,18 @@ AbstractButton {
             topMargin: units.gu(1)
         }
 
-        ClockCircle {
-            width: units.gu(3.5)
+        Icon {
             anchors.centerIn: parent
-
-            Icon {
-                anchors.centerIn: parent
-                color: UbuntuColors.coolGrey
-                name: "add"
-                height: units.gu(2)
-                width: height
-            }
+            color: UbuntuColors.coolGrey
+            name: "add"
+            height: units.gu(2)
+            width: height
         }
     }
 
+
     Label {
         text: i18n.tr("City")
-        color: UbuntuColors.midAubergine
         anchors {
             left: _addButton.right
             leftMargin: units.gu(1)
