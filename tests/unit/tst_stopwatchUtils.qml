@@ -67,16 +67,4 @@ TestCase {
         result = stopwatchFormatTime.addZeroPrefix(str, 4)
         compare(result, "0032", "Zero prefix not added correctly")
     }
-
-    /*
-     This test checks if the lap time correctly shows or hides the hours
-     as requires and returns it as a string.
-    */
-    function test_lapTimeIncludesHoursCorrectly() {
-        var result
-        result = stopwatchFormatTime.lapTimeToString(1123000)
-        compare(result, "18:43", "Lap time shows hours despite it not being greater than 0")
-        result = stopwatchFormatTime.lapTimeToString(8323000)
-        compare(result, "02:18:43", "Lap time not showing hours despite it being greater than 0")
-    }
 }

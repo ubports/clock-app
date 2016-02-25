@@ -103,11 +103,11 @@ TestCase {
     */
     function test_timeToNextAlarmStringMustShowAll() {
         var currentDateTime = new Date()
-        var timeInMilliseconds = ((5 * 24 + 2)* 60 + 15) * 60 * 1000; // 5 days, 2 hrs, 16 mins
+        var timeInMilliseconds = ((5 * 24 + 2)* 60 + 15) * 60 * 1000; // 5 days, 2 hrs, 15 mins
 
         var alarmDate = new Date(currentDateTime.getTime() + timeInMilliseconds);
         var result = alarmUtils.get_time_to_alarm(alarmDate, currentDateTime)
-        compare(result, "in 5d 2h 16m", "Time to next alarm string is incorrect")
+        compare(result, "in 5d 2h 15m", "Time to next alarm string is incorrect")
     }
 
     /*
