@@ -8,6 +8,10 @@ ubuntu-clock-app (3.7) UNRELEASED; urgency=medium
   * Implemented new UI design according to design specs (LP: #1528241)
   * Removed SURU bar from all views (LP: #1543492)
 
+  [ Nicholas Skaggs ]
+  * Fixed test launching and added option for building with SDK
+  * Removed fixtures and debug_print_trees
+
   [ Andrew Hayzen ]
   * Fixes for various autopilot issues (LP: #1535488)
 

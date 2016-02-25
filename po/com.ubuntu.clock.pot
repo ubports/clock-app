@@ -1,6 +1,6 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR Canonical Ltd.
-# This file is distributed under the same license as the PACKAGE package.
+# This file is distributed under the same license as the  package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-02-17 22:46+0100\n"
+"POT-Creation-Date: 2016-02-26 00:06+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,51 +18,46 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
-#: ../app/MainPage.qml:53 ../app/alarm/AlarmUtils.qml:55
-msgid "No active alarms"
-msgstr ""
-
-#: ../app/alarm/AlarmLabel.qml:33 ../app/alarm/AlarmLabel.qml:71
-#: ../app/alarm/EditAlarmPage.qml:294
-msgid "Label"
-msgstr ""
-
-#: ../app/alarm/AlarmList.qml:61 ../app/alarm/AlarmPage.qml:101
-#: ../app/worldclock/UserWorldCityList.qml:69
-msgid "Delete"
-msgstr ""
-
-#: ../app/alarm/AlarmPage.qml:27
+#: ../app/MainPage.qml:63 ../app/alarm/AlarmPage.qml:34
 msgid "Alarms"
 msgstr ""
 
-#: ../app/alarm/AlarmPage.qml:41 ../app/alarm/AlarmPage.qml:66
-#: ../app/worldclock/WorldCityList.qml:79
-msgid "Back"
+#: ../app/alarm/AlarmLabel.qml:33 ../app/alarm/AlarmLabel.qml:71
+#: ../app/alarm/EditAlarmPage.qml:297
+msgid "Label"
 msgstr ""
 
-#: ../app/alarm/AlarmPage.qml:51 ../app/alarm/EditAlarmPage.qml:41
-#: ../app/alarm/EditAlarmPage.qml:185
+#: ../app/alarm/AlarmList.qml:61 ../app/alarm/AlarmPage.qml:99
+#: ../app/worldclock/UserWorldCityList.qml:70
+msgid "Delete"
+msgstr ""
+
+#: ../app/alarm/AlarmPage.qml:48 ../app/alarm/EditAlarmPage.qml:43
+#: ../app/alarm/EditAlarmPage.qml:188
 msgid "Alarm"
 msgstr ""
 
-#: ../app/alarm/AlarmPage.qml:76
+#: ../app/alarm/AlarmPage.qml:62 ../app/worldclock/WorldCityList.qml:79
+msgid "Back"
+msgstr ""
+
+#: ../app/alarm/AlarmPage.qml:74
 msgid "Select None"
 msgstr ""
 
-#: ../app/alarm/AlarmPage.qml:78 ../app/alarm/AlarmRepeat.qml:59
+#: ../app/alarm/AlarmPage.qml:76 ../app/alarm/AlarmRepeat.qml:59
 msgid "Select All"
 msgstr ""
 
-#: ../app/alarm/AlarmPage.qml:152
+#: ../app/alarm/AlarmPage.qml:155
 msgid "No saved alarms"
 msgstr ""
 
-#: ../app/alarm/AlarmPage.qml:153
+#: ../app/alarm/AlarmPage.qml:156
 msgid "Tap the + icon to add an alarm"
 msgstr ""
 
-#: ../app/alarm/AlarmRepeat.qml:36 ../app/alarm/EditAlarmPage.qml:279
+#: ../app/alarm/AlarmRepeat.qml:36 ../app/alarm/EditAlarmPage.qml:282
 msgid "Repeat"
 msgstr ""
 
@@ -104,7 +99,7 @@ msgstr ""
 msgid "Change time and date"
 msgstr ""
 
-#: ../app/alarm/AlarmSound.qml:30 ../app/alarm/EditAlarmPage.qml:314
+#: ../app/alarm/AlarmSound.qml:30 ../app/alarm/EditAlarmPage.qml:317
 msgid "Sound"
 msgstr ""
 
@@ -136,39 +131,34 @@ msgstr ""
 msgid "Daily"
 msgstr ""
 
-#: ../app/alarm/AlarmUtils.qml:82
-#, qt-format
-msgid "Next Alarm %1"
-msgstr ""
-
-#: ../app/alarm/AlarmUtils.qml:103
+#: ../app/alarm/AlarmUtils.qml:70
 msgid "Alarm Passed"
 msgstr ""
 
-#: ../app/alarm/AlarmUtils.qml:113
+#: ../app/alarm/AlarmUtils.qml:80
 #, no-c-format, qt-format
 msgid "in %1d %2h %3m"
 msgstr ""
 
-#: ../app/alarm/AlarmUtils.qml:123
+#: ../app/alarm/AlarmUtils.qml:90
 #, no-c-format, qt-format
 msgid "in %1h %2m"
 msgstr ""
 
-#: ../app/alarm/AlarmUtils.qml:132
+#: ../app/alarm/AlarmUtils.qml:99
 #, no-c-format, qt-format
 msgid "in %1m"
 msgstr ""
 
-#: ../app/alarm/EditAlarmPage.qml:34
+#: ../app/alarm/EditAlarmPage.qml:37
 msgid "New alarm"
 msgstr ""
 
-#: ../app/alarm/EditAlarmPage.qml:34
+#: ../app/alarm/EditAlarmPage.qml:37
 msgid "Edit alarm"
 msgstr ""
 
-#: ../app/alarm/EditAlarmPage.qml:337
+#: ../app/alarm/EditAlarmPage.qml:339
 msgid "Delete alarm"
 msgstr ""
 
@@ -177,7 +167,7 @@ msgstr ""
 msgid "Add sound from"
 msgstr ""
 
-#: ../app/clock/ClockPage.qml:245
+#: ../app/clock/ClockPage.qml:244
 msgid "Retrieving location..."
 msgstr ""
 
@@ -222,37 +212,37 @@ msgstr ""
 
 #. TRANSLATORS: this indicates if the time in a world clock
 #. is behind or ahead of the time at the current location
-#: ../app/worldclock/UserWorldCityDelegate.qml:135
+#: ../app/worldclock/UserWorldCityDelegate.qml:136
 msgid "behind"
 msgstr ""
 
-#: ../app/worldclock/UserWorldCityDelegate.qml:136
+#: ../app/worldclock/UserWorldCityDelegate.qml:137
 msgid "ahead"
 msgstr ""
 
 #. TRANSLATORS: the first argument is hour, followed by
 #. minute, and the translation for either 'behind' or
 #. 'ahead'
-#: ../app/worldclock/UserWorldCityDelegate.qml:146
+#: ../app/worldclock/UserWorldCityDelegate.qml:147
 #, qt-format
 msgid "%1h %2m %3"
 msgstr ""
 
 #. TRANSLATORS: the first argument is hour, followed by the
 #. translation for either 'behind' or 'ahead'
-#: ../app/worldclock/UserWorldCityDelegate.qml:155
+#: ../app/worldclock/UserWorldCityDelegate.qml:156
 #, qt-format
 msgid "%1h %2"
 msgstr ""
 
 #. TRANSLATORS: the first argument is minute, followed by the
 #. translation for either 'behind' or 'ahead'
-#: ../app/worldclock/UserWorldCityDelegate.qml:163
+#: ../app/worldclock/UserWorldCityDelegate.qml:164
 #, qt-format
 msgid "%1m %2"
 msgstr ""
 
-#: ../app/worldclock/UserWorldCityDelegate.qml:169
+#: ../app/worldclock/UserWorldCityDelegate.qml:170
 msgid "Same time"
 msgstr ""
 
