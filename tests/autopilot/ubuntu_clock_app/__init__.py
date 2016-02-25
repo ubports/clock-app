@@ -115,7 +115,11 @@ class PageWithBottomEdge(Page):
         try:
             action_item = self.wait_select_single(objectName='bottomEdgeTip')
             action_item.visible.wait_for(True)
-            action_item.isAnimating.wait_for(False)
+            try:
+                action_item.isAnimating.wait_for(False)
+            except:
+                logger.debug("Bottom edge isn't animating")
+                pass
             start_x = (action_item.globalRect.x +
                        (action_item.globalRect.width * 0.5))
             start_y = (action_item.globalRect.y +
