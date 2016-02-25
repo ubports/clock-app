@@ -325,7 +325,9 @@ Page {
             objectName: "defaultWorldCityItem" + index
             ListItemLayout {
                 title.text: cityName
+                title.objectName: "defaultCityNameText"
                 subtitle.text: countryName
+                subtitle.objectName: "defaultCountryNameText"
 
                 Label {
                     id: _localTime
