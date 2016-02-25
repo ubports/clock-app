@@ -50,14 +50,23 @@ Page {
 
     flickable: null
 
+    Timer {
+        id: hideBottomEdgeHintTimer
+        interval: 3000
+        onTriggered: bottomEdge.hint.status = BottomEdgeHint.Inactive
+    }
+
     BottomEdge {
         id: bottomEdge
         height: parent.height
+        hint.iconName: "alarm-clock"
         hint.text: i18n.tr("Alarms")
+        hint.status: BottomEdgeHint.Active
         contentComponent: AlarmPage {
             width: bottomEdge.width
             height: bottomEdge.height
         }
+        Component.onCompleted: hideBottomEdgeHintTimer.start()
     }
 
     AlarmUtils {
