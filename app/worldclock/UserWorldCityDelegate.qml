@@ -33,6 +33,7 @@ ListItem {
 
     height: units.gu(9)
     divider.visible: false
+    highlightColor: "Transparent"
 
     Item {
         id: delegate
