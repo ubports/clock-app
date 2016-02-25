@@ -115,7 +115,11 @@ class PageWithBottomEdge(Page):
         try:
             action_item = self.wait_select_single(objectName='bottomEdgeTip')
             action_item.visible.wait_for(True)
-            action_item.isAnimating.wait_for(False)
+            try:
+                action_item.isAnimating.wait_for(False)
+            except:
+                logger.debug("Bottom edge isn't animating")
+                pass
             start_x = (action_item.globalRect.x +
                        (action_item.globalRect.width * 0.5))
             start_y = (action_item.globalRect.y +
@@ -289,7 +293,7 @@ class WorldCityList(Page):
 
         cityList.count.wait_for(GreaterThan(0))
 
-        cityList.print_tree()  # Debug line
+        #cityList.print_tree()  # Debug line
 
         for index in range(int(cityList.count)):
             world_city_item = self.wait_select_single(
@@ -402,7 +406,7 @@ class AlarmRepeat(Page):
         self.unselect_selected_days()
         index = 0
 
-        self.print_tree()  # Debug line
+        #self.print_tree()  # Debug line
 
         for index in range(len(days)):
             for index2 in range(self._get_num_of_days()):
