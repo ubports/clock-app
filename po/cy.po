@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2015-10-19 04:17+0200\n"
-"PO-Revision-Date: 2015-07-15 11:44+0000\n"
+"PO-Revision-Date: 2016-02-24 15:49+0000\n"
 "Last-Translator: Owen Llywelyn <owen.llywelyn@gmail.com>\n"
 "Language-Team: Welsh <cy@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -16,8 +16,8 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=n==1 ? 0 : n==2 ? 1 : (n != 8 && n != 11) ? "
 "2 : 3;\n"
-"X-Launchpad-Export-Date: 2015-12-28 05:29+0000\n"
-"X-Generator: Launchpad (build 17865)\n"
+"X-Launchpad-Export-Date: 2016-02-25 05:25+0000\n"
+"X-Generator: Launchpad (build 17925)\n"
 
 #: ../app/MainPage.qml:53 ../app/alarm/AlarmUtils.qml:55
 msgid "No active alarms"
@@ -93,7 +93,7 @@ msgstr "Lefel sain larwm"
 
 #: ../app/alarm/AlarmSettingsPage.qml:125
 msgid "Alarm stops after"
-msgstr ""
+msgstr "Larwm yn peidio ar ôl"
 
 #: ../app/alarm/AlarmSettingsPage.qml:163
 msgid "Snooze for"
@@ -113,15 +113,15 @@ msgstr "Sain"
 
 #: ../app/alarm/AlarmSound.qml:186
 msgid "Custom alarm sounds"
-msgstr ""
+msgstr "Seiniau larwm wedi'u haddasu"
 
 #: ../app/alarm/AlarmSound.qml:201
 msgid "Add sound"
-msgstr ""
+msgstr "Ychwanegu sain"
 
 #: ../app/alarm/AlarmSound.qml:353
 msgid "Default alarm sounds"
-msgstr ""
+msgstr "Seiniau larwm diofyn"
 
 #: ../app/alarm/AlarmUtils.qml:31
 msgid "Never"
@@ -178,7 +178,7 @@ msgstr "Dileu Larwm"
 #. TRANSLATORS: This is the page title. Please keep the translation length to 3 words if possible
 #: ../app/alarm/SoundPeerPicker.qml:27
 msgid "Add sound from"
-msgstr ""
+msgstr "Ychwanegu sain o"
 
 #: ../app/clock/ClockPage.qml:249
 msgid "Retrieving location..."
@@ -188,31 +188,31 @@ msgstr "Cyrchu lleoliad..."
 #. translation length to a few characters.
 #: ../app/stopwatch/LapListView.qml:46 ../app/stopwatch/StopwatchPage.qml:83
 msgid "Lap"
-msgstr ""
+msgstr "Lap"
 
 #: ../app/stopwatch/LapListView.qml:56
 msgid "Lap Time"
-msgstr ""
+msgstr "Amser Lap"
 
 #: ../app/stopwatch/LapListView.qml:64
 msgid "Total Time"
-msgstr ""
+msgstr "Cyfanswm Amser"
 
 #: ../app/stopwatch/StopwatchPage.qml:66
 msgid "Stop"
-msgstr ""
+msgstr "Atal"
 
 #: ../app/stopwatch/StopwatchPage.qml:66
 msgid "Start"
-msgstr ""
+msgstr "Cychwyn"
 
 #: ../app/stopwatch/StopwatchPage.qml:66
 msgid "Resume"
-msgstr ""
+msgstr "Ailgychwyn"
 
 #: ../app/stopwatch/StopwatchPage.qml:83
 msgid "Clear"
-msgstr ""
+msgstr "Clirio"
 
 #: ../app/worldclock/AddWorldCityButton.qml:30
 msgid "Add"
@@ -1659,7 +1659,7 @@ msgstr "Prag"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:275
 msgid "Czech Republic"
-msgstr ""
+msgstr "Y Weriniaeth Tsiec"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:276
 msgid "Pyongyang"
@@ -2033,8 +2033,8 @@ msgstr "Cloc"
 msgid ""
 "A sophisticated clock app that provides world clock, alarm and stopwatch "
 "functionality."
-msgstr ""
+msgstr "Ap cloc soffistigedig sy'n cynnig cloc y byd, larwm a watsh amseru"
 
 #: ubuntu-clock-app.desktop.in.in.h:3
 msgid "time;alarm;alert;clock;world;stopwatch;"
-msgstr ""
+msgstr "amser;larwm;rhybudd;cloc;byd;watshamseru;"
