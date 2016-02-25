@@ -1,8 +1,6 @@
 set(UPSTREAM_COMPONENTS_QML_JS_FILES
-    FakeHeader.qml
     FastScroll.js
     FastScroll.qml
-    PageWithBottomEdge.qml
 )
 
 # make the files visible in the qtcreator tree
