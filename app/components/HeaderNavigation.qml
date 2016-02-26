@@ -31,14 +31,14 @@ Item {
         spacing: units.gu(2)
 
         ActionIcon {
-            iconName: "clock"
-            iconColor: listview.currentIndex == 0 ? "#19b6ee" : "#5d5d5d"
+            icon.name: "clock"
+            icon.color: listview.currentIndex === 0 ? "#19b6ee" : "#5d5d5d"
             onClicked: listview.currentIndex = 0
         }
         
         ActionIcon {
-            iconName: "stopwatch"
-            iconColor: listview.currentIndex == 1 ? "#19b6ee" : "#5d5d5d"
+            icon.name: "stopwatch"
+            icon.color: listview.currentIndex === 1 ? "#19b6ee" : "#5d5d5d"
             onClicked: listview.currentIndex = 1
         }
     }
@@ -54,7 +54,7 @@ Item {
             rightMargin: units.gu(1)
         }
 
-        iconName: "settings"
+        icon.name: "settings"
         
         onClicked: {
             mainStack.push(Qt.resolvedUrl("../alarm/AlarmSettingsPage.qml"))

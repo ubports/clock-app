@@ -22,10 +22,7 @@ import Ubuntu.Components 1.3
 AbstractButton {
     id: abstractButton
 
-    property alias iconName: _icon.name
-    property alias iconSource: _icon.source
-    property alias iconWidth: _icon.width
-    property alias iconColor: _icon.color
+    property alias icon: _icon
 
     width: units.gu(4)
     height: width
