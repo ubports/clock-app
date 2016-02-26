@@ -1,4 +1,5 @@
 set(COMPONENTS_QML_JS_FILES
+    AlarmBottomEdge.qml
     ActionIcon.qml
     AnalogMode.qml
     AnalogShadow.qml

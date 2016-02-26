@@ -54,16 +54,11 @@ Page {
         onTriggered: bottomEdge.hint.status = BottomEdgeHint.Inactive
     }
 
-    BottomEdge {
+    AlarmBottomEdge {
         id: bottomEdge
         height: parent.height
-        hint.iconName: "alarm-clock"
-        hint.text: i18n.tr("Alarms")
-        hint.status: BottomEdgeHint.Active
-        contentComponent: AlarmPage {
-            width: bottomEdge.width
-            height: bottomEdge.height
-        }
+        pageStack: mainStack
+        alarmModel: _mainPage.alarmModel
         Component.onCompleted: hideBottomEdgeHintTimer.start()
     }
 
