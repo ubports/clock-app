@@ -21,11 +21,15 @@ import Ubuntu.Components 1.3
 
 Page {
     id: alarmPage
+    objectName: 'AlarmPage'
 
+    header: standardHeader
+
+    property var model: null
+    property var pageStack: null
     readonly property bool isAlarmPage: true
 
-    objectName: 'AlarmPage'
-    header: standardHeader
+    signal bottomEdgeClosed()
 
     Component.onCompleted: console.log("[LOG]: Alarm Page loaded")
 
@@ -37,7 +41,7 @@ Page {
                 text: "close"
                 iconName: "go-down"
                 onTriggered: {
-                    bottomEdge.collapse()
+                    bottomEdgeClosed()
                 }
             }
         ]
@@ -47,7 +51,7 @@ Page {
                 iconName: "add"
                 text: i18n.tr("Alarm")
                 onTriggered: {
-                    mainStack.push(Qt.resolvedUrl("EditAlarmPage.qml"))
+                    pageStack.push(Qt.resolvedUrl("EditAlarmPage.qml"))
                 }
             }
         ]
@@ -115,7 +119,7 @@ Page {
 
     AlarmList {
         id: alarmListView
-        model: alarmModel
+        model: alarmPage.model
         anchors {
             top: alarmPage.header.bottom
             left: parent.left
@@ -147,7 +151,7 @@ Page {
             margins: units.gu(2)
             verticalCenter: parent.verticalCenter
         }
-        active: alarmModel ? alarmModel.count === 0 : true
+        active: alarmPage.model ? alarmPage.model.count === 0 : true
         Component.onCompleted: {
             setSource(Qt.resolvedUrl("../components/EmptyState.qml"),
                       {
