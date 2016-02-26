@@ -48,8 +48,6 @@ Page {
     // Clock App Alarm Model Reference Variable
     property var alarmModel
 
-    flickable: null
-
     Timer {
         id: hideBottomEdgeHintTimer
         interval: 3000

@@ -116,15 +116,6 @@ MainView {
                 asynchronous: false
             }
 
-            /*
-              Create a new Date() object and pass the date, month, year, hour, minute
-              and second received from the DateTime plugin manually to ensure the
-              timezone info is set correctly.
-
-              Javascript Month is 0-11 while QDateTime month is 1-12. Hence the -1
-              is required.
-            */
-
             alarmModel: alarmModelLoader.item
             /*
                FIXME: When the upstream QT bug at

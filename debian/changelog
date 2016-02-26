@@ -24,6 +24,7 @@ ubuntu-clock-app (3.7) UNRELEASED; urgency=medium
   [ Nekhelesh Ramananthan ]
   * Fix 'Shutter' effect animation on title bar when opening bottom edge (LP: #1543496)
   * Migrate to the new SDK Bottom edge (LP: #1549988)
+  * Reduce binding in ActionIcon.qml and fixed stopwatch slide delete UI issue.
 
  -- Bartosz Kosiorek <gang65@poczta.onet.pl>  Wed, 30 Dec 2015 01:43:24 +0100
 
