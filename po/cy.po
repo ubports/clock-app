@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2015-10-19 04:17+0200\n"
+"POT-Creation-Date: 2016-02-26 00:06+0100\n"
 "PO-Revision-Date: 2016-02-24 15:49+0000\n"
 "Last-Translator: Owen Llywelyn <owen.llywelyn@gmail.com>\n"
 "Language-Team: Welsh <cy@li.org>\n"
@@ -16,69 +16,64 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=n==1 ? 0 : n==2 ? 1 : (n != 8 && n != 11) ? "
 "2 : 3;\n"
-"X-Launchpad-Export-Date: 2016-02-25 05:25+0000\n"
+"X-Launchpad-Export-Date: 2016-02-26 05:30+0000\n"
 "X-Generator: Launchpad (build 17925)\n"
 
-#: ../app/MainPage.qml:53 ../app/alarm/AlarmUtils.qml:55
-msgid "No active alarms"
-msgstr "Dim larymau gweithredol"
-
-#: ../app/alarm/AlarmLabel.qml:33 ../app/alarm/AlarmLabel.qml:71
-#: ../app/alarm/EditAlarmPage.qml:283
-msgid "Label"
-msgstr "Label"
-
-#: ../app/alarm/AlarmList.qml:61 ../app/alarm/AlarmPage.qml:101
-#: ../app/worldclock/UserWorldCityList.qml:69
-msgid "Delete"
-msgstr "Dileu"
-
-#: ../app/alarm/AlarmPage.qml:27
+#: ../app/MainPage.qml:63 ../app/alarm/AlarmPage.qml:34
 msgid "Alarms"
 msgstr "Larymau"
 
-#: ../app/alarm/AlarmPage.qml:41 ../app/alarm/AlarmPage.qml:66
-#: ../app/worldclock/WorldCityList.qml:79
-msgid "Back"
-msgstr "Nôl"
+#: ../app/alarm/AlarmLabel.qml:33 ../app/alarm/AlarmLabel.qml:71
+#: ../app/alarm/EditAlarmPage.qml:297
+msgid "Label"
+msgstr "Label"
 
-#: ../app/alarm/AlarmPage.qml:51 ../app/alarm/EditAlarmPage.qml:41
-#: ../app/alarm/EditAlarmPage.qml:185
+#: ../app/alarm/AlarmList.qml:61 ../app/alarm/AlarmPage.qml:99
+#: ../app/worldclock/UserWorldCityList.qml:70
+msgid "Delete"
+msgstr "Dileu"
+
+#: ../app/alarm/AlarmPage.qml:48 ../app/alarm/EditAlarmPage.qml:43
+#: ../app/alarm/EditAlarmPage.qml:188
 msgid "Alarm"
 msgstr "Larwm"
 
-#: ../app/alarm/AlarmPage.qml:76
+#: ../app/alarm/AlarmPage.qml:62 ../app/worldclock/WorldCityList.qml:79
+msgid "Back"
+msgstr "Nôl"
+
+#: ../app/alarm/AlarmPage.qml:74
 msgid "Select None"
 msgstr "Dewis Dim"
 
-#: ../app/alarm/AlarmPage.qml:78 ../app/alarm/AlarmRepeat.qml:59
+#: ../app/alarm/AlarmPage.qml:76 ../app/alarm/AlarmRepeat.qml:59
 msgid "Select All"
 msgstr "Dewis y Cyfan"
 
-#: ../app/alarm/AlarmPage.qml:152
+#: ../app/alarm/AlarmPage.qml:155
 msgid "No saved alarms"
 msgstr "Dim larymau wedi'u cadw"
 
-#: ../app/alarm/AlarmPage.qml:153
+#: ../app/alarm/AlarmPage.qml:156
 msgid "Tap the + icon to add an alarm"
 msgstr "Tapiwch eicon + i ychwanegu larwm"
 
-#: ../app/alarm/AlarmRepeat.qml:36 ../app/alarm/EditAlarmPage.qml:273
+#: ../app/alarm/AlarmRepeat.qml:36 ../app/alarm/EditAlarmPage.qml:282
 msgid "Repeat"
 msgstr "Ailadrodd"
 
-#: ../app/alarm/AlarmSettingsPage.qml:29
+#: ../app/alarm/AlarmSettingsPage.qml:28
 msgid "Settings"
 msgstr "Gosodiadau"
 
 #. TRANSLATORS: Alarm stops after
 #. TRANSLATORS: Snooze for
-#: ../app/alarm/AlarmSettingsPage.qml:54 ../app/alarm/AlarmSettingsPage.qml:55
-#: ../app/alarm/AlarmSettingsPage.qml:56 ../app/alarm/AlarmSettingsPage.qml:57
-#: ../app/alarm/AlarmSettingsPage.qml:67 ../app/alarm/AlarmSettingsPage.qml:68
-#: ../app/alarm/AlarmSettingsPage.qml:69 ../app/alarm/AlarmSettingsPage.qml:70
-#: ../app/alarm/AlarmSettingsPage.qml:126
-#: ../app/alarm/AlarmSettingsPage.qml:164
+#: ../app/alarm/AlarmSettingsPage.qml:53 ../app/alarm/AlarmSettingsPage.qml:54
+#: ../app/alarm/AlarmSettingsPage.qml:55 ../app/alarm/AlarmSettingsPage.qml:56
+#: ../app/alarm/AlarmSettingsPage.qml:66 ../app/alarm/AlarmSettingsPage.qml:67
+#: ../app/alarm/AlarmSettingsPage.qml:68 ../app/alarm/AlarmSettingsPage.qml:69
+#: ../app/alarm/AlarmSettingsPage.qml:118
+#: ../app/alarm/AlarmSettingsPage.qml:147
 #, qt-format
 msgid "%1 minute"
 msgid_plural "%1 minutes"
@@ -87,39 +82,39 @@ msgstr[1] "%1 munud"
 msgstr[2] "%1 munud"
 msgstr[3] "%1 munud"
 
-#: ../app/alarm/AlarmSettingsPage.qml:94
+#: ../app/alarm/AlarmSettingsPage.qml:96
 msgid "Alarm volume"
 msgstr "Lefel sain larwm"
 
-#: ../app/alarm/AlarmSettingsPage.qml:125
+#: ../app/alarm/AlarmSettingsPage.qml:117
 msgid "Alarm stops after"
 msgstr "Larwm yn peidio ar ôl"
 
-#: ../app/alarm/AlarmSettingsPage.qml:163
+#: ../app/alarm/AlarmSettingsPage.qml:146
 msgid "Snooze for"
 msgstr "Hepian am"
 
-#: ../app/alarm/AlarmSettingsPage.qml:199
+#: ../app/alarm/AlarmSettingsPage.qml:175
 msgid "Vibration"
 msgstr "Cryndod"
 
-#: ../app/alarm/AlarmSettingsPage.qml:233
+#: ../app/alarm/AlarmSettingsPage.qml:200
 msgid "Change time and date"
 msgstr "Newid amser a dyddiad"
 
-#: ../app/alarm/AlarmSound.qml:31 ../app/alarm/EditAlarmPage.qml:296
+#: ../app/alarm/AlarmSound.qml:30 ../app/alarm/EditAlarmPage.qml:317
 msgid "Sound"
 msgstr "Sain"
 
-#: ../app/alarm/AlarmSound.qml:186
+#: ../app/alarm/AlarmSound.qml:185
 msgid "Custom alarm sounds"
 msgstr "Seiniau larwm wedi'u haddasu"
 
-#: ../app/alarm/AlarmSound.qml:201
+#: ../app/alarm/AlarmSound.qml:200
 msgid "Add sound"
 msgstr "Ychwanegu sain"
 
-#: ../app/alarm/AlarmSound.qml:353
+#: ../app/alarm/AlarmSound.qml:336
 msgid "Default alarm sounds"
 msgstr "Seiniau larwm diofyn"
 
@@ -139,39 +134,34 @@ msgstr "Penwythnosau"
 msgid "Daily"
 msgstr "Dyddiol"
 
-#: ../app/alarm/AlarmUtils.qml:82
-#, qt-format
-msgid "Next Alarm %1"
-msgstr "Larwm Nesaf %1"
-
-#: ../app/alarm/AlarmUtils.qml:89
+#: ../app/alarm/AlarmUtils.qml:70
 msgid "Alarm Passed"
 msgstr "Larwm Wedi Pasio"
 
-#: ../app/alarm/AlarmUtils.qml:99
+#: ../app/alarm/AlarmUtils.qml:80
 #, no-c-format, qt-format
 msgid "in %1d %2h %3m"
 msgstr "mewn %1d %2a %3m"
 
-#: ../app/alarm/AlarmUtils.qml:109
+#: ../app/alarm/AlarmUtils.qml:90
 #, no-c-format, qt-format
 msgid "in %1h %2m"
 msgstr "mewn %1a %2m"
 
-#: ../app/alarm/AlarmUtils.qml:118
+#: ../app/alarm/AlarmUtils.qml:99
 #, no-c-format, qt-format
 msgid "in %1m"
 msgstr "mewn %1m"
 
-#: ../app/alarm/EditAlarmPage.qml:34
+#: ../app/alarm/EditAlarmPage.qml:37
 msgid "New alarm"
 msgstr "Larwm Newydd"
 
-#: ../app/alarm/EditAlarmPage.qml:34
+#: ../app/alarm/EditAlarmPage.qml:37
 msgid "Edit alarm"
 msgstr "Golygu Larwm"
 
-#: ../app/alarm/EditAlarmPage.qml:316
+#: ../app/alarm/EditAlarmPage.qml:339
 msgid "Delete alarm"
 msgstr "Dileu Larwm"
 
@@ -180,37 +170,37 @@ msgstr "Dileu Larwm"
 msgid "Add sound from"
 msgstr "Ychwanegu sain o"
 
-#: ../app/clock/ClockPage.qml:249
+#: ../app/clock/ClockPage.qml:244
 msgid "Retrieving location..."
 msgstr "Cyrchu lleoliad..."
 
 #. TRANSLATORS: This refers to the stopwatch lap and is shown as a header where space is limited. Constrain
 #. translation length to a few characters.
-#: ../app/stopwatch/LapListView.qml:46 ../app/stopwatch/StopwatchPage.qml:83
+#: ../app/stopwatch/LapListView.qml:49 ../app/stopwatch/StopwatchPage.qml:98
 msgid "Lap"
 msgstr "Lap"
 
-#: ../app/stopwatch/LapListView.qml:56
+#: ../app/stopwatch/LapListView.qml:58
 msgid "Lap Time"
 msgstr "Amser Lap"
 
-#: ../app/stopwatch/LapListView.qml:64
+#: ../app/stopwatch/LapListView.qml:65
 msgid "Total Time"
 msgstr "Cyfanswm Amser"
 
-#: ../app/stopwatch/StopwatchPage.qml:66
+#: ../app/stopwatch/StopwatchPage.qml:80
 msgid "Stop"
 msgstr "Atal"
 
-#: ../app/stopwatch/StopwatchPage.qml:66
+#: ../app/stopwatch/StopwatchPage.qml:80
 msgid "Start"
 msgstr "Cychwyn"
 
-#: ../app/stopwatch/StopwatchPage.qml:66
+#: ../app/stopwatch/StopwatchPage.qml:80
 msgid "Resume"
 msgstr "Ailgychwyn"
 
-#: ../app/stopwatch/StopwatchPage.qml:83
+#: ../app/stopwatch/StopwatchPage.qml:98
 msgid "Clear"
 msgstr "Clirio"
 
@@ -218,44 +208,44 @@ msgstr "Clirio"
 msgid "Add"
 msgstr "Ychwanegu"
 
-#: ../app/worldclock/AddWorldCityButton.qml:65
+#: ../app/worldclock/AddWorldCityButton.qml:60
 #: ../app/worldclock/WorldCityList.qml:63
 msgid "City"
 msgstr "Dinas"
 
 #. TRANSLATORS: this indicates if the time in a world clock
 #. is behind or ahead of the time at the current location
-#: ../app/worldclock/UserWorldCityDelegate.qml:133
+#: ../app/worldclock/UserWorldCityDelegate.qml:136
 msgid "behind"
 msgstr "ar ôl"
 
-#: ../app/worldclock/UserWorldCityDelegate.qml:134
+#: ../app/worldclock/UserWorldCityDelegate.qml:137
 msgid "ahead"
 msgstr "o flaen"
 
 #. TRANSLATORS: the first argument is hour, followed by
 #. minute, and the translation for either 'behind' or
 #. 'ahead'
-#: ../app/worldclock/UserWorldCityDelegate.qml:144
+#: ../app/worldclock/UserWorldCityDelegate.qml:147
 #, qt-format
 msgid "%1h %2m %3"
 msgstr "%1a %2m %3"
 
 #. TRANSLATORS: the first argument is hour, followed by the
 #. translation for either 'behind' or 'ahead'
-#: ../app/worldclock/UserWorldCityDelegate.qml:153
+#: ../app/worldclock/UserWorldCityDelegate.qml:156
 #, qt-format
 msgid "%1h %2"
 msgstr "%1a %2"
 
 #. TRANSLATORS: the first argument is minute, followed by the
 #. translation for either 'behind' or 'ahead'
-#: ../app/worldclock/UserWorldCityDelegate.qml:161
+#: ../app/worldclock/UserWorldCityDelegate.qml:164
 #, qt-format
 msgid "%1m %2"
 msgstr "%1m %2"
 
-#: ../app/worldclock/UserWorldCityDelegate.qml:167
+#: ../app/worldclock/UserWorldCityDelegate.qml:170
 msgid "Same time"
 msgstr "Yr un amser"
 

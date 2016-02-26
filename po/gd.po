@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2015-10-19 04:17+0200\n"
+"POT-Creation-Date: 2016-02-26 00:06+0100\n"
 "PO-Revision-Date: 2015-11-20 05:04+0000\n"
 "Last-Translator: GunChleoc <Unknown>\n"
 "Language-Team: Fòram na Gàidhlig\n"
@@ -16,70 +16,65 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n==1 || n==11) ? 0 : (n==2 || n==12) ? 1 : "
 "(n > 2 && n < 20) ? 2 : 3;\n"
-"X-Launchpad-Export-Date: 2015-12-28 05:28+0000\n"
-"X-Generator: Launchpad (build 17865)\n"
+"X-Launchpad-Export-Date: 2016-02-26 05:29+0000\n"
+"X-Generator: Launchpad (build 17925)\n"
 "Language: gd\n"
 
-#: ../app/MainPage.qml:53 ../app/alarm/AlarmUtils.qml:55
-msgid "No active alarms"
-msgstr "Chan eil caismeachd ghnìomhach ann"
-
-#: ../app/alarm/AlarmLabel.qml:33 ../app/alarm/AlarmLabel.qml:71
-#: ../app/alarm/EditAlarmPage.qml:283
-msgid "Label"
-msgstr "Leubail"
-
-#: ../app/alarm/AlarmList.qml:61 ../app/alarm/AlarmPage.qml:101
-#: ../app/worldclock/UserWorldCityList.qml:69
-msgid "Delete"
-msgstr "Sguab às"
-
-#: ../app/alarm/AlarmPage.qml:27
+#: ../app/MainPage.qml:63 ../app/alarm/AlarmPage.qml:34
 msgid "Alarms"
 msgstr "Caismeachdan"
 
-#: ../app/alarm/AlarmPage.qml:41 ../app/alarm/AlarmPage.qml:66
-#: ../app/worldclock/WorldCityList.qml:79
-msgid "Back"
-msgstr "Air ais"
+#: ../app/alarm/AlarmLabel.qml:33 ../app/alarm/AlarmLabel.qml:71
+#: ../app/alarm/EditAlarmPage.qml:297
+msgid "Label"
+msgstr "Leubail"
 
-#: ../app/alarm/AlarmPage.qml:51 ../app/alarm/EditAlarmPage.qml:41
-#: ../app/alarm/EditAlarmPage.qml:185
+#: ../app/alarm/AlarmList.qml:61 ../app/alarm/AlarmPage.qml:99
+#: ../app/worldclock/UserWorldCityList.qml:70
+msgid "Delete"
+msgstr "Sguab às"
+
+#: ../app/alarm/AlarmPage.qml:48 ../app/alarm/EditAlarmPage.qml:43
+#: ../app/alarm/EditAlarmPage.qml:188
 msgid "Alarm"
 msgstr "Caismeachd"
 
-#: ../app/alarm/AlarmPage.qml:76
+#: ../app/alarm/AlarmPage.qml:62 ../app/worldclock/WorldCityList.qml:79
+msgid "Back"
+msgstr "Air ais"
+
+#: ../app/alarm/AlarmPage.qml:74
 msgid "Select None"
 msgstr "Dì-thagh na h-uile"
 
-#: ../app/alarm/AlarmPage.qml:78 ../app/alarm/AlarmRepeat.qml:59
+#: ../app/alarm/AlarmPage.qml:76 ../app/alarm/AlarmRepeat.qml:59
 msgid "Select All"
 msgstr "Tagh na h-uile"
 
-#: ../app/alarm/AlarmPage.qml:152
+#: ../app/alarm/AlarmPage.qml:155
 msgid "No saved alarms"
 msgstr "Chan eil caismeachd air a sàbhaladh ann"
 
-#: ../app/alarm/AlarmPage.qml:153
+#: ../app/alarm/AlarmPage.qml:156
 msgid "Tap the + icon to add an alarm"
 msgstr "Gnog air an ìomhaigheag + gus caismeachd a chur ris"
 
-#: ../app/alarm/AlarmRepeat.qml:36 ../app/alarm/EditAlarmPage.qml:273
+#: ../app/alarm/AlarmRepeat.qml:36 ../app/alarm/EditAlarmPage.qml:282
 msgid "Repeat"
 msgstr "Tachair a-rithist"
 
-#: ../app/alarm/AlarmSettingsPage.qml:29
+#: ../app/alarm/AlarmSettingsPage.qml:28
 msgid "Settings"
 msgstr "Roghainnean"
 
 #. TRANSLATORS: Alarm stops after
 #. TRANSLATORS: Snooze for
-#: ../app/alarm/AlarmSettingsPage.qml:54 ../app/alarm/AlarmSettingsPage.qml:55
-#: ../app/alarm/AlarmSettingsPage.qml:56 ../app/alarm/AlarmSettingsPage.qml:57
-#: ../app/alarm/AlarmSettingsPage.qml:67 ../app/alarm/AlarmSettingsPage.qml:68
-#: ../app/alarm/AlarmSettingsPage.qml:69 ../app/alarm/AlarmSettingsPage.qml:70
-#: ../app/alarm/AlarmSettingsPage.qml:126
-#: ../app/alarm/AlarmSettingsPage.qml:164
+#: ../app/alarm/AlarmSettingsPage.qml:53 ../app/alarm/AlarmSettingsPage.qml:54
+#: ../app/alarm/AlarmSettingsPage.qml:55 ../app/alarm/AlarmSettingsPage.qml:56
+#: ../app/alarm/AlarmSettingsPage.qml:66 ../app/alarm/AlarmSettingsPage.qml:67
+#: ../app/alarm/AlarmSettingsPage.qml:68 ../app/alarm/AlarmSettingsPage.qml:69
+#: ../app/alarm/AlarmSettingsPage.qml:118
+#: ../app/alarm/AlarmSettingsPage.qml:147
 #, qt-format
 msgid "%1 minute"
 msgid_plural "%1 minutes"
@@ -88,39 +83,39 @@ msgstr[1] "%1 mhionaid"
 msgstr[2] "%1 mionaidean"
 msgstr[3] "%1 mionaid"
 
-#: ../app/alarm/AlarmSettingsPage.qml:94
+#: ../app/alarm/AlarmSettingsPage.qml:96
 msgid "Alarm volume"
 msgstr "Àirde na fuaime"
 
-#: ../app/alarm/AlarmSettingsPage.qml:125
+#: ../app/alarm/AlarmSettingsPage.qml:117
 msgid "Alarm stops after"
 msgstr "Sguiridh a' chaismeachd às dèidh"
 
-#: ../app/alarm/AlarmSettingsPage.qml:163
+#: ../app/alarm/AlarmSettingsPage.qml:146
 msgid "Snooze for"
 msgstr "Dèan dùsal fad"
 
-#: ../app/alarm/AlarmSettingsPage.qml:199
+#: ../app/alarm/AlarmSettingsPage.qml:175
 msgid "Vibration"
 msgstr "Dèan crith"
 
-#: ../app/alarm/AlarmSettingsPage.qml:233
+#: ../app/alarm/AlarmSettingsPage.qml:200
 msgid "Change time and date"
 msgstr "Atharraich an ceann-là is àm"
 
-#: ../app/alarm/AlarmSound.qml:31 ../app/alarm/EditAlarmPage.qml:296
+#: ../app/alarm/AlarmSound.qml:30 ../app/alarm/EditAlarmPage.qml:317
 msgid "Sound"
 msgstr "Fuaim"
 
-#: ../app/alarm/AlarmSound.qml:186
+#: ../app/alarm/AlarmSound.qml:185
 msgid "Custom alarm sounds"
 msgstr "Fuaimean caismeachd gnàthaichte"
 
-#: ../app/alarm/AlarmSound.qml:201
+#: ../app/alarm/AlarmSound.qml:200
 msgid "Add sound"
 msgstr "Cuir fuaim ris"
 
-#: ../app/alarm/AlarmSound.qml:353
+#: ../app/alarm/AlarmSound.qml:336
 msgid "Default alarm sounds"
 msgstr "Fuaimean caismeachd tùsail"
 
@@ -140,39 +135,34 @@ msgstr "Gach deireadh-seachdaine"
 msgid "Daily"
 msgstr "Gach latha"
 
-#: ../app/alarm/AlarmUtils.qml:82
-#, qt-format
-msgid "Next Alarm %1"
-msgstr "An ath chaismeachd %1"
-
-#: ../app/alarm/AlarmUtils.qml:89
+#: ../app/alarm/AlarmUtils.qml:70
 msgid "Alarm Passed"
 msgstr "Chaidh a' chaismeachd seachad"
 
-#: ../app/alarm/AlarmUtils.qml:99
+#: ../app/alarm/AlarmUtils.qml:80
 #, no-c-format, qt-format
 msgid "in %1d %2h %3m"
 msgstr "ann an %1l %2u %3m"
 
-#: ../app/alarm/AlarmUtils.qml:109
+#: ../app/alarm/AlarmUtils.qml:90
 #, no-c-format, qt-format
 msgid "in %1h %2m"
 msgstr "ann an %1u %2m"
 
-#: ../app/alarm/AlarmUtils.qml:118
+#: ../app/alarm/AlarmUtils.qml:99
 #, no-c-format, qt-format
 msgid "in %1m"
 msgstr "ann an %1m"
 
-#: ../app/alarm/EditAlarmPage.qml:34
+#: ../app/alarm/EditAlarmPage.qml:37
 msgid "New alarm"
 msgstr "Caismeachd ùr"
 
-#: ../app/alarm/EditAlarmPage.qml:34
+#: ../app/alarm/EditAlarmPage.qml:37
 msgid "Edit alarm"
 msgstr "Deasaich a' chaismeachd"
 
-#: ../app/alarm/EditAlarmPage.qml:316
+#: ../app/alarm/EditAlarmPage.qml:339
 msgid "Delete alarm"
 msgstr "Sguab às a chaismeachd"
 
@@ -181,37 +171,37 @@ msgstr "Sguab às a chaismeachd"
 msgid "Add sound from"
 msgstr "Cuir fuaim ris o"
 
-#: ../app/clock/ClockPage.qml:249
+#: ../app/clock/ClockPage.qml:244
 msgid "Retrieving location..."
 msgstr "A' faighinn far a bheil thu..."
 
 #. TRANSLATORS: This refers to the stopwatch lap and is shown as a header where space is limited. Constrain
 #. translation length to a few characters.
-#: ../app/stopwatch/LapListView.qml:46 ../app/stopwatch/StopwatchPage.qml:83
+#: ../app/stopwatch/LapListView.qml:49 ../app/stopwatch/StopwatchPage.qml:98
 msgid "Lap"
 msgstr "Cuairt"
 
-#: ../app/stopwatch/LapListView.qml:56
+#: ../app/stopwatch/LapListView.qml:58
 msgid "Lap Time"
 msgstr "Ùine na cuairte"
 
-#: ../app/stopwatch/LapListView.qml:64
+#: ../app/stopwatch/LapListView.qml:65
 msgid "Total Time"
 msgstr "An ùine gu h-iomlan"
 
-#: ../app/stopwatch/StopwatchPage.qml:66
+#: ../app/stopwatch/StopwatchPage.qml:80
 msgid "Stop"
 msgstr "Stad"
 
-#: ../app/stopwatch/StopwatchPage.qml:66
+#: ../app/stopwatch/StopwatchPage.qml:80
 msgid "Start"
 msgstr "Tòisich"
 
-#: ../app/stopwatch/StopwatchPage.qml:66
+#: ../app/stopwatch/StopwatchPage.qml:80
 msgid "Resume"
 msgstr "Lean air"
 
-#: ../app/stopwatch/StopwatchPage.qml:83
+#: ../app/stopwatch/StopwatchPage.qml:98
 msgid "Clear"
 msgstr "Falamhaich"
 
@@ -219,44 +209,44 @@ msgstr "Falamhaich"
 msgid "Add"
 msgstr "Cuir ris"
 
-#: ../app/worldclock/AddWorldCityButton.qml:65
+#: ../app/worldclock/AddWorldCityButton.qml:60
 #: ../app/worldclock/WorldCityList.qml:63
 msgid "City"
 msgstr "Baile"
 
 #. TRANSLATORS: this indicates if the time in a world clock
 #. is behind or ahead of the time at the current location
-#: ../app/worldclock/UserWorldCityDelegate.qml:133
+#: ../app/worldclock/UserWorldCityDelegate.qml:136
 msgid "behind"
 msgstr "air deireadh"
 
-#: ../app/worldclock/UserWorldCityDelegate.qml:134
+#: ../app/worldclock/UserWorldCityDelegate.qml:137
 msgid "ahead"
 msgstr "air thoiseach"
 
 #. TRANSLATORS: the first argument is hour, followed by
 #. minute, and the translation for either 'behind' or
 #. 'ahead'
-#: ../app/worldclock/UserWorldCityDelegate.qml:144
+#: ../app/worldclock/UserWorldCityDelegate.qml:147
 #, qt-format
 msgid "%1h %2m %3"
 msgstr "%1u %2m %3"
 
 #. TRANSLATORS: the first argument is hour, followed by the
 #. translation for either 'behind' or 'ahead'
-#: ../app/worldclock/UserWorldCityDelegate.qml:153
+#: ../app/worldclock/UserWorldCityDelegate.qml:156
 #, qt-format
 msgid "%1h %2"
 msgstr "%1u %2"
 
 #. TRANSLATORS: the first argument is minute, followed by the
 #. translation for either 'behind' or 'ahead'
-#: ../app/worldclock/UserWorldCityDelegate.qml:161
+#: ../app/worldclock/UserWorldCityDelegate.qml:164
 #, qt-format
 msgid "%1m %2"
 msgstr "%1m %2"
 
-#: ../app/worldclock/UserWorldCityDelegate.qml:167
+#: ../app/worldclock/UserWorldCityDelegate.qml:170
 msgid "Same time"
 msgstr "An aon àm"
 

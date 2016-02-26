@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2015-10-19 04:17+0200\n"
+"POT-Creation-Date: 2016-02-26 00:06+0100\n"
 "PO-Revision-Date: 2015-10-11 15:02+0000\n"
 "Last-Translator: Ian Li <Unknown>\n"
 "Language-Team: Chinese (Simplified) <zh_CN@li.org>\n"
@@ -15,107 +15,102 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Launchpad-Export-Date: 2015-12-28 05:29+0000\n"
-"X-Generator: Launchpad (build 17865)\n"
+"X-Launchpad-Export-Date: 2016-02-26 05:30+0000\n"
+"X-Generator: Launchpad (build 17925)\n"
 
-#: ../app/MainPage.qml:53 ../app/alarm/AlarmUtils.qml:55
-msgid "No active alarms"
-msgstr "没有激活的闹铃"
-
-#: ../app/alarm/AlarmLabel.qml:33 ../app/alarm/AlarmLabel.qml:71
-#: ../app/alarm/EditAlarmPage.qml:283
-msgid "Label"
-msgstr "标签"
-
-#: ../app/alarm/AlarmList.qml:61 ../app/alarm/AlarmPage.qml:101
-#: ../app/worldclock/UserWorldCityList.qml:69
-msgid "Delete"
-msgstr "删除"
-
-#: ../app/alarm/AlarmPage.qml:27
+#: ../app/MainPage.qml:63 ../app/alarm/AlarmPage.qml:34
 msgid "Alarms"
 msgstr "闹钟"
 
-#: ../app/alarm/AlarmPage.qml:41 ../app/alarm/AlarmPage.qml:66
-#: ../app/worldclock/WorldCityList.qml:79
-msgid "Back"
-msgstr "返回"
+#: ../app/alarm/AlarmLabel.qml:33 ../app/alarm/AlarmLabel.qml:71
+#: ../app/alarm/EditAlarmPage.qml:297
+msgid "Label"
+msgstr "标签"
 
-#: ../app/alarm/AlarmPage.qml:51 ../app/alarm/EditAlarmPage.qml:41
-#: ../app/alarm/EditAlarmPage.qml:185
+#: ../app/alarm/AlarmList.qml:61 ../app/alarm/AlarmPage.qml:99
+#: ../app/worldclock/UserWorldCityList.qml:70
+msgid "Delete"
+msgstr "删除"
+
+#: ../app/alarm/AlarmPage.qml:48 ../app/alarm/EditAlarmPage.qml:43
+#: ../app/alarm/EditAlarmPage.qml:188
 msgid "Alarm"
 msgstr "闹钟"
 
-#: ../app/alarm/AlarmPage.qml:76
+#: ../app/alarm/AlarmPage.qml:62 ../app/worldclock/WorldCityList.qml:79
+msgid "Back"
+msgstr "返回"
+
+#: ../app/alarm/AlarmPage.qml:74
 msgid "Select None"
 msgstr "全部不选"
 
-#: ../app/alarm/AlarmPage.qml:78 ../app/alarm/AlarmRepeat.qml:59
+#: ../app/alarm/AlarmPage.qml:76 ../app/alarm/AlarmRepeat.qml:59
 msgid "Select All"
 msgstr "全选"
 
-#: ../app/alarm/AlarmPage.qml:152
+#: ../app/alarm/AlarmPage.qml:155
 msgid "No saved alarms"
 msgstr "未设定闹铃"
 
-#: ../app/alarm/AlarmPage.qml:153
+#: ../app/alarm/AlarmPage.qml:156
 msgid "Tap the + icon to add an alarm"
 msgstr "点击 + 来新增一个闹铃"
 
-#: ../app/alarm/AlarmRepeat.qml:36 ../app/alarm/EditAlarmPage.qml:273
+#: ../app/alarm/AlarmRepeat.qml:36 ../app/alarm/EditAlarmPage.qml:282
 msgid "Repeat"
 msgstr "重复"
 
-#: ../app/alarm/AlarmSettingsPage.qml:29
+#: ../app/alarm/AlarmSettingsPage.qml:28
 msgid "Settings"
 msgstr "设置"
 
 #. TRANSLATORS: Alarm stops after
 #. TRANSLATORS: Snooze for
-#: ../app/alarm/AlarmSettingsPage.qml:54 ../app/alarm/AlarmSettingsPage.qml:55
-#: ../app/alarm/AlarmSettingsPage.qml:56 ../app/alarm/AlarmSettingsPage.qml:57
-#: ../app/alarm/AlarmSettingsPage.qml:67 ../app/alarm/AlarmSettingsPage.qml:68
-#: ../app/alarm/AlarmSettingsPage.qml:69 ../app/alarm/AlarmSettingsPage.qml:70
-#: ../app/alarm/AlarmSettingsPage.qml:126
-#: ../app/alarm/AlarmSettingsPage.qml:164
+#: ../app/alarm/AlarmSettingsPage.qml:53 ../app/alarm/AlarmSettingsPage.qml:54
+#: ../app/alarm/AlarmSettingsPage.qml:55 ../app/alarm/AlarmSettingsPage.qml:56
+#: ../app/alarm/AlarmSettingsPage.qml:66 ../app/alarm/AlarmSettingsPage.qml:67
+#: ../app/alarm/AlarmSettingsPage.qml:68 ../app/alarm/AlarmSettingsPage.qml:69
+#: ../app/alarm/AlarmSettingsPage.qml:118
+#: ../app/alarm/AlarmSettingsPage.qml:147
 #, qt-format
 msgid "%1 minute"
 msgid_plural "%1 minutes"
 msgstr[0] "%1 分钟"
 
-#: ../app/alarm/AlarmSettingsPage.qml:94
+#: ../app/alarm/AlarmSettingsPage.qml:96
 msgid "Alarm volume"
 msgstr "闹钟音量"
 
-#: ../app/alarm/AlarmSettingsPage.qml:125
+#: ../app/alarm/AlarmSettingsPage.qml:117
 msgid "Alarm stops after"
 msgstr "闹铃停止于"
 
-#: ../app/alarm/AlarmSettingsPage.qml:163
+#: ../app/alarm/AlarmSettingsPage.qml:146
 msgid "Snooze for"
 msgstr "贪睡间隔"
 
-#: ../app/alarm/AlarmSettingsPage.qml:199
+#: ../app/alarm/AlarmSettingsPage.qml:175
 msgid "Vibration"
 msgstr "振动"
 
-#: ../app/alarm/AlarmSettingsPage.qml:233
+#: ../app/alarm/AlarmSettingsPage.qml:200
 msgid "Change time and date"
 msgstr "更改时间与日期"
 
-#: ../app/alarm/AlarmSound.qml:31 ../app/alarm/EditAlarmPage.qml:296
+#: ../app/alarm/AlarmSound.qml:30 ../app/alarm/EditAlarmPage.qml:317
 msgid "Sound"
 msgstr "声音"
 
-#: ../app/alarm/AlarmSound.qml:186
+#: ../app/alarm/AlarmSound.qml:185
 msgid "Custom alarm sounds"
 msgstr "自定义闹铃声音"
 
-#: ../app/alarm/AlarmSound.qml:201
+#: ../app/alarm/AlarmSound.qml:200
 msgid "Add sound"
 msgstr "添加声音"
 
-#: ../app/alarm/AlarmSound.qml:353
+#: ../app/alarm/AlarmSound.qml:336
 msgid "Default alarm sounds"
 msgstr "默认闹铃声音"
 
@@ -135,39 +130,34 @@ msgstr "周末"
 msgid "Daily"
 msgstr "每天"
 
-#: ../app/alarm/AlarmUtils.qml:82
-#, qt-format
-msgid "Next Alarm %1"
-msgstr "下一次闹铃 %1"
-
-#: ../app/alarm/AlarmUtils.qml:89
+#: ../app/alarm/AlarmUtils.qml:70
 msgid "Alarm Passed"
 msgstr "闹铃结束"
 
-#: ../app/alarm/AlarmUtils.qml:99
+#: ../app/alarm/AlarmUtils.qml:80
 #, no-c-format, qt-format
 msgid "in %1d %2h %3m"
 msgstr "在 %1 天 %2 小时 %3 分钟后"
 
-#: ../app/alarm/AlarmUtils.qml:109
+#: ../app/alarm/AlarmUtils.qml:90
 #, no-c-format, qt-format
 msgid "in %1h %2m"
 msgstr "在 %1 小时 %2 分钟后"
 
-#: ../app/alarm/AlarmUtils.qml:118
+#: ../app/alarm/AlarmUtils.qml:99
 #, no-c-format, qt-format
 msgid "in %1m"
 msgstr "在 %1 分钟后"
 
-#: ../app/alarm/EditAlarmPage.qml:34
+#: ../app/alarm/EditAlarmPage.qml:37
 msgid "New alarm"
 msgstr "新建闹钟"
 
-#: ../app/alarm/EditAlarmPage.qml:34
+#: ../app/alarm/EditAlarmPage.qml:37
 msgid "Edit alarm"
 msgstr "编辑闹钟"
 
-#: ../app/alarm/EditAlarmPage.qml:316
+#: ../app/alarm/EditAlarmPage.qml:339
 msgid "Delete alarm"
 msgstr "删除闹钟"
 
@@ -176,37 +166,37 @@ msgstr "删除闹钟"
 msgid "Add sound from"
 msgstr "添加声音自"
 
-#: ../app/clock/ClockPage.qml:249
+#: ../app/clock/ClockPage.qml:244
 msgid "Retrieving location..."
 msgstr "确定方位中..."
 
 #. TRANSLATORS: This refers to the stopwatch lap and is shown as a header where space is limited. Constrain
 #. translation length to a few characters.
-#: ../app/stopwatch/LapListView.qml:46 ../app/stopwatch/StopwatchPage.qml:83
+#: ../app/stopwatch/LapListView.qml:49 ../app/stopwatch/StopwatchPage.qml:98
 msgid "Lap"
 msgstr "圈"
 
-#: ../app/stopwatch/LapListView.qml:56
+#: ../app/stopwatch/LapListView.qml:58
 msgid "Lap Time"
 msgstr "单圈时间"
 
-#: ../app/stopwatch/LapListView.qml:64
+#: ../app/stopwatch/LapListView.qml:65
 msgid "Total Time"
 msgstr "总时间"
 
-#: ../app/stopwatch/StopwatchPage.qml:66
+#: ../app/stopwatch/StopwatchPage.qml:80
 msgid "Stop"
 msgstr "停止"
 
-#: ../app/stopwatch/StopwatchPage.qml:66
+#: ../app/stopwatch/StopwatchPage.qml:80
 msgid "Start"
 msgstr "开始"
 
-#: ../app/stopwatch/StopwatchPage.qml:66
+#: ../app/stopwatch/StopwatchPage.qml:80
 msgid "Resume"
 msgstr "继续"
 
-#: ../app/stopwatch/StopwatchPage.qml:83
+#: ../app/stopwatch/StopwatchPage.qml:98
 msgid "Clear"
 msgstr "清除"
 
@@ -214,44 +204,44 @@ msgstr "清除"
 msgid "Add"
 msgstr "新增"
 
-#: ../app/worldclock/AddWorldCityButton.qml:65
+#: ../app/worldclock/AddWorldCityButton.qml:60
 #: ../app/worldclock/WorldCityList.qml:63
 msgid "City"
 msgstr "城市"
 
 #. TRANSLATORS: this indicates if the time in a world clock
 #. is behind or ahead of the time at the current location
-#: ../app/worldclock/UserWorldCityDelegate.qml:133
+#: ../app/worldclock/UserWorldCityDelegate.qml:136
 msgid "behind"
 msgstr "后"
 
-#: ../app/worldclock/UserWorldCityDelegate.qml:134
+#: ../app/worldclock/UserWorldCityDelegate.qml:137
 msgid "ahead"
 msgstr "前"
 
 #. TRANSLATORS: the first argument is hour, followed by
 #. minute, and the translation for either 'behind' or
 #. 'ahead'
-#: ../app/worldclock/UserWorldCityDelegate.qml:144
+#: ../app/worldclock/UserWorldCityDelegate.qml:147
 #, qt-format
 msgid "%1h %2m %3"
 msgstr "%1 小时 %2 分钟 %3"
 
 #. TRANSLATORS: the first argument is hour, followed by the
 #. translation for either 'behind' or 'ahead'
-#: ../app/worldclock/UserWorldCityDelegate.qml:153
+#: ../app/worldclock/UserWorldCityDelegate.qml:156
 #, qt-format
 msgid "%1h %2"
 msgstr "%1 小时 %2"
 
 #. TRANSLATORS: the first argument is minute, followed by the
 #. translation for either 'behind' or 'ahead'
-#: ../app/worldclock/UserWorldCityDelegate.qml:161
+#: ../app/worldclock/UserWorldCityDelegate.qml:164
 #, qt-format
 msgid "%1m %2"
 msgstr "%1 分钟 %2"
 
-#: ../app/worldclock/UserWorldCityDelegate.qml:167
+#: ../app/worldclock/UserWorldCityDelegate.qml:170
 msgid "Same time"
 msgstr "同一时间"
 
