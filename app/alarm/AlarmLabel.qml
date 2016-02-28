@@ -30,27 +30,32 @@ Page {
     property string oldAlarmLabel: alarm.message
 
     visible: false
-    title: i18n.tr("Label")
 
-    head.backAction: Action {
-        id: backAction
-        iconName: "back"
-        onTriggered: {
-            // Restore old alarm label if user presses the back button
-            alarm.message = oldAlarmLabel
-            pop()
-        }
-    }
-
-    head.actions: Action {
-        id: saveAction
-        objectName: "saveAction"
-        iconName: "ok"
-        enabled: oldAlarmLabel !== _labelEntry.text.trim() && _labelEntry.text.trim()
-        onTriggered: {
-            alarm.message = _labelEntry.text.trim()
-            pop()
-        }
+    header: PageHeader {
+        title: i18n.tr("Label")
+        leadingActionBar.actions: [
+            Action {
+                id: backAction
+                iconName: "back"
+                onTriggered: {
+                    // Restore old alarm label if user presses the back button
+                    alarm.message = oldAlarmLabel
+                    pop()
+                }
+            }
+        ]
+        trailingActionBar.actions: [
+            Action {
+                id: saveAction
+                objectName: "saveAction"
+                iconName: "ok"
+                enabled: oldAlarmLabel !== _labelEntry.text.trim() && _labelEntry.text.trim()
+                onTriggered: {
+                    alarm.message = _labelEntry.text.trim()
+                    pop()
+                }
+            }
+        ]
     }
 
     Component.onCompleted: {
@@ -63,7 +68,10 @@ Page {
         spacing: units.gu(0.5)
 
         anchors {
-            fill: parent
+            top: _alarmLabelPage.header.bottom
+            left: parent.left
+            right: parent.right
+            bottom: parent.bottom
             margins: units.gu(2)
         }
 
