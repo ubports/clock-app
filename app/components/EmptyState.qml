@@ -45,12 +45,13 @@ Item {
     Label {
         id: emptyLabel
         textSize: Label.Large
-        font.bold: true
+        font.weight: Font.Normal
         width: parent.width
         wrapMode: Text.WordWrap
         anchors.top: emptyIcon.bottom
         anchors.topMargin: units.gu(4)
         horizontalAlignment: Text.AlignHCenter
+        color: "#5d5d5d"
     }
 
     Label {
@@ -59,5 +60,6 @@ Item {
         wrapMode: Text.WordWrap
         anchors.top: emptyLabel.bottom
         horizontalAlignment: Text.AlignHCenter
+        color: "#888888"
     }
 }
