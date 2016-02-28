@@ -33,7 +33,57 @@ Page {
     property int oldAlarmDaysOfWeek
 
     visible: false
-    title: i18n.tr("Repeat")
+
+    header: PageHeader {
+        title: i18n.tr("Repeat")
+        leadingActionBar.actions: [
+            Action {
+                iconName: "back"
+                onTriggered: {
+                    // Restore alarm frequency and type if user presses the back button
+                    alarm.daysOfWeek = oldAlarmDaysOfWeek
+                    detectAlarmType()
+                    pop()
+                }
+            }
+        ]
+        trailingActionBar.actions: [
+            Action {
+                text: i18n.tr("Select All")
+
+                iconSource: {
+                    if(alarm.daysOfWeek === 127)
+                        return Qt.resolvedUrl("../graphics/select-none.svg")
+                    else
+                        return Qt.resolvedUrl("../graphics/select.svg")
+                }
+
+                onTriggered: {
+                    if (alarm.daysOfWeek === 127) {
+                        for (var i=0; i<_alarmDays.count; i++) {
+                            _alarmDays.itemAt(i).isChecked = false
+                        }
+                    }
+
+                    else {
+                        for (var i=0; i<_alarmDays.count; i++) {
+                            _alarmDays.itemAt(i).isChecked = true
+                        }
+                    }
+                }
+            },
+
+            Action {
+                id: saveAction
+                objectName: "saveAction"
+                iconName: "ok"
+                enabled: oldAlarmDaysOfWeek !== alarm.daysOfWeek
+                onTriggered: {
+                    pop()
+                }
+            }
+        ]
+    }
 
     // Function to detect if alarm is OneTime or Repeating
     function detectAlarmType() {
@@ -43,53 +93,6 @@ Page {
             alarm.type = Alarm.OneTime
         }
     }
-
-    head.backAction: Action {
-        iconName: "back"
-        onTriggered: {
-            // Restore alarm frequency and type if user presses the back button
-            alarm.daysOfWeek = oldAlarmDaysOfWeek
-            detectAlarmType()
-            pop()
-        }
-    }
-
-    head.actions: [
-        Action {
-            text: i18n.tr("Select All")
-
-            iconSource: {
-                if(alarm.daysOfWeek === 127)
-                    return Qt.resolvedUrl("../graphics/select-none.svg")
-                else
-                    return Qt.resolvedUrl("../graphics/select.svg")
-            }
-
-            onTriggered: {
-                if (alarm.daysOfWeek === 127) {
-                    for (var i=0; i<_alarmDays.count; i++) {
-                        _alarmDays.itemAt(i).isChecked = false
-                    }
-                }
-
-                else {
-                    for (var i=0; i<_alarmDays.count; i++) {
-                        _alarmDays.itemAt(i).isChecked = true
-                    }
-                }
-            }
-        },
-
-        Action {
-            id: saveAction
-            objectName: "saveAction"
-            iconName: "ok"
-            enabled: oldAlarmDaysOfWeek !== alarm.daysOfWeek
-            onTriggered: {
-                pop()
-            }
-        }
-    ]
 
     /*
      By Default, the alarm is set to Today. However if it is a one-time alarm,
@@ -135,7 +138,12 @@ Page {
     Column {
         id: _alarmDayColumn
 
-        anchors.fill: parent
+        anchors {
+            top: _alarmRepeatPage.header.bottom
+            left: parent.left
+            right: parent.right
+            bottom: parent.bottom
+        }
 
         Repeater {
             id: _alarmDays
