@@ -81,11 +81,11 @@ Page {
                     }
                 }
 
-                iconSource: {
+                iconName: {
                     if(alarmListView.ViewItems.selectedIndices.length === alarmListView.count) {
-                        return Qt.resolvedUrl("../graphics/select-none.svg")
+                        return "select-none"
                     } else {
-                        return Qt.resolvedUrl("../graphics/select.svg")
+                        return "select"
                     }
                 }
 

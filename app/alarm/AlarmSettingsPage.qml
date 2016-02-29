@@ -25,9 +25,12 @@ import "../components"
 Page {
     id: _alarmSettings
 
-    title: i18n.tr("Settings")
     visible: false
-    flickable: settingsPlugin
+
+    header: PageHeader {
+        title: i18n.tr("Settings")
+        flickable: settingsPlugin
+    }
 
     Connections {
         target: clockApp

@@ -7,8 +7,6 @@ set(GRAPHICS_FILES
     Minute_Hand_Shadow@27.png
     Second_Hand@27.png
     Second_Hand_Shadow@27.png
-    select-none.svg
-    select.svg
 )
 
 # make the files visible in the qtcreator tree
