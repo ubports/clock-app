@@ -25,7 +25,8 @@ ListItem {
     property var localTime
     property bool showAlarmFrequency
     property string alarmOccurrence: type === Alarm.Repeating ? alarmUtils.format_day_string(daysOfWeek, type)
-                                                              : alarmUtils.get_time_to_alarm(model.date, localTime)
+                                                              : model.enabled ? alarmUtils.get_time_to_alarm(model.date, localTime)
+                                                                              : ""
 
     onShowAlarmFrequencyChanged: {
         if (type === Alarm.Repeating && model.enabled) {
