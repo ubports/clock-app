@@ -59,6 +59,7 @@ Page {
         height: parent.height
         pageStack: mainStack
         alarmModel: _mainPage.alarmModel
+        hint.visible: bottomEdge.enabled && isClockPage
         Component.onCompleted: hideBottomEdgeHintTimer.start()
     }
 

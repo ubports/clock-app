@@ -33,7 +33,6 @@ BottomEdge {
     property var _realPage: null
 
     hint {
-        visible: bottomEdge.enabled
         enabled: visible
         iconName: "alarm-clock"
         text: i18n.tr("Alarms")

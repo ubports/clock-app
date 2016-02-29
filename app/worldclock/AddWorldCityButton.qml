@@ -48,7 +48,7 @@ AbstractButton {
 
         Icon {
             anchors.centerIn: parent
-            color: UbuntuColors.coolGrey
+            color: "#3B3B3B" // #TODO: Replace with UbuntuColors.Inkstone after OTA-10
             name: "add"
             height: units.gu(2)
             width: height

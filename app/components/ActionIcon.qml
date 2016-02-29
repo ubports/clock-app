@@ -30,7 +30,7 @@ AbstractButton {
     Rectangle {
         visible: abstractButton.pressed
         anchors.fill: parent
-        color: Theme.palette.selected.background
+        color: "#CDCDCD" // #TODO: Replace with UbuntuColors.Silk after OTA-10
     }
 
     Icon {

@@ -79,11 +79,12 @@ Item {
         }
     }
 
-    Rectangle {
+    UbuntuShape {
         id: magnified
 
-        color: Theme.palette.normal.overlay
-        radius: height * 0.3
+        aspect: UbuntuShape.Flat
+        backgroundColor: "#3B3B3B" // #TODO: Replace with UbuntuColors.Inkstone after OTA-10
+        radius: "large"
         height: pinSize * 2
         width: height
         opacity: internal.fastScrolling && root.enabled ? 1.0 : 0.0
@@ -103,6 +104,7 @@ Item {
             verticalAlignment: Text.AlignVCenter
             text: internal.desireSection
             textSize: Label.Small
+            color: "white"
         }
 
         Behavior on opacity {
@@ -110,16 +112,17 @@ Item {
         }
     }
 
-    Rectangle {
+    UbuntuShape {
         id: cursor
 
         property bool showLabel: false
         property string currentSectionName: ""
 
-        radius: pinSize * 0.3
+        radius: "large"
         height: pinSize
         width: height
-        color: Theme.palette.normal.foreground
+        aspect: UbuntuShape.Flat
+        backgroundColor: "#3B3B3B" // #TODO: Replace with UbuntuColors.Inkstone after OTA-10
         opacity: rail.opacity
         x: rail.x
         y: {
@@ -180,7 +183,7 @@ Item {
                 horizontalAlignment: Text.AlignHCenter
                 text: modelData
                 textSize: Label.XSmall
-                color: cursor.y === y ? "white" : Theme.palette.selected.backgroundText
+                color: cursor.y === y ? "white" : "#3B3B3B" // #TODO: Replace with UbuntuColors.Inkstone after OTA-10
                 opacity: !internal.modelDirty && Sections.contains(text) ? 1.0 : 0.5
             }
         }
