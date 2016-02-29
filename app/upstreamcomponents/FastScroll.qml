@@ -82,6 +82,7 @@ Item {
     UbuntuShape {
         id: magnified
 
+        aspect: UbuntuShape.Flat
         backgroundColor: UbuntuColors.coolGrey
         radius: "large"
         height: pinSize * 2
@@ -120,6 +121,7 @@ Item {
         radius: "large"
         height: pinSize
         width: height
+        aspect: UbuntuShape.Flat
         backgroundColor: UbuntuColors.coolGrey
         opacity: rail.opacity
         x: rail.x
