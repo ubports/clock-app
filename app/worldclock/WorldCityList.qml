@@ -47,56 +47,60 @@ Page {
         staticTimeZoneModelLoader.sourceComponent = staticTimeZoneModelComponent
     }
 
-    title: i18n.tr("Select a city")
     visible: false
-    flickable: null
+    header: standardHeader
 
-    state: "default"
-    states: [
-        PageHeadState {
-            name: "default"
-            head: worldCityList.head
-            actions: [
-                Action {
-                    objectName: "searchButton"
-                    iconName: "search"
-                    text: i18n.tr("City")
-                    onTriggered: {
-                        worldCityList.state = "search"
-                        searchComponentLoader.sourceComponent = searchComponent
-                        jsonTimeZoneModelLoader.sourceComponent = jsonTimeZoneModelComponent
-                        searchComponentLoader.item.forceActiveFocus()
-                    }
+    PageHeader {
+        id: standardHeader
+
+        title: i18n.tr("Select a city")
+        flickable: null
+        visible: worldCityList.header === standardHeader
+        trailingActionBar.actions: [
+            Action {
+                objectName: "searchButton"
+                iconName: "search"
+                text: i18n.tr("City")
+                onTriggered: {
+                    worldCityList.header = searchHeader
+                    searchComponentLoader.sourceComponent = searchComponent
+                    jsonTimeZoneModelLoader.sourceComponent = jsonTimeZoneModelComponent
+                    searchComponentLoader.item.forceActiveFocus()
                 }
-            ]
-        },
+            }
+        ]
+    }
 
-        PageHeadState {
-            name: "search"
-            head: worldCityList.head
-            backAction: Action {
+    PageHeader {
+        id: searchHeader
+
+        flickable: null
+        visible: worldCityList.header === searchHeader
+
+        leadingActionBar.actions: [
+            Action {
                 iconName: "back"
                 text: i18n.tr("Back")
                 onTriggered: {
                     cityList.forceActiveFocus()
                     searchComponentLoader.item.text = ""
-                    worldCityList.state = "default"
+                    worldCityList.header = standardHeader
                     isOnlineMode = false
                     searchComponentLoader.sourceComponent = undefined
                     jsonTimeZoneModelLoader.sourceComponent = undefined
                 }
             }
+        ]
 
-            contents: Loader {
-                id: searchComponentLoader
-                anchors {
-                    left: parent ? parent.left : undefined
-                    right: parent ? parent.right : undefined
-                    rightMargin: units.gu(2)
-                }
+        contents: Loader {
+            id: searchComponentLoader
+            anchors {
+                left: parent ? parent.left : undefined
+                right: parent ? parent.right : undefined
+                verticalCenter: parent ? parent.verticalCenter : undefined
             }
         }
-    ]
+    }
 
     Component {
         id: searchComponent
@@ -242,7 +246,7 @@ Page {
             left: parent.left
             right: parent.right
             margins: units.gu(2)
-            top: parent.top
+            top: worldCityList.header.bottom
             topMargin: units.gu(4)
         }
     }
@@ -262,7 +266,7 @@ Page {
         }
     }
 
-    ListView {
+    UbuntuListView {
         id: cityList
         objectName: "cityList"
 
@@ -293,9 +297,14 @@ Page {
             forceActiveFocus()
         }
 
-        anchors.fill: parent
-        anchors.rightMargin: fastScroll.showing ? fastScroll.width - units.gu(1)
-                                                : 0
+        anchors {
+            top: worldCityList.header.bottom
+            left: parent.left
+            right: parent.right
+            bottom: parent.bottom
+            rightMargin: fastScroll.showing ? fastScroll.width - units.gu(1)
+                                            : 0
+        }
 
         model: sortedTimeZoneModel
         currentIndex: -1

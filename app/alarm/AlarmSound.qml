@@ -27,8 +27,6 @@ Page {
     id: _alarmSoundPage
     objectName: "alarmSoundPage"
 
-    title: i18n.tr("Sound")
-    flickable: _pageFlickable
     visible: false
 
     // Property used to let pageStack know that this is the alarm sound page
@@ -58,24 +56,31 @@ Page {
         oldAlarmSoundName = alarmSound.subText
     }
 
-    head.backAction: Action {
-        iconName: "back"
-        onTriggered: {
-            // Restore alarm sound to old values (url, name) if the back button is pressed
-            alarm.sound = oldAlarmSoundUrl
-            alarmSound.subText = oldAlarmSoundName
-            pop()
-        }
-    }
-
-    head.actions: Action {
-        id: saveAction
-        objectName: "saveAction"
-        iconName: "ok"
-        enabled: oldAlarmSoundUrl !== alarm.sound
-        onTriggered: {
-            pop()
-        }
+    header: PageHeader {
+        title: i18n.tr("Sound")
+        flickable: _pageFlickable
+        leadingActionBar.actions: [
+            Action {
+                iconName: "back"
+                onTriggered: {
+                    // Restore alarm sound to old values (url, name) if the back button is pressed
+                    alarm.sound = oldAlarmSoundUrl
+                    alarmSound.subText = oldAlarmSoundName
+                    pop()
+                }
+            }
+        ]
+        trailingActionBar.actions: [
+            Action {
+                id: saveAction
+                objectName: "saveAction"
+                iconName: "ok"
+                enabled: oldAlarmSoundUrl !== alarm.sound
+                onTriggered: {
+                    pop()
+                }
+            }
+        ]
     }
 
     FolderListModel {
@@ -125,7 +130,7 @@ Page {
         for (var i=0; i<customSoundModel.count; i++) {
             if (soundUrl === customSoundModel.get(i, "fileURL")) {
                 alarmSound.subText = customSoundModel.get(i, "fileBaseName")
-                alarm.sound = soundUrl                
+                alarm.sound = soundUrl
                 _customAlarmSounds.itemAt(i).isChecked = true
                 previewAlarmSound.controlPlayback(soundUrl)
                 return
@@ -217,7 +222,7 @@ Page {
                     objectName: "customAlarmSoundDelegate" + index
 
                     property bool isChecked: alarmSound.subText === _customSoundName.title.text ? true
-                                                                                          : false
+                                                                                                : false
 
                     height: _customSoundName.height + divider.height
 
@@ -244,7 +249,7 @@ Page {
                                             for (var i=0; i<defaultSoundModel.count; i++) {
                                                 if (defaultSoundModel.get(i, "fileBaseName") === alarmSound.subText) {
                                                     alarm.sound = defaultSoundModel.get(i, "fileURL")
-                                                    oldAlarmSoundUrl = alarm.sound                                                    
+                                                    oldAlarmSoundUrl = alarm.sound
                                                     _alarmSounds.itemAt(i).isChecked = true
                                                     previewAlarmSound.controlPlayback(defaultSoundModel.get(i, "fileURL"))
                                                 }
@@ -354,7 +359,7 @@ Page {
                     objectName: "alarmSoundDelegate" + index
 
                     property bool isChecked: alarmSound.subText === _soundName.title.text ? true
-                                                                                    : false
+                                                                                          : false
 
                     height: _soundName.height + divider.height
 
