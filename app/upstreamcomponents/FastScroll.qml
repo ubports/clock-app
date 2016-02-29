@@ -103,6 +103,7 @@ Item {
             verticalAlignment: Text.AlignVCenter
             text: internal.desireSection
             textSize: Label.Small
+            color: "white"
         }
 
         Behavior on opacity {
