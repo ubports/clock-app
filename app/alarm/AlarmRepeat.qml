@@ -49,15 +49,18 @@ Page {
         ]
         trailingActionBar.actions: [
             Action {
-                text: i18n.tr("Select All")
-
-                iconSource: {
-                    if(alarm.daysOfWeek === 127)
-                        return Qt.resolvedUrl("../graphics/select-none.svg")
-                    else
-                        return Qt.resolvedUrl("../graphics/select.svg")
+                id: saveAction
+                objectName: "saveAction"
+                iconName: "ok"
+                enabled: oldAlarmDaysOfWeek !== alarm.daysOfWeek
+                onTriggered: {
+                    pop()
                 }
+            },
 
+            Action {
+                text: i18n.tr("Select All")
+                iconName: alarm.daysOfWeek === 127 ? "select-none" : "select"
                 onTriggered: {
                     if (alarm.daysOfWeek === 127) {
                         for (var i=0; i<_alarmDays.count; i++) {
@@ -70,16 +73,6 @@ Page {
                             _alarmDays.itemAt(i).isChecked = true
                         }
                     }
-                }
-            },
-
-            Action {
-                id: saveAction
-                objectName: "saveAction"
-                iconName: "ok"
-                enabled: oldAlarmDaysOfWeek !== alarm.daysOfWeek
-                onTriggered: {
-                    pop()
                 }
             }
         ]
