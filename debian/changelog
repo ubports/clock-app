@@ -27,6 +27,7 @@ ubuntu-clock-app (3.7) UNRELEASED; urgency=medium
   * Migrated all page head to the new PageHeader (LP: #1550991)
   * Reduce binding in ActionIcon.qml and fixed stopwatch slide delete UI issue.
   * Fixed colors being broken with OTA-10 SDK (LP: #1550716)
+  * Fixed alarm passed label being shown in the alarm description (LP: #1551307)
 
  -- Bartosz Kosiorek <gang65@poczta.onet.pl>  Wed, 30 Dec 2015 01:43:24 +0100
 
