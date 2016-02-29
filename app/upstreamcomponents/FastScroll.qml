@@ -79,11 +79,11 @@ Item {
         }
     }
 
-    Rectangle {
+    UbuntuShape {
         id: magnified
 
-        color: UbuntuColors.coolGrey
-        radius: height * 0.3
+        backgroundColor: UbuntuColors.coolGrey
+        radius: "large"
         height: pinSize * 2
         width: height
         opacity: internal.fastScrolling && root.enabled ? 1.0 : 0.0
@@ -111,16 +111,16 @@ Item {
         }
     }
 
-    Rectangle {
+    UbuntuShape {
         id: cursor
 
         property bool showLabel: false
         property string currentSectionName: ""
 
-        radius: pinSize * 0.3
+        radius: "large"
         height: pinSize
         width: height
-        color: UbuntuColors.coolGrey
+        backgroundColor: UbuntuColors.coolGrey
         opacity: rail.opacity
         x: rail.x
         y: {
