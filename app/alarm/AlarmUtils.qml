@@ -66,8 +66,9 @@ QtObject {
         // even with different timezones (eg. during daylight saving change)
         var totalTime = get_utc_time(alarmDate) - get_utc_time(currentDateTime);
 
+        // Alarm has passed
         if(totalTime < 0) {
-            return i18n.tr("Alarm Passed")
+            return ""
         }
 
         var timeObject = _split_time(totalTime);
