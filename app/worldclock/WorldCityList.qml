@@ -266,7 +266,7 @@ Page {
         }
     }
 
-    UbuntuListView {
+    ListView {
         id: cityList
         objectName: "cityList"
 
@@ -307,8 +307,6 @@ Page {
         }
 
         model: sortedTimeZoneModel
-        currentIndex: -1
-
         clip: true
 
         section.property: "cityName"

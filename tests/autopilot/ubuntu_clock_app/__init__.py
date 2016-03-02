@@ -315,13 +315,13 @@ class WorldCityList(Page):
         :param city_Name: world city name to add
 
         """
-        header = self.main_view.get_header()
-        header.click_action_button("searchButton")
+        searchHeaderButton = self.wait_select_single(
+            "UCAbstractButton", objectName="searchButton_button")
+        self.pointing_device.click_object(searchHeaderButton)
         self._search_world_city(city_Name, country_Name)
 
     def _search_world_city(self, city_Name, country_Name):
-        header = self.main_view.get_header()
-        searchTextfield = header.wait_select_single(
+        searchTextfield = self.wait_select_single(
             "TextField", objectName='searchField')
         searchTextfield.visible.wait_for(True)
         searchTextfield.write(city_Name)
