@@ -119,6 +119,7 @@ Page {
                 listViewHeight: units.gu(28)
                 titleText.text: i18n.tr("Alarm stops after")
                 subText.text: i18n.tr("%1 minute", "%1 minutes", alarmSettings.duration).arg(alarmSettings.duration)
+                subText.textSize: Label.Medium
 
                 model: durationModel
 
@@ -148,6 +149,7 @@ Page {
                 listViewHeight: units.gu(28)
                 titleText.text: i18n.tr("Snooze for")
                 subText.text: i18n.tr("%1 minute", "%1 minutes", alarmSettings.snoozeDuration).arg(alarmSettings.snoozeDuration)
+                subText.textSize: Label.Medium
 
                 model: snoozeModel
 
@@ -202,6 +204,7 @@ Page {
                     id: timeAndDateLayout
                     title.text: i18n.tr("Change time and date")
                     subtitle.text: localTimeSource.localizedCurrentDateString + " " + localTimeSource.localizedCurrentTimeString
+                    subtitle.textSize: Label.Medium
 
                     Icon {
                         SlotsLayout.position: SlotsLayout.Trailing

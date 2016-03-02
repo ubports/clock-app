@@ -208,6 +208,7 @@ Item {
         text: clock.localizedDateString
         textSize: Label.Medium
         opacity: 0
+        color: "#5D5D5D"
     }
 
     Row {
@@ -235,6 +236,7 @@ Item {
             id: location
             objectName: "location"
 
+            color: "#5D5D5D"
             anchors.verticalCenter: locationIcon.verticalCenter
 
             text: {

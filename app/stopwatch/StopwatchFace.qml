@@ -39,6 +39,7 @@ ClockCircle {
         text: stopwatchFormatTime.millisToTimeString(milliseconds, true)
         font.pixelSize: units.dp(36)
         anchors.centerIn: parent
+        color: "#5D5D5D"
     }
 
     Label {
@@ -46,6 +47,7 @@ ClockCircle {
 
         text: stopwatchFormatTime.millisToString(milliseconds)
         textSize: Label.Large
+        color: "#5D5D5D"
         anchors {
             top: time.bottom
             topMargin: units.gu(1.5)

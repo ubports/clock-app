@@ -69,15 +69,15 @@ ListItem {
         title.text: Qt.formatTime(model.date) // Alarm time
         title.font.weight: Font.Normal
         subtitle.text: message // Alarm name
+        subtitle.textSize: Label.Medium
         summary.text:  alarmOccurrence
+        summary.textSize: Label.Medium
 
         Switch {
             id: alarmStatus
 
             objectName: "listAlarmStatus" + index
             anchors.verticalCenter: parent.verticalCenter
-            SlotsLayout.position: SlotsLayout.Trailing
-            SlotsLayout.overrideVerticalPositioning: true
             checked: model.enabled && (model.status === Alarm.Ready)
             onCheckedChanged: {
                 if (checked !== model.enabled) {
