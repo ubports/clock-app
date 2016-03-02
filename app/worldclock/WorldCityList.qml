@@ -336,6 +336,7 @@ Page {
                 title.text: cityName
                 title.objectName: "defaultCityNameText"
                 subtitle.text: countryName
+                subtitle.textSize: Label.Medium
                 subtitle.objectName: "defaultCountryNameText"
 
                 Label {

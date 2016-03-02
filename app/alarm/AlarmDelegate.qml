@@ -69,7 +69,9 @@ ListItem {
         title.text: Qt.formatTime(model.date) // Alarm time
         title.font.weight: Font.Normal
         subtitle.text: message // Alarm name
+        subtitle.textSize: Label.Medium
         summary.text:  alarmOccurrence
+        summary.textSize: Label.Medium
 
         Switch {
             id: alarmStatus

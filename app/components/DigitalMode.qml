@@ -48,6 +48,7 @@ ClockCircle {
 
         anchors.centerIn: parent
 
+        color: "#5D5D5D"
         font.pixelSize: maxTimeFontSize
 
         text: {
@@ -74,6 +75,7 @@ ClockCircle {
 
         font.pixelSize: maxPeriodFontSize
         visible: text !== ""
+        color: "#5D5D5D"
         text: {
             if (localizedTimeString.search(Qt.locale().amText) !== -1) {
                 // 12 hour format detected with the localised AM text

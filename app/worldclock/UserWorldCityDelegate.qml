@@ -56,7 +56,7 @@ ListItem {
             Label {
                 text: model.cityName
                 objectName: "userCityNameText"
-                textSize: Label.Small
+                textSize: Label.Medium
                 width: parent.width
                 elide: Text.ElideRight
                 color: "#5d5d5d"
@@ -65,7 +65,7 @@ ListItem {
             Label {
                 text: model.countryName
                 objectName: "userCountryNameText"
-                textSize: Label.Small
+                textSize: Label.Medium
                 width: parent.width
                 elide: Text.ElideRight
                 color: "#888888"
@@ -123,7 +123,7 @@ ListItem {
             anchors.verticalCenter: parent.verticalCenter
 
             color: "#5d5d5d"
-            textSize: Label.Small
+            textSize: Label.Medium
             wrapMode: Text.WordWrap
             maximumLineCount: 2
             elide: Text.ElideRight

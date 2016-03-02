@@ -281,6 +281,7 @@ Page {
 
                 title.text: i18n.tr("Repeat")
                 subtitle.text: _alarmRepeat.subText
+                subtitle.textSize: Label.Medium
             }
             onClicked: pageStack.push(Qt.resolvedUrl("AlarmRepeat.qml"),
                                       {"alarm": _alarm, "alarmUtils": alarmUtils})
@@ -296,6 +297,7 @@ Page {
 
                 title.text: i18n.tr("Label")
                 subtitle.text: _alarm.message
+                subtitle.textSize: Label.Medium
             }
             onClicked: pageStack.push(Qt.resolvedUrl("AlarmLabel.qml"),
                                       {"alarm": _alarm})
@@ -316,6 +318,7 @@ Page {
 
                 title.text: i18n.tr("Sound")
                 subtitle.text: _alarmSound.subText
+                subtitle.textSize: Label.Medium
             }
             onClicked: pageStack.push(Qt.resolvedUrl("AlarmSound.qml"), {
                                           "alarmSound": _alarmSound,
