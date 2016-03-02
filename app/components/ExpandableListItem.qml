@@ -33,46 +33,46 @@ ListItem {
     property Component delegate
     property alias titleText: expandableHeader.title
     property alias subText: expandableHeader.subtitle
-    property alias listViewHeight: expandableList.height
+    property alias listViewHeight: expandableListLoader.height
 
-    height: expandableHeader.height + divider.height
-    expansion.height: contentColumn.height
+    height: headerListItem.height
+    expansion.height: headerListItem.height + expandableListLoader.height
     onClicked: expansion.expanded = !expansion.expanded
 
-    Column {
-        id: contentColumn
+    ListItem {
+        id: headerListItem
+        height: expandableHeader.height + divider.height
 
-        anchors {
-            left: parent.left
-            right: parent.right
-        }
+        ListItemLayout {
+            id: expandableHeader
 
-        ListItem {
-            height: expandableHeader.height + divider.height
-            ListItemLayout {
-                id: expandableHeader
+            Icon {
+                id: arrow
 
-                Icon {
-                    id: arrow
+                width: units.gu(2)
+                height: width
+                SlotsLayout.position: SlotsLayout.Trailing
+                name: "go-down"
+                rotation: expandableListItem.expansion.expanded ? 180 : 0
 
-                    width: units.gu(2)
-                    height: width
-                    SlotsLayout.position: SlotsLayout.Trailing
-                    SlotsLayout.overrideVerticalPositioning: true
-                    anchors.verticalCenter: parent.verticalCenter
-                    name: "go-down"
-                    rotation: expandableListItem.expansion.expanded ? 180 : 0
-
-                    Behavior on rotation {
-                        UbuntuNumberAnimation {}
-                    }
+                Behavior on rotation {
+                    UbuntuNumberAnimation {}
                 }
             }
         }
+    }
 
+    Loader {
+        id: expandableListLoader
+        width: parent.width
+        anchors.top: headerListItem.bottom
+        sourceComponent: expandableListItem.expansion.expanded ? expandableListComponent : undefined
+    }
+
+    Component {
+        id: expandableListComponent
         ListView {
             id: expandableList
-            width: parent.width
             interactive: false
             model: expandableListItem.model
             delegate: expandableListItem.delegate
