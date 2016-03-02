@@ -78,8 +78,6 @@ ListItem {
 
             objectName: "listAlarmStatus" + index
             anchors.verticalCenter: parent.verticalCenter
-            SlotsLayout.position: SlotsLayout.Trailing
-            SlotsLayout.overrideVerticalPositioning: true
             checked: model.enabled && (model.status === Alarm.Ready)
             onCheckedChanged: {
                 if (checked !== model.enabled) {
