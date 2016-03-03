@@ -65,6 +65,7 @@ ListItem {
     Loader {
         id: expandableListLoader
         width: parent.width
+        asynchronous: true
         anchors.top: headerListItem.bottom
         sourceComponent: expandableListItem.expansion.expanded ? expandableListComponent : undefined
     }
