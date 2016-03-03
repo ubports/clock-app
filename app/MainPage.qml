@@ -113,6 +113,7 @@ Page {
         id: listview
         objectName: "pageListView"
 
+        // Property required only in autopilot to check if listitem has finished moving
         property alias isMoving: moveAnimation.running
 
         function moveToStopwatchPage() {
@@ -154,6 +155,7 @@ Page {
 
         model: navigationModel
         orientation: ListView.Horizontal
+        snapMode: ListView.SnapOneItem
         interactive: false
     }
 }

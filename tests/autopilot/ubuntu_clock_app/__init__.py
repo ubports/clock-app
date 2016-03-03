@@ -171,6 +171,10 @@ class StopwatchPage(Page):
         try:
             self._get_start_stop_button().text.wait_for("Resume")
             self._get_lap_clear_button().text.wait_for("Clear")
+            self._get_stopwatch_time().text.wait_for(
+                NotEquals("00:00:00"))
+            self._get_stopwatch_milliseconds().text.wait_for(
+                NotEquals("000"))
         except AssertionError:
             raise ClockEmulatorException(
                 'Incorrect stopwatch pause state')
@@ -188,6 +192,50 @@ class StopwatchPage(Page):
         except AssertionError:
             raise ClockEmulatorException(
                 'Invalid stopwatch clear state')
+
+    @autopilot_logging.log_action(logger.info)
+    def add_lap(self):
+        old_count = self._get_laps_count()
+        self._click_lap_clear_button()
+
+        try:
+            self._get_laps_list_view().count.wait_for(
+                Equals(old_count + 1))
+        except AssertionError:
+            raise ClockEmulatorException(
+                'Laps count did not increase on pressing the add lap \
+                button')
+
+    @autopilot_logging.log_action(logger.info)
+    def delete_lap(self, index):
+        old_count = self._get_laps_count()
+        laps_list = self._get_laps_list_view()
+
+        lap = laps_list.wait_select_single(
+            "LapsListDelegate", objectName="lapsListItem{}".format(index))
+        lap.click_remove_action()
+
+        try:
+            self._get_laps_list_view().count.wait_for(
+                Equals(old_count - 1))
+        except AssertionError:
+            raise ClockEmulatorException(
+                'Laps count did not decrease on deleting the lap')
+
+    def _get_laps_count(self):
+        return int(self._get_laps_list_view().count)
+
+    def _get_laps_list_view(self):
+        return self.wait_select_single("QQuickListView",
+                                       objectName="lapsList")
+
+    @autopilot_logging.log_action(logger.info)
+    def clean_up_test(self):
+        if self._get_start_stop_button().text == "Stop":
+            self._click_start_stop_button()
+
+        if self._get_lap_clear_button().text == "Clear":
+            self._click_lap_clear_button()
 
     def _get_stopwatch_time(self):
         """Return the stopwatch time object"""
@@ -222,6 +270,14 @@ class StopwatchPage(Page):
         """Press the lap/clear button"""
         lap_clear_button = self._get_lap_clear_button()
         self.pointing_device.click_object(lap_clear_button)
+
+
+class LapsListDelegate(UCListItem):
+    """Autopilot helper for laps list delegate"""
+
+    def click_remove_action(self):
+        return self.trigger_leading_action('swipeDeleteAction',
+                                           self.wait_until_destroyed)
 
 
 class ClockPage(Page):

@@ -140,6 +140,7 @@ Item {
         id: lapListViewComponent
         LapListView {
             id: lapListView
+            objectName: "lapsList"
             model: stopwatchEngine
         }
     }

@@ -20,11 +20,10 @@ import QtQuick 2.4
 import Ubuntu.Components 1.3
 import Stopwatch 1.0
 
-UbuntuListView {
+ListView {
     id: lapListView
 
     clip: true
-    currentIndex: -1
 
     StopwatchFormatTime {
         id: stopwatchFormatTime
@@ -75,18 +74,18 @@ UbuntuListView {
         }
     }
 
-    delegate: ListItem {
-        divider.visible: true
-        divider.anchors.leftMargin: units.gu(2)
-        divider.anchors.right: parent.right
-        divider.anchors.rightMargin: units.gu(2)
+    delegate: LapsListDelegate {
+        id: lapsListItem
+        objectName: "lapsListItem" + index
 
-        width: parent.width
-        anchors.horizontalCenter: parent.horizontalCenter
+        divider.anchors.leftMargin: units.gu(2)
+        divider.anchors.rightMargin: units.gu(2)
 
         leadingActions: ListItemActions {
             actions: [
                 Action {
+                    id: swipeDeleteAction
+                    objectName: "swipeDeleteAction"
                     iconName: "delete"
                     onTriggered: {
                         stopwatchEngine.removeLap(index)
@@ -95,48 +94,10 @@ UbuntuListView {
             ]
         }
 
-        Row {
-            anchors {
-                left: parent.left
-                right: parent.right
-                verticalCenter: parent.verticalCenter
-                leftMargin: units.gu(3)
-                rightMargin: units.gu(2)
-            }
-
-            Label {
-                text: "#%1".arg(Number(count - index).toLocaleString(Qt.locale(), "f", 0))
-                width: parent.width / 5
-                horizontalAlignment: Text.AlignLeft
-            }
-
-            Item {
-                width: 2* parent.width / 5
-                height: childrenRect.height
-                Row {
-                    anchors.horizontalCenter: parent.horizontalCenter
-                    Label {
-                        text: stopwatchFormatTime.lapTimeToString(model.laptime) + "."
-                    }
-                    Label {
-                        text: stopwatchFormatTime.millisToString(model.laptime)
-                    }
-                }
-            }
-
-            Item {
-                width: 2 * parent.width / 5
-                height: childrenRect.height
-                Row {
-                    anchors.right: parent.right
-                    Label {
-                        text: stopwatchFormatTime.lapTimeToString(model.totaltime) + "."
-                    }
-                    Label {
-                        text: stopwatchFormatTime.millisToString(model.totaltime)
-                    }
-                }
-            }
-        }
+        indexLabel: "#%1".arg(Number(count - index).toLocaleString(Qt.locale(), "f", 0))
+        lapTimeLabel: stopwatchFormatTime.lapTimeToString(model.laptime) + "."
+        lapMilliTimeLabel: stopwatchFormatTime.millisToString(model.laptime)
+        totalTimeLabel: stopwatchFormatTime.lapTimeToString(model.totaltime) + "."
+        totalMilliTimeLabel: stopwatchFormatTime.millisToString(model.totaltime)
     }
 }

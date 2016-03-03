@@ -41,10 +41,23 @@ class TestStopwatch(ClockAppTestCase):
 
         self.page = self.app.main_view.open_stopwatch()
 
-    def test_pressing_start_stop_button_starts_stops_stopwatch(self):
-        """Test to check if stopwatch can be started and stopped using
-        the UI buttons"""
+    def test_pressing_gui_button_starts_stops_clears_stopwatch(self):
+        """Test to check if stopwatch can be started, stopped and
+        cleared using the UI buttons"""
 
         self.page.start_stopwatch()
         self.page.stop_stopwatch()
         self.page.clear_stopwatch()
+
+    def test_pressing_lap_button_adds_laps(self):
+        """Test to check if stopwatch laps can be created"""
+        self.page.start_stopwatch()
+        self.page.add_lap()
+        self.page.clean_up_test()
+
+    def test_swipe_delete_button_deletes_laps(self):
+        """Test to check if laps can be deleted by swiping right"""
+        self.page.start_stopwatch()
+        self.page.add_lap()
+        self.page.delete_lap(0)
+        self.page.clean_up_test()
