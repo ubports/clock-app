@@ -4,7 +4,9 @@ ubuntu-clock-app (3.8) UNRELEASED; urgency=medium
   * Dynamic loading of ListView in ExpandableListItem
   * Removed all vertical positioning overrides of trailing icon in ListItem.
   * Fixed failing autopilot tests in trunk (LP: #1552489)
-  * Added Stopwatch autopilot tests (LP: #1490206)
+  * Added Stopwatch autopilot tests for adding/deleting laps, checking
+    start, pause and stop stopwatch states. (LP: #1490206)
+  * Moved laps list delegate into its own file
 
  -- Nekhelesh <krnekhelesh@nik90-laptop>  Wed, 02 Mar 2016 19:30:48 +0100
 
