@@ -2,6 +2,8 @@ ubuntu-clock-app (3.8) UNRELEASED; urgency=medium
 
   [ Nekhelesh Ramananthan ]
   * Dynamic loading of ListView in ExpandableListItem
+  * Removed all vertical positioning overrides of trailing icon in ListItem.
+  * Fixed failing autopilot tests in trunk (LP: #1552489)
 
  -- Nekhelesh <krnekhelesh@nik90-laptop>  Wed, 02 Mar 2016 19:30:48 +0100
 
