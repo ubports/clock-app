@@ -25,7 +25,6 @@ from testtools.matchers import Equals
 
 from ubuntu_clock_app.tests import ClockAppTestCase
 
-import time
 
 class TestStopwatch(ClockAppTestCase):
     """Tests the stopwatch feature"""
@@ -47,3 +46,5 @@ class TestStopwatch(ClockAppTestCase):
         the UI buttons"""
 
         self.page.start_stopwatch()
+        self.page.stop_stopwatch()
+        self.page.clear_stopwatch()
