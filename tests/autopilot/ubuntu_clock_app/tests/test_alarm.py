@@ -18,7 +18,7 @@
 
 from __future__ import absolute_import
 
-import datetime
+from datetime import datetime, timedelta
 
 from autopilot.matchers import Eventually
 from testtools.matchers import Equals
@@ -33,28 +33,28 @@ class TestAlarm(ClockAppTestCase):
             {'alarm_name': 'Random days Alarm Test',
              'days': ['Tuesday', 'Wednesday', 'Friday', 'Sunday'],
              'expected_recurrence': 'Tuesday, Wednesday, Friday, Sunday',
-             'expected_time': '00:55:00',
+             'expected_time': '06:10:00',
+             'enabled_value': True,
+             'test_sound_name': 'Bliss'
+             }),
+
+        ('weekday',
+            {'alarm_name': 'Weekday Alarm Test',
+             'days': ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+             'expected_recurrence': 'Weekdays',
+             'expected_time': '06:10:00',
+             'enabled_value': True,
+             'test_sound_name': 'Bliss'
+             }),
+
+        ('weekend',
+            {'alarm_name': 'Weekend Alarm Test',
+             'days': ['Saturday', 'Sunday'],
+             'expected_recurrence': 'Weekends',
+             'expected_time': '06:10:00',
              'enabled_value': True,
              'test_sound_name': 'Bliss'
              })
-
-        #('weekday',
-            #{'alarm_name': 'Weekday Alarm Test',
-             #'days': ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-             #'expected_recurrence': 'Weekdays',
-             #'expected_time': '06:10:00',
-             #'enabled_value': True,
-             #'test_sound_name': 'Bliss'
-             #}),
-
-        #('weekend',
-            #{'alarm_name': 'Weekend Alarm Test',
-             #'days': ['Saturday', 'Sunday'],
-             #'expected_recurrence': 'Weekends',
-             #'expected_time': '06:10:00',
-             #'enabled_value': True,
-             #'test_sound_name': 'Bliss'
-             #})
     ]
 
     def setUp(self):
@@ -76,13 +76,15 @@ class TestAlarm(ClockAppTestCase):
         and verifies if they are added to the alarm list in the alarm page.
 
         """
-        time_to_set = datetime.time(0, 5, 0)
+        time_to_set = datetime.now() + timedelta(minutes=5)
+        formatted_time_to_set = time_to_set.time()
+
         expected_alarm_info = (
             self.alarm_name, self.expected_recurrence, self.enabled_value,
-            self.expected_time)
+            formatted_time_to_set)
 
         self.page.add_single_alarm(
-            self.alarm_name, self.days, time_to_set, self.test_sound_name)
+            self.alarm_name, self.days, formatted_time_to_set, self.test_sound_name)
 
         alarmlistPage = self.app.main_view.get_AlarmList()
         saved_alarms = alarmlistPage.get_saved_alarms()
