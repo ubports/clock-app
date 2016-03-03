@@ -68,15 +68,20 @@ ListItem {
 
         title.text: Qt.formatTime(model.date) // Alarm time
         title.font.weight: Font.Normal
+        title.objectName: "alarmTime"
+
         subtitle.text: message // Alarm name
         subtitle.textSize: Label.Medium
+        subtitle.objectName: "alarmName"
+
         summary.text:  alarmOccurrence
         summary.textSize: Label.Medium
+        summary.objectName: "alarmOccurrence"
 
         Switch {
             id: alarmStatus
+            objectName: "listAlarmStatus"
 
-            objectName: "listAlarmStatus" + index
             anchors.verticalCenter: parent.verticalCenter
             checked: model.enabled && (model.status === Alarm.Ready)
             onCheckedChanged: {

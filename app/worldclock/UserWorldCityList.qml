@@ -65,6 +65,8 @@ ListView {
         leadingActions: ListItemActions {
             actions: [
                 Action {
+                    id: swipeDeleteAction
+                    objectName: "swipeDeleteAction"
                     iconName: "delete"
                     text: i18n.tr("Delete")
                     onTriggered: {
