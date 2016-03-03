@@ -32,28 +32,25 @@ class TestAlarm(ClockAppTestCase):
         ('random',
             {'alarm_name': 'Random days Alarm Test',
              'days': ['Tuesday', 'Wednesday', 'Friday', 'Sunday'],
-             'expected_recurrence': 'Tuesday, Wednesday, Friday, Sunday',
-             'expected_time': '06:10:00',
+             'expected_recurrence': 'Tue, Wed, Fri, Sun',
              'enabled_value': True,
-             'test_sound_name': 'Bliss'
+             'sound_name': 'Bliss'
              }),
 
         ('weekday',
             {'alarm_name': 'Weekday Alarm Test',
              'days': ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
              'expected_recurrence': 'Weekdays',
-             'expected_time': '06:10:00',
              'enabled_value': True,
-             'test_sound_name': 'Bliss'
+             'sound_name': 'Bliss'
              }),
 
         ('weekend',
             {'alarm_name': 'Weekend Alarm Test',
              'days': ['Saturday', 'Sunday'],
              'expected_recurrence': 'Weekends',
-             'expected_time': '06:10:00',
              'enabled_value': True,
-             'test_sound_name': 'Bliss'
+             'sound_name': 'Bliss'
              })
     ]
 
@@ -78,18 +75,19 @@ class TestAlarm(ClockAppTestCase):
         """
         time_to_set = datetime.now() + timedelta(minutes=5)
         formatted_time_to_set = time_to_set.time()
+        time_to_set_string = format(time_to_set, '%H:%M')
 
-        # expected_alarm_info = (
-        #    self.alarm_name, self.expected_recurrence, self.enabled_value,
-        #    formatted_time_to_set)
+        expected_alarm_info = (
+            self.alarm_name, self.expected_recurrence,
+            time_to_set_string, self.enabled_value)
 
         self.page.add_single_alarm(
             self.alarm_name, self.days, formatted_time_to_set,
-            self.test_sound_name)
+            self.sound_name)
 
         alarmlistPage = self.app.main_view.get_AlarmList()
-        # saved_alarms = alarmlistPage.get_saved_alarms()
-        # self.assertIn(expected_alarm_info, saved_alarms)
+        saved_alarms = alarmlistPage.get_saved_alarms()
+        self.assertIn(expected_alarm_info, saved_alarms)
 
         # TODO: Remove this statement once proper support for cleaning the
         # test alarm environment is added. Until then remove the alarm

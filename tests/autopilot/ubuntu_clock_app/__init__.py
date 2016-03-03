@@ -530,7 +530,7 @@ class AlarmList(object):
             enabled = alarm_item.wait_select_single(
                 ubuntuuitoolkit.CheckBox,
                 objectName='listAlarmStatus').checked
-            alarms.append((name, recurrence, enabled, time))
+            alarms.append((name, recurrence, time, enabled))
         return alarms
 
     @autopilot_logging.log_action(logger.info)
