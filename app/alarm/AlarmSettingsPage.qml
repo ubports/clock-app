@@ -202,14 +202,13 @@ Page {
                 height: timeAndDateLayout.height + divider.height
                 ListItemLayout {
                     id: timeAndDateLayout
+
                     title.text: i18n.tr("Change time and date")
                     subtitle.text: localTimeSource.localizedCurrentDateString + " " + localTimeSource.localizedCurrentTimeString
                     subtitle.textSize: Label.Medium
 
                     Icon {
                         SlotsLayout.position: SlotsLayout.Trailing
-                        SlotsLayout.overrideVerticalPositioning: true
-                        anchors.verticalCenter: parent.verticalCenter
                         width: units.gu(2)
                         height: width
                         name: "go-next"
