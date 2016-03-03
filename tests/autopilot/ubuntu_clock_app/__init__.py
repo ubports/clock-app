@@ -99,7 +99,7 @@ class Page(UbuntuUIToolkitCustomProxyObjectBase):
 
 class MainPage(Page):
     """Autopilot helper for the Main page."""
-    
+
     def reveal_bottom_edge_page(self):
         """Bring the bottom edge page to the screen"""
         try:
@@ -109,7 +109,7 @@ class MainPage(Page):
             start_x = (bottom_edge_hint.globalRect.x +
                        (bottom_edge_hint.globalRect.width * 0.5))
             start_y = (bottom_edge_hint.globalRect.y +
-                         (bottom_edge_hint.height * 0.5))
+                       (bottom_edge_hint.height * 0.5))
             stop_y = start_y - (self.height * 0.7)
             self.pointing_device.drag(start_x, start_y,
                                       start_x, stop_y, rate=2)
@@ -216,7 +216,7 @@ class AlarmPage(Page):
         alarm_sound_page = edit_alarm_page.open_alarmSound_page()
         alarm_sound_page.set_alarm_sound(test_sound_name)
         alarm_sound_page.click_save_button()
-        
+
         edit_alarm_page._check_sound_changed(test_sound_name)
         edit_alarm_page._click_save_alarm_button()
         self._confirm_alarm_creation(old_alarm_count)
@@ -258,7 +258,8 @@ class WorldCityList(Page):
 
         cityList.count.wait_for(GreaterThan(0))
 
-        #cityList.print_tree()  # Debug line
+        # Debug line
+        # cityList.print_tree()
 
         for index in range(int(cityList.count)):
             world_city_item = self.wait_select_single(
@@ -379,7 +380,8 @@ class AlarmRepeat(Page):
         self.unselect_selected_days()
         index = 0
 
-        #self.print_tree()  # Debug line
+        # Debug line
+        # self.print_tree()
 
         for index in range(len(days)):
             for index2 in range(self._get_num_of_days()):
@@ -406,7 +408,7 @@ class AlarmRepeat(Page):
         dayCheckbox = alarm_day_item.wait_select_single(
             'CheckBox', objectName='daySwitch')
         dayCheckbox.check()
-        
+
     def click_save_button(self):
         saveHeaderButton = self.wait_select_single(
             "UCAbstractButton", objectName="saveAction_button")
@@ -460,6 +462,7 @@ class AlarmSound(Page):
         saveHeaderButton = self.wait_select_single(
             "UCAbstractButton", objectName="saveAction_button")
         self.pointing_device.click_object(saveHeaderButton)
+
 
 class AlarmLabel(Page):
     """Autopilot helper for the  AlarmLabel page."""
