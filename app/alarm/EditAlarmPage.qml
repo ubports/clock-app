@@ -318,6 +318,7 @@ Page {
 
                 title.text: i18n.tr("Sound")
                 subtitle.text: _alarmSound.subText
+                subtitle.objectName: "soundName"
                 subtitle.textSize: Label.Medium
             }
             onClicked: pageStack.push(Qt.resolvedUrl("AlarmSound.qml"), {

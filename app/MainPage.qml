@@ -56,10 +56,12 @@ Page {
 
     AlarmBottomEdge {
         id: bottomEdge
+        objectName: "bottomEdge"
         height: parent.height
         pageStack: mainStack
         alarmModel: _mainPage.alarmModel
         hint.visible: bottomEdge.enabled && isClockPage
+        hint.objectName: "bottomEdgeHint"
         Component.onCompleted: hideBottomEdgeHintTimer.start()
     }
 

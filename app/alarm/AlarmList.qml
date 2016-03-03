@@ -57,6 +57,8 @@ UbuntuListView {
         leadingActions: ListItemActions {
             actions: [
                 Action {
+                    id: deleteAction
+                    objectName: "deleteAction"
                     iconName: "delete"
                     text: i18n.tr("Delete")
                     onTriggered: {

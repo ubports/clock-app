@@ -365,9 +365,9 @@ Page {
 
                     ListItemLayout {
                         id: _soundName
-                        objectName: "soundName" + index
 
                         title.text: fileBaseName
+                        title.objectName: "soundName"
 
                         Icon {
                             SlotsLayout.position: SlotsLayout.Trailing

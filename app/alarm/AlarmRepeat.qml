@@ -38,6 +38,8 @@ Page {
         title: i18n.tr("Repeat")
         leadingActionBar.actions: [
             Action {
+                id: backAction
+                objectName: "backAction"
                 iconName: "back"
                 onTriggered: {
                     // Restore alarm frequency and type if user presses the back button
@@ -154,13 +156,14 @@ Page {
 
                 ListItemLayout {
                     id: _alarmDay
-                    objectName: 'alarmDay' + index
 
                     title.text: day
+                    title.objectName: 'alarmDay'
 
                     CheckBox {
                         id: daySwitch
-                        objectName: 'daySwitch' + index
+                        objectName: 'daySwitch'
+
                         SlotsLayout.position: SlotsLayout.Trailing
                         checked: (alarm.daysOfWeek & flag) == flag
                                  && alarm.type === Alarm.Repeating

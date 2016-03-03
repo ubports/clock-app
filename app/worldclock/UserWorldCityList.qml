@@ -21,13 +21,12 @@ import WorldClock 1.0
 import U1db 1.0 as U1db
 import Ubuntu.Components 1.3
 
-UbuntuListView {
+ListView {
     id: worldCityColumn
     objectName: "userWorldCityRepeater"
 
     clip: true
     anchors.fill: parent
-    currentIndex: -1
 
     onFlickStarted:  {
         forceActiveFocus()
@@ -66,6 +65,8 @@ UbuntuListView {
         leadingActions: ListItemActions {
             actions: [
                 Action {
+                    id: swipeDeleteAction
+                    objectName: "swipeDeleteAction"
                     iconName: "delete"
                     text: i18n.tr("Delete")
                     onTriggered: {
