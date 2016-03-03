@@ -27,7 +27,6 @@ from ubuntu_clock_app.tests import ClockAppTestCase
 
 
 class TestClock(ClockAppTestCase):
-
     """Test the clock page features."""
 
     def setUp(self):

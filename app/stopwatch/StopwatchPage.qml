@@ -71,7 +71,8 @@ Item {
         }
 
         Button {
-            id: stopButton
+            id: startStopButton
+            objectName: "startAndStopButton"
 
             width: parent.width / 2 - units.gu(1)
             height: units.gu(4)
@@ -94,6 +95,7 @@ Item {
 
         Button {
             id: lapButton
+            objectName: "lapAndClearButton"
 
             text: stopwatchEngine.running ? i18n.tr("Lap") : i18n.tr("Clear")
             width: parent.width / 2 - units.gu(1)

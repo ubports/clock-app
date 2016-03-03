@@ -20,7 +20,8 @@ import logging
 
 from autopilot import logging as autopilot_logging
 from autopilot.introspection import dbus
-from testtools.matchers import GreaterThan
+from testtools.matchers import (Equals, GreaterThan)
+from autopilot.matchers import Eventually
 
 from ubuntuuitoolkit import (
     MainView, UbuntuUIToolkitCustomProxyObjectBase, pickers, UCListItem)
@@ -83,6 +84,17 @@ class MainView(MainView):
         return self.wait_select_single("WorldCityList",
                                        objectName="worldCityList")
 
+    @autopilot_logging.log_action(logger.info)
+    def open_stopwatch(self):
+        """Open the Stopwatch Page.
+        
+        :return: the Stopwatch Page.
+        
+        """
+        mainPage = self.get_main_page()
+        mainPage.press_header_navigation_button(
+            'stopwatchNavigationButton')
+        return self.wait_select_single(StopwatchPage)
 
 class Page(UbuntuUIToolkitCustomProxyObjectBase):
     """Autopilot helper for Pages."""
@@ -120,6 +132,37 @@ class MainPage(Page):
             logger.error('BottomEdge element not found.')
             raise
 
+    def press_header_navigation_button(self, button_object_name):
+        """Press the passed custom navigation button
+        
+        :param button_object_name: Object name of navigation button
+        
+        """
+        navigation_button = self.wait_select_single(
+            'ActionIcon', objectName=button_object_name)
+        self.pointing_device.click_object(navigation_button)
+        page_list_view = self.wait_select_single(
+            'QQuickListView', objectName="pageListView")
+        page_list_view.isMoving.wait_for(False)
+
+
+class StopwatchPage(Page):
+    """Autopilot helper for the Stopwatch page."""
+
+    @autopilot_logging.log_action(logger.info)
+    def start_stopwatch(self):
+        self._click_start_stop_button()
+
+    def _get_start_stop_button_state(self):
+        startStopButton = self.wait_select_single(
+            "Button", objectName="startStopButton")
+        return startStopButton.text
+
+    def _click_start_stop_button(self):
+        startStopButton = self.wait_select_single(
+            "Button", objectName="startAndStopButton")
+        startStopButton.visible.wait_for(True)
+        self.pointing_device.click_object(startStopButton)
 
 class ClockPage(Page):
     """Autopilot helper for the Clock page."""

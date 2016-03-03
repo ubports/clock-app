@@ -35,6 +35,7 @@ ClockCircle {
 
     Label {
         id: time
+        objectName: "stopwatchTime"
 
         text: stopwatchFormatTime.millisToTimeString(milliseconds, true)
         font.pixelSize: units.dp(36)
@@ -44,6 +45,7 @@ ClockCircle {
 
     Label {
         id: miliseconds
+        objectName: "stopwatchMilliseconds"
 
         text: stopwatchFormatTime.millisToString(milliseconds)
         textSize: Label.Large
