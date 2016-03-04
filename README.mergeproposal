@@ -29,5 +29,6 @@ Checklist
 The above checklist is more of a guideline to help clock app trunk stay buildable,
 stable and up to date.
 
-Note: As of vivid 15.04, Autopilot are broken in trunk. As such autopilot failures
-can be excused until they are fixed in trunk.
+Jenkins
+=======
+In addition to manual reviews, merge proposals are subject to being run in jenkins to ensure the application builds and any unit tests are successful. For more information on jenkins and how it works, see the [Core Apps Jenkins Wiki](https://wiki.ubuntu.com/Touch/CoreApps/Jenkins)
