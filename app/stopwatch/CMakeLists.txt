@@ -1,5 +1,6 @@
 set(STOPWATCH_QML_JS_FILES
     LapListView.qml
+    LapsListDelegate.qml
     StopwatchFace.qml
     StopwatchPage.qml
 )

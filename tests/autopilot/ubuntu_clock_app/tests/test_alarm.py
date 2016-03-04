@@ -22,12 +22,13 @@ from datetime import datetime, timedelta
 
 from autopilot.matchers import Eventually
 from testtools.matchers import Equals
+
 from ubuntu_clock_app.tests import ClockAppTestCase
 
 
 class TestAlarm(ClockAppTestCase):
-
     """Tests the alarm page features"""
+
     scenarios = [
         ('random',
             {'alarm_name': 'Random days Alarm Test',
@@ -55,7 +56,7 @@ class TestAlarm(ClockAppTestCase):
     ]
 
     def setUp(self):
-        """ This is needed to wait for the application to start.
+        """This is needed to wait for the application to start.
 
         In the testfarm, the application may take some time to show up.
 

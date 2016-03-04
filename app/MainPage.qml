@@ -107,13 +107,42 @@ Page {
         }
     }
 
+
+
     ListView {
         id: listview
+        objectName: "pageListView"
+
+        // Property required only in autopilot to check if listitem has finished moving
+        property alias isMoving: moveAnimation.running
+
+        function moveToStopwatchPage() {
+            moveAnimation.moveTo(listview.originX + listview.width)
+            listview.currentIndex = 1
+        }
+
+        function moveToClockPage() {
+            moveAnimation.moveTo(listview.originX)
+            listview.currentIndex = 0
+        }
+
+        UbuntuNumberAnimation {
+            id: moveAnimation
+            objectName: "pageListViewAnimation"
+
+            target: listview
+            property: "contentX"
+            function moveTo(contentX) {
+                from = listview.contentX
+                to = contentX
+                start()
+            }
+        }
 
         // Show the stopwatch page on app startup if it is running
         Component.onCompleted: {
             if (stopwatchPage.isRunning) {
-                positionViewAtIndex(1, ListView.SnapPosition)
+                moveToStopwatchPage()
             }
         }
 
@@ -128,7 +157,5 @@ Page {
         orientation: ListView.Horizontal
         snapMode: ListView.SnapOneItem
         interactive: false
-        highlightMoveDuration: UbuntuAnimation.BriskDuration
-        highlightRangeMode: ListView.StrictlyEnforceRange
     }
 }
