@@ -128,7 +128,7 @@ Page {
                         var url = String("%1%2%3")
                         .arg("http://geoname-lookup.ubuntu.com/?query=")
                         .arg(searchField.text)
-                        .arg("&app=com.ubuntu.clock&version=3.7.x")
+                        .arg("&app=com.ubuntu.clock&version=3.8.x")
                         console.log("Online URL: " + url)
                         if (jsonTimeZoneModelLoader.status === Loader.Ready) {
                             jsonTimeZoneModel.source = Qt.resolvedUrl(url)
@@ -330,12 +330,19 @@ Page {
         delegate: ListItem {
             divider.visible: false
             objectName: "defaultWorldCityItem" + index
+            height: worldCityListItemLayout.height
+
             ListItemLayout {
+                id: worldCityListItemLayout
+
                 title.text: cityName
                 title.objectName: "defaultCityNameText"
                 subtitle.text: countryName
                 subtitle.textSize: Label.Medium
                 subtitle.objectName: "defaultCountryNameText"
+
+                padding.top: units.gu(1.5)
+                padding.bottom: units.gu(1.5)
 
                 Label {
                     id: _localTime

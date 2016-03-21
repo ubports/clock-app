@@ -30,7 +30,7 @@ AbstractButton {
     Rectangle {
         visible: abstractButton.pressed
         anchors.fill: parent
-        color: "#CDCDCD" // #TODO: Replace with UbuntuColors.Silk after OTA-10
+        color: UbuntuColors.silk
     }
 
     Icon {
@@ -38,6 +38,6 @@ AbstractButton {
         width: units.gu(2)
         height: width
         anchors.centerIn: parent
-        color: "#5d5d5d"
+        color: UbuntuColors.slate
     }
 }

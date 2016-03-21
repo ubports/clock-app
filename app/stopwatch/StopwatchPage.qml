@@ -101,7 +101,7 @@ Item {
             width: parent.width / 2 - units.gu(1)
             height: units.gu(4)
             x: stopwatchEngine.previousTimeOfStopwatch !== 0 || stopwatchEngine.running ? parent.width - width : parent.width
-            color: "#f7f7f7"
+            color: UbuntuColors.porcelain
             visible:  stopwatchEngine.previousTimeOfStopwatch !== 0 || stopwatchEngine.running
             onClicked: {
                 if (stopwatchEngine.running) {
