@@ -29,7 +29,7 @@ Circle {
 
     property bool isFoldVisible: true
 
-    color: "#f7f7f7"
+    color: UbuntuColors.porcelain
     borderWidth: units.dp(1)
     borderColorTop: "#00000000"
     borderColorBottom: "#6E6E6E"
@@ -42,10 +42,10 @@ Circle {
         anchors.margins: borderWidth
         radius: height / 2
         gradient: Gradient {
-            GradientStop { position: 0.0; color: "#f7f7f7" }
-            GradientStop { position: 0.5; color: "#f7f7f7" }
-            GradientStop { position: 0.5; color: "#fdfdfd" }
-            GradientStop { position: 1.0; color: "#fdfdfd" }
+            GradientStop { position: 0.0; color: UbuntuColors.porcelain }
+            GradientStop { position: 0.5; color: UbuntuColors.porcelain }
+            GradientStop { position: 0.5; color: "#FDFDFD" }
+            GradientStop { position: 1.0; color: "#FDFDFD" }
         }
     }
 }

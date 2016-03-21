@@ -83,7 +83,7 @@ Item {
         id: magnified
 
         aspect: UbuntuShape.Flat
-        backgroundColor: "#3B3B3B" // #TODO: Replace with UbuntuColors.Inkstone after OTA-10
+        backgroundColor: UbuntuColors.inkstone
         radius: "large"
         height: pinSize * 2
         width: height
@@ -122,7 +122,7 @@ Item {
         height: pinSize
         width: height
         aspect: UbuntuShape.Flat
-        backgroundColor: "#3B3B3B" // #TODO: Replace with UbuntuColors.Inkstone after OTA-10
+        backgroundColor: UbuntuColors.inkstone
         opacity: rail.opacity
         x: rail.x
         y: {
@@ -183,7 +183,7 @@ Item {
                 horizontalAlignment: Text.AlignHCenter
                 text: modelData
                 textSize: Label.XSmall
-                color: cursor.y === y ? "white" : "#3B3B3B" // #TODO: Replace with UbuntuColors.Inkstone after OTA-10
+                color: cursor.y === y ? "white" : UbuntuColors.inkstone
                 opacity: !internal.modelDirty && Sections.contains(text) ? 1.0 : 0.5
             }
         }

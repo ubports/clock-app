@@ -208,7 +208,7 @@ Item {
         text: clock.localizedDateString
         textSize: Label.Medium
         opacity: 0
-        color: "#5D5D5D"
+        color: UbuntuColors.slate
     }
 
     Row {
@@ -236,7 +236,7 @@ Item {
             id: location
             objectName: "location"
 
-            color: "#5D5D5D"
+            color: UbuntuColors.slate
             anchors.verticalCenter: locationIcon.verticalCenter
 
             text: {
@@ -257,7 +257,7 @@ Item {
         id: divider
         width: parent.width
         height: 1
-        color: "#cdcdcd"
+        color: UbuntuColors.silk
         anchors {
             top: locationRow.bottom
             topMargin: units.gu(3)

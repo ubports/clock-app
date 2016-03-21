@@ -35,7 +35,7 @@ Item {
             objectName: "clockNavigationButton"
 
             icon.name: "clock"
-            icon.color: listview.currentIndex === 0 ? "#19b6ee" : "#5d5d5d" // #TODO: Replace with UbuntuColors.Blue and UbuntuColors.Slate after OTA-10
+            icon.color: listview.currentIndex === 0 ? UbuntuColors.blue : UbuntuColors.slate
             onClicked: listview.moveToClockPage()
         }
         
@@ -44,7 +44,7 @@ Item {
             objectName: "stopwatchNavigationButton"
 
             icon.name: "stopwatch"
-            icon.color: listview.currentIndex === 1 ? "#19b6ee" : "#5d5d5d" // #TODO: Replace with UbuntuColors.Blue and UbuntuColors.Slate after OTA-10
+            icon.color: listview.currentIndex === 1 ? UbuntuColors.blue : UbuntuColors.slate
             onClicked:  listview.moveToStopwatchPage()
         }
     }
