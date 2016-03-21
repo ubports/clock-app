@@ -330,12 +330,19 @@ Page {
         delegate: ListItem {
             divider.visible: false
             objectName: "defaultWorldCityItem" + index
+            height: worldCityListItemLayout.height
+
             ListItemLayout {
+                id: worldCityListItemLayout
+
                 title.text: cityName
                 title.objectName: "defaultCityNameText"
                 subtitle.text: countryName
                 subtitle.textSize: Label.Medium
                 subtitle.objectName: "defaultCountryNameText"
+
+                padding.top: units.gu(1.5)
+                padding.bottom: units.gu(1.5)
 
                 Label {
                     id: _localTime
