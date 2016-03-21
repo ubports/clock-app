@@ -9,6 +9,8 @@ ubuntu-clock-app (3.8) UNRELEASED; urgency=medium
   * Moved laps list delegate into its own file
   * Fixed world city listitem vertical centering.
   * Replaced hex color codes with UbuntuColors counterparts.
+  * Updated framework to ubuntu-sdk-15.04.4 and incremented base version to 3.8
+    to prevent clock app release to OTA-9.1 users.
 
   [Ken VanDine]
   * Bump Ubuntu.Content import to 1.3 to fix theme issue (LP: #1554621)

@@ -1,7 +1,7 @@
 {
     "name": "com.ubuntu.clock",
     "description": "A sophisticated clock app for Ubuntu Touch",
-    "framework": "ubuntu-sdk-15.04.3",
+    "framework": "ubuntu-sdk-15.04.4",
     "architecture": "@CLICK_ARCH@",
     "title": "Clock",
     "icon": "clock@30.png",
@@ -12,7 +12,7 @@
             "urls": "share/url-dispatcher/urls/com.ubuntu.clock_clock.url-dispatcher"
         }
     },
-    "version": "3.7.@BZR_REVNO@",
+    "version": "3.8.@BZR_REVNO@",
     "maintainer": "Ubuntu App Cats <ubuntu-touch-coreapps@lists.launchpad.net>",
     "x-test": {
         "autopilot": {
