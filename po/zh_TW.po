@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2016-02-29 21:58+0100\n"
-"PO-Revision-Date: 2016-05-17 03:29+0000\n"
+"PO-Revision-Date: 2016-06-06 04:20+0000\n"
 "Last-Translator: Po-Hsu Lin <po-hsu.lin@canonical.com>\n"
 "Language-Team: Chinese (Traditional) <zh_TW@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Launchpad-Export-Date: 2016-05-18 05:47+0000\n"
-"X-Generator: Launchpad (build 18025)\n"
+"X-Launchpad-Export-Date: 2016-06-06 05:19+0000\n"
+"X-Generator: Launchpad (build 18086)\n"
 
 #: ../app/alarm/AlarmLabel.qml:35 ../app/alarm/AlarmLabel.qml:79
 #: ../app/alarm/EditAlarmPage.qml:297
@@ -170,11 +170,11 @@ msgstr "正在取得位置..."
 #. translation length to a few characters.
 #: ../app/stopwatch/LapListView.qml:49 ../app/stopwatch/StopwatchPage.qml:98
 msgid "Lap"
-msgstr ""
+msgstr "圈"
 
 #: ../app/stopwatch/LapListView.qml:58
 msgid "Lap Time"
-msgstr ""
+msgstr "單圈時間"
 
 #: ../app/stopwatch/LapListView.qml:65
 msgid "Total Time"
