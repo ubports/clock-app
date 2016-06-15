@@ -8,20 +8,20 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2016-02-29 21:58+0100\n"
-"PO-Revision-Date: 2016-01-28 22:16+0000\n"
+"PO-Revision-Date: 2016-06-14 10:19+0000\n"
 "Last-Translator: Angutivik Casper Rúnur Tausen Hansen <Unknown>\n"
 "Language-Team: Faroese <fo@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2016-03-29 05:43+0000\n"
-"X-Generator: Launchpad (build 17967)\n"
+"X-Launchpad-Export-Date: 2016-06-15 06:21+0000\n"
+"X-Generator: Launchpad (build 18097)\n"
 
 #: ../app/alarm/AlarmLabel.qml:35 ../app/alarm/AlarmLabel.qml:79
 #: ../app/alarm/EditAlarmPage.qml:297
 msgid "Label"
-msgstr ""
+msgstr "Spjaldur"
 
 #: ../app/alarm/AlarmList.qml:61 ../app/alarm/AlarmPage.qml:103
 #: ../app/worldclock/UserWorldCityList.qml:70
@@ -30,12 +30,12 @@ msgstr "Strika"
 
 #: ../app/alarm/AlarmPage.qml:38 ../app/components/AlarmBottomEdge.qml:38
 msgid "Alarms"
-msgstr ""
+msgstr "Vekjarar"
 
 #: ../app/alarm/AlarmPage.qml:52 ../app/alarm/EditAlarmPage.qml:43
 #: ../app/alarm/EditAlarmPage.qml:188
 msgid "Alarm"
-msgstr ""
+msgstr "Vekjari"
 
 #: ../app/alarm/AlarmPage.qml:66 ../app/worldclock/WorldCityList.qml:83
 msgid "Back"
@@ -51,11 +51,11 @@ msgstr "Vel alt"
 
 #: ../app/alarm/AlarmPage.qml:159
 msgid "No saved alarms"
-msgstr ""
+msgstr "Eingin goymdur vekjari"
 
 #: ../app/alarm/AlarmPage.qml:160
 msgid "Tap the + icon to add an alarm"
-msgstr ""
+msgstr "Fyri at gera vekjara, pikka + teknið"
 
 #: ../app/alarm/AlarmRepeat.qml:38 ../app/alarm/EditAlarmPage.qml:282
 msgid "Repeat"
@@ -81,23 +81,23 @@ msgstr[1] "%1 minuttir"
 
 #: ../app/alarm/AlarmSettingsPage.qml:99
 msgid "Alarm volume"
-msgstr ""
+msgstr "Vekjaraljóðstyrki"
 
 #: ../app/alarm/AlarmSettingsPage.qml:120
 msgid "Alarm stops after"
-msgstr ""
+msgstr "Vekjarin støðgar eftir"
 
 #: ../app/alarm/AlarmSettingsPage.qml:149
 msgid "Snooze for"
-msgstr ""
+msgstr "Slanga í"
 
 #: ../app/alarm/AlarmSettingsPage.qml:178
 msgid "Vibration"
-msgstr ""
+msgstr "Titran"
 
 #: ../app/alarm/AlarmSettingsPage.qml:203
 msgid "Change time and date"
-msgstr ""
+msgstr "Broyt tíð og dato"
 
 #: ../app/alarm/AlarmSound.qml:60 ../app/alarm/EditAlarmPage.qml:317
 msgid "Sound"
@@ -105,15 +105,15 @@ msgstr "Ljóð"
 
 #: ../app/alarm/AlarmSound.qml:190
 msgid "Custom alarm sounds"
-msgstr ""
+msgstr "Sjálvvald vekjaraljóð"
 
 #: ../app/alarm/AlarmSound.qml:205
 msgid "Add sound"
-msgstr ""
+msgstr "Tilset ljóð"
 
 #: ../app/alarm/AlarmSound.qml:341
 msgid "Default alarm sounds"
-msgstr ""
+msgstr "Sjálvgoldin vekjaraljóð"
 
 #: ../app/alarm/AlarmUtils.qml:31
 msgid "Never"
@@ -148,38 +148,38 @@ msgstr "um %1m"
 
 #: ../app/alarm/EditAlarmPage.qml:37
 msgid "New alarm"
-msgstr ""
+msgstr "Nýggjur vekjari"
 
 #: ../app/alarm/EditAlarmPage.qml:37
 msgid "Edit alarm"
-msgstr ""
+msgstr "Broyt vekjaran"
 
 #: ../app/alarm/EditAlarmPage.qml:339
 msgid "Delete alarm"
-msgstr ""
+msgstr "Strika vekjaran"
 
 #. TRANSLATORS: This is the page title. Please keep the translation length to 3 words if possible
 #: ../app/alarm/SoundPeerPicker.qml:27
 msgid "Add sound from"
-msgstr ""
+msgstr "Tilset ljóð frá"
 
 #: ../app/clock/ClockPage.qml:244
 msgid "Retrieving location..."
-msgstr ""
+msgstr "Heintar stað..."
 
 #. TRANSLATORS: This refers to the stopwatch lap and is shown as a header where space is limited. Constrain
 #. translation length to a few characters.
 #: ../app/stopwatch/LapListView.qml:49 ../app/stopwatch/StopwatchPage.qml:98
 msgid "Lap"
-msgstr ""
+msgstr "Runda"
 
 #: ../app/stopwatch/LapListView.qml:58
 msgid "Lap Time"
-msgstr ""
+msgstr "Rundutíð"
 
 #: ../app/stopwatch/LapListView.qml:65
 msgid "Total Time"
-msgstr ""
+msgstr "Samanlagt tíð"
 
 #: ../app/stopwatch/StopwatchPage.qml:80
 msgid "Stop"
@@ -199,7 +199,7 @@ msgstr "Strika"
 
 #: ../app/worldclock/AddWorldCityButton.qml:30
 msgid "Add"
-msgstr ""
+msgstr "Legg til"
 
 #: ../app/worldclock/AddWorldCityButton.qml:60
 #: ../app/worldclock/WorldCityList.qml:63
@@ -240,7 +240,7 @@ msgstr "%1m %2"
 
 #: ../app/worldclock/UserWorldCityDelegate.qml:170
 msgid "Same time"
-msgstr ""
+msgstr "Somu tíð"
 
 #: ../app/worldclock/WorldCityList.qml:56
 msgid "Select a city"
@@ -264,7 +264,7 @@ msgstr "Kundi ikki sambinda."
 
 #: ../app/worldclock/WorldCityList.qml:228
 msgid "Please check your network connection and try again"
-msgstr ""
+msgstr "Vinaliga kanna netsamband títt og royn aftur"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:48
 msgid "Abidjan"
@@ -393,7 +393,7 @@ msgstr "Amman"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:55
 msgid "Jordan"
-msgstr ""
+msgstr "Jordan"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:56
 msgid "Amsterdam"
@@ -468,7 +468,7 @@ msgstr "Grikkaland"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:67
 msgid "Atlanta"
-msgstr ""
+msgstr "Atlanta"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:68
 msgid "Auckland"
@@ -476,15 +476,15 @@ msgstr ""
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:68
 msgid "New Zealand"
-msgstr ""
+msgstr "Ný Sæland"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:69
 msgid "Austin"
-msgstr ""
+msgstr "Austin"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:71
 msgid "Baghdad"
-msgstr ""
+msgstr "Bagdad"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:71
 msgid "Iraq"
