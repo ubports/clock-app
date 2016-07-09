@@ -292,7 +292,7 @@ void StaticTimeZoneModel::loadDefaultCityList()
     addCity("Samoa", _("Samoa"), "Pacific/Apia", _("Samoa"));
     addCity("San Antonio", _("San Antonio"), "America/Chicago", _("United States"));
     addCity("San Diego", _("San Diego"), "America/Los_Angeles", _("United States"));
-    addCity("San Francisco", _("San Francisco"), "America/Costa_Rica", _("United States"));
+    addCity("San Francisco", _("San Francisco"), "America/Los_Angeles", _("United States"));
     addCity("San José", _("San José"), "America/Costa_Rica", _("Costa Rica"));
     addCity("San Juan", _("San Juan"), "America/Puerto_Rico", _("Puerto Rico"));
     addCity("San Marino", _("San Marino"), "Europe/San_Marino", _("San Marino"));
