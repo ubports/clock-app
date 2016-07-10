@@ -23,7 +23,7 @@ Page {
     id: alarmPage
     objectName: 'AlarmPage'
 
-    header: standardHeader
+    header: alarmListView.ViewItems.selectMode ? selectionHeader : standardHeader
 
     property var model: null
     property var pageStack: null
@@ -59,13 +59,11 @@ Page {
 
     PageHeader {
         id: selectionHeader
-        visible: alarmListView.ViewItems.selectMode
         leadingActionBar.actions: [
             Action {
                 iconName: "back"
                 text: i18n.tr("Back")
                 onTriggered: {
-                    alarmPage.header = standardHeader
                     alarmListView.ViewItems.selectMode = false
                 }
             }
