@@ -6,7 +6,7 @@ confinement: strict
 
 apps:
   ubuntu-clock-app:
-    command: desktop-launch $SNAP/usr/lib/*/qt5/bin/qmlscene $SNAP/usr/share/ubuntu-clock-app/ubuntu-clock-app.qml
+    command: clock
     plugs: [unity7,opengl]
 
 parts:
@@ -39,8 +39,11 @@ parts:
       - ubuntu-sdk-libs
       - qtubuntu-desktop
       - qml-module-qtsysteminfo
-      - qtchooser
     snap:
       - -usr/share/doc
       - -usr/include
-    after: [desktop/qt5]
+  environment:
+    plugin: copy
+    files:
+      clock.wrapper: bin/clock
+      snappy-qt5.conf: etc/xdg/qtchooser/snappy-qt5.conf
