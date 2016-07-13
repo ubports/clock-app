@@ -33,7 +33,7 @@ Page {
     }
 
     Connections {
-        target: clockApp
+        target: rootWindow
         onApplicationStateChanged: {
             localTimeSource.update()
         }

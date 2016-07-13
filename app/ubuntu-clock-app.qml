@@ -27,6 +27,9 @@ import QtQuick.Window 2.2
 Window {
     id: rootWindow
 
+    // Property to store the state of an application (active or suspended)
+    property bool applicationState: Qt.application.active
+
     /*
   The width and height defined below are the same dimension used by the
   designers in the clock visual spec.
@@ -36,11 +39,22 @@ Window {
     minimumHeight: units.gu(70)
     maximumWidth: units.gu(50)
 
+    onApplicationStateChanged: {
+        localTimeSource.update()
+        /*
+     Reload the alarm model when the clock app gains focus to refresh
+     the alarm page UI in the case of alarm notifications.
+    */
+        if(applicationState && !mainPage.isColdStart && (mainStack.currentPage.isMainPage
+                                                         || mainStack.currentPage.isAlarmPage)) {
+            console.log("[LOG]: Alarm Database unloaded")
+            alarmModelLoader.source = ""
+            alarmModelLoader.source = Qt.resolvedUrl("alarm/AlarmModelComponent.qml")
+        }
+    }
+
     MainView {
         id: clockApp
-
-        // Property to store the state of an application (active or suspended)
-        property bool applicationState: Qt.application.active
 
         // objectName for functional testing purposes (autopilot-qt5)
         objectName: "clockMainView"
@@ -86,20 +100,6 @@ Window {
             id: alarmSoundHelper
             // Create CustomSounds directory if it does not exist on app startup
             Component.onCompleted: createCustomAlarmSoundDirectory()
-        }
-
-        onApplicationStateChanged: {
-            localTimeSource.update()
-            /*
-         Reload the alarm model when the clock app gains focus to refresh
-         the alarm page UI in the case of alarm notifications.
-        */
-            if(applicationState && !mainPage.isColdStart && (mainStack.currentPage.isMainPage
-                                                             || mainStack.currentPage.isAlarmPage)) {
-                console.log("[LOG]: Alarm Database unloaded")
-                alarmModelLoader.source = ""
-                alarmModelLoader.source = Qt.resolvedUrl("alarm/AlarmModelComponent.qml")
-            }
         }
 
         PageStack {
