@@ -1,2 +1,6 @@
 *.user
 builddir
+stage
+prime
+parts
+ubuntu-clock-app_*.snap
