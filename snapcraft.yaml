@@ -1,5 +1,5 @@
 name: ubuntu-clock-app
-version: 3.6+snap2
+version: "3.8.480"
 summary: Ubuntu Clock app
 description: The clock app for all Ubuntu devices
 confinement: strict
@@ -7,7 +7,7 @@ confinement: strict
 apps:
   ubuntu-clock-app:
     command: clock
-    plugs: [unity7,opengl]
+    plugs: [unity7, opengl, network, network-bind]
 
 parts:
   clock:
