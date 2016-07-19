@@ -139,7 +139,7 @@ Page {
     }
 
     Connections {
-        target: clockApp
+        target: rootWindow
         onApplicationStateChanged: {
             previewAlarmSound.stop()
         }

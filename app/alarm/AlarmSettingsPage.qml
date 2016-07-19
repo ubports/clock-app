@@ -33,7 +33,7 @@ Page {
     }
 
     Connections {
-        target: clockApp
+        target: rootWindow
         onApplicationStateChanged: {
             localTimeSource.update()
         }
@@ -100,6 +100,7 @@ Page {
                         }
 
                         Slider {
+                            width: Math.min(parent.width, units.gu(40))
                             minimumValue: 1
                             maximumValue: 100
                             live: true

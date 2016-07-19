@@ -144,7 +144,7 @@ Page {
     }
 
     Connections {
-        target: clockApp
+        target: rootWindow
         onApplicationStateChanged: {
             /*
               Update world city list immediately when the clock app is brought

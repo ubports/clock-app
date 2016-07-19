@@ -119,7 +119,7 @@ Item {
     }
 
     Connections {
-        target: clockApp
+        target: rootWindow
         onApplicationStateChanged: {
             /*
              If Clock App is brought from background after more than 30 mins,
