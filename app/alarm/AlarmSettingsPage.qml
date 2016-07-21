@@ -134,6 +134,7 @@ Page {
                             height: width
                             name: "tick"
                             visible: alarmSettings.duration === duration
+                            asynchronous: true
                         }
                     }
 
@@ -164,6 +165,7 @@ Page {
                             height: width
                             name: "tick"
                             visible: alarmSettings.snoozeDuration === duration
+                            asynchronous: true
                         }
                     }
 
@@ -213,6 +215,7 @@ Page {
                         width: units.gu(2)
                         height: width
                         name: "go-next"
+                        asynchronous: true
                     }
                 }
 

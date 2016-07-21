@@ -52,6 +52,7 @@ AbstractButton {
             name: "add"
             height: units.gu(2)
             width: height
+            asynchronous: true
         }
     }
 

@@ -294,6 +294,7 @@ Page {
                             name: "media-playback-pause"
                             visible: _customAlarmSoundDelegate.isChecked &&
                                      previewAlarmSound.playbackState === Audio.PlayingState
+                            asynchronous: true
                         }
 
                         Icon {
@@ -303,6 +304,7 @@ Page {
                             width: units.gu(2)
                             height: width
                             name: "tick"
+                            asynchronous: true
                         }
                     }
 
@@ -376,6 +378,7 @@ Page {
                             name: "media-playback-pause"
                             visible: _alarmSoundDelegate.isChecked &&
                                      previewAlarmSound.playbackState === Audio.PlayingState
+                            asynchronous: true
                         }
 
                         Icon {
@@ -385,6 +388,7 @@ Page {
                             height: width
                             name: "tick"
                             anchors.verticalCenter: parent.verticalCenter
+                            asynchronous: true
                         }
                     }
 

@@ -230,6 +230,7 @@ Item {
             name: "location"
             height: units.gu(2.2)
             color: location.color
+            asynchronous: true
         }
 
         Label {

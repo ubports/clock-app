@@ -54,6 +54,7 @@ ListItem {
                 SlotsLayout.position: SlotsLayout.Trailing
                 name: "go-down"
                 rotation: expandableListItem.expansion.expanded ? 180 : 0
+                asynchronous: true
 
                 Behavior on rotation {
                     UbuntuNumberAnimation {}

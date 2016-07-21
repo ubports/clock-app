@@ -40,6 +40,7 @@ Item {
         height: units.gu(10)
         width: height
         color: "#BBBBBB"
+        asynchronous: true
     }
 
     Label {
