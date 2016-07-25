@@ -61,6 +61,16 @@ Item {
         otherElementsStartUpAnimation.start()
     }
 
+    // FIXME: workaround necessary because PositionSource blocks for over 1000ms
+    // when becoming active the first time. In order not to slowdown startup we
+    // delay requesting the location until the clock app is loaded.
+    //
+    // Ref.: https://bugs.launchpad.net/platform-api/+bug/1606156
+    Connections {
+        target: otherElementsStartUpAnimation
+        onStopped: geoposition.active = true
+    }
+
     PositionSource {
         id: geoposition
 
@@ -71,7 +81,7 @@ Item {
 
         readonly property real userLatitude: position.coordinate.latitude
 
-        active: true
+        active: false
         updateInterval: 1000
 
         onSourceErrorChanged: {
@@ -230,6 +240,7 @@ Item {
             name: "location"
             height: units.gu(2.2)
             color: location.color
+            asynchronous: true
         }
 
         Label {

@@ -51,18 +51,21 @@ Page {
     Timer {
         id: hideBottomEdgeHintTimer
         interval: 3000
-        onTriggered: bottomEdge.hint.status = BottomEdgeHint.Inactive
+        onTriggered: bottomEdgeLoader.item.hint.status = BottomEdgeHint.Inactive
     }
 
-    AlarmBottomEdge {
-        id: bottomEdge
-        objectName: "bottomEdge"
-        height: parent.height
-        pageStack: mainStack
-        alarmModel: _mainPage.alarmModel
-        hint.visible: bottomEdge.enabled && isClockPage
-        hint.objectName: "bottomEdgeHint"
-        Component.onCompleted: hideBottomEdgeHintTimer.start()
+    Loader {
+        id: bottomEdgeLoader
+        asynchronous: true
+        onLoaded: hideBottomEdgeHintTimer.start()
+        Component.onCompleted: setSource("components/AlarmBottomEdge.qml", {
+                                             "objectName": "bottomEdge",
+                                             "parent": _mainPage,
+                                             "pageStack": mainStack,
+                                             "alarmModel": Qt.binding( function () { return  _mainPage.alarmModel } ),
+                                             "hint.visible": Qt.binding( function () { return _mainPage.isClockPage } ),
+                                             "hint.objectName": "bottomEdgeHint"
+                                         })
     }
 
     AlarmUtils {

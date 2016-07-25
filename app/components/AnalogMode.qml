@@ -46,6 +46,7 @@ ClockCircle {
         anchors.verticalCenterOffset: showSeconds ? units.dp(2) : units.dp(1)
 
         source: "../graphics/Hour_Hand_Shadow.png"
+        asynchronous: true
         fillMode: Image.PreserveAspectFit
         // notLocalizedDateTimeString.split(":")[3] is hours
         // notLocalizedDateTimeString.split(":")[4] is minutes
@@ -64,6 +65,7 @@ ClockCircle {
 
         smooth: true
         source: "../graphics/Hour_Hand.png"
+        asynchronous: true
         fillMode: Image.PreserveAspectFit
         // notLocalizedDateTimeString.split(":")[3] is hours
         // notLocalizedDateTimeString.split(":")[4] is minutes
@@ -81,6 +83,7 @@ ClockCircle {
         anchors.verticalCenterOffset: showSeconds ? units.dp(2) : units.dp(1)
 
         source: "../graphics/Minute_Hand_Shadow.png"
+        asynchronous: true
         fillMode: Image.PreserveAspectFit
         // notLocalizedDateTimeString.split(":")[4] is minutes
         // notLocalizedDateTimeString.split(":")[5] is seconds
@@ -98,6 +101,7 @@ ClockCircle {
 
         smooth: true
         source: "../graphics/Minute_Hand.png"
+        asynchronous: true
         fillMode: Image.PreserveAspectFit
         // notLocalizedDateTimeString.split(":")[4] is minutes
         // notLocalizedDateTimeString.split(":")[5] is seconds
@@ -116,6 +120,7 @@ ClockCircle {
 
         visible: showSeconds
         source: "../graphics/Second_Hand_Shadow.png"
+        asynchronous: true
         fillMode: Image.PreserveAspectFit
         // notLocalizedDateTimeString.split(":")[5] is seconds
         // We need to calculate degree number for rotation (0 degrees means no rotation).
@@ -133,6 +138,7 @@ ClockCircle {
         smooth: true
         visible: showSeconds
         source: "../graphics/Second_Hand.png"
+        asynchronous: true
         fillMode: Image.PreserveAspectFit
         // notLocalizedDateTimeString.split(":")[5] is seconds
         // We need to calculate degree number for rotation (0 degrees means no rotation).
@@ -150,6 +156,7 @@ ClockCircle {
 
         fillMode: Image.PreserveAspectFit
         source: "../graphics/Knob.png"
+        asynchronous: true
     }
 
     SequentialAnimation {
