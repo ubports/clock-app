@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2016-02-29 21:58+0100\n"
-"PO-Revision-Date: 2016-09-14 15:38+0000\n"
+"PO-Revision-Date: 2016-09-16 16:22+0000\n"
 "Last-Translator: Ubuntu-QC-1 <Unknown>\n"
 "Language-Team: French <fr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Launchpad-Export-Date: 2016-09-15 06:20+0000\n"
+"X-Launchpad-Export-Date: 2016-09-17 07:16+0000\n"
 "X-Generator: Launchpad (build 18186)\n"
 
 #: ../app/alarm/AlarmLabel.qml:35 ../app/alarm/AlarmLabel.qml:79
@@ -89,7 +89,7 @@ msgstr "L'alarme s'arrête après"
 
 #: ../app/alarm/AlarmSettingsPage.qml:149
 msgid "Snooze for"
-msgstr "Répéter dans"
+msgstr "Rappel dans"
 
 #: ../app/alarm/AlarmSettingsPage.qml:178
 msgid "Vibration"
@@ -125,7 +125,7 @@ msgstr "En semaine"
 
 #: ../app/alarm/AlarmUtils.qml:41
 msgid "Weekends"
-msgstr "Les weekends"
+msgstr "Les fins de semaine"
 
 #: ../app/alarm/AlarmUtils.qml:45
 msgid "Daily"
@@ -161,11 +161,11 @@ msgstr "Supprimer l'alarme"
 #. TRANSLATORS: This is the page title. Please keep the translation length to 3 words if possible
 #: ../app/alarm/SoundPeerPicker.qml:27
 msgid "Add sound from"
-msgstr "Ajouter un son depuis"
+msgstr "Ajouter un son de"
 
 #: ../app/clock/ClockPage.qml:244
 msgid "Retrieving location..."
-msgstr "Recherche de la localisation..."
+msgstr "Récupération du lieu..."
 
 #. TRANSLATORS: This refers to the stopwatch lap and is shown as a header where space is limited. Constrain
 #. translation length to a few characters.
@@ -210,11 +210,11 @@ msgstr "Ville"
 #. is behind or ahead of the time at the current location
 #: ../app/worldclock/UserWorldCityDelegate.qml:136
 msgid "behind"
-msgstr "de retard"
+msgstr "En retard de"
 
 #: ../app/worldclock/UserWorldCityDelegate.qml:137
 msgid "ahead"
-msgstr "d'avance"
+msgstr "En avance de"
 
 #. TRANSLATORS: the first argument is hour, followed by
 #. minute, and the translation for either 'behind' or
@@ -229,7 +229,7 @@ msgstr "%3 %1h %2m"
 #: ../app/worldclock/UserWorldCityDelegate.qml:156
 #, qt-format
 msgid "%1h %2"
-msgstr "%1h %2"
+msgstr "%2 %1h"
 
 #. TRANSLATORS: the first argument is minute, followed by the
 #. translation for either 'behind' or 'ahead'
@@ -248,11 +248,11 @@ msgstr "Sélectionner une ville"
 
 #: ../app/worldclock/WorldCityList.qml:112
 msgid "Search..."
-msgstr "Rechercher…"
+msgstr "Rechercher..."
 
 #: ../app/worldclock/WorldCityList.qml:216
 msgid "Searching for a city"
-msgstr "Recherche d'une ville en cours"
+msgstr "Recherche d'une ville"
 
 #: ../app/worldclock/WorldCityList.qml:221
 msgid "No City Found"
@@ -260,11 +260,11 @@ msgstr "Aucune ville trouvée"
 
 #: ../app/worldclock/WorldCityList.qml:227
 msgid "Unable to connect."
-msgstr "Impossible d'établir la connexion."
+msgstr "Impossible de se connecter."
 
 #: ../app/worldclock/WorldCityList.qml:228
 msgid "Please check your network connection and try again"
-msgstr "Veuillez vérifier votre configuration réseau et réessayer"
+msgstr "Veuillez vérifier votre connection réseau et ressayer"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:48
 msgid "Abidjan"
@@ -368,7 +368,7 @@ msgstr "Albuquerque"
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:341
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:342
 msgid "United States"
-msgstr "États-Unis d'Amérique"
+msgstr "États-Unis"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:53
 msgid "Algiers"
@@ -745,7 +745,7 @@ msgstr "Canberra"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:108
 msgid "Cancún"
-msgstr "Cancún"
+msgstr "Cancun"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:108
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:114
@@ -797,7 +797,7 @@ msgstr "Chihuahua"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:115
 msgid "Chişinău"
-msgstr "Chişinău"
+msgstr "Chisinau"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:115
 msgid "Moldova"
@@ -1205,7 +1205,7 @@ msgstr "Kinshasa"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:192
 msgid "Democratic Republic of the Congo"
-msgstr "République Démocratique du Congo"
+msgstr "République démocratique du Congo"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:193
 msgid "Kiritimati"
@@ -1774,15 +1774,15 @@ msgstr "Saint-Domingue"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:302
 msgid "Dominican Republic"
-msgstr "République Dominicaine"
+msgstr "République dominicaine"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:303
 msgid "São Paulo"
-msgstr "São Paulo"
+msgstr "Sao Paulo"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:304
 msgid "São Tomé"
-msgstr "São Tomé"
+msgstr "Sao Tomé"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:304
 msgid "São Tomé and Príncipe"
@@ -1842,7 +1842,7 @@ msgstr "Bulgarie"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:314
 msgid "St.Johns"
-msgstr "Saint John's"
+msgstr "Saint-Jean de Terre-Neuve"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:315
 msgid "St.Kitts"
@@ -1978,7 +1978,7 @@ msgstr "Varsovie"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:341
 msgid "Washington D.C."
-msgstr "Washington D.C."
+msgstr "Washington (district de Columbia)"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:342
 msgid "Winamac"
@@ -1990,7 +1990,7 @@ msgstr "Winnipeg"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:344
 msgid "Wrocław"
-msgstr "Wrocław"
+msgstr "Vratislavie"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:346
 msgid "Zagreb"
@@ -2017,9 +2017,9 @@ msgid ""
 "A sophisticated clock app that provides world clock, alarm and stopwatch "
 "functionality."
 msgstr ""
-"Une application sophistiquée qui fournit des fonctionnalités d'horloge "
-"mondiale, d'alarme et de chronomètre."
+"Une application sophistiquée qui fournit des fonctions d'horloge mondiale, "
+"d'alarme et de chronomètre."
 
 #: ubuntu-clock-app.desktop.in.in.h:3
 msgid "time;alarm;alert;clock;world;stopwatch;"
-msgstr "heure;alarme;alerte;horloge;monde;chronomètre;"
+msgstr "heure;alarme;alerte;horloge;monde;mondiale;chronomètre;"
