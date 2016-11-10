@@ -7,7 +7,7 @@ grade: devel
 
 apps:
     ubuntu-clock-app:
-        command: desktop-launch qmlscene --desktop_file_hint=unity8 $SNAP/usr/share/ubuntu-clock-app/ubuntu-clock-app.qml
+        command: desktop-launch $SNAP/bin/ubuntu-clock-app
         plugs: [unity7, platform, opengl, network, network-bind]
 
 plugs:
@@ -42,7 +42,9 @@ parts:
             - qtdeclarative5-folderlistmodel-plugin
             - qtdeclarative5-ubuntu-ui-toolkit-plugin
             - xvfb
-        stage-packages: []
+        stage-packages: 
+            - qtdeclarative5-u1db1.0
+
         snap:
             - -usr/share/doc
             - -usr/include
@@ -51,3 +53,5 @@ parts:
     environment:
         source: snap/
         plugin: dump
+        organize:
+            ubuntu-clock-app.wrapper: bin/ubuntu-clock-app
