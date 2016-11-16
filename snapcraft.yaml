@@ -4,7 +4,6 @@ summary: Ubuntu Clock app
 description: The clock app for all Ubuntu devices
 confinement: strict
 grade: devel
-architectures: [all]
 
 apps:
     ubuntu-clock-app:
