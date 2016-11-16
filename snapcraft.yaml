@@ -4,6 +4,7 @@ summary: Ubuntu Clock app
 description: The clock app for all Ubuntu devices
 confinement: strict
 grade: devel
+architectures: [all]
 
 apps:
     ubuntu-clock-app:
@@ -18,7 +19,7 @@ plugs:
 
 parts:
     ubuntu-clock-app:
-        source: .
+        source: .       
         plugin: cmake
         configflags: [-DCMAKE_INSTALL_PREFIX=/usr, -DCLICK_MODE=off]
         build-packages:
