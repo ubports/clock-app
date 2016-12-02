@@ -8,7 +8,7 @@ grade: devel
 apps:
     ubuntu-clock-app:
         command: desktop-launch $SNAP/bin/ubuntu-clock-app
-        plugs: [unity7, unity8, platform, opengl, network, network-bind]
+        plugs: [unity7, unity8, platform, opengl, network]
 
 plugs:
     platform:
