@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2016-02-29 21:58+0100\n"
-"PO-Revision-Date: 2016-10-14 07:25+0000\n"
+"PO-Revision-Date: 2017-01-04 10:17+0000\n"
 "Last-Translator: Cédric VALMARY (Tot en òc) <cvalmary@yahoo.fr>\n"
 "Language-Team: Occitan (post 1500) <oc@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Launchpad-Export-Date: 2016-12-10 05:31+0000\n"
-"X-Generator: Launchpad (build 18292)\n"
+"X-Launchpad-Export-Date: 2017-01-05 06:07+0000\n"
+"X-Generator: Launchpad (build 18298)\n"
 
 #: ../app/alarm/AlarmLabel.qml:35 ../app/alarm/AlarmLabel.qml:79
 #: ../app/alarm/EditAlarmPage.qml:297
@@ -292,7 +292,7 @@ msgstr "Etiòpia"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:51
 msgid "Adelaide"
-msgstr "Adelaïde"
+msgstr "Adelaïda"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:51
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:96
@@ -415,7 +415,7 @@ msgstr "Russia"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:58
 msgid "Anchorage"
-msgstr "Ancorage"
+msgstr "Anchorage"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:59
 msgid "Andorra"
@@ -552,7 +552,7 @@ msgstr "China"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:80
 msgid "Beirut"
-msgstr "Beirut"
+msgstr "Beirot"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:80
 msgid "Lebanon"
@@ -659,7 +659,7 @@ msgstr "Brazzaville"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:95
 msgid "Republic of the Congo"
-msgstr "Republica del Congò"
+msgstr "Republica de Còngo"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:96
 msgid "Brisbane"
@@ -1151,7 +1151,7 @@ msgstr "Johannesburg"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:185
 msgid "Kabul"
-msgstr "Cabol"
+msgstr "Kabol"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:185
 msgid "Afghanistan"
@@ -1171,7 +1171,7 @@ msgstr "Karachi"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:188
 msgid "Khartoum"
-msgstr "Khartoum"
+msgstr "Khartom"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:188
 msgid "Sudan"
@@ -1822,7 +1822,7 @@ msgstr "Singapor"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:311
 msgid "Simferopol"
-msgstr "Sinferopol"
+msgstr "Simferopòl"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:312
 msgid "Skopje"
@@ -2017,7 +2017,7 @@ msgid ""
 "A sophisticated clock app that provides world clock, alarm and stopwatch "
 "functionality."
 msgstr ""
-"Una aplicacion sofisticada que prpvesís de foncionalitats de relòtge "
+"Una aplicacion sofisticada que provesís de foncionalitats de relòtge "
 "mondial, d'alarma e de cronomètre."
 
 #: ubuntu-clock-app.desktop.in.in.h:3
