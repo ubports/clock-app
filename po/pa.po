@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2016-02-29 21:58+0100\n"
-"PO-Revision-Date: 2015-04-08 11:22+0000\n"
+"PO-Revision-Date: 2017-02-04 14:36+0000\n"
 "Last-Translator: Gursharnjit_Singh <ubuntuser13@gmail.com>\n"
 "Language-Team: Punjabi <pa@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2016-12-10 05:31+0000\n"
-"X-Generator: Launchpad (build 18292)\n"
+"X-Launchpad-Export-Date: 2017-02-05 05:53+0000\n"
+"X-Generator: Launchpad (build 18322)\n"
 
 #: ../app/alarm/AlarmLabel.qml:35 ../app/alarm/AlarmLabel.qml:79
 #: ../app/alarm/EditAlarmPage.qml:297
@@ -26,7 +26,7 @@ msgstr "ਲੇਬਲ"
 #: ../app/alarm/AlarmList.qml:61 ../app/alarm/AlarmPage.qml:103
 #: ../app/worldclock/UserWorldCityList.qml:70
 msgid "Delete"
-msgstr "ਹਟਾਓ"
+msgstr "ਮਿਟਾਓ"
 
 #: ../app/alarm/AlarmPage.qml:38 ../app/components/AlarmBottomEdge.qml:38
 msgid "Alarms"
@@ -43,19 +43,19 @@ msgstr "ਪਿੱਛੇ"
 
 #: ../app/alarm/AlarmPage.qml:78
 msgid "Select None"
-msgstr "ਕੋਈ ਨਾ ਚੁਣੋ"
+msgstr "ਕੋਈ ਵੀ ਨਾ ਚੁਣੋ"
 
 #: ../app/alarm/AlarmPage.qml:80 ../app/alarm/AlarmRepeat.qml:62
 msgid "Select All"
-msgstr "ਸੱਭ ਚੁਣੋ"
+msgstr "ਸਭ ਚੁਣੋ"
 
 #: ../app/alarm/AlarmPage.qml:159
 msgid "No saved alarms"
-msgstr "ਕੋਈ ਸੰਭਾਲ੍ਹਿਆ ਅਲਾਰਮ ਨਹੀਂ"
+msgstr "ਕੋਈ ਸੰਭਾਲ੍ਹੇ ਅਲਾਰਮ ਨਹੀਂ"
 
 #: ../app/alarm/AlarmPage.qml:160
 msgid "Tap the + icon to add an alarm"
-msgstr "ਇੱਕ ਅਲਾਰਮ ਜੋੜਨ ਲਈ + ਆਈਕਾਨ ਨੂੰ ਛੂਹੋ"
+msgstr "ਇੱਕ ਅਲਾਰਮ ਸ਼ਾਮਲ ਕਰਨ ਲਈ + ਆਈਕਾਨ ਨੂੰ ਛੂਹੋ"
 
 #: ../app/alarm/AlarmRepeat.qml:38 ../app/alarm/EditAlarmPage.qml:282
 msgid "Repeat"
@@ -63,7 +63,7 @@ msgstr "ਦੁਹਰਾਓ"
 
 #: ../app/alarm/AlarmSettingsPage.qml:31
 msgid "Settings"
-msgstr "ਸੈਟਿੰਗ"
+msgstr "ਸੈਟਿੰਗਾਂ"
 
 #. TRANSLATORS: Alarm stops after
 #. TRANSLATORS: Snooze for
@@ -77,19 +77,19 @@ msgstr "ਸੈਟਿੰਗ"
 msgid "%1 minute"
 msgid_plural "%1 minutes"
 msgstr[0] "%1 ਮਿੰਟ"
-msgstr[1] "%1 ਮਿੰਟਾਂ"
+msgstr[1] "%1 ਮਿੰਟ"
 
 #: ../app/alarm/AlarmSettingsPage.qml:99
 msgid "Alarm volume"
-msgstr "ਅਲਾਰਮ ਅਵਾਜ"
+msgstr "ਅਲਾਰਮ ਦੀ ਅਵਾਜ਼"
 
 #: ../app/alarm/AlarmSettingsPage.qml:120
 msgid "Alarm stops after"
-msgstr ""
+msgstr "ਅਲਾਰਮ ਇਸ ਸਮੇਂ ਬਾਅਦ ਬੰਦ ਹੋਵੇਗਾ"
 
 #: ../app/alarm/AlarmSettingsPage.qml:149
 msgid "Snooze for"
-msgstr "ਲਈ ਝਪਕੀ"
+msgstr "ਇਸ ਸਮੇਂ ਲਈ ਸਨੂਜ਼ ਕਰੋ"
 
 #: ../app/alarm/AlarmSettingsPage.qml:178
 msgid "Vibration"
@@ -101,35 +101,35 @@ msgstr "ਸਮਾਂ ਅਤੇ ਮਿਤੀ ਬਦਲੋ"
 
 #: ../app/alarm/AlarmSound.qml:60 ../app/alarm/EditAlarmPage.qml:317
 msgid "Sound"
-msgstr "ਆਵਾਜ਼"
+msgstr "ਧੁਨੀ"
 
 #: ../app/alarm/AlarmSound.qml:190
 msgid "Custom alarm sounds"
-msgstr ""
+msgstr "ਵਿਉਂਤੀਆਂ ਅਵਾਜ਼ ਧੁਨੀਆਂ"
 
 #: ../app/alarm/AlarmSound.qml:205
 msgid "Add sound"
-msgstr ""
+msgstr "ਅਲਾਰਮ ਸ਼ਾਮਲ ਕਰੋ"
 
 #: ../app/alarm/AlarmSound.qml:341
 msgid "Default alarm sounds"
-msgstr ""
+msgstr "ਮੂਲ ਅਲਾਰਮ ਧੁਨੀਆਂ"
 
 #: ../app/alarm/AlarmUtils.qml:31
 msgid "Never"
-msgstr "ਕਦੇ ਨਹੀਂ"
+msgstr "ਕਦੇ ਵੀ ਨਹੀਂ"
 
 #: ../app/alarm/AlarmUtils.qml:37
 msgid "Weekdays"
-msgstr "ਹਫ਼ਤਾ ਦਿਨ"
+msgstr "ਹਫ਼ਤੇ ਦੇ ਦਿਨ"
 
 #: ../app/alarm/AlarmUtils.qml:41
 msgid "Weekends"
-msgstr "ਹਫ਼ਤੇਵਾਰ"
+msgstr "ਛੁੱਟੀ ਵਾਲੇ ਦਿਨ"
 
 #: ../app/alarm/AlarmUtils.qml:45
 msgid "Daily"
-msgstr "ਰੋਜ਼"
+msgstr "ਰੋਜ਼ਾਨਾ"
 
 #: ../app/alarm/AlarmUtils.qml:81
 #, no-c-format, qt-format
@@ -152,7 +152,7 @@ msgstr "ਨਵਾਂ ਅਲਾਰਮ"
 
 #: ../app/alarm/EditAlarmPage.qml:37
 msgid "Edit alarm"
-msgstr "ਅਲਾਰਮ ਸੋਧ"
+msgstr "ਅਲਾਰਮ ਦਾ ਸੰਪਾਦਨ ਕਰੋ"
 
 #: ../app/alarm/EditAlarmPage.qml:339
 msgid "Delete alarm"
