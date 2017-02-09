@@ -9,4 +9,4 @@ else
 fi
 
 export QML2_IMPORT_PATH=$SNAP/usr/lib/$ARCH/qt5/qml/ClockApp:$QML2_IMPORT_PATH
-exec qmlscene --desktop_file_hint=unity8 $SNAP/usr/share/ubuntu-clock-app/ubuntu-clock-app.qml
+exec qmlscene "$@" $SNAP/usr/share/ubuntu-clock-app/ubuntu-clock-app.qml
