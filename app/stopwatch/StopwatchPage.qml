@@ -108,6 +108,7 @@ Item {
                     stopwatchEngine.addLap()
                 } else {
                     stopwatchEngine.clearStopwatch()
+                    listview.interactive = true
                 }
             }
             Behavior on x {
@@ -127,7 +128,7 @@ Item {
             topMargin: units.gu(1)
         }
 
-        preventStealing: true
+        preventStealing: !(!stopwatchEngine.running && stopwatchEngine.totalTimeOfStopwatch === 0)
 
         Loader {
             id: lapListViewLoader

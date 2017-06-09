@@ -28,8 +28,25 @@ ListItem {
     property string lapMilliTimeLabel
     property string totalTimeLabel
     property string totalMilliTimeLabel
+    MouseArea {
+         height: listItemRow.height
+          width: parent.width
+        anchors {
+            verticalCenter: parent.verticalCenter
+            left: parent.left
+            right: parent.right
+        }
+        hoverEnabled:true
+        preventStealing: true
+        propagateComposedEvents:true
+        onEntered: listview.interactive = false
+        onExited: listview.interactive = true
+        onReleased: listview.interactive = true
+    }
+
 
     Row {
+        id:listItemRow
         anchors {
             left: parent.left
             right: parent.right

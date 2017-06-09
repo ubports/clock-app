@@ -89,6 +89,7 @@ ListView {
                     iconName: "delete"
                     onTriggered: {
                         stopwatchEngine.removeLap(index)
+                        listview.interactive = true
                     }
                 }
             ]
