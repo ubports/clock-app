@@ -30,6 +30,17 @@ Item {
         console.log("[LOG]: Stopwatch Page Loaded")
     }
 
+    // HACK : This is anpartof the hack fix in LapListView.qml:32
+    MouseArea {
+        anchors {
+            top: parent.top
+            left:parent.left
+            right:parent.right
+            bottom: buttonRow.bottom
+        }
+        onPressed: listview.interactive = true
+    }
+
     StopwatchEngine {
         id: stopwatchEngine
     }
@@ -54,6 +65,8 @@ Item {
                     stopwatchEngine.startStopwatch();
                 }
             }
+            // HACK : This is anpartof the hack fix in LapListView.qml:32
+            onPressed: listview.interactive = true
         }
     }
 
@@ -108,6 +121,7 @@ Item {
                     stopwatchEngine.addLap()
                 } else {
                     stopwatchEngine.clearStopwatch()
+                    listview.interactive = true
                 }
             }
             Behavior on x {
@@ -119,6 +133,7 @@ Item {
     }
 
     MouseArea {
+
         anchors {
             top: buttonRow.bottom
             bottom: parent.bottom
@@ -127,7 +142,7 @@ Item {
             topMargin: units.gu(1)
         }
 
-        preventStealing: true
+        preventStealing: !(!stopwatchEngine.running && stopwatchEngine.totalTimeOfStopwatch === 0)
 
         Loader {
             id: lapListViewLoader
