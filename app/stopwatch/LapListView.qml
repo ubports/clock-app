@@ -29,24 +29,6 @@ ListView {
         id: stopwatchFormatTime
     }
 
-    // HACK : This is an hack to reduce the cases the swiping left/right on a lap might switch between the main view pages
-    //        (This a QT issue when you have nested interactive listviews)
-    MouseArea {
-        height: parent.height
-        width: parent.width
-        anchors {
-            top:parent.top
-            left: parent.left
-            right: parent.right
-        }
-        hoverEnabled:true
-        propagateComposedEvents: true
-        onPressed: { listview.interactive = (count == 0) ; mouse.accepted = false }
-        onEntered: listview.interactive = (count == 0)
-        onExited: listview.interactive = true
-        onReleased: { listview.interactive = true ; mouse.accepted = false }
-    }
-
     header: ListItem {
         visible: count !== 0
         width: parent.width - units.gu(4)

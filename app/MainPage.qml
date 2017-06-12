@@ -111,6 +111,7 @@ Page {
     }
 
 
+
     ListView {
         id: listview
         objectName: "pageListView"
@@ -128,31 +129,16 @@ Page {
             listview.currentIndex = 0
         }
 
-        function updateListViewCurrentIndex() {
-               listview.currentIndex = listview.contentX / listview.width;
-        }
-
-        onFlickEnded: {
-            updateListViewCurrentIndex();
-        }
-
-        onDragEnded: {
-            updateListViewCurrentIndex();
-        }
-
         UbuntuNumberAnimation {
             id: moveAnimation
             objectName: "pageListViewAnimation"
 
             target: listview
             property: "contentX"
-            function moveTo(newContentX) {
+            function moveTo(contentX) {
                 from = listview.contentX
-                to = newContentX
+                to = contentX
                 start()
-            }
-            onStopped: {
-                listview.positionViewAtIndex(listview.currentIndex,ListView.Contain);
             }
         }
 
@@ -173,6 +159,6 @@ Page {
         model: navigationModel
         orientation: ListView.Horizontal
         snapMode: ListView.SnapOneItem
-        interactive: true
+        interactive: false
     }
 }
