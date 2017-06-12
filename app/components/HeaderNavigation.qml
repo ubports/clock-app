@@ -48,22 +48,5 @@ Item {
             onClicked:  listview.moveToStopwatchPage()
         }
     }
-    
 
-    ActionIcon {
-        id: settingsIcon
-        objectName: "settingsIcon"
-        
-        anchors {
-            verticalCenter: parent.verticalCenter
-            right: parent.right
-            rightMargin: units.gu(1)
-        }
-
-        icon.name: "settings"
-        
-        onClicked: {
-            mainStack.push(Qt.resolvedUrl("../alarm/AlarmSettingsPage.qml"))
-        }
-    }
 }

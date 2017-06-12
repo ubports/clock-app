@@ -48,6 +48,7 @@ Page {
     // Clock App Alarm Model Reference Variable
     property var alarmModel
 
+
     Timer {
         id: hideBottomEdgeHintTimer
         interval: 3000
@@ -96,21 +97,26 @@ Page {
     }
 
     header: PageHeader {
-        visible: false
-    }
-
-    HeaderNavigation {
-        id: headerRow
-
-        anchors {
-            top: parent.top
-            left: parent.left
-            right: parent.right
-            topMargin: 0
+        visible:true
+        StyleHints {
+            backgroundColor: "transparent"
+            dividerColor: "transparent"
         }
+
+        trailingActionBar {
+            actions : [
+                Action {
+                    id: settingsIcon
+                    objectName: "settingsIcon"
+                    iconName: "settings"
+                    onTriggered: {
+                        mainStack.push(Qt.resolvedUrl("./alarm/AlarmSettingsPage.qml"))
+                    }
+                }
+            ]
+        }
+
     }
-
-
 
     ListView {
         id: listview
@@ -150,15 +156,26 @@ Page {
         }
 
         anchors {
-            top: headerRow.bottom
+            top: parent.top
             left: parent.left
             right: parent.right
-            bottom: parent.bottom
+            bottom: headerRow.top
         }
 
         model: navigationModel
         orientation: ListView.Horizontal
         snapMode: ListView.SnapOneItem
         interactive: false
+    }
+
+    HeaderNavigation {
+        id: headerRow
+
+        anchors {
+            bottom: parent.bottom
+            left: parent.left
+            right: parent.right
+            bottomMargin: bottomEdgeLoader.item && bottomEdgeLoader.item.hint.visible && bottomEdgeLoader.item.hint.status == BottomEdgeHint.Active ? units.gu(3) : 0
+        }
     }
 }
