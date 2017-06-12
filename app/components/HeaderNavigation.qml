@@ -18,35 +18,51 @@
 
 import QtQuick 2.4
 import Ubuntu.Components 1.3
+import QtGraphicalEffects 1.0
 
 Item {
     id: headerRow
-    
-    height: units.gu(6)
 
-    Row {
-        id: iconContainer
-        
-        anchors.centerIn: parent
-        spacing: units.gu(2)
+    height: units.gu(4)
 
-        ActionIcon {
-            id: clockNavigationButton
-            objectName: "clockNavigationButton"
-
-            icon.name: "clock"
-            icon.color: listview.currentIndex === 0 ? UbuntuColors.blue : UbuntuColors.slate
-            onClicked: listview.moveToClockPage()
+    Rectangle {
+        id:iconWrapper
+        anchors.fill:parent
+        layer.enabled: true
+        layer.effect:  DropShadow {
+            verticalOffset: -1
+            radius: 2
+            samples: 5
+            color: "#20000000"
         }
-        
-        ActionIcon {
-            id: stopwatchNavigationButton
-            objectName: "stopwatchNavigationButton"
 
-            icon.name: "stopwatch"
-            icon.color: listview.currentIndex === 1 ? UbuntuColors.blue : UbuntuColors.slate
-            onClicked:  listview.moveToStopwatchPage()
+        Row {
+            id: iconContainer
+
+            anchors.centerIn: parent
+            spacing: units.gu(4)
+
+            ActionIcon {
+                id: clockNavigationButton
+                objectName: "clockNavigationButton"
+                height:units.gu(4)
+                width: units.gu(6)
+                icon.name: "clock"
+                icon.color: listview.currentIndex === 0 ? UbuntuColors.blue : UbuntuColors.slate
+                onClicked: listview.moveToClockPage()
+            }
+
+            ActionIcon {
+                id: stopwatchNavigationButton
+                objectName: "stopwatchNavigationButton"
+                height:units.gu(4)
+                width: units.gu(6)
+                icon.name: "stopwatch"
+                icon.color: listview.currentIndex === 1 ? UbuntuColors.blue : UbuntuColors.slate
+                onClicked:  listview.moveToStopwatchPage()
+            }
         }
     }
+
 
 }

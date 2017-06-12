@@ -190,7 +190,7 @@ Page {
             bottom: parent.bottom
             left: parent.left
             right: parent.right
-            bottomMargin: bottomEdgeLoader.item && bottomEdgeLoader.item.hint.visible && bottomEdgeLoader.item.hint.status == BottomEdgeHint.Active ? units.gu(3) : 0
+            bottomMargin: bottomEdgeLoader.item && bottomEdgeLoader.item.hint.visible && bottomEdgeLoader.item.hint.status == BottomEdgeHint.Active ? units.gu(4) : 0
         }
     }
 }
