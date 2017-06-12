@@ -178,7 +178,7 @@ Page {
         model: navigationModel
         orientation: ListView.Horizontal
         snapMode: ListView.SnapOneItem
-        interactive: false
+        interactive: true
     }
 
     HeaderNavigation {
