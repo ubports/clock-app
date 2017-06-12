@@ -48,7 +48,6 @@ Page {
     // Clock App Alarm Model Reference Variable
     property var alarmModel
 
-
     Timer {
         id: hideBottomEdgeHintTimer
         interval: 3000
@@ -115,7 +114,6 @@ Page {
                 }
             ]
         }
-
     }
 
     ListView {
@@ -135,16 +133,31 @@ Page {
             listview.currentIndex = 0
         }
 
+        function updateListViewCurrentIndex() {
+               listview.currentIndex = listview.contentX / listview.width;
+        }
+
+        onFlickEnded: {
+            updateListViewCurrentIndex();
+        }
+
+        onDragEnded: {
+            updateListViewCurrentIndex();
+        }
+
         UbuntuNumberAnimation {
             id: moveAnimation
             objectName: "pageListViewAnimation"
 
             target: listview
             property: "contentX"
-            function moveTo(contentX) {
+            function moveTo(newContentX) {
                 from = listview.contentX
-                to = contentX
+                to = newContentX
                 start()
+            }
+            onStopped: {
+                listview.positionViewAtIndex(listview.currentIndex,ListView.Contain);
             }
         }
 

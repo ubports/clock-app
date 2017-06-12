@@ -29,7 +29,11 @@ ListItem {
     property string totalTimeLabel
     property string totalMilliTimeLabel
 
+
+
+
     Row {
+        id:listItemRow
         anchors {
             left: parent.left
             right: parent.right
