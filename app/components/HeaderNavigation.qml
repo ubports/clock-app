@@ -30,6 +30,7 @@ Item {
         anchors.fill:parent
         layer.enabled: true
         layer.effect:  DropShadow {
+            cached:true
             verticalOffset: -1
             radius: 2
             samples: 5
