@@ -145,6 +145,8 @@ Page {
             updateListViewCurrentIndex();
         }
 
+        onCurrentIndexChanged: listview.interactive = true
+
         UbuntuNumberAnimation {
             id: moveAnimation
             objectName: "pageListViewAnimation"
