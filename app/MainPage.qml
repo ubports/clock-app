@@ -137,13 +137,8 @@ Page {
                listview.currentIndex = listview.contentX / listview.width;
         }
 
-        onFlickEnded: {
-            updateListViewCurrentIndex();
-        }
-
-        onDragEnded: {
-            updateListViewCurrentIndex();
-        }
+        onFlickEnded: updateListViewCurrentIndex();
+        onDragEnded: updateListViewCurrentIndex();
 
         onCurrentIndexChanged: listview.interactive = true
 
@@ -180,6 +175,7 @@ Page {
         model: navigationModel
         orientation: ListView.Horizontal
         snapMode: ListView.SnapOneItem
+        flickDeceleration:10
         interactive: true
     }
 
