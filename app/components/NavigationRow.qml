@@ -21,9 +21,9 @@ import Ubuntu.Components 1.3
 import QtGraphicalEffects 1.0
 
 Item {
-    id: headerRow
+    id: bottomRow
 
-    height: units.gu(4)
+    height: units.gu(6)
 
     Rectangle {
         id:iconWrapper
@@ -45,21 +45,25 @@ Item {
 
             ActionIcon {
                 id: clockNavigationButton
+                 property bool isSelected: listview.currentIndex === 0
                 objectName: "clockNavigationButton"
-                height:units.gu(4)
-                width: units.gu(6)
+                label.text: isSelected ? i18n.tr("Clock") : ""
+                height:units.gu(5)
+                width: units.gu(7)
                 icon.name: "clock"
-                icon.color: listview.currentIndex === 0 ? UbuntuColors.blue : UbuntuColors.slate
+                icon.color: isSelected ? UbuntuColors.blue : UbuntuColors.slate
                 onClicked: listview.moveToClockPage()
             }
 
             ActionIcon {
+                property bool isSelected: listview.currentIndex === 1
                 id: stopwatchNavigationButton
                 objectName: "stopwatchNavigationButton"
-                height:units.gu(4)
-                width: units.gu(6)
+                label.text: isSelected ? i18n.tr("Stopwatch") : ""
+                height:units.gu(5)
+                width: units.gu(7)
                 icon.name: "stopwatch"
-                icon.color: listview.currentIndex === 1 ? UbuntuColors.blue : UbuntuColors.slate
+                icon.color: isSelected ? UbuntuColors.blue : UbuntuColors.slate
                 onClicked:  listview.moveToStopwatchPage()
             }
         }

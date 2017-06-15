@@ -10,7 +10,7 @@ set(COMPONENTS_QML_JS_FILES
     DigitalShadow.qml
     EmptyState.qml
     ExpandableListItem.qml
-    HeaderNavigation.qml
+    NavigationRow.qml
     Shadow.qml
 )
 

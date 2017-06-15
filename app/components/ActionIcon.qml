@@ -23,8 +23,9 @@ AbstractButton {
     id: abstractButton
 
     property alias icon: _icon
+    property alias label : _label
 
-    width: units.gu(4)
+    width: units.gu(6)
     height: width
 
     Rectangle {
@@ -35,10 +36,24 @@ AbstractButton {
 
     Icon {
         id: _icon
-        width: units.gu(2)
+        width: parent.width - units.gu(4)
         height: width
-        anchors.centerIn: parent
+        anchors.top:parent.top
+        anchors.horizontalCenter: parent.horizontalCenter
+        anchors.topMargin: units.gu(0.5)
         color: UbuntuColors.slate
         asynchronous: true
+    }
+    Label {
+        id: _label
+        width:  parent.width
+        height: units.gu(1)
+        anchors.top: _icon.bottom
+        color: _icon.color
+        visible: this.text != ""
+        text: ""
+        horizontalAlignment: Text.AlignHCenter
+        font.pixelSize: units.dp(11)
+
     }
 }
