@@ -136,12 +136,10 @@ Page {
         }
 
         function updateListViewCurrentIndex() {
-               listview.currentIndex = listview.contentX / listview.width;
+               listview.currentIndex = listview.indexAt(listview.contentX,0);
         }
 
-        onFlickEnded: updateListViewCurrentIndex();
-        onDragEnded: updateListViewCurrentIndex();
-
+        onMovementEnded: updateListViewCurrentIndex();
         onCurrentIndexChanged: listview.interactive = true
 
         UbuntuNumberAnimation {
