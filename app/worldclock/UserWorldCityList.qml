@@ -26,6 +26,7 @@ ListView {
     objectName: "userWorldCityRepeater"
 
     clip: true
+    pressDelay: 66
     anchors.fill: parent
 
     onFlickStarted:  {
