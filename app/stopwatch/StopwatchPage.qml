@@ -132,8 +132,28 @@ Item {
         }
     }
 
-    MouseArea {
 
+    // HACK : This is an hack to reduce the cases the swiping left/right on a lap might switch between the main view pages
+    //        (This a QT issue when you have nested interactive listviews)
+    MouseArea {
+        z:10
+        anchors {
+            top:lapListView.top
+            left: lapListView.left
+            right: lapListView.right
+            bottom:lapListView.bottom
+        }
+        hoverEnabled:true
+        propagateComposedEvents: true
+        preventStealing: !stopwatchEngine.totalTimeOfStopwatch === 0
+        onPressed: { listview.interactive = ( stopwatchEngine.totalTimeOfStopwatch === 0 ) ; mouse.accepted = false }
+        onEntered: listview.interactive = ( stopwatchEngine.totalTimeOfStopwatch === 0 )
+        onExited: listview.interactive = true
+        onReleased: { listview.interactive = true ; mouse.accepted = false }
+    }
+   LapListView {
+        id: lapListView
+        objectName: "lapsList"
         anchors {
             top: buttonRow.bottom
             bottom: parent.bottom
@@ -141,22 +161,7 @@ Item {
             right: parent.right
             topMargin: units.gu(1)
         }
-
-        preventStealing: !(!stopwatchEngine.running && stopwatchEngine.totalTimeOfStopwatch === 0)
-
-        Loader {
-            id: lapListViewLoader
-            anchors.fill: parent
-            sourceComponent: !stopwatchEngine.running && stopwatchEngine.totalTimeOfStopwatch === 0 ? undefined : lapListViewComponent
-        }
-    }
-
-    Component {
-        id: lapListViewComponent
-        LapListView {
-            id: lapListView
-            objectName: "lapsList"
-            model: stopwatchEngine
-        }
+        visible: !stopwatchEngine.running && stopwatchEngine.totalTimeOfStopwatch === 0 ? undefined : lapListViewComponent
+        model: stopwatchEngine
     }
 }

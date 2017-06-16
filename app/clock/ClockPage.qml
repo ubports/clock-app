@@ -302,7 +302,7 @@ Item {
         id: otherElementsStartUpAnimation
 
         UbuntuNumberAnimation {
-            target: headerRow
+            target: bottomRow
             property: "anchors.topMargin"
             from: units.gu(4)
             to: 0
@@ -310,7 +310,7 @@ Item {
         }
 
         UbuntuNumberAnimation {
-            target: headerRow
+            target: bottomRow
             property: "opacity"
             from: 0
             to: 1

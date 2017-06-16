@@ -31,6 +31,7 @@ UbuntuListView {
     signal selectAll()
 
     clip: true
+    pressDelay: 75
     currentIndex: -1
 
     Timer {

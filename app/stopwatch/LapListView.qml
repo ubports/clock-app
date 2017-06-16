@@ -20,32 +20,16 @@ import QtQuick 2.4
 import Ubuntu.Components 1.3
 import Stopwatch 1.0
 
-ListView {
+UbuntuListView {
     id: lapListView
 
     clip: true
-
+    pressDelay: 75
+    currentIndex: -1
     StopwatchFormatTime {
         id: stopwatchFormatTime
     }
 
-    // HACK : This is an hack to reduce the cases the swiping left/right on a lap might switch between the main view pages
-    //        (This a QT issue when you have nested interactive listviews)
-    MouseArea {
-        height: parent.height
-        width: parent.width
-        anchors {
-            top:parent.top
-            left: parent.left
-            right: parent.right
-        }
-        hoverEnabled:true
-        propagateComposedEvents: true
-        onPressed: { listview.interactive = (count == 0) ; mouse.accepted = false }
-        onEntered: listview.interactive = (count == 0)
-        onExited: listview.interactive = true
-        onReleased: { listview.interactive = true ; mouse.accepted = false }
-    }
 
     header: ListItem {
         visible: count !== 0

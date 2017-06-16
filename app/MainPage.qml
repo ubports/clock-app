@@ -20,6 +20,7 @@ import QtQuick 2.4
 import Ubuntu.Components 1.3
 import QtSystemInfo 5.0
 import Qt.labs.settings 1.0
+
 import "upstreamcomponents"
 import "alarm"
 import "clock"
@@ -96,20 +97,25 @@ Page {
     }
 
     header: PageHeader {
-        visible: false
-    }
+        visible:true
+        StyleHints {
+            backgroundColor: "transparent"
+            dividerColor: "transparent"
+        }
 
-    HeaderNavigation {
-        id: headerRow
-
-        anchors {
-            top: parent.top
-            left: parent.left
-            right: parent.right
-            topMargin: 0
+        trailingActionBar {
+            actions : [
+                Action {
+                    id: settingsIcon
+                    objectName: "settingsIcon"
+                    iconName: "settings"
+                    onTriggered: {
+                        mainStack.push(Qt.resolvedUrl("./alarm/AlarmSettingsPage.qml"))
+                    }
+                }
+            ]
         }
     }
-
 
     ListView {
         id: listview
@@ -129,16 +135,11 @@ Page {
         }
 
         function updateListViewCurrentIndex() {
-               listview.currentIndex = listview.contentX / listview.width;
+               listview.currentIndex = listview.indexAt(listview.contentX,0);
         }
 
-        onFlickEnded: {
-            updateListViewCurrentIndex();
-        }
-
-        onDragEnded: {
-            updateListViewCurrentIndex();
-        }
+        onMovementEnded: updateListViewCurrentIndex();
+        onCurrentIndexChanged: listview.interactive = true
 
         UbuntuNumberAnimation {
             id: moveAnimation
@@ -164,15 +165,26 @@ Page {
         }
 
         anchors {
-            top: headerRow.bottom
+            top: parent.top
             left: parent.left
             right: parent.right
-            bottom: parent.bottom
+            bottom: bottomRow.top
         }
 
         model: navigationModel
         orientation: ListView.Horizontal
         snapMode: ListView.SnapOneItem
+        flickDeceleration:10
         interactive: true
+    }
+
+    NavigationRow {
+        id: bottomRow
+        anchors {
+            bottom: parent.bottom
+            left: parent.left
+            right: parent.right
+            bottomMargin: bottomEdgeLoader.item && bottomEdgeLoader.item.hint.visible && bottomEdgeLoader.item.hint.status == BottomEdgeHint.Active ? units.gu(4) : 0
+        }
     }
 }
