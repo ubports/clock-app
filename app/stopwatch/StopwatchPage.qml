@@ -30,15 +30,17 @@ Item {
         console.log("[LOG]: Stopwatch Page Loaded")
     }
 
-    // HACK : This is anpartof the hack fix in LapListView.qml:32
+    // HACK : This is anpartof the hack fix in line #126
     MouseArea {
+        z:1
         anchors {
             top: parent.top
             left:parent.left
             right:parent.right
             bottom: buttonRow.bottom
         }
-        onPressed: listview.interactive = true
+        propagateComposedEvents: true
+        onPressed: { listview.interactive = true ; mouse.accepted = false }
     }
 
     StopwatchEngine {
@@ -55,18 +57,6 @@ Item {
             top: parent.top
             topMargin: units.gu(2)
             horizontalCenter: parent.horizontalCenter
-        }
-        MouseArea {
-            anchors.fill: parent
-            onClicked: {
-                if (stopwatchEngine.running) {
-                    stopwatchEngine.pauseStopwatch();
-                } else {
-                    stopwatchEngine.startStopwatch();
-                }
-            }
-            // HACK : This is anpartof the hack fix in LapListView.qml:32
-            onPressed: listview.interactive = true
         }
     }
 
@@ -137,20 +127,37 @@ Item {
     //        (This a QT issue when you have nested interactive listviews)
     MouseArea {
         z:10
+        id:mouseFlickHack
+        property bool preventFlick: lapListView.visible
         anchors {
             top:lapListView.top
             left: lapListView.left
             right: lapListView.right
-            bottom:lapListView.bottom
         }
+        height : Math.min((1+lapListView.count) * lapListView.headerItem.height,lapListView.height)
         hoverEnabled:true
         propagateComposedEvents: true
-        preventStealing: !stopwatchEngine.totalTimeOfStopwatch === 0
-        onPressed: { listview.interactive = ( stopwatchEngine.totalTimeOfStopwatch === 0 ) ; mouse.accepted = false }
-        onEntered: listview.interactive = ( stopwatchEngine.totalTimeOfStopwatch === 0 )
+        preventStealing: preventFlick
+        onPressed: { listview.interactive = !preventFlick ; mouse.accepted = false }
+        onEntered: listview.interactive = !preventFlick
         onExited: listview.interactive = true
         onReleased: { listview.interactive = true ; mouse.accepted = false }
+
     }
+    MouseArea {
+        z:10
+        anchors {
+            top:mouseFlickHack.bottom
+            left: mouseFlickHack.left
+            right: mouseFlickHack.right
+            bottom: parent.bottom
+        }
+
+        propagateComposedEvents: true
+        preventStealing: preventFlick
+        onPressed: { listview.interactive = true ; mouse.accepted = false }
+    }
+
    LapListView {
         id: lapListView
         objectName: "lapsList"
@@ -161,7 +168,7 @@ Item {
             right: parent.right
             topMargin: units.gu(1)
         }
-        visible: !stopwatchEngine.running && stopwatchEngine.totalTimeOfStopwatch === 0 ? undefined : lapListViewComponent
+        visible: stopwatchEngine.running || stopwatchEngine.totalTimeOfStopwatch !== 0
         model: stopwatchEngine
     }
 }
