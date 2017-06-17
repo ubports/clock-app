@@ -20,6 +20,8 @@ import QtQuick 2.4
 import Stopwatch 1.0
 import Ubuntu.Components 1.3
 
+import "../components"
+
 Item {
     id: _stopwatchPage
     objectName: "stopwatchPage"
@@ -28,19 +30,6 @@ Item {
 
     Component.onCompleted: {
         console.log("[LOG]: Stopwatch Page Loaded")
-    }
-
-    // HACK : This is anpartof the hack fix in line #126
-    MouseArea {
-        z:1
-        anchors {
-            top: parent.top
-            left:parent.left
-            right:parent.right
-            bottom: buttonRow.bottom
-        }
-        propagateComposedEvents: true
-        onPressed: { listview.interactive = true ; mouse.accepted = false }
     }
 
     StopwatchEngine {
@@ -123,40 +112,11 @@ Item {
     }
 
 
-    // HACK : This is an hack to reduce the cases the swiping left/right on a lap might switch between the main view pages
-    //        (This a QT issue when you have nested interactive listviews)
-    MouseArea {
-        z:10
-        id:mouseFlickHack
-        property bool preventFlick: lapListView.visible
-        anchors {
-            top:lapListView.top
-            left: lapListView.left
-            right: lapListView.right
-        }
-        height : Math.min((1+lapListView.count) * lapListView.headerItem.height,lapListView.height)
-        hoverEnabled:true
-        propagateComposedEvents: true
-        preventStealing: preventFlick
-        onPressed: { listview.interactive = !preventFlick ; mouse.accepted = false }
-        onEntered: listview.interactive = !preventFlick
-        onExited: listview.interactive = true
-        onReleased: { listview.interactive = true ; mouse.accepted = false }
-
-    }
-    MouseArea {
-        z:10
-        anchors {
-            top:mouseFlickHack.bottom
-            left: mouseFlickHack.left
-            right: mouseFlickHack.right
-            bottom: parent.bottom
-        }
-
-        propagateComposedEvents: true
-        preventStealing: preventFlick
-        onPressed: { listview.interactive = true ; mouse.accepted = false }
-    }
+   NestedListviewsHack {
+       z:10
+       parentListView : listview
+       nestedListView : lapListView
+   }
 
    LapListView {
         id: lapListView
