@@ -39,10 +39,10 @@ Item {
         hoverEnabled:true
         propagateComposedEvents: true
         preventStealing: preventFlick
-        onPressed: { console.log("Pressed"); parentListView.interactive = !preventFlick ; mouse.accepted = false }
+        onPressed: { parentListView.interactive = !preventFlick ; mouse.accepted = false }
         onEntered: parentListView.interactive = !preventFlick
         onExited: parentListView.interactive = true
-        onReleased: {console.log("Released"); parentListView.interactive = true ; mouse.accepted = false }
+        onReleased: { parentListView.interactive = true ; mouse.accepted = false }
 
     }
     MouseArea {
