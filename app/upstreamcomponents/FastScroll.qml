@@ -212,6 +212,7 @@ Item {
         }
         y: rail.y
         height: rail.height
+        visible: rail.opacity == 1.0
 
         preventStealing: true
         onPressed: {
