@@ -269,6 +269,7 @@ Page {
     ListView {
         id: cityList
         objectName: "cityList"
+        currentIndex: -1
 
         function addWorldCity(cityId, countryName, timezone) {
             console.log("[LOG]: Adding " + cityId.toString() + " city to U1db Database")

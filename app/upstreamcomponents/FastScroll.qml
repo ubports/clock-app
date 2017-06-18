@@ -50,7 +50,7 @@ Item {
     property ListView listView
     property int pinSize: units.gu(2)
 
-    readonly property var letters: ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+    property var letters: []
     readonly property alias fastScrolling: internal.fastScrolling
     readonly property bool showing: (rail.opacity !== 0.0)
     readonly property double minimumHeight: rail.height
@@ -73,10 +73,16 @@ Item {
     Connections {
         target: listView
         onCurrentIndexChanged: {
-            if (currentIndex != -1) {
+            if (listView.currentIndex != -1) {
                 rail.opacity = 0.0
             }
         }
+    }
+
+    Connections {
+        target: listView.model
+        onModelChanged : internal.populateSideBar()
+
     }
 
     UbuntuShape {
@@ -206,7 +212,6 @@ Item {
         }
         y: rail.y
         height: rail.height
-        visible: rail.opacity == 1.0
 
         preventStealing: true
         onPressed: {
@@ -260,6 +265,7 @@ Item {
     }
 
     QtObject {
+
         id: internal
 
         property string currentSection: listView.currentSection
@@ -319,6 +325,20 @@ Item {
             if (index != -1) {
                 currentItem = sectionsRepeater.itemAt(index)
             }
+        }
+
+        function populateSideBar() {
+            console.log("Updating letters "+  listView.model.count)
+            var firstLetterHash = {};
+            root.letters = [];
+            for(var i=0;  i < listView.model.count; i++) {
+                var firstLetter = listView.model.get(i).cityName.substr(0,1);
+                if(!firstLetterHash[firstLetter]) {
+                    root.letters.push(firstLetter);
+                    firstLetterHash[firstLetter] = firstLetter;
+                }
+            }
+            sectionsRepeater.model=root.letters;
         }
     }
 }
