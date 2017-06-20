@@ -31,9 +31,9 @@ Window {
     property bool applicationState: Qt.application.active
 
     /*
-  The width and height defined below are the same dimension used by the
-  designers in the clock visual spec.
-*/
+      The width and height defined below are the same dimension used by the
+      designers in the clock visual spec.
+    */
 
     minimumWidth: units.gu(40)
     minimumHeight: units.gu(70)
@@ -41,10 +41,11 @@ Window {
 
     onApplicationStateChanged: {
         localTimeSource.update()
+        Date.timeZoneUpdated()
         /*
-     Reload the alarm model when the clock app gains focus to refresh
-     the alarm page UI in the case of alarm notifications.
-    */
+         Reload the alarm model when the clock app gains focus to refresh
+         the alarm page UI in the case of alarm notifications.
+        */
         if(applicationState && !mainPage.isColdStart && (mainStack.currentPage.isMainPage
                                                          || mainStack.currentPage.isAlarmPage)) {
             console.log("[LOG]: Alarm Database unloaded")
