@@ -78,48 +78,61 @@ ListItem {
         summary.textSize: Label.Medium
         summary.objectName: "alarmOccurrence"
 
-        Switch {
-            id: alarmStatus
-            objectName: "listAlarmStatus"
+        MouseArea {
+            /**
+              Provide a larger click area then the actual alaram status switch
+             */
+            width: units.gu(7)
+            height: parent.height
 
-            anchors.verticalCenter: parent.verticalCenter
-            checked: model.enabled && (model.status === Alarm.Ready)
-            onCheckedChanged: {
-                if (checked !== model.enabled) {
-                    /*
-                     Calculate the alarm time if it is a one-time alarm.
-                     Repeating alarms do this automatically.
-                    */
-                    if(type === Alarm.OneTime) {
-                        var date = new Date()
-                        date.setHours(model.date.getHours(), model.date.getMinutes(), 0)
+            preventStealing: true
 
-                        model.daysOfWeek = Alarm.AutoDetect
-                        if (date < new Date()) {
-                            var tomorrow = new Date()
-                            tomorrow.setDate(tomorrow.getDate() + 1)
-                            model.daysOfWeek = alarmUtils.get_alarm_day(tomorrow.getDay())
-                        }
-                        model.date = date
-
-                    }
-                    model.enabled = checked
-                    model.save()
-                }
+            onClicked: {
+                alarmStatus.checked = !alarmStatus.checked;
             }
+            Switch {
+                id: alarmStatus
+                objectName: "listAlarmStatus"
+                anchors.right: parent.right
+                anchors.verticalCenter: parent.verticalCenter
+                checked: model.enabled && (model.status === Alarm.Ready)
+                onCheckedChanged: {
+                    if (checked !== model.enabled) {
+                        /*
+                         Calculate the alarm time if it is a one-time alarm.
+                         Repeating alarms do this automatically.
+                        */
+                        if(type === Alarm.OneTime) {
+                            var date = new Date()
+                            date.setHours(model.date.getHours(), model.date.getMinutes(), 0)
 
-            Connections {
-                target: model
-                onStatusChanged: {
-                    /*
-                    Update switch value only when the alarm save() operation
-                    is complete to avoid switching it back.
-                     */
-                    if (model.status === Alarm.Ready) {
-                        alarmStatus.checked = model.enabled;
+                            model.daysOfWeek = Alarm.AutoDetect
+                            if (date < new Date()) {
+                                var tomorrow = new Date()
+                                tomorrow.setDate(tomorrow.getDate() + 1)
+                                model.daysOfWeek = alarmUtils.get_alarm_day(tomorrow.getDay())
+                            }
+                            model.date = date
 
-                        if (!alarmStatus.checked && type === Alarm.Repeating) {
-                            alarmOccurrence = alarmUtils.format_day_string(daysOfWeek, type)
+                        }
+                        model.enabled = checked
+                        model.save()
+                    }
+                }
+
+                Connections {
+                    target: model
+                    onStatusChanged: {
+                        /*
+                        Update switch value only when the alarm save() operation
+                        is complete to avoid switching it back.
+                         */
+                        if (model.status === Alarm.Ready) {
+                            alarmStatus.checked = model.enabled;
+
+                            if (!alarmStatus.checked && type === Alarm.Repeating) {
+                                alarmOccurrence = alarmUtils.format_day_string(daysOfWeek, type)
+                            }
                         }
                     }
                 }
