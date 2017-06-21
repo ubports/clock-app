@@ -64,6 +64,7 @@ ListItem {
     }
 
     ListItemLayout {
+        padding.trailing: units.gu(0)
         id: mainLayout
 
         title.text: Qt.formatTime(model.date) // Alarm time
@@ -82,7 +83,7 @@ ListItem {
             /**
               Provide a larger click area then the actual alaram status switch
              */
-            width: units.gu(7)
+            width: units.gu(9)
             height: parent.height
 
             preventStealing: true
@@ -93,6 +94,7 @@ ListItem {
             Switch {
                 id: alarmStatus
                 objectName: "listAlarmStatus"
+                anchors.rightMargin: units.gu(1)
                 anchors.right: parent.right
                 anchors.verticalCenter: parent.verticalCenter
                 checked: model.enabled && (model.status === Alarm.Ready)
