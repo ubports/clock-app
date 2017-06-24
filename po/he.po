@@ -55,7 +55,7 @@ msgstr "לא נשמרו התרעות"
 
 #: ../app/alarm/AlarmPage.qml:160
 msgid "Tap the + icon to add an alarm"
-msgstr ""
+msgstr "לחיצה על סימן ה'+' תוסיף אתרעה חדשה"
 
 #: ../app/alarm/AlarmRepeat.qml:38 ../app/alarm/EditAlarmPage.qml:282
 msgid "Repeat"
@@ -76,16 +76,16 @@ msgstr "הגדרות"
 #, qt-format
 msgid "%1 minute"
 msgid_plural "%1 minutes"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1 דקה"
+msgstr[1] "%1 דקות"
 
 #: ../app/alarm/AlarmSettingsPage.qml:99
 msgid "Alarm volume"
-msgstr ""
+msgstr "עוצמת התרעה"
 
 #: ../app/alarm/AlarmSettingsPage.qml:120
 msgid "Alarm stops after"
-msgstr ""
+msgstr "עצור אתרעות לאחר"
 
 #: ../app/alarm/AlarmSettingsPage.qml:149
 msgid "Snooze for"
@@ -93,39 +93,39 @@ msgstr ""
 
 #: ../app/alarm/AlarmSettingsPage.qml:178
 msgid "Vibration"
-msgstr ""
+msgstr "רטט"
 
 #: ../app/alarm/AlarmSettingsPage.qml:203
 msgid "Change time and date"
-msgstr ""
+msgstr "שינוי תאריך וזמן"
 
 #: ../app/alarm/AlarmSound.qml:60 ../app/alarm/EditAlarmPage.qml:317
 msgid "Sound"
-msgstr ""
+msgstr "צילצול"
 
 #: ../app/alarm/AlarmSound.qml:190
 msgid "Custom alarm sounds"
-msgstr ""
+msgstr "צלילי אתרעות מותאמים"
 
 #: ../app/alarm/AlarmSound.qml:205
 msgid "Add sound"
-msgstr ""
+msgstr "הוסף צילצול"
 
 #: ../app/alarm/AlarmSound.qml:341
 msgid "Default alarm sounds"
-msgstr ""
+msgstr "צליל בררית מחדל לאתרעות"
 
 #: ../app/alarm/AlarmUtils.qml:31
 msgid "Never"
-msgstr ""
+msgstr "לעולם לא"
 
 #: ../app/alarm/AlarmUtils.qml:37
 msgid "Weekdays"
-msgstr ""
+msgstr "ימי השבוע"
 
 #: ../app/alarm/AlarmUtils.qml:41
 msgid "Weekends"
-msgstr ""
+msgstr "סופי שבוע"
 
 #: ../app/alarm/AlarmUtils.qml:45
 msgid "Daily"
@@ -134,52 +134,52 @@ msgstr "מדי יום"
 #: ../app/alarm/AlarmUtils.qml:81
 #, no-c-format, qt-format
 msgid "in %1d %2h %3m"
-msgstr ""
+msgstr "בתוך %1d %2h %3m"
 
 #: ../app/alarm/AlarmUtils.qml:91
 #, no-c-format, qt-format
 msgid "in %1h %2m"
-msgstr ""
+msgstr "בתוך %1h %2m"
 
 #: ../app/alarm/AlarmUtils.qml:100
 #, no-c-format, qt-format
 msgid "in %1m"
-msgstr ""
+msgstr "בתוך %1m"
 
 #: ../app/alarm/EditAlarmPage.qml:37
 msgid "New alarm"
-msgstr ""
+msgstr "אתרעה חדשה"
 
 #: ../app/alarm/EditAlarmPage.qml:37
 msgid "Edit alarm"
-msgstr ""
+msgstr "ערוך אתרעה"
 
 #: ../app/alarm/EditAlarmPage.qml:339
 msgid "Delete alarm"
-msgstr ""
+msgstr "מחק אתרעה"
 
 #. TRANSLATORS: This is the page title. Please keep the translation length to 3 words if possible
 #: ../app/alarm/SoundPeerPicker.qml:27
 msgid "Add sound from"
-msgstr ""
+msgstr "הוספת צילצול מ"
 
 #: ../app/clock/ClockPage.qml:244
 msgid "Retrieving location..."
-msgstr ""
+msgstr "מאתר מיקום..."
 
 #. TRANSLATORS: This refers to the stopwatch lap and is shown as a header where space is limited. Constrain
 #. translation length to a few characters.
 #: ../app/stopwatch/LapListView.qml:49 ../app/stopwatch/StopwatchPage.qml:98
 msgid "Lap"
-msgstr ""
+msgstr "הקפה"
 
 #: ../app/stopwatch/LapListView.qml:58
 msgid "Lap Time"
-msgstr ""
+msgstr "זמן הקפה"
 
 #: ../app/stopwatch/LapListView.qml:65
 msgid "Total Time"
-msgstr ""
+msgstr "זמן כולל"
 
 #: ../app/stopwatch/StopwatchPage.qml:80
 msgid "Stop"
@@ -191,30 +191,30 @@ msgstr "התחלה"
 
 #: ../app/stopwatch/StopwatchPage.qml:80
 msgid "Resume"
-msgstr ""
+msgstr "המשך"
 
 #: ../app/stopwatch/StopwatchPage.qml:98
 msgid "Clear"
-msgstr ""
+msgstr "ניקוי"
 
 #: ../app/worldclock/AddWorldCityButton.qml:30
 msgid "Add"
-msgstr ""
+msgstr "הוספת"
 
 #: ../app/worldclock/AddWorldCityButton.qml:60
 #: ../app/worldclock/WorldCityList.qml:63
 msgid "City"
-msgstr ""
+msgstr "עיר"
 
 #. TRANSLATORS: this indicates if the time in a world clock
 #. is behind or ahead of the time at the current location
 #: ../app/worldclock/UserWorldCityDelegate.qml:136
 msgid "behind"
-msgstr ""
+msgstr "מאחר"
 
 #: ../app/worldclock/UserWorldCityDelegate.qml:137
 msgid "ahead"
-msgstr ""
+msgstr "מקדים"
 
 #. TRANSLATORS: the first argument is hour, followed by
 #. minute, and the translation for either 'behind' or
@@ -240,23 +240,23 @@ msgstr ""
 
 #: ../app/worldclock/UserWorldCityDelegate.qml:170
 msgid "Same time"
-msgstr ""
+msgstr "אותו זמן"
 
 #: ../app/worldclock/WorldCityList.qml:56
 msgid "Select a city"
-msgstr ""
+msgstr "בחירת עיר"
 
 #: ../app/worldclock/WorldCityList.qml:112
 msgid "Search..."
-msgstr ""
+msgstr "חיפוש..."
 
 #: ../app/worldclock/WorldCityList.qml:216
 msgid "Searching for a city"
-msgstr ""
+msgstr "מחפש אחר עיר"
 
 #: ../app/worldclock/WorldCityList.qml:221
 msgid "No City Found"
-msgstr ""
+msgstr "לא נמצאו ערים"
 
 #: ../app/worldclock/WorldCityList.qml:227
 msgid "Unable to connect."
