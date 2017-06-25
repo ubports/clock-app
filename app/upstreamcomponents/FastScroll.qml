@@ -50,7 +50,7 @@ Item {
     property ListView listView
     property int pinSize: units.gu(2)
 
-    readonly property var letters: ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+    property var letters: []
     readonly property alias fastScrolling: internal.fastScrolling
     readonly property bool showing: (rail.opacity !== 0.0)
     readonly property double minimumHeight: rail.height
@@ -73,10 +73,16 @@ Item {
     Connections {
         target: listView
         onCurrentIndexChanged: {
-            if (currentIndex != -1) {
+            if (listView.currentIndex != -1) {
                 rail.opacity = 0.0
             }
         }
+    }
+
+    Connections {
+        target: listView.model
+        onModelChanged : internal.populateSideBar()
+
     }
 
     UbuntuShape {
@@ -152,7 +158,7 @@ Item {
             leftMargin: units.gu(2)
             top: parent.top
         }
-        height: childrenRect.height
+        height: Math.min(childrenRect.height, root.listView.height)
         opacity: 0.0
         onIsVisibleChanged: {
             if (isVisible) {
@@ -260,6 +266,7 @@ Item {
     }
 
     QtObject {
+
         id: internal
 
         property string currentSection: listView.currentSection
@@ -319,6 +326,37 @@ Item {
             if (index != -1) {
                 currentItem = sectionsRepeater.itemAt(index)
             }
+        }
+
+        function populateSideBar() {
+            console.log("Updating letters "+  listView.model.count)
+            var firstLetterHash = {};
+            root.letters = [];
+            for(var i=0;  i < listView.model.count; i++) {
+                var firstLetter = listView.model.get(i).cityName.substr(0,1);
+                if(!firstLetterHash[firstLetter]) {
+                    root.letters.push(firstLetter);
+                    firstLetterHash[firstLetter] = firstLetter;
+                }
+            }
+
+            sectionsRepeater.model = internal.longListHack(root.letters);
+        }
+
+        //TODO This is an HACK to fix cases where the amount of letters is bigger then the visible space
+        //     (A real fix should be changing the column to a scrollable item itself or maybe change the letters into dots when theres too much letters)
+        function longListHack(letters) {
+            var acceptableHeight = root.listView.height - root.anchors.topMargin ;
+
+            if( letters.length > 0 && (root.pinSize * letters.length ) > acceptableHeight) {
+                for( var y=0;
+                    letters.length > 26 && (root.pinSize * letters.length ) > acceptableHeight  ;
+                    y+=1 + Math.max(0,letters.length / (letters.length-(acceptableHeight/(root.pinSize))))) {
+
+                        letters.splice(parseInt(y) % letters.length,1);
+                }
+            }
+            return letters;
         }
     }
 }
