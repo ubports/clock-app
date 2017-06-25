@@ -47,6 +47,16 @@ Item {
             topMargin: units.gu(2)
             horizontalCenter: parent.horizontalCenter
         }
+        MouseArea {
+            anchors.fill: parent
+            onClicked: {
+                if (stopwatchEngine.running) {
+                    stopwatchEngine.pauseStopwatch();
+                } else {
+                    stopwatchEngine.startStopwatch();
+                }
+            }
+        }
     }
 
     Item {
