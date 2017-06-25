@@ -1,11 +1,10 @@
-import QtQuick 2.0
+import QtQuick 2.4
 
 /**
  * HACK : This is an hack to reduce the cases the swiping left/right on a lap might switch between the main view pages
  *       (This a QT issue when you have nested interactive listviews)
  *       (This implementation require the list to have an header that is the same hight as it`s items)
  */
-
 
 
 Item {

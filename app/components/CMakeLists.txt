@@ -11,6 +11,7 @@ set(COMPONENTS_QML_JS_FILES
     EmptyState.qml
     ExpandableListItem.qml
     NavigationRow.qml
+    NestedListviewsHack.qml
     Shadow.qml
 )
 
