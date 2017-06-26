@@ -181,11 +181,24 @@ Page {
 
     NavigationRow {
         id: bottomRow
+
+        transitions: Transition {
+            PropertyAnimation {
+               properties: "anchors.bottomMargin";
+            }
+        }
+         states: [
+             State {
+                name: "up"
+                when: bottomEdgeLoader.item && bottomEdgeLoader.item.hint.visible && bottomEdgeLoader.item.hint.status == BottomEdgeHint.Active
+                PropertyChanges { target: bottomRow; anchors.bottomMargin:  units.gu(4); }
+              }
+         ]
         anchors {
             bottom: parent.bottom
             left: parent.left
             right: parent.right
-            bottomMargin: bottomEdgeLoader.item && bottomEdgeLoader.item.hint.visible && bottomEdgeLoader.item.hint.status == BottomEdgeHint.Active ? units.gu(4) : 0
+            bottomMargin: 0
         }
     }
 }
