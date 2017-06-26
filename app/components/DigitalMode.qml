@@ -46,11 +46,16 @@ ClockCircle {
     Label {
         id: _digitalTime
 
-        anchors.centerIn: parent
+        anchors.verticalCenter: parent.verticalCenter
+        anchors.horizontalCenter: parent.horizontalCenter
+        width:Math.min(parent.width,parent.height)-units.dp(4)
 
         color: UbuntuColors.slate
         font.pixelSize: maxTimeFontSize
-
+        minimumPixelSize: 6
+        fontSizeMode: Text.Fit
+        horizontalAlignment: Text.AlignHCenter
+        verticalAlignment: Text.AlignVCenter
         text: {
             if (localizedTimeString.search(Qt.locale().amText) !== -1) {
                 // 12 hour format detected with the localised AM text
@@ -74,6 +79,8 @@ ClockCircle {
         anchors.horizontalCenter: parent.horizontalCenter
 
         font.pixelSize: maxPeriodFontSize
+        minimumPixelSize: 6
+        fontSizeMode: Text.Fit
         visible: text !== ""
         color: UbuntuColors.slate
         text: {
