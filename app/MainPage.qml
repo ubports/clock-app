@@ -174,8 +174,8 @@ Page {
         model: navigationModel
         orientation: ListView.Horizontal
         snapMode: ListView.SnapOneItem
-        flickDeceleration:width
-        maximumFlickVelocity: width*10
+        flickDeceleration:width/4
+        maximumFlickVelocity: width*5
         interactive: true
     }
 
