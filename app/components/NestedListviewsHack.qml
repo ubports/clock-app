@@ -34,7 +34,10 @@ Item {
             left: parent.left
             right: parent.right
         }
-        height : Math.min((1+nestedListView.count) * nestedListView.headerItem.height,nestedListView.height)
+        height : Math.min(  nestedListView.height,
+                            Math.max( nestedListView.headerItem ? (1+nestedListView.count) * nestedListView.headerItem.height : 0 ,
+                                      nestedListView.count && nestedListView.itemAt(0,0) ? (1+nestedListView.count) * nestedListView.itemAt(0,0).height : 0 )
+                 )
         hoverEnabled:true
         propagateComposedEvents: true
         preventStealing: preventFlick
