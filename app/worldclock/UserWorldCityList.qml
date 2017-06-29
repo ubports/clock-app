@@ -27,7 +27,6 @@ ListView {
 
     clip: true
     pressDelay: 66
-    anchors.fill: parent
 
     onFlickStarted:  {
         forceActiveFocus()
