@@ -8,15 +8,17 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2016-02-29 21:58+0100\n"
-"PO-Revision-Date: 2015-09-16 09:49+0000\n"
-"Last-Translator: Víctor R. Ruiz <Unknown>\n"
-"Language-Team: Spanish <es@li.org>\n"
+"PO-Revision-Date: 2017-06-30 07:56+0000\n"
+"Last-Translator: Francisco Molinero <paco@byasl.com>\n"
+"Language-Team: Spanish <https://ubpweblate.tnvcomp.com/projects/ubports"
+"/clock-app/es/>\n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2.14.1\n"
 "X-Launchpad-Export-Date: 2017-04-05 07:41+0000\n"
-"X-Generator: Launchpad (build 18335)\n"
 
 #: ../app/alarm/AlarmLabel.qml:35 ../app/alarm/AlarmLabel.qml:79
 #: ../app/alarm/EditAlarmPage.qml:297
@@ -43,7 +45,7 @@ msgstr "Atrás"
 
 #: ../app/alarm/AlarmPage.qml:78
 msgid "Select None"
-msgstr "Cancelar la selección"
+msgstr "Cancelar selección"
 
 #: ../app/alarm/AlarmPage.qml:80 ../app/alarm/AlarmRepeat.qml:62
 msgid "Select All"
@@ -105,7 +107,7 @@ msgstr "Sonido"
 
 #: ../app/alarm/AlarmSound.qml:190
 msgid "Custom alarm sounds"
-msgstr "Sonidos de alarma personalizadas"
+msgstr "Sonidos de alarma personalizados"
 
 #: ../app/alarm/AlarmSound.qml:205
 msgid "Add sound"
@@ -195,7 +197,7 @@ msgstr "Reanudar"
 
 #: ../app/stopwatch/StopwatchPage.qml:98
 msgid "Clear"
-msgstr "Reiniciar"
+msgstr "Limpiar"
 
 #: ../app/worldclock/AddWorldCityButton.qml:30
 msgid "Add"
@@ -397,7 +399,7 @@ msgstr "Jordania"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:56
 msgid "Amsterdam"
-msgstr "Ámsterdam"
+msgstr "Amsterdam"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:56
 msgid "Netherlands"
