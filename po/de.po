@@ -179,7 +179,7 @@ msgstr "Den Quellcode bekommen"
 
 #: ../app/components/Information.qml:18
 msgid "Report issues"
-msgstr ""
+msgstr "Probleme melden"
 
 #: ../app/components/Information.qml:19
 msgid "Help translate"
