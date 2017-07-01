@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-07-02 18:48+0000\n"
-"PO-Revision-Date: 2017-07-07 23:21+0000\n"
+"PO-Revision-Date: 2017-07-07 23:22+0000\n"
 "Last-Translator: Weblate Admin <flori-weblate@bin.org.in>\n"
 "Language-Team: German <https://ubpweblate.tnvcomp.com/projects/ubports/clock-"
 "app/de/>\n"
@@ -175,7 +175,7 @@ msgstr "Information"
 
 #: ../app/components/Information.qml:17
 msgid "Get the source"
-msgstr ""
+msgstr "Den Quellcode bekommen"
 
 #: ../app/components/Information.qml:18
 msgid "Report issues"
