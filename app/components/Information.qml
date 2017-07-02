@@ -14,9 +14,9 @@ Page {
      }
 
     Component.onCompleted: {
-        infoModel.append({ name: i18n.tr("Get the source"), desc: i18n.tr("Source of clock lays here."), url: "https://github.com/ubports/clock-app" })
-        infoModel.append({ name: i18n.tr("Report issues"), desc: i18n.tr("Issues you have do you?"), url: "https://github.com/ubports/clock-app/issues" })
-        infoModel.append({ name: i18n.tr("Help translate"), desc: i18n.tr("Understand you I am not."), url: "https://translate.ubports.com/projects/ubports/clock-app/" })
+        infoModel.append({ name: i18n.tr("Get the source"), url: "https://github.com/ubports/clock-app" })
+        infoModel.append({ name: i18n.tr("Report issues"), url: "https://github.com/ubports/clock-app/issues" })
+        infoModel.append({ name: i18n.tr("Help translate"), url: "https://translate.ubports.com/projects/ubports/clock-app/" })
     }
 
     UbuntuListView {

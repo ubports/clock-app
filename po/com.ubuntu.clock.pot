@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-02 17:20+0000\n"
+"POT-Creation-Date: 2017-07-02 18:48+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -175,24 +175,12 @@ msgstr ""
 msgid "Get the source"
 msgstr ""
 
-#: ../app/components/Information.qml:17
-msgid "Source of clock lays here."
-msgstr ""
-
 #: ../app/components/Information.qml:18
 msgid "Report issues"
 msgstr ""
 
-#: ../app/components/Information.qml:18
-msgid "Issues you have do you?"
-msgstr ""
-
 #: ../app/components/Information.qml:19
 msgid "Help translate"
-msgstr ""
-
-#: ../app/components/Information.qml:19
-msgid "Understand you I am not."
 msgstr ""
 
 #: ../app/components/NavigationRow.qml:50 ubuntu-clock-app.desktop.in.in.h:1
