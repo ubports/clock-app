@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2016-02-29 21:58+0100\n"
-"PO-Revision-Date: 2017-06-28 19:10+0000\n"
+"PO-Revision-Date: 2017-07-03 06:05+0000\n"
 "Last-Translator: Eran <etherpulse@gmail.com>\n"
 "Language-Team: Hebrew <https://ubpweblate.tnvcomp.com/projects/ubports/clock-"
 "app/he/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.14.1\n"
+"X-Generator: Weblate 2.15\n"
 "X-Launchpad-Export-Date: 2017-04-05 07:40+0000\n"
 
 #: ../app/alarm/AlarmLabel.qml:35 ../app/alarm/AlarmLabel.qml:79
@@ -41,7 +41,7 @@ msgstr "התרעה"
 
 #: ../app/alarm/AlarmPage.qml:66 ../app/worldclock/WorldCityList.qml:83
 msgid "Back"
-msgstr "חזרה"
+msgstr "אחורה"
 
 #: ../app/alarm/AlarmPage.qml:78
 msgid "Select None"
@@ -1571,7 +1571,7 @@ msgstr "פנמה"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:263
 msgid "Panama"
-msgstr ""
+msgstr "פנמה"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:264
 msgid "Paramaribo"
@@ -1844,7 +1844,7 @@ msgstr "בולגריה"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:314
 msgid "St.Johns"
-msgstr ""
+msgstr "סיינט ג'ונס"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:315
 msgid "St.Kitts"
