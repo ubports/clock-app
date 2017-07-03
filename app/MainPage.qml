@@ -75,7 +75,7 @@ Page {
 
     ScreenSaver {
         // Disable screen dimming/off when stopwatch is running
-        screenSaverEnabled: !stopwatchPage.isRunning
+        screenSaverEnabled: stopwatchPageLoader.item && !stopwatchPageLoader.item.isRunning
     }
 
     VisualItemModel {
@@ -89,12 +89,25 @@ Page {
             height: listview.height
         }
 
-        StopwatchPage {
-            id: stopwatchPage
+        Loader {
+            id:stopwatchPageLoader
+            asynchronous: true
             width: clockApp.width
             height: listview.height
+            Component.onCompleted: setSource("stopwatch/StopwatchPage.qml" ,{
+                                                 "notLocalizedClockTimeString": _mainPage.notLocalizedDateTimeString,
+                                                 "localizedClockTimeString": _mainPage.localizedTimeString,
+                                                 "localizedClockDateString": _mainPage.localizedDateString,
+                                                 "width": clockApp.width,
+                                                 "height": listview.height});
+            onLoaded: {
+                if (this.item.isRunning) {
+                    listview.moveToStopwatchPage()
+                }
+            }
         }
     }
+
 
     header: PageHeader {
         visible:true
@@ -159,7 +172,7 @@ Page {
 
         // Show the stopwatch page on app startup if it is running
         Component.onCompleted: {
-            if (stopwatchPage.isRunning) {
+            if (stopwatchPageLoader.item && stopwatchPageLoader.item.isRunning) {
                 moveToStopwatchPage()
             }
         }
