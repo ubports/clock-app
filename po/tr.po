@@ -6,11 +6,12 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
-"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2016-02-29 21:58+0100\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-07-02 18:48+0000\n"
 "PO-Revision-Date: 2015-11-20 18:42+0000\n"
 "Last-Translator: Mutlu Can YILMAZ <mtlcnylmz@gmail.com>\n"
 "Language-Team: Turkish <tr@li.org>\n"
+"Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -19,12 +20,12 @@ msgstr ""
 "X-Generator: Launchpad (build 18335)\n"
 
 #: ../app/alarm/AlarmLabel.qml:35 ../app/alarm/AlarmLabel.qml:79
-#: ../app/alarm/EditAlarmPage.qml:297
+#: ../app/alarm/EditAlarmPage.qml:298
 msgid "Label"
 msgstr "Etiket"
 
-#: ../app/alarm/AlarmList.qml:61 ../app/alarm/AlarmPage.qml:103
-#: ../app/worldclock/UserWorldCityList.qml:70
+#: ../app/alarm/AlarmList.qml:64 ../app/alarm/AlarmPage.qml:101
+#: ../app/worldclock/UserWorldCityList.qml:71
 msgid "Delete"
 msgstr "Sil"
 
@@ -37,23 +38,23 @@ msgstr "Alarmlar"
 msgid "Alarm"
 msgstr "Alarm"
 
-#: ../app/alarm/AlarmPage.qml:66 ../app/worldclock/WorldCityList.qml:83
+#: ../app/alarm/AlarmPage.qml:65 ../app/worldclock/WorldCityList.qml:83
 msgid "Back"
 msgstr "Geri"
 
-#: ../app/alarm/AlarmPage.qml:78
+#: ../app/alarm/AlarmPage.qml:76
 msgid "Select None"
 msgstr "Hiçbirini Seçme"
 
-#: ../app/alarm/AlarmPage.qml:80 ../app/alarm/AlarmRepeat.qml:62
+#: ../app/alarm/AlarmPage.qml:78 ../app/alarm/AlarmRepeat.qml:64
 msgid "Select All"
 msgstr "Tümünü Seç"
 
-#: ../app/alarm/AlarmPage.qml:159
+#: ../app/alarm/AlarmPage.qml:157
 msgid "No saved alarms"
 msgstr "Kayıtlı alarm yok"
 
-#: ../app/alarm/AlarmPage.qml:160
+#: ../app/alarm/AlarmPage.qml:158
 msgid "Tap the + icon to add an alarm"
 msgstr "Bir alarm eklemek için + simgesine dokunun"
 
@@ -71,8 +72,8 @@ msgstr "Ayarlar"
 #: ../app/alarm/AlarmSettingsPage.qml:58 ../app/alarm/AlarmSettingsPage.qml:59
 #: ../app/alarm/AlarmSettingsPage.qml:69 ../app/alarm/AlarmSettingsPage.qml:70
 #: ../app/alarm/AlarmSettingsPage.qml:71 ../app/alarm/AlarmSettingsPage.qml:72
-#: ../app/alarm/AlarmSettingsPage.qml:121
-#: ../app/alarm/AlarmSettingsPage.qml:150
+#: ../app/alarm/AlarmSettingsPage.qml:122
+#: ../app/alarm/AlarmSettingsPage.qml:153
 #, qt-format
 msgid "%1 minute"
 msgid_plural "%1 minutes"
@@ -83,23 +84,23 @@ msgstr[1] "%1 dakika"
 msgid "Alarm volume"
 msgstr "Alarm sesitrusty"
 
-#: ../app/alarm/AlarmSettingsPage.qml:120
+#: ../app/alarm/AlarmSettingsPage.qml:121
 msgid "Alarm stops after"
 msgstr "Alarmın durması için"
 
-#: ../app/alarm/AlarmSettingsPage.qml:149
+#: ../app/alarm/AlarmSettingsPage.qml:152
 msgid "Snooze for"
 msgstr "Şu kadar ertele"
 
-#: ../app/alarm/AlarmSettingsPage.qml:178
+#: ../app/alarm/AlarmSettingsPage.qml:183
 msgid "Vibration"
 msgstr "Titreşim"
 
-#: ../app/alarm/AlarmSettingsPage.qml:203
+#: ../app/alarm/AlarmSettingsPage.qml:209
 msgid "Change time and date"
 msgstr "Saat ve tarihi değiştir"
 
-#: ../app/alarm/AlarmSound.qml:60 ../app/alarm/EditAlarmPage.qml:317
+#: ../app/alarm/AlarmSound.qml:60 ../app/alarm/EditAlarmPage.qml:319
 msgid "Sound"
 msgstr "Ses"
 
@@ -111,7 +112,7 @@ msgstr "Özel alarm sesleri"
 msgid "Add sound"
 msgstr "Ses ekle"
 
-#: ../app/alarm/AlarmSound.qml:341
+#: ../app/alarm/AlarmSound.qml:343
 msgid "Default alarm sounds"
 msgstr "Öntanımlı alarm sesleri"
 
@@ -154,7 +155,7 @@ msgstr "Yeni alarm"
 msgid "Edit alarm"
 msgstr "Alarmı düzenle"
 
-#: ../app/alarm/EditAlarmPage.qml:339
+#: ../app/alarm/EditAlarmPage.qml:343
 msgid "Delete alarm"
 msgstr "Alarmı sil"
 
@@ -163,37 +164,63 @@ msgstr "Alarmı sil"
 msgid "Add sound from"
 msgstr "Ses ekle"
 
-#: ../app/clock/ClockPage.qml:244
+#: ../app/clock/ClockPage.qml:257
 msgid "Retrieving location..."
 msgstr "Konum getiriliyor..."
 
+#: ../app/components/Information.qml:8
+#, fuzzy
+msgid "Information"
+msgstr "Titreşim"
+
+#: ../app/components/Information.qml:17
+msgid "Get the source"
+msgstr ""
+
+#: ../app/components/Information.qml:18
+msgid "Report issues"
+msgstr ""
+
+#: ../app/components/Information.qml:19
+msgid "Help translate"
+msgstr ""
+
+#: ../app/components/NavigationRow.qml:50 ubuntu-clock-app.desktop.in.in.h:1
+msgid "Clock"
+msgstr "Saat"
+
+#: ../app/components/NavigationRow.qml:62
+#, fuzzy
+msgid "Stopwatch"
+msgstr "Durdur"
+
 #. TRANSLATORS: This refers to the stopwatch lap and is shown as a header where space is limited. Constrain
 #. translation length to a few characters.
-#: ../app/stopwatch/LapListView.qml:49 ../app/stopwatch/StopwatchPage.qml:98
+#: ../app/stopwatch/LapListView.qml:50 ../app/stopwatch/StopwatchPage.qml:113
 msgid "Lap"
 msgstr "Tur"
 
-#: ../app/stopwatch/LapListView.qml:58
+#: ../app/stopwatch/LapListView.qml:59
 msgid "Lap Time"
 msgstr "Tur Zamanı"
 
-#: ../app/stopwatch/LapListView.qml:65
+#: ../app/stopwatch/LapListView.qml:66
 msgid "Total Time"
 msgstr "Toplam Süre"
 
-#: ../app/stopwatch/StopwatchPage.qml:80
+#: ../app/stopwatch/StopwatchPage.qml:94
 msgid "Stop"
 msgstr "Durdur"
 
-#: ../app/stopwatch/StopwatchPage.qml:80
+#: ../app/stopwatch/StopwatchPage.qml:94
 msgid "Start"
 msgstr "Başlat"
 
-#: ../app/stopwatch/StopwatchPage.qml:80
+#: ../app/stopwatch/StopwatchPage.qml:94
 msgid "Resume"
 msgstr "Sürdür"
 
-#: ../app/stopwatch/StopwatchPage.qml:98
+#: ../app/stopwatch/StopwatchPage.qml:113
 msgid "Clear"
 msgstr "Temizle"
 
@@ -201,7 +228,7 @@ msgstr "Temizle"
 msgid "Add"
 msgstr "Add"
 
-#: ../app/worldclock/AddWorldCityButton.qml:60
+#: ../app/worldclock/AddWorldCityButton.qml:61
 #: ../app/worldclock/WorldCityList.qml:63
 msgid "City"
 msgstr "Şehir"
@@ -2007,10 +2034,6 @@ msgstr "Zürih"
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:347
 msgid "Switzerland"
 msgstr "İsviçre"
-
-#: ubuntu-clock-app.desktop.in.in.h:1
-msgid "Clock"
-msgstr "Saat"
 
 #: ubuntu-clock-app.desktop.in.in.h:2
 msgid ""
