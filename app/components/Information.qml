@@ -35,7 +35,9 @@ Page {
           width:height
           name:"clock-app"
           layer.enabled: true
-          layer.effect: UbuntuShapeOverlay {  }
+          layer.effect: UbuntuShapeOverlay {
+              relativeRadius: 0.75
+           }
         }
         Label {
             width: parent.width
