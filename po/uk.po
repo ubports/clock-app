@@ -7,27 +7,27 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
-"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2016-02-29 21:58+0100\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-07-02 18:48+0000\n"
 "PO-Revision-Date: 2015-10-09 12:23+0000\n"
 "Last-Translator: Yuri Chornoivan <yurchor@gmail.com>\n"
 "Language-Team: Ukrainian <uk@li.org>\n"
+"Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Launchpad-Export-Date: 2017-04-05 07:41+0000\n"
 "X-Generator: Launchpad (build 18335)\n"
-"Language: uk\n"
 
 #: ../app/alarm/AlarmLabel.qml:35 ../app/alarm/AlarmLabel.qml:79
-#: ../app/alarm/EditAlarmPage.qml:297
+#: ../app/alarm/EditAlarmPage.qml:298
 msgid "Label"
 msgstr "Мітка"
 
-#: ../app/alarm/AlarmList.qml:61 ../app/alarm/AlarmPage.qml:103
-#: ../app/worldclock/UserWorldCityList.qml:70
+#: ../app/alarm/AlarmList.qml:64 ../app/alarm/AlarmPage.qml:101
+#: ../app/worldclock/UserWorldCityList.qml:71
 msgid "Delete"
 msgstr "Вилучити"
 
@@ -40,23 +40,23 @@ msgstr "Сигнали"
 msgid "Alarm"
 msgstr "Будильник"
 
-#: ../app/alarm/AlarmPage.qml:66 ../app/worldclock/WorldCityList.qml:83
+#: ../app/alarm/AlarmPage.qml:65 ../app/worldclock/WorldCityList.qml:83
 msgid "Back"
 msgstr "Назад"
 
-#: ../app/alarm/AlarmPage.qml:78
+#: ../app/alarm/AlarmPage.qml:76
 msgid "Select None"
 msgstr "Не обирати жодного"
 
-#: ../app/alarm/AlarmPage.qml:80 ../app/alarm/AlarmRepeat.qml:62
+#: ../app/alarm/AlarmPage.qml:78 ../app/alarm/AlarmRepeat.qml:64
 msgid "Select All"
 msgstr "Вибрати все"
 
-#: ../app/alarm/AlarmPage.qml:159
+#: ../app/alarm/AlarmPage.qml:157
 msgid "No saved alarms"
 msgstr "Немає збережених нагадувань"
 
-#: ../app/alarm/AlarmPage.qml:160
+#: ../app/alarm/AlarmPage.qml:158
 msgid "Tap the + icon to add an alarm"
 msgstr "Натисніть піктограму «+», щоб додати нагадування"
 
@@ -74,8 +74,8 @@ msgstr "Налаштування"
 #: ../app/alarm/AlarmSettingsPage.qml:58 ../app/alarm/AlarmSettingsPage.qml:59
 #: ../app/alarm/AlarmSettingsPage.qml:69 ../app/alarm/AlarmSettingsPage.qml:70
 #: ../app/alarm/AlarmSettingsPage.qml:71 ../app/alarm/AlarmSettingsPage.qml:72
-#: ../app/alarm/AlarmSettingsPage.qml:121
-#: ../app/alarm/AlarmSettingsPage.qml:150
+#: ../app/alarm/AlarmSettingsPage.qml:122
+#: ../app/alarm/AlarmSettingsPage.qml:153
 #, qt-format
 msgid "%1 minute"
 msgid_plural "%1 minutes"
@@ -87,23 +87,23 @@ msgstr[2] "%1 хвилин"
 msgid "Alarm volume"
 msgstr "Гучність нагадування"
 
-#: ../app/alarm/AlarmSettingsPage.qml:120
+#: ../app/alarm/AlarmSettingsPage.qml:121
 msgid "Alarm stops after"
 msgstr "Нагадування зупиняється після"
 
-#: ../app/alarm/AlarmSettingsPage.qml:149
+#: ../app/alarm/AlarmSettingsPage.qml:152
 msgid "Snooze for"
 msgstr "Подрімати"
 
-#: ../app/alarm/AlarmSettingsPage.qml:178
+#: ../app/alarm/AlarmSettingsPage.qml:183
 msgid "Vibration"
 msgstr "Вібрація"
 
-#: ../app/alarm/AlarmSettingsPage.qml:203
+#: ../app/alarm/AlarmSettingsPage.qml:209
 msgid "Change time and date"
 msgstr "Змінити час і дату"
 
-#: ../app/alarm/AlarmSound.qml:60 ../app/alarm/EditAlarmPage.qml:317
+#: ../app/alarm/AlarmSound.qml:60 ../app/alarm/EditAlarmPage.qml:319
 msgid "Sound"
 msgstr "Звук"
 
@@ -115,7 +115,7 @@ msgstr "Нетипові звуки нагадувань"
 msgid "Add sound"
 msgstr "Додати звук"
 
-#: ../app/alarm/AlarmSound.qml:341
+#: ../app/alarm/AlarmSound.qml:343
 msgid "Default alarm sounds"
 msgstr "Типові звуки нагадувань"
 
@@ -158,7 +158,7 @@ msgstr "Нове нагадування"
 msgid "Edit alarm"
 msgstr "Редагувати нагадування"
 
-#: ../app/alarm/EditAlarmPage.qml:339
+#: ../app/alarm/EditAlarmPage.qml:343
 msgid "Delete alarm"
 msgstr "Вилучити нагадування"
 
@@ -167,37 +167,63 @@ msgstr "Вилучити нагадування"
 msgid "Add sound from"
 msgstr "Додавання звуку з"
 
-#: ../app/clock/ClockPage.qml:244
+#: ../app/clock/ClockPage.qml:257
 msgid "Retrieving location..."
 msgstr "Отримуємо дані місця перебування…"
 
+#: ../app/components/Information.qml:8
+#, fuzzy
+msgid "Information"
+msgstr "Вібрація"
+
+#: ../app/components/Information.qml:17
+msgid "Get the source"
+msgstr ""
+
+#: ../app/components/Information.qml:18
+msgid "Report issues"
+msgstr ""
+
+#: ../app/components/Information.qml:19
+msgid "Help translate"
+msgstr ""
+
+#: ../app/components/NavigationRow.qml:50 ubuntu-clock-app.desktop.in.in.h:1
+msgid "Clock"
+msgstr "Годинник"
+
+#: ../app/components/NavigationRow.qml:62
+#, fuzzy
+msgid "Stopwatch"
+msgstr "Зупинити"
+
 #. TRANSLATORS: This refers to the stopwatch lap and is shown as a header where space is limited. Constrain
 #. translation length to a few characters.
-#: ../app/stopwatch/LapListView.qml:49 ../app/stopwatch/StopwatchPage.qml:98
+#: ../app/stopwatch/LapListView.qml:50 ../app/stopwatch/StopwatchPage.qml:113
 msgid "Lap"
 msgstr "Коло"
 
-#: ../app/stopwatch/LapListView.qml:58
+#: ../app/stopwatch/LapListView.qml:59
 msgid "Lap Time"
 msgstr "Час кола"
 
-#: ../app/stopwatch/LapListView.qml:65
+#: ../app/stopwatch/LapListView.qml:66
 msgid "Total Time"
 msgstr "Загальний час"
 
-#: ../app/stopwatch/StopwatchPage.qml:80
+#: ../app/stopwatch/StopwatchPage.qml:94
 msgid "Stop"
 msgstr "Зупинити"
 
-#: ../app/stopwatch/StopwatchPage.qml:80
+#: ../app/stopwatch/StopwatchPage.qml:94
 msgid "Start"
 msgstr "Почати"
 
-#: ../app/stopwatch/StopwatchPage.qml:80
+#: ../app/stopwatch/StopwatchPage.qml:94
 msgid "Resume"
 msgstr "Продовжити"
 
-#: ../app/stopwatch/StopwatchPage.qml:98
+#: ../app/stopwatch/StopwatchPage.qml:113
 msgid "Clear"
 msgstr "Спорожнити"
 
@@ -205,7 +231,7 @@ msgstr "Спорожнити"
 msgid "Add"
 msgstr "Додати"
 
-#: ../app/worldclock/AddWorldCityButton.qml:60
+#: ../app/worldclock/AddWorldCityButton.qml:61
 #: ../app/worldclock/WorldCityList.qml:63
 msgid "City"
 msgstr "Місто"
@@ -2014,10 +2040,6 @@ msgstr "Цюріх"
 msgid "Switzerland"
 msgstr "Швейцарія"
 
-#: ubuntu-clock-app.desktop.in.in.h:1
-msgid "Clock"
-msgstr "Годинник"
-
 #: ubuntu-clock-app.desktop.in.in.h:2
 msgid ""
 "A sophisticated clock app that provides world clock, alarm and stopwatch "
@@ -2029,5 +2051,5 @@ msgstr ""
 #: ubuntu-clock-app.desktop.in.in.h:3
 msgid "time;alarm;alert;clock;world;stopwatch;"
 msgstr ""
-"time;alarm;alert;clock;world;stopwatch;час;нагадування;будильник;дзвінок;годи"
-"нник;світ;секундомір;"
+"time;alarm;alert;clock;world;stopwatch;час;нагадування;будильник;дзвінок;"
+"годинник;світ;секундомір;"

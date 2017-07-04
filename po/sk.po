@@ -6,11 +6,12 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
-"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2016-02-29 21:58+0100\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-07-02 18:48+0000\n"
 "PO-Revision-Date: 2016-03-07 12:09+0000\n"
 "Last-Translator: P_E_T_O <Unknown>\n"
 "Language-Team: Slovak <sk@li.org>\n"
+"Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -19,12 +20,12 @@ msgstr ""
 "X-Generator: Launchpad (build 18335)\n"
 
 #: ../app/alarm/AlarmLabel.qml:35 ../app/alarm/AlarmLabel.qml:79
-#: ../app/alarm/EditAlarmPage.qml:297
+#: ../app/alarm/EditAlarmPage.qml:298
 msgid "Label"
 msgstr "Menovka"
 
-#: ../app/alarm/AlarmList.qml:61 ../app/alarm/AlarmPage.qml:103
-#: ../app/worldclock/UserWorldCityList.qml:70
+#: ../app/alarm/AlarmList.qml:64 ../app/alarm/AlarmPage.qml:101
+#: ../app/worldclock/UserWorldCityList.qml:71
 msgid "Delete"
 msgstr "Vymazať"
 
@@ -37,23 +38,23 @@ msgstr "Budíky"
 msgid "Alarm"
 msgstr "Budík"
 
-#: ../app/alarm/AlarmPage.qml:66 ../app/worldclock/WorldCityList.qml:83
+#: ../app/alarm/AlarmPage.qml:65 ../app/worldclock/WorldCityList.qml:83
 msgid "Back"
 msgstr "Naspäť"
 
-#: ../app/alarm/AlarmPage.qml:78
+#: ../app/alarm/AlarmPage.qml:76
 msgid "Select None"
 msgstr "Zrušiť výber"
 
-#: ../app/alarm/AlarmPage.qml:80 ../app/alarm/AlarmRepeat.qml:62
+#: ../app/alarm/AlarmPage.qml:78 ../app/alarm/AlarmRepeat.qml:64
 msgid "Select All"
 msgstr "Vybrať všetko"
 
-#: ../app/alarm/AlarmPage.qml:159
+#: ../app/alarm/AlarmPage.qml:157
 msgid "No saved alarms"
 msgstr "Žiadne uložené budíky"
 
-#: ../app/alarm/AlarmPage.qml:160
+#: ../app/alarm/AlarmPage.qml:158
 msgid "Tap the + icon to add an alarm"
 msgstr "Kliknite na ikonu + pre pridanie budíka"
 
@@ -71,8 +72,8 @@ msgstr "Nastavenia"
 #: ../app/alarm/AlarmSettingsPage.qml:58 ../app/alarm/AlarmSettingsPage.qml:59
 #: ../app/alarm/AlarmSettingsPage.qml:69 ../app/alarm/AlarmSettingsPage.qml:70
 #: ../app/alarm/AlarmSettingsPage.qml:71 ../app/alarm/AlarmSettingsPage.qml:72
-#: ../app/alarm/AlarmSettingsPage.qml:121
-#: ../app/alarm/AlarmSettingsPage.qml:150
+#: ../app/alarm/AlarmSettingsPage.qml:122
+#: ../app/alarm/AlarmSettingsPage.qml:153
 #, qt-format
 msgid "%1 minute"
 msgid_plural "%1 minutes"
@@ -84,23 +85,23 @@ msgstr[2] "%1 minúty"
 msgid "Alarm volume"
 msgstr "Hlasitosť budíka"
 
-#: ../app/alarm/AlarmSettingsPage.qml:120
+#: ../app/alarm/AlarmSettingsPage.qml:121
 msgid "Alarm stops after"
 msgstr "Budík sa zastaví po"
 
-#: ../app/alarm/AlarmSettingsPage.qml:149
+#: ../app/alarm/AlarmSettingsPage.qml:152
 msgid "Snooze for"
 msgstr "Spánok na"
 
-#: ../app/alarm/AlarmSettingsPage.qml:178
+#: ../app/alarm/AlarmSettingsPage.qml:183
 msgid "Vibration"
 msgstr "Vibrovanie"
 
-#: ../app/alarm/AlarmSettingsPage.qml:203
+#: ../app/alarm/AlarmSettingsPage.qml:209
 msgid "Change time and date"
 msgstr "Zmeniť čas a dátum"
 
-#: ../app/alarm/AlarmSound.qml:60 ../app/alarm/EditAlarmPage.qml:317
+#: ../app/alarm/AlarmSound.qml:60 ../app/alarm/EditAlarmPage.qml:319
 msgid "Sound"
 msgstr "Zvuk"
 
@@ -112,7 +113,7 @@ msgstr "Vlastný zvuk budíka"
 msgid "Add sound"
 msgstr "Pridať zvuk"
 
-#: ../app/alarm/AlarmSound.qml:341
+#: ../app/alarm/AlarmSound.qml:343
 msgid "Default alarm sounds"
 msgstr "Predvolený zvuk budíka"
 
@@ -155,7 +156,7 @@ msgstr "Nový budík"
 msgid "Edit alarm"
 msgstr "Upraviť budík"
 
-#: ../app/alarm/EditAlarmPage.qml:339
+#: ../app/alarm/EditAlarmPage.qml:343
 msgid "Delete alarm"
 msgstr "Vymazať budík"
 
@@ -164,37 +165,63 @@ msgstr "Vymazať budík"
 msgid "Add sound from"
 msgstr "Pridať zvuk z"
 
-#: ../app/clock/ClockPage.qml:244
+#: ../app/clock/ClockPage.qml:257
 msgid "Retrieving location..."
 msgstr "Získavanie polohy..."
 
+#: ../app/components/Information.qml:8
+#, fuzzy
+msgid "Information"
+msgstr "Vibrovanie"
+
+#: ../app/components/Information.qml:17
+msgid "Get the source"
+msgstr ""
+
+#: ../app/components/Information.qml:18
+msgid "Report issues"
+msgstr ""
+
+#: ../app/components/Information.qml:19
+msgid "Help translate"
+msgstr ""
+
+#: ../app/components/NavigationRow.qml:50 ubuntu-clock-app.desktop.in.in.h:1
+msgid "Clock"
+msgstr "Hodiny"
+
+#: ../app/components/NavigationRow.qml:62
+#, fuzzy
+msgid "Stopwatch"
+msgstr "Zastaviť"
+
 #. TRANSLATORS: This refers to the stopwatch lap and is shown as a header where space is limited. Constrain
 #. translation length to a few characters.
-#: ../app/stopwatch/LapListView.qml:49 ../app/stopwatch/StopwatchPage.qml:98
+#: ../app/stopwatch/LapListView.qml:50 ../app/stopwatch/StopwatchPage.qml:113
 msgid "Lap"
 msgstr "Kolo"
 
-#: ../app/stopwatch/LapListView.qml:58
+#: ../app/stopwatch/LapListView.qml:59
 msgid "Lap Time"
 msgstr "Čas kola"
 
-#: ../app/stopwatch/LapListView.qml:65
+#: ../app/stopwatch/LapListView.qml:66
 msgid "Total Time"
 msgstr "Celkový čas"
 
-#: ../app/stopwatch/StopwatchPage.qml:80
+#: ../app/stopwatch/StopwatchPage.qml:94
 msgid "Stop"
 msgstr "Zastaviť"
 
-#: ../app/stopwatch/StopwatchPage.qml:80
+#: ../app/stopwatch/StopwatchPage.qml:94
 msgid "Start"
 msgstr "Spustiť"
 
-#: ../app/stopwatch/StopwatchPage.qml:80
+#: ../app/stopwatch/StopwatchPage.qml:94
 msgid "Resume"
 msgstr "Pokračovať"
 
-#: ../app/stopwatch/StopwatchPage.qml:98
+#: ../app/stopwatch/StopwatchPage.qml:113
 msgid "Clear"
 msgstr "Vyčistiť"
 
@@ -202,7 +229,7 @@ msgstr "Vyčistiť"
 msgid "Add"
 msgstr "Pridať"
 
-#: ../app/worldclock/AddWorldCityButton.qml:60
+#: ../app/worldclock/AddWorldCityButton.qml:61
 #: ../app/worldclock/WorldCityList.qml:63
 msgid "City"
 msgstr "Mesto"
@@ -2008,10 +2035,6 @@ msgstr "Zürich"
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:347
 msgid "Switzerland"
 msgstr "Švajčiarsko"
-
-#: ubuntu-clock-app.desktop.in.in.h:1
-msgid "Clock"
-msgstr "Hodiny"
 
 #: ubuntu-clock-app.desktop.in.in.h:2
 msgid ""

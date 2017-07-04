@@ -6,26 +6,26 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
-"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2016-02-29 21:58+0100\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-07-02 18:48+0000\n"
 "PO-Revision-Date: 2015-09-19 17:30+0000\n"
 "Last-Translator: Josef Andersson <Unknown>\n"
 "Language-Team: Swedish\n"
+"Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Launchpad-Export-Date: 2017-04-05 07:41+0000\n"
 "X-Generator: Launchpad (build 18335)\n"
-"Language: sv\n"
 
 #: ../app/alarm/AlarmLabel.qml:35 ../app/alarm/AlarmLabel.qml:79
-#: ../app/alarm/EditAlarmPage.qml:297
+#: ../app/alarm/EditAlarmPage.qml:298
 msgid "Label"
 msgstr "Etikett"
 
-#: ../app/alarm/AlarmList.qml:61 ../app/alarm/AlarmPage.qml:103
-#: ../app/worldclock/UserWorldCityList.qml:70
+#: ../app/alarm/AlarmList.qml:64 ../app/alarm/AlarmPage.qml:101
+#: ../app/worldclock/UserWorldCityList.qml:71
 msgid "Delete"
 msgstr "Ta bort"
 
@@ -38,23 +38,23 @@ msgstr "Alarm"
 msgid "Alarm"
 msgstr "Alarm"
 
-#: ../app/alarm/AlarmPage.qml:66 ../app/worldclock/WorldCityList.qml:83
+#: ../app/alarm/AlarmPage.qml:65 ../app/worldclock/WorldCityList.qml:83
 msgid "Back"
 msgstr "Bakåt"
 
-#: ../app/alarm/AlarmPage.qml:78
+#: ../app/alarm/AlarmPage.qml:76
 msgid "Select None"
 msgstr "Markera inget"
 
-#: ../app/alarm/AlarmPage.qml:80 ../app/alarm/AlarmRepeat.qml:62
+#: ../app/alarm/AlarmPage.qml:78 ../app/alarm/AlarmRepeat.qml:64
 msgid "Select All"
 msgstr "Markera allt"
 
-#: ../app/alarm/AlarmPage.qml:159
+#: ../app/alarm/AlarmPage.qml:157
 msgid "No saved alarms"
 msgstr "Inga sparade alarm"
 
-#: ../app/alarm/AlarmPage.qml:160
+#: ../app/alarm/AlarmPage.qml:158
 msgid "Tap the + icon to add an alarm"
 msgstr "Tryck på ikonen + för att lägga till ett alarm"
 
@@ -72,8 +72,8 @@ msgstr "Inställningar"
 #: ../app/alarm/AlarmSettingsPage.qml:58 ../app/alarm/AlarmSettingsPage.qml:59
 #: ../app/alarm/AlarmSettingsPage.qml:69 ../app/alarm/AlarmSettingsPage.qml:70
 #: ../app/alarm/AlarmSettingsPage.qml:71 ../app/alarm/AlarmSettingsPage.qml:72
-#: ../app/alarm/AlarmSettingsPage.qml:121
-#: ../app/alarm/AlarmSettingsPage.qml:150
+#: ../app/alarm/AlarmSettingsPage.qml:122
+#: ../app/alarm/AlarmSettingsPage.qml:153
 #, qt-format
 msgid "%1 minute"
 msgid_plural "%1 minutes"
@@ -84,23 +84,23 @@ msgstr[1] "%1 minuter"
 msgid "Alarm volume"
 msgstr "Alarmvolym"
 
-#: ../app/alarm/AlarmSettingsPage.qml:120
+#: ../app/alarm/AlarmSettingsPage.qml:121
 msgid "Alarm stops after"
 msgstr "Alarm slutar efter"
 
-#: ../app/alarm/AlarmSettingsPage.qml:149
+#: ../app/alarm/AlarmSettingsPage.qml:152
 msgid "Snooze for"
 msgstr "Snooze i"
 
-#: ../app/alarm/AlarmSettingsPage.qml:178
+#: ../app/alarm/AlarmSettingsPage.qml:183
 msgid "Vibration"
 msgstr "Vibration"
 
-#: ../app/alarm/AlarmSettingsPage.qml:203
+#: ../app/alarm/AlarmSettingsPage.qml:209
 msgid "Change time and date"
 msgstr "Ändra tid och datum"
 
-#: ../app/alarm/AlarmSound.qml:60 ../app/alarm/EditAlarmPage.qml:317
+#: ../app/alarm/AlarmSound.qml:60 ../app/alarm/EditAlarmPage.qml:319
 msgid "Sound"
 msgstr "Ljud"
 
@@ -112,7 +112,7 @@ msgstr "Anpassade alarmljud"
 msgid "Add sound"
 msgstr "Lägg till ljud"
 
-#: ../app/alarm/AlarmSound.qml:341
+#: ../app/alarm/AlarmSound.qml:343
 msgid "Default alarm sounds"
 msgstr "Standardalarmljud"
 
@@ -155,7 +155,7 @@ msgstr "Nytt alarm"
 msgid "Edit alarm"
 msgstr "Redigera alarm"
 
-#: ../app/alarm/EditAlarmPage.qml:339
+#: ../app/alarm/EditAlarmPage.qml:343
 msgid "Delete alarm"
 msgstr "Ta bort alarm"
 
@@ -164,37 +164,63 @@ msgstr "Ta bort alarm"
 msgid "Add sound from"
 msgstr "Lägg till ljud från"
 
-#: ../app/clock/ClockPage.qml:244
+#: ../app/clock/ClockPage.qml:257
 msgid "Retrieving location..."
 msgstr "Hämtar plats..."
 
+#: ../app/components/Information.qml:8
+#, fuzzy
+msgid "Information"
+msgstr "Vibration"
+
+#: ../app/components/Information.qml:17
+msgid "Get the source"
+msgstr ""
+
+#: ../app/components/Information.qml:18
+msgid "Report issues"
+msgstr ""
+
+#: ../app/components/Information.qml:19
+msgid "Help translate"
+msgstr ""
+
+#: ../app/components/NavigationRow.qml:50 ubuntu-clock-app.desktop.in.in.h:1
+msgid "Clock"
+msgstr "Klocka"
+
+#: ../app/components/NavigationRow.qml:62
+#, fuzzy
+msgid "Stopwatch"
+msgstr "Stopp"
+
 #. TRANSLATORS: This refers to the stopwatch lap and is shown as a header where space is limited. Constrain
 #. translation length to a few characters.
-#: ../app/stopwatch/LapListView.qml:49 ../app/stopwatch/StopwatchPage.qml:98
+#: ../app/stopwatch/LapListView.qml:50 ../app/stopwatch/StopwatchPage.qml:113
 msgid "Lap"
 msgstr "Varv"
 
-#: ../app/stopwatch/LapListView.qml:58
+#: ../app/stopwatch/LapListView.qml:59
 msgid "Lap Time"
 msgstr "Varvtid"
 
-#: ../app/stopwatch/LapListView.qml:65
+#: ../app/stopwatch/LapListView.qml:66
 msgid "Total Time"
 msgstr "Total tid"
 
-#: ../app/stopwatch/StopwatchPage.qml:80
+#: ../app/stopwatch/StopwatchPage.qml:94
 msgid "Stop"
 msgstr "Stopp"
 
-#: ../app/stopwatch/StopwatchPage.qml:80
+#: ../app/stopwatch/StopwatchPage.qml:94
 msgid "Start"
 msgstr "Start"
 
-#: ../app/stopwatch/StopwatchPage.qml:80
+#: ../app/stopwatch/StopwatchPage.qml:94
 msgid "Resume"
 msgstr "Fortsätt"
 
-#: ../app/stopwatch/StopwatchPage.qml:98
+#: ../app/stopwatch/StopwatchPage.qml:113
 msgid "Clear"
 msgstr "Rensa"
 
@@ -202,7 +228,7 @@ msgstr "Rensa"
 msgid "Add"
 msgstr "Lägg till"
 
-#: ../app/worldclock/AddWorldCityButton.qml:60
+#: ../app/worldclock/AddWorldCityButton.qml:61
 #: ../app/worldclock/WorldCityList.qml:63
 msgid "City"
 msgstr "Ort"
@@ -2008,10 +2034,6 @@ msgstr "Zürich"
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:347
 msgid "Switzerland"
 msgstr "Schweiz"
-
-#: ubuntu-clock-app.desktop.in.in.h:1
-msgid "Clock"
-msgstr "Klocka"
 
 #: ubuntu-clock-app.desktop.in.in.h:2
 msgid ""

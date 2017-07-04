@@ -6,11 +6,12 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
-"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2016-02-29 21:58+0100\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-07-02 18:48+0000\n"
 "PO-Revision-Date: 2015-09-11 08:07+0000\n"
 "Last-Translator: Richard Somlói <ricsipontaz@gmail.com>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
+"Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -19,12 +20,12 @@ msgstr ""
 "X-Generator: Launchpad (build 18335)\n"
 
 #: ../app/alarm/AlarmLabel.qml:35 ../app/alarm/AlarmLabel.qml:79
-#: ../app/alarm/EditAlarmPage.qml:297
+#: ../app/alarm/EditAlarmPage.qml:298
 msgid "Label"
 msgstr "Címke"
 
-#: ../app/alarm/AlarmList.qml:61 ../app/alarm/AlarmPage.qml:103
-#: ../app/worldclock/UserWorldCityList.qml:70
+#: ../app/alarm/AlarmList.qml:64 ../app/alarm/AlarmPage.qml:101
+#: ../app/worldclock/UserWorldCityList.qml:71
 msgid "Delete"
 msgstr "Törlés"
 
@@ -37,23 +38,23 @@ msgstr "Riasztások"
 msgid "Alarm"
 msgstr "Riasztás"
 
-#: ../app/alarm/AlarmPage.qml:66 ../app/worldclock/WorldCityList.qml:83
+#: ../app/alarm/AlarmPage.qml:65 ../app/worldclock/WorldCityList.qml:83
 msgid "Back"
 msgstr "Vissza"
 
-#: ../app/alarm/AlarmPage.qml:78
+#: ../app/alarm/AlarmPage.qml:76
 msgid "Select None"
 msgstr "Kijelölés megszüntetése"
 
-#: ../app/alarm/AlarmPage.qml:80 ../app/alarm/AlarmRepeat.qml:62
+#: ../app/alarm/AlarmPage.qml:78 ../app/alarm/AlarmRepeat.qml:64
 msgid "Select All"
 msgstr "Összes kijelölése"
 
-#: ../app/alarm/AlarmPage.qml:159
+#: ../app/alarm/AlarmPage.qml:157
 msgid "No saved alarms"
 msgstr "Nincs mentett riasztás"
 
-#: ../app/alarm/AlarmPage.qml:160
+#: ../app/alarm/AlarmPage.qml:158
 msgid "Tap the + icon to add an alarm"
 msgstr "Új hozzáadásához koppintson a + ikonra"
 
@@ -71,8 +72,8 @@ msgstr "Beállítások"
 #: ../app/alarm/AlarmSettingsPage.qml:58 ../app/alarm/AlarmSettingsPage.qml:59
 #: ../app/alarm/AlarmSettingsPage.qml:69 ../app/alarm/AlarmSettingsPage.qml:70
 #: ../app/alarm/AlarmSettingsPage.qml:71 ../app/alarm/AlarmSettingsPage.qml:72
-#: ../app/alarm/AlarmSettingsPage.qml:121
-#: ../app/alarm/AlarmSettingsPage.qml:150
+#: ../app/alarm/AlarmSettingsPage.qml:122
+#: ../app/alarm/AlarmSettingsPage.qml:153
 #, qt-format
 msgid "%1 minute"
 msgid_plural "%1 minutes"
@@ -83,23 +84,23 @@ msgstr[1] "%1 perc"
 msgid "Alarm volume"
 msgstr "Riasztás hangereje"
 
-#: ../app/alarm/AlarmSettingsPage.qml:120
+#: ../app/alarm/AlarmSettingsPage.qml:121
 msgid "Alarm stops after"
 msgstr "Riasztás befejezése ennyi idő után:"
 
-#: ../app/alarm/AlarmSettingsPage.qml:149
+#: ../app/alarm/AlarmSettingsPage.qml:152
 msgid "Snooze for"
 msgstr "Szundi hossza"
 
-#: ../app/alarm/AlarmSettingsPage.qml:178
+#: ../app/alarm/AlarmSettingsPage.qml:183
 msgid "Vibration"
 msgstr "Rezgés"
 
-#: ../app/alarm/AlarmSettingsPage.qml:203
+#: ../app/alarm/AlarmSettingsPage.qml:209
 msgid "Change time and date"
 msgstr "Dátum és idő módosítása"
 
-#: ../app/alarm/AlarmSound.qml:60 ../app/alarm/EditAlarmPage.qml:317
+#: ../app/alarm/AlarmSound.qml:60 ../app/alarm/EditAlarmPage.qml:319
 msgid "Sound"
 msgstr "Hang"
 
@@ -111,7 +112,7 @@ msgstr "Egyéni riasztáshangok"
 msgid "Add sound"
 msgstr "Hang hozzáadása"
 
-#: ../app/alarm/AlarmSound.qml:341
+#: ../app/alarm/AlarmSound.qml:343
 msgid "Default alarm sounds"
 msgstr "Alapértelmezett riasztáshangok"
 
@@ -154,7 +155,7 @@ msgstr "Új riasztás"
 msgid "Edit alarm"
 msgstr "Szerkesztés"
 
-#: ../app/alarm/EditAlarmPage.qml:339
+#: ../app/alarm/EditAlarmPage.qml:343
 msgid "Delete alarm"
 msgstr "Riasztás törlése"
 
@@ -163,37 +164,63 @@ msgstr "Riasztás törlése"
 msgid "Add sound from"
 msgstr "Hang hozzáadása"
 
-#: ../app/clock/ClockPage.qml:244
+#: ../app/clock/ClockPage.qml:257
 msgid "Retrieving location..."
 msgstr "Hely meghatározása..."
 
+#: ../app/components/Information.qml:8
+#, fuzzy
+msgid "Information"
+msgstr "Rezgés"
+
+#: ../app/components/Information.qml:17
+msgid "Get the source"
+msgstr ""
+
+#: ../app/components/Information.qml:18
+msgid "Report issues"
+msgstr ""
+
+#: ../app/components/Information.qml:19
+msgid "Help translate"
+msgstr ""
+
+#: ../app/components/NavigationRow.qml:50 ubuntu-clock-app.desktop.in.in.h:1
+msgid "Clock"
+msgstr "Óra"
+
+#: ../app/components/NavigationRow.qml:62
+#, fuzzy
+msgid "Stopwatch"
+msgstr "Leállítás"
+
 #. TRANSLATORS: This refers to the stopwatch lap and is shown as a header where space is limited. Constrain
 #. translation length to a few characters.
-#: ../app/stopwatch/LapListView.qml:49 ../app/stopwatch/StopwatchPage.qml:98
+#: ../app/stopwatch/LapListView.qml:50 ../app/stopwatch/StopwatchPage.qml:113
 msgid "Lap"
 msgstr "Kör"
 
-#: ../app/stopwatch/LapListView.qml:58
+#: ../app/stopwatch/LapListView.qml:59
 msgid "Lap Time"
 msgstr "Köridő"
 
-#: ../app/stopwatch/LapListView.qml:65
+#: ../app/stopwatch/LapListView.qml:66
 msgid "Total Time"
 msgstr "Teljes idő"
 
-#: ../app/stopwatch/StopwatchPage.qml:80
+#: ../app/stopwatch/StopwatchPage.qml:94
 msgid "Stop"
 msgstr "Leállítás"
 
-#: ../app/stopwatch/StopwatchPage.qml:80
+#: ../app/stopwatch/StopwatchPage.qml:94
 msgid "Start"
 msgstr "Indítás"
 
-#: ../app/stopwatch/StopwatchPage.qml:80
+#: ../app/stopwatch/StopwatchPage.qml:94
 msgid "Resume"
 msgstr "Folytatás"
 
-#: ../app/stopwatch/StopwatchPage.qml:98
+#: ../app/stopwatch/StopwatchPage.qml:113
 msgid "Clear"
 msgstr "Törlés"
 
@@ -201,7 +228,7 @@ msgstr "Törlés"
 msgid "Add"
 msgstr "Város"
 
-#: ../app/worldclock/AddWorldCityButton.qml:60
+#: ../app/worldclock/AddWorldCityButton.qml:61
 #: ../app/worldclock/WorldCityList.qml:63
 msgid "City"
 msgstr "hozzáadása"
@@ -2007,10 +2034,6 @@ msgstr "Zürich"
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:347
 msgid "Switzerland"
 msgstr "Svájc"
-
-#: ubuntu-clock-app.desktop.in.in.h:1
-msgid "Clock"
-msgstr "Óra"
 
 #: ubuntu-clock-app.desktop.in.in.h:2
 msgid ""
