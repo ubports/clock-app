@@ -6,11 +6,12 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
-"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2016-02-29 21:58+0100\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-07-02 18:48+0000\n"
 "PO-Revision-Date: 2016-12-17 05:36+0000\n"
 "Last-Translator: AungKhantBo <aungkhantbo@yahoo.com>\n"
 "Language-Team: Burmese <my@li.org>\n"
+"Language: my\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -19,12 +20,12 @@ msgstr ""
 "X-Generator: Launchpad (build 18335)\n"
 
 #: ../app/alarm/AlarmLabel.qml:35 ../app/alarm/AlarmLabel.qml:79
-#: ../app/alarm/EditAlarmPage.qml:297
+#: ../app/alarm/EditAlarmPage.qml:298
 msgid "Label"
 msgstr "အမှတ်အသား"
 
-#: ../app/alarm/AlarmList.qml:61 ../app/alarm/AlarmPage.qml:103
-#: ../app/worldclock/UserWorldCityList.qml:70
+#: ../app/alarm/AlarmList.qml:64 ../app/alarm/AlarmPage.qml:101
+#: ../app/worldclock/UserWorldCityList.qml:71
 msgid "Delete"
 msgstr "ဖျက်ရန်"
 
@@ -37,23 +38,23 @@ msgstr "နှိုးစက်များ"
 msgid "Alarm"
 msgstr "နှိုးစက်"
 
-#: ../app/alarm/AlarmPage.qml:66 ../app/worldclock/WorldCityList.qml:83
+#: ../app/alarm/AlarmPage.qml:65 ../app/worldclock/WorldCityList.qml:83
 msgid "Back"
 msgstr "နောက်သို့"
 
-#: ../app/alarm/AlarmPage.qml:78
+#: ../app/alarm/AlarmPage.qml:76
 msgid "Select None"
 msgstr "ဘာမျှ မရွေး"
 
-#: ../app/alarm/AlarmPage.qml:80 ../app/alarm/AlarmRepeat.qml:62
+#: ../app/alarm/AlarmPage.qml:78 ../app/alarm/AlarmRepeat.qml:64
 msgid "Select All"
 msgstr "အားလုံးကိုရွေးရန်"
 
-#: ../app/alarm/AlarmPage.qml:159
+#: ../app/alarm/AlarmPage.qml:157
 msgid "No saved alarms"
 msgstr "နှိုးစက် မှတ်ထားခြင်းမရှိ"
 
-#: ../app/alarm/AlarmPage.qml:160
+#: ../app/alarm/AlarmPage.qml:158
 msgid "Tap the + icon to add an alarm"
 msgstr "နှိုးစက်တစ်ခုပေးရန် +လက္ခဏာကိုနှိပ်ပါ"
 
@@ -71,8 +72,8 @@ msgstr "အပြင်​အဆင်​များ"
 #: ../app/alarm/AlarmSettingsPage.qml:58 ../app/alarm/AlarmSettingsPage.qml:59
 #: ../app/alarm/AlarmSettingsPage.qml:69 ../app/alarm/AlarmSettingsPage.qml:70
 #: ../app/alarm/AlarmSettingsPage.qml:71 ../app/alarm/AlarmSettingsPage.qml:72
-#: ../app/alarm/AlarmSettingsPage.qml:121
-#: ../app/alarm/AlarmSettingsPage.qml:150
+#: ../app/alarm/AlarmSettingsPage.qml:122
+#: ../app/alarm/AlarmSettingsPage.qml:153
 #, qt-format
 msgid "%1 minute"
 msgid_plural "%1 minutes"
@@ -82,23 +83,23 @@ msgstr[0] "%1မိနစ်​"
 msgid "Alarm volume"
 msgstr "နှိုးစက်သံ၏အတိုးအကျယ်"
 
-#: ../app/alarm/AlarmSettingsPage.qml:120
+#: ../app/alarm/AlarmSettingsPage.qml:121
 msgid "Alarm stops after"
 msgstr "ပြီးနောက်နှိုးစက်ကိုရပ်"
 
-#: ../app/alarm/AlarmSettingsPage.qml:149
+#: ../app/alarm/AlarmSettingsPage.qml:152
 msgid "Snooze for"
 msgstr ""
 
-#: ../app/alarm/AlarmSettingsPage.qml:178
+#: ../app/alarm/AlarmSettingsPage.qml:183
 msgid "Vibration"
 msgstr ""
 
-#: ../app/alarm/AlarmSettingsPage.qml:203
+#: ../app/alarm/AlarmSettingsPage.qml:209
 msgid "Change time and date"
 msgstr "ရက်စွဲနှင့်အချိန်ကိုပြောင်းရန်"
 
-#: ../app/alarm/AlarmSound.qml:60 ../app/alarm/EditAlarmPage.qml:317
+#: ../app/alarm/AlarmSound.qml:60 ../app/alarm/EditAlarmPage.qml:319
 msgid "Sound"
 msgstr "အသံ"
 
@@ -110,7 +111,7 @@ msgstr ""
 msgid "Add sound"
 msgstr ""
 
-#: ../app/alarm/AlarmSound.qml:341
+#: ../app/alarm/AlarmSound.qml:343
 msgid "Default alarm sounds"
 msgstr ""
 
@@ -153,7 +154,7 @@ msgstr "နှိုးစက်အသစ်"
 msgid "Edit alarm"
 msgstr "နှိုးစက်ကိုပြင်ရန်"
 
-#: ../app/alarm/EditAlarmPage.qml:339
+#: ../app/alarm/EditAlarmPage.qml:343
 msgid "Delete alarm"
 msgstr "နှိုးစက်ကိုဖျက်ရန်"
 
@@ -162,37 +163,62 @@ msgstr "နှိုးစက်ကိုဖျက်ရန်"
 msgid "Add sound from"
 msgstr ""
 
-#: ../app/clock/ClockPage.qml:244
+#: ../app/clock/ClockPage.qml:257
 msgid "Retrieving location..."
 msgstr "တည်​​နေရာကို ပြန်​ရှာ​နေသည်​"
 
+#: ../app/components/Information.qml:8
+msgid "Information"
+msgstr ""
+
+#: ../app/components/Information.qml:17
+msgid "Get the source"
+msgstr ""
+
+#: ../app/components/Information.qml:18
+msgid "Report issues"
+msgstr ""
+
+#: ../app/components/Information.qml:19
+msgid "Help translate"
+msgstr ""
+
+#: ../app/components/NavigationRow.qml:50 ubuntu-clock-app.desktop.in.in.h:1
+msgid "Clock"
+msgstr "နာရီ"
+
+#: ../app/components/NavigationRow.qml:62
+#, fuzzy
+msgid "Stopwatch"
+msgstr "ရပ်"
+
 #. TRANSLATORS: This refers to the stopwatch lap and is shown as a header where space is limited. Constrain
 #. translation length to a few characters.
-#: ../app/stopwatch/LapListView.qml:49 ../app/stopwatch/StopwatchPage.qml:98
+#: ../app/stopwatch/LapListView.qml:50 ../app/stopwatch/StopwatchPage.qml:113
 msgid "Lap"
 msgstr ""
 
-#: ../app/stopwatch/LapListView.qml:58
+#: ../app/stopwatch/LapListView.qml:59
 msgid "Lap Time"
 msgstr ""
 
-#: ../app/stopwatch/LapListView.qml:65
+#: ../app/stopwatch/LapListView.qml:66
 msgid "Total Time"
 msgstr ""
 
-#: ../app/stopwatch/StopwatchPage.qml:80
+#: ../app/stopwatch/StopwatchPage.qml:94
 msgid "Stop"
 msgstr "ရပ်"
 
-#: ../app/stopwatch/StopwatchPage.qml:80
+#: ../app/stopwatch/StopwatchPage.qml:94
 msgid "Start"
 msgstr "စမည်"
 
-#: ../app/stopwatch/StopwatchPage.qml:80
+#: ../app/stopwatch/StopwatchPage.qml:94
 msgid "Resume"
 msgstr "ပြန်စရန်"
 
-#: ../app/stopwatch/StopwatchPage.qml:98
+#: ../app/stopwatch/StopwatchPage.qml:113
 msgid "Clear"
 msgstr "ရှင်းလင်းမည်"
 
@@ -200,7 +226,7 @@ msgstr "ရှင်းလင်းမည်"
 msgid "Add"
 msgstr ""
 
-#: ../app/worldclock/AddWorldCityButton.qml:60
+#: ../app/worldclock/AddWorldCityButton.qml:61
 #: ../app/worldclock/WorldCityList.qml:63
 msgid "City"
 msgstr "မြို့"
@@ -263,9 +289,7 @@ msgstr "ဆက်သွယ်၍ မရပါ။"
 
 #: ../app/worldclock/WorldCityList.qml:228
 msgid "Please check your network connection and try again"
-msgstr ""
-"သင်​၏ကွန်​ယက်​ဆက်​သွယ်​မှုကိုစစ်​​ဆေးကြည်​့ပြီး "
-"​နောက်​တစ်​ကြိမ်​ပြန်​ကြိုးစားကြည်​့ပါ"
+msgstr "သင်​၏ကွန်​ယက်​ဆက်​သွယ်​မှုကိုစစ်​​ဆေးကြည်​့ပြီး ​နောက်​တစ်​ကြိမ်​ပြန်​ကြိုးစားကြည်​့ပါ"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:48
 msgid "Abidjan"
@@ -2008,10 +2032,6 @@ msgstr ""
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:347
 msgid "Switzerland"
 msgstr ""
-
-#: ubuntu-clock-app.desktop.in.in.h:1
-msgid "Clock"
-msgstr "နာရီ"
 
 #: ubuntu-clock-app.desktop.in.in.h:2
 msgid ""
