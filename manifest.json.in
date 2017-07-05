@@ -12,7 +12,7 @@
             "urls": "share/url-dispatcher/urls/com.ubuntu.clock_clock.url-dispatcher"
         }
     },
-    "version": "3.8.@BZR_REVNO@",
+    "version": "3.8.@REVNO@",
     "maintainer": "Ubuntu App Cats <ubuntu-touch-coreapps@lists.launchpad.net>",
     "x-test": {
         "autopilot": {
@@ -23,7 +23,7 @@
         }
     },
     "x-source": {
-        "vcs-bzr": "@BZR_SOURCE@",
-        "vcs-bzr-revno": "@BZR_REVNO@"
+        "vcs": "@SOURCE@",
+        "vcs-revno": "@REVNO@"
     }
 }
