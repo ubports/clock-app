@@ -75,4 +75,9 @@ That's about it. To quit GDB, type quit to return back to the normal terminal co
      quit
 
 
+LXD required packages :
+=======================
+If your using git as source control than run :
+    $ apt install git
+
 
