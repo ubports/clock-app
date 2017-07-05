@@ -48,18 +48,45 @@ if(CLICK_MODE)
   set(QT_IMPORTS_DIR "${CMAKE_INSTALL_LIBDIR}")
   set(EXEC "qmlscene $@ ${UBUNTU-CLOCK_APP_DIR}/${MAIN_QML}")
   set(MODULE_PATH ${QT_IMPORTS_DIR})
-  if(NOT BZR_REVNO)
+  # Case of git source control
+    if(NOT REVNO)
+      execute_process(
+            COMMAND git rev-list --count --first-parent HEAD
+            OUTPUT_VARIABLE REVNO
+            RESULT_VARIABLE res
+            WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}"
+            OUTPUT_STRIP_TRAILING_WHITESPACE
+        )
+        message("-- Setting REVNO to ${REVNO} with result of : ${res}")
+    endif(NOT REVNO)
+    if(NOT SOURCE)
+        execute_process(
+            COMMAND git remote -v
+            COMMAND grep origin
+            COMMAND grep push
+            COMMAND awk "{print $2}"
+            OUTPUT_VARIABLE SOURCE
+            RESULT_VARIABLE res
+            WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}"
+            OUTPUT_STRIP_TRAILING_WHITESPACE
+        )
+      message("-- Setting SOURCE to ${SOURCE} with result of : ${res}")
+    endif(NOT SOURCE)
+   # Case of bzr source control
+    if(NOT REVNO)
     execute_process(
       COMMAND bzr revno
-              OUTPUT_VARIABLE BZR_REVNO
+                  OUTPUT_VARIABLE REVNO
               WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
               OUTPUT_STRIP_TRAILING_WHITESPACE
       )
-  endif(NOT BZR_REVNO)
-  if(NOT BZR_SOURCE)
-    set(BZR_SOURCE lp:${APP_HARDCODE})
-    message("-- Setting BZR_SOURCE to ${BZR_SOURCE}")
-  endif(NOT BZR_SOURCE)
+        message("-- Setting REVNO to ${REVNO}")
+    endif(NOT REVNO)
+    if(NOT SOURCE)
+        set(SOURCE lp:${APP_HARDCODE})
+        message("-- Setting SOURCE to ${SOURCE}")
+    endif(NOT SOURCE)
+
 else(CLICK_MODE)
   set(UBUNTU-CLOCK_APP_DIR "${CMAKE_INSTALL_DATADIR}/ubuntu-clock-app")
   execute_process(
