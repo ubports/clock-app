@@ -84,7 +84,7 @@ ListItem {
               Provide a larger click area then the actual alaram status switch
              */
             width: units.gu(9)
-            height: parent.height
+            height: units.gu(9)
 
             preventStealing: true
 

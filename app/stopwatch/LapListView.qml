@@ -24,19 +24,27 @@ UbuntuListView {
     id: lapListView
 
     clip: true
-    pressDelay: 75
+    pressDelay: 70
     currentIndex: -1
     StopwatchFormatTime {
         id: stopwatchFormatTime
     }
 
+    headerPositioning: ListView.PullBackHeader
 
     header: ListItem {
+        z:2 //TODO for some reason this is needed as the items default to being above the header
         visible: count !== 0
         width: parent.width - units.gu(4)
         anchors.horizontalCenter: parent.horizontalCenter
 
+        Rectangle {
+            anchors.fill:parent
+            color: "white"
+        }
+
         Row {
+
             anchors {
                 left: parent.left
                 right: parent.right
