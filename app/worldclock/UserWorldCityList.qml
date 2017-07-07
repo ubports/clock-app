@@ -26,7 +26,7 @@ ListView {
     objectName: "userWorldCityRepeater"
 
     clip: true
-    anchors.fill: parent
+    pressDelay: 66
 
     onFlickStarted:  {
         forceActiveFocus()

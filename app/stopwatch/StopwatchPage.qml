@@ -20,6 +20,8 @@ import QtQuick 2.4
 import Stopwatch 1.0
 import Ubuntu.Components 1.3
 
+import "../components"
+
 Item {
     id: _stopwatchPage
     objectName: "stopwatchPage"
@@ -28,17 +30,6 @@ Item {
 
     Component.onCompleted: {
         console.log("[LOG]: Stopwatch Page Loaded")
-    }
-
-    // HACK : This is anpartof the hack fix in LapListView.qml:32
-    MouseArea {
-        anchors {
-            top: parent.top
-            left:parent.left
-            right:parent.right
-            bottom: buttonRow.bottom
-        }
-        onPressed: listview.interactive = true
     }
 
     StopwatchEngine {
@@ -65,8 +56,6 @@ Item {
                     stopwatchEngine.startStopwatch();
                 }
             }
-            // HACK : This is anpartof the hack fix in LapListView.qml:32
-            onPressed: listview.interactive = true
         }
     }
 
@@ -133,24 +122,12 @@ Item {
     }
 
 
-    // HACK : This is an hack to reduce the cases the swiping left/right on a lap might switch between the main view pages
-    //        (This a QT issue when you have nested interactive listviews)
-    MouseArea {
-        z:10
-        anchors {
-            top:lapListView.top
-            left: lapListView.left
-            right: lapListView.right
-            bottom:lapListView.bottom
-        }
-        hoverEnabled:true
-        propagateComposedEvents: true
-        preventStealing: !stopwatchEngine.totalTimeOfStopwatch === 0
-        onPressed: { listview.interactive = ( stopwatchEngine.totalTimeOfStopwatch === 0 ) ; mouse.accepted = false }
-        onEntered: listview.interactive = ( stopwatchEngine.totalTimeOfStopwatch === 0 )
-        onExited: listview.interactive = true
-        onReleased: { listview.interactive = true ; mouse.accepted = false }
-    }
+   NestedListviewsHack {
+       z:10
+       parentListView : listview
+       nestedListView : lapListView
+   }
+
    LapListView {
         id: lapListView
         objectName: "lapsList"
@@ -161,7 +138,7 @@ Item {
             right: parent.right
             topMargin: units.gu(1)
         }
-        visible: !stopwatchEngine.running && stopwatchEngine.totalTimeOfStopwatch === 0 ? undefined : lapListViewComponent
+        visible: stopwatchEngine.running || stopwatchEngine.totalTimeOfStopwatch !== 0
         model: stopwatchEngine
     }
 }

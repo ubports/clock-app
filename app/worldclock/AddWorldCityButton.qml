@@ -23,6 +23,8 @@ import "../components"
 AbstractButton {
     id: addWorldCityButton
 
+    LayoutMirroring.enabled: Qt.locale().textDirection == Qt.RightToLeft
+    LayoutMirroring.childrenInherit: true
     width: parent.width
     height: _addButton.height + units.gu(4)
 

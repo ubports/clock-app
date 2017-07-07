@@ -275,10 +275,9 @@ Item {
         }
     }
 
-    MouseArea {
-        id: worldCityListMouseArea
-
-        preventStealing: true
+    UserWorldCityList {
+        id: worldCityColumn
+        opacity: date.opacity
 
         anchors {
             top: divider.bottom
@@ -287,16 +286,19 @@ Item {
             right: parent.right
         }
 
-        UserWorldCityList {
-            id: worldCityColumn
-            opacity: date.opacity
-
-            footer: AddWorldCityButton {
-                id: addWorldCityButton
-                objectName: "addWorldCityButton"
-            }
+        footer: AddWorldCityButton {
+            id: addWorldCityButton
+            objectName: "addWorldCityButton"
         }
     }
+
+    NestedListviewsHack {
+        id:worldCityHack
+        z:10
+        parentListView : listview
+        nestedListView : worldCityColumn
+    }
+
 
     ParallelAnimation {
         id: otherElementsStartUpAnimation

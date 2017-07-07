@@ -75,7 +75,7 @@ Page {
 
     ScreenSaver {
         // Disable screen dimming/off when stopwatch is running
-        screenSaverEnabled: !stopwatchPage.isRunning
+        screenSaverEnabled: stopwatchPageLoader.item && !stopwatchPageLoader.item.isRunning
     }
 
     VisualItemModel {
@@ -89,12 +89,25 @@ Page {
             height: listview.height
         }
 
-        StopwatchPage {
-            id: stopwatchPage
+        Loader {
+            id:stopwatchPageLoader
+            asynchronous: true
             width: clockApp.width
             height: listview.height
+            Component.onCompleted: setSource("stopwatch/StopwatchPage.qml" ,{
+                                                 "notLocalizedClockTimeString": _mainPage.notLocalizedDateTimeString,
+                                                 "localizedClockTimeString": _mainPage.localizedTimeString,
+                                                 "localizedClockDateString": _mainPage.localizedDateString,
+                                                 "width": clockApp.width,
+                                                 "height": listview.height});
+            onLoaded: {
+                if (this.item.isRunning) {
+                    listview.moveToStopwatchPage()
+                }
+            }
         }
     }
+
 
     header: PageHeader {
         visible:true
@@ -167,7 +180,7 @@ Page {
 
         // Show the stopwatch page on app startup if it is running
         Component.onCompleted: {
-            if (stopwatchPage.isRunning) {
+            if (stopwatchPageLoader.item && stopwatchPageLoader.item.isRunning) {
                 moveToStopwatchPage()
             }
         }
@@ -182,17 +195,31 @@ Page {
         model: navigationModel
         orientation: ListView.Horizontal
         snapMode: ListView.SnapOneItem
-        flickDeceleration:10
+        flickDeceleration:width/4
+        maximumFlickVelocity: width*5
         interactive: true
     }
 
     NavigationRow {
         id: bottomRow
+
+        transitions: Transition {
+            PropertyAnimation {
+               properties: "anchors.bottomMargin";
+            }
+        }
+         states: [
+             State {
+                name: "up"
+                when: bottomEdgeLoader.item && bottomEdgeLoader.item.hint.visible && bottomEdgeLoader.item.hint.status == BottomEdgeHint.Active
+                PropertyChanges { target: bottomRow; anchors.bottomMargin:  units.gu(4); }
+              }
+         ]
         anchors {
             bottom: parent.bottom
             left: parent.left
             right: parent.right
-            bottomMargin: bottomEdgeLoader.item && bottomEdgeLoader.item.hint.visible && bottomEdgeLoader.item.hint.status == BottomEdgeHint.Active ? units.gu(4) : 0
+            bottomMargin: 0
         }
     }
 }
