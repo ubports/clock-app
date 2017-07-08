@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-07-02 18:48+0000\n"
-"PO-Revision-Date: 2017-07-08 12:25+0000\n"
+"PO-Revision-Date: 2017-07-08 12:26+0000\n"
 "Last-Translator: Sami Törmänen <tormanen.sami@gmail.com>\n"
 "Language-Team: Finnish <https://ubpweblate.tnvcomp.com/projects/ubports"
 "/clock-app/fi/>\n"
@@ -45,7 +45,7 @@ msgstr "Takaisin"
 
 #: ../app/alarm/AlarmPage.qml:76
 msgid "Select None"
-msgstr "Tyhjennä valinta"
+msgstr "Poista valinnat"
 
 #: ../app/alarm/AlarmPage.qml:78 ../app/alarm/AlarmRepeat.qml:64
 msgid "Select All"
