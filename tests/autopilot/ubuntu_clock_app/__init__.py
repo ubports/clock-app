@@ -132,6 +132,19 @@ class MainPage(Page):
             logger.error('BottomEdge element not found.')
             raise
 
+    def hide_bottom_edge_page(self):
+        """Bring the bottom edge page to the screen"""
+        try:
+            close_alarm_action = self.wait_select_single(
+                "UCAbstractButton", objectName="closeAlarmList_button")
+            close_alarm_action.visible.wait_for(True)
+            self.pointing_device.click_object(close_alarm_action)
+
+        except dbus.StateNotFoundError:
+            logger.error('BottomEdge element not found.')
+            raise
+
+
     def press_header_navigation_button(self, button_object_name):
         """Press the passed custom navigation button
 
@@ -226,8 +239,7 @@ class StopwatchPage(Page):
         return int(self._get_laps_list_view().count)
 
     def _get_laps_list_view(self):
-        return self.wait_select_single("QQuickListView",
-                                       objectName="lapsList")
+        return self.wait_select_single(objectName="lapsList")
 
     @autopilot_logging.log_action(logger.info)
     def clean_up_test(self):
