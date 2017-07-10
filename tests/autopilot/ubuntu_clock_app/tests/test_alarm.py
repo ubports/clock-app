@@ -35,7 +35,14 @@ class TestAlarm(ClockAppTestCase):
              'days': ['Tuesday', 'Wednesday', 'Friday', 'Sunday'],
              'expected_recurrence': 'Tue, Wed, Fri, Sun',
              'enabled_value': True,
-             'sound_name': 'Bliss'
+             'sound_name': 'Bliss',
+             'edited_values' : {
+				'alarm_name': 'Random days Alarm Test Edited',
+				'days': ['Thursday'],
+				'expected_recurrence': 'Tue, Wed, Thr, Fri, Sun',
+				'enabled_value': True,
+				'sound_name': 'Bliss'
+			 }
              }),
 
         ('weekday',
@@ -43,7 +50,14 @@ class TestAlarm(ClockAppTestCase):
              'days': ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
              'expected_recurrence': 'Weekdays',
              'enabled_value': True,
-             'sound_name': 'Bliss'
+             'sound_name': 'Bliss',
+             'edited_values' : {
+				 'alarm_name': 'Weekday Alarm Test Edited',
+				'days':  ['Saturday', 'Sunday'],
+				'expected_recurrence': 'Daily',
+				'enabled_value': False,
+				'sound_name': 'Ubuntu',
+             }
              }),
 
         ('weekend',
@@ -51,7 +65,14 @@ class TestAlarm(ClockAppTestCase):
              'days': ['Saturday', 'Sunday'],
              'expected_recurrence': 'Weekends',
              'enabled_value': True,
-             'sound_name': 'Bliss'
+             'sound_name': 'Bliss',
+			 'edited_values' : {
+				'alarm_name': 'Weekend Alarm Test Edited',
+				'days': ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+				'expected_recurrence': 'Daily',
+				'enabled_value': True,
+				'sound_name': 'Ubuntu'
+			 }
              })
     ]
 
@@ -89,6 +110,48 @@ class TestAlarm(ClockAppTestCase):
         alarmlistPage = self.app.main_view.get_AlarmList()
         saved_alarms = alarmlistPage.get_saved_alarms()
         self.assertIn(expected_alarm_info, saved_alarms)
+
+        # TODO: Remove this statement once proper support for cleaning the
+        # test alarm environment is added. Until then remove the alarm
+        # created during the test at the end of the test.
+        # -- nik90 - 2014-03-03
+        alarmlistPage.delete_alarm(index=0)
+
+    def test_add_and_edit_alarm_in_list(self):
+        """Test to check if alarms are saved properly
+
+        This test saves some random days, weekends and weekdays types of alarm
+        and verifies if they are added to the alarm list in the alarm page.
+        and then test editing those values.
+
+        """
+        time_to_set = datetime.now() + timedelta(minutes=5)
+        formatted_time_to_set = time_to_set.time()
+        time_to_set_string = format(time_to_set, '%H:%M')
+
+        expected_alarm_info = (
+            self.alarm_name, self.expected_recurrence,
+            time_to_set_string, self.enabled_value)
+
+        added_alarm = self.page.add_single_alarm(
+            self.alarm_name, self.days, formatted_time_to_set,
+            self.sound_name)
+
+        alarmlistPage = self.app.main_view.get_AlarmList()
+        saved_alarms = alarmlistPage.get_saved_alarms()
+        """self.assertIn(expected_alarm_info, saved_alarms)"""
+
+        edited_expected_alarm_info = (
+            self.edited_values.edited_.alarm_name, self.edited_values.expected_recurrence,
+            time_to_set_string, self.edited_values.enabled_value)
+
+        self.page.edit_single_alarm( added_alarm,
+            self.edited_values.alarm_name, self.edited_values.days, formatted_time_to_set,
+            self.edited_values.sound_name)
+
+        alarmlistPage = self.app.main_view.get_AlarmList()
+        saved_alarms = alarmlistPage.get_saved_alarms()
+        self.assertIn(edited_expected_alarm_info, saved_alarms)
 
         # TODO: Remove this statement once proper support for cleaning the
         # test alarm environment is added. Until then remove the alarm

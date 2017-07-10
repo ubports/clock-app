@@ -392,6 +392,8 @@ class AlarmPage(Page):
         edit_alarm_page._click_save_alarm_button()
         self._confirm_alarm_creation(old_alarm_count)
 
+        return alarmListPage._get_alarm_by_index(old_alarm_count)
+
     def _click_add_alarm_button(self):
         """Click the add alarm header button."""
         addHeaderButton = self.wait_select_single(
@@ -411,6 +413,39 @@ class AlarmPage(Page):
         except AssertionError:
             raise ClockEmulatorException('Error creating alarm.')
 
+    @autopilot_logging.log_action(logger.info)
+    def edit_single_alarm(self, existingAlarm, name, days, time_to_set, test_sound_name):
+        """Edit a single type alarm
+
+        :param name: name of alarm
+        :param days: days on which the alarm should be triggered
+        :param time_to_set: time to set alarm to
+        :param test_sound_name: sound to set in alarm
+
+        """
+        alarmListPage = AlarmList.select(self.main_view)
+        old_alarm_count = alarmListPage.get_num_of_alarms()
+
+        self.pointing_device.click_object(existingAlarm)
+
+        edit_alarm_page = self.main_view.wait_select_single(EditAlarmPage)
+        edit_alarm_page.set_alarm_time(time_to_set)
+
+        alarm_repeat_page = edit_alarm_page.open_alarmRepeat_page()
+        alarm_repeat_page.set_alarm_days(days)
+        alarm_repeat_page.click_save_button()
+
+        alarm_label_page = edit_alarm_page.open_alarmLabel_page()
+        alarm_label_page.set_alarm_label(name)
+        alarm_label_page.click_save_button()
+
+        alarm_sound_page = edit_alarm_page.open_alarmSound_page()
+        alarm_sound_page.set_alarm_sound(test_sound_name)
+        alarm_sound_page.click_save_button()
+
+        edit_alarm_page._check_sound_changed(test_sound_name)
+        edit_alarm_page._click_save_alarm_button()
+        self._confirm_alarm_creation(old_alarm_count)
 
 class WorldCityList(Page):
     """Autopilot helper for World City List page."""
@@ -717,6 +752,14 @@ class AlarmList(object):
         except AssertionError:
             raise ClockEmulatorException('Error deleting alarm.')
 
+    @autopilot_logging.log_action(logger.info)
+    def _get_alarm_by_index(self, index):
+        """Delete an alarm at the specified index."""
+        old_alarm_count = self.get_num_of_alarms()
+        alarm = self.proxy_object.wait_select_single(
+            objectName='alarm{}'.format(index))
+
+        return alarm
 
 class AlarmDelegate(UCListItem):
     """Autopilot helper for alarm delegate"""
