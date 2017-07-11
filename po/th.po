@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-07-02 18:48+0000\n"
-"PO-Revision-Date: 2017-07-08 21:28+0000\n"
+"PO-Revision-Date: 2017-07-11 19:50+0000\n"
 "Last-Translator: Hans <hans1977se@gmail.com>\n"
 "Language-Team: Thai <https://ubpweblate.tnvcomp.com/projects/ubports/clock-"
 "app/th/>\n"
@@ -1388,23 +1388,24 @@ msgstr "ประเทศนิการากัว"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:219
 msgid "Manchester"
-msgstr ""
+msgstr "แมนเชสเตอร์"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:220
 msgid "Manila"
-msgstr ""
+msgstr "มะนิลา"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:220
 msgid "Philippines"
-msgstr ""
+msgstr "ประเทศฟิลิปปินส์"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:221
+#, fuzzy
 msgid "Marengo"
-msgstr ""
+msgstr "มาเรงโก"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:222
 msgid "Martinique"
-msgstr ""
+msgstr "มาร์ตีนิก"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:223
 msgid "Maseru"
@@ -1412,19 +1413,19 @@ msgstr ""
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:223
 msgid "Lesotho"
-msgstr ""
+msgstr "ประเทศเลโซโท"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:224
 msgid "Melbourne"
-msgstr ""
+msgstr "เมลเบิร์น"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:225
 msgid "Memphis"
-msgstr ""
+msgstr "เมมฟิส"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:226
 msgid "Mendoza"
-msgstr ""
+msgstr "เมนโดซา"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:227
 msgid "Metlakatla"
@@ -1432,40 +1433,40 @@ msgstr ""
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:228
 msgid "Mexico City"
-msgstr ""
+msgstr "เม็กซิโกซิตี"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:229
 msgid "Miami"
-msgstr ""
+msgstr "ไมแอมี"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:230
 msgid "Milan"
-msgstr ""
+msgstr "มิลาน"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:230
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:288
 msgid "Italy"
-msgstr ""
+msgstr "ประเทศอิตาลี"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:231
 msgid "Milwaukee"
-msgstr ""
+msgstr "มิลวอกี"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:232
 msgid "Minneapolis"
-msgstr ""
+msgstr "มินนีแอโพลิส"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:233
 msgid "Minsk"
-msgstr ""
+msgstr "มินสค์"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:233
 msgid "Belarus"
-msgstr ""
+msgstr "ประเทศเบลารุส"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:234
 msgid "Mogadishu"
-msgstr ""
+msgstr "โมกาดิชู"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:234
 msgid "Somalia"
