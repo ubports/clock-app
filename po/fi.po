@@ -8,16 +8,17 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-07-02 18:48+0000\n"
-"PO-Revision-Date: 2015-09-23 07:00+0000\n"
-"Last-Translator: Jiri Grönroos <Unknown>\n"
-"Language-Team: Finnish <fi@li.org>\n"
+"PO-Revision-Date: 2017-07-08 12:26+0000\n"
+"Last-Translator: Sami Törmänen <tormanen.sami@gmail.com>\n"
+"Language-Team: Finnish <https://ubpweblate.tnvcomp.com/projects/ubports"
+"/clock-app/fi/>\n"
 "Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2.15\n"
 "X-Launchpad-Export-Date: 2017-04-05 07:40+0000\n"
-"X-Generator: Launchpad (build 18335)\n"
 
 #: ../app/alarm/AlarmLabel.qml:35 ../app/alarm/AlarmLabel.qml:79
 #: ../app/alarm/EditAlarmPage.qml:298
@@ -44,7 +45,7 @@ msgstr "Takaisin"
 
 #: ../app/alarm/AlarmPage.qml:76
 msgid "Select None"
-msgstr "Tyhjennä valinta"
+msgstr "Poista valinnat"
 
 #: ../app/alarm/AlarmPage.qml:78 ../app/alarm/AlarmRepeat.qml:64
 msgid "Select All"
@@ -169,30 +170,28 @@ msgid "Retrieving location..."
 msgstr "Noudetaan sijaintia..."
 
 #: ../app/components/Information.qml:8
-#, fuzzy
 msgid "Information"
-msgstr "Värinä"
+msgstr "Tietoja"
 
 #: ../app/components/Information.qml:17
 msgid "Get the source"
-msgstr ""
+msgstr "Hanki lähdekoodi"
 
 #: ../app/components/Information.qml:18
 msgid "Report issues"
-msgstr ""
+msgstr "Ilmoita ongelmista"
 
 #: ../app/components/Information.qml:19
 msgid "Help translate"
-msgstr ""
+msgstr "Auta suomennoksissa"
 
 #: ../app/components/NavigationRow.qml:50 ubuntu-clock-app.desktop.in.in.h:1
 msgid "Clock"
 msgstr "Kello"
 
 #: ../app/components/NavigationRow.qml:62
-#, fuzzy
 msgid "Stopwatch"
-msgstr "Pysäytä"
+msgstr "Sekuntikello"
 
 #. TRANSLATORS: This refers to the stopwatch lap and is shown as a header where space is limited. Constrain
 #. translation length to a few characters.
