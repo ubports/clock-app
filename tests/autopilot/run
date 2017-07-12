@@ -5,6 +5,11 @@ if [[ -z `which autopilot3` ]]; then
   exit
 fi
 
+#Some of the alarm tests  depend on the days names  so we need to keep it in english
+export LC_ALL=en_GB.UTF-8
+export LC_TIME=en_GB.UTF-8
+export LC_MEASUREMENT=en_GB.UTF-8
+
 SCRIPTPATH=`dirname $0`
 pushd ${SCRIPTPATH}
 autopilot3 run ubuntu_clock_app

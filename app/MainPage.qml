@@ -211,7 +211,8 @@ Page {
          states: [
              State {
                 name: "up"
-                when: bottomEdgeLoader.item && bottomEdgeLoader.item.hint.visible && bottomEdgeLoader.item.hint.status == BottomEdgeHint.Active
+                when:  bottomEdgeLoader.item && bottomEdgeLoader.item.hint.visible &&
+                       (bottomEdgeLoader.item.hint.status == BottomEdgeHint.Active || bottomEdgeLoader.item.hint.status == BottomEdgeHint.Locked)
                 PropertyChanges { target: bottomRow; anchors.bottomMargin:  units.gu(4); }
               }
          ]
