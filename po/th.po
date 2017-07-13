@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-07-02 18:48+0000\n"
-"PO-Revision-Date: 2017-07-11 19:50+0000\n"
+"PO-Revision-Date: 2017-07-13 22:01+0000\n"
 "Last-Translator: Hans <hans1977se@gmail.com>\n"
 "Language-Team: Thai <https://ubpweblate.tnvcomp.com/projects/ubports/clock-"
 "app/th/>\n"
@@ -650,11 +650,11 @@ msgstr "เบอร์มิวดา"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:87
 msgid "Beulah"
-msgstr ""
+msgstr "โบลาห์"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:88
 msgid "Black Rock City"
-msgstr ""
+msgstr "แบล็คร็อคซิตี้"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:89
 msgid "Blantyre"
@@ -1409,7 +1409,7 @@ msgstr "มาร์ตีนิก"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:223
 msgid "Maseru"
-msgstr ""
+msgstr "มาเซรู"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:223
 msgid "Lesotho"
@@ -1470,253 +1470,259 @@ msgstr "โมกาดิชู"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:234
 msgid "Somalia"
-msgstr ""
+msgstr "ประเทศโซมาเลีย"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:235
 msgid "Monrovia"
-msgstr ""
+msgstr "มอนโรเวีย"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:235
 msgid "Liberia"
-msgstr ""
+msgstr "ประเทศไลบีเรีย"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:236
 msgid "Monaco"
-msgstr ""
+msgstr "ประเทศโมนาโก"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:237
 msgid "Monterrey"
-msgstr ""
+msgstr "มอนเตร์เรย์"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:238
 msgid "Montevideo"
-msgstr ""
+msgstr "มอนเตวิเดโอ"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:238
 msgid "Uruguay"
-msgstr ""
+msgstr "ประเทศอุรุกวัย"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:239
 msgid "Montreal"
-msgstr ""
+msgstr "มอนทรีออล"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:240
 msgid "Moscow"
-msgstr ""
+msgstr "มอสโก"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:241
 msgid "Mountain View"
-msgstr ""
+msgstr "เมาน์เทนวิว"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:242
 msgid "Mumbai"
-msgstr ""
+msgstr "มุมไบ"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:243
 msgid "Munich"
-msgstr ""
+msgstr "มิวนิก"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:244
 msgid "Muscat"
-msgstr ""
+msgstr "มัสกัต"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:244
 msgid "Oman"
-msgstr ""
+msgstr "ประเทศโอมาน"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:246
 msgid "Nairobi"
-msgstr ""
+msgstr "ไนโรบี"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:246
 msgid "Kenya"
-msgstr ""
+msgstr "ประเทศเคนยา"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:247
 msgid "Nashville"
-msgstr ""
+msgstr "แนชวิลล์"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:248
+#, fuzzy
 msgid "Nassau"
-msgstr ""
+msgstr "แนสซอ"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:248
 msgid "Bahamas"
-msgstr ""
+msgstr "ประเทศบาฮามาส"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:249
 msgid "New Orleans"
-msgstr ""
+msgstr "นิวออร์ลีนส์"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:250
 msgid "New Salem"
-msgstr ""
+msgstr "นิวซาเล็ม"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:251
 msgid "New South Wales"
-msgstr ""
+msgstr "รัฐนิวเซาท์เวลส์"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:252
 msgid "New York"
-msgstr ""
+msgstr "นิวยอร์ก"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:253
+#, fuzzy
 msgid "Newfoundland"
-msgstr ""
+msgstr "เกาะนิวฟันด์แลนด์"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:254
 msgid "Nouméa"
-msgstr ""
+msgstr "นูเมอา"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:254
 msgid "New Caledonia"
-msgstr ""
+msgstr "นิวแคลิโดเนีย"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:255
 msgid "Nuestra Señora de La Paz"
-msgstr ""
+msgstr "นวยส์ตราเซญอราเดลาปาซ"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:257
 msgid "Oklahoma City"
-msgstr ""
+msgstr "โอคลาโฮมาซิตี"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:258
 msgid "Osaka"
-msgstr ""
+msgstr "โอซะกะ"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:258
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:325
 msgid "Japan"
-msgstr ""
+msgstr "ประเทศญี่ปุ่น"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:259
 msgid "Oslo"
-msgstr ""
+msgstr "ออสโล"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:259
 msgid "Norway"
-msgstr ""
+msgstr "ประเทศนอร์เวย์"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:260
 msgid "Ottawa"
-msgstr ""
+msgstr "ออตตาวา"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:261
 msgid "Oulu"
-msgstr ""
+msgstr "โอวลุ"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:263
+#, fuzzy
 msgid "Panamá"
-msgstr ""
+msgstr "ประเทศปานามา"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:263
+#, fuzzy
 msgid "Panama"
-msgstr ""
+msgstr "ปานามา"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:264
 msgid "Paramaribo"
-msgstr ""
+msgstr "ปารามารีโบ"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:264
 msgid "Suriname"
-msgstr ""
+msgstr "ประเทศซูรินาม"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:265
 msgid "Paris"
-msgstr ""
+msgstr "ปารีส"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:265
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:338
 msgid "France"
-msgstr ""
+msgstr "ประเทศฝรั่งเศส"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:266
 msgid "Perth"
-msgstr ""
+msgstr "เพิร์ท"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:267
 msgid "Petersburg"
-msgstr ""
+msgstr "ปีเตอร์สเบิร์ก"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:268
 msgid "Philadelphia"
-msgstr ""
+msgstr "ฟิลาเดลเฟีย"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:269
 msgid "Phnom Penh"
-msgstr ""
+msgstr "พนมเปญ"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:269
 msgid "Cambodia"
-msgstr ""
+msgstr "ประเทศกัมพูชา"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:270
 msgid "Phoenix"
-msgstr ""
+msgstr "ฟีนิกซ์"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:271
 msgid "Pittsburgh"
-msgstr ""
+msgstr "พิตต์สเบิร์ก"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:272
 msgid "Port of Spain"
-msgstr ""
+msgstr "พอร์ต-ออฟ-สเปน"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:272
 msgid "Trinidad and Tobago"
-msgstr ""
+msgstr "ตรินิแดดและโตเบโก"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:273
 msgid "Port au Prince"
-msgstr ""
+msgstr "ปอร์โตแปรงซ์"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:273
 msgid "Haiti"
-msgstr ""
+msgstr "ประเทศเฮติ"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:274
 msgid "Portland"
-msgstr ""
+msgstr "พอร์ตแลนด์"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:275
 msgid "Prague"
-msgstr ""
+msgstr "ปราก"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:275
+#, fuzzy
 msgid "Czech Republic"
-msgstr ""
+msgstr "ประเทศเช็กเกีย"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:276
 msgid "Pyongyang"
-msgstr ""
+msgstr "เปียงยาง"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:276
 msgid "North Korea"
-msgstr ""
+msgstr "ประเทศเกาหลีเหนือ"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:278
 msgid "Queensland"
-msgstr ""
+msgstr "ควีนส์แลนด์"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:279
 msgid "Quito"
-msgstr ""
+msgstr "กีโต"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:279
 msgid "Ecuador"
-msgstr ""
+msgstr "ประเทศเอกวาดอร์"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:281
 msgid "Rangoon"
-msgstr ""
+msgstr "ย่างกุ้ง"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:281
 msgid "Myanmar"
-msgstr ""
+msgstr "ประเทศพม่า"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:282
+#, fuzzy
 msgid "Reno"
-msgstr ""
+msgstr "เรโน"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:283
 msgid "Reston"
@@ -1724,271 +1730,271 @@ msgstr ""
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:284
 msgid "Reykjavík"
-msgstr ""
+msgstr "เรคยาวิก"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:284
 msgid "Iceland"
-msgstr ""
+msgstr "ประเทศไอซ์แลนด์"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:285
 msgid "Riga"
-msgstr ""
+msgstr "รีกา"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:285
 msgid "Latvia"
-msgstr ""
+msgstr "ประเทศลัตเวีย"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:286
 msgid "Rio de Janeiro"
-msgstr ""
+msgstr "รีโอเดจาเนโร"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:287
 msgid "Riyadh"
-msgstr ""
+msgstr "รียาด"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:287
 msgid "Saudi Arabia"
-msgstr ""
+msgstr "ประเทศซาอุดีอาระเบีย"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:288
 msgid "Rome"
-msgstr ""
+msgstr "โรม"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:290
 msgid "Sacramento"
-msgstr ""
+msgstr "แซคราเมนโต"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:291
 msgid "Salt Lake City"
-msgstr ""
+msgstr "ซอลต์เลกซิตี"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:292
 msgid "Samoa"
-msgstr ""
+msgstr "หมู่เกาะซามัว"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:293
 msgid "San Antonio"
-msgstr ""
+msgstr "แซนแอนโทนีโอ"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:294
 msgid "San Diego"
-msgstr ""
+msgstr "แซนดีเอโก"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:295
 msgid "San Francisco"
-msgstr ""
+msgstr "ซานฟรานซิสโก"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:296
 msgid "San José"
-msgstr ""
+msgstr "แซนโฮเซ"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:297
 msgid "San Juan"
-msgstr ""
+msgstr "ซานฮวน"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:297
 msgid "Puerto Rico"
-msgstr ""
+msgstr "ปวยร์โตรีโก"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:298
 msgid "San Marino"
-msgstr ""
+msgstr "ประเทศซานมารีโน"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:299
 msgid "San Salvador"
-msgstr ""
+msgstr "ซานซัลวาดอร์"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:300
 msgid "Sanaa"
-msgstr ""
+msgstr "ซานา"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:300
 msgid "Yemen"
-msgstr ""
+msgstr "ประเทศเยเมน"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:301
 msgid "Santiago"
-msgstr ""
+msgstr "ซานเตียโก"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:302
 msgid "Santo Domingo"
-msgstr ""
+msgstr "ซานโตโดมิงโก"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:302
 msgid "Dominican Republic"
-msgstr ""
+msgstr "สาธารณรัฐโดมินิกัน"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:303
 msgid "São Paulo"
-msgstr ""
+msgstr "เซาเปาลู"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:304
 msgid "São Tomé"
-msgstr ""
+msgstr "เซาตูเม"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:304
 msgid "São Tomé and Príncipe"
-msgstr ""
+msgstr "ประเทศเซาตูเมและปรินซีปี"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:305
 msgid "Sarajevo"
-msgstr ""
+msgstr "ซาราเยโว"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:305
 msgid "Bosnia and Herzegovina"
-msgstr ""
+msgstr "ประเทศบอสเนียและเฮอร์เซโกวีนา"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:306
 msgid "Saskatchewan"
-msgstr ""
+msgstr "ซัสแคตเชวัน"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:307
 msgid "Seattle"
-msgstr ""
+msgstr "ซีแอตเทิล"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:308
 msgid "Seoul"
-msgstr ""
+msgstr "โซล"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:308
 msgid "South Korea"
-msgstr ""
+msgstr "ประเทศเกาหลีใต้"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:309
 msgid "Shanghai"
-msgstr ""
+msgstr "เซี่ยงไฮ้"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:310
 msgid "Singapore"
-msgstr ""
+msgstr "ประเทศสิงคโปร์"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:311
 msgid "Simferopol"
-msgstr ""
+msgstr "ซิมเฟอโรปอล"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:312
 msgid "Skopje"
-msgstr ""
+msgstr "สโกเปีย"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:312
 msgid "Macedonia"
-msgstr ""
+msgstr "ประเทศมาซิโดเนีย"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:313
 msgid "Sofia"
-msgstr ""
+msgstr "โซเฟีย"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:313
 msgid "Bulgaria"
-msgstr ""
+msgstr "ประเทศบัลแกเรีย"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:314
 msgid "St.Johns"
-msgstr ""
+msgstr "เซนต์จอห์น"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:315
 msgid "St.Kitts"
-msgstr ""
+msgstr "เซนต์คิตส์"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:315
 msgid "Saint Kitts and Nevis"
-msgstr ""
+msgstr "ประเทศเซนต์คิตส์และเนวิส"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:316
 msgid "St.Louis"
-msgstr ""
+msgstr "เซนต์หลุยส์"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:317
 msgid "Stanley"
-msgstr ""
+msgstr "สแตนลีย์"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:317
 msgid "Falkland Islands"
-msgstr ""
+msgstr "หมู่เกาะฟอล์กแลนด์"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:318
 msgid "Stockholm"
-msgstr ""
+msgstr "สต็อกโฮล์ม"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:318
 msgid "Sweden"
-msgstr ""
+msgstr "ประเทศสวีเดน"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:319
 msgid "Suva"
-msgstr ""
+msgstr "ซูวา"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:320
 msgid "Sydney"
-msgstr ""
+msgstr "ซิดนีย์"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:322
 msgid "Taipei"
-msgstr ""
+msgstr "ไทเป"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:322
 msgid "Taiwan"
-msgstr ""
+msgstr "ประเทศไต้หวัน"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:323
 msgid "Tallinn"
-msgstr ""
+msgstr "ทาลลินน์"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:323
 msgid "Estonia"
-msgstr ""
+msgstr "ประเทศเอสโตเนีย"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:324
 msgid "Tehran"
-msgstr ""
+msgstr "เตหะราน"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:324
 msgid "Iran"
-msgstr ""
+msgstr "ประเทศอิหร่าน"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:325
 msgid "Tokyo"
-msgstr ""
+msgstr "โตเกียว"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:326
 msgid "Toronto"
-msgstr ""
+msgstr "โทรอนโต"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:327
 msgid "Tripoli"
-msgstr ""
+msgstr "ตริโปลี"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:327
 msgid "Libya"
-msgstr ""
+msgstr "ประเทศลิเบีย"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:328
 msgid "Tunis"
-msgstr ""
+msgstr "ตูนิส"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:328
 msgid "Tunisia"
-msgstr ""
+msgstr "ประเทศตูนิเซีย"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:330
 msgid "Ulan Bator"
-msgstr ""
+msgstr "อูลานบาตาร์"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:330
 msgid "Mongolia"
-msgstr ""
+msgstr "ประเทศมองโกเลีย"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:331
 msgid "UTC"
-msgstr ""
+msgstr "ยูทีซี"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:333
 msgid "Vancouver"
-msgstr ""
+msgstr "แวนคูเวอร์"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:334
 msgid "Vatican City"
-msgstr ""
+msgstr "กรุงวาติกัน"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:335
 msgid "Vevay"
@@ -1996,19 +2002,19 @@ msgstr ""
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:336
 msgid "Vienna"
-msgstr ""
+msgstr "เวียนนา"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:336
 msgid "Austria"
-msgstr ""
+msgstr "ประเทศออสเตรีย"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:337
 msgid "Vilnius"
-msgstr ""
+msgstr "วิลนีอุส"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:337
 msgid "Lithuania"
-msgstr ""
+msgstr "ประเทศลิทัวเนีย"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:338
 msgid "Vincennes"
@@ -2016,11 +2022,11 @@ msgstr ""
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:340
 msgid "Warsaw"
-msgstr ""
+msgstr "วอร์ซอ"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:341
 msgid "Washington D.C."
-msgstr ""
+msgstr "วอชิงตัน ดี.ซี."
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:342
 msgid "Winamac"
@@ -2028,27 +2034,27 @@ msgstr ""
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:343
 msgid "Winnipeg"
-msgstr ""
+msgstr "วินนิเพ็ก"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:344
 msgid "Wrocław"
-msgstr ""
+msgstr "วรอตสวัฟ"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:346
 msgid "Zagreb"
-msgstr ""
+msgstr "ซาเกร็บ"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:346
 msgid "Croatia"
-msgstr ""
+msgstr "ประเทศโครเอเชีย"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:347
 msgid "Zürich"
-msgstr ""
+msgstr "ซือริช"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:347
 msgid "Switzerland"
-msgstr ""
+msgstr "ประเทศสวิตเซอร์แลนด์"
 
 #: ubuntu-clock-app.desktop.in.in.h:2
 msgid ""
