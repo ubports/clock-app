@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-07-02 18:48+0000\n"
-"PO-Revision-Date: 2017-07-13 22:01+0000\n"
+"PO-Revision-Date: 2017-07-15 11:02+0000\n"
 "Last-Translator: Hans <hans1977se@gmail.com>\n"
 "Language-Team: Thai <https://ubpweblate.tnvcomp.com/projects/ubports/clock-"
 "app/th/>\n"
@@ -301,8 +301,9 @@ msgid "Unable to connect."
 msgstr "ไม่สามารถเชื่อมต่อ"
 
 #: ../app/worldclock/WorldCityList.qml:228
+#, fuzzy
 msgid "Please check your network connection and try again"
-msgstr ""
+msgstr "กรุณาตรวจสอบการเชื่อมต่อระบบเครือข่ายของคุณ และลองอีกครั้ง"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:48
 msgid "Abidjan"
@@ -609,7 +610,6 @@ msgid "United Kingdom"
 msgstr "ประเทศอังกฤษ"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:82
-#, fuzzy
 msgid "Belgrade"
 msgstr "เบลเกรด"
 
@@ -698,7 +698,6 @@ msgid "Brazzaville"
 msgstr "บราซาวีล"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:95
-#, fuzzy
 msgid "Republic of the Congo"
 msgstr "สาธารณรัฐคองโก"
 
@@ -821,8 +820,9 @@ msgid "Morocco"
 msgstr "โมร็อกโก"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:112
+#, fuzzy
 msgid "Cayman Palms"
-msgstr ""
+msgstr "เคย์แมนปาล์ม"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:112
 msgid "Cayman Islands"
@@ -1043,7 +1043,7 @@ msgstr "ยิบรอลตาร์"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:153
 msgid "Grand Turk"
-msgstr ""
+msgstr "แกรนด์เติร์ก"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:153
 msgid "Turks and Caicos Islands"
@@ -1428,8 +1428,9 @@ msgid "Mendoza"
 msgstr "เมนโดซา"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:227
+#, fuzzy
 msgid "Metlakatla"
-msgstr ""
+msgstr "เมทลากาตละ"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:228
 msgid "Mexico City"
@@ -1537,7 +1538,6 @@ msgid "Nashville"
 msgstr "แนชวิลล์"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:248
-#, fuzzy
 msgid "Nassau"
 msgstr "แนสซอ"
 
@@ -1562,9 +1562,8 @@ msgid "New York"
 msgstr "นิวยอร์ก"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:253
-#, fuzzy
 msgid "Newfoundland"
-msgstr "เกาะนิวฟันด์แลนด์"
+msgstr "นิวฟันด์แลนด์"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:254
 msgid "Nouméa"
@@ -1689,7 +1688,7 @@ msgstr "ปราก"
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:275
 #, fuzzy
 msgid "Czech Republic"
-msgstr "ประเทศเช็กเกีย"
+msgstr "สาธารณรัฐเช็ก"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:276
 msgid "Pyongyang"
@@ -1725,8 +1724,9 @@ msgid "Reno"
 msgstr "เรโน"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:283
+#, fuzzy
 msgid "Reston"
-msgstr ""
+msgstr "เรสตัน"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:284
 msgid "Reykjavík"
@@ -1997,8 +1997,9 @@ msgid "Vatican City"
 msgstr "กรุงวาติกัน"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:335
+#, fuzzy
 msgid "Vevay"
-msgstr ""
+msgstr "วีเวย์"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:336
 msgid "Vienna"
@@ -2017,8 +2018,9 @@ msgid "Lithuania"
 msgstr "ประเทศลิทัวเนีย"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:338
+#, fuzzy
 msgid "Vincennes"
-msgstr ""
+msgstr "วินเซนเนส"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:340
 msgid "Warsaw"
@@ -2029,8 +2031,9 @@ msgid "Washington D.C."
 msgstr "วอชิงตัน ดี.ซี."
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:342
+#, fuzzy
 msgid "Winamac"
-msgstr ""
+msgstr "วินาแมค"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:343
 msgid "Winnipeg"
@@ -2057,11 +2060,14 @@ msgid "Switzerland"
 msgstr "ประเทศสวิตเซอร์แลนด์"
 
 #: ubuntu-clock-app.desktop.in.in.h:2
+#, fuzzy
 msgid ""
 "A sophisticated clock app that provides world clock, alarm and stopwatch "
 "functionality."
 msgstr ""
+"แอปนาฬิกาที่ซับซ้อน สามารถทำหน้าที่นาฬิกาโลก นาฬิกาปลุก และนาฬิกาจับเวลาได้"
 
 #: ubuntu-clock-app.desktop.in.in.h:3
+#, fuzzy
 msgid "time;alarm;alert;clock;world;stopwatch;"
-msgstr ""
+msgstr "เวลา;การปลุก;การเตือน;นาฬิกา;โลก;นาฬิกาจับเวลา;"
