@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-07-02 18:48+0000\n"
-"PO-Revision-Date: 2017-07-08 22:19+0000\n"
+"PO-Revision-Date: 2017-07-17 21:33+0000\n"
 "Last-Translator: Ahmed Suliman <ahmedselaman@gmail.com>\n"
 "Language-Team: Arabic <https://ubpweblate.tnvcomp.com/projects/ubports/clock-"
 "app/ar/>\n"
@@ -62,11 +62,11 @@ msgstr "انقر علي رمز + لاضافة منبه"
 
 #: ../app/alarm/AlarmRepeat.qml:38 ../app/alarm/EditAlarmPage.qml:282
 msgid "Repeat"
-msgstr "التكرار"
+msgstr "تكرار"
 
 #: ../app/alarm/AlarmSettingsPage.qml:31
 msgid "Settings"
-msgstr "الإعدادات"
+msgstr "الاعدادات"
 
 #. TRANSLATORS: Alarm stops after
 #. TRANSLATORS: Snooze for
