@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-07-02 18:48+0000\n"
-"PO-Revision-Date: 2017-07-15 11:02+0000\n"
-"Last-Translator: Hans <hans1977se@gmail.com>\n"
+"PO-Revision-Date: 2017-07-19 03:52+0000\n"
+"Last-Translator: PhompAng <tingtong003tomy@gmail.com>\n"
 "Language-Team: Thai <https://ubpweblate.tnvcomp.com/projects/ubports/clock-"
 "app/th/>\n"
 "Language: th\n"
@@ -43,23 +43,20 @@ msgid "Back"
 msgstr "กลับ"
 
 #: ../app/alarm/AlarmPage.qml:76
-#, fuzzy
 msgid "Select None"
-msgstr "ไม่ได้ตัดสินเลือก"
+msgstr "ไม่เลือก"
 
 #: ../app/alarm/AlarmPage.qml:78 ../app/alarm/AlarmRepeat.qml:64
 msgid "Select All"
 msgstr "เลือกทั้งหมด"
 
 #: ../app/alarm/AlarmPage.qml:157
-#, fuzzy
 msgid "No saved alarms"
-msgstr "ไม่มีเสียงปลุกบันทึกไว้อยู่"
+msgstr "ไม่มีเสียงปลุกที่บันทึกไว้"
 
 #: ../app/alarm/AlarmPage.qml:158
-#, fuzzy
 msgid "Tap the + icon to add an alarm"
-msgstr "แตะไอคอน + สำหรับเพิ่มเสียงปลุก"
+msgstr "แตะไอคอน + เพื่อเพิ่มเสียงปลุก"
 
 #: ../app/alarm/AlarmRepeat.qml:38 ../app/alarm/EditAlarmPage.qml:282
 msgid "Repeat"
@@ -97,7 +94,7 @@ msgstr "หลับต่อ"
 
 #: ../app/alarm/AlarmSettingsPage.qml:183
 msgid "Vibration"
-msgstr "การสั่นสะเทือน"
+msgstr "การสั่น"
 
 #: ../app/alarm/AlarmSettingsPage.qml:209
 msgid "Change time and date"
@@ -108,7 +105,6 @@ msgid "Sound"
 msgstr "เสียง"
 
 #: ../app/alarm/AlarmSound.qml:190
-#, fuzzy
 msgid "Custom alarm sounds"
 msgstr "เสียงปลุกที่กำหนดเอง"
 
@@ -118,9 +114,8 @@ msgid "Add sound"
 msgstr "เพิ่มเสียงเพิ่มเติม"
 
 #: ../app/alarm/AlarmSound.qml:343
-#, fuzzy
 msgid "Default alarm sounds"
-msgstr "เสียงปริยายของเสียงปลุก"
+msgstr "เสียงปลุกปริยาย"
 
 #: ../app/alarm/AlarmUtils.qml:31
 #, fuzzy
@@ -140,19 +135,19 @@ msgid "Daily"
 msgstr "ประจำวัน"
 
 #: ../app/alarm/AlarmUtils.qml:81
-#, fuzzy, no-c-format, qt-format
+#, no-c-format, qt-format
 msgid "in %1d %2h %3m"
-msgstr "เมื่อ %1 วัน %2 ชม. %3 นท."
+msgstr "ในอีก %1 วัน %2 ชม. %3 น."
 
 #: ../app/alarm/AlarmUtils.qml:91
-#, fuzzy, no-c-format, qt-format
+#, no-c-format, qt-format
 msgid "in %1h %2m"
-msgstr "เมื่อ %1 ชม. %2 นท."
+msgstr "ในอีก %1 ชม. %2 น."
 
 #: ../app/alarm/AlarmUtils.qml:100
-#, fuzzy, no-c-format, qt-format
+#, no-c-format, qt-format
 msgid "in %1m"
-msgstr "เมื่อ %1 นท."
+msgstr "ในอีก %1 นาที"
 
 #: ../app/alarm/EditAlarmPage.qml:37
 msgid "New alarm"
@@ -172,9 +167,8 @@ msgid "Add sound from"
 msgstr "เสียงเพิ่มเติมจาก"
 
 #: ../app/clock/ClockPage.qml:257
-#, fuzzy
 msgid "Retrieving location..."
-msgstr "กำลังค้นหาสถานที่ตั้งอยู่..."
+msgstr "กำลังค้นหาตำแหน่งปัจจุบัน..."
 
 #: ../app/components/Information.qml:8
 msgid "Information"
@@ -186,7 +180,6 @@ msgid "Get the source"
 msgstr "รับจุดกำเนิด"
 
 #: ../app/components/Information.qml:18
-#, fuzzy
 msgid "Report issues"
 msgstr "แจ้งปัญหา"
 
@@ -217,23 +210,20 @@ msgid "Total Time"
 msgstr "เวลาทั้งหมด"
 
 #: ../app/stopwatch/StopwatchPage.qml:94
-#, fuzzy
 msgid "Stop"
 msgstr "หยุด"
 
 #: ../app/stopwatch/StopwatchPage.qml:94
-#, fuzzy
 msgid "Start"
-msgstr "เริ่มต้น"
+msgstr "เริ่ม"
 
 #: ../app/stopwatch/StopwatchPage.qml:94
 msgid "Resume"
 msgstr "เริ่มต่อ"
 
 #: ../app/stopwatch/StopwatchPage.qml:113
-#, fuzzy
 msgid "Clear"
-msgstr "ลบ"
+msgstr "ล้าง"
 
 #: ../app/worldclock/AddWorldCityButton.qml:30
 msgid "Add"
@@ -260,7 +250,7 @@ msgstr "เร็วกว่า"
 #: ../app/worldclock/UserWorldCityDelegate.qml:147
 #, qt-format
 msgid "%1h %2m %3"
-msgstr "%3 %1 ชม. %2 นท."
+msgstr "%3 %1 ชม. %2 น."
 
 #. TRANSLATORS: the first argument is hour, followed by the
 #. translation for either 'behind' or 'ahead'
@@ -274,7 +264,7 @@ msgstr "%2 %1ชม."
 #: ../app/worldclock/UserWorldCityDelegate.qml:164
 #, qt-format
 msgid "%1m %2"
-msgstr "%2 %1 นท."
+msgstr "%2 %1 น."
 
 #: ../app/worldclock/UserWorldCityDelegate.qml:170
 msgid "Same time"
@@ -301,9 +291,8 @@ msgid "Unable to connect."
 msgstr "ไม่สามารถเชื่อมต่อ"
 
 #: ../app/worldclock/WorldCityList.qml:228
-#, fuzzy
 msgid "Please check your network connection and try again"
-msgstr "กรุณาตรวจสอบการเชื่อมต่อระบบเครือข่ายของคุณ และลองอีกครั้ง"
+msgstr "กรุณาตรวจสอบการเชื่อมต่อเครือข่ายของคุณและลองอีกครั้ง"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:48
 msgid "Abidjan"
@@ -406,9 +395,8 @@ msgstr "แอลบูเคอร์คี"
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:335
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:341
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:342
-#, fuzzy
 msgid "United States"
-msgstr "สหรัฐ"
+msgstr "สหรัฐอเมริกา"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:53
 msgid "Algiers"
@@ -1686,7 +1674,6 @@ msgid "Prague"
 msgstr "ปราก"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:275
-#, fuzzy
 msgid "Czech Republic"
 msgstr "สาธารณรัฐเช็ก"
 
