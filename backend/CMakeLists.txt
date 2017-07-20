@@ -35,7 +35,7 @@ set(
 set(
     timer_SRCS
     modules/Timer/backend.cpp
-    modules/Timer/engine.cpp
+    modules/Timer/timerengine.cpp
 )
 
 add_library(alarm MODULE

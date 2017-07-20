@@ -14,31 +14,13 @@
  *                                                                           *
  ****************************************************************************/
 
-#include "engine.h"
+#include "timerengine.h"
 #include <QDebug>
 
-TimerEngine::TimerEngine(QObject *parent) : QAbstractListModel(parent) {
+TimerEngine::TimerEngine(QObject *parent) : QObject(parent) {
 
     if(m_isTimerRunning == true) {
     }
-}
-
-int TimerEngine::rowCount(const QModelIndex &parent) const
-{
-    /*
-     QT's models also handle tables and tree views, so the index is not just a
-     integer but consists of a parent, row and a column. Since we using a simple
-     list model, let's ignore the parent. Q_UNUSED(parent) gets rid of the
-     compiler warning about the unused variable.
-    */
-    Q_UNUSED(parent)
-
-    return 0;// m_settings.value("Timer/timers").toList().count();
-}
-
-QVariant TimerEngine::data(const QModelIndex &index, int role) const
-{
-    return QVariant();
 }
 
 void TimerEngine::addTimer(int timesec, QString timerName) {
@@ -61,8 +43,6 @@ void TimerEngine::pauseTimer() {
 }
 
 void TimerEngine::clearTimer() {
-    beginResetModel();
-    endResetModel();
 }
 
 bool TimerEngine::running() const {

@@ -3,7 +3,7 @@
 
 #include <QAbstractListModel>
 
-class TimerEngine : public QAbstractListModel
+class TimerEngine : public QObject
 {
     Q_OBJECT
 
@@ -17,14 +17,6 @@ signals:
 
 
 public:
-
-    /*
-     Let's override the pure virtual functions (the ones marked as
-     "virtual" and have "= 0" in the end.
-    */
-    int rowCount(const QModelIndex &parent) const;
-    QVariant data(const QModelIndex &index, int role) const;
-
     explicit TimerEngine(QObject *parent = 0);
 
     // Getter functions for the properties
