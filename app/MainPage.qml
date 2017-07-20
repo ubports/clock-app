@@ -243,7 +243,7 @@ Page {
             bottom: parent.bottom
             left: parent.left
             right: parent.right
-            bottomMargin: 0
+            bottomMargin: units.gu(1);
         }
     }
 }

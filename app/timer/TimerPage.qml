@@ -69,7 +69,7 @@ Item {
             width: parent.width / 2 - units.gu(1)
             height: units.gu(4)
             color: true? UbuntuColors.green : UbuntuColors.red
-            text: true ? i18n.tr("Stop") : (true ? i18n.tr("Start") : i18n.tr("Resume"))
+            text: timerEngine.isRunning ? i18n.tr("Stop") : (true ? i18n.tr("Start") : i18n.tr("Resume"))
             onClicked: {
             }
             Behavior on x {

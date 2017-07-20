@@ -1,6 +1,4 @@
 /*****************************************************************************
- * Copyright: 2015-2016 Michael Zanetti <michael_zanetti@gmx.net>            *
- *            2015-2016 Bartosz Kosiorek <gang65@poczta.onet.pl>             *
  *                                                                           *
  * This prject is free software: you can redistribute it and/or modify       *
  * it under the terms of the GNU General Public License as published by      *
@@ -17,31 +15,11 @@
  ****************************************************************************/
 
 #include "engine.h"
-
-#include <QStandardPaths>
 #include <QDebug>
 
-TimerEngine::TimerEngine(QObject *parent) : QAbstractListModel(parent),
-    /*
-     #FIXME: Change QStandardPaths::ConfigLocation to QStandardPaths::AppConfigLocation
-     when Ubuntu Touch moves over to Qt 5.5. AppConfigLocation will directly return
-     /home/phablet/.config/com.ubuntu.clock path.
-    */
-    m_settings(QStandardPaths::standardLocations(QStandardPaths::ConfigLocation).first() + "/com.ubuntu.clock/com.ubuntu.clock.conf", QSettings::IniFormat)
-{
-    qDebug() << "[LOG] Loading Saved timers from " << m_settings.fileName();
+TimerEngine::TimerEngine(QObject *parent) : QAbstractListModel(parent) {
 
-    m_timer.setInterval(45);
-    connect(&m_timer, &QTimer::timeout, this, &TimerEngine::updateTimer);
-
-
-
-    m_isTimerRunning = m_settings.value("Timer/isTimerRunning").toBool();
-
-
-    if(m_isTimerRunning == true)
-    {
-        m_timer.start();
+    if(m_isTimerRunning == true) {
     }
 }
 
@@ -55,7 +33,7 @@ int TimerEngine::rowCount(const QModelIndex &parent) const
     */
     Q_UNUSED(parent)
 
-    return m_settings.value("Timer/laps").toList().count();
+    return 0;// m_settings.value("Timer/timers").toList().count();
 }
 
 QVariant TimerEngine::data(const QModelIndex &index, int role) const
@@ -73,7 +51,6 @@ void TimerEngine::removeTimer(int timerIndex) {
 
 void TimerEngine::startTimer(int timesec) {
     setRunning(true);
-    m_timer.start();
 }
 
 void TimerEngine::updateTimer() {
@@ -81,12 +58,10 @@ void TimerEngine::updateTimer() {
 
 void TimerEngine::pauseTimer() {
     setRunning(false);
-    m_timer.stop();
 }
 
 void TimerEngine::clearTimer() {
     beginResetModel();
-    m_settings.setValue("Timer/laps", QVariantList());
     endResetModel();
 }
 
@@ -96,12 +71,10 @@ bool TimerEngine::running() const {
 
 
 void TimerEngine::setRunning(bool value) {
-    if(value == m_isTimerRunning)
-    {
+    if(value == m_isTimerRunning) {
         return;
     }
 
     m_isTimerRunning = value;
-    m_settings.setValue("Timer/isTimerRunning", m_isTimerRunning);
     emit runningChanged();
 }

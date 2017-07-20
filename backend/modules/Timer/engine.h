@@ -1,10 +1,7 @@
-#ifndef ENGINE_H
-#define ENGINE_H
+#ifndef TIMER_ENGINE_H
+#define TIMER_ENGINE_H
 
 #include <QAbstractListModel>
-#include <QTimer>
-#include <QSettings>
-#include <QDateTime>
 
 class TimerEngine : public QAbstractListModel
 {
@@ -47,11 +44,7 @@ private:
 
     void setRunning(bool value);
 
-    QSettings m_settings;
-
-    QTimer m_timer;
-
-    bool m_isTimerRunning;
+    bool m_isTimerRunning = false;
 };
 
-#endif // ENGINE_H
+#endif // TIMER_ENGINE_H
