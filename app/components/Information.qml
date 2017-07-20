@@ -51,7 +51,7 @@ Page {
             width: parent.width
             color: UbuntuColors.ash
             horizontalAlignment: Text.AlignHCenter
-            text: i18n.tr("Version %1").arg("3.8.487")
+            text: i18n.tr("Version %1").arg("3.8.539")
         }
 
     }

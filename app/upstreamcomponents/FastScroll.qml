@@ -349,12 +349,14 @@ Item {
             var acceptableHeight = root.listView.height - root.anchors.topMargin ;
 
             if( letters.length > 0 && (root.pinSize * letters.length ) > acceptableHeight) {
+                console.log("Decressing letters "+  listView.model.count)
                 for( var y=0;
                     letters.length > 26 && (root.pinSize * letters.length ) > acceptableHeight  ;
                     y+=1 + Math.max(0,letters.length / (letters.length-(acceptableHeight/(root.pinSize))))) {
 
                         letters.splice(parseInt(y) % letters.length,1);
                 }
+                console.log("Decressed letters "+  listView.model.count)
             }
             return letters;
         }

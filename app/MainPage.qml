@@ -106,6 +106,24 @@ Page {
                 }
             }
         }
+
+        Loader {
+            id:timerPageLoader
+            asynchronous: true
+            width: clockApp.width
+            height: listview.height
+            Component.onCompleted: setSource("timer/TimerPage.qml" ,{
+                                                 "notLocalizedClockTimeString": _mainPage.notLocalizedDateTimeString,
+                                                 "localizedClockTimeString": _mainPage.localizedTimeString,
+                                                 "localizedClockDateString": _mainPage.localizedDateString,
+                                                 "width": clockApp.width,
+                                                 "height": listview.height});
+            onLoaded: {
+                if (this.item.isRunning) {
+                    listview.moveToTimerPage()
+                }
+            }
+        }
     }
 
 
@@ -148,6 +166,11 @@ Page {
         function moveToStopwatchPage() {
             moveAnimation.moveTo(listview.originX + listview.width)
             listview.currentIndex = 1
+        }
+
+        function moveToTimerPage() {
+            moveAnimation.moveTo(listview.originX + listview.width*2)
+            listview.currentIndex = 2
         }
 
         function moveToClockPage() {
