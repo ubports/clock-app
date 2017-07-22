@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-07-02 18:48+0000\n"
-"PO-Revision-Date: 2017-07-05 06:36+0000\n"
+"PO-Revision-Date: 2017-07-22 21:33+0000\n"
 "Last-Translator: anonymous <noreply@weblate.org>\n"
 "Language-Team: Hebrew <https://ubpweblate.tnvcomp.com/projects/ubports/clock-"
 "app/he/>\n"
@@ -179,7 +179,7 @@ msgstr "הורידו את הקוד"
 
 #: ../app/components/Information.qml:18
 msgid "Report issues"
-msgstr "דיווח על בעיות"
+msgstr "דווחו על בעיות"
 
 #: ../app/components/Information.qml:19
 msgid "Help translate"
