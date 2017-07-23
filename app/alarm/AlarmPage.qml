@@ -38,6 +38,7 @@ Page {
         title: i18n.tr("Alarms")
         leadingActionBar.actions: [
             Action {
+                objectName: "closeAlarmList"
                 text: "close"
                 iconName: "go-down"
                 onTriggered: {
