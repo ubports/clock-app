@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-07-02 18:48+0000\n"
-"PO-Revision-Date: 2017-07-23 04:27+0000\n"
+"PO-Revision-Date: 2017-07-23 14:52+0000\n"
 "Last-Translator: dimitra <dimitra86@list.ru>\n"
 "Language-Team: Russian <https://ubpweblate.tnvcomp.com/projects/ubports"
 "/clock-app/ru/>\n"
@@ -177,22 +177,21 @@ msgstr "Информация"
 
 #: ../app/components/Information.qml:17
 msgid "Get the source"
-msgstr ""
+msgstr "Получить данные"
 
 #: ../app/components/Information.qml:18
 msgid "Report issues"
-msgstr ""
+msgstr "Сообщить о проблеме"
 
 #: ../app/components/Information.qml:19
 msgid "Help translate"
-msgstr ""
+msgstr "Помощь в переводе"
 
 #: ../app/components/NavigationRow.qml:50 ubuntu-clock-app.desktop.in.in.h:1
 msgid "Clock"
 msgstr "Часы"
 
 #: ../app/components/NavigationRow.qml:62
-#, fuzzy
 msgid "Stopwatch"
 msgstr "Стоп"
 
