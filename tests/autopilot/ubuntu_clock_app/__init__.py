@@ -445,7 +445,6 @@ class AlarmPage(Page):
 
         edit_alarm_page._check_sound_changed(test_sound_name)
         edit_alarm_page._click_save_alarm_button()
-        self._confirm_alarm_creation(old_alarm_count)
 
 class WorldCityList(Page):
     """Autopilot helper for World City List page."""
@@ -738,6 +737,9 @@ class AlarmList(object):
                 objectName='listAlarmStatus').checked
             alarms.append((name, recurrence, time, enabled))
         return alarms
+
+    def get_saved_alarms_count(self):
+       return len(self.get_saved_alarms())
 
     @autopilot_logging.log_action(logger.info)
     def delete_alarm(self, index):

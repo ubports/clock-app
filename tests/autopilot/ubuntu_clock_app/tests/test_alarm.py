@@ -36,13 +36,11 @@ class TestAlarm(ClockAppTestCase):
              'expected_recurrence': 'Tue, Wed, Fri, Sun',
              'enabled_value': True,
              'sound_name': 'Bliss',
-             'edited_values' : {
-				'alarm_name': 'Random days Alarm Test Edited',
-				'days': ['Thursday'],
-				'expected_recurrence': 'Tue, Wed, Thr, Fri, Sun',
-				'enabled_value': True,
-				'sound_name': 'Bliss'
-			 }
+			 'edited_alarm_name': 'Random days Alarm Test Edited',
+             'edited_days': ['Thursday'],
+             'edited_expected_recurrence': 'Thu',
+             'edited_enabled_value': True,
+             'edited_sound_name': 'Celestial'
              }),
 
         ('weekday',
@@ -51,13 +49,11 @@ class TestAlarm(ClockAppTestCase):
              'expected_recurrence': 'Weekdays',
              'enabled_value': True,
              'sound_name': 'Bliss',
-             'edited_values' : {
-				 'alarm_name': 'Weekday Alarm Test Edited',
-				'days':  ['Saturday', 'Sunday'],
-				'expected_recurrence': 'Daily',
-				'enabled_value': False,
-				'sound_name': 'Ubuntu',
-             }
+			 'edited_alarm_name': 'Weekday Alarm Test Edited',
+             'edited_days':  ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+             'edited_expected_recurrence': 'Daily',
+             'edited_enabled_value': True,
+             'edited_sound_name': 'Counterpoint',
              }),
 
         ('weekend',
@@ -66,13 +62,11 @@ class TestAlarm(ClockAppTestCase):
              'expected_recurrence': 'Weekends',
              'enabled_value': True,
              'sound_name': 'Bliss',
-			 'edited_values' : {
-				'alarm_name': 'Weekend Alarm Test Edited',
-				'days': ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-				'expected_recurrence': 'Daily',
-				'enabled_value': True,
-				'sound_name': 'Ubuntu'
-			 }
+             'edited_alarm_name': 'Weekend Alarm Test Edited',
+			 'edited_days': ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+             'edited_expected_recurrence': 'Daily',
+             'edited_enabled_value': True,
+             'edited_sound_name': 'Celestial'
              })
     ]
 
@@ -87,6 +81,15 @@ class TestAlarm(ClockAppTestCase):
             self.app.main_view.visible, Eventually(Equals(True)))
 
         self.page = self.app.main_view.open_alarm()
+
+    def test_remove_all_alarms(self):
+        alarmlistPage = self.app.main_view.get_AlarmList()
+        alarmscount = alarmlistPage.get_saved_alarms_count()
+        for idx in range(alarmscount):
+           alarmlistPage.delete_alarm(index=0)
+
+        savedAlarmsCount = alarmlistPage.get_saved_alarms_count()
+        self.assertEqual(0, savedAlarmsCount)
 
     def test_add_recurring_type_alarm_must_add_to_alarm_list(self):
         """Test to check if alarms are saved properly
@@ -137,17 +140,17 @@ class TestAlarm(ClockAppTestCase):
             self.alarm_name, self.days, formatted_time_to_set,
             self.sound_name)
 
-        alarmlistPage = self.app.main_view.get_AlarmList()
+        """alarmlistPage = self.app.main_view.get_AlarmList()
         saved_alarms = alarmlistPage.get_saved_alarms()
-        """self.assertIn(expected_alarm_info, saved_alarms)"""
+        self.assertIn(expected_alarm_info, saved_alarms)"""
 
         edited_expected_alarm_info = (
-            self.edited_values.edited_.alarm_name, self.edited_values.expected_recurrence,
-            time_to_set_string, self.edited_values.enabled_value)
+            self.edited_alarm_name, self.edited_expected_recurrence,
+            time_to_set_string, self.edited_enabled_value)
 
         self.page.edit_single_alarm( added_alarm,
-            self.edited_values.alarm_name, self.edited_values.days, formatted_time_to_set,
-            self.edited_values.sound_name)
+            self.edited_alarm_name, self.edited_days, formatted_time_to_set,
+            self.edited_sound_name)
 
         alarmlistPage = self.app.main_view.get_AlarmList()
         saved_alarms = alarmlistPage.get_saved_alarms()
