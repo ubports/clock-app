@@ -18,21 +18,27 @@
 
 import QtQuick 2.4
 import Ubuntu.Components 1.3
+import Ubuntu.Components.Pickers 1.3
 import "../components"
 
-ClockCircle {
-    id: stopwatchCircle
+AdjustableAnalogClock {
+    id: timerCircle
 
     width: units.gu(24)
 
-    Label {
+    DatePicker {
         id: timer
         objectName: "timerTime"
+        width:parent.width/2
+        height: parent.height/5
+        anchors.horizontalCenter: parent.horizontalCenter
+        anchors.verticalCenter: parent.verticalCenter
+        mode:"Hours|Minutes"
+      // date: Date.parse(localDateTime)
 
-        text: "00:00"
-        font.pixelSize: units.dp(36)
-        anchors.centerIn: parent
-        color: UbuntuColors.slate
+//        text: localDateTime.split(":")[3] + "h " +localDateTime.split(":")[4] + "m";
+        anchors.verticalCenterOffset: parent.width/4
+//       color: UbuntuColors.slate
     }
 
 

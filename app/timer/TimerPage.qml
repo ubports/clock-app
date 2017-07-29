@@ -78,7 +78,26 @@ Item {
                 }
             }
         }
-
-
     }
+
+
+    NestedListviewsHack {
+        z:10
+        parentListView : listview
+        nestedListView : lapListView
+    }
+
+    ListView {
+         id: lapListView
+         objectName: "lapsList"
+         anchors {
+             top: buttonRow.bottom
+             bottom: parent.bottom
+             left: parent.left
+             right: parent.right
+             topMargin: units.gu(1)
+         }
+         visible: stopwatchEngine.running || stopwatchEngine.totalTimeOfStopwatch !== 0
+         model: stopwatchEngine
+     }
 }
