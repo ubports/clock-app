@@ -48,9 +48,9 @@ MainView {
 
         function initTestCase() {
             alarmLabelPage.visible = true
-            header = findChild(mainView, "MainView_Header")
+            header = findChild(mainView, "alarmLabelHeader")
             alarmLabel = findChild(alarmLabelPage, "labelEntry")
-            backButton = findChild(header, "customBackButton")
+            backButton = findChild(header, "backAction_button")
             saveButton = findChild(header, "saveAction_button")
         }
 
