@@ -68,8 +68,8 @@ MainView {
             alarmRepeatPageLoader.sourceComponent = alarmRepeatPage
             alarmRepeatPageLoader.item.visible = true
             spy.target = alarmRepeatPageLoader.item.Component
-            header = findChild(mainView, "MainView_Header")
-            backButton = findChild(header, "customBackButton")
+            header = findChild(mainView, "alarmRepeatHeader")
+            backButton = findChild(header, "backAction_button")
             saveButton = findChild(header, "saveAction_button")
             repeater = findChild(alarmRepeatPageLoader.item, "alarmDays")
         }
@@ -100,8 +100,9 @@ MainView {
             tryCompare(_alarm, "daysOfWeek", 0, 3000, "Alarm days of weeks is not 0 by default")
 
             for(var i=0; i<repeater.count; i++) {
-                var currentDayLabel = findChild(alarmRepeatPageLoader.item, "alarmDay"+i)
-                var currentDaySwitch = findChild(alarmRepeatPageLoader.item, "daySwitch"+i)
+                var alarmDayHolder = findChild(alarmRepeatPageLoader.item, "alarmDayHolder"+i)
+                var currentDayLabel = findChild(alarmDayHolder, "alarmDay")
+                var currentDaySwitch = findChild(alarmDayHolder, "daySwitch")
 
                 compare(currentDaySwitch.checked, false, "All switches are not disabled by default")
             }
@@ -117,7 +118,8 @@ MainView {
             tryCompare(_alarm, "daysOfWeek", 0, 3000, "Alarm days of weeks is not 0 by default")
             compare(saveButton.enabled, false, "save header button is not disabled despite no alarm frequency change")
 
-            var randomDaySwitch = findChild(alarmRepeatPageLoader.item, "daySwitch"+3)
+            var alarmDayHolder = findChild(alarmRepeatPageLoader.item, "alarmDayHolder"+3)
+            var randomDaySwitch = findChild(alarmDayHolder, "daySwitch")
             mouseClick(randomDaySwitch, centerOf(randomDaySwitch).x, centerOf(randomDaySwitch).y)
             compare(saveButton.enabled, true, "save header button is not disabled despite no alarm frequency change")
         }
@@ -132,8 +134,8 @@ MainView {
             waitForRendering(alarmRepeatPageLoader.item);
 
             tryCompare(_alarm, "type", Alarm.OneTime, 3000, "Alarm type is not OneTime by default")
-
-            var randomDaySwitch = findChild(alarmRepeatPageLoader.item, "daySwitch"+3)
+            var alarmDayHolder = findChild(alarmRepeatPageLoader.item, "alarmDayHolder"+3)
+            var randomDaySwitch = findChild(alarmDayHolder, "daySwitch")
 
             mouseClick(randomDaySwitch, centerOf(randomDaySwitch).x, centerOf(randomDaySwitch).y)
             tryCompare(_alarm, "type", Alarm.Repeating, 3000, "Alarm type did not change to Repeating despite enabling a switch")
@@ -150,7 +152,8 @@ MainView {
             waitForRendering(alarmRepeatPageLoader.item);
 
             for(var i=0; i<repeater.count; i++) {
-                var currentDaySwitch = findChild(alarmRepeatPageLoader.item, "daySwitch"+i)
+                var alarmDayHolder = findChild(alarmRepeatPageLoader.item, "alarmDayHolder"+i)
+                var currentDaySwitch = findChild(alarmDayHolder, "daySwitch")
 
                 if(!currentDaySwitch.checked) {
                     mouseClick(currentDaySwitch, centerOf(currentDaySwitch).x, centerOf(currentDaySwitch).y)
@@ -168,12 +171,14 @@ MainView {
          should properly show the days previously selected by the user.
         */
         function test_alarmObjectSetsSwitchStatus() {
+            waitForRendering(alarmRepeatPageLoader.item);
             _alarm.type = Alarm.Repeating
             _alarm.daysOfWeek = Alarm.Saturday | Alarm.Sunday
 
             for(var i=0; i<repeater.count; i++) {
-                var currentDayLabel = findChild(alarmRepeatPageLoader.item, "alarmDay"+i)
-                var currentDaySwitch = findChild(alarmRepeatPageLoader.item, "daySwitch"+i)
+                var alarmDayHolder = findChild(alarmRepeatPageLoader.item, "alarmDayHolder"+i)
+                var currentDayLabel = findChild(alarmDayHolder, "alarmDay")
+                var currentDaySwitch = findChild(alarmDayHolder, "daySwitch")
 
                 if(currentDayLabel.text === Qt.locale().standaloneDayName(6, Locale.LongFormat) ||
                         currentDayLabel.text === Qt.locale().standaloneDayName(0, Locale.LongFormat)) {
