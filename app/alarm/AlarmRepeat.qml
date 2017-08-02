@@ -35,6 +35,8 @@ Page {
     visible: false
 
     header: PageHeader {
+        id: alarmRepeatHeader
+        objectName: "alarmRepeatHeader"
         title: i18n.tr("Repeat")
         leadingActionBar.actions: [
             Action {

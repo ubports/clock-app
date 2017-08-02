@@ -31,13 +31,11 @@ MockClockApp {
         when: windowShown
 
         property var header
-        property var backButton
         property var clockPage
         property var pageStack
 
         function initTestCase() {
             header = findChild(clockApp, "MainView_Header")
-            backButton = findChild(header, "customBackButton")
             pageStack = findChild(clockApp, "pageStack")
             clockPage = findChild(clockApp, "clockPage")
         }
@@ -160,11 +158,11 @@ MockClockApp {
             var worldCityPage = getPage(pageStack, "worldCityList")
             waitForRendering(worldCityPage)
 
-            addCityFromList("Amsterdam", "Netherlands")
-            assertWorldCityAddition("Amsterdam", "Netherlands")
+            addCityFromList("Albuquerque", "United States")
+            assertWorldCityAddition("Albuquerque", "United States")
 
             // Clean up after the test by deleting the city which was added during the test
-            deleteWorldCity("Amsterdam", "Netherlands")
+            deleteWorldCity("Albuquerque", "United States")
         }
     }
 }

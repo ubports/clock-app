@@ -32,10 +32,13 @@ Page {
     visible: false
 
     header: PageHeader {
+        id: alarmLabelHeader
+        objectName: "alarmLabelHeader"
         title: i18n.tr("Label")
         leadingActionBar.actions: [
             Action {
                 id: backAction
+                objectName: "backAction"
                 iconName: "back"
                 onTriggered: {
                     // Restore old alarm label if user presses the back button
