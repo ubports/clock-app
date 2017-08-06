@@ -26,21 +26,23 @@ AdjustableAnalogClock {
 
     width: units.gu(24)
 
-    DatePicker {
-        id: timer
-        objectName: "timerTime"
-        width:parent.width/2
-        height: parent.height/5
+    property bool hasTime: datedTime.getTime() > Date.now()
+
+    Label {
+        id: timerTimeLbl
+        objectName: "timerTimeLbl"
+        width:parent.width/3
+        height: parent.height/6
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.verticalCenter: parent.verticalCenter
-        mode:"Hours|Minutes"
-      // date: Date.parse(localDateTime)
-
-//        text: localDateTime.split(":")[3] + "h " +localDateTime.split(":")[4] + "m";
-        anchors.verticalCenterOffset: parent.width/4
-//       color: UbuntuColors.slate
+        font.pixelSize: units.gu(3)
+        horizontalAlignment: Text.Center
+        text: localDateTime.split(":")[3] + "h " +localDateTime.split(":")[4] + "m";
+        anchors.verticalCenterOffset: -parent.width/4
+        color: UbuntuColors.ash
     }
-
-
+    function reset() {
+         localDateTime = "1970:01:01:00:00:00"
+    }
 
 }

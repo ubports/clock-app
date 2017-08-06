@@ -45,7 +45,7 @@ Item {
 
             ActionIcon {
                 id: clockNavigationButton
-                 property bool isSelected: listview.currentIndex === 0
+                property bool isSelected: listview.currentIndex === 0
                 objectName: "clockNavigationButton"
                 label.text: isSelected ? i18n.tr("Clock") : ""
                 height:units.gu(5)

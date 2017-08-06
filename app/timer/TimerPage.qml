@@ -38,8 +38,8 @@ Item {
     }
 
     TimerFace {
-        id: timer
-        objectName: "timer"
+        id: timerFace
+        objectName: "timerFace"
 
         anchors {
             top: parent.top
@@ -49,37 +49,65 @@ Item {
 
     }
 
-    Item {
+    Row {
         id: buttonRow
-
-        width: parent.width - units.gu(4)
-        height: units.gu(4)
+        spacing: units.gu(2)
         anchors {
-            top: timer.bottom
+            top: timerFace.bottom
             topMargin: units.gu(4)
-            left: parent.left
-            right: parent.right
+            horizontalCenter: parent.horizontalCenter
             margins: units.gu(2)
+        }
+
+        ActionIcon {
+            id:saveTimerButton
+            objectName:"saveTimerButton"
+            icon.name: "save"
+            width: units.gu(7)
+            height: units.gu(4)
+            icon.color: UbuntuColors.slate
+            enabled: timerFace.hasTime
+            opacity: timerFace.hasTime ? 1: 0
+
+            Behavior on opacity {
+                UbuntuNumberAnimation{
+                    duration: UbuntuAnimation.BriskDuration
+                }
+            }
+
         }
 
         Button {
             id: startStopButton
             objectName: "startAndStopButton"
-            anchors.horizontalCenter: parent.horizontalCenter
-            width: parent.width / 2 - units.gu(1)
+            width: _timerPage.width / 2 - units.gu(1)
             height: units.gu(4)
-            color: true? UbuntuColors.green : UbuntuColors.red
+            enabled: timerEngine.isRunning || timerFace.hasTime
+            color: !timerEngine.isRunning  ? UbuntuColors.green : UbuntuColors.red
             text: timerEngine.isRunning ? i18n.tr("Stop") : (true ? i18n.tr("Start") : i18n.tr("Resume"))
             onClicked: {
+
             }
-            Behavior on x {
+        }
+        ActionIcon {
+            id:resetTimerButton
+            objectName:"resetTimerButton"
+            icon.name: "reset"
+            width: units.gu(7)
+            height: units.gu(4)
+            enabled: timerFace.hasTime
+            opacity:  timerFace.hasTime ? 1: 0
+            Behavior on opacity {
                 UbuntuNumberAnimation{
                     duration: UbuntuAnimation.BriskDuration
                 }
             }
+
+            onClicked: {
+                timerFace.reset()
+            }
         }
     }
-
 
     NestedListviewsHack {
         z:10
@@ -87,9 +115,9 @@ Item {
         nestedListView : lapListView
     }
 
-    ListView {
-         id: lapListView
-         objectName: "lapsList"
+    TimerListView {
+         id: timersList
+         objectName: "timersList"
          anchors {
              top: buttonRow.bottom
              bottom: parent.bottom

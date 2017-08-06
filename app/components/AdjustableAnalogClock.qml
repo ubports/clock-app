@@ -4,10 +4,18 @@ AnalogMode {
 
     property var  isMainClock: false
     property bool adjustable: true
+    property var datedTime: new Date(0)
+
     showSeconds: false
 
-
     localDateTime: "1970:01:01:00:00:00"
+
+    onLocalDateTimeChanged: {
+        var tmpTime = new Date(Date.now());
+        datedTime = new Date( tmpTime.setHours( tmpTime.getHours() + parseInt(localDateTime.split(":")[3]),
+                                                tmpTime.getMinutes() + parseInt(localDateTime.split(":")[4])));
+
+    }
 
     MouseArea {
         id:adjustHourMouseArea
