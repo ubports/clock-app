@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-07-02 18:48+0000\n"
-"PO-Revision-Date: 2017-07-05 15:14+0000\n"
-"Last-Translator: Gabriele <gabrielemartelli@tiscali.it>\n"
+"PO-Revision-Date: 2017-08-07 00:03+0000\n"
+"Last-Translator: alexisme <alexanderc.spa@openmailbox.org>\n"
 "Language-Team: Italian <https://ubpweblate.tnvcomp.com/projects/ubports"
 "/clock-app/it/>\n"
 "Language: it\n"
@@ -131,7 +131,7 @@ msgstr "Fine settimana"
 
 #: ../app/alarm/AlarmUtils.qml:45
 msgid "Daily"
-msgstr "Giornaliero"
+msgstr "Ogni giorno"
 
 #: ../app/alarm/AlarmUtils.qml:81
 #, no-c-format, qt-format
