@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-07-02 18:48+0000\n"
-"PO-Revision-Date: 2017-08-21 20:07+0000\n"
-"Last-Translator: Byteschubse <usoltau@mail.de>\n"
+"PO-Revision-Date: 2017-08-28 22:06+0000\n"
+"Last-Translator: Jan Sprinz <neo@neothethird.de>\n"
 "Language-Team: German <https://ubpweblate.tnvcomp.com/projects/ubports/clock-"
 "app/de/>\n"
 "Language: de\n"
@@ -75,10 +75,10 @@ msgstr "Einstellungen"
 #: ../app/alarm/AlarmSettingsPage.qml:71 ../app/alarm/AlarmSettingsPage.qml:72
 #: ../app/alarm/AlarmSettingsPage.qml:122
 #: ../app/alarm/AlarmSettingsPage.qml:153
-#, fuzzy, qt-format
+#, qt-format
 msgid "%1 minute"
 msgid_plural "%1 minutes"
-msgstr[0] "ist die Anzahl der Minuten"
+msgstr[0] "eine Minute"
 msgstr[1] "%1 Minuten"
 
 #: ../app/alarm/AlarmSettingsPage.qml:99
