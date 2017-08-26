@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-07-02 18:48+0000\n"
-"PO-Revision-Date: 2017-08-07 00:03+0000\n"
-"Last-Translator: alexisme <alexanderc.spa@openmailbox.org>\n"
+"PO-Revision-Date: 2017-08-26 21:08+0000\n"
+"Last-Translator: Emanuele Calabro <oursgamemf@gmail.com>\n"
 "Language-Team: Italian <https://ubpweblate.tnvcomp.com/projects/ubports"
 "/clock-app/it/>\n"
 "Language: it\n"
@@ -212,8 +212,9 @@ msgid "Stop"
 msgstr "Ferma"
 
 #: ../app/stopwatch/StopwatchPage.qml:94
+#, fuzzy
 msgid "Start"
-msgstr "Avvia"
+msgstr "Start"
 
 #: ../app/stopwatch/StopwatchPage.qml:94
 msgid "Resume"
