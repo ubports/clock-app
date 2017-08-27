@@ -224,6 +224,46 @@ Page {
                 }
             }
 
+            ExpandableListItem {
+                id: _selectedTheme
+
+                property var selectedItem: null
+
+                listViewHeight: units.gu(28)
+                titleText.text: i18n.tr("Theme")
+                subText.text: model.name
+                subText.textSize: Label.Medium
+
+                model: ListModel {
+                        ListElement {name: "Ambiance"; value : "Ubuntu.Components.Themes.Ambiance"}
+                        ListElement {name: "Suru Dark"; value : "Ubuntu.Components.Themes.SuruDark"}
+                }
+
+                Component.onCompleted: {
+                    selectedItem = model.get(0).name
+                }
+
+                delegate: ListItem {
+                    ListItemLayout {
+                        title.text: model.name
+
+                        Icon {
+                            SlotsLayout.position: SlotsLayout.Trailing
+                            width: units.gu(2)
+                            height: width
+                            name: "tick"
+                            visible: _selectedTheme.selectedItem && model.name ==_selectedTheme.selectedItem
+                            asynchronous: true
+                        }
+                    }
+
+                    onClicked: {
+                        _selectedTheme.selectedItem = model.name
+                        _selectedTheme.expansion.expanded = false
+                        clockApp.theme.name = model.value
+                    }
+                }
+            }
         }
     }
 }

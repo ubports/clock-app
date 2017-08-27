@@ -28,6 +28,7 @@ Item {
     Rectangle {
         id:iconWrapper
         anchors.fill:parent
+        color: theme.palette.normal.background
         layer.enabled: true
         layer.effect:  DropShadow {
             cached:true

@@ -63,7 +63,7 @@ Window {
         // applicationName for click packages (used as an unique app identifier)
         applicationName: "com.ubuntu.clock"
 
-        backgroundColor: "#FFFFFF"
+        backgroundColor: theme.palette.normal.background
 
         anchors.fill: parent
 
