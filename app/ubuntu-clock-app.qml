@@ -21,8 +21,9 @@ import WorldClock 1.0
 import U1db 1.0 as U1db
 import Alarm 1.0
 import Ubuntu.Components 1.3
-import "components"
 import QtQuick.Window 2.2
+import Qt.labs.settings 1.0
+import "components"
 
 Window {
     id: rootWindow
@@ -68,6 +69,21 @@ Window {
         anchors.fill: parent
 
         anchorToKeyboard: true
+
+        Settings {
+            id:clockAppSettings
+            property string theme: clockApp.theme.name
+
+            function updateTheme() {
+                if(clockAppSettings.theme) {
+                   clockApp.theme.name = clockAppSettings.theme
+                }
+            }
+
+            Component.onCompleted: updateTheme();
+            onThemeChanged: updateTheme();
+
+        }
 
         // Database to store the user preferences locally
         U1db.Database {

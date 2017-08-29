@@ -227,20 +227,16 @@ Page {
             ExpandableListItem {
                 id: _selectedTheme
 
-                property var selectedItem: null
-
-                listViewHeight: units.gu(28)
+                listViewHeight: units.gu(14)
                 titleText.text: i18n.tr("Theme")
                 subText.text: model.name
                 subText.textSize: Label.Medium
 
+                //TODO This list should be retrived for the system but i couldn't find a way to do that elegently
+                //     so it`s currently hard coded with the themes that  Ubuntu SDK docs says are available by default.
                 model: ListModel {
                         ListElement {name: "Ambiance"; value : "Ubuntu.Components.Themes.Ambiance"}
                         ListElement {name: "Suru Dark"; value : "Ubuntu.Components.Themes.SuruDark"}
-                }
-
-                Component.onCompleted: {
-                    selectedItem = model.get(0).name
                 }
 
                 delegate: ListItem {
@@ -252,15 +248,14 @@ Page {
                             width: units.gu(2)
                             height: width
                             name: "tick"
-                            visible: _selectedTheme.selectedItem && model.name ==_selectedTheme.selectedItem
+                            visible: model.value == clockAppSettings.theme
                             asynchronous: true
                         }
                     }
 
                     onClicked: {
-                        _selectedTheme.selectedItem = model.name
                         _selectedTheme.expansion.expanded = false
-                        clockApp.theme.name = model.value
+                        clockAppSettings.theme = model.value
                     }
                 }
             }
