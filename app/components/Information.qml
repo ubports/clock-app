@@ -43,7 +43,7 @@ Page {
             width: parent.width
             font.pixelSize: units.gu(5)
             font.bold: true
-            color: UbuntuColors.jet
+            color: theme.palette.normal.backgroundText
             horizontalAlignment: Text.AlignHCenter
             text: "Clock App"
         }

@@ -229,7 +229,6 @@ Page {
 
                 listViewHeight: units.gu(14)
                 titleText.text: i18n.tr("Theme")
-                subText.text: model.name
                 subText.textSize: Label.Medium
 
                 //TODO This list should be retrived for the system but i couldn't find a way to do that elegently
@@ -238,6 +237,16 @@ Page {
                         ListElement {name: "Ambiance"; value : "Ubuntu.Components.Themes.Ambiance"}
                         ListElement {name: "Suru Dark"; value : "Ubuntu.Components.Themes.SuruDark"}
                 }
+
+                function updateSelectedItem() {
+                    for(var i=0; i < model.count;i++) {
+                        if(model.get(i).value == clockAppSettings.theme) {
+                            _selectedTheme.subText.text = model.get(i).name;
+                        }
+                    }
+                }
+
+                Component.onCompleted: updateSelectedItem();
 
                 delegate: ListItem {
                     ListItemLayout {
@@ -256,6 +265,7 @@ Page {
                     onClicked: {
                         _selectedTheme.expansion.expanded = false
                         clockAppSettings.theme = model.value
+                        _selectedTheme.updateSelectedItem()
                     }
                 }
             }

@@ -65,6 +65,7 @@ BottomEdge {
     Component {
         id: editorPageBottomEdge
         AlarmPage {
+            onThemeChanged: { bottomEdge.commit(); bottomEdge.collapse(); }
             implicitWidth: bottomEdge.width
             implicitHeight: bottomEdge.height
             model: bottomEdge.alarmModel

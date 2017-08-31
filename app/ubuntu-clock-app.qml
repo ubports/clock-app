@@ -72,11 +72,13 @@ Window {
 
         Settings {
             id:clockAppSettings
-            property string theme: clockApp.theme.name
+            property string theme:  "Ubuntu.Components.Themes.Ambiance"
 
             function updateTheme() {
                 if(clockAppSettings.theme) {
                    clockApp.theme.name = clockAppSettings.theme
+                } else {
+                    clockApp.theme.name = "Ubuntu.Components.Themes.Ambiance"
                 }
             }
 
