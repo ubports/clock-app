@@ -227,6 +227,7 @@ Page {
             ExpandableListItem {
                 id: _selectedTheme
 
+                property QtObject selectedItem: null
                 listViewHeight: units.gu(14)
                 titleText.text: i18n.tr("Theme")
                 subText.textSize: Label.Medium
@@ -238,15 +239,22 @@ Page {
                         ListElement {name: "Suru Dark"; value : "Ubuntu.Components.Themes.SuruDark"}
                 }
 
-                function updateSelectedItem() {
+                onSelectedItemChanged:  {
+                    if(clockAppSettings.theme !== selectedItem.value) {
+                        clockAppSettings.theme = selectedItem.value;
+                    }
+                    subText.text == selectedItem.name;
+                }
+
+                function updateSelectedItem(itemValue) {
                     for(var i=0; i < model.count;i++) {
-                        if(model.get(i).value == clockAppSettings.theme) {
-                            _selectedTheme.subText.text = model.get(i).name;
+                        if(model.get(i).value == itemValue) {
+                            _selectedTheme.selectedItem = model.get(i);
                         }
                     }
                 }
 
-                Component.onCompleted: updateSelectedItem();
+                Component.onCompleted: updateSelectedItem(clockAppSettings.theme);
 
                 delegate: ListItem {
                     ListItemLayout {
@@ -263,9 +271,8 @@ Page {
                     }
 
                     onClicked: {
+                        _selectedTheme.updateSelectedItem(model.value)
                         _selectedTheme.expansion.expanded = false
-                        clockAppSettings.theme = model.value
-                        _selectedTheme.updateSelectedItem()
                     }
                 }
             }
