@@ -241,21 +241,13 @@ Page {
                         ListElement {name: "Suru Dark"; value : "Ubuntu.Components.Themes.SuruDark"}
                 }
 
-
-                // HACK This timer is an hack to fix the issue that changing the theme synchronously
-                //       breaks the ExpandableListItem behavior an leave it in the expanded state
-                //       This  probably has something to do with the collapse/expand animation.
-                Timer {
-                    id:updateThemeSettingsTimer
-                    interval:UbuntuAnimation.SlowDuration
-                    onTriggered: {
-                        clockAppSettings.theme = _selectedTheme.selectedItem.value;
-                    }
-                }
-
                 onSelectedItemChanged:  {
                     if(clockAppSettings.theme !== selectedItem.value) {
-                        updateThemeSettingsTimer.start()
+                        clockAppSettings.theme = _selectedTheme.selectedItem.value;
+                        titleText.text = theme.name == selectedItem.value ?
+                                            i18n.tr("Theme") :
+                                            i18n.tr("Theme (will apply after App restart)");
+
                     }
                     subText.text = selectedItem.name;
                 }

@@ -81,7 +81,6 @@ Window {
             }
 
             Component.onCompleted: updateTheme();
-            onThemeChanged: updateTheme();
 
         }
 
