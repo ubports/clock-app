@@ -230,7 +230,9 @@ Page {
                 property QtObject selectedItem: null
 
                 listViewHeight: units.gu(6) + (model.count * units.gu(5))
-                titleText.text: i18n.tr("Theme")
+                titleText.text:(theme.name == selectedItem.value || !clockAppSettings.theme ) ?
+                                   (clockAppSettings.theme ? i18n.tr("Theme") : i18n.tr("Theme (system theme on App start)") ):
+                                   i18n.tr("Theme (will apply after App restart)");
                 subText.textSize: Label.Medium
 
                 //TODO This list should be retrived form the system/UITK but I couldn't find a way to do that elegently
@@ -242,13 +244,10 @@ Page {
                 }
 
                 onSelectedItemChanged:  {
-                    if(clockAppSettings.theme !== selectedItem.value) {
+                    if(clockAppSettings.theme !== selectedItem.value  ) {
                         clockAppSettings.theme = _selectedTheme.selectedItem.value;
-                        titleText.text = theme.name == selectedItem.value ?
-                                            i18n.tr("Theme") :
-                                            i18n.tr("Theme (will apply after App restart)");
-
                     }
+
                     subText.text = selectedItem.name;
                 }
 
