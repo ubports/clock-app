@@ -233,8 +233,8 @@ Page {
                 titleText.text: i18n.tr("Theme")
                 subText.textSize: Label.Medium
 
-                //TODO This list should be retrived form the system/UITK but i couldn't find a way to do that elegently
-                //     so it`s currently hard coded with the themes that  Ubuntu SDK docs says are available by default.
+                //TODO This list should be retrived form the system/UITK but I couldn't find a way to do that elegently
+                //     so it`s currently hard coded with the themes that Ubuntu SDK docs says are available by default.
                 model: ListModel {
                         ListElement {name: "System Theme"; value : "" }
                         ListElement {name: "Ambiance"; value : "Ubuntu.Components.Themes.Ambiance"}
@@ -256,7 +256,6 @@ Page {
                 onSelectedItemChanged:  {
                     if(clockAppSettings.theme !== selectedItem.value) {
                         updateThemeSettingsTimer.start()
-
                     }
                     subText.text = selectedItem.name;
                 }
