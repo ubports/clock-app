@@ -228,28 +228,44 @@ Page {
                 id: _selectedTheme
 
                 property QtObject selectedItem: null
-                listViewHeight: units.gu(14)
+
+                listViewHeight: units.gu(6) + (model.count * units.gu(5))
                 titleText.text: i18n.tr("Theme")
                 subText.textSize: Label.Medium
 
-                //TODO This list should be retrived for the system but i couldn't find a way to do that elegently
+                //TODO This list should be retrived form the system/UITK but i couldn't find a way to do that elegently
                 //     so it`s currently hard coded with the themes that  Ubuntu SDK docs says are available by default.
                 model: ListModel {
+                        ListElement {name: "System Theme"; value : "" }
                         ListElement {name: "Ambiance"; value : "Ubuntu.Components.Themes.Ambiance"}
                         ListElement {name: "Suru Dark"; value : "Ubuntu.Components.Themes.SuruDark"}
                 }
 
+
+                // HACK This timer is an hack to fix the issue that changing the theme synchronously
+                //       breaks the ExpandableListItem behavior an leave it in the expanded state
+                //       This  probably has something to do with the collapse/expand animation.
+                Timer {
+                    id:updateThemeSettingsTimer
+                    interval:UbuntuAnimation.SlowDuration
+                    onTriggered: {
+                        clockAppSettings.theme = _selectedTheme.selectedItem.value;
+                    }
+                }
+
                 onSelectedItemChanged:  {
                     if(clockAppSettings.theme !== selectedItem.value) {
-                        clockAppSettings.theme = selectedItem.value;
+                        updateThemeSettingsTimer.start()
+
                     }
-                    subText.text == selectedItem.name;
+                    subText.text = selectedItem.name;
                 }
 
                 function updateSelectedItem(itemValue) {
                     for(var i=0; i < model.count;i++) {
                         if(model.get(i).value == itemValue) {
-                            _selectedTheme.selectedItem = model.get(i);
+                            selectedItem = model.get(i);
+                            break;
                         }
                     }
                 }
