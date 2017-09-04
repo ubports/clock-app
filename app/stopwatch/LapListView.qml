@@ -40,7 +40,7 @@ UbuntuListView {
 
         Rectangle {
             anchors.fill:parent
-            color: "white"
+            color: theme.palette.normal.background
         }
 
         Row {
