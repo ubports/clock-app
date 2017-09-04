@@ -45,13 +45,13 @@ Page {
             font.bold: true
             color: theme.palette.normal.backgroundText
             horizontalAlignment: Text.AlignHCenter
-            text: "Clock App"
+            text: i18n.tr("Clock App")
         }
         Label {
             width: parent.width
             color: UbuntuColors.ash
             horizontalAlignment: Text.AlignHCenter
-            text: i18n.tr("Version %1").arg("3.8.554")
+            text: i18n.tr("Version %1").arg("3.8.555")
         }
 
     }
