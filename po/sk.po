@@ -8,9 +8,9 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-07-02 18:48+0000\n"
-"PO-Revision-Date: 2017-07-15 16:53+0000\n"
+"PO-Revision-Date: 2017-09-07 19:12+0000\n"
 "Last-Translator: t-h-e-p-e-t-e-r <peter.valachovic@gmail.com>\n"
-"Language-Team: Slovak <https://ubpweblate.tnvcomp.com/projects/ubports/clock-"
+"Language-Team: Slovak <https://translate.ubports.com/projects/ubports/clock-"
 "app/sk/>\n"
 "Language: sk\n"
 "MIME-Version: 1.0\n"
@@ -41,7 +41,7 @@ msgstr "Budík"
 
 #: ../app/alarm/AlarmPage.qml:65 ../app/worldclock/WorldCityList.qml:83
 msgid "Back"
-msgstr "Naspäť"
+msgstr "Späť"
 
 #: ../app/alarm/AlarmPage.qml:76
 msgid "Select None"
