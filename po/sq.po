@@ -8,81 +8,83 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-04 10:26+0300\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2017-09-09 20:09+0000\n"
+"Last-Translator: Jeff <jeffi27@live.at>\n"
+"Language-Team: Albanian <https://translate.ubports.com/projects/ubports"
+"/clock-app/sq/>\n"
 "Language: sq\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2.15\n"
 
 #: app/clock/ClockPage.qml:257
 msgid "Retrieving location..."
-msgstr ""
+msgstr "Marrja e vendndodhjes…"
 
 #: app/alarm/AlarmSound.qml:60 app/alarm/EditAlarmPage.qml:323
 msgid "Sound"
-msgstr ""
+msgstr "Tingulli"
 
 #: app/alarm/AlarmSound.qml:190
 msgid "Custom alarm sounds"
-msgstr ""
+msgstr "Tinguj të alarmit personal"
 
 #: app/alarm/AlarmSound.qml:205
 msgid "Add sound"
-msgstr ""
+msgstr "Fut tingull"
 
 #: app/alarm/AlarmSound.qml:343
 msgid "Default alarm sounds"
-msgstr ""
+msgstr "Tingujë të alarmit të paracaktuar"
 
 #: app/alarm/AlarmLabel.qml:37 app/alarm/AlarmLabel.qml:82
 #: app/alarm/EditAlarmPage.qml:302
 msgid "Label"
-msgstr ""
+msgstr "Përshkrimi"
 
 #: app/alarm/AlarmPage.qml:38 app/components/AlarmBottomEdge.qml:38
 msgid "Alarms"
-msgstr ""
+msgstr "Alarmët"
 
 #: app/alarm/AlarmPage.qml:53 app/alarm/EditAlarmPage.qml:43
 #: app/alarm/EditAlarmPage.qml:188
 msgid "Alarm"
-msgstr ""
+msgstr "Alarmi"
 
 #: app/alarm/AlarmPage.qml:66 app/worldclock/WorldCityList.qml:83
 msgid "Back"
-msgstr ""
+msgstr "Mbrapa"
 
 #: app/alarm/AlarmPage.qml:77
 msgid "Select None"
-msgstr ""
+msgstr "Anulo zgjedhjen"
 
 #: app/alarm/AlarmPage.qml:79 app/alarm/AlarmRepeat.qml:66
 msgid "Select All"
-msgstr ""
+msgstr "Zgjidhë të gjitha"
 
 #: app/alarm/AlarmPage.qml:102 app/alarm/AlarmList.qml:64
 #: app/worldclock/UserWorldCityList.qml:71
 msgid "Delete"
-msgstr ""
+msgstr "Fshijë"
 
 #: app/alarm/AlarmPage.qml:158
 msgid "No saved alarms"
-msgstr ""
+msgstr "Asnjë alarm i ruajtur"
 
 #: app/alarm/AlarmPage.qml:159
 msgid "Tap the + icon to add an alarm"
-msgstr ""
+msgstr "Trokitni lehtë mbi + ikonën për të shtuar një alarm të ri"
 
 #: app/alarm/AlarmRepeat.qml:40 app/alarm/EditAlarmPage.qml:286
 msgid "Repeat"
-msgstr ""
+msgstr "Përserit"
 
 #: app/alarm/AlarmSettingsPage.qml:31
 msgid "Settings"
-msgstr ""
+msgstr "Konfigurimi"
 
 #. TRANSLATORS: Alarm stops after
 #. TRANSLATORS: Snooze for
@@ -94,189 +96,189 @@ msgstr ""
 #, qt-format
 msgid "%1 minute"
 msgid_plural "%1 minutes"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1 minutë"
+msgstr[1] "%1 minuta"
 
 #: app/alarm/AlarmSettingsPage.qml:99
 msgid "Alarm volume"
-msgstr ""
+msgstr "Vëllimi i alarmit"
 
 #: app/alarm/AlarmSettingsPage.qml:121
 msgid "Alarm stops after"
-msgstr ""
+msgstr "Alarmi ndalët mbasë"
 
 #: app/alarm/AlarmSettingsPage.qml:152
 msgid "Snooze for"
-msgstr ""
+msgstr "Ripërsëritët për"
 
 #: app/alarm/AlarmSettingsPage.qml:183
 msgid "Vibration"
-msgstr ""
+msgstr "Dhridhëja"
 
 #: app/alarm/AlarmSettingsPage.qml:209
 msgid "Change time and date"
-msgstr ""
+msgstr "Ndryshoni kohën dhe datën"
 
 #: app/alarm/AlarmSettingsPage.qml:234
 msgid "Theme"
-msgstr ""
+msgstr "Tema"
 
 #: app/alarm/AlarmSettingsPage.qml:234
 msgid "Theme (system theme on App start)"
-msgstr ""
+msgstr "Tema (tema e sistemit në fillimin e aplikacionit)"
 
 #: app/alarm/AlarmSettingsPage.qml:235
 msgid "Theme (will apply after App restart)"
-msgstr ""
+msgstr "Theme (do të aplikohet pas rifillimit të aplikacionit)"
 
 #: app/alarm/AlarmUtils.qml:31
 msgid "Never"
-msgstr ""
+msgstr "Kurrë"
 
 #: app/alarm/AlarmUtils.qml:37
 msgid "Weekdays"
-msgstr ""
+msgstr "Ditë jave"
 
 #: app/alarm/AlarmUtils.qml:41
 msgid "Weekends"
-msgstr ""
+msgstr "Fundëjava"
 
 #: app/alarm/AlarmUtils.qml:45
 msgid "Daily"
-msgstr ""
+msgstr "Ditorë"
 
 #: app/alarm/AlarmUtils.qml:81
 #, no-c-format, qt-format
 msgid "in %1d %2h %3m"
-msgstr ""
+msgstr "në %1 ditë, %2 orë dhe %3 minuta"
 
 #: app/alarm/AlarmUtils.qml:91
 #, no-c-format, qt-format
 msgid "in %1h %2m"
-msgstr ""
+msgstr "në %1 orë dhe %2 minuta"
 
 #: app/alarm/AlarmUtils.qml:100
 #, no-c-format, qt-format
 msgid "in %1m"
-msgstr ""
+msgstr "në %1 minuta"
 
 #: app/alarm/EditAlarmPage.qml:37
 msgid "New alarm"
-msgstr ""
+msgstr "Alarm i ri"
 
 #: app/alarm/EditAlarmPage.qml:37
 msgid "Edit alarm"
-msgstr ""
+msgstr "Redakto alarmin"
 
 #: app/alarm/EditAlarmPage.qml:347
 msgid "Delete alarm"
-msgstr ""
+msgstr "Fshijë alarmin"
 
 #. TRANSLATORS: This is the page title. Please keep the translation length to 3 words if possible
 #: app/alarm/SoundPeerPicker.qml:27
 msgid "Add sound from"
-msgstr ""
+msgstr "Fut tingull nga"
 
 #: app/stopwatch/StopwatchPage.qml:83
 msgid "Stop"
-msgstr ""
+msgstr "Ndalo"
 
 #: app/stopwatch/StopwatchPage.qml:83
 msgid "Start"
-msgstr ""
+msgstr "Fillo"
 
 #: app/stopwatch/StopwatchPage.qml:83
 msgid "Resume"
-msgstr ""
+msgstr "Rinise"
 
 #. TRANSLATORS: This refers to the stopwatch lap and is shown as a header where space is limited. Constrain
 #. translation length to a few characters.
 #: app/stopwatch/StopwatchPage.qml:102 app/stopwatch/LapListView.qml:58
 msgid "Lap"
-msgstr ""
+msgstr "Xhiro"
 
 #: app/stopwatch/StopwatchPage.qml:102
 msgid "Clear"
-msgstr ""
+msgstr "Pastro"
 
 #: app/stopwatch/LapListView.qml:67
 msgid "Lap Time"
-msgstr ""
+msgstr "Koha e xhiros"
 
 #: app/stopwatch/LapListView.qml:74
 msgid "Total Time"
-msgstr ""
+msgstr "Koha e tërë"
 
 #: app/components/Information.qml:8
 msgid "App Information"
-msgstr ""
+msgstr "Info e App"
 
 #: app/components/Information.qml:17
 msgid "Get the source"
-msgstr ""
+msgstr "Merrni burimin"
 
 #: app/components/Information.qml:18
 msgid "Report issues"
-msgstr ""
+msgstr "Raporto problem"
 
 #: app/components/Information.qml:19
 msgid "Help translate"
-msgstr ""
+msgstr "Ndihmoni përkthimin"
 
 #: app/components/Information.qml:48
 msgid "Clock App"
-msgstr ""
+msgstr "App i Orës"
 
 #: app/components/Information.qml:54
 #, qt-format
 msgid "Version %1"
-msgstr ""
+msgstr "Versioni %1"
 
 #: app/components/NavigationRow.qml:51
 msgid "Clock"
-msgstr ""
+msgstr "Ora"
 
 #: app/components/NavigationRow.qml:63
 msgid "Stopwatch"
-msgstr ""
+msgstr "Ora ndalëse"
 
 #: app/worldclock/WorldCityList.qml:56
 msgid "Select a city"
-msgstr ""
+msgstr "Zgjidhë një qytet"
 
 #: app/worldclock/WorldCityList.qml:63 app/worldclock/AddWorldCityButton.qml:63
 msgid "City"
-msgstr ""
+msgstr "Qyteti"
 
 #: app/worldclock/WorldCityList.qml:112
 msgid "Search..."
-msgstr ""
+msgstr "Kërkon…"
 
 #: app/worldclock/WorldCityList.qml:216
 msgid "Searching for a city"
-msgstr ""
+msgstr "Po kërkohet një qytet"
 
 #: app/worldclock/WorldCityList.qml:221
 msgid "No City Found"
-msgstr ""
+msgstr "Asnjë qytet nuk u gjet"
 
 #: app/worldclock/WorldCityList.qml:227
 msgid "Unable to connect."
-msgstr ""
+msgstr "Nuk mund të lidhet."
 
 #: app/worldclock/WorldCityList.qml:228
 msgid "Please check your network connection and try again"
-msgstr ""
+msgstr "Kontrollo lidhjen e rrjetit dhe provo përsëri"
 
 #. TRANSLATORS: this indicates if the time in a world clock
 #. is behind or ahead of the time at the current location
 #: app/worldclock/UserWorldCityDelegate.qml:136
 msgid "behind"
-msgstr ""
+msgstr "mbrapa"
 
 #: app/worldclock/UserWorldCityDelegate.qml:137
 msgid "ahead"
-msgstr ""
+msgstr "përpara"
 
 #. TRANSLATORS: the first argument is hour, followed by
 #. minute, and the translation for either 'behind' or
