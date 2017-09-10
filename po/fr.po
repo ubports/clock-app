@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-07-02 18:48+0000\n"
-"PO-Revision-Date: 2017-07-12 10:27+0000\n"
-"Last-Translator: Anneonyme017 <anneonyme017@openmailbox.org>\n"
+"PO-Revision-Date: 2017-09-07 19:44+0000\n"
+"Last-Translator: Anne Onyme <anneonyme017@openmailbox.org>\n"
 "Language-Team: French <https://ubpweblate.tnvcomp.com/projects/ubports/clock-"
 "app/fr/>\n"
 "Language: fr\n"
@@ -270,7 +270,7 @@ msgstr "Même heure"
 
 #: ../app/worldclock/WorldCityList.qml:56
 msgid "Select a city"
-msgstr "Sélectionner une ville"
+msgstr "Sélectionnez une ville"
 
 #: ../app/worldclock/WorldCityList.qml:112
 msgid "Search..."
