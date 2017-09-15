@@ -8,9 +8,9 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-07-02 18:48+0000\n"
-"PO-Revision-Date: 2017-08-23 13:56+0000\n"
+"PO-Revision-Date: 2017-09-15 23:24+0000\n"
 "Last-Translator: Eran <etherpulse@gmail.com>\n"
-"Language-Team: Hebrew <https://ubpweblate.tnvcomp.com/projects/ubports/clock-"
+"Language-Team: Hebrew <https://translate.ubports.com/projects/ubports/clock-"
 "app/he/>\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
@@ -49,7 +49,7 @@ msgstr "ביטול הבחירה"
 
 #: ../app/alarm/AlarmPage.qml:78 ../app/alarm/AlarmRepeat.qml:64
 msgid "Select All"
-msgstr "בחירת הכול"
+msgstr "בחירת הכל"
 
 #: ../app/alarm/AlarmPage.qml:157
 msgid "No saved alarms"
