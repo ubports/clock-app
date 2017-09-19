@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-07-02 18:48+0000\n"
-"PO-Revision-Date: 2017-09-17 14:01+0000\n"
-"Last-Translator: Twinkybot <me@twinkybot.org>\n"
+"PO-Revision-Date: 2017-09-19 15:02+0000\n"
+"Last-Translator: Florian Leeber <flori@bin.org.in>\n"
 "Language-Team: German <https://translate.ubports.com/projects/ubports/clock-"
 "app/de/>\n"
 "Language: de\n"
@@ -103,7 +103,7 @@ msgstr "Zeit und Datum ändern"
 
 #: ../app/alarm/AlarmSound.qml:60 ../app/alarm/EditAlarmPage.qml:319
 msgid "Sound"
-msgstr "Klang"
+msgstr "Audio"
 
 #: ../app/alarm/AlarmSound.qml:190
 msgid "Custom alarm sounds"
