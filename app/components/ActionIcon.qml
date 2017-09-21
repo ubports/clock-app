@@ -31,7 +31,7 @@ AbstractButton {
     Rectangle {
         visible: abstractButton.pressed
         anchors.fill: parent
-        color: UbuntuColors.silk
+        color: theme.palette.normal.background
     }
 
     Icon {

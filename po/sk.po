@@ -8,16 +8,17 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-07-02 18:48+0000\n"
-"PO-Revision-Date: 2016-03-07 12:09+0000\n"
-"Last-Translator: P_E_T_O <Unknown>\n"
-"Language-Team: Slovak <sk@li.org>\n"
+"PO-Revision-Date: 2017-09-07 19:12+0000\n"
+"Last-Translator: t-h-e-p-e-t-e-r <peter.valachovic@gmail.com>\n"
+"Language-Team: Slovak <https://translate.ubports.com/projects/ubports/clock-"
+"app/sk/>\n"
 "Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n==1) ? 1 : (n>=2 && n<=4) ? 2 : 0;\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Weblate 2.15\n"
 "X-Launchpad-Export-Date: 2017-04-05 07:41+0000\n"
-"X-Generator: Launchpad (build 18335)\n"
 
 #: ../app/alarm/AlarmLabel.qml:35 ../app/alarm/AlarmLabel.qml:79
 #: ../app/alarm/EditAlarmPage.qml:298
@@ -40,7 +41,7 @@ msgstr "Budík"
 
 #: ../app/alarm/AlarmPage.qml:65 ../app/worldclock/WorldCityList.qml:83
 msgid "Back"
-msgstr "Naspäť"
+msgstr "Späť"
 
 #: ../app/alarm/AlarmPage.qml:76
 msgid "Select None"
@@ -170,30 +171,28 @@ msgid "Retrieving location..."
 msgstr "Získavanie polohy..."
 
 #: ../app/components/Information.qml:8
-#, fuzzy
 msgid "Information"
-msgstr "Vibrovanie"
+msgstr "Informácia"
 
 #: ../app/components/Information.qml:17
 msgid "Get the source"
-msgstr ""
+msgstr "Získať zdroj"
 
 #: ../app/components/Information.qml:18
 msgid "Report issues"
-msgstr ""
+msgstr "Nahlásiť chyby"
 
 #: ../app/components/Information.qml:19
 msgid "Help translate"
-msgstr ""
+msgstr "Pomôcť s prekladom"
 
 #: ../app/components/NavigationRow.qml:50 ubuntu-clock-app.desktop.in.in.h:1
 msgid "Clock"
 msgstr "Hodiny"
 
 #: ../app/components/NavigationRow.qml:62
-#, fuzzy
 msgid "Stopwatch"
-msgstr "Zastaviť"
+msgstr "Stopky"
 
 #. TRANSLATORS: This refers to the stopwatch lap and is shown as a header where space is limited. Constrain
 #. translation length to a few characters.

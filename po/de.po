@@ -8,9 +8,9 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-07-02 18:48+0000\n"
-"PO-Revision-Date: 2017-07-07 23:24+0000\n"
-"Last-Translator: Weblate Admin <flori-weblate@bin.org.in>\n"
-"Language-Team: German <https://ubpweblate.tnvcomp.com/projects/ubports/clock-"
+"PO-Revision-Date: 2017-09-08 19:44+0000\n"
+"Last-Translator: Alois Nebel <kunze.freyburg@freenet.de>\n"
+"Language-Team: German <https://translate.ubports.com/projects/ubports/clock-"
 "app/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
@@ -49,7 +49,7 @@ msgstr "Auswahl aufheben"
 
 #: ../app/alarm/AlarmPage.qml:78 ../app/alarm/AlarmRepeat.qml:64
 msgid "Select All"
-msgstr "Alles auswählen"
+msgstr "Alle auswählen"
 
 #: ../app/alarm/AlarmPage.qml:157
 msgid "No saved alarms"

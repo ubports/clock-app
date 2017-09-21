@@ -234,6 +234,10 @@ Page {
         DatePicker {
             id: _timePicker
             objectName: "alarmTime"
+            StyleHints {
+                highlightBackgroundColor: theme.palette.normal.raised
+                highlightColor: "#000000"
+            }
 
             /*
               #FIXME: DatePicker does not respect the user's locale. The bug

@@ -53,36 +53,37 @@ TestCase {
         mock_notLocalizedDateTimeString = currentTime.getFullYear().toString() + ":" + (currentTime.getMonth() + 1).toString() + ":" + currentTime.getDate().toString() + ":" + currentTime.getHours().toString() + ":" + currentTime.getMinutes().toString() + ":" +currentTime.getSeconds().toString()
     }
 
-    /*
-     This test checks if the the bottom edge title is set correctly according
-     to the active alarms amongst other disabled alarms.
-    */
-    function test_bottomEdgeTitleMustDisplayActiveAlarm() {
-        var result = alarmUtils.set_bottom_edge_title(mockAlarmDatabase, mock_notLocalizedDateTimeString)
-        compare(result, "Next Alarm in 7h 1m", "Bottom edge title is incorrect")
-    }
+// TODO : set_bottom_edge_title : This feture was never implemented. To enable the tests commented out below once it is implemented
+//    /*
+//     This test checks if the the bottom edge title is set correctly according
+//     to the active alarms amongst other disabled alarms.
+//    */
+//    function test_bottomEdgeTitleMustDisplayActiveAlarm() {
+//        var result = alarmUtils.set_bottom_edge_title(mockAlarmDatabase, mock_notLocalizedDateTimeString)
+//        compare(result, "Next Alarm in 7h 1m", "Bottom edge title is incorrect")
+//    }
+//    /*
+//     This test checks if the bottom edge title is correctly set to "No Active
+//     Alarms" where there are no enabled alarms"
+//    */
+//    function test_bottomEdgeTitleMustDisplayNoActiveAlarm() {
+//        mockAlarmDatabase.set(1, {"enabled": false})
+//        var result = alarmUtils.set_bottom_edge_title(mockAlarmDatabase, mock_notLocalizedDateTimeString)
+//        compare(result, "No active alarms", "Bottom edge title is not correctly set when there are no enabled alarms")
+//        mockAlarmDatabase.set(1, {"enabled": true})
+//    }
 
-    /*
-     This test checks if the bottom edge title is correctly set to "No Active
-     Alarms" where there are no enabled alarms"
-    */
-    function test_bottomEdgeTitleMustDisplayNoActiveAlarm() {
-        mockAlarmDatabase.set(1, {"enabled": false})
-        var result = alarmUtils.set_bottom_edge_title(mockAlarmDatabase, mock_notLocalizedDateTimeString)
-        compare(result, "No active alarms", "Bottom edge title is not correctly set when there are no enabled alarms")
-        mockAlarmDatabase.set(1, {"enabled": true})
-    }
-
-    /*
-     This test checks if the bottom edge title is correctly set with the next
-     immediate active alarm amongst several active alarms"
-    */
-    function test_bottomEdgeTitleMustDisplayNextActiveAlarm() {
-        mockAlarmDatabase.set(0, {"enabled": true})
-        var result = alarmUtils.set_bottom_edge_title(mockAlarmDatabase, mock_notLocalizedDateTimeString)
-        compare(result, "Next Alarm in 2h 1m", "Bottom edge title is not correctly set to the next immediate active alarm where there are multiple active alarms.")
-        mockAlarmDatabase.set(0, {"enabled": false})
-    }
+//    /*
+//     This test checks if the bottom edge title is correctly set with the next
+//     immediate active alarm amongst several active alarms"
+//    */
+//    function test_bottomEdgeTitleMustDisplayNextActiveAlarm() {
+//        mockAlarmDatabase.set(0, {"enabled": true})
+//        var result = alarmUtils.set_bottom_edge_title(mockAlarmDatabase, mock_notLocalizedDateTimeString)
+//        compare(result, "Next Alarm in 2h 1m", "Bottom edge title is not correctly set to the next immediate active alarm where there are multiple active alarms.")
+//        mockAlarmDatabase.set(0, {"enabled": false})
+//    }
+//  End of TODO set_bottom_edge_title
 
     /*
      This test checks if the _split_time() function takes a time in milliseconds
@@ -107,7 +108,8 @@ TestCase {
 
         var alarmDate = new Date(currentDateTime.getTime() + timeInMilliseconds);
         var result = alarmUtils.get_time_to_alarm(alarmDate, currentDateTime)
-        compare(result, "in 5d 2h 15m", "Time to next alarm string is incorrect")
+        //one minute is added to make the  display nicer see AlarmUtils:_split_time:129
+        compare(result, "in 5d 2h 16m", "Time to next alarm string is incorrect")
     }
 
     /*

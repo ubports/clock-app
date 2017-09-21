@@ -31,7 +31,7 @@ import "../../app/clock"
 */
 
 MainView {
-    id: clockApp
+    id: rootWindow
 
     // Property to store the state of an application (active or suspended)
     property bool applicationState: Qt.application.active
@@ -81,7 +81,7 @@ MainView {
             }
 
             alarmModel: alarmModelLoader.item
-            bottomEdgeEnabled: alarmModelLoader.status === Loader.Ready && alarmModelLoader.item.isReady && isClockPage
+
             notLocalizedDateTimeString: localTimeSource.notLocalizedCurrentDateTimeString
             localizedTimeString: localTimeSource.localizedCurrentTimeString
             localizedDateString: localTimeSource.localizedCurrentDateString

@@ -1,4 +1,4 @@
-ubuntu-clock-app (3.8) UNRELEASED; urgency=medium
+ubuntu-clock-app (3.8) vivid; urgency=medium
 
   [ Nekhelesh Ramananthan ]
   * Dynamic loading of ListView in ExpandableListItem

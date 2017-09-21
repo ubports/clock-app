@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-07-02 18:48+0000\n"
-"PO-Revision-Date: 2017-07-06 16:38+0000\n"
+"PO-Revision-Date: 2017-08-28 05:30+0000\n"
 "Last-Translator: Walter Garcia-Fontes <walter.garcia@upf.edu>\n"
 "Language-Team: Catalan <https://ubpweblate.tnvcomp.com/projects/ubports"
 "/clock-app/ca/>\n"
@@ -28,7 +28,7 @@ msgstr "Nom"
 #: ../app/alarm/AlarmList.qml:64 ../app/alarm/AlarmPage.qml:101
 #: ../app/worldclock/UserWorldCityList.qml:71
 msgid "Delete"
-msgstr "Suprimeix"
+msgstr "Suprimeix-lo"
 
 #: ../app/alarm/AlarmPage.qml:38 ../app/components/AlarmBottomEdge.qml:38
 msgid "Alarms"
@@ -217,11 +217,11 @@ msgstr "Inicia"
 
 #: ../app/stopwatch/StopwatchPage.qml:94
 msgid "Resume"
-msgstr "Reprèn"
+msgstr "Continua"
 
 #: ../app/stopwatch/StopwatchPage.qml:113
 msgid "Clear"
-msgstr "Neteja"
+msgstr "Neteja-ho"
 
 #: ../app/worldclock/AddWorldCityButton.qml:30
 msgid "Add"
