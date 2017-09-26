@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-04 10:26+0300\n"
-"PO-Revision-Date: 2017-09-16 09:19+0000\n"
+"PO-Revision-Date: 2017-09-18 07:33+0000\n"
 "Last-Translator: Jeff <jeffi27@live.at>\n"
 "Language-Team: Albanian <https://translate.ubports.com/projects/ubports"
 "/clock-app/sq/>\n"
@@ -113,7 +113,7 @@ msgstr "Ripërsëritët për"
 
 #: app/alarm/AlarmSettingsPage.qml:183
 msgid "Vibration"
-msgstr "Dhridhëja"
+msgstr "Dridhje"
 
 #: app/alarm/AlarmSettingsPage.qml:209
 msgid "Change time and date"
@@ -181,7 +181,7 @@ msgstr "Fut tingull nga"
 
 #: app/stopwatch/StopwatchPage.qml:83
 msgid "Stop"
-msgstr "Ndalo"
+msgstr "Ndal"
 
 #: app/stopwatch/StopwatchPage.qml:83
 msgid "Start"
@@ -189,7 +189,7 @@ msgstr "Fillo"
 
 #: app/stopwatch/StopwatchPage.qml:83
 msgid "Resume"
-msgstr "Rinise"
+msgstr "Rifillo"
 
 #. TRANSLATORS: This refers to the stopwatch lap and is shown as a header where space is limited. Constrain
 #. translation length to a few characters.

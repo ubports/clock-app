@@ -8,9 +8,9 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-07-02 18:48+0000\n"
-"PO-Revision-Date: 2017-07-14 14:27+0000\n"
-"Last-Translator: Andrzej Stamburski <stambur@wp.pl>\n"
-"Language-Team: Polish <https://ubpweblate.tnvcomp.com/projects/ubports/clock-"
+"PO-Revision-Date: 2017-09-16 23:06+0000\n"
+"Last-Translator: Beton <betonn@protonmail.com>\n"
+"Language-Team: Polish <https://translate.ubports.com/projects/ubports/clock-"
 "app/pl/>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
@@ -215,7 +215,7 @@ msgstr "Zatrzymaj"
 
 #: ../app/stopwatch/StopwatchPage.qml:94
 msgid "Start"
-msgstr "Start"
+msgstr "Włącz"
 
 #: ../app/stopwatch/StopwatchPage.qml:94
 msgid "Resume"
