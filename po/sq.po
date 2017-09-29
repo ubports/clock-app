@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-04 10:26+0300\n"
-"PO-Revision-Date: 2017-09-18 07:33+0000\n"
+"PO-Revision-Date: 2017-09-29 07:37+0000\n"
 "Last-Translator: Jeff <jeffi27@live.at>\n"
 "Language-Team: Albanian <https://translate.ubports.com/projects/ubports"
 "/clock-app/sq/>\n"
@@ -63,7 +63,7 @@ msgstr "Anulo zgjedhjen"
 
 #: app/alarm/AlarmPage.qml:79 app/alarm/AlarmRepeat.qml:66
 msgid "Select All"
-msgstr "Zgjidhë të gjitha"
+msgstr "Përzgjidh Gjithçka"
 
 #: app/alarm/AlarmPage.qml:102 app/alarm/AlarmList.qml:64
 #: app/worldclock/UserWorldCityList.qml:71
@@ -308,7 +308,7 @@ msgstr "Të njëjtën kohë"
 
 #: app/worldclock/AddWorldCityButton.qml:32
 msgid "Add"
-msgstr "Fut"
+msgstr "Shto"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:48
 msgid "Abidjan"
