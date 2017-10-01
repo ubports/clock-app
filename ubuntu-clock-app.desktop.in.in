@@ -9,5 +9,5 @@ Terminal=false
 Type=Application
 X-Ubuntu-Touch=true
 X-Ubuntu-Default-Department-ID=accessories
-X-Ubuntu-Splash-Color=#F5F5F5
+X-Ubuntu-Splash-Color=#A0A0A0
 X-Ubuntu-Supported-Orientations=portrait
