@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-07-02 18:48+0000\n"
-"PO-Revision-Date: 2017-09-16 23:06+0000\n"
-"Last-Translator: Beton <betonn@protonmail.com>\n"
+"PO-Revision-Date: 2017-09-27 22:22+0000\n"
+"Last-Translator: Daniel Frańczak <danielfranczak5@wp.pl>\n"
 "Language-Team: Polish <https://translate.ubports.com/projects/ubports/clock-"
 "app/pl/>\n"
 "Language: pl\n"
@@ -97,7 +97,7 @@ msgstr "Drzemka na"
 
 #: ../app/alarm/AlarmSettingsPage.qml:183
 msgid "Vibration"
-msgstr "Wibracja"
+msgstr "Wibracje"
 
 #: ../app/alarm/AlarmSettingsPage.qml:209
 msgid "Change time and date"
@@ -211,7 +211,7 @@ msgstr "Czas całkowity"
 
 #: ../app/stopwatch/StopwatchPage.qml:94
 msgid "Stop"
-msgstr "Zatrzymaj"
+msgstr "Stop"
 
 #: ../app/stopwatch/StopwatchPage.qml:94
 msgid "Start"
@@ -276,7 +276,7 @@ msgstr "Wybierz miasto"
 
 #: ../app/worldclock/WorldCityList.qml:112
 msgid "Search..."
-msgstr "Wyszukiwanie..."
+msgstr "Szukaj..."
 
 #: ../app/worldclock/WorldCityList.qml:216
 msgid "Searching for a city"

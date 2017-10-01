@@ -8,10 +8,10 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-07-02 18:48+0000\n"
-"PO-Revision-Date: 2017-07-20 13:13+0000\n"
-"Last-Translator: wangyou <1078360711@qq.com>\n"
+"PO-Revision-Date: 2017-09-24 07:24+0000\n"
+"Last-Translator: Mutse Young <yyhoo2.young@gmail.com>\n"
 "Language-Team: Chinese (Simplified) "
-"<https://ubpweblate.tnvcomp.com/projects/ubports/clock-app/zh_Hans/>\n"
+"<https://translate.ubports.com/projects/ubports/clock-app/zh_Hans/>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -212,7 +212,7 @@ msgstr "停止"
 
 #: ../app/stopwatch/StopwatchPage.qml:94
 msgid "Start"
-msgstr "开始"
+msgstr "启动"
 
 #: ../app/stopwatch/StopwatchPage.qml:94
 msgid "Resume"
