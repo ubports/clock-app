@@ -20,7 +20,7 @@ import QtQuick 2.4
 import Ubuntu.Components 1.3
 
 UbuntuListView {
-    id: lapListView
+    id: timersListView
 
     clip: true
     pressDelay: 70
@@ -34,10 +34,6 @@ UbuntuListView {
         width: parent.width - units.gu(4)
         anchors.horizontalCenter: parent.horizontalCenter
 
-        Rectangle {
-            anchors.fill:parent
-            color: "white"
-        }
 
         Row {
 
@@ -51,7 +47,7 @@ UbuntuListView {
             Label {
                 // #TRANSLATORS: This refers to the stopwatch lap and is shown as a header where space is limited. Constrain
                 // translation length to a few characters.
-                text: i18n.tr("Lap")
+                text: i18n.tr("ID")
                 width: parent.width / 5
                 elide: Text.ElideRight
                 horizontalAlignment: Text.AlignLeft
@@ -60,14 +56,14 @@ UbuntuListView {
             Label {
                 width: 2 * parent.width / 5
                 elide: Text.ElideRight
-                text: i18n.tr("Lap Time")
+                text: i18n.tr("Time")
                 horizontalAlignment: Text.AlignHCenter
             }
 
             Label {
                 width: 2 * parent.width / 5
                 elide: Text.ElideRight
-                text: i18n.tr("Total Time")
+                text: i18n.tr("Label")
                 horizontalAlignment: Text.AlignRight
             }
         }
@@ -94,16 +90,36 @@ UbuntuListView {
                     objectName: "swipeDeleteAction"
                     iconName: "delete"
                     onTriggered: {
-                        stopwatchEngine.removeLap(index)
+                        clockDB.deleteDoc( model.docId )
                     }
                 }
             ]
         }
 
+        trailingActions: ListItemActions {
+            actions: [
+                Action {
+                    id: setTimerAction
+                    objectName: "setTimerAction"
+                    iconName: "keyboard-enter"
+                    onTriggered: {
+                        //TODO
+                        console.log(model.contents.time)
+                        timerFace.getCircle().setTime(new Date(model.contents.time))
+                    }
+                }
+            ]
+        }
+        function prinObject(obj) {
+            for(var i in obj ) {
+                console.log(obj[i]);
+                if(typeof obj[i] == "object") {
+                    prinObject(obj[i]);
+                }
+            }
+        }
         indexLabel: "#%1".arg(Number(count - index).toLocaleString(Qt.locale(), "f", 0))
-        lapTimeLabel: stopwatchFormatTime.lapTimeToString(model.laptime) + "."
-        lapMilliTimeLabel: stopwatchFormatTime.millisToString(model.laptime)
-        totalTimeLabel: stopwatchFormatTime.lapTimeToString(model.totaltime) + "."
-        totalMilliTimeLabel: stopwatchFormatTime.millisToString(model.totaltime)
+        timerTime:  new Date(model.contents.time)
+        timerMessage: model.contents.message
     }
 }

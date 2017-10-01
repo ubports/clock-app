@@ -21,15 +21,11 @@ import QtQuick 2.4
 import Ubuntu.Components 1.3
 
 ListItem {
-    id: lapsListItem
+    id: _timerListItem
 
     property string indexLabel
-    property string lapTimeLabel
-    property string lapMilliTimeLabel
-    property string totalTimeLabel
-    property string totalMilliTimeLabel
-
-
+    property var    timerTime
+    property var    timerMessage
 
 
     Row {
@@ -50,18 +46,16 @@ ListItem {
         }
 
         Item {
-            id: lapTimeContainer
+            id: timeContainer
+
+
             width: 2* parent.width / 5
             height: childrenRect.height
             Row {
                 anchors.horizontalCenter: parent.horizontalCenter
                 Label {
-                    id: _lapTimeLabel
-                    text: lapTimeLabel
-                }
-                Label {
-                    id: _lapMilliTimeLabel
-                    text: lapMilliTimeLabel
+                    id: _timerTime
+                    text:timerTime.toTimeString()
                 }
             }
         }
@@ -72,12 +66,8 @@ ListItem {
             Row {
                 anchors.right: parent.right
                 Label {
-                    id: _totalTimeLabel
-                    text: totalTimeLabel
-                }
-                Label {
-                    id: _totalMilliTimeLabel
-                    text: totalMilliTimeLabel
+                    id: _timerLabel
+                    text: timerMessage
                 }
             }
         }

@@ -21,28 +21,48 @@ import Ubuntu.Components 1.3
 import Ubuntu.Components.Pickers 1.3
 import "../components"
 
-AdjustableAnalogClock {
-    id: timerCircle
-
+Item {
     width: units.gu(24)
+    height:width
 
-    property bool hasTime: datedTime.getTime() > Date.now()
+    property alias adjustable: timerCircle.adjustable
 
-    Label {
-        id: timerTimeLbl
-        objectName: "timerTimeLbl"
-        width:parent.width/3
-        height: parent.height/6
-        anchors.horizontalCenter: parent.horizontalCenter
-        anchors.verticalCenter: parent.verticalCenter
-        font.pixelSize: units.gu(3)
-        horizontalAlignment: Text.Center
-        text: localDateTime.split(":")[3] + "h " +localDateTime.split(":")[4] + "m";
-        anchors.verticalCenterOffset: -parent.width/4
-        color: UbuntuColors.ash
+    Column {
+        width: parent.width
+
+        AdjustableAnalogClock {
+            id: timerCircle
+
+            width: parent.width
+
+            property bool hasTime: datedTime.getTime() > Date.now()
+
+        }
+
+        Label {
+            id: timerTimeLbl
+            objectName: "timerTimeLbl"
+            width:parent.width/3
+            height: parent.height/6
+            anchors.horizontalCenter: parent.horizontalCenter
+            font.pixelSize: units.gu(3)
+            horizontalAlignment: Text.Center
+            text: timerCircle.localDateTime.split(":")[3] + "h " +timerCircle.localDateTime.split(":")[4] + "m " + (timerCircle.showSeconds ? timerCircle.localDateTime.split(":")[5] + "s" : "");
+            anchors.verticalCenterOffset: -parent.width/4
+            color: UbuntuColors.ash
+        }
     }
+
     function reset() {
-         localDateTime = "1970:01:01:00:00:00"
+         timerCircle.localDateTime = "1970:01:01:00:00:00"
+    }
+
+    function getCircle() {
+        return timerCircle;
+    }
+
+    function getTimerTime() {
+        return (new Date(timerCircle.datedTime.getTime() - Date.now())).getTime();
     }
 
 }

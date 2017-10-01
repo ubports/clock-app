@@ -6,7 +6,7 @@ AnalogMode {
     property bool adjustable: true
     property var datedTime: new Date(0)
 
-    showSeconds: false
+    showSeconds: !adjustable
 
     localDateTime: "1970:01:01:00:00:00"
 
@@ -51,5 +51,11 @@ AnalogMode {
 
         onMouseXChanged: updateMinutes(mouse)
         onMouseYChanged: updateMinutes(mouse)
+    }
+
+    function setTime(time) {
+        datedTime = time;
+        localDateTime= "1970:01:01:"+time.getHours()+ ":"+time.getMinutes()+":"+time.getSeconds();
+
     }
 }

@@ -19,6 +19,8 @@
 import QtQuick 2.4
 import Timer 1.0
 import Ubuntu.Components 1.3
+import QtQml.Models 2.1
+import U1db 1.0 as U1db
 
 import "../components"
 
@@ -26,21 +28,36 @@ Item {
     id: _timerPage
     objectName: "timerPage"
 
-    property alias isRunning: timerEngine.running
+    property Alarm alarm: null
+    property var isRunning: alarm && alarm.enabled
+    property AlarmModel alarmModel: null
+
 
     Component.onCompleted: {
         console.log("[LOG]: Timer Page Loaded")
     }
 
-
-    TimerEngine {
-        id: timerEngine
+    onAlarmModelChanged: {
+        updateAlarms ();
     }
+
+    function updateAlarms () {
+         console.log("Alarm Model updated")
+        if(alarmModel && alarmModel.count > 0 ) {
+            for(var i=0; i < alarmModel.count; i++) {
+                if(alarmModel.get(i).message.match(/^\(Timer\)( |$)/)) {
+                    _timerPage.alarm = alarmModel.get(i);
+                    break;
+                }
+            }
+        }
+    }
+
 
     TimerFace {
         id: timerFace
         objectName: "timerFace"
-
+        adjustable: !_timerPage.isRunning
         anchors {
             top: parent.top
             topMargin: units.gu(2)
@@ -48,6 +65,43 @@ Item {
         }
 
     }
+
+    Component {
+        id:alarmComponent
+        Alarm {
+        }
+    }
+
+    // Function to save a new alarm
+    function startNewAlarm(datetime, message) {
+        if(!alarm) {
+            alarm = alarmComponent.createObject(_timerPage)
+        }
+
+        alarm.reset()
+        alarm.type = Alarm.OneTime;
+        alarm.message = "(Timer)" + (message ? message : "" )
+        alarm.date = datetime
+        alarm.enabled = true
+        alarm.save()
+    }
+
+    Timer {
+        id:timerFaceUpdate
+        interval: 1000
+        onTriggered: {
+            if(alarm && alarm.enabled) {
+               var secsDiff =alarm.date.getTime() - Date.now();
+                if(secsDiff > 0) {
+                    var date = new Date(secsDiff);
+                    timerFace.getCircle().setTime( date );
+                }
+            }
+        }
+        running: isRunning
+        repeat: true
+    }
+
 
     Row {
         id: buttonRow
@@ -62,18 +116,19 @@ Item {
         ActionIcon {
             id:saveTimerButton
             objectName:"saveTimerButton"
-            icon.name: "save"
+            icon.name:   timerPropsRow.enabled ? "close" : "save"
             width: units.gu(7)
             height: units.gu(4)
             icon.color: UbuntuColors.slate
-            enabled: timerFace.hasTime
-            opacity: timerFace.hasTime ? 1: 0
+            enabled: timerFace.getCircle().hasTime && !isRunning
+            opacity: timerFace.getCircle().hasTime  && !isRunning ? 1: 0
 
             Behavior on opacity {
                 UbuntuNumberAnimation{
                     duration: UbuntuAnimation.BriskDuration
                 }
             }
+            onClicked: timerPropsRow.enabled = !timerPropsRow.enabled
 
         }
 
@@ -82,11 +137,18 @@ Item {
             objectName: "startAndStopButton"
             width: _timerPage.width / 2 - units.gu(1)
             height: units.gu(4)
-            enabled: timerEngine.isRunning || timerFace.hasTime
-            color: !timerEngine.isRunning  ? UbuntuColors.green : UbuntuColors.red
-            text: timerEngine.isRunning ? i18n.tr("Stop") : (true ? i18n.tr("Start") : i18n.tr("Resume"))
+            enabled: isRunning || timerFace.getCircle().hasTime
+            color: !isRunning  ? UbuntuColors.green : UbuntuColors.red
+            text: isRunning ? i18n.tr("Stop") : (true ? i18n.tr("Start") : i18n.tr("Resume"))
             onClicked: {
-
+                if(isRunning) {
+                    // TODO
+                    alarm.cancel()
+                    alarm.enabled = false;
+                } else {
+                    startNewAlarm(timerFace.getCircle().datedTime);
+                    alarm.enabled = true;
+                }
             }
         }
         ActionIcon {
@@ -95,8 +157,8 @@ Item {
             icon.name: "reset"
             width: units.gu(7)
             height: units.gu(4)
-            enabled: timerFace.hasTime
-            opacity:  timerFace.hasTime ? 1: 0
+            enabled: timerFace.getCircle().hasTime && !isRunning
+            opacity:  timerFace.getCircle().hasTime  && !isRunning ? 1: 0
             Behavior on opacity {
                 UbuntuNumberAnimation{
                     duration: UbuntuAnimation.BriskDuration
@@ -109,23 +171,81 @@ Item {
         }
     }
 
+    Row {
+        id: timerPropsRow
+        spacing: units.gu(2)
+        enabled: false
+        height: enabled ? units.gu(5) : 0
+        clip: true
+        anchors {
+            top: buttonRow.bottom
+            topMargin: units.gu(4)
+            horizontalCenter: parent.horizontalCenter
+            margins: units.gu(2)
+        }
+
+        Behavior on height {
+            UbuntuNumberAnimation{
+                duration: UbuntuAnimation.BriskDuration
+            }
+        }
+
+        TextField {
+            id:timerNameField
+            width:_timerPage.width - units.gu(10)
+            anchors {
+                margins: units.gu(2)
+            }
+            text: i18n.tr("Timer")
+        }
+        ActionIcon {
+            id:saveTimerAction
+            objectName:"saveTimerAction"
+            icon.name: "save"
+            width: units.gu(7)
+            height: units.gu(4)
+            onClicked: {
+                clockDB.putDoc({"timer":{"time":timerFace.getTimerTime(),"message":timerNameField.text}});
+                timerPropsRow.enabled = false
+            }
+        }
+    }
+
     NestedListviewsHack {
         z:10
         parentListView : listview
-        nestedListView : lapListView
+        nestedListView : timersList
+    }
+
+    // U1db Index to index all documents storing the world city details
+    U1db.Index {
+        id: by_timer_message
+        database: clockDB
+        expression: [
+            "timer.message",
+            "timer.time",
+        ]
+    }
+
+    // U1db Query to create a model of the world cities saved by the user
+    U1db.Query {
+        id: dbAllTimersQuery
+        index: by_timer_message
+        query: ["*"]
     }
 
     TimerListView {
          id: timersList
          objectName: "timersList"
          anchors {
-             top: buttonRow.bottom
+             top: timerPropsRow.bottom
              bottom: parent.bottom
              left: parent.left
              right: parent.right
              topMargin: units.gu(1)
          }
-         visible: stopwatchEngine.running || stopwatchEngine.totalTimeOfStopwatch !== 0
-         model: stopwatchEngine
+         visible: dbAllTimersQuery.results
+
+         model: dbAllTimersQuery
      }
 }

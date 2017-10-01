@@ -58,15 +58,17 @@ Page {
     Loader {
         id: bottomEdgeLoader
         asynchronous: true
-        onLoaded: hideBottomEdgeHintTimer.start()
+        onLoaded: {
+            item.alarmModel = Qt.binding( function () { return  _mainPage.alarmModel } );
+            item.hint.visible = Qt.binding( function () { return _mainPage.isClockPage } );
+            hideBottomEdgeHintTimer.start();
+        }
         Component.onCompleted: setSource("components/AlarmBottomEdge.qml", {
                                              "objectName": "bottomEdge",
                                              "parent": _mainPage,
                                              "pageStack": mainStack,
-                                             "alarmModel": Qt.binding( function () { return  _mainPage.alarmModel } ),
-                                             "hint.visible": Qt.binding( function () { return _mainPage.isClockPage } ),
                                              "hint.objectName": "bottomEdgeHint"
-                                         })
+                                         });
     }
 
     AlarmUtils {
@@ -87,6 +89,12 @@ Page {
             localizedClockDateString: _mainPage.localizedDateString
             width: clockApp.width
             height: listview.height
+            Component.onCompleted: stopwatchPageLoader.setSource("stopwatch/StopwatchPage.qml" ,{
+                                                                     "notLocalizedClockTimeString": _mainPage.notLocalizedDateTimeString,
+                                                                     "localizedClockTimeString": _mainPage.localizedTimeString,
+                                                                     "localizedClockDateString": _mainPage.localizedDateString,
+                                                                     "width": clockApp.width,
+                                                                     "height": listview.height});
         }
 
         Loader {
@@ -94,16 +102,13 @@ Page {
             asynchronous: true
             width: clockApp.width
             height: listview.height
-            Component.onCompleted: setSource("stopwatch/StopwatchPage.qml" ,{
-                                                 "notLocalizedClockTimeString": _mainPage.notLocalizedDateTimeString,
-                                                 "localizedClockTimeString": _mainPage.localizedTimeString,
-                                                 "localizedClockDateString": _mainPage.localizedDateString,
-                                                 "width": clockApp.width,
-                                                 "height": listview.height});
             onLoaded: {
                 if (this.item.isRunning) {
                     listview.moveToStopwatchPage()
                 }
+                timerPageLoader.setSource("timer/TimerPage.qml" ,{
+                                                                 "width": clockApp.width,
+                                                                 "height": listview.height });
             }
         }
 
@@ -112,16 +117,11 @@ Page {
             asynchronous: true
             width: clockApp.width
             height: listview.height
-            Component.onCompleted: setSource("timer/TimerPage.qml" ,{
-                                                 "notLocalizedClockTimeString": _mainPage.notLocalizedDateTimeString,
-                                                 "localizedClockTimeString": _mainPage.localizedTimeString,
-                                                 "localizedClockDateString": _mainPage.localizedDateString,
-                                                 "width": clockApp.width,
-                                                 "height": listview.height});
             onLoaded: {
                 if (this.item.isRunning) {
                     listview.moveToTimerPage()
                 }
+                item.alarmModel = Qt.binding( function () { return  _mainPage.alarmModel } )
             }
         }
     }
