@@ -12,9 +12,9 @@ AnalogMode {
 
     onLocalDateTimeChanged: {
         var tmpTime = new Date(Date.now());
+
         datedTime = new Date( tmpTime.setHours( tmpTime.getHours() + parseInt(localDateTime.split(":")[3]),
                                                 tmpTime.getMinutes() + parseInt(localDateTime.split(":")[4])));
-
     }
 
     MouseArea {
@@ -54,8 +54,9 @@ AnalogMode {
     }
 
     function setTime(time) {
-        datedTime = time;
-        localDateTime= "1970:01:01:"+time.getHours()+ ":"+time.getMinutes()+":"+time.getSeconds();
+        var timezoneHours = ((time).getTimezoneOffset() / 60);
+        var timezoneminutes = ((time).getTimezoneOffset() % 60);
+        localDateTime= "1970:01:01:"+parseInt(time.getHours()+timezoneHours)+ ":"+parseInt(time.getMinutes()+timezoneminutes)+":"+time.getSeconds();
 
     }
 }

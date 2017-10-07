@@ -39,6 +39,9 @@ Item {
 
     onAlarmModelChanged: {
         updateAlarms ();
+        if(alarmModel) {
+            alarmModel.countChanged.connect(updateAlarms);
+        }
     }
 
     function updateAlarms () {
@@ -145,8 +148,10 @@ Item {
                     // TODO
                     alarm.cancel()
                     alarm.enabled = false;
+                    clockDB.deleteDoc(dbActiveTimers.docId);
                 } else {
                     startNewAlarm(timerFace.getCircle().datedTime);
+                    clockDB.putDoc({"active_timers":{"time":alarm.datetime,"message":alarm.message}});
                     alarm.enabled = true;
                 }
             }
@@ -227,10 +232,25 @@ Item {
         ]
     }
 
+
+
     // U1db Query to create a model of the world cities saved by the user
     U1db.Query {
         id: dbAllTimersQuery
         index: by_timer_message
+        query: ["*"]
+    }
+
+    U1db.Index {
+        id: active_timers_index
+        database: clockDB
+        expression: [
+            "active_timers.message",
+        ]
+    }
+    U1db.Query {
+        id: dbActiveTimers
+        index: active_timers_index
         query: ["*"]
     }
 

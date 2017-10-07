@@ -119,7 +119,7 @@ UbuntuListView {
             }
         }
         indexLabel: "#%1".arg(Number(count - index).toLocaleString(Qt.locale(), "f", 0))
-        timerTime:  new Date(model.contents.time)
+        timerTime:  new Date(model.contents.time + (new Date()).getTimezoneOffset()*60)
         timerMessage: model.contents.message
     }
 }
