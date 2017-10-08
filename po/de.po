@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-07-02 18:48+0000\n"
-"PO-Revision-Date: 2017-09-24 08:01+0000\n"
+"PO-Revision-Date: 2017-10-05 07:00+0000\n"
 "Last-Translator: Twinkybot <me@twinkybot.org>\n"
 "Language-Team: German <https://translate.ubports.com/projects/ubports/clock-"
 "app/de/>\n"
@@ -274,7 +274,7 @@ msgstr "Eine Stadt auswählen"
 
 #: ../app/worldclock/WorldCityList.qml:112
 msgid "Search..."
-msgstr "Suchen …"
+msgstr "Suchen..."
 
 #: ../app/worldclock/WorldCityList.qml:216
 msgid "Searching for a city"
