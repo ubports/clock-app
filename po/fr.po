@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-07-02 18:48+0000\n"
-"PO-Revision-Date: 2017-10-05 08:36+0000\n"
+"PO-Revision-Date: 2017-10-10 09:56+0000\n"
 "Last-Translator: RedXXIII <adered7@gmail.com>\n"
 "Language-Team: French <https://translate.ubports.com/projects/ubports/clock-"
 "app/fr/>\n"
@@ -45,7 +45,7 @@ msgstr "Précédent"
 
 #: ../app/alarm/AlarmPage.qml:76
 msgid "Select None"
-msgstr "Annuler la sélection"
+msgstr "Annuler sélection"
 
 #: ../app/alarm/AlarmPage.qml:78 ../app/alarm/AlarmRepeat.qml:64
 msgid "Select All"
