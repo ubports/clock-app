@@ -27,6 +27,8 @@ ClockCircle {
 
     // Property to show/hide the seconds hand
     property bool showSeconds
+    property bool partialRotation: true
+    property bool animateRotation: false
 
     property var  localDateTime: notLocalizedDateTimeString
 
@@ -55,7 +57,8 @@ ClockCircle {
         // We need to calculate degree number for rotation (0 degrees means no rotation).
         // Full rotate has 360 degrees and we have 12 hours in clock face,
         // For hours: 360deg/12h=30 deg/h, for minutes 30deg/60min= 0.5 deg/min
-        rotation: (parseInt(localDateTime.split(":")[3]) * 30) + (parseInt(localDateTime.split(":")[4]) * 0.5)
+        rotation: (parseInt(localDateTime.split(":")[3]) * 30) + (partialRotation? (parseInt(localDateTime.split(":")[4]) * 0.5) : 0 )
+        Behavior on rotation { enabled: animateRotation; UbuntuNumberAnimation { duration:UbuntuAnimation.BriskDuration } }
     }
 
     Image {
@@ -74,7 +77,8 @@ ClockCircle {
         // We need to calculate degree number for rotation (0 degrees means no rotation).
         // Full rotate has 360 degrees and we have 12 hours in clock face,
         // For hours: 360deg/12h=30 deg/h, for minutes 30deg/60min= 0.5 deg/min
-        rotation: (parseInt(localDateTime.split(":")[3]) * 30) + (parseInt(localDateTime.split(":")[4]) * 0.5)
+        rotation: (parseInt(localDateTime.split(":")[3]) * 30) + (partialRotation? (parseInt(localDateTime.split(":")[4]) * 0.5) : 0 )
+        Behavior on rotation { enabled: animateRotation; UbuntuNumberAnimation { duration:UbuntuAnimation.BriskDuration } }
     }
 
     Image {
@@ -93,7 +97,8 @@ ClockCircle {
         // We need to calculate degree number for rotation (0 degrees means no rotation).
         // Full rotate has 360 degrees and we have 60 miutes in clock face,
         // For minutes: 360deg/60min=6 deg/min, for seconds 6deg/60sec= 0.1 deg/sec
-        rotation: (parseInt(localDateTime.split(":")[4]) * 6) + (parseInt(localDateTime.split(":")[5]) * 0.1)
+        rotation: (parseInt(localDateTime.split(":")[4]) * 6) + (partialRotation? (parseInt(localDateTime.split(":")[5]) * 0.1) : 0 )
+        Behavior on rotation { enabled: animateRotation; UbuntuNumberAnimation { duration:UbuntuAnimation.BriskDuration } }
     }
 
     Image {
@@ -112,7 +117,8 @@ ClockCircle {
         // We need to calculate degree number for rotation (0 degrees means no rotation).
         // Full rotate has 360 degrees and we have 60 miutes in clock face,
         // For minutes: 360deg/60min=6 deg/min, for seconds 6deg/60sec= 0.1 deg/sec
-        rotation: (parseInt(localDateTime.split(":")[4]) * 6) + (parseInt(localDateTime.split(":")[5]) * 0.1)
+        rotation: (parseInt(localDateTime.split(":")[4]) * 6) + (partialRotation? (parseInt(localDateTime.split(":")[5]) * 0.1) : 0 )
+        Behavior on rotation { enabled: animateRotation; UbuntuNumberAnimation { duration:UbuntuAnimation.BriskDuration } }
     }
 
     Image {
@@ -131,6 +137,7 @@ ClockCircle {
         // Full rotate has 360 degrees and we have 60 seconds in clock face,
         // For seconds 360deg/60sec= 6 deg/sec
         rotation: visible ? parseInt(localDateTime.split(":")[5]) * 6 : 0
+        Behavior on rotation { enabled: animateRotation; UbuntuNumberAnimation { duration:UbuntuAnimation.BriskDuration } }
     }
 
     Image {
@@ -149,6 +156,7 @@ ClockCircle {
         // Full rotate has 360 degrees and we have 60 seconds in clock face,
         // For seconds 360deg/60sec= 6 deg/sec
         rotation: visible ? parseInt(localDateTime.split(":")[5]) * 6 : 0
+        Behavior on rotation { enabled: animateRotation; UbuntuNumberAnimation { duration:UbuntuAnimation.BriskDuration } }
     }
 
     Image {

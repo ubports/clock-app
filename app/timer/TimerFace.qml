@@ -22,10 +22,13 @@ import Ubuntu.Components.Pickers 1.3
 import "../components"
 
 Item {
+    id:_timerFace
     width: units.gu(24)
     height:width
 
     property alias adjustable: timerCircle.adjustable
+
+    signal adjusted(string adjustedTime)
 
     Column {
         width: parent.width
@@ -35,7 +38,9 @@ Item {
 
             width: parent.width
 
-            property bool hasTime: datedTime.getTime() > Date.now()
+            property bool hasTime: getTime().getTime() > Date.now()
+
+            onAdjusted: _timerFace.adjusted(adjustedTime)
 
         }
 
@@ -61,8 +66,9 @@ Item {
         return timerCircle;
     }
 
+
     function getTimerTime() {
-        return (new Date(timerCircle.datedTime.getTime() - Date.now())).getTime();
+        return (new Date(timerCircle.getTime().getTime() - Date.now())).getTime();
     }
 
 }

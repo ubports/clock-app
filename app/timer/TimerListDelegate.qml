@@ -23,7 +23,6 @@ import Ubuntu.Components 1.3
 ListItem {
     id: _timerListItem
 
-    property string indexLabel
     property var    timerTime
     property var    timerMessage
 
@@ -38,30 +37,24 @@ ListItem {
             rightMargin: units.gu(2)
         }
 
-        Label {
-            id: _indexLabel
-            text: indexLabel
-            width: parent.width / 5
-            horizontalAlignment: Text.AlignLeft
-        }
-
         Item {
             id: timeContainer
 
 
-            width: 2* parent.width / 5
+            width: parent.width / 2
             height: childrenRect.height
             Row {
-                anchors.horizontalCenter: parent.horizontalCenter
+                anchors.left: parent.left
                 Label {
                     id: _timerTime
                     text:timerTime.toTimeString()
+                    horizontalAlignment: Label.AlignLeft
                 }
             }
         }
 
         Item {
-            width: 2 * parent.width / 5
+            width: parent.width / 2
             height: childrenRect.height
             Row {
                 anchors.right: parent.right

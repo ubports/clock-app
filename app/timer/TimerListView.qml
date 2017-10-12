@@ -45,23 +45,14 @@ UbuntuListView {
             }
 
             Label {
-                // #TRANSLATORS: This refers to the stopwatch lap and is shown as a header where space is limited. Constrain
-                // translation length to a few characters.
-                text: i18n.tr("ID")
-                width: parent.width / 5
+                width:  parent.width / 2
                 elide: Text.ElideRight
-                horizontalAlignment: Text.AlignLeft
-            }
-
-            Label {
-                width: 2 * parent.width / 5
-                elide: Text.ElideRight
-                text: i18n.tr("Time")
+                text: i18n.tr("Duration")
                 horizontalAlignment: Text.AlignHCenter
             }
 
             Label {
-                width: 2 * parent.width / 5
+                width: parent.width / 2
                 elide: Text.ElideRight
                 text: i18n.tr("Label")
                 horizontalAlignment: Text.AlignRight
@@ -102,10 +93,10 @@ UbuntuListView {
                     id: setTimerAction
                     objectName: "setTimerAction"
                     iconName: "keyboard-enter"
+                    enabled: !_timerPage.isRunning
                     onTriggered: {
-                        //TODO
-                        console.log(model.contents.time)
                         timerFace.getCircle().setTime(new Date(model.contents.time))
+                        timerNameField.text = model.contents.message
                     }
                 }
             ]
@@ -118,7 +109,7 @@ UbuntuListView {
                 }
             }
         }
-        indexLabel: "#%1".arg(Number(count - index).toLocaleString(Qt.locale(), "f", 0))
+
         timerTime:  new Date(model.contents.time + (new Date()).getTimezoneOffset()*60)
         timerMessage: model.contents.message
     }

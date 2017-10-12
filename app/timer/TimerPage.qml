@@ -67,6 +67,10 @@ Item {
             horizontalCenter: parent.horizontalCenter
         }
 
+        onAdjusted: {
+            timerNameField.text = "";
+        }
+
     }
 
     Component {
@@ -94,7 +98,7 @@ Item {
         interval: 1000
         onTriggered: {
             if(alarm && alarm.enabled) {
-               var secsDiff =alarm.date.getTime() - Date.now();
+               var secsDiff = alarm.date.getTime() - Date.now();
                 if(secsDiff > 0) {
                     var date = new Date(secsDiff);
                     timerFace.getCircle().setTime( date );
@@ -145,13 +149,12 @@ Item {
             text: isRunning ? i18n.tr("Stop") : (true ? i18n.tr("Start") : i18n.tr("Resume"))
             onClicked: {
                 if(isRunning) {
-                    // TODO
-                    alarm.cancel()
                     alarm.enabled = false;
+                    alarm.cancel()
                     clockDB.deleteDoc(dbActiveTimers.docId);
                 } else {
-                    startNewAlarm(timerFace.getCircle().datedTime);
-                    clockDB.putDoc({"active_timers":{"time":alarm.datetime,"message":alarm.message}});
+                    startNewAlarm(timerFace.getCircle().getTime(), timerNameField.text);
+                    clockDB.putDoc({"active_timers":{"time":alarm.date,"message":alarm.message}});
                     alarm.enabled = true;
                 }
             }
@@ -201,7 +204,10 @@ Item {
             anchors {
                 margins: units.gu(2)
             }
-            text: i18n.tr("Timer")
+
+            placeholderText: i18n.tr("Enter Timer description")
+            onAccepted: timerPropsRow.saveTimer();
+            maximumLength: 25
         }
         ActionIcon {
             id:saveTimerAction
@@ -209,10 +215,13 @@ Item {
             icon.name: "save"
             width: units.gu(7)
             height: units.gu(4)
-            onClicked: {
-                clockDB.putDoc({"timer":{"time":timerFace.getTimerTime(),"message":timerNameField.text}});
-                timerPropsRow.enabled = false
-            }
+            onClicked: timerPropsRow.saveTimer();
+        }
+
+        function saveTimer() {
+            clockDB.putDoc({"timer":{"time":timerFace.getTimerTime(),"message":timerNameField.text}});
+            timerPropsRow.enabled = false
+            timerNameField.text = "";
         }
     }
 
