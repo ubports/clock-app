@@ -8,9 +8,9 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-07-02 18:48+0000\n"
-"PO-Revision-Date: 2017-07-05 08:50+0000\n"
+"PO-Revision-Date: 2017-10-18 12:32+0000\n"
 "Last-Translator: Ivo Xavier <ivofernandes12@gmail.com>\n"
-"Language-Team: Portuguese <https://ubpweblate.tnvcomp.com/projects/ubports"
+"Language-Team: Portuguese <https://translate.ubports.com/projects/ubports"
 "/clock-app/pt/>\n"
 "Language: pt\n"
 "MIME-Version: 1.0\n"
@@ -45,7 +45,7 @@ msgstr "Anterior"
 
 #: ../app/alarm/AlarmPage.qml:76
 msgid "Select None"
-msgstr "Desmarcar todos"
+msgstr "Não selecionar nenhum"
 
 #: ../app/alarm/AlarmPage.qml:78 ../app/alarm/AlarmRepeat.qml:64
 msgid "Select All"
