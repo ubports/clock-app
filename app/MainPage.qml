@@ -89,7 +89,7 @@ Page {
             localizedClockDateString: _mainPage.localizedDateString
             width: clockApp.width
             height: listview.height
-            Component.onCompleted: stopwatchPageLoader.setSource("stopwatch/StopwatchPage.qml" ,{
+            onStartupAnimationEnd: stopwatchPageLoader.setSource("stopwatch/StopwatchPage.qml" ,{
                                                                      "notLocalizedClockTimeString": _mainPage.notLocalizedDateTimeString,
                                                                      "localizedClockTimeString": _mainPage.localizedTimeString,
                                                                      "localizedClockDateString": _mainPage.localizedDateString,

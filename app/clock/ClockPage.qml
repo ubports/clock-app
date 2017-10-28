@@ -28,6 +28,8 @@ Item {
     id: _clockPage
     objectName: "clockPage"
 
+    signal startupAnimationEnd()
+
     // Property to keep track of the clock mode
     property alias isDigital: clock.isDigital
 
@@ -303,6 +305,8 @@ Item {
     ParallelAnimation {
         id: otherElementsStartUpAnimation
 
+        onStopped:startupAnimationEnd();
+
         UbuntuNumberAnimation {
             target: bottomRow
             property: "anchors.topMargin"
@@ -324,7 +328,7 @@ Item {
             property: "opacity"
             from: 0
             to: 1
-            duration: 900
+            duration: 500
         }
 
         UbuntuNumberAnimation {
@@ -332,7 +336,7 @@ Item {
             property: "anchors.topMargin"
             from: units.gu(29)
             to: units.gu(4)
-            duration: 900
+            duration: 500
         }
     }
 }

@@ -24,19 +24,20 @@ Item {
     id: bottomRow
 
     height: units.gu(6)
+    layer.enabled: true
+    layer.effect:  DropShadow {
+        cached:true
+        verticalOffset: -1
+        radius: 2
+        samples: 5
+        color: "#20000000"
+    }
 
     Rectangle {
         id:iconWrapper
         anchors.fill:parent
         color: theme.palette.normal.background
-        layer.enabled: true
-        layer.effect:  DropShadow {
-            cached:true
-            verticalOffset: -1
-            radius: 2
-            samples: 5
-            color: "#20000000"
-        }
+
 
         Row {
             id: iconContainer
