@@ -38,7 +38,7 @@ ListItem {
         textChangeAnimation.start()
     }
 
-    height: mainLayout.height + divider.height
+    height: visible ? mainLayout.height + divider.height : 0
 
     SequentialAnimation {
         id: textChangeAnimation

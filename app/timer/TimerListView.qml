@@ -23,7 +23,7 @@ UbuntuListView {
     id: timersListView
 
     clip: true
-    pressDelay: 70
+//    pressDelay: 75
     currentIndex: -1
 
     headerPositioning: ListView.PullBackHeader
@@ -34,6 +34,10 @@ UbuntuListView {
         width: parent.width - units.gu(4)
         anchors.horizontalCenter: parent.horizontalCenter
 
+        Rectangle {
+            anchors.fill: parent
+            color:theme.palette.normal.background
+        }
 
         Row {
 
@@ -45,18 +49,13 @@ UbuntuListView {
             }
 
             Label {
-                width:  parent.width / 2
+                width:  parent.width
                 elide: Text.ElideRight
-                text: i18n.tr("Duration")
+                text: i18n.tr("Saved Timers")
                 horizontalAlignment: Text.AlignHCenter
             }
 
-            Label {
-                width: parent.width / 2
-                elide: Text.ElideRight
-                text: i18n.tr("Label")
-                horizontalAlignment: Text.AlignRight
-            }
+
         }
     }
 
@@ -68,8 +67,8 @@ UbuntuListView {
     }
 
     delegate: TimerListDelegate {
-        id: lapsListItem
-        objectName: "lapsListItem" + index
+        id: savedTimersListItem
+        objectName: "savedTimersListItem" + index
 
         divider.anchors.leftMargin: units.gu(2)
         divider.anchors.rightMargin: units.gu(2)
@@ -79,6 +78,7 @@ UbuntuListView {
                 Action {
                     id: swipeDeleteAction
                     objectName: "swipeDeleteAction"
+                    text: i18n.tr("Delete")
                     iconName: "delete"
                     onTriggered: {
                         clockDB.deleteDoc( model.docId )
@@ -93,7 +93,9 @@ UbuntuListView {
                     id: setTimerAction
                     objectName: "setTimerAction"
                     iconName: "keyboard-enter"
+                    text: i18n.tr("Set Timer")
                     enabled: !_timerPage.isRunning
+                    visible: enabled
                     onTriggered: {
                         timerFace.getCircle().setTime(new Date(model.contents.time))
                         timerNameField.text = model.contents.message
@@ -101,16 +103,9 @@ UbuntuListView {
                 }
             ]
         }
-        function prinObject(obj) {
-            for(var i in obj ) {
-                console.log(obj[i]);
-                if(typeof obj[i] == "object") {
-                    prinObject(obj[i]);
-                }
-            }
-        }
 
-        timerTime:  new Date(model.contents.time + (new Date()).getTimezoneOffset()*60)
+        timerTime:  new Date(model.contents.time)
         timerMessage: model.contents.message
+        activeAlarm: activeTimers.findTimerAlarmByMessage(activeTimers.timerPrefix + model.contents.message) !== null && _timerPage.isRunning;
     }
 }

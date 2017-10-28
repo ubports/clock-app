@@ -20,18 +20,42 @@ import QtQuick 2.4
 import Ubuntu.Components 1.3
 import Ubuntu.Components.Pickers 1.3
 import "../components"
+import "../alarm"
 
 Item {
     id:_timerFace
     width: units.gu(24)
-    height:width
+    height:width + units.gu(0.5)
 
     property alias adjustable: timerCircle.adjustable
+    property bool running: false
+
+    // Below logic seemss weird but it`s need to prevent the time label from poping in and out while adjusting the timer
+    property bool showTimeLabel: timerCircle.adjusting && timerTimeLbl.height || timerCircle.hasTime && !timerCircle.adjusting;
+
 
     signal adjusted(string adjustedTime)
 
+    
+
+
     Column {
         width: parent.width
+
+        Label {
+            id: timerTimeLbl
+            objectName: "timerTimeLbl"
+            width:parent.width/3            
+            height: showTimeLabel ? font.pixelSize + units.gu(1) : 0;
+            opacity: showTimeLabel ? 1 : 0
+            Behavior on height { UbuntuNumberAnimation { duration: UbuntuAnimation.SlowDuration } }
+            anchors.horizontalCenter: parent.horizontalCenter
+            font.pixelSize: units.gu(2.5)
+            font.bold: running
+            horizontalAlignment: Text.Center
+            text: timerAlarmUtils.get_time_to_alarm(timerCircle.getTime(),new Date(), running)
+            color: running ? theme.palette.normal.selectionText : theme.palette.normal.backgroundText;
+        }
 
         AdjustableAnalogClock {
             id: timerCircle
@@ -44,18 +68,7 @@ Item {
 
         }
 
-        Label {
-            id: timerTimeLbl
-            objectName: "timerTimeLbl"
-            width:parent.width/3
-            height: parent.height/6
-            anchors.horizontalCenter: parent.horizontalCenter
-            font.pixelSize: units.gu(3)
-            horizontalAlignment: Text.Center
-            text: timerCircle.localDateTime.split(":")[3] + "h " +timerCircle.localDateTime.split(":")[4] + "m " + (timerCircle.showSeconds ? timerCircle.localDateTime.split(":")[5] + "s" : "");
-            anchors.verticalCenterOffset: -parent.width/4
-            color: UbuntuColors.ash
-        }
+
     }
 
     function reset() {

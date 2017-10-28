@@ -17,11 +17,9 @@
  */
 
 import QtQuick 2.4
-import Timer 1.0
 import Ubuntu.Components 1.3
 import QtQml.Models 2.1
 import U1db 1.0 as U1db
-
 import "../components"
 
 Item {
@@ -29,26 +27,33 @@ Item {
     objectName: "timerPage"
 
     property Alarm alarm: null
-    property var isRunning: alarm && alarm.enabled
+    property var isRunning: alarm && alarm.enabled  && alarm.date > new Date();
     property AlarmModel alarmModel: null
 
+    ActiveTimers {
+        id: activeTimers
+        alarmModel: _timerPage.alarmModel
+    }
 
     Component.onCompleted: {
         console.log("[LOG]: Timer Page Loaded")
+        _timerPage.isRunning = Qt.binding(function() { return alarm && alarm.enabled && alarm.date > new Date(); });
     }
 
-    onAlarmModelChanged: {
-        updateAlarms ();
-        if(alarmModel) {
-            alarmModel.countChanged.connect(updateAlarms);
-        }
+    onAlarmModelChanged: updateAlarms ();
+
+    Connections {
+        id:alarmModelConnection
+        target:alarmModel
+        onCountChanged :updateAlarms();
     }
 
     function updateAlarms () {
-         console.log("Alarm Model updated")
+        console.log("Alarm Model updated")
         if(alarmModel && alarmModel.count > 0 ) {
             for(var i=0; i < alarmModel.count; i++) {
-                if(alarmModel.get(i).message.match(/^\(Timer\)( |$)/)) {
+                var tmpAlarm = alarmModel.get(i);
+                if(activeTimers.isAlarmATimerAlarm(tmpAlarm) && tmpAlarm.enabled  && tmpAlarm.date > new Date()) {
                     _timerPage.alarm = alarmModel.get(i);
                     break;
                 }
@@ -56,11 +61,11 @@ Item {
         }
     }
 
-
     TimerFace {
         id: timerFace
         objectName: "timerFace"
-        adjustable: !_timerPage.isRunning
+        running: _timerPage.isRunning
+        adjustable: !running
         anchors {
             top: parent.top
             topMargin: units.gu(2)
@@ -75,22 +80,7 @@ Item {
 
     Component {
         id:alarmComponent
-        Alarm {
-        }
-    }
-
-    // Function to save a new alarm
-    function startNewAlarm(datetime, message) {
-        if(!alarm) {
-            alarm = alarmComponent.createObject(_timerPage)
-        }
-
-        alarm.reset()
-        alarm.type = Alarm.OneTime;
-        alarm.message = "(Timer)" + (message ? message : "" )
-        alarm.date = datetime
-        alarm.enabled = true
-        alarm.save()
+        Alarm {}
     }
 
     Timer {
@@ -102,6 +92,9 @@ Item {
                 if(secsDiff > 0) {
                     var date = new Date(secsDiff);
                     timerFace.getCircle().setTime( date );
+
+                } else {
+                    _timerPage.stopTimer();
                 }
             }
         }
@@ -141,22 +134,24 @@ Item {
 
         Button {
             id: startStopButton
+
+            property bool inProgress: false
+
             objectName: "startAndStopButton"
             width: _timerPage.width / 2 - units.gu(1)
             height: units.gu(4)
-            enabled: isRunning || timerFace.getCircle().hasTime
+            enabled: !inProgress  && (isRunning || timerFace.getCircle().hasTime)
             color: !isRunning  ? UbuntuColors.green : UbuntuColors.red
             text: isRunning ? i18n.tr("Stop") : (true ? i18n.tr("Start") : i18n.tr("Resume"))
             onClicked: {
+                inProgress = true;
                 if(isRunning) {
-                    alarm.enabled = false;
-                    alarm.cancel()
-                    clockDB.deleteDoc(dbActiveTimers.docId);
+                    _timerPage.stopTimer();
                 } else {
-                    startNewAlarm(timerFace.getCircle().getTime(), timerNameField.text);
-                    clockDB.putDoc({"active_timers":{"time":alarm.date,"message":alarm.message}});
-                    alarm.enabled = true;
+                    _timerPage.startTimer();
+
                 }
+                inProgress = false;
             }
         }
         ActionIcon {
@@ -241,25 +236,10 @@ Item {
         ]
     }
 
-
-
     // U1db Query to create a model of the world cities saved by the user
     U1db.Query {
         id: dbAllTimersQuery
         index: by_timer_message
-        query: ["*"]
-    }
-
-    U1db.Index {
-        id: active_timers_index
-        database: clockDB
-        expression: [
-            "active_timers.message",
-        ]
-    }
-    U1db.Query {
-        id: dbActiveTimers
-        index: active_timers_index
         query: ["*"]
     }
 
@@ -277,4 +257,49 @@ Item {
 
          model: dbAllTimersQuery
      }
+
+    TimerUtils {
+        id: timerAlarmUtils
+    }
+
+    //============================= Timer Functions =============================
+
+    /**
+     * Save a new alarm
+     * @param datetime the DateTime object that the timer alarm should be fired at.
+     * @param message  the message to display when the alarm is fired.
+     */
+    function startNewAlarm(datetime, message) {
+        if(!alarm) {
+            alarm = alarmComponent.createObject(_timerPage)
+        }
+
+        alarm.reset()
+        alarm.type = Alarm.OneTime;
+        alarm.message = activeTimers.timerPrefix + (message ? message : "" )
+        alarm.date = datetime
+        alarm.enabled = true
+        alarm.save()
+    }
+    /**
+     * Start a new timer based on the current UI settings.
+     */
+    function startTimer() {
+        startNewAlarm(timerFace.getCircle().getTime(), timerNameField.text);
+        clockDB.putDoc({"active_timers":{"time":alarm.date,"message":alarm.message}});
+        alarm.enabled = true;
+    }
+
+    /**
+     * Stop the currently running timer.
+     */
+    function stopTimer() {
+        alarm.enabled = false;
+        alarm.cancel()
+        alarmModelConnection.target = null;
+        activeTimers.removeAllTimerAlarms();
+        alarmModelConnection.target = _timerPage.alarmModel;
+        _timerPage.updateAlarms();
+    }
+
 }

@@ -3,6 +3,7 @@ set(TIMER_QML_JS_FILES
     TimerPage.qml
     TimerListDelegate.qml
     TimerListView.qml
+    ActiveTimers.qml
 )
 
 # make the files visible in the qtcreator tree

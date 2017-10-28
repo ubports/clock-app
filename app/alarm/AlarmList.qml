@@ -35,20 +35,6 @@ UbuntuListView {
     pressDelay: 75
     currentIndex: -1
 
-
-    U1db.Index {
-        id: active_timers_index
-        database: clockDB
-        expression: [
-            "active_timers.message",
-        ]
-    }
-    U1db.Query {
-        id: dbActiveTimers
-        index: active_timers_index
-        query: ["*"]
-    }
-
     Timer {
         id: alarmTimer
         running: alarmListView.visible && alarmModel.count !== 0
@@ -57,17 +43,6 @@ UbuntuListView {
         onTriggered: {
             showAlarmFrequency = !showAlarmFrequency
         }
-    }
-
-    function isAlarmATimerAlarm(alarmToCheck) {
-        if(dbActiveTimers.results && alarmToCheck ){
-            for(var i in dbActiveTimers.results) {
-                if(alarmToCheck.message === dbActiveTimers.results[i].message) {
-                    return true;
-                }
-            }
-        }
-        return false
     }
 
     displaced: Transition {
@@ -96,7 +71,7 @@ UbuntuListView {
             ]
         }
 
-        visible: !isAlarmATimerAlarm(model)
+        visible: !activeTimers.isAlarmATimerAlarm(model)
 
         onClicked: {
             if (selectMode) {

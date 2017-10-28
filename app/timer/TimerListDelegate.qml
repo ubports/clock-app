@@ -20,49 +20,37 @@
 import QtQuick 2.4
 import Ubuntu.Components 1.3
 
+
 ListItem {
     id: _timerListItem
 
     property var    timerTime
     property var    timerMessage
+    property bool   activeAlarm: false
 
 
-    Row {
-        id:listItemRow
-        anchors {
-            left: parent.left
-            right: parent.right
-            verticalCenter: parent.verticalCenter
-            leftMargin: units.gu(3)
-            rightMargin: units.gu(2)
-        }
+    ListItemLayout {
+        title.text:timerMessage
+        subtitle.text:timerAlarmUtils.timeDiffToString(timerTime.getTime());
 
-        Item {
-            id: timeContainer
+        Column {
+            visible : opacity !== 0;
+            opacity: activeAlarm ? 1 : 0;
+            SlotsLayout.position : SlotsLayout.TopRight;
 
+            Behavior on opacity { UbuntuNumberAnimation { duration: UbuntuAnimation.SlowDuration } }
 
-            width: parent.width / 2
-            height: childrenRect.height
-            Row {
-                anchors.left: parent.left
-                Label {
-                    id: _timerTime
-                    text:timerTime.toTimeString()
-                    horizontalAlignment: Label.AlignLeft
-                }
+            Icon {
+                anchors.horizontalCenter: parent.horizontalCenter
+                name:"alarm"
+                width:units.gu(1.5)
+            }
+            Label {
+                text:i18n.tr("Active")
+                font.pixelSize: units.gu(1.2)
             }
         }
 
-        Item {
-            width: parent.width / 2
-            height: childrenRect.height
-            Row {
-                anchors.right: parent.right
-                Label {
-                    id: _timerLabel
-                    text: timerMessage
-                }
-            }
-        }
     }
+
 }
