@@ -182,7 +182,7 @@ Item {
             Label {
                 id: lbl
 
-                anchors.left: parent.left
+                anchors.left: sectionsRepeater.left
                 height: pinSize
                 width: pinSize
                 verticalAlignment: Text.AlignVCenter
@@ -245,6 +245,7 @@ Item {
         running: false
         onTriggered: {
             Sections.initSectionData(listView);
+            internal.populateSideBar();
             internal.modelDirty = false;
         }
     }
