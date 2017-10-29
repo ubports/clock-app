@@ -42,6 +42,17 @@ Item {
 
     onAlarmModelChanged: updateAlarms ();
 
+    onIsRunningChanged: {
+        //Currently we only support a single timer so if the timer is stopped :
+        //   disconnect the alarmModel connections remove ALL the timers reconnect the  alarm Model
+        if(!isRunning) {
+            alarmModelConnection.target = null;
+            activeTimers.removeAllTimerAlarms();
+            alarmModelConnection.target = _timerPage.alarmModel;
+            _timerPage.updateAlarms();
+        }
+    }
+
     Connections {
         id:alarmModelConnection
         target:alarmModel
@@ -296,10 +307,6 @@ Item {
     function stopTimer() {
         alarm.enabled = false;
         alarm.cancel()
-        alarmModelConnection.target = null;
-        activeTimers.removeAllTimerAlarms();
-        alarmModelConnection.target = _timerPage.alarmModel;
-        _timerPage.updateAlarms();
     }
 
 }
