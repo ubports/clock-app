@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-07-02 18:48+0000\n"
-"PO-Revision-Date: 2017-09-24 07:24+0000\n"
+"PO-Revision-Date: 2017-10-21 05:41+0000\n"
 "Last-Translator: Mutse Young <yyhoo2.young@gmail.com>\n"
 "Language-Team: Chinese (Simplified) "
 "<https://translate.ubports.com/projects/ubports/clock-app/zh_Hans/>\n"
@@ -45,7 +45,7 @@ msgstr "返回"
 
 #: ../app/alarm/AlarmPage.qml:76
 msgid "Select None"
-msgstr "全部不选"
+msgstr "取消选择"
 
 #: ../app/alarm/AlarmPage.qml:78 ../app/alarm/AlarmRepeat.qml:64
 msgid "Select All"
