@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-07-02 18:48+0000\n"
-"PO-Revision-Date: 2017-10-29 20:09+0000\n"
+"PO-Revision-Date: 2017-10-30 21:52+0000\n"
 "Last-Translator: Brînzariu Cristian <info@ebeton.ro>\n"
 "Language-Team: Romanian <https://translate.ubports.com/projects/ubports"
 "/clock-app/ro/>\n"
@@ -66,7 +66,7 @@ msgstr "Repetare"
 
 #: ../app/alarm/AlarmSettingsPage.qml:31
 msgid "Settings"
-msgstr "Configurări"
+msgstr "Setări"
 
 #. TRANSLATORS: Alarm stops after
 #. TRANSLATORS: Snooze for
@@ -81,7 +81,7 @@ msgid "%1 minute"
 msgid_plural "%1 minutes"
 msgstr[0] "un minut"
 msgstr[1] "%1 minute"
-msgstr[2] ""
+msgstr[2] "%1 de minute"
 
 #: ../app/alarm/AlarmSettingsPage.qml:99
 msgid "Alarm volume"
@@ -172,30 +172,28 @@ msgid "Retrieving location..."
 msgstr "Se preia locaţia..."
 
 #: ../app/components/Information.qml:8
-#, fuzzy
 msgid "Information"
-msgstr "Vibrație"
+msgstr "Informare"
 
 #: ../app/components/Information.qml:17
 msgid "Get the source"
-msgstr ""
+msgstr "Descarcă sursa"
 
 #: ../app/components/Information.qml:18
 msgid "Report issues"
-msgstr ""
+msgstr "Raportează probleme"
 
 #: ../app/components/Information.qml:19
 msgid "Help translate"
-msgstr ""
+msgstr "Ajută cu traducerile"
 
 #: ../app/components/NavigationRow.qml:50 ubuntu-clock-app.desktop.in.in.h:1
 msgid "Clock"
 msgstr "Ceas"
 
 #: ../app/components/NavigationRow.qml:62
-#, fuzzy
 msgid "Stopwatch"
-msgstr "Stop"
+msgstr "Oprește cronometrul"
 
 #. TRANSLATORS: This refers to the stopwatch lap and is shown as a header where space is limited. Constrain
 #. translation length to a few characters.
