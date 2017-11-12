@@ -74,6 +74,7 @@ Page {
         _alarm.date = alarmTime
         _alarm.enabled = true
         _alarm.save()
+        metricAlarms.increment(1);
     }
 
     // Function to read a saved alarm

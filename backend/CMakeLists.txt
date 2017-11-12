@@ -12,6 +12,7 @@ set(
     modules/Alarm/backend.cpp
     modules/Alarm/settings.cpp
     modules/Alarm/sound.cpp
+    modules/Alarm/sortedalarmsmodel.cpp
 )
 
 set(
