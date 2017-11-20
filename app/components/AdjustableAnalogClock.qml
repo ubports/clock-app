@@ -20,7 +20,7 @@ AnalogMode {
         id: hourHandAdjust
         opacity:adjustable ? 0.2 : 0
         Behavior on opacity { UbuntuNumberAnimation { duration:UbuntuAnimation.BriskDuration } }
-        z: 20
+        z: minuteHandAdjust.z + 10
         width: parent.width
         anchors.centerIn: parent
 
@@ -52,8 +52,8 @@ AnalogMode {
         id:adjustHourMouseArea
         z: hourHandAdjust.z + 1
         anchors.centerIn: parent
-        width:parent.width/2 + units.gu(1.5)
-        height: parent.height/2 + units.gu(1.5)
+        width:parent.width/2
+        height: parent.height/2
         propagateComposedEvents: true
         preventStealing: true
         function updateHours(mouse) {
@@ -96,6 +96,26 @@ AnalogMode {
         fillMode: Image.PreserveAspectFit
     }
 
+    //Seperate the ohur adjusting area from the minute adjustment area by 3gu
+    MouseArea {
+        id:adjustHourMinutesSeperator
+        z: adjustMinuteMouseArea.z + 1
+        anchors.centerIn: parent
+        width:adjustHourMouseArea.width + units.gu(3)
+        height: adjustHourMouseArea.height + units.gu(3)
+        propagateComposedEvents: true
+        preventStealing: true
+
+        onPressed:  {
+           var localPoint = mapToItem(adjustHourMinutesSeperator, mouse.x, mouse.y)
+           var tangx = localPoint.x-(width/2);
+           var tangy = localPoint.y-(height/2);
+            if (Math.abs(Math.sqrt((tangx*tangx)+(tangy*tangy))) > adjustHourMinutesSeperator.width/2 ) {
+                 mouse.accepted = false;
+            }
+
+        }
+    }
 
     MouseArea {
         id:adjustMinuteMouseArea

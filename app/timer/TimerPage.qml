@@ -132,7 +132,7 @@ Item {
             height: units.gu(4)
             icon.color: UbuntuColors.slate
             enabled: timerFace.getCircle().hasTime && !isRunning
-            opacity: timerFace.getCircle().hasTime  && !isRunning ? 1: 0
+            opacity: enabled ? 1: 0
 
             Behavior on opacity {
                 UbuntuNumberAnimation{
@@ -172,7 +172,7 @@ Item {
             width: units.gu(7)
             height: units.gu(4)
             enabled: timerFace.getCircle().hasTime && !isRunning
-            opacity:  timerFace.getCircle().hasTime  && !isRunning ? 1: 0
+            opacity: enabled ? 1: 0
             Behavior on opacity {
                 UbuntuNumberAnimation{
                     duration: UbuntuAnimation.BriskDuration

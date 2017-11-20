@@ -28,10 +28,6 @@ Item {
 
     property AlarmModel alarmModel: null
 
-    onAlarmModelChanged: {
-
-    }
-
     // U1db Query to create a model of the world cities saved by the user
 
     U1db.Index {

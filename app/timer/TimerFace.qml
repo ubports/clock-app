@@ -62,7 +62,7 @@ Item {
 
             width: parent.width
 
-            property bool hasTime: getTime().getTime() > Date.now()
+            property bool hasTime: timerCircle.getTime().getTime() > Date.now()
 
             onAdjusted: _timerFace.adjusted(adjustedTime)
 
