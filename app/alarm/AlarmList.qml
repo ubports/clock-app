@@ -44,9 +44,15 @@ UbuntuListView {
         }
     }
 
-    displaced: Transition {
+    Transition {
+        id:itemTransition
         UbuntuNumberAnimation { property: "y"; duration: UbuntuAnimation.BriskDuration }
+        UbuntuNumberAnimation { property: "opacity";  from:0; to:1; duration: UbuntuAnimation.BriskDuration }
     }
+
+    addDisplaced: itemTransition
+    removeDisplaced: itemTransition
+    moveDisplaced: itemTransition
 
     delegate: AlarmDelegate {
         id: alarmDelegate
