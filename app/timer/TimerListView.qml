@@ -69,6 +69,7 @@ UbuntuListView {
     delegate: TimerListDelegate {
         id: savedTimersListItem
         objectName: "savedTimersListItem" + index
+        enabled: !_timerPage.isRunning
 
         divider.anchors.leftMargin: units.gu(2)
         divider.anchors.rightMargin: units.gu(2)
@@ -87,21 +88,9 @@ UbuntuListView {
             ]
         }
 
-        trailingActions: ListItemActions {
-            actions: [
-                Action {
-                    id: setTimerAction
-                    objectName: "setTimerAction"
-                    iconName: "keyboard-enter"
-                    text: i18n.tr("Set Timer")
-                    enabled: !_timerPage.isRunning
-                    visible: enabled
-                    onTriggered: {
-                        timerFace.getCircle().setTime(new Date(model.contents.time))
-                        timerNameField.text = model.contents.message
-                    }
-                }
-            ]
+        onClicked: {
+            timerFace.getCircle().setTime(new Date(model.contents.time))
+            timerNameField.text = model.contents.message
         }
 
         timerTime:  new Date(model.contents.time)
