@@ -21,6 +21,7 @@ import Ubuntu.Components 1.3
 import QtQml.Models 2.1
 import U1db 1.0 as U1db
 import "../components"
+import "../alarm"
 
 Item {
     id: _timerPage
@@ -28,7 +29,7 @@ Item {
 
     property Alarm alarm: null
     property var isRunning: alarm && alarm.enabled  && alarm.date > new Date();
-    property AlarmModel alarmModel: null
+    property AlarmModelComponent alarmModel: null
 
     ActiveTimers {
         id: activeTimers
@@ -57,6 +58,7 @@ Item {
         id:alarmModelConnection
         target:alarmModel
         onCountChanged :updateAlarms();
+        onIsReadyChanged: updateAlarms();
     }
 
     function updateAlarms () {
@@ -232,6 +234,7 @@ Item {
     }
 
     NestedListviewsHack {
+        id:timerNestedListViewHack
         z:10
         parentListView : listview
         nestedListView : timersList
@@ -287,18 +290,19 @@ Item {
 
         alarm.reset()
         alarm.type = Alarm.OneTime;
-        alarm.message = activeTimers.timerPrefix + (message ? message : "" )
+        alarm.message = activeTimers.timerPrefix + (message ? " " + message : "" )
         alarm.date = datetime
         alarm.enabled = true
         alarm.save()
+
+        return alarm;
     }
     /**
      * Start a new timer based on the current UI settings.
      */
     function startTimer() {
-        startNewAlarm(timerFace.getCircle().getTime(), timerNameField.text);
-        clockDB.putDoc({"active_timers":{"time":alarm.date,"message":alarm.message}});
-        alarm.enabled = true;
+        _timerPage.startNewAlarm(timerFace.getCircle().getTime(), timerNameField.text);
+        activeTimers.addActiveTimer(alarm);
     }
 
     /**

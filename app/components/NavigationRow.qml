@@ -22,17 +22,18 @@ import QtGraphicalEffects 1.0
 
 Item {
     id: bottomRow
-
+    anchors.topMargin: units.gu(5)
     height: units.gu(6)
     layer.enabled: true
-    layer.effect:  DropShadow {
+    layer.effect: DropShadow {
+        source:iconWrapper
+        transparentBorder:true
         cached:true
         verticalOffset: -1
-        radius: 2
-        samples: 5
+        radius: 1
+        samples: 3
         color: "#20000000"
     }
-
     Rectangle {
         id:iconWrapper
         anchors.fill:parent

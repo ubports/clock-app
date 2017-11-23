@@ -83,6 +83,7 @@ UbuntuListView {
                     iconName: "delete"
                     onTriggered: {
                         clockDB.deleteDoc( model.docId )
+                        timerNestedListViewHack.release();
                     }
                 }
             ]
@@ -91,6 +92,7 @@ UbuntuListView {
         onClicked: {
             timerFace.getCircle().setTime(new Date(model.contents.time))
             timerNameField.text = model.contents.message
+            timerNestedListViewHack.release();
         }
 
         timerTime:  new Date(model.contents.time)

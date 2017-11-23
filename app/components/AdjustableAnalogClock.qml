@@ -1,6 +1,7 @@
 import QtQuick 2.0
 import Ubuntu.Components 1.3
 import QtGraphicalEffects 1.0
+import QtFeedback 5.0
 
 AnalogMode {
     id:_adjustableAnalogClock
@@ -58,10 +59,14 @@ AnalogMode {
         preventStealing: true
         function updateHours(mouse) {
             if(adjustable) {
+                 var oldLocalDateTime = localDateTime;
                 var localPoint = mapToItem(adjustHourMouseArea, mouse.x, mouse.y)
                 var minutes = parseInt(localDateTime.split(":")[4]);
                 var rot =  1-(Math.PI + Math.atan2(localPoint.x-(width/2),localPoint.y-(height/2))) / (Math.PI*2);
                 localDateTime =  "1970:01:01:"+ parseInt(rot * 12) + ":"+minutes+":00";
+                if(oldLocalDateTime != localDateTime) {
+                   Haptics.play();
+                }
                 adjusted(localDateTime)
             }
         }
@@ -125,10 +130,14 @@ AnalogMode {
         propagateComposedEvents: true
         function updateMinutes(mouse) {
             if(adjustable) {
+                var oldLocalDateTime = localDateTime;
                 var localPoint = mapToItem(adjustMinuteMouseArea, mouse.x, mouse.y)
                 var hour = parseInt(localDateTime.split(":")[3]);
                 var rot = 1-(Math.PI + Math.atan2(localPoint.x-(width/2),localPoint.y-(parent.height/2))) / (Math.PI*2);
                 localDateTime =  "1970:01:01:"+ hour +":"+ parseInt(rot * 60) + ":00";
+                if(oldLocalDateTime != localDateTime) {
+                    Haptics.play();
+                }
                 adjusted(localDateTime)
             }
         }

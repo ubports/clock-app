@@ -115,17 +115,17 @@ Page {
         Loader {
             id:timerPageLoader
             asynchronous: true
+            active: alarmModel !== null || status == Loader.Ready;
             width: clockApp.width
             height: listview.height
             onLoaded: {
+                item.alarmModel = Qt.binding( function () { return  _mainPage.alarmModel } )
                 if (this.item.isRunning) {
                     listview.moveToTimerPage()
                 }
-                item.alarmModel = Qt.binding( function () { return  _mainPage.alarmModel } )
             }
         }
     }
-
 
     header: PageHeader {
         visible:true

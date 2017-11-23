@@ -312,7 +312,7 @@ Item {
             property: "anchors.topMargin"
             from: units.gu(4)
             to: 0
-            duration: 500
+            duration: UbuntuAnimation.SlowDuration
         }
 
         UbuntuNumberAnimation {
@@ -320,7 +320,7 @@ Item {
             property: "opacity"
             from: 0
             to: 1
-            duration: 500
+            duration: UbuntuAnimation.SlowDuration
         }
 
         UbuntuNumberAnimation {
@@ -328,7 +328,7 @@ Item {
             property: "opacity"
             from: 0
             to: 1
-            duration: 500
+            duration: UbuntuAnimation.SlowDuration
         }
 
         UbuntuNumberAnimation {
@@ -336,7 +336,7 @@ Item {
             property: "anchors.topMargin"
             from: units.gu(29)
             to: units.gu(4)
-            duration: 500
+            duration: UbuntuAnimation.SlowDuration
         }
     }
 }
