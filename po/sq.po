@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-04 10:26+0300\n"
-"PO-Revision-Date: 2017-09-16 09:19+0000\n"
+"PO-Revision-Date: 2017-09-29 07:37+0000\n"
 "Last-Translator: Jeff <jeffi27@live.at>\n"
 "Language-Team: Albanian <https://translate.ubports.com/projects/ubports"
 "/clock-app/sq/>\n"
@@ -63,7 +63,7 @@ msgstr "Anulo zgjedhjen"
 
 #: app/alarm/AlarmPage.qml:79 app/alarm/AlarmRepeat.qml:66
 msgid "Select All"
-msgstr "Zgjidhë të gjitha"
+msgstr "Përzgjidh Gjithçka"
 
 #: app/alarm/AlarmPage.qml:102 app/alarm/AlarmList.qml:64
 #: app/worldclock/UserWorldCityList.qml:71
@@ -113,7 +113,7 @@ msgstr "Ripërsëritët për"
 
 #: app/alarm/AlarmSettingsPage.qml:183
 msgid "Vibration"
-msgstr "Dhridhëja"
+msgstr "Dridhje"
 
 #: app/alarm/AlarmSettingsPage.qml:209
 msgid "Change time and date"
@@ -181,7 +181,7 @@ msgstr "Fut tingull nga"
 
 #: app/stopwatch/StopwatchPage.qml:83
 msgid "Stop"
-msgstr "Ndalo"
+msgstr "Ndal"
 
 #: app/stopwatch/StopwatchPage.qml:83
 msgid "Start"
@@ -189,7 +189,7 @@ msgstr "Fillo"
 
 #: app/stopwatch/StopwatchPage.qml:83
 msgid "Resume"
-msgstr "Rinise"
+msgstr "Rifillo"
 
 #. TRANSLATORS: This refers to the stopwatch lap and is shown as a header where space is limited. Constrain
 #. translation length to a few characters.
@@ -308,7 +308,7 @@ msgstr "Të njëjtën kohë"
 
 #: app/worldclock/AddWorldCityButton.qml:32
 msgid "Add"
-msgstr "Fut"
+msgstr "Shto"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:48
 msgid "Abidjan"

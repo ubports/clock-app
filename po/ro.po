@@ -8,17 +8,17 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-07-02 18:48+0000\n"
-"PO-Revision-Date: 2017-06-29 11:04+0000\n"
+"PO-Revision-Date: 2017-10-30 21:52+0000\n"
 "Last-Translator: Brînzariu Cristian <info@ebeton.ro>\n"
-"Language-Team: Romanian <https://ubpweblate.tnvcomp.com/projects/ubports/"
-"clock-app/ro/>\n"
+"Language-Team: Romanian <https://translate.ubports.com/projects/ubports"
+"/clock-app/ro/>\n"
 "Language: ro\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
 "20)) ? 1 : 2;\n"
-"X-Generator: Weblate 2.14.1\n"
+"X-Generator: Weblate 2.15\n"
 "X-Launchpad-Export-Date: 2017-04-05 07:41+0000\n"
 
 #: ../app/alarm/AlarmLabel.qml:35 ../app/alarm/AlarmLabel.qml:79
@@ -29,7 +29,7 @@ msgstr "Etichetă"
 #: ../app/alarm/AlarmList.qml:64 ../app/alarm/AlarmPage.qml:101
 #: ../app/worldclock/UserWorldCityList.qml:71
 msgid "Delete"
-msgstr "Ştergeţi"
+msgstr "Șterge"
 
 #: ../app/alarm/AlarmPage.qml:38 ../app/components/AlarmBottomEdge.qml:38
 msgid "Alarms"
@@ -50,7 +50,7 @@ msgstr "Anulaţi selecţia"
 
 #: ../app/alarm/AlarmPage.qml:78 ../app/alarm/AlarmRepeat.qml:64
 msgid "Select All"
-msgstr "Selectați tot"
+msgstr "Selectează tot"
 
 #: ../app/alarm/AlarmPage.qml:157
 msgid "No saved alarms"
@@ -66,7 +66,7 @@ msgstr "Repetare"
 
 #: ../app/alarm/AlarmSettingsPage.qml:31
 msgid "Settings"
-msgstr "Configurări"
+msgstr "Setări"
 
 #. TRANSLATORS: Alarm stops after
 #. TRANSLATORS: Snooze for
@@ -79,7 +79,7 @@ msgstr "Configurări"
 #, qt-format
 msgid "%1 minute"
 msgid_plural "%1 minutes"
-msgstr[0] "%1 minut"
+msgstr[0] "un minut"
 msgstr[1] "%1 minute"
 msgstr[2] "%1 de minute"
 
@@ -172,30 +172,28 @@ msgid "Retrieving location..."
 msgstr "Se preia locaţia..."
 
 #: ../app/components/Information.qml:8
-#, fuzzy
 msgid "Information"
-msgstr "Vibrație"
+msgstr "Informare"
 
 #: ../app/components/Information.qml:17
 msgid "Get the source"
-msgstr ""
+msgstr "Descarcă sursa"
 
 #: ../app/components/Information.qml:18
 msgid "Report issues"
-msgstr ""
+msgstr "Raportează probleme"
 
 #: ../app/components/Information.qml:19
 msgid "Help translate"
-msgstr ""
+msgstr "Ajută cu traducerile"
 
 #: ../app/components/NavigationRow.qml:50 ubuntu-clock-app.desktop.in.in.h:1
 msgid "Clock"
 msgstr "Ceas"
 
 #: ../app/components/NavigationRow.qml:62
-#, fuzzy
 msgid "Stopwatch"
-msgstr "Stop"
+msgstr "Oprește cronometrul"
 
 #. TRANSLATORS: This refers to the stopwatch lap and is shown as a header where space is limited. Constrain
 #. translation length to a few characters.
@@ -213,11 +211,11 @@ msgstr "Timpul Total"
 
 #: ../app/stopwatch/StopwatchPage.qml:94
 msgid "Stop"
-msgstr "Stop"
+msgstr "Oprește"
 
 #: ../app/stopwatch/StopwatchPage.qml:94
 msgid "Start"
-msgstr "Start"
+msgstr "Pornește"
 
 #: ../app/stopwatch/StopwatchPage.qml:94
 msgid "Resume"
@@ -274,7 +272,7 @@ msgstr "Aceiaşi dată"
 
 #: ../app/worldclock/WorldCityList.qml:56
 msgid "Select a city"
-msgstr "Selectaţi un oraş"
+msgstr "Selectează un oraș"
 
 #: ../app/worldclock/WorldCityList.qml:112
 msgid "Search..."

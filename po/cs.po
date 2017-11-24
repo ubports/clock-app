@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-07-02 18:48+0000\n"
-"PO-Revision-Date: 2017-09-07 22:09+0000\n"
+"PO-Revision-Date: 2017-10-02 13:17+0000\n"
 "Last-Translator: Milan Korecký <milan.korecky@gmail.com>\n"
 "Language-Team: Czech <https://translate.ubports.com/projects/ubports/clock-"
 "app/cs/>\n"
@@ -57,7 +57,7 @@ msgstr "Žádné uložené budíky"
 
 #: ../app/alarm/AlarmPage.qml:158
 msgid "Tap the + icon to add an alarm"
-msgstr "Klepněte na ikonu + pro přidání budíku"
+msgstr "Klikněte na ikonu + pro přidání budíku"
 
 #: ../app/alarm/AlarmRepeat.qml:38 ../app/alarm/EditAlarmPage.qml:282
 msgid "Repeat"
@@ -198,7 +198,7 @@ msgstr "Stopky"
 #. translation length to a few characters.
 #: ../app/stopwatch/LapListView.qml:50 ../app/stopwatch/StopwatchPage.qml:113
 msgid "Lap"
-msgstr "Mezičas"
+msgstr "Úsek"
 
 #: ../app/stopwatch/LapListView.qml:59
 msgid "Lap Time"
@@ -214,7 +214,7 @@ msgstr "Zastavit"
 
 #: ../app/stopwatch/StopwatchPage.qml:94
 msgid "Start"
-msgstr "Spustit"
+msgstr "Start"
 
 #: ../app/stopwatch/StopwatchPage.qml:94
 msgid "Resume"
@@ -222,7 +222,7 @@ msgstr "Pokračovat"
 
 #: ../app/stopwatch/StopwatchPage.qml:113
 msgid "Clear"
-msgstr "Smazat"
+msgstr "Vyčistit"
 
 #: ../app/worldclock/AddWorldCityButton.qml:30
 msgid "Add"
@@ -275,7 +275,7 @@ msgstr "Vybrat město"
 
 #: ../app/worldclock/WorldCityList.qml:112
 msgid "Search..."
-msgstr "Hledat..."
+msgstr "Hledat…"
 
 #: ../app/worldclock/WorldCityList.qml:216
 msgid "Searching for a city"
@@ -283,7 +283,7 @@ msgstr "Hledání města"
 
 #: ../app/worldclock/WorldCityList.qml:221
 msgid "No City Found"
-msgstr "Město nenalezeno"
+msgstr "Žádné město nenalezeno"
 
 #: ../app/worldclock/WorldCityList.qml:227
 msgid "Unable to connect."
@@ -291,7 +291,7 @@ msgstr "Nelze se připojit."
 
 #: ../app/worldclock/WorldCityList.qml:228
 msgid "Please check your network connection and try again"
-msgstr "Prosím, zkontrolujte své připojení k internetu a zkuste hledání znovu"
+msgstr "Prosím zkontrolujte své připojení k internetu a zkuste hledání znovu"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:48
 msgid "Abidjan"

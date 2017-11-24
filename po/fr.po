@@ -8,9 +8,9 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-07-02 18:48+0000\n"
-"PO-Revision-Date: 2017-09-07 19:44+0000\n"
-"Last-Translator: Anne Onyme <anneonyme017@openmailbox.org>\n"
-"Language-Team: French <https://ubpweblate.tnvcomp.com/projects/ubports/clock-"
+"PO-Revision-Date: 2017-10-10 09:56+0000\n"
+"Last-Translator: RedXXIII <adered7@gmail.com>\n"
+"Language-Team: French <https://translate.ubports.com/projects/ubports/clock-"
 "app/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
@@ -45,7 +45,7 @@ msgstr "Précédent"
 
 #: ../app/alarm/AlarmPage.qml:76
 msgid "Select None"
-msgstr "Ne rien sélectionner"
+msgstr "Annuler sélection"
 
 #: ../app/alarm/AlarmPage.qml:78 ../app/alarm/AlarmRepeat.qml:64
 msgid "Select All"
@@ -274,7 +274,7 @@ msgstr "Sélectionnez une ville"
 
 #: ../app/worldclock/WorldCityList.qml:112
 msgid "Search..."
-msgstr "Rechercher…"
+msgstr "Rechercher..."
 
 #: ../app/worldclock/WorldCityList.qml:216
 msgid "Searching for a city"
