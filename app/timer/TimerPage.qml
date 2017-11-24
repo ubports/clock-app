@@ -141,7 +141,10 @@ Item {
                     duration: UbuntuAnimation.BriskDuration
                 }
             }
-            onClicked: timerPropsRow.enabled = !timerPropsRow.enabled
+            onClicked: {
+                timerPropsRow.enabled = !timerPropsRow.enabled;
+                timerNameField.focus = timerPropsRow.enabled;
+            }
 
         }
 

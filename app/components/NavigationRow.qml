@@ -32,7 +32,7 @@ Item {
         verticalOffset: -1
         radius: 1
         samples: 3
-        color: "#20000000"
+        color: "#202F2F2F"
     }
     Rectangle {
         id:iconWrapper
