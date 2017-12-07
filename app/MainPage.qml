@@ -89,12 +89,18 @@ Page {
             localizedClockDateString: _mainPage.localizedDateString
             width: clockApp.width
             height: listview.height
-            onStartupAnimationEnd: stopwatchPageLoader.setSource("stopwatch/StopwatchPage.qml" ,{
+            onStartupAnimationEnd: {
+                stopwatchPageLoader.setSource("stopwatch/StopwatchPage.qml" ,{
                                                                      "notLocalizedClockTimeString": _mainPage.notLocalizedDateTimeString,
                                                                      "localizedClockTimeString": _mainPage.localizedTimeString,
                                                                      "localizedClockDateString": _mainPage.localizedDateString,
                                                                      "width": clockApp.width,
                                                                      "height": listview.height});
+                timerPageLoader.setSource("timer/TimerPage.qml" ,{
+                                                                 "width": clockApp.width,
+                                                                 "height": listview.height });
+            }
+
         }
 
         Loader {
@@ -106,9 +112,6 @@ Page {
                 if (this.item.isRunning) {
                     listview.moveToStopwatchPage()
                 }
-                timerPageLoader.setSource("timer/TimerPage.qml" ,{
-                                                                 "width": clockApp.width,
-                                                                 "height": listview.height });
             }
         }
 
