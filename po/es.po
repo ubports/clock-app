@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-04 10:26+0300\n"
-"PO-Revision-Date: 2017-12-09 23:22+0000\n"
-"Last-Translator: Stefano Melchior <stefano.melchior@me.com>\n"
+"PO-Revision-Date: 2017-12-10 07:10+0000\n"
+"Last-Translator: Francisco Molinero <paco@byasl.com>\n"
 "Language-Team: Spanish <https://translate.ubports.com/projects/ubports/clock-"
 "app/es/>\n"
 "Language: es\n"
@@ -122,7 +122,7 @@ msgstr "Cambiar fecha y hora"
 
 #: app/alarm/AlarmSettingsPage.qml:234
 msgid "Theme"
-msgstr ""
+msgstr "Tema"
 
 #: app/alarm/AlarmSettingsPage.qml:234
 msgid "Theme (system theme on App start)"
@@ -130,7 +130,7 @@ msgstr ""
 
 #: app/alarm/AlarmSettingsPage.qml:235
 msgid "Theme (will apply after App restart)"
-msgstr ""
+msgstr "Tema (Se aplicará tras el reinicio de la App)"
 
 #: app/alarm/AlarmUtils.qml:31
 msgid "Never"
@@ -233,9 +233,9 @@ msgid "Clock App"
 msgstr "Reloj"
 
 #: app/components/Information.qml:54
-#, fuzzy, qt-format
+#, qt-format
 msgid "Version %1"
-msgstr "en %1m"
+msgstr "Versión %1"
 
 #: app/components/NavigationRow.qml:51
 msgid "Clock"
