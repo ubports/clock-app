@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-04 10:26+0300\n"
-"PO-Revision-Date: 2017-10-05 07:00+0000\n"
-"Last-Translator: Twinkybot <me@twinkybot.org>\n"
+"PO-Revision-Date: 2017-12-11 08:25+0000\n"
+"Last-Translator: Peter Nerlich <peter.nerlich+ubports@googlemail.com>\n"
 "Language-Team: German <https://translate.ubports.com/projects/ubports/clock-"
 "app/de/>\n"
 "Language: de\n"
@@ -216,16 +216,19 @@ msgid "App Information"
 msgstr "Information"
 
 #: app/components/Information.qml:17
+#, fuzzy
 msgid "Get the source"
-msgstr "Den Quellcode bekommen"
+msgstr "Hol den Quellcode"
 
 #: app/components/Information.qml:18
+#, fuzzy
 msgid "Report issues"
-msgstr "Probleme melden"
+msgstr "Problem melden"
 
 #: app/components/Information.qml:19
+#, fuzzy
 msgid "Help translate"
-msgstr "Beim Übersetzen mithelfen"
+msgstr "Übersetzen helfen"
 
 #: app/components/Information.qml:48
 #, fuzzy
