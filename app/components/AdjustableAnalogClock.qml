@@ -8,6 +8,7 @@ AnalogMode {
     property var  isMainClock: false
     property bool adjustable: true
     property bool adjusting: false
+    property bool enableHaptic: false
 
     signal adjusted(string adjustedTime)
 
@@ -64,7 +65,7 @@ AnalogMode {
                 var minutes = parseInt(localDateTime.split(":")[4]);
                 var rot =  1-(Math.PI + Math.atan2(localPoint.x-(width/2),localPoint.y-(height/2))) / (Math.PI*2);
                 localDateTime =  "1970:01:01:"+ parseInt(rot * 12) + ":"+minutes+":00";
-                if(oldLocalDateTime != localDateTime) {
+                if(oldLocalDateTime != localDateTime && enableHaptic )  {
                    Haptics.play();
                 }
                 adjusted(localDateTime)
@@ -135,7 +136,7 @@ AnalogMode {
                 var hour = parseInt(localDateTime.split(":")[3]);
                 var rot = 1-(Math.PI + Math.atan2(localPoint.x-(width/2),localPoint.y-(parent.height/2))) / (Math.PI*2);
                 localDateTime =  "1970:01:01:"+ hour +":"+ parseInt(rot * 60) + ":00";
-                if(oldLocalDateTime != localDateTime) {
+                if(oldLocalDateTime != localDateTime  && enableHaptic) {
                     Haptics.play();
                 }
                 adjusted(localDateTime)
