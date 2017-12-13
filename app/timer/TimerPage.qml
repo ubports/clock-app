@@ -293,7 +293,7 @@ Item {
 
         alarm.reset()
         alarm.type = Alarm.OneTime;
-        alarm.message = activeTimers.timerPrefix + (message ? " " + message : "" )
+        alarm.message = activeTimers.addPrefixToMessage(message)
         alarm.date = datetime
         alarm.enabled = true
         alarm.save()

@@ -97,6 +97,6 @@ UbuntuListView {
 
         timerTime:  new Date(model.contents.time)
         timerMessage: model.contents.message
-        activeAlarm: activeTimers.findTimerAlarmByMessage(activeTimers.timerPrefix + model.contents.message) !== null && _timerPage.isRunning;
+        activeAlarm: activeTimers.findTimerAlarmByMessage(activeTimers.addPrefixToMessage(model.contents.message)) !== null && _timerPage.isRunning;
     }
 }

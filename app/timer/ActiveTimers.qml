@@ -83,6 +83,7 @@ Item {
      * Find an alarm in the active timers DB by compereing its message.
      */
     function findTimerAlarmByMessage(alarmMessageToFind) {
+
         if(dbActiveTimers.results && alarmMessageToFind ){
             for(var i in dbActiveTimers.results) {
                 if( alarmMessageToFind === dbActiveTimers.results[i].message ) {
@@ -113,6 +114,10 @@ Item {
      */
     function addActiveTimer(timer) {
         clockDB.putDoc({"active_timers":{"time":timer.date,"message":timer.message}});
+    }
+
+    function addPrefixToMessage(message) {
+        return  _activeTimers.timerPrefix + (message ? " " + message : "");
     }
 
 }
