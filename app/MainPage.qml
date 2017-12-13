@@ -118,7 +118,7 @@ Page {
         Loader {
             id:timerPageLoader
             asynchronous: true
-            active: alarmModel !== null || status == Loader.Ready;
+            active: alarmModel !== null || timerPageLoader.item;
             width: clockApp.width
             height: listview.height
             onLoaded: {
@@ -240,6 +240,11 @@ Page {
                 when:  bottomEdgeLoader.item && bottomEdgeLoader.item.hint.visible &&
                        (bottomEdgeLoader.item.hint.status == BottomEdgeHint.Active || bottomEdgeLoader.item.hint.status == BottomEdgeHint.Locked)
                 PropertyChanges { target: bottomRow; anchors.bottomMargin:  units.gu(4); }
+              },
+             State {
+                name: "keyboard-visible"
+                when: Qt.inputMethod.visible
+                PropertyChanges { target: bottomRow; anchors.bottomMargin: -bottomRow.height; }
               }
          ]
         anchors {
