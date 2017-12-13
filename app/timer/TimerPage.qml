@@ -81,7 +81,6 @@ Item {
         adjustable: !running
         anchors {
             top: parent.top
-            topMargin: units.gu(2)
             horizontalCenter: parent.horizontalCenter
         }
 
@@ -101,7 +100,7 @@ Item {
         interval: 1000
         onTriggered: {
             if(alarm && alarm.enabled) {
-               var secsDiff = alarm.date.getTime() - Date.now();
+                var secsDiff = alarm.date.getTime() - Date.now();
                 if(secsDiff > 0) {
                     var date = new Date(secsDiff);
                     timerFace.getCircle().setTime( date );
@@ -115,124 +114,143 @@ Item {
         repeat: true
     }
 
-
-    Row {
+    Item {
         id: buttonRow
-        spacing: units.gu(2)
+
+        width: parent.width - units.gu(4)
+        height: units.gu(4)
+        clip:true
         anchors {
             top: timerFace.bottom
-            topMargin: units.gu(4)
-            horizontalCenter: parent.horizontalCenter
+            topMargin: units.gu(6)
+            left: parent.left
+            right: parent.right
             margins: units.gu(2)
         }
 
-        ActionIcon {
-            id:saveTimerButton
-            objectName:"saveTimerButton"
-            icon.name:   timerPropsRow.enabled ? "close" : "save"
-            width: units.gu(7)
-            height: units.gu(4)
-            icon.color: UbuntuColors.slate
-            enabled: timerFace.getCircle().hasTime && !isRunning
-            opacity: enabled ? 1: 0
-
-            Behavior on opacity {
-                UbuntuNumberAnimation{
-                    duration: UbuntuAnimation.BriskDuration
-                }
-            }
-            onClicked: {
-                timerPropsRow.enabled = !timerPropsRow.enabled;
-                timerNameField.focus = timerPropsRow.enabled;
-            }
-
-        }
-
-        Button {
-            id: startStopButton
-
-            property bool inProgress: false
-
-            objectName: "startAndStopButton"
-            width: _timerPage.width / 2 - units.gu(1)
-            height: units.gu(4)
-            enabled: !inProgress  && (isRunning || timerFace.getCircle().hasTime)
-            color: !isRunning  ? UbuntuColors.green : UbuntuColors.red
-            text: isRunning ? i18n.tr("Stop") : (true ? i18n.tr("Start") : i18n.tr("Resume"))
-            onClicked: {
-                inProgress = true;
-                if(isRunning) {
-                    _timerPage.stopTimer();
-                } else {
-                    _timerPage.startTimer();
-
-                }
-                inProgress = false;
-            }
-        }
-        ActionIcon {
-            id:resetTimerButton
-            objectName:"resetTimerButton"
-            icon.name: "reset"
-            width: units.gu(7)
-            height: units.gu(4)
-            enabled: timerFace.getCircle().hasTime && !isRunning
-            opacity: enabled ? 1: 0
-            Behavior on opacity {
-                UbuntuNumberAnimation{
-                    duration: UbuntuAnimation.BriskDuration
-                }
-            }
-
-            onClicked: {
-                timerFace.reset()
-            }
-        }
-    }
-
-    Row {
-        id: timerPropsRow
-        spacing: units.gu(2)
-        enabled: false
-        height: enabled ? units.gu(5) : 0
-        clip: true
-        anchors {
-            top: buttonRow.bottom
-            topMargin: units.gu(4)
-            horizontalCenter: parent.horizontalCenter
-            margins: units.gu(2)
-        }
-
-        Behavior on height {
-            UbuntuNumberAnimation{
-                duration: UbuntuAnimation.BriskDuration
-            }
-        }
-
-        TextField {
-            id:timerNameField
-            width:_timerPage.width - units.gu(10)
+        Row {
+            id: saveTimerRow
+            spacing: units.gu(1)
+            enabled: false
+            height: enabled ? parent.height : 0
+            clip: true
             anchors {
-                margins: units.gu(2)
+                top: parent.top
+                horizontalCenter: parent.horizontalCenter
             }
 
-            placeholderText: i18n.tr("Enter Timer description")
-            onAccepted: timerPropsRow.saveTimer();
-            maximumLength: 25
-        }
-        ActionIcon {
-            id:saveTimerAction
-            objectName:"saveTimerAction"
-            icon.name: "save"
-            width: units.gu(7)
-            height: units.gu(4)
-            onClicked: timerPropsRow.saveTimer();
+            Behavior on height {
+                UbuntuNumberAnimation{
+                    duration: UbuntuAnimation.BriskDuration
+                }
+            }
+
+            ActionIcon {
+                id:dontSaveTimerButton
+                objectName:"dontSaveTimerButton"
+                icon.name:  "close"
+                width: units.gu(7)
+                height: units.gu(4)
+                icon.color: UbuntuColors.slate
+                onClicked: {
+                    timerNameField.focus = saveTimerRow.enabled = false;
+                }
+            }
+
+            TextField {
+                id:timerNameField
+                width: buttonRow.width / 2 - units.gu(1)
+                placeholderText: i18n.tr("Enter Timer description")
+                onAccepted: saveTimerRow.saveTimer();
+                maximumLength: 25
+            }
+
+            ActionIcon {
+                id:saveTimerAction
+                enabled: timerNameField.text
+                objectName:"saveTimerAction"
+                icon.name: "save"
+                width: units.gu(7)
+                height: units.gu(4)
+                onClicked: saveTimerRow.saveTimer();
+            }
+
+            function saveTimer() {
+                clockDB.putDoc({"timer":{"time":timerFace.getTimerTime(),"message":timerNameField.text}});
+                saveTimerRow.enabled = false
+                timerNameField.text = "";
+            }
         }
 
-        function saveTimer() {
-            clockDB.putDoc({"timer":{"time":timerFace.getTimerTime(),"message":timerNameField.text}});
-            timerPropsRow.enabled = false
-            timerNameField.text = "";
+        Row {
+            id: controlRow
+            height: parent.height
+            spacing: units.gu(2)
+            anchors {
+                top: saveTimerRow.bottom
+                horizontalCenter: parent.horizontalCenter
+            }
+            ActionIcon {
+                id:saveTimerButton
+                objectName:"saveTimerButton"
+                icon.name: "save"
+                width: units.gu(7)
+                height: units.gu(4)
+                icon.color: UbuntuColors.slate
+                enabled: timerFace.getCircle().hasTime && !isRunning
+                opacity: enabled ? 1: 0
+
+                Behavior on opacity {
+                    UbuntuNumberAnimation{
+                        duration: UbuntuAnimation.BriskDuration
+                    }
+                }
+                onClicked: {
+                    timerNameField.focus = saveTimerRow.enabled = true;
+                }
+
+            }
+
+            Button {
+                id: startStopButton
+
+                property bool inProgress: false
+
+                objectName: "startAndStopButton"
+                width: buttonRow.width / 2 - units.gu(1)
+                height: units.gu(4)
+                enabled: !inProgress  && (isRunning || timerFace.getCircle().hasTime)
+                color: !isRunning  ? UbuntuColors.green : UbuntuColors.red
+                text: isRunning ? i18n.tr("Stop") :  i18n.tr("Start")
+                onClicked: {
+                    inProgress = true;
+                    if(isRunning) {
+                        _timerPage.stopTimer();
+                    } else {
+                        _timerPage.startTimer();
+
+                    }
+                    inProgress = false;
+                }
+            }
+            ActionIcon {
+                id:resetTimerButton
+                objectName:"resetTimerButton"
+                icon.name: "reset"
+                width: units.gu(7)
+                height: units.gu(4)
+                enabled: timerFace.getCircle().hasTime && !isRunning
+                opacity: enabled ? 1: 0
+                Behavior on opacity {
+                    UbuntuNumberAnimation{
+                        duration: UbuntuAnimation.BriskDuration
+                    }
+                }
+
+                onClicked: {
+                    timerFace.reset()
+                }
+            }
         }
     }
 
@@ -261,19 +279,19 @@ Item {
     }
 
     TimerListView {
-         id: timersList
-         objectName: "timersList"
-         anchors {
-             top: timerPropsRow.bottom
-             bottom: parent.bottom
-             left: parent.left
-             right: parent.right
-             topMargin: units.gu(1)
-         }
-         visible: dbAllTimersQuery.results
+        id: timersList
+        objectName: "timersList"
+        anchors {
+            top: buttonRow.bottom
+            bottom: parent.bottom
+            left: parent.left
+            right: parent.right
+            topMargin: units.gu(1)
+        }
+        visible: dbAllTimersQuery.results
 
-         model: dbAllTimersQuery
-     }
+        model: dbAllTimersQuery
+    }
 
     TimerUtils {
         id: timerAlarmUtils

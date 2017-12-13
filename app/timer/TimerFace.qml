@@ -25,7 +25,7 @@ import "../alarm"
 Item {
     id:_timerFace
     width: units.gu(24)
-    height:width + units.gu(0.5)
+    height:width
 
     property alias adjustable: timerCircle.adjustable
     property bool running: false
@@ -41,14 +41,14 @@ Item {
 
     Column {
         width: parent.width
-
+        spacing:units.gu(0.5)
         Label {
             id: timerTimeLbl
+
             objectName: "timerTimeLbl"
             width:parent.width/3            
-            height: showTimeLabel ? font.pixelSize + units.gu(1) : 0;
+            height:  font.pixelSize ;
             opacity: showTimeLabel ? 1 : 0
-            Behavior on height { UbuntuNumberAnimation { duration: UbuntuAnimation.SlowDuration } }
             anchors.horizontalCenter: parent.horizontalCenter
             font.pixelSize: units.gu(2.5)
             font.bold: running
@@ -59,7 +59,6 @@ Item {
 
         AdjustableAnalogClock {
             id: timerCircle
-
             width: parent.width
 
             property bool hasTime: timerCircle.getTime().getTime() > Date.now()
