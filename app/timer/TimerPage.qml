@@ -81,6 +81,7 @@ Item {
         adjustable: !running
         anchors {
             top: parent.top
+            topMargin:units.gu(2)
             horizontalCenter: parent.horizontalCenter
         }
 
@@ -130,7 +131,7 @@ Item {
 
         Row {
             id: saveTimerRow
-            spacing: units.gu(1)
+            spacing: units.gu(2)
             enabled: false
             height: enabled ? parent.height : 0
             clip: true
@@ -169,7 +170,7 @@ Item {
                 id:saveTimerAction
                 enabled: timerNameField.text
                 objectName:"saveTimerAction"
-                icon.name: "save"
+                icon.name: "reminder-new"
                 width: units.gu(7)
                 height: units.gu(4)
                 onClicked: saveTimerRow.saveTimer();
@@ -193,7 +194,7 @@ Item {
             ActionIcon {
                 id:saveTimerButton
                 objectName:"saveTimerButton"
-                icon.name: "save"
+                icon.name: "reminder-new"
                 width: units.gu(7)
                 height: units.gu(4)
                 icon.color: UbuntuColors.slate

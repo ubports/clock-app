@@ -204,7 +204,7 @@ Item {
 
         anchors {
             verticalCenter: parent.top
-            verticalCenterOffset: units.gu(14)
+            verticalCenterOffset: height/2 + units.gu(4)
             horizontalCenter: parent.horizontalCenter
         }
     }

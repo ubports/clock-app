@@ -50,7 +50,7 @@ Item {
             height:  font.pixelSize ;
             opacity: showTimeLabel ? 1 : 0
             anchors.horizontalCenter: parent.horizontalCenter
-            font.pixelSize: units.gu(2.5)
+            font.pixelSize: units.gu(2)
             font.bold: running
             horizontalAlignment: Text.Center
             text: timerAlarmUtils.get_time_to_alarm(timerCircle.getTime(),new Date(), running)
