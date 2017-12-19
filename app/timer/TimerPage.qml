@@ -81,7 +81,7 @@ Item {
         adjustable: !running
         anchors {
             top: parent.top
-            topMargin:units.gu(2)
+            topMargin:units.gu(1.5)
             horizontalCenter: parent.horizontalCenter
         }
 
@@ -117,13 +117,12 @@ Item {
 
     Item {
         id: buttonRow
-
         width: parent.width - units.gu(4)
         height: units.gu(4)
         clip:true
         anchors {
             top: timerFace.bottom
-            topMargin: units.gu(6)
+            topMargin: units.gu(6.5)
             left: parent.left
             right: parent.right
             margins: units.gu(2)
@@ -161,7 +160,7 @@ Item {
             TextField {
                 id:timerNameField
                 width: buttonRow.width / 2 - units.gu(1)
-                placeholderText: i18n.tr("Enter Timer description")
+                placeholderText: i18n.tr("Enter timer name")
                 onAccepted: saveTimerRow.saveTimer();
                 maximumLength: 25
             }
@@ -169,6 +168,7 @@ Item {
             ActionIcon {
                 id:saveTimerAction
                 enabled: timerNameField.text
+
                 objectName:"saveTimerAction"
                 icon.name: "reminder-new"
                 width: units.gu(7)
@@ -290,6 +290,8 @@ Item {
             topMargin: units.gu(1)
         }
         visible: dbAllTimersQuery.results
+
+        nestedListViewHack: timerNestedListViewHack
 
         model: dbAllTimersQuery
     }

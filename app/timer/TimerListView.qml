@@ -22,6 +22,8 @@ import Ubuntu.Components 1.3
 UbuntuListView {
     id: timersListView
 
+    property var nestedListViewHack: null
+
     clip: true
 //    pressDelay: 75
     currentIndex: -1
@@ -82,8 +84,8 @@ UbuntuListView {
                     text: i18n.tr("Delete")
                     iconName: "delete"
                     onTriggered: {
+                        timersListView.nestedListViewHack.release();
                         clockDB.deleteDoc( model.docId )
-                        timerNestedListViewHack.release();
                     }
                 }
             ]
@@ -92,7 +94,7 @@ UbuntuListView {
         onClicked: {
             timerFace.getCircle().setTime(new Date(model.contents.time))
             timerNameField.text = model.contents.message
-            timerNestedListViewHack.release();
+            timersListView.nestedListViewHack.release();
         }
 
         timerTime:  new Date(model.contents.time)
