@@ -177,6 +177,9 @@ Item {
             }
 
             function saveTimer() {
+                if (Qt.inputMethod.preeditText) {
+                    Qt.inputMethod.commit()
+                }
                 clockDB.putDoc({"timer":{"time":timerFace.getTimerTime(),"message":timerNameField.text}});
                 saveTimerRow.enabled = false
                 timerNameField.text = "";
