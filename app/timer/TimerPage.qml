@@ -167,8 +167,8 @@ Item {
 
             ActionIcon {
                 id:saveTimerAction
-                enabled: timerNameField.text
-
+                enabled: timerNameField.displayText
+                opacity: enabled ? 1 : 0.5
                 objectName:"saveTimerAction"
                 icon.name: "reminder-new"
                 width: units.gu(7)
