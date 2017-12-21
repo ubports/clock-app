@@ -58,15 +58,17 @@ Page {
     Loader {
         id: bottomEdgeLoader
         asynchronous: true
-        onLoaded: hideBottomEdgeHintTimer.start()
+        onLoaded: {
+            item.alarmModel = Qt.binding( function () { return  _mainPage.alarmModel } );
+            item.hint.visible = Qt.binding( function () { return _mainPage.isClockPage } );
+            hideBottomEdgeHintTimer.start();
+        }
         Component.onCompleted: setSource("components/AlarmBottomEdge.qml", {
                                              "objectName": "bottomEdge",
                                              "parent": _mainPage,
                                              "pageStack": mainStack,
-                                             "alarmModel": Qt.binding( function () { return  _mainPage.alarmModel } ),
-                                             "hint.visible": Qt.binding( function () { return _mainPage.isClockPage } ),
                                              "hint.objectName": "bottomEdgeHint"
-                                         })
+                                         });
     }
 
     AlarmUtils {
@@ -87,6 +89,18 @@ Page {
             localizedClockDateString: _mainPage.localizedDateString
             width: clockApp.width
             height: listview.height
+            onStartupAnimationEnd: {
+                stopwatchPageLoader.setSource("stopwatch/StopwatchPage.qml" ,{
+                                                                     "notLocalizedClockTimeString": _mainPage.notLocalizedDateTimeString,
+                                                                     "localizedClockTimeString": _mainPage.localizedTimeString,
+                                                                     "localizedClockDateString": _mainPage.localizedDateString,
+                                                                     "width": clockApp.width,
+                                                                     "height": listview.height});
+                timerPageLoader.setSource("timer/TimerPage.qml" ,{
+                                                                 "width": clockApp.width,
+                                                                 "height": listview.height });
+            }
+
         }
 
         Loader {
@@ -94,20 +108,27 @@ Page {
             asynchronous: true
             width: clockApp.width
             height: listview.height
-            Component.onCompleted: setSource("stopwatch/StopwatchPage.qml" ,{
-                                                 "notLocalizedClockTimeString": _mainPage.notLocalizedDateTimeString,
-                                                 "localizedClockTimeString": _mainPage.localizedTimeString,
-                                                 "localizedClockDateString": _mainPage.localizedDateString,
-                                                 "width": clockApp.width,
-                                                 "height": listview.height});
             onLoaded: {
                 if (this.item.isRunning) {
                     listview.moveToStopwatchPage()
                 }
             }
         }
-    }
 
+        Loader {
+            id:timerPageLoader
+            asynchronous: true
+            active: alarmModel !== null || timerPageLoader.item;
+            width: clockApp.width
+            height: listview.height
+            onLoaded: {
+                item.alarmModel = Qt.binding( function () { return  _mainPage.alarmModel } )
+                if (this.item.isRunning) {
+                    listview.moveToTimerPage()
+                }
+            }
+        }
+    }
 
     header: PageHeader {
         visible:true
@@ -148,6 +169,11 @@ Page {
         function moveToStopwatchPage() {
             moveAnimation.moveTo(listview.originX + listview.width)
             listview.currentIndex = 1
+        }
+
+        function moveToTimerPage() {
+            moveAnimation.moveTo(listview.originX + listview.width*2)
+            listview.currentIndex = 2
         }
 
         function moveToClockPage() {
@@ -214,13 +240,18 @@ Page {
                 when:  bottomEdgeLoader.item && bottomEdgeLoader.item.hint.visible &&
                        (bottomEdgeLoader.item.hint.status == BottomEdgeHint.Active || bottomEdgeLoader.item.hint.status == BottomEdgeHint.Locked)
                 PropertyChanges { target: bottomRow; anchors.bottomMargin:  units.gu(4); }
+              },
+             State {
+                name: "keyboard-visible"
+                when: Qt.inputMethod.visible
+                PropertyChanges { target: bottomRow; anchors.bottomMargin: -bottomRow.height; }
               }
          ]
         anchors {
             bottom: parent.bottom
             left: parent.left
             right: parent.right
-            bottomMargin: 0
+            bottomMargin: units.gu(1);
         }
     }
 }

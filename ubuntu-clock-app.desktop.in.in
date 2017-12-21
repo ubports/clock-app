@@ -1,7 +1,7 @@
 [Desktop Entry]
 Version=1.0
 _Name=Clock
-_Comment=A sophisticated clock app that provides world clock, alarm and stopwatch functionality.
+_Comment=A sophisticated clock app that provides world clock, alarm , stopwatch and timer functionality.
 _Keywords=time;alarm;alert;clock;world;stopwatch;
 Exec=@EXEC@
 Icon=@ICON@
@@ -9,5 +9,5 @@ Terminal=false
 Type=Application
 X-Ubuntu-Touch=true
 X-Ubuntu-Default-Department-ID=accessories
-X-Ubuntu-Splash-Color=#F5F5F5
+X-Ubuntu-Splash-Color=#111111
 X-Ubuntu-Supported-Orientations=portrait
