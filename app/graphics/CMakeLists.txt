@@ -7,6 +7,8 @@ set(GRAPHICS_FILES
     Minute_Hand_Shadow@27.png
     Second_Hand@27.png
     Second_Hand_Shadow@27.png
+    Hour_Adjust_Circle@27.png
+    Minute_Adjust_Cirlce@27.png
 )
 
 # make the files visible in the qtcreator tree

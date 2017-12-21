@@ -14,6 +14,8 @@ set(COMPONENTS_QML_JS_FILES
     Information.qml
     NestedListviewsHack.qml
     Shadow.qml
+    AdjustableAnalogClock.qml
+    TimerUtils.qml
 )
 
 # make the files visible in the qtcreator tree

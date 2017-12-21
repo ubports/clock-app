@@ -12,6 +12,10 @@ Item {
     property ListView nestedListView : null
     property ListView parentListView : null
 
+    function release() {
+        parentListView.interactive = true;
+    }
+
     MouseArea {
         z:10
         id:aboveNestedList
@@ -22,7 +26,8 @@ Item {
             right:parent.right
         }
         propagateComposedEvents: true
-        onPressed: { listview.interactive = true ; mouse.accepted = false }
+        preventStealing: mouseFlickHack.preventFlick
+        onPressed: { parentListView.interactive = true ; mouse.accepted = false }
     }
     MouseArea {
         z:10

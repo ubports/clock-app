@@ -44,7 +44,7 @@ Item {
 
         anchors {
             top: parent.top
-            topMargin: units.gu(2)
+            topMargin: units.gu(4)
             horizontalCenter: parent.horizontalCenter
         }
         MouseArea {

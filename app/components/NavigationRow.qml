@@ -22,21 +22,23 @@ import QtGraphicalEffects 1.0
 
 Item {
     id: bottomRow
-
+    anchors.topMargin: units.gu(5)
     height: units.gu(6)
-
+    layer.enabled: true
+    layer.effect: DropShadow {
+        source:iconWrapper
+        transparentBorder:true
+        cached:true
+        verticalOffset: -1
+        radius: 1
+        samples: 3
+        color: "#202F2F2F"
+    }
     Rectangle {
         id:iconWrapper
         anchors.fill:parent
         color: theme.palette.normal.background
-        layer.enabled: true
-        layer.effect:  DropShadow {
-            cached:true
-            verticalOffset: -1
-            radius: 2
-            samples: 5
-            color: "#20000000"
-        }
+
 
         Row {
             id: iconContainer
@@ -46,7 +48,7 @@ Item {
 
             ActionIcon {
                 id: clockNavigationButton
-                 property bool isSelected: listview.currentIndex === 0
+                property bool isSelected: listview.currentIndex === 0
                 objectName: "clockNavigationButton"
                 label.text: isSelected ? i18n.tr("Clock") : ""
                 height:units.gu(5)
@@ -66,6 +68,18 @@ Item {
                 icon.name: "stopwatch"
                 icon.color: isSelected ? UbuntuColors.blue : UbuntuColors.slate
                 onClicked:  listview.moveToStopwatchPage()
+            }
+
+            ActionIcon {
+                property bool isSelected: listview.currentIndex === 2
+                id: timerNavigationButton
+                objectName: "timerNavigationButton"
+                label.text: isSelected ? i18n.tr("Timer") : ""
+                height:units.gu(5)
+                width: units.gu(7)
+                icon.name: "timer"
+                icon.color: isSelected ? UbuntuColors.blue : UbuntuColors.slate
+                onClicked:  listview.moveToTimerPage()
             }
         }
     }
