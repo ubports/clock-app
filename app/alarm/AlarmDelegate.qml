@@ -25,7 +25,7 @@ ListItem {
     property var localTime
     property bool showAlarmFrequency
     property string alarmOccurrence: type === Alarm.Repeating ? alarmUtils.format_day_string(daysOfWeek, type)
-                                                              : model.enabled ? alarmUtils.get_time_to_alarm(model.date, localTime)
+                                                              : model && model.enabled ? alarmUtils.get_time_to_alarm(model.date, localTime)
                                                                               : ""
 
     onShowAlarmFrequencyChanged: {
@@ -38,7 +38,7 @@ ListItem {
         textChangeAnimation.start()
     }
 
-    height: mainLayout.height + divider.height
+    height: visible ? mainLayout.height + divider.height : 0
 
     SequentialAnimation {
         id: textChangeAnimation
