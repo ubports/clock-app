@@ -18,6 +18,7 @@
 
 import QtQuick 2.4
 import Ubuntu.Components 1.3
+import "../timer"
 
 Page {
     id: alarmPage
@@ -32,6 +33,11 @@ Page {
     signal bottomEdgeClosed()
 
     Component.onCompleted: console.log("[LOG]: Alarm Page loaded")
+
+    ActiveTimers {
+        id: activeTimers
+        alarmModel: alarmPage.model
+    }
 
     PageHeader {
         id: standardHeader
@@ -150,7 +156,7 @@ Page {
             margins: units.gu(2)
             verticalCenter: parent.verticalCenter
         }
-        active: alarmPage.model ? alarmPage.model.count === 0 : true
+        active: alarmPage.model && (alarmPage.model.count === 0 || alarmPage.model.count === activeTimers.count()-1)
         Component.onCompleted: {
             setSource(Qt.resolvedUrl("../components/EmptyState.qml"),
                       {

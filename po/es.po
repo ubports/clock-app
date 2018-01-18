@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-04 10:26+0300\n"
-"PO-Revision-Date: 2017-11-26 10:20+0000\n"
+"PO-Revision-Date: 2017-12-10 07:58+0000\n"
 "Last-Translator: advocatux <advocatux@airpost.net>\n"
 "Language-Team: Spanish <https://translate.ubports.com/projects/ubports/clock-"
 "app/es/>\n"
@@ -122,15 +122,15 @@ msgstr "Cambiar fecha y hora"
 
 #: app/alarm/AlarmSettingsPage.qml:234
 msgid "Theme"
-msgstr ""
+msgstr "Tema"
 
 #: app/alarm/AlarmSettingsPage.qml:234
 msgid "Theme (system theme on App start)"
-msgstr ""
+msgstr "Tema (tema del sistema en el inicio de la aplicación)"
 
 #: app/alarm/AlarmSettingsPage.qml:235
 msgid "Theme (will apply after App restart)"
-msgstr ""
+msgstr "Tema (Se aplicará tras el reinicio de la App)"
 
 #: app/alarm/AlarmUtils.qml:31
 msgid "Never"
@@ -211,13 +211,12 @@ msgid "Total Time"
 msgstr "Tiempo total"
 
 #: app/components/Information.qml:8
-#, fuzzy
 msgid "App Information"
-msgstr "Información"
+msgstr "Información de la aplicación"
 
 #: app/components/Information.qml:17
 msgid "Get the source"
-msgstr "Traer el código"
+msgstr "Obtener el código"
 
 #: app/components/Information.qml:18
 msgid "Report issues"
@@ -228,14 +227,13 @@ msgid "Help translate"
 msgstr "Ayudar a traducir"
 
 #: app/components/Information.qml:48
-#, fuzzy
 msgid "Clock App"
-msgstr "Reloj"
+msgstr "Aplicación de reloj"
 
 #: app/components/Information.qml:54
-#, fuzzy, qt-format
+#, qt-format
 msgid "Version %1"
-msgstr "en %1m"
+msgstr "Versión %1"
 
 #: app/components/NavigationRow.qml:51
 msgid "Clock"
@@ -307,7 +305,7 @@ msgstr "%1m %2"
 
 #: app/worldclock/UserWorldCityDelegate.qml:170
 msgid "Same time"
-msgstr "Misma hora"
+msgstr "Mismo tiempo"
 
 #: app/worldclock/AddWorldCityButton.qml:32
 msgid "Add"

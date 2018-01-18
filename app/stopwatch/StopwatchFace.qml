@@ -27,6 +27,8 @@ ClockCircle {
     // Property to hold the total time (in milliseconds)
     property int milliseconds: 0
 
+    isFoldVisible: false
+
     width: units.gu(24)
 
     StopwatchFormatTime {

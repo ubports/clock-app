@@ -12,7 +12,7 @@
             "urls": "share/url-dispatcher/urls/com.ubuntu.clock_clock.url-dispatcher"
         }
     },
-    "version": "3.8.@REVNO@",
+    "version": "3.9.@REVNO@",
     "maintainer": "UBports <community@ubports.com>",
     "x-test": {
         "autopilot": {
