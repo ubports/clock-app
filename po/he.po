@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-04 10:26+0300\n"
-"PO-Revision-Date: 2017-09-15 23:24+0000\n"
+"PO-Revision-Date: 2018-02-09 12:30+0000\n"
 "Last-Translator: Eran <etherpulse@gmail.com>\n"
 "Language-Team: Hebrew <https://translate.ubports.com/projects/ubports/clock-"
 "app/he/>\n"
@@ -122,15 +122,15 @@ msgstr "שינוי זמן ותאריך"
 
 #: app/alarm/AlarmSettingsPage.qml:234
 msgid "Theme"
-msgstr ""
+msgstr "ערכת נושא"
 
 #: app/alarm/AlarmSettingsPage.qml:234
 msgid "Theme (system theme on App start)"
-msgstr ""
+msgstr "ערכת נושא ( שימוש בערכת נושא של המערכת בהפעלת היישום )"
 
 #: app/alarm/AlarmSettingsPage.qml:235
 msgid "Theme (will apply after App restart)"
-msgstr ""
+msgstr "ערכת נושא ( תאותחל בהפעלת היישום מחדש )"
 
 #: app/alarm/AlarmUtils.qml:31
 msgid "Never"
@@ -661,7 +661,7 @@ msgstr "באולה"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:88
 msgid "Black Rock City"
-msgstr ""
+msgstr "בלאק רוק סיטי"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:89
 msgid "Blantyre"
@@ -784,7 +784,7 @@ msgstr "קיימברידג'"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:106
 msgid "Canary"
-msgstr ""
+msgstr "קאנארי"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:107
 msgid "Canberra"
@@ -828,7 +828,7 @@ msgstr "במרוקו"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:112
 msgid "Cayman Palms"
-msgstr ""
+msgstr "קיימן פאלמס"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:112
 msgid "Cayman Islands"
@@ -1049,7 +1049,7 @@ msgstr "גיברלטר"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:153
 msgid "Grand Turk"
-msgstr ""
+msgstr "גראנד טורק"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:153
 msgid "Turks and Caicos Islands"
@@ -1302,7 +1302,7 @@ msgstr "כווית"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:200
 msgid "Kyiv"
-msgstr ""
+msgstr "קייב"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:202
 msgid "Lagos"
@@ -1366,7 +1366,7 @@ msgstr "מקאו"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:213
 msgid "Macao"
-msgstr ""
+msgstr "מאקו"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:214
 msgid "Madison"
@@ -1555,7 +1555,7 @@ msgstr "ניו אורלינס"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:250
 msgid "New Salem"
-msgstr ""
+msgstr "ניו סיילם"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:251
 msgid "New South Wales"
@@ -1713,7 +1713,7 @@ msgstr "אקוודור"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:281
 msgid "Rangoon"
-msgstr ""
+msgstr "ראנגון"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:281
 msgid "Myanmar"
@@ -1985,7 +1985,7 @@ msgstr "מונגוליה"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:331
 msgid "UTC"
-msgstr ""
+msgstr "UTC"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:333
 msgid "Vancouver"
@@ -2029,7 +2029,7 @@ msgstr "וושינגטון די. סי."
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:342
 msgid "Winamac"
-msgstr ""
+msgstr "וינאמק"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:343
 msgid "Winnipeg"
