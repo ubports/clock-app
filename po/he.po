@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-04 10:26+0300\n"
-"PO-Revision-Date: 2018-02-09 12:30+0000\n"
-"Last-Translator: Eran <etherpulse@gmail.com>\n"
+"PO-Revision-Date: 2018-03-04 20:25+0000\n"
+"Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://translate.ubports.com/projects/ubports/clock-"
 "app/he/>\n"
 "Language: he\n"
@@ -26,7 +26,7 @@ msgstr "מאתר מיקום…"
 
 #: app/alarm/AlarmSound.qml:60 app/alarm/EditAlarmPage.qml:323
 msgid "Sound"
-msgstr "צליל התרעה"
+msgstr "צליל"
 
 #: app/alarm/AlarmSound.qml:190
 msgid "Custom alarm sounds"
@@ -64,7 +64,7 @@ msgstr "ביטול הבחירה"
 
 #: app/alarm/AlarmPage.qml:79 app/alarm/AlarmRepeat.qml:66
 msgid "Select All"
-msgstr "בחירת הכל"
+msgstr "בחירת הכול"
 
 #: app/alarm/AlarmPage.qml:102 app/alarm/AlarmList.qml:64
 #: app/worldclock/UserWorldCityList.qml:71
@@ -97,7 +97,7 @@ msgstr "הגדרות"
 #, qt-format
 msgid "%1 minute"
 msgid_plural "%1 minutes"
-msgstr[0] "דקה %1"
+msgstr[0] "דקה"
 msgstr[1] "%1 דקות"
 
 #: app/alarm/AlarmSettingsPage.qml:99
@@ -211,31 +211,29 @@ msgid "Total Time"
 msgstr "זמן כולל"
 
 #: app/components/Information.qml:8
-#, fuzzy
 msgid "App Information"
-msgstr "מידע"
+msgstr "מידע על היישומון"
 
 #: app/components/Information.qml:17
 msgid "Get the source"
-msgstr "הורידו את הקוד"
+msgstr "הורדת קוד המקור"
 
 #: app/components/Information.qml:18
 msgid "Report issues"
-msgstr "דווחו על בעיות"
+msgstr "דיווח על בעיות"
 
 #: app/components/Information.qml:19
 msgid "Help translate"
-msgstr "עיזרו לתרגם"
+msgstr "סיוע בתרגום"
 
 #: app/components/Information.qml:48
-#, fuzzy
 msgid "Clock App"
-msgstr "שעון"
+msgstr "יישומון שעון"
 
 #: app/components/Information.qml:54
-#, fuzzy, qt-format
+#, qt-format
 msgid "Version %1"
-msgstr "בתוך %1m"
+msgstr "גרסה %1"
 
 #: app/components/NavigationRow.qml:51
 msgid "Clock"
@@ -311,7 +309,7 @@ msgstr "אותו זמן"
 
 #: app/worldclock/AddWorldCityButton.qml:32
 msgid "Add"
-msgstr "הוספת"
+msgstr "הוספה"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:48
 msgid "Abidjan"
@@ -1406,7 +1404,7 @@ msgstr "הפיליפינים"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:221
 msgid "Marengo"
-msgstr ""
+msgstr "מרנגו"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:222
 msgid "Martinique"
@@ -1434,7 +1432,7 @@ msgstr "מנדוסה"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:227
 msgid "Metlakatla"
-msgstr ""
+msgstr "מטלקטלה"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:228
 msgid "Mexico City"
@@ -1579,7 +1577,7 @@ msgstr "קלדוניה החדשה"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:255
 msgid "Nuestra Señora de La Paz"
-msgstr ""
+msgstr "נואסטרה סניורה דה לה פאס"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:257
 msgid "Oklahoma City"
@@ -1997,7 +1995,7 @@ msgstr "קריית הוותיקן"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:335
 msgid "Vevay"
-msgstr ""
+msgstr "ויוואי"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:336
 msgid "Vienna"
