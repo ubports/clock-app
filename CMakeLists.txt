@@ -99,6 +99,8 @@ else(CLICK_MODE)
   set(ICON ${CMAKE_INSTALL_PREFIX}/${UBUNTU-CLOCK_APP_DIR}/${ICON_FILE})
 endif(CLICK_MODE)
 
+install(FILES app/${ICON_FILE} DESTINATION ${UBUNTU-CALCULATOR-APP_DIR})
+
 if(${CLICK_MODE})
   message("-- Configuring manifest.json")
 
