@@ -8,16 +8,17 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-04 10:26+0300\n"
-"PO-Revision-Date: 2016-06-06 04:20+0000\n"
-"Last-Translator: Po-Hsu Lin <po-hsu.lin@canonical.com>\n"
-"Language-Team: Chinese (Traditional) <zh_TW@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2018-02-23 03:36+0000\n"
+"Last-Translator: P.-H. Lin <cypressyew@gmail.com>\n"
+"Language-Team: Chinese (Traditional) "
+"<https://translate.ubports.com/projects/ubports/clock-app/zh_Hant/>\n"
+"Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2.15\n"
 "X-Launchpad-Export-Date: 2017-04-05 07:41+0000\n"
-"X-Generator: Launchpad (build 18335)\n"
 
 #: app/clock/ClockPage.qml:257
 msgid "Retrieving location..."
@@ -112,7 +113,7 @@ msgstr "小睡"
 
 #: app/alarm/AlarmSettingsPage.qml:183
 msgid "Vibration"
-msgstr "震動"
+msgstr "振動"
 
 #: app/alarm/AlarmSettingsPage.qml:209
 msgid "Change time and date"
@@ -120,15 +121,15 @@ msgstr "變更時間和日期"
 
 #: app/alarm/AlarmSettingsPage.qml:234
 msgid "Theme"
-msgstr ""
+msgstr "佈景主題"
 
 #: app/alarm/AlarmSettingsPage.qml:234
 msgid "Theme (system theme on App start)"
-msgstr ""
+msgstr "佈景主題（程式啟動時的系統佈景主題）"
 
 #: app/alarm/AlarmSettingsPage.qml:235
 msgid "Theme (will apply after App restart)"
-msgstr ""
+msgstr "佈景主體（將在程式重新啟動後套用）"
 
 #: app/alarm/AlarmUtils.qml:31
 msgid "Never"
@@ -209,40 +210,37 @@ msgid "Total Time"
 msgstr "總時間"
 
 #: app/components/Information.qml:8
-#, fuzzy
 msgid "App Information"
-msgstr "震動"
+msgstr "應用程式資訊"
 
 #: app/components/Information.qml:17
 msgid "Get the source"
-msgstr ""
+msgstr "取得原始碼"
 
 #: app/components/Information.qml:18
 msgid "Report issues"
-msgstr ""
+msgstr "回報問題"
 
 #: app/components/Information.qml:19
 msgid "Help translate"
-msgstr ""
+msgstr "協助翻譯"
 
 #: app/components/Information.qml:48
-#, fuzzy
 msgid "Clock App"
 msgstr "時鐘"
 
 #: app/components/Information.qml:54
-#, fuzzy, qt-format
+#, qt-format
 msgid "Version %1"
-msgstr "於 %1 分鐘後"
+msgstr "版本 %1"
 
 #: app/components/NavigationRow.qml:51
 msgid "Clock"
 msgstr "時鐘"
 
 #: app/components/NavigationRow.qml:63
-#, fuzzy
 msgid "Stopwatch"
-msgstr "停止"
+msgstr "碼表"
 
 #: app/worldclock/WorldCityList.qml:56
 msgid "Select a city"
@@ -1566,7 +1564,7 @@ msgstr "紐約"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:253
 msgid "Newfoundland"
-msgstr ""
+msgstr "紐芬蘭"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:254
 msgid "Nouméa"
