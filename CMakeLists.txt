@@ -36,7 +36,7 @@ set(APP_NAME                clock)
 set(APP_HARDCODE            ubuntu-clock-app)
 set(MAIN_QML                ${APP_HARDCODE}.qml)
 set(DESKTOP_FILE            "${APP_HARDCODE}.desktop")
-set(ICON                    clock-app@30.png)
+set(ICON_FILE                    clock-app@30.png)
 SET(AUTOPILOT_DIR           ubuntu_clock_app)
 set(URLS_FILE               "${PROJECT_NAME}_${APP_NAME}.url-dispatcher")
 
@@ -48,6 +48,7 @@ if(CLICK_MODE)
   set(QT_IMPORTS_DIR "${CMAKE_INSTALL_LIBDIR}")
   set(EXEC "qmlscene $@ ${UBUNTU-CLOCK_APP_DIR}/${MAIN_QML}")
   set(MODULE_PATH ${QT_IMPORTS_DIR})
+  set(ICON ${ICON_FILE})
   # Case of git source control
     if(NOT REVNO)
       execute_process(
@@ -95,6 +96,7 @@ else(CLICK_MODE)
             OUTPUT_STRIP_TRAILING_WHITESPACE
     )
   set(MODULE_PATH ${QT_IMPORTS_DIR}/ClockApp)
+  set(ICON ${CMAKE_INSTALL_PREFIX}/${UBUNTU-CLOCK_APP_DIR}/${ICON_FILE})
 endif(CLICK_MODE)
 
 if(${CLICK_MODE})
