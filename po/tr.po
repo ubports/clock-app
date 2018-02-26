@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-04 10:26+0300\n"
-"PO-Revision-Date: 2017-11-26 08:54+0000\n"
-"Last-Translator: Arda Canbolat <oardacn@gmail.com>\n"
+"PO-Revision-Date: 2018-02-26 16:14+0000\n"
+"Last-Translator: Hüseyin Soylu <hsoyluu34@gmail.com>\n"
 "Language-Team: Turkish <https://translate.ubports.com/projects/ubports/clock-"
 "app/tr/>\n"
 "Language: tr\n"
@@ -221,11 +221,11 @@ msgstr "Kaynağa bak"
 
 #: app/components/Information.qml:18
 msgid "Report issues"
-msgstr "Sorun bildir"
+msgstr "Sorunları bildir"
 
 #: app/components/Information.qml:19
 msgid "Help translate"
-msgstr "Çevirmeye yardım et"
+msgstr "Çeviriye yardımcı ol"
 
 #: app/components/Information.qml:48
 #, fuzzy
