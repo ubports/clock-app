@@ -36,7 +36,7 @@ set(APP_NAME                clock)
 set(APP_HARDCODE            ubuntu-clock-app)
 set(MAIN_QML                ${APP_HARDCODE}.qml)
 set(DESKTOP_FILE            "${APP_HARDCODE}.desktop")
-set(ICON_FILE                    clock-app@30.png)
+set(ICON_FILE               clock-app@30.png)
 SET(AUTOPILOT_DIR           ubuntu_clock_app)
 set(URLS_FILE               "${PROJECT_NAME}_${APP_NAME}.url-dispatcher")
 
@@ -98,8 +98,6 @@ else(CLICK_MODE)
   set(MODULE_PATH ${QT_IMPORTS_DIR}/ClockApp)
   set(ICON ${CMAKE_INSTALL_PREFIX}/${UBUNTU-CLOCK_APP_DIR}/${ICON_FILE})
 endif(CLICK_MODE)
-
-install(FILES app/${ICON_FILE} DESTINATION ${UBUNTU-CALCULATOR-APP_DIR})
 
 if(${CLICK_MODE})
   message("-- Configuring manifest.json")
