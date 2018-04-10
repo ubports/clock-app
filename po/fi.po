@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-04 10:26+0300\n"
-"PO-Revision-Date: 2018-01-17 08:15+0000\n"
+"PO-Revision-Date: 2018-04-10 08:03+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://translate.ubports.com/projects/ubports/clock-"
 "app/fi/>\n"
@@ -122,15 +122,15 @@ msgstr "Muuta aikaa tai päiväystä"
 
 #: app/alarm/AlarmSettingsPage.qml:234
 msgid "Theme"
-msgstr ""
+msgstr "Teema"
 
 #: app/alarm/AlarmSettingsPage.qml:234
 msgid "Theme (system theme on App start)"
-msgstr ""
+msgstr "Teema (järjestelmän teema sovelluksen käynnistyessä)"
 
 #: app/alarm/AlarmSettingsPage.qml:235
 msgid "Theme (will apply after App restart)"
-msgstr ""
+msgstr "Teema (tulee voimaan sovelluksen uudelleenkäynnistyksen myötä)"
 
 #: app/alarm/AlarmUtils.qml:31
 msgid "Never"
@@ -211,9 +211,8 @@ msgid "Total Time"
 msgstr "Kokonaisaika"
 
 #: app/components/Information.qml:8
-#, fuzzy
 msgid "App Information"
-msgstr "Tietoja"
+msgstr "Sovellustietoja"
 
 #: app/components/Information.qml:17
 msgid "Get the source"
@@ -228,14 +227,13 @@ msgid "Help translate"
 msgstr "Osallistu lokalisointiin"
 
 #: app/components/Information.qml:48
-#, fuzzy
 msgid "Clock App"
-msgstr "Kello"
+msgstr "Kellosovellus"
 
 #: app/components/Information.qml:54
-#, fuzzy, qt-format
+#, qt-format
 msgid "Version %1"
-msgstr "– %1m"
+msgstr "Versio %1"
 
 #: app/components/NavigationRow.qml:51
 msgid "Clock"
