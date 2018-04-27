@@ -19,6 +19,7 @@
 import QtQuick 2.4
 import Ubuntu.Components 1.3
 import QtSystemInfo 5.0
+import QtGraphicalEffects 1.0
 import Qt.labs.settings 1.0
 
 import "upstreamcomponents"
@@ -84,11 +85,12 @@ Page {
         id: navigationModel
         ClockPage {
             id: clockPage
+            anchors.bottomMargin: units.gu(4)
             notLocalizedClockTimeString: _mainPage.notLocalizedDateTimeString
             localizedClockTimeString: _mainPage.localizedTimeString
             localizedClockDateString: _mainPage.localizedDateString
             width: clockApp.width
-            height: listview.height
+            height: listview.height -units.gu(4)
             onStartupAnimationEnd: {
                 stopwatchPageLoader.setSource("stopwatch/StopwatchPage.qml" ,{
                                                                      "notLocalizedClockTimeString": _mainPage.notLocalizedDateTimeString,
@@ -107,7 +109,8 @@ Page {
             id:stopwatchPageLoader
             asynchronous: true
             width: clockApp.width
-            height: listview.height
+            height: listview.height -units.gu(4)
+            anchors.bottomMargin: units.gu(4)
             onLoaded: {
                 if (this.item.isRunning) {
                     listview.moveToStopwatchPage()
@@ -120,7 +123,8 @@ Page {
             asynchronous: true
             active: alarmModel !== null || timerPageLoader.item;
             width: clockApp.width
-            height: listview.height
+            height: listview.height- units.gu(4)
+            anchors.bottomMargin: units.gu(4)
             onLoaded: {
                 item.alarmModel = Qt.binding( function () { return  _mainPage.alarmModel } )
                 if (this.item.isRunning) {
@@ -136,12 +140,21 @@ Page {
             backgroundColor: "transparent"
             dividerColor: "transparent"
         }
+        contents: NavigationRow {
+            id: bottomRow
+            anchors {
+               fill:parent
+               leftMargin: mainTrailingActions.width
+            }
+        }
 
         trailingActionBar {
+            id:mainTrailingActions
             actions : [
                 Action {
                     id: settingsIcon
                     objectName: "settingsIcon"
+                    text: i18n.tr("Settings")
                     iconName: "settings"
                     onTriggered: {
                         mainStack.push(Qt.resolvedUrl("./alarm/AlarmSettingsPage.qml"))
@@ -150,14 +163,18 @@ Page {
                 Action {
                     id: infoIcon
                     objectName: "infoIcon"
+                    text: i18n.tr("About")
                     iconName: "info"
                     onTriggered: {
                         mainStack.push(Qt.resolvedUrl("./components/Information.qml"))
                     }
                 }
             ]
+            numberOfSlots: 1
         }
     }
+
+
 
     ListView {
         id: listview
@@ -215,7 +232,8 @@ Page {
             top: parent.top
             left: parent.left
             right: parent.right
-            bottom: bottomRow.top
+            bottom: parent.bottom
+            topMargin: units.gu(4)
         }
 
         model: navigationModel
@@ -225,33 +243,29 @@ Page {
         maximumFlickVelocity: width*5
         interactive: true
     }
-
-    NavigationRow {
-        id: bottomRow
-
-        transitions: Transition {
-            PropertyAnimation {
-               properties: "anchors.bottomMargin";
-            }
-        }
-         states: [
-             State {
-                name: "up"
-                when:  bottomEdgeLoader.item && bottomEdgeLoader.item.hint.visible &&
-                       (bottomEdgeLoader.item.hint.status == BottomEdgeHint.Active || bottomEdgeLoader.item.hint.status == BottomEdgeHint.Locked)
-                PropertyChanges { target: bottomRow; anchors.bottomMargin:  units.gu(4); }
-              },
-             State {
-                name: "keyboard-visible"
-                when: Qt.inputMethod.visible
-                PropertyChanges { target: bottomRow; anchors.bottomMargin: -bottomRow.height; }
-              }
-         ]
+    //Bottom swipe area
+    DropShadow {
+       anchors.fill: bottomSwipeRect
+       verticalOffset: 0
+       radius:3
+       samples: 7
+       color: Qt.rgba(0,0,0,0.2)
+       source:bottomSwipeRect
+       transparentBorder :true
+   }
+    MouseArea {
+        z:10
+        anchors.fill:bottomSwipeRect
+        onPressed: { listview.interactive = true ; mouse.accepted = false }
+    }
+    Rectangle {
+        id:bottomSwipeRect
         anchors {
+            left:parent.left
+            right:parent.right
             bottom: parent.bottom
-            left: parent.left
-            right: parent.right
-            bottomMargin: units.gu(1);
         }
+        color:theme.palette.normal.background
+        height:units.gu(4)
     }
 }
