@@ -20,6 +20,7 @@ import QtQuick 2.4
 import Ubuntu.Components 1.3
 import QtQml.Models 2.1
 import U1db 1.0 as U1db
+import Ubuntu.Components.Popups 1.3
 import "../components"
 import "../alarm"
 
@@ -114,6 +115,21 @@ Item {
         running: isRunning
         repeat: true
     }
+
+    Popover {
+          id:pleaseSetTimePopover
+          Label {
+              id:pleaseSetTimeMsg
+              anchors.centerIn: parent
+              anchors.verticalCenter: parent.verticalCenter
+              text:i18n.tr("Please set a time before starting a timer\n by dragging the clock hands above.")
+              horizontalAlignment: Text.Center
+          }
+          autoClose: true
+          callerMargin: units.gu(1)
+          contentHeight: units.gu(5)
+          contentWidth: pleaseSetTimeMsg.width + callerMargin * 2
+      }
 
     Item {
         id: buttonRow
@@ -219,14 +235,20 @@ Item {
                 id: startStopButton
 
                 property bool inProgress: false
+                property bool isActive: !inProgress  && (isRunning || timerFace.getCircle().hasTime)
 
                 objectName: "startAndStopButton"
                 width: buttonRow.width / 2 - units.gu(1)
                 height: units.gu(4)
-                enabled: !inProgress  && (isRunning || timerFace.getCircle().hasTime)
+                opacity: isActive ? 1 : 0.5
                 color: !isRunning  ? UbuntuColors.green : UbuntuColors.red
                 text: isRunning ? i18n.tr("Stop") :  i18n.tr("Start")
                 onClicked: {
+                    if(!isActive) {
+                        pleaseSetTimePopover.caller = startStopButton
+                        pleaseSetTimePopover.show();
+                        return;
+                    }
                     inProgress = true;
                     if(isRunning) {
                         _timerPage.stopTimer();
@@ -236,6 +258,7 @@ Item {
                     }
                     inProgress = false;
                 }
+
             }
             ActionIcon {
                 id:resetTimerButton
