@@ -117,12 +117,13 @@ Item {
     }
 
     Popover {
+          //Display helping  hint when the user click on the start without setting the timer time
           id:pleaseSetTimePopover
           Label {
               id:pleaseSetTimeMsg
               anchors.centerIn: parent
               anchors.verticalCenter: parent.verticalCenter
-              text:i18n.tr("Please set a time before starting a timer\n by dragging the clock hands above.")
+              text:i18n.tr("Please set a time before starting the timer\nBy dragging the clock hands above.")
               horizontalAlignment: Text.Center
           }
           autoClose: true
