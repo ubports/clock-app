@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-04 10:26+0300\n"
-"PO-Revision-Date: 2018-04-27 13:38+0000\n"
+"PO-Revision-Date: 2018-04-29 09:03+0000\n"
 "Last-Translator: Adrià <adriamartinmor@gmail.com>\n"
 "Language-Team: Sardinian <https://translate.ubports.com/projects/ubports"
 "/clock-app/sc/>\n"
@@ -309,7 +309,7 @@ msgstr ""
 
 #: app/worldclock/AddWorldCityButton.qml:32
 msgid "Add"
-msgstr ""
+msgstr "Agiunghe"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:48
 msgid "Abidjan"
