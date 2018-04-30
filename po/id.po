@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-04 10:26+0300\n"
-"PO-Revision-Date: 2018-04-30 10:59+0000\n"
+"PO-Revision-Date: 2018-04-30 12:18+0000\n"
 "Last-Translator: Dito Kurnia P <ditokpl@gmail.com>\n"
 "Language-Team: Indonesian <https://translate.ubports.com/projects/ubports"
 "/clock-app/id/>\n"
@@ -81,7 +81,7 @@ msgstr "Klik ikon + untuk menambah alarm"
 
 #: app/alarm/AlarmRepeat.qml:40 app/alarm/EditAlarmPage.qml:286
 msgid "Repeat"
-msgstr "Pengulangan"
+msgstr "Ulangi"
 
 #: app/alarm/AlarmSettingsPage.qml:31
 msgid "Settings"
@@ -97,7 +97,7 @@ msgstr "Pengaturan"
 #, qt-format
 msgid "%1 minute"
 msgid_plural "%1 minutes"
-msgstr[0] "%1 menit"
+msgstr[0] "Menit %1"
 
 #: app/alarm/AlarmSettingsPage.qml:99
 msgid "Alarm volume"
@@ -113,7 +113,7 @@ msgstr "Tunda untuk"
 
 #: app/alarm/AlarmSettingsPage.qml:183
 msgid "Vibration"
-msgstr "Vibrasi"
+msgstr "Getaran"
 
 #: app/alarm/AlarmSettingsPage.qml:209
 msgid "Change time and date"
