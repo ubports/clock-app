@@ -141,7 +141,7 @@ Page {
             dividerColor: "transparent"
         }
         contents: NavigationRow {
-            id: bottomRow
+            id: navRow
             anchors {
                fill:parent
                leftMargin: mainTrailingActions.width
