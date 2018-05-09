@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-04 10:26+0300\n"
-"PO-Revision-Date: 2018-04-30 12:18+0000\n"
+"PO-Revision-Date: 2018-05-09 07:31+0000\n"
 "Last-Translator: Dito Kurnia P <ditokpl@gmail.com>\n"
 "Language-Team: Indonesian <https://translate.ubports.com/projects/ubports"
 "/clock-app/id/>\n"
@@ -64,7 +64,7 @@ msgstr "Jangan Pilih"
 
 #: app/alarm/AlarmPage.qml:79 app/alarm/AlarmRepeat.qml:66
 msgid "Select All"
-msgstr "Pilih Semua"
+msgstr "Pilih semua"
 
 #: app/alarm/AlarmPage.qml:102 app/alarm/AlarmList.qml:64
 #: app/worldclock/UserWorldCityList.qml:71
@@ -97,7 +97,7 @@ msgstr "Pengaturan"
 #, qt-format
 msgid "%1 minute"
 msgid_plural "%1 minutes"
-msgstr[0] "Menit %1"
+msgstr[0] "%1 menit"
 
 #: app/alarm/AlarmSettingsPage.qml:99
 msgid "Alarm volume"
@@ -181,7 +181,7 @@ msgstr "tambahkan suara dari"
 
 #: app/stopwatch/StopwatchPage.qml:83
 msgid "Stop"
-msgstr "Stop"
+msgstr "Berhenti"
 
 #: app/stopwatch/StopwatchPage.qml:83
 msgid "Start"
@@ -244,7 +244,7 @@ msgstr "Stopwatch"
 
 #: app/worldclock/WorldCityList.qml:56
 msgid "Select a city"
-msgstr "pilih kota"
+msgstr "Pilih kota"
 
 #: app/worldclock/WorldCityList.qml:63 app/worldclock/AddWorldCityButton.qml:63
 msgid "City"
