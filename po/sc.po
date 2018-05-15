@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-04 10:26+0300\n"
-"PO-Revision-Date: 2018-05-13 22:10+0000\n"
-"Last-Translator: Flavia <flavia.efloris@gmail.com>\n"
+"PO-Revision-Date: 2018-05-15 20:31+0000\n"
+"Last-Translator: Matteo Mandis <mandismatteo@gmail.com>\n"
 "Language-Team: Sardinian <https://translate.ubports.com/projects/ubports"
 "/clock-app/sc/>\n"
 "Language: sc\n"
@@ -42,7 +42,7 @@ msgstr "Sonos de ispertadore predefinidos"
 #: app/alarm/AlarmLabel.qml:37 app/alarm/AlarmLabel.qml:82
 #: app/alarm/EditAlarmPage.qml:302
 msgid "Label"
-msgstr ""
+msgstr "Nùmene"
 
 #: app/alarm/AlarmPage.qml:38 app/components/AlarmBottomEdge.qml:38
 msgid "Alarms"
