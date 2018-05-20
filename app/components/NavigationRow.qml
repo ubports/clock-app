@@ -21,7 +21,7 @@ import Ubuntu.Components 1.3
 
 
 Item {
-    id: bottomRow
+    id: navigationRow
     height: units.gu(5)
 
     Row {
