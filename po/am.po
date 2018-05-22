@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-04 10:26+0300\n"
-"PO-Revision-Date: 2018-05-13 20:51+0000\n"
+"PO-Revision-Date: 2018-05-22 04:17+0000\n"
 "Last-Translator: Samson <sambelet@yahoo.com>\n"
 "Language-Team: Amharic <https://translate.ubports.com/projects/ubports/clock-"
 "app/am/>\n"
@@ -233,7 +233,7 @@ msgstr "የ ሰአት መተግበሪያ"
 #: app/components/Information.qml:54
 #, qt-format
 msgid "Version %1"
-msgstr "እትም  %1"
+msgstr "እትም %1"
 
 #: app/components/NavigationRow.qml:51
 msgid "Clock"
