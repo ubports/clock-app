@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-04 10:26+0300\n"
-"PO-Revision-Date: 2018-03-20 08:08+0000\n"
+"PO-Revision-Date: 2018-05-25 00:09+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål "
 "<https://translate.ubports.com/projects/ubports/clock-app/nb/>\n"
@@ -215,7 +215,6 @@ msgid "App Information"
 msgstr "Programinformasjon"
 
 #: app/components/Information.qml:17
-#, fuzzy
 msgid "Get the source"
 msgstr "Hent kildekoden"
 
