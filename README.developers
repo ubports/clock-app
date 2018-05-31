@@ -1,14 +1,16 @@
-Building and running on Vivid Desktop (15.04)
-=============================================
+Building and running (using clickable): 
+=======================================
 
 Building and running the Ubuntu Clock App is quite simple. You will require
 clickable which can be obtained by following the instructions on the clickable documentaion site - http://clickable.bhdouglass.com/en/latest/
 To run on the desktop:
 
+   $ cd <clock-app code directory>
    $ clickable --desktop
    
 To install and run on the device: 
 
+   $ cd <clock-app code directory>
    $ clickable --arch=armhf clean build build-click install launch
 
 Submitting a patch upstream
@@ -45,7 +47,9 @@ Object Declarations, Grouped Properties and Lists.
 Development tools :
 ===================
 
-- Ubuntu SDK : This is an unsupported IDE however it should compile,run and debug the clock-app without any issues.
+- Ubuntu SDK : This is an unsupported IDE however it should compile,run and debug the clock-app without any issues 
+               (If you use this IDE you don't need to use clickable however this development vector is unsupported 
+                and you might encounter issues in the future)
 - Any other tool to alter text in source files should work :)
 
 LXD required packages :
