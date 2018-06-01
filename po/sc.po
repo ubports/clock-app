@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-04 10:26+0300\n"
-"PO-Revision-Date: 2018-05-28 14:47+0000\n"
-"Last-Translator: Adrià <adriamartinmor@gmail.com>\n"
+"PO-Revision-Date: 2018-06-01 13:34+0000\n"
+"Last-Translator: Stefania Reccia <stefa.reccia@gmail.com>\n"
 "Language-Team: Sardinian <https://translate.ubports.com/projects/ubports"
 "/clock-app/sc/>\n"
 "Language: sc\n"
@@ -412,7 +412,7 @@ msgstr "Albuquerque"
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:341
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:342
 msgid "United States"
-msgstr ""
+msgstr "Istados Unidos"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:53
 msgid "Algiers"
@@ -420,7 +420,7 @@ msgstr ""
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:53
 msgid "Algeria"
-msgstr ""
+msgstr "Algerìa"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:54
 msgid "Almaty"
@@ -429,7 +429,7 @@ msgstr ""
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:54
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:63
 msgid "Kazakhstan"
-msgstr ""
+msgstr "Kasakhstan"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:55
 msgid "Amman"
@@ -445,7 +445,7 @@ msgstr ""
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:56
 msgid "Netherlands"
-msgstr ""
+msgstr "Logos Bascios"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:57
 msgid "Anadyr"
@@ -455,7 +455,7 @@ msgstr ""
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:240
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:267
 msgid "Russia"
-msgstr ""
+msgstr "Rùssia"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:58
 msgid "Anchorage"
@@ -463,7 +463,7 @@ msgstr ""
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:59
 msgid "Andorra"
-msgstr ""
+msgstr "Andorra"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:60
 msgid "Ankara"
@@ -472,7 +472,7 @@ msgstr ""
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:60
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:178
 msgid "Turkey"
-msgstr ""
+msgstr "Turkia"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:61
 msgid "Ann Arbor"
@@ -532,7 +532,7 @@ msgstr ""
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:71
 msgid "Iraq"
-msgstr ""
+msgstr "Iraq"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:72
 msgid "Bahrain"
@@ -623,7 +623,7 @@ msgstr ""
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:83
 msgid "Belize"
-msgstr ""
+msgstr "Belize"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:84
 msgid "Belo Horizonte"
@@ -740,7 +740,7 @@ msgstr ""
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:100
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:226
 msgid "Argentina"
-msgstr ""
+msgstr "Argentina"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:102
 msgid "Cairo"
