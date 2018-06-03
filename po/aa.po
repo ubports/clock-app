@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-02 18:48+0000\n"
+"POT-Creation-Date: 2017-09-04 10:26+0300\n"
 "PO-Revision-Date: 2015-04-17 21:25+0000\n"
 "Last-Translator: Charif AYFARAH <ayfarah@ymail.com>\n"
 "Language-Team: Afar <aa@li.org>\n"
@@ -19,278 +19,298 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-04-05 07:39+0000\n"
 "X-Generator: Launchpad (build 18335)\n"
 
-#: ../app/alarm/AlarmLabel.qml:35 ../app/alarm/AlarmLabel.qml:79
-#: ../app/alarm/EditAlarmPage.qml:298
+#: app/clock/ClockPage.qml:257
+msgid "Retrieving location..."
+msgstr "Arac goranto..."
+
+#: app/alarm/AlarmSound.qml:60 app/alarm/EditAlarmPage.qml:323
+msgid "Sound"
+msgstr "Xongolo"
+
+#: app/alarm/AlarmSound.qml:190
+msgid "Custom alarm sounds"
+msgstr ""
+
+#: app/alarm/AlarmSound.qml:205
+msgid "Add sound"
+msgstr ""
+
+#: app/alarm/AlarmSound.qml:343
+msgid "Default alarm sounds"
+msgstr ""
+
+#: app/alarm/AlarmLabel.qml:37 app/alarm/AlarmLabel.qml:82
+#: app/alarm/EditAlarmPage.qml:302
 msgid "Label"
 msgstr "Bedu"
 
-#: ../app/alarm/AlarmList.qml:64 ../app/alarm/AlarmPage.qml:101
-#: ../app/worldclock/UserWorldCityList.qml:71
-msgid "Delete"
-msgstr "Dug"
-
-#: ../app/alarm/AlarmPage.qml:38 ../app/components/AlarmBottomEdge.qml:38
+#: app/alarm/AlarmPage.qml:38 app/components/AlarmBottomEdge.qml:38
 msgid "Alarms"
 msgstr "Alalol"
 
-#: ../app/alarm/AlarmPage.qml:52 ../app/alarm/EditAlarmPage.qml:43
-#: ../app/alarm/EditAlarmPage.qml:188
+#: app/alarm/AlarmPage.qml:53 app/alarm/EditAlarmPage.qml:43
+#: app/alarm/EditAlarmPage.qml:188
 msgid "Alarm"
 msgstr "Alalo"
 
-#: ../app/alarm/AlarmPage.qml:65 ../app/worldclock/WorldCityList.qml:83
+#: app/alarm/AlarmPage.qml:66 app/worldclock/WorldCityList.qml:83
 msgid "Back"
 msgstr "Derre"
 
-#: ../app/alarm/AlarmPage.qml:76
+#: app/alarm/AlarmPage.qml:77
 msgid "Select None"
 msgstr "Meextem mattu"
 
-#: ../app/alarm/AlarmPage.qml:78 ../app/alarm/AlarmRepeat.qml:64
+#: app/alarm/AlarmPage.qml:79 app/alarm/AlarmRepeat.qml:66
 msgid "Select All"
 msgstr "Inkih meex"
 
-#: ../app/alarm/AlarmPage.qml:157
+#: app/alarm/AlarmPage.qml:102 app/alarm/AlarmList.qml:64
+#: app/worldclock/UserWorldCityList.qml:71
+msgid "Delete"
+msgstr "Dug"
+
+#: app/alarm/AlarmPage.qml:158
 msgid "No saved alarms"
 msgstr "Taagisen alalol ma yan"
 
-#: ../app/alarm/AlarmPage.qml:158
+#: app/alarm/AlarmPage.qml:159
 msgid "Tap the + icon to add an alarm"
 msgstr "Alalo edde osissam faxxek + xukkut"
 
-#: ../app/alarm/AlarmRepeat.qml:38 ../app/alarm/EditAlarmPage.qml:282
+#: app/alarm/AlarmRepeat.qml:40 app/alarm/EditAlarmPage.qml:286
 msgid "Repeat"
 msgstr "Qagis"
 
-#: ../app/alarm/AlarmSettingsPage.qml:31
+#: app/alarm/AlarmSettingsPage.qml:31
 msgid "Settings"
 msgstr "Massosu"
 
 #. TRANSLATORS: Alarm stops after
 #. TRANSLATORS: Snooze for
-#: ../app/alarm/AlarmSettingsPage.qml:56 ../app/alarm/AlarmSettingsPage.qml:57
-#: ../app/alarm/AlarmSettingsPage.qml:58 ../app/alarm/AlarmSettingsPage.qml:59
-#: ../app/alarm/AlarmSettingsPage.qml:69 ../app/alarm/AlarmSettingsPage.qml:70
-#: ../app/alarm/AlarmSettingsPage.qml:71 ../app/alarm/AlarmSettingsPage.qml:72
-#: ../app/alarm/AlarmSettingsPage.qml:122
-#: ../app/alarm/AlarmSettingsPage.qml:153
+#: app/alarm/AlarmSettingsPage.qml:56 app/alarm/AlarmSettingsPage.qml:57
+#: app/alarm/AlarmSettingsPage.qml:58 app/alarm/AlarmSettingsPage.qml:59
+#: app/alarm/AlarmSettingsPage.qml:69 app/alarm/AlarmSettingsPage.qml:70
+#: app/alarm/AlarmSettingsPage.qml:71 app/alarm/AlarmSettingsPage.qml:72
+#: app/alarm/AlarmSettingsPage.qml:122 app/alarm/AlarmSettingsPage.qml:153
 #, qt-format
 msgid "%1 minute"
 msgid_plural "%1 minutes"
 msgstr[0] "%1 miniti"
 msgstr[1] "%1 miniti"
 
-#: ../app/alarm/AlarmSettingsPage.qml:99
+#: app/alarm/AlarmSettingsPage.qml:99
 msgid "Alarm volume"
 msgstr "Alolô kaala"
 
-#: ../app/alarm/AlarmSettingsPage.qml:121
+#: app/alarm/AlarmSettingsPage.qml:121
 msgid "Alarm stops after"
 msgstr ""
 
-#: ../app/alarm/AlarmSettingsPage.qml:152
+#: app/alarm/AlarmSettingsPage.qml:152
 msgid "Snooze for"
 msgstr "Qundugulus"
 
-#: ../app/alarm/AlarmSettingsPage.qml:183
+#: app/alarm/AlarmSettingsPage.qml:183
 msgid "Vibration"
 msgstr "Araro"
 
-#: ../app/alarm/AlarmSettingsPage.qml:209
+#: app/alarm/AlarmSettingsPage.qml:209
 msgid "Change time and date"
 msgstr "Waqla kee taarik koris"
 
-#: ../app/alarm/AlarmSound.qml:60 ../app/alarm/EditAlarmPage.qml:319
-msgid "Sound"
-msgstr "Xongolo"
-
-#: ../app/alarm/AlarmSound.qml:190
-msgid "Custom alarm sounds"
+#: app/alarm/AlarmSettingsPage.qml:234
+msgid "Theme"
 msgstr ""
 
-#: ../app/alarm/AlarmSound.qml:205
-msgid "Add sound"
+#: app/alarm/AlarmSettingsPage.qml:234
+msgid "Theme (system theme on App start)"
 msgstr ""
 
-#: ../app/alarm/AlarmSound.qml:343
-msgid "Default alarm sounds"
+#: app/alarm/AlarmSettingsPage.qml:235
+msgid "Theme (will apply after App restart)"
 msgstr ""
 
-#: ../app/alarm/AlarmUtils.qml:31
+#: app/alarm/AlarmUtils.qml:31
 msgid "Never"
 msgstr "Inkinnah"
 
-#: ../app/alarm/AlarmUtils.qml:37
+#: app/alarm/AlarmUtils.qml:37
 msgid "Weekdays"
 msgstr "Ayyam-ayroora"
 
-#: ../app/alarm/AlarmUtils.qml:41
+#: app/alarm/AlarmUtils.qml:41
 msgid "Weekends"
 msgstr "Ayyam-ellecabo"
 
-#: ../app/alarm/AlarmUtils.qml:45
+#: app/alarm/AlarmUtils.qml:45
 msgid "Daily"
 msgstr "Ayrol"
 
-#: ../app/alarm/AlarmUtils.qml:81
+#: app/alarm/AlarmUtils.qml:81
 #, no-c-format, qt-format
 msgid "in %1d %2h %3m"
 msgstr "%1ayro %2saaqata %3minitih addat"
 
-#: ../app/alarm/AlarmUtils.qml:91
+#: app/alarm/AlarmUtils.qml:91
 #, no-c-format, qt-format
 msgid "in %1h %2m"
 msgstr "%1saaqata %2minitih addat"
 
-#: ../app/alarm/AlarmUtils.qml:100
+#: app/alarm/AlarmUtils.qml:100
 #, no-c-format, qt-format
 msgid "in %1m"
 msgstr "%1minitih addat"
 
-#: ../app/alarm/EditAlarmPage.qml:37
+#: app/alarm/EditAlarmPage.qml:37
 msgid "New alarm"
 msgstr "Qusba alalo"
 
-#: ../app/alarm/EditAlarmPage.qml:37
+#: app/alarm/EditAlarmPage.qml:37
 msgid "Edit alarm"
 msgstr "Alalo Fak"
 
-#: ../app/alarm/EditAlarmPage.qml:343
+#: app/alarm/EditAlarmPage.qml:347
 msgid "Delete alarm"
 msgstr "Alalo dug"
 
 #. TRANSLATORS: This is the page title. Please keep the translation length to 3 words if possible
-#: ../app/alarm/SoundPeerPicker.qml:27
+#: app/alarm/SoundPeerPicker.qml:27
 msgid "Add sound from"
 msgstr ""
 
-#: ../app/clock/ClockPage.qml:257
-msgid "Retrieving location..."
-msgstr "Arac goranto..."
-
-#: ../app/components/Information.qml:8
-#, fuzzy
-msgid "Information"
-msgstr "Araro"
-
-#: ../app/components/Information.qml:17
-msgid "Get the source"
+#: app/stopwatch/StopwatchPage.qml:83
+msgid "Stop"
 msgstr ""
 
-#: ../app/components/Information.qml:18
-msgid "Report issues"
+#: app/stopwatch/StopwatchPage.qml:83
+msgid "Start"
 msgstr ""
 
-#: ../app/components/Information.qml:19
-msgid "Help translate"
-msgstr ""
-
-#: ../app/components/NavigationRow.qml:50 ubuntu-clock-app.desktop.in.in.h:1
-msgid "Clock"
-msgstr "Uddur"
-
-#: ../app/components/NavigationRow.qml:62
-msgid "Stopwatch"
+#: app/stopwatch/StopwatchPage.qml:83
+msgid "Resume"
 msgstr ""
 
 #. TRANSLATORS: This refers to the stopwatch lap and is shown as a header where space is limited. Constrain
 #. translation length to a few characters.
-#: ../app/stopwatch/LapListView.qml:50 ../app/stopwatch/StopwatchPage.qml:113
+#: app/stopwatch/StopwatchPage.qml:102 app/stopwatch/LapListView.qml:58
 msgid "Lap"
 msgstr ""
 
-#: ../app/stopwatch/LapListView.qml:59
-msgid "Lap Time"
-msgstr ""
-
-#: ../app/stopwatch/LapListView.qml:66
-msgid "Total Time"
-msgstr ""
-
-#: ../app/stopwatch/StopwatchPage.qml:94
-msgid "Stop"
-msgstr ""
-
-#: ../app/stopwatch/StopwatchPage.qml:94
-msgid "Start"
-msgstr ""
-
-#: ../app/stopwatch/StopwatchPage.qml:94
-msgid "Resume"
-msgstr ""
-
-#: ../app/stopwatch/StopwatchPage.qml:113
+#: app/stopwatch/StopwatchPage.qml:102
 msgid "Clear"
 msgstr ""
 
-#: ../app/worldclock/AddWorldCityButton.qml:30
-msgid "Add"
-msgstr "Osis"
+#: app/stopwatch/LapListView.qml:67
+msgid "Lap Time"
+msgstr ""
 
-#: ../app/worldclock/AddWorldCityButton.qml:61
-#: ../app/worldclock/WorldCityList.qml:63
+#: app/stopwatch/LapListView.qml:74
+msgid "Total Time"
+msgstr ""
+
+#: app/components/Information.qml:8
+#, fuzzy
+msgid "App Information"
+msgstr "Araro"
+
+#: app/components/Information.qml:17
+msgid "Get the source"
+msgstr ""
+
+#: app/components/Information.qml:18
+msgid "Report issues"
+msgstr ""
+
+#: app/components/Information.qml:19
+msgid "Help translate"
+msgstr ""
+
+#: app/components/Information.qml:48
+#, fuzzy
+msgid "Clock App"
+msgstr "Uddur"
+
+#: app/components/Information.qml:54
+#, fuzzy, qt-format
+msgid "Version %1"
+msgstr "%1minitih addat"
+
+#: app/components/NavigationRow.qml:51
+msgid "Clock"
+msgstr "Uddur"
+
+#: app/components/NavigationRow.qml:63
+msgid "Stopwatch"
+msgstr ""
+
+#: app/worldclock/WorldCityList.qml:56
+msgid "Select a city"
+msgstr "Mandar meex"
+
+#: app/worldclock/WorldCityList.qml:63 app/worldclock/AddWorldCityButton.qml:63
 msgid "City"
 msgstr "Mandara"
 
+#: app/worldclock/WorldCityList.qml:112
+msgid "Search..."
+msgstr "Gorris..."
+
+#: app/worldclock/WorldCityList.qml:216
+msgid "Searching for a city"
+msgstr "Mandar goranto"
+
+#: app/worldclock/WorldCityList.qml:221
+msgid "No City Found"
+msgstr "Mandar ma geytiminna"
+
+#: app/worldclock/WorldCityList.qml:227
+msgid "Unable to connect."
+msgstr "Fantaaxaw ma bicinna"
+
+#: app/worldclock/WorldCityList.qml:228
+msgid "Please check your network connection and try again"
+msgstr "Maganak, ku rettah fantaaxaw efeegeday gabbat kaadu"
+
 #. TRANSLATORS: this indicates if the time in a world clock
 #. is behind or ahead of the time at the current location
-#: ../app/worldclock/UserWorldCityDelegate.qml:136
+#: app/worldclock/UserWorldCityDelegate.qml:136
 msgid "behind"
 msgstr "wadirih yan"
 
-#: ../app/worldclock/UserWorldCityDelegate.qml:137
+#: app/worldclock/UserWorldCityDelegate.qml:137
 msgid "ahead"
 msgstr "foocah yan"
 
 #. TRANSLATORS: the first argument is hour, followed by
 #. minute, and the translation for either 'behind' or
 #. 'ahead'
-#: ../app/worldclock/UserWorldCityDelegate.qml:147
+#: app/worldclock/UserWorldCityDelegate.qml:147
 #, qt-format
 msgid "%1h %2m %3"
 msgstr "%1saaqat %2minit %3"
 
 #. TRANSLATORS: the first argument is hour, followed by the
 #. translation for either 'behind' or 'ahead'
-#: ../app/worldclock/UserWorldCityDelegate.qml:156
+#: app/worldclock/UserWorldCityDelegate.qml:156
 #, qt-format
 msgid "%1h %2"
 msgstr "%1saaqat %2"
 
 #. TRANSLATORS: the first argument is minute, followed by the
 #. translation for either 'behind' or 'ahead'
-#: ../app/worldclock/UserWorldCityDelegate.qml:164
+#: app/worldclock/UserWorldCityDelegate.qml:164
 #, qt-format
 msgid "%1m %2"
 msgstr "%1minit %2"
 
-#: ../app/worldclock/UserWorldCityDelegate.qml:170
+#: app/worldclock/UserWorldCityDelegate.qml:170
 msgid "Same time"
 msgstr "Waqla inkittu"
 
-#: ../app/worldclock/WorldCityList.qml:56
-msgid "Select a city"
-msgstr "Mandar meex"
-
-#: ../app/worldclock/WorldCityList.qml:112
-msgid "Search..."
-msgstr "Gorris..."
-
-#: ../app/worldclock/WorldCityList.qml:216
-msgid "Searching for a city"
-msgstr "Mandar goranto"
-
-#: ../app/worldclock/WorldCityList.qml:221
-msgid "No City Found"
-msgstr "Mandar ma geytiminna"
-
-#: ../app/worldclock/WorldCityList.qml:227
-msgid "Unable to connect."
-msgstr "Fantaaxaw ma bicinna"
-
-#: ../app/worldclock/WorldCityList.qml:228
-msgid "Please check your network connection and try again"
-msgstr "Maganak, ku rettah fantaaxaw efeegeday gabbat kaadu"
+#: app/worldclock/AddWorldCityButton.qml:32
+msgid "Add"
+msgstr "Osis"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:48
 msgid "Abidjan"

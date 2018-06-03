@@ -8,9 +8,9 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-04 10:26+0300\n"
-"PO-Revision-Date: 2017-07-19 15:49+0000\n"
-"Last-Translator: Ahmed Suliman <ahmedselaman@gmail.com>\n"
-"Language-Team: Arabic <https://ubpweblate.tnvcomp.com/projects/ubports/clock-"
+"PO-Revision-Date: 2018-02-05 05:17+0000\n"
+"Last-Translator: ubports_arabic <ubportsarabic@gmail.com>\n"
+"Language-Team: Arabic <https://translate.ubports.com/projects/ubports/clock-"
 "app/ar/>\n"
 "Language: ar\n"
 "MIME-Version: 1.0\n"
@@ -57,7 +57,7 @@ msgstr "المنبه"
 
 #: app/alarm/AlarmPage.qml:66 app/worldclock/WorldCityList.qml:83
 msgid "Back"
-msgstr "عودة"
+msgstr "للوراء"
 
 #: app/alarm/AlarmPage.qml:77
 msgid "Select None"
@@ -65,7 +65,7 @@ msgstr "لا تختر شيء"
 
 #: app/alarm/AlarmPage.qml:79 app/alarm/AlarmRepeat.qml:66
 msgid "Select All"
-msgstr "إختيار الكل"
+msgstr "تحديد كل"
 
 #: app/alarm/AlarmPage.qml:102 app/alarm/AlarmList.qml:64
 #: app/worldclock/UserWorldCityList.qml:71
@@ -86,7 +86,7 @@ msgstr "تكرار"
 
 #: app/alarm/AlarmSettingsPage.qml:31
 msgid "Settings"
-msgstr "الاعدادات"
+msgstr "الضبط"
 
 #. TRANSLATORS: Alarm stops after
 #. TRANSLATORS: Snooze for
@@ -187,11 +187,11 @@ msgstr "إضافة منبه جديد"
 
 #: app/stopwatch/StopwatchPage.qml:83
 msgid "Stop"
-msgstr "إيقاف"
+msgstr "توقف"
 
 #: app/stopwatch/StopwatchPage.qml:83
 msgid "Start"
-msgstr "ابدأ"
+msgstr "بداية"
 
 #: app/stopwatch/StopwatchPage.qml:83
 msgid "Resume"
@@ -226,11 +226,11 @@ msgstr "الحصول على المصدر"
 
 #: app/components/Information.qml:18
 msgid "Report issues"
-msgstr "الابلاغ عن مشكلة"
+msgstr "الإبلاغ عن المشكلات"
 
 #: app/components/Information.qml:19
 msgid "Help translate"
-msgstr "المساعدة في الترجمة"
+msgstr "مساعدة الترجمة"
 
 #: app/components/Information.qml:48
 #, fuzzy
@@ -260,7 +260,7 @@ msgstr "المدينة"
 
 #: app/worldclock/WorldCityList.qml:112
 msgid "Search..."
-msgstr "بحث..."
+msgstr "البحث ..."
 
 #: app/worldclock/WorldCityList.qml:216
 msgid "Searching for a city"

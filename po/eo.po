@@ -8,10 +8,10 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-04 10:26+0300\n"
-"PO-Revision-Date: 2017-11-27 11:57+0000\n"
+"PO-Revision-Date: 2017-12-10 20:48+0000\n"
 "Last-Translator: Pablo Foche <pablo.foche@gmail.com>\n"
-"Language-Team: Esperanto <https://translate.ubports.com/projects/ubports/"
-"clock-app/eo/>\n"
+"Language-Team: Esperanto <https://translate.ubports.com/projects/ubports"
+"/clock-app/eo/>\n"
 "Language: eo\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -217,11 +217,11 @@ msgstr "Informo"
 
 #: app/components/Information.qml:17
 msgid "Get the source"
-msgstr "Aliri la fonton"
+msgstr "Elŝuti la fonto-kodon"
 
 #: app/components/Information.qml:18
 msgid "Report issues"
-msgstr "Raporti problemojn"
+msgstr "Sciigi problemojn"
 
 #: app/components/Information.qml:19
 msgid "Help translate"
