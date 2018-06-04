@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-04 10:26+0300\n"
 "PO-Revision-Date: 2018-06-04 14:24+0000\n"
-"Last-Translator: Flavia <flavia.efloris@gmail.com>\n"
+"Last-Translator: Stefania Reccia <stefa.reccia@gmail.com>\n"
 "Language-Team: Sardinian <https://translate.ubports.com/projects/ubports"
 "/clock-app/sc/>\n"
 "Language: sc\n"
@@ -1379,7 +1379,7 @@ msgstr ""
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:217
 msgid "Malta"
-msgstr "Malta\n"
+msgstr "Malta"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:218
 msgid "Managua"
