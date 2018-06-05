@@ -13,7 +13,7 @@
         }
     },
     "version": "3.9.@REVNO@",
-    "maintainer": "Ubuntu App Cats <ubuntu-touch-coreapps@lists.launchpad.net>",
+    "maintainer": "UBports <dev@ubports.com>",
     "x-test": {
         "autopilot": {
             "autopilot_module": "@AUTOPILOT_DIR@",
