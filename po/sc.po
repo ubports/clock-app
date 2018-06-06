@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-04 10:26+0300\n"
-"PO-Revision-Date: 2018-06-04 14:33+0000\n"
+"PO-Revision-Date: 2018-06-06 15:52+0000\n"
 "Last-Translator: Flavia <flavia.efloris@gmail.com>\n"
 "Language-Team: Sardinian <https://translate.ubports.com/projects/ubports"
 "/clock-app/sc/>\n"
@@ -137,7 +137,7 @@ msgstr "Mai"
 
 #: app/alarm/AlarmUtils.qml:37
 msgid "Weekdays"
-msgstr ""
+msgstr "Dies de fatoriu"
 
 #: app/alarm/AlarmUtils.qml:41
 msgid "Weekends"
