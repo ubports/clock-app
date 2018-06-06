@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-04 10:26+0300\n"
-"PO-Revision-Date: 2018-06-06 15:52+0000\n"
-"Last-Translator: Flavia <flavia.efloris@gmail.com>\n"
+"PO-Revision-Date: 2018-06-06 16:21+0000\n"
+"Last-Translator: Matteo Mandis <mandismatteo@gmail.com>\n"
 "Language-Team: Sardinian <https://translate.ubports.com/projects/ubports"
 "/clock-app/sc/>\n"
 "Language: sc\n"
@@ -211,7 +211,7 @@ msgstr "Tempus totale"
 
 #: app/components/Information.qml:8
 msgid "App Information"
-msgstr "Informatzione de s'aplicatzione"
+msgstr "Informatziones de s'aplicatzione"
 
 #: app/components/Information.qml:17
 msgid "Get the source"
@@ -268,7 +268,7 @@ msgstr "Non faghet a si collegare."
 
 #: app/worldclock/WorldCityList.qml:228
 msgid "Please check your network connection and try again"
-msgstr "Controlla sa conessione de sa rete e torra a proare"
+msgstr "Controlla sa connessione de sa rete e torra a proare"
 
 #. TRANSLATORS: this indicates if the time in a world clock
 #. is behind or ahead of the time at the current location
@@ -278,7 +278,7 @@ msgstr "A coa"
 
 #: app/worldclock/UserWorldCityDelegate.qml:137
 msgid "ahead"
-msgstr "A in antis"
+msgstr "a in antis"
 
 #. TRANSLATORS: the first argument is hour, followed by
 #. minute, and the translation for either 'behind' or
@@ -420,7 +420,7 @@ msgstr "Algeri"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:53
 msgid "Algeria"
-msgstr "Algerìa"
+msgstr "Algeria"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:54
 msgid "Almaty"
