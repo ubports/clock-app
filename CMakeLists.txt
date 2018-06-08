@@ -49,17 +49,6 @@ if(CLICK_MODE)
   set(EXEC "qmlscene $@ ${UBUNTU-CLOCK_APP_DIR}/${MAIN_QML}")
   set(MODULE_PATH ${QT_IMPORTS_DIR})
   set(ICON ${ICON_FILE})
-  # Case of git source control
-    if(NOT REVNO)
-      execute_process(
-            COMMAND git rev-list --count --first-parent HEAD
-            OUTPUT_VARIABLE REVNO
-            RESULT_VARIABLE res
-            WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}"
-            OUTPUT_STRIP_TRAILING_WHITESPACE
-        )
-        message("-- Setting REVNO to ${REVNO} with result of : ${res}")
-    endif(NOT REVNO)
     if(NOT SOURCE)
         execute_process(
             COMMAND git remote -v
@@ -71,19 +60,7 @@ if(CLICK_MODE)
             WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}"
             OUTPUT_STRIP_TRAILING_WHITESPACE
         )
-      message("-- Setting SOURCE to ${SOURCE} with result of : ${res}")
-    endif(NOT SOURCE)
-   # Case of bzr source control
-    if(NOT REVNO)
-    execute_process(
-      COMMAND bzr revno
-                  OUTPUT_VARIABLE REVNO
-              WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
-              OUTPUT_STRIP_TRAILING_WHITESPACE
-      )
-        message("-- Setting REVNO to ${REVNO}")
-    endif(NOT REVNO)
-    if(NOT SOURCE)
+        message("-- Setting SOURCE to ${SOURCE} with result of : ${res}")
         set(SOURCE lp:${APP_HARDCODE})
         message("-- Setting SOURCE to ${SOURCE}")
     endif(NOT SOURCE)
