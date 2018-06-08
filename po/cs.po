@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-04 10:26+0300\n"
-"PO-Revision-Date: 2017-10-02 13:17+0000\n"
+"PO-Revision-Date: 2017-12-10 12:22+0000\n"
 "Last-Translator: Milan Korecký <milan.korecky@gmail.com>\n"
 "Language-Team: Czech <https://translate.ubports.com/projects/ubports/clock-"
 "app/cs/>\n"
@@ -123,15 +123,15 @@ msgstr "Změnit čas a datum"
 
 #: app/alarm/AlarmSettingsPage.qml:234
 msgid "Theme"
-msgstr ""
+msgstr "Vzhled"
 
 #: app/alarm/AlarmSettingsPage.qml:234
 msgid "Theme (system theme on App start)"
-msgstr ""
+msgstr "Vzhled (motiv vzhledu při startu aplikace)"
 
 #: app/alarm/AlarmSettingsPage.qml:235
 msgid "Theme (will apply after App restart)"
-msgstr ""
+msgstr "Vzhled (bude použit po restartování aplikace)"
 
 #: app/alarm/AlarmUtils.qml:31
 msgid "Never"
@@ -212,13 +212,12 @@ msgid "Total Time"
 msgstr "Celkový čas"
 
 #: app/components/Information.qml:8
-#, fuzzy
 msgid "App Information"
-msgstr "Informace"
+msgstr "Informace o aplikaci"
 
 #: app/components/Information.qml:17
 msgid "Get the source"
-msgstr "Získat zdroj"
+msgstr "Získat zdrojový kód"
 
 #: app/components/Information.qml:18
 msgid "Report issues"
@@ -226,17 +225,16 @@ msgstr "Nahlásit chyby"
 
 #: app/components/Information.qml:19
 msgid "Help translate"
-msgstr "Pomoc s překladem"
+msgstr "Pomozte s překladem"
 
 #: app/components/Information.qml:48
-#, fuzzy
 msgid "Clock App"
 msgstr "Hodiny"
 
 #: app/components/Information.qml:54
-#, fuzzy, qt-format
+#, qt-format
 msgid "Version %1"
-msgstr "za %1m"
+msgstr "Verze %1"
 
 #: app/components/NavigationRow.qml:51
 msgid "Clock"

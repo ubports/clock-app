@@ -1,5 +1,6 @@
 *.user
 builddir
+build/
 stage
 prime
 parts

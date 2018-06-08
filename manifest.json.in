@@ -13,7 +13,7 @@
         }
     },
     "version": "3.9.@REVNO@",
-    "maintainer": "UBports <community@ubports.com>",
+    "maintainer": "UBports <dev@ubports.com>",
     "x-test": {
         "autopilot": {
             "autopilot_module": "@AUTOPILOT_DIR@",
