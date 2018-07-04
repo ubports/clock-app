@@ -308,22 +308,6 @@ Item {
         onStopped:startupAnimationEnd();
 
         UbuntuNumberAnimation {
-            target: bottomRow
-            property: "anchors.topMargin"
-            from: units.gu(4)
-            to: 0
-            duration: UbuntuAnimation.SlowDuration
-        }
-
-        UbuntuNumberAnimation {
-            target: bottomRow
-            property: "opacity"
-            from: 0
-            to: 1
-            duration: UbuntuAnimation.SlowDuration
-        }
-
-        UbuntuNumberAnimation {
             target: date
             property: "opacity"
             from: 0

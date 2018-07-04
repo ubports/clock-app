@@ -34,11 +34,35 @@ AbstractButton {
         color: theme.palette.normal.background
     }
 
+    states: [
+        State {
+            name: "noText"
+            when: _label.visible == false
+            PropertyChanges {
+                target: _icon
+                anchors {
+                   centerIn:abstractButton
+                }
+
+            }
+        },
+        State {
+            name: "hasText"
+            when: _label.visible == true
+            PropertyChanges {
+                target: _icon
+                anchors {
+                   top:abstractButton.top
+                }
+
+            }
+        }
+    ]
+
     Icon {
         id: _icon
         width: parent.width - units.gu(4)
         height: width
-        anchors.top:parent.top
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.topMargin: units.gu(0.5)
         color: UbuntuColors.slate
