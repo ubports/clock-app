@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-04 10:26+0300\n"
-"PO-Revision-Date: 2018-07-05 08:17+0000\n"
+"PO-Revision-Date: 2018-07-05 15:05+0000\n"
 "Last-Translator: konrad <kohofer@gmail.com>\n"
 "Language-Team: English (United Kingdom) "
 "<https://translate.ubports.com/projects/ubports/clock-app/en_GB/>\n"
@@ -56,7 +56,7 @@ msgstr "Alarm"
 
 #: app/alarm/AlarmPage.qml:66 app/worldclock/WorldCityList.qml:83
 msgid "Back"
-msgstr "Tillbaka"
+msgstr "Back"
 
 #: app/alarm/AlarmPage.qml:77
 msgid "Select None"
@@ -69,7 +69,7 @@ msgstr "Select All"
 #: app/alarm/AlarmPage.qml:102 app/alarm/AlarmList.qml:64
 #: app/worldclock/UserWorldCityList.qml:71
 msgid "Delete"
-msgstr "Supprimer"
+msgstr "Delete"
 
 #: app/alarm/AlarmPage.qml:158
 msgid "No saved alarms"
