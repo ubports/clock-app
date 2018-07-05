@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-04 10:26+0300\n"
-"PO-Revision-Date: 2018-06-27 20:52+0000\n"
-"Last-Translator: robin <musicfree@wanadoo.fr>\n"
+"PO-Revision-Date: 2018-07-05 08:17+0000\n"
+"Last-Translator: konrad <kohofer@gmail.com>\n"
 "Language-Team: English (United Kingdom) "
 "<https://translate.ubports.com/projects/ubports/clock-app/en_GB/>\n"
 "Language: en_GB\n"
@@ -122,19 +122,19 @@ msgstr "Change time and date"
 
 #: app/alarm/AlarmSettingsPage.qml:234
 msgid "Theme"
-msgstr ""
+msgstr "Theme"
 
 #: app/alarm/AlarmSettingsPage.qml:234
 msgid "Theme (system theme on App start)"
-msgstr ""
+msgstr "Theme (system theme on App start)"
 
 #: app/alarm/AlarmSettingsPage.qml:235
 msgid "Theme (will apply after App restart)"
-msgstr ""
+msgstr "Theme (will apply after App restart)"
 
 #: app/alarm/AlarmUtils.qml:31
 msgid "Never"
-msgstr "Aldrig"
+msgstr "Never"
 
 #: app/alarm/AlarmUtils.qml:37
 msgid "Weekdays"
@@ -211,40 +211,37 @@ msgid "Total Time"
 msgstr "Total Time"
 
 #: app/components/Information.qml:8
-#, fuzzy
 msgid "App Information"
-msgstr "Vibration"
+msgstr "App Information"
 
 #: app/components/Information.qml:17
 msgid "Get the source"
-msgstr ""
+msgstr "Get the source"
 
 #: app/components/Information.qml:18
 msgid "Report issues"
-msgstr ""
+msgstr "Report issues"
 
 #: app/components/Information.qml:19
 msgid "Help translate"
-msgstr ""
+msgstr "Help translate"
 
 #: app/components/Information.qml:48
-#, fuzzy
 msgid "Clock App"
-msgstr "Clock"
+msgstr "Clock App"
 
 #: app/components/Information.qml:54
-#, fuzzy, qt-format
+#, qt-format
 msgid "Version %1"
-msgstr "in %1m"
+msgstr "Version %1"
 
 #: app/components/NavigationRow.qml:51
 msgid "Clock"
 msgstr "Clock"
 
 #: app/components/NavigationRow.qml:63
-#, fuzzy
 msgid "Stopwatch"
-msgstr "Stop"
+msgstr "Stopwatch"
 
 #: app/worldclock/WorldCityList.qml:56
 msgid "Select a city"
