@@ -1,7 +1,7 @@
 Updating translations
 =====================
 
-Translations for the Clock app happen in [Launchpad Translations] and
+Translations for the Clock app happen in [UBports Weblate] and
 are automatically committed daily on the trunk branch in the po/ folder.
 
 They are then built and installed as part of the package build, so that
@@ -38,5 +38,5 @@ language the app has got at least a translated message available for.
 
 Translations for core apps follow the standard [gettext format].
 
- [Launchpad Translations]: https://translations.launchpad.net/ubuntu-clock-app
+ [UBports Weblate]: https://translate.ubports.com/projects/ubports/clock-app/
  [gettext format]: https://www.gnu.org/software/gettext/
