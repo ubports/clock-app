@@ -1,7 +1,7 @@
 ReadMe - Ubuntu Clock App
 =========================
 
-Ubuntu Clock App is the official clock app for Ubports. We follow an open
+Ubuntu Clock App is the official clock app for Ubuntu Touch. We follow an open
 source model where the code is available to anyone to branch and hack on. The
 ubuntu clock app follows a test driven development (TDD) where tests are
 written in parallel to feature implementation to help spot regressions easier.
