@@ -9,17 +9,17 @@ If you are submitting your bugfix/patch to the clock app, please follow the
 following steps below to check whether that all tests pass before proposing a
 merge request.
 
-* Branch the clock app code, 
-   $ bzr branch lp:ubuntu-clock-app
+* Get the clock app code, 
+   $ git clone git@github.com:ubports/clock-app.git
 
 * Build the clock app,
-   $ mkdir builddir && cd builddir
+   $ mkdir build && cd build
    $ cmake ..  && cmake --build . -- -j 3
    
 Running all unit test at once
 =============================
 
-If you want to run all tests, then run the following command from the builddir,
+If you want to run all tests, then run the following command from the build dir,
 
    $ ctest --output-on-failure
    
@@ -34,8 +34,8 @@ If you want to run testcases individually, you can do so by navigating to the
 unit tests folder by,
 
 * Navigate to the tests/unit directory
-   $ cd tests/unit
+   $ cd <Project root>/tests/unit
    
 * Run the test by providing their filenames
    $ qmltestrunner -input tst_alarmLabel.qml
-   $ qmltestrunner -input tst_alarm.qml -import ../../builddir/backend
+   $ qmltestrunner -input tst_alarm.qml -import ../../build/backend
