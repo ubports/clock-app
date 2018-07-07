@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-04 10:26+0300\n"
-"PO-Revision-Date: 2018-03-11 22:28+0000\n"
+"PO-Revision-Date: 2018-06-14 12:53+0000\n"
 "Last-Translator: Aitzol Berasategi <aitzol76@gmail.com>\n"
 "Language-Team: Basque <https://translate.ubports.com/projects/ubports/clock-"
 "app/eu/>\n"
@@ -56,7 +56,7 @@ msgstr "Alarma"
 
 #: app/alarm/AlarmPage.qml:66 app/worldclock/WorldCityList.qml:83
 msgid "Back"
-msgstr "Atzera"
+msgstr "Itzuli"
 
 #: app/alarm/AlarmPage.qml:77
 msgid "Select None"

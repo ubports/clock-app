@@ -8,16 +8,17 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-04 10:26+0300\n"
-"PO-Revision-Date: 2016-09-29 12:28+0000\n"
-"Last-Translator: Fr-coord <Unknown>\n"
-"Language-Team: French <fr@li.org>\n"
-"Language: fr\n"
+"PO-Revision-Date: 2018-07-05 13:47+0000\n"
+"Last-Translator: Vince1171 <vincentvf@live.be>\n"
+"Language-Team: French (Canada) "
+"<https://translate.ubports.com/projects/ubports/clock-app/fr_CA/>\n"
+"Language: fr_CA\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 2.15\n"
 "X-Launchpad-Export-Date: 2017-04-05 07:41+0000\n"
-"X-Generator: Launchpad (build 18335)\n"
 
 #: app/clock/ClockPage.qml:257
 msgid "Retrieving location..."
@@ -59,7 +60,7 @@ msgstr "Précédent"
 
 #: app/alarm/AlarmPage.qml:77
 msgid "Select None"
-msgstr "Ne rien sélectionner"
+msgstr "Tout désélectionner"
 
 #: app/alarm/AlarmPage.qml:79 app/alarm/AlarmRepeat.qml:66
 msgid "Select All"

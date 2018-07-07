@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-04 10:26+0300\n"
-"PO-Revision-Date: 2018-05-14 09:43+0000\n"
+"PO-Revision-Date: 2018-06-16 23:07+0000\n"
 "Last-Translator: Joachim Lazaroms <joachim.pc@gmail.com>\n"
 "Language-Team: Dutch <https://translate.ubports.com/projects/ubports/clock-"
 "app/nl/>\n"
@@ -114,7 +114,7 @@ msgstr "Sluimeren gedurende"
 
 #: app/alarm/AlarmSettingsPage.qml:183
 msgid "Vibration"
-msgstr "Trilling"
+msgstr "trillen"
 
 #: app/alarm/AlarmSettingsPage.qml:209
 msgid "Change time and date"
