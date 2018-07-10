@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-04 10:26+0300\n"
 "PO-Revision-Date: 2018-07-10 13:57+0000\n"
-"Last-Translator: Flavia <flavia.efloris@gmail.com>\n"
+"Last-Translator: Stefania Reccia <stefa.reccia@gmail.com>\n"
 "Language-Team: Sardinian <https://translate.ubports.com/projects/ubports"
 "/clock-app/sc/>\n"
 "Language: sc\n"
@@ -1291,7 +1291,7 @@ msgstr "Malèsia"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:199
 msgid "Kuwait City"
-msgstr ""
+msgstr "Tzitade de Kuwait"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:199
 msgid "Kuwait"
