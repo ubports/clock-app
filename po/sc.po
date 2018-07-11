@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-04 10:26+0300\n"
-"PO-Revision-Date: 2018-07-11 12:47+0000\n"
-"Last-Translator: Flavia <flavia.efloris@gmail.com>\n"
+"PO-Revision-Date: 2018-07-11 12:48+0000\n"
+"Last-Translator: Stefania Reccia <stefa.reccia@gmail.com>\n"
 "Language-Team: Sardinian <https://translate.ubports.com/projects/ubports"
 "/clock-app/sc/>\n"
 "Language: sc\n"
@@ -954,7 +954,7 @@ msgstr "Bangladesh"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:135
 msgid "Djibouti"
-msgstr ""
+msgstr "Gibuti"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:136
 msgid "Doha"
