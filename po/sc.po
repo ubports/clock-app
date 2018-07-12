@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-04 10:26+0300\n"
-"PO-Revision-Date: 2018-07-11 12:50+0000\n"
+"PO-Revision-Date: 2018-07-12 14:04+0000\n"
 "Last-Translator: Flavia <flavia.efloris@gmail.com>\n"
 "Language-Team: Sardinian <https://translate.ubports.com/projects/ubports"
 "/clock-app/sc/>\n"
@@ -995,7 +995,7 @@ msgstr ""
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:142
 msgid "Edmonton"
-msgstr ""
+msgstr "Edmonton"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:143
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:299
@@ -1009,7 +1009,7 @@ msgstr ""
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:146
 msgid "Fortaleza"
-msgstr ""
+msgstr "Fortaleza"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:147
 msgid "Frankfurt"
@@ -1017,7 +1017,7 @@ msgstr ""
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:148
 msgid "Freetown"
-msgstr ""
+msgstr "Freetown"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:148
 msgid "Sierra Leone"
@@ -1046,7 +1046,7 @@ msgstr ""
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:153
 msgid "Grand Turk"
-msgstr ""
+msgstr "Grand Turk"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:153
 msgid "Turks and Caicos Islands"
@@ -1062,7 +1062,7 @@ msgstr ""
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:156
 msgid "Guangzhou"
-msgstr ""
+msgstr "Guangzhou"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:157
 msgid "Guatemala"
@@ -1191,7 +1191,7 @@ msgstr "Gerusalemme"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:183
 msgid "Johannesburg"
-msgstr ""
+msgstr "Johannesburg"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:185
 msgid "Kabul"
@@ -1589,7 +1589,7 @@ msgstr "Osaka"
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:258
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:325
 msgid "Japan"
-msgstr ""
+msgstr "Giapone"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:259
 msgid "Oslo"
@@ -1710,11 +1710,11 @@ msgstr ""
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:281
 msgid "Rangoon"
-msgstr ""
+msgstr "Rangoon"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:281
 msgid "Myanmar"
-msgstr ""
+msgstr "Birmània"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:282
 msgid "Reno"
@@ -1722,11 +1722,11 @@ msgstr ""
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:283
 msgid "Reston"
-msgstr ""
+msgstr "Reston"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:284
 msgid "Reykjavík"
-msgstr ""
+msgstr "Reykjavík"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:284
 msgid "Iceland"
@@ -1734,11 +1734,11 @@ msgstr "Islanda"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:285
 msgid "Riga"
-msgstr ""
+msgstr "Riga"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:285
 msgid "Latvia"
-msgstr ""
+msgstr "Letònia"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:286
 msgid "Rio de Janeiro"
@@ -1746,7 +1746,7 @@ msgstr ""
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:287
 msgid "Riyadh"
-msgstr ""
+msgstr "Riyadh"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:287
 msgid "Saudi Arabia"
@@ -1754,19 +1754,19 @@ msgstr ""
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:288
 msgid "Rome"
-msgstr ""
+msgstr "Roma"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:290
 msgid "Sacramento"
-msgstr ""
+msgstr "Sacramento"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:291
 msgid "Salt Lake City"
-msgstr ""
+msgstr "Salt Lake City"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:292
 msgid "Samoa"
-msgstr ""
+msgstr "Samoa"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:293
 msgid "San Antonio"
