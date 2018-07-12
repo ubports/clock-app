@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-04 10:26+0300\n"
-"PO-Revision-Date: 2018-07-12 14:08+0000\n"
-"Last-Translator: Stefania Reccia <stefa.reccia@gmail.com>\n"
+"PO-Revision-Date: 2018-07-12 14:17+0000\n"
+"Last-Translator: Flavia <flavia.efloris@gmail.com>\n"
 "Language-Team: Sardinian <https://translate.ubports.com/projects/ubports"
 "/clock-app/sc/>\n"
 "Language: sc\n"
@@ -1802,7 +1802,7 @@ msgstr "San Salvadòr"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:300
 msgid "Sanaa"
-msgstr ""
+msgstr "Sanaa"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:300
 msgid "Yemen"
@@ -1810,19 +1810,19 @@ msgstr ""
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:301
 msgid "Santiago"
-msgstr ""
+msgstr "Santiago"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:302
 msgid "Santo Domingo"
-msgstr ""
+msgstr "Santo Domingo"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:302
 msgid "Dominican Republic"
-msgstr ""
+msgstr "Repùblica Dominicana"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:303
 msgid "São Paulo"
-msgstr ""
+msgstr "São Paulo"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:304
 msgid "São Tomé"
@@ -1834,23 +1834,23 @@ msgstr ""
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:305
 msgid "Sarajevo"
-msgstr ""
+msgstr "Sarajevo"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:305
 msgid "Bosnia and Herzegovina"
-msgstr ""
+msgstr "Bòsnia e Erzegòvina"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:306
 msgid "Saskatchewan"
-msgstr ""
+msgstr "Saskatchewan"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:307
 msgid "Seattle"
-msgstr ""
+msgstr "Seattle"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:308
 msgid "Seoul"
-msgstr ""
+msgstr "Seul"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:308
 msgid "South Korea"
@@ -1858,19 +1858,19 @@ msgstr ""
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:309
 msgid "Shanghai"
-msgstr ""
+msgstr "Shanghai"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:310
 msgid "Singapore"
-msgstr ""
+msgstr "Singapore"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:311
 msgid "Simferopol"
-msgstr ""
+msgstr "Simferopol"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:312
 msgid "Skopje"
-msgstr ""
+msgstr "Skopje"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:312
 msgid "Macedonia"
