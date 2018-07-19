@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-04 10:26+0300\n"
-"PO-Revision-Date: 2018-07-19 11:06+0000\n"
-"Last-Translator: Stefania Reccia <stefa.reccia@gmail.com>\n"
+"PO-Revision-Date: 2018-07-22 00:00+0000\n"
+"Last-Translator: Flavia <flavia.efloris@gmail.com>\n"
 "Language-Team: Sardinian <https://translate.ubports.com/projects/ubports"
 "/clock-app/sc/>\n"
 "Language: sc\n"
@@ -496,7 +496,7 @@ msgstr "Aruba"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:65
 msgid "Asunción"
-msgstr ""
+msgstr "Asunción"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:65
 msgid "Paraguay"
@@ -569,7 +569,7 @@ msgstr "Bangkok"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:76
 msgid "Thailand"
-msgstr ""
+msgstr "Tailàndia"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:77
 msgid "Barbados"
@@ -962,7 +962,7 @@ msgstr "Doha"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:136
 msgid "Qatar"
-msgstr ""
+msgstr "Qatar"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:137
 msgid "Dominica"
@@ -991,7 +991,7 @@ msgstr ""
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:141
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:301
 msgid "Chile"
-msgstr ""
+msgstr "Tzile"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:142
 msgid "Edmonton"
