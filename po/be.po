@@ -8,17 +8,18 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-04 10:26+0300\n"
-"PO-Revision-Date: 2015-11-27 11:43+0000\n"
-"Last-Translator: Siamion Šachalevič <semen.shah@gmail.com>\n"
-"Language-Team: Belarusian <be@li.org>\n"
+"PO-Revision-Date: 2018-07-21 11:34+0000\n"
+"Last-Translator: ierihon <idekovets@mail.ru>\n"
+"Language-Team: Belarusian <https://translate.ubports.com/projects/ubports"
+"/clock-app/be/>\n"
 "Language: be\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<="
+"4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 2.17\n"
 "X-Launchpad-Export-Date: 2017-04-05 07:40+0000\n"
-"X-Generator: Launchpad (build 18335)\n"
 
 #: app/clock/ClockPage.qml:257
 msgid "Retrieving location..."
@@ -85,7 +86,7 @@ msgstr "Паўтараць"
 
 #: app/alarm/AlarmSettingsPage.qml:31
 msgid "Settings"
-msgstr ""
+msgstr "Налады"
 
 #. TRANSLATORS: Alarm stops after
 #. TRANSLATORS: Snooze for
