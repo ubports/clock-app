@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-04 10:26+0300\n"
-"PO-Revision-Date: 2018-07-22 00:00+0000\n"
+"PO-Revision-Date: 2018-07-23 10:12+0000\n"
 "Last-Translator: Flavia <flavia.efloris@gmail.com>\n"
 "Language-Team: Sardinian <https://translate.ubports.com/projects/ubports"
 "/clock-app/sc/>\n"
@@ -125,7 +125,7 @@ msgstr "Tema"
 
 #: app/alarm/AlarmSettingsPage.qml:234
 msgid "Theme (system theme on App start)"
-msgstr ""
+msgstr "Tema (tema de sistema cando s'aplicatzione est incarrerende·si)"
 
 #: app/alarm/AlarmSettingsPage.qml:235
 msgid "Theme (will apply after App restart)"
