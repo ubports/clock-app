@@ -27,8 +27,8 @@ Running tests on the desktop
 
 Using terminal:
 
-*  Branch the clock app code,
-    $ bzr branch lp:ubuntu-clock-app
+*  Get the clock app code,
+    $ git clone git@github.com:ubports/clock-app.git
 
 *  Build the clock app,
     $ mkdir builddir && cd builddir

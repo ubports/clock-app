@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-04 10:26+0300\n"
-"PO-Revision-Date: 2017-09-29 07:37+0000\n"
+"PO-Revision-Date: 2018-06-02 21:19+0000\n"
 "Last-Translator: Jeff <jeffi27@live.at>\n"
 "Language-Team: Albanian <https://translate.ubports.com/projects/ubports"
 "/clock-app/sq/>\n"
@@ -84,7 +84,7 @@ msgstr "Përserit"
 
 #: app/alarm/AlarmSettingsPage.qml:31
 msgid "Settings"
-msgstr "Konfigurimi"
+msgstr "Cilsimet"
 
 #. TRANSLATORS: Alarm stops after
 #. TRANSLATORS: Snooze for
@@ -199,7 +199,7 @@ msgstr "Xhiro"
 
 #: app/stopwatch/StopwatchPage.qml:102
 msgid "Clear"
-msgstr "Pastro"
+msgstr "Rikthe"
 
 #: app/stopwatch/LapListView.qml:67
 msgid "Lap Time"
@@ -211,15 +211,15 @@ msgstr "Koha e tërë"
 
 #: app/components/Information.qml:8
 msgid "App Information"
-msgstr "Info e App"
+msgstr "App Informata"
 
 #: app/components/Information.qml:17
 msgid "Get the source"
-msgstr "Merrni burimin"
+msgstr "Merre kodin burimor"
 
 #: app/components/Information.qml:18
 msgid "Report issues"
-msgstr "Raporto problem"
+msgstr "Raporto problemet"
 
 #: app/components/Information.qml:19
 msgid "Help translate"
@@ -232,7 +232,7 @@ msgstr "App i Orës"
 #: app/components/Information.qml:54
 #, qt-format
 msgid "Version %1"
-msgstr "Versioni %1"
+msgstr "Verzioni %1"
 
 #: app/components/NavigationRow.qml:51
 msgid "Clock"
@@ -441,7 +441,7 @@ msgstr "Jordania"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:56
 msgid "Amsterdam"
-msgstr "Amsterdami"
+msgstr "Amsterdam"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:56
 msgid "Netherlands"
@@ -877,7 +877,7 @@ msgstr "Guinea"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:121
 msgid "Copenhagen"
-msgstr "Kopenhagen"
+msgstr "Kopenhagë"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:121
 msgid "Denmark"
