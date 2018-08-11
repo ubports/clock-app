@@ -119,17 +119,31 @@ Item {
     Popover {
           //Display helping  hint when the user click on the start without setting the timer time
           id:pleaseSetTimePopover
+          
           Label {
               id:pleaseSetTimeMsg
               anchors.centerIn: parent
-              anchors.verticalCenter: parent.verticalCenter
               text:i18n.tr("Please set a time before starting the timer\nBy dragging the clock hands above.")
               horizontalAlignment: Text.Center
           }
           autoClose: true
+          
           callerMargin: units.gu(1)
           contentHeight: units.gu(5)
           contentWidth: pleaseSetTimeMsg.width + callerMargin * 2
+          
+          Timer {
+			  id:closePleaseSetTimePopoverTimer
+			  interval:2000
+			  running:false
+			  onTriggered:{
+				  pleaseSetTimePopover.hide();
+			  }
+		  }
+          
+		  onVisibleChanged: {
+			  if(visible) closePleaseSetTimePopoverTimer.start();
+		}
       }
 
     Item {
