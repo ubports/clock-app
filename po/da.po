@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-04 10:26+0300\n"
-"PO-Revision-Date: 2018-08-19 08:38+0000\n"
+"PO-Revision-Date: 2018-08-24 18:44+0000\n"
 "Last-Translator: Tom Rausner <tomrausner@gmail.com>\n"
 "Language-Team: Danish <https://translate.ubports.com/projects/ubports/"
 "clock-app/da/>\n"
@@ -60,7 +60,7 @@ msgstr "Tilbage"
 
 #: app/alarm/AlarmPage.qml:77
 msgid "Select None"
-msgstr "Markér intet"
+msgstr "Fravælg alt"
 
 #: app/alarm/AlarmPage.qml:79 app/alarm/AlarmRepeat.qml:66
 msgid "Select All"
