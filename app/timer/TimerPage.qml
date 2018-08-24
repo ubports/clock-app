@@ -20,6 +20,7 @@ import QtQuick 2.4
 import Ubuntu.Components 1.3
 import QtQml.Models 2.1
 import U1db 1.0 as U1db
+import Ubuntu.Components.Popups 1.3
 import "../components"
 import "../alarm"
 
@@ -114,6 +115,36 @@ Item {
         running: isRunning
         repeat: true
     }
+
+    Popover {
+          //Display helping  hint when the user click on the start without setting the timer time
+          id:pleaseSetTimePopover
+          
+          Label {
+              id:pleaseSetTimeMsg
+              anchors.centerIn: parent
+              text:i18n.tr("Please set a time before starting the timer\nBy dragging the clock hands above.")
+              horizontalAlignment: Text.Center
+          }
+          autoClose: true
+          
+          callerMargin: units.gu(1)
+          contentHeight: units.gu(5)
+          contentWidth: pleaseSetTimeMsg.width + callerMargin * 2
+          
+          Timer {
+			  id:closePleaseSetTimePopoverTimer
+			  interval:2000
+			  running:false
+			  onTriggered:{
+				  pleaseSetTimePopover.hide();
+			  }
+		  }
+          
+		  onVisibleChanged: {
+			  if(visible) closePleaseSetTimePopoverTimer.start();
+		}
+      }
 
     Item {
         id: buttonRow
@@ -219,14 +250,20 @@ Item {
                 id: startStopButton
 
                 property bool inProgress: false
+                property bool isActive: !inProgress  && (isRunning || timerFace.getCircle().hasTime)
 
                 objectName: "startAndStopButton"
                 width: buttonRow.width / 2 - units.gu(1)
                 height: units.gu(4)
-                enabled: !inProgress  && (isRunning || timerFace.getCircle().hasTime)
+                opacity: isActive ? 1 : 0.5
                 color: !isRunning  ? UbuntuColors.green : UbuntuColors.red
                 text: isRunning ? i18n.tr("Stop") :  i18n.tr("Start")
                 onClicked: {
+                    if(!isActive) {
+                        pleaseSetTimePopover.caller = startStopButton
+                        pleaseSetTimePopover.show();
+                        return;
+                    }
                     inProgress = true;
                     if(isRunning) {
                         _timerPage.stopTimer();
@@ -236,6 +273,7 @@ Item {
                     }
                     inProgress = false;
                 }
+
             }
             ActionIcon {
                 id:resetTimerButton
