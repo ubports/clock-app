@@ -70,8 +70,8 @@ bool SortedAlarmsModel::lessThan(const QModelIndex &left, const QModelIndex &rig
     QObject* rightData = right.data(Qt::InitialSortOrderRole).value<QObject*>();
     qint32 decreaseDisabled = 0x0FFFFFFF; // TODO find out the max positive int32 c++ value constant name.
     QDateTime currentDateTime = QDateTime::currentDateTime();
-    qint64 leftValue = (currentDateTime < leftData->property("date").toDateTime() ? 0 : decreaseDisabled) + floor(leftData->property("date").toDateTime().toTime_t()) + (leftData->property("enabled").toBool() ? -0.1 : 0);
-    qint64 rightValue = (currentDateTime < rightData->property("date").toDateTime() ? 0 : decreaseDisabled) + floor(rightData->property("date").toDateTime().toTime_t())+ (rightData->property("enabled").toBool() ? -0.1 : 0);
+    qint64 leftValue = (currentDateTime < leftData->property("date").toDateTime() ? 0 : decreaseDisabled) - leftData->property("date").toDateTime().time().secsTo(QTime(23,59,59)) ;
+    qint64 rightValue = (currentDateTime < rightData->property("date").toDateTime() ? 0 : decreaseDisabled) - rightData->property("date").toDateTime().time().secsTo(QTime(23,59,59)) ;
 
     return leftValue < rightValue;
 }
