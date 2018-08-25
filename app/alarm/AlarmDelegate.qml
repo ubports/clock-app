@@ -39,7 +39,7 @@ ListItem {
     function animateTextChange() {
         textChangeAnimation.start()
     }
-
+    
     function updateModel() {
         mainLayout.title.text = Qt.formatTime(model.date);
         mainLayout.subtitle.text = model.message
@@ -48,9 +48,9 @@ ListItem {
             alarmOccurrence = alarmUtils.format_day_string(daysOfWeek, type)
         }
     }
-
-
-    height: mainLayout.height + divider.height
+    
+    
+    height: visible ? mainLayout.height + divider.height : 0
 
     SequentialAnimation {
         id: textChangeAnimation

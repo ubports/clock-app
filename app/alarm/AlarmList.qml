@@ -18,6 +18,7 @@
 
 import QtQuick 2.4
 import Ubuntu.Components 1.3
+import U1db 1.0 as U1db
 
 UbuntuListView {
     id: alarmListView
@@ -74,6 +75,8 @@ UbuntuListView {
                 }
             ]
         }
+
+        visible: !activeTimers.isAlarmATimerAlarm(model)
 
         onClicked: {
             if (selectMode) {

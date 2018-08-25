@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-02 18:48+0000\n"
-"PO-Revision-Date: 2017-09-24 07:24+0000\n"
-"Last-Translator: Mutse Young <yyhoo2.young@gmail.com>\n"
+"POT-Creation-Date: 2017-09-04 10:26+0300\n"
+"PO-Revision-Date: 2018-05-01 17:59+0000\n"
+"Last-Translator: Hugh Y <hugh_yan@live.com>\n"
 "Language-Team: Chinese (Simplified) "
 "<https://translate.ubports.com/projects/ubports/clock-app/zh_Hans/>\n"
 "Language: zh_CN\n"
@@ -20,276 +20,297 @@ msgstr ""
 "X-Generator: Weblate 2.15\n"
 "X-Launchpad-Export-Date: 2017-04-05 07:41+0000\n"
 
-#: ../app/alarm/AlarmLabel.qml:35 ../app/alarm/AlarmLabel.qml:79
-#: ../app/alarm/EditAlarmPage.qml:298
+#: app/clock/ClockPage.qml:257
+msgid "Retrieving location..."
+msgstr "确定方位中..."
+
+#: app/alarm/AlarmSound.qml:60 app/alarm/EditAlarmPage.qml:323
+msgid "Sound"
+msgstr "声音"
+
+#: app/alarm/AlarmSound.qml:190
+msgid "Custom alarm sounds"
+msgstr "自定义闹铃声音"
+
+#: app/alarm/AlarmSound.qml:205
+msgid "Add sound"
+msgstr "添加声音"
+
+#: app/alarm/AlarmSound.qml:343
+msgid "Default alarm sounds"
+msgstr "默认闹铃声音"
+
+#: app/alarm/AlarmLabel.qml:37 app/alarm/AlarmLabel.qml:82
+#: app/alarm/EditAlarmPage.qml:302
 msgid "Label"
 msgstr "标签"
 
-#: ../app/alarm/AlarmList.qml:64 ../app/alarm/AlarmPage.qml:101
-#: ../app/worldclock/UserWorldCityList.qml:71
-msgid "Delete"
-msgstr "删除"
-
-#: ../app/alarm/AlarmPage.qml:38 ../app/components/AlarmBottomEdge.qml:38
+#: app/alarm/AlarmPage.qml:38 app/components/AlarmBottomEdge.qml:38
 msgid "Alarms"
 msgstr "闹钟"
 
-#: ../app/alarm/AlarmPage.qml:52 ../app/alarm/EditAlarmPage.qml:43
-#: ../app/alarm/EditAlarmPage.qml:188
+#: app/alarm/AlarmPage.qml:53 app/alarm/EditAlarmPage.qml:43
+#: app/alarm/EditAlarmPage.qml:188
 msgid "Alarm"
 msgstr "闹钟"
 
-#: ../app/alarm/AlarmPage.qml:65 ../app/worldclock/WorldCityList.qml:83
+#: app/alarm/AlarmPage.qml:66 app/worldclock/WorldCityList.qml:83
 msgid "Back"
 msgstr "返回"
 
-#: ../app/alarm/AlarmPage.qml:76
+#: app/alarm/AlarmPage.qml:77
 msgid "Select None"
-msgstr "全部不选"
+msgstr "取消选择"
 
-#: ../app/alarm/AlarmPage.qml:78 ../app/alarm/AlarmRepeat.qml:64
+#: app/alarm/AlarmPage.qml:79 app/alarm/AlarmRepeat.qml:66
 msgid "Select All"
 msgstr "全选"
 
-#: ../app/alarm/AlarmPage.qml:157
+#: app/alarm/AlarmPage.qml:102 app/alarm/AlarmList.qml:64
+#: app/worldclock/UserWorldCityList.qml:71
+msgid "Delete"
+msgstr "删除"
+
+#: app/alarm/AlarmPage.qml:158
 msgid "No saved alarms"
 msgstr "未设定闹铃"
 
-#: ../app/alarm/AlarmPage.qml:158
+#: app/alarm/AlarmPage.qml:159
 msgid "Tap the + icon to add an alarm"
 msgstr "点击 + 来新增一个闹铃"
 
-#: ../app/alarm/AlarmRepeat.qml:38 ../app/alarm/EditAlarmPage.qml:282
+#: app/alarm/AlarmRepeat.qml:40 app/alarm/EditAlarmPage.qml:286
 msgid "Repeat"
 msgstr "重复"
 
-#: ../app/alarm/AlarmSettingsPage.qml:31
+#: app/alarm/AlarmSettingsPage.qml:31
 msgid "Settings"
 msgstr "设置"
 
 #. TRANSLATORS: Alarm stops after
 #. TRANSLATORS: Snooze for
-#: ../app/alarm/AlarmSettingsPage.qml:56 ../app/alarm/AlarmSettingsPage.qml:57
-#: ../app/alarm/AlarmSettingsPage.qml:58 ../app/alarm/AlarmSettingsPage.qml:59
-#: ../app/alarm/AlarmSettingsPage.qml:69 ../app/alarm/AlarmSettingsPage.qml:70
-#: ../app/alarm/AlarmSettingsPage.qml:71 ../app/alarm/AlarmSettingsPage.qml:72
-#: ../app/alarm/AlarmSettingsPage.qml:122
-#: ../app/alarm/AlarmSettingsPage.qml:153
+#: app/alarm/AlarmSettingsPage.qml:56 app/alarm/AlarmSettingsPage.qml:57
+#: app/alarm/AlarmSettingsPage.qml:58 app/alarm/AlarmSettingsPage.qml:59
+#: app/alarm/AlarmSettingsPage.qml:69 app/alarm/AlarmSettingsPage.qml:70
+#: app/alarm/AlarmSettingsPage.qml:71 app/alarm/AlarmSettingsPage.qml:72
+#: app/alarm/AlarmSettingsPage.qml:122 app/alarm/AlarmSettingsPage.qml:153
 #, qt-format
 msgid "%1 minute"
 msgid_plural "%1 minutes"
 msgstr[0] "%1 分钟"
 
-#: ../app/alarm/AlarmSettingsPage.qml:99
+#: app/alarm/AlarmSettingsPage.qml:99
 msgid "Alarm volume"
 msgstr "闹钟音量"
 
-#: ../app/alarm/AlarmSettingsPage.qml:121
+#: app/alarm/AlarmSettingsPage.qml:121
 msgid "Alarm stops after"
 msgstr "闹铃停止于"
 
-#: ../app/alarm/AlarmSettingsPage.qml:152
+#: app/alarm/AlarmSettingsPage.qml:152
 msgid "Snooze for"
 msgstr "贪睡间隔"
 
-#: ../app/alarm/AlarmSettingsPage.qml:183
+#: app/alarm/AlarmSettingsPage.qml:183
 msgid "Vibration"
 msgstr "振动"
 
-#: ../app/alarm/AlarmSettingsPage.qml:209
+#: app/alarm/AlarmSettingsPage.qml:209
 msgid "Change time and date"
 msgstr "更改时间与日期"
 
-#: ../app/alarm/AlarmSound.qml:60 ../app/alarm/EditAlarmPage.qml:319
-msgid "Sound"
-msgstr "声音"
+#: app/alarm/AlarmSettingsPage.qml:234
+msgid "Theme"
+msgstr ""
 
-#: ../app/alarm/AlarmSound.qml:190
-msgid "Custom alarm sounds"
-msgstr "自定义闹铃声音"
+#: app/alarm/AlarmSettingsPage.qml:234
+msgid "Theme (system theme on App start)"
+msgstr ""
 
-#: ../app/alarm/AlarmSound.qml:205
-msgid "Add sound"
-msgstr "添加声音"
+#: app/alarm/AlarmSettingsPage.qml:235
+msgid "Theme (will apply after App restart)"
+msgstr ""
 
-#: ../app/alarm/AlarmSound.qml:343
-msgid "Default alarm sounds"
-msgstr "默认闹铃声音"
-
-#: ../app/alarm/AlarmUtils.qml:31
+#: app/alarm/AlarmUtils.qml:31
 msgid "Never"
 msgstr "永不"
 
-#: ../app/alarm/AlarmUtils.qml:37
+#: app/alarm/AlarmUtils.qml:37
 msgid "Weekdays"
 msgstr "工作日"
 
-#: ../app/alarm/AlarmUtils.qml:41
+#: app/alarm/AlarmUtils.qml:41
 msgid "Weekends"
 msgstr "周末"
 
-#: ../app/alarm/AlarmUtils.qml:45
+#: app/alarm/AlarmUtils.qml:45
 msgid "Daily"
 msgstr "每天"
 
-#: ../app/alarm/AlarmUtils.qml:81
+#: app/alarm/AlarmUtils.qml:81
 #, no-c-format, qt-format
 msgid "in %1d %2h %3m"
 msgstr "在 %1 天 %2 小时 %3 分钟后"
 
-#: ../app/alarm/AlarmUtils.qml:91
+#: app/alarm/AlarmUtils.qml:91
 #, no-c-format, qt-format
 msgid "in %1h %2m"
 msgstr "在 %1 小时 %2 分钟后"
 
-#: ../app/alarm/AlarmUtils.qml:100
+#: app/alarm/AlarmUtils.qml:100
 #, no-c-format, qt-format
 msgid "in %1m"
 msgstr "在 %1 分钟后"
 
-#: ../app/alarm/EditAlarmPage.qml:37
+#: app/alarm/EditAlarmPage.qml:37
 msgid "New alarm"
 msgstr "新建闹钟"
 
-#: ../app/alarm/EditAlarmPage.qml:37
+#: app/alarm/EditAlarmPage.qml:37
 msgid "Edit alarm"
 msgstr "编辑闹钟"
 
-#: ../app/alarm/EditAlarmPage.qml:343
+#: app/alarm/EditAlarmPage.qml:347
 msgid "Delete alarm"
 msgstr "删除闹钟"
 
 #. TRANSLATORS: This is the page title. Please keep the translation length to 3 words if possible
-#: ../app/alarm/SoundPeerPicker.qml:27
+#: app/alarm/SoundPeerPicker.qml:27
 msgid "Add sound from"
 msgstr "添加声音自"
 
-#: ../app/clock/ClockPage.qml:257
-msgid "Retrieving location..."
-msgstr "确定方位中..."
-
-#: ../app/components/Information.qml:8
-msgid "Information"
-msgstr "信息"
-
-#: ../app/components/Information.qml:17
-msgid "Get the source"
-msgstr "获取来源"
-
-#: ../app/components/Information.qml:18
-msgid "Report issues"
-msgstr "反馈问题"
-
-#: ../app/components/Information.qml:19
-msgid "Help translate"
-msgstr "帮助翻译"
-
-#: ../app/components/NavigationRow.qml:50 ubuntu-clock-app.desktop.in.in.h:1
-msgid "Clock"
-msgstr "时钟"
-
-#: ../app/components/NavigationRow.qml:62
-msgid "Stopwatch"
-msgstr "秒表"
-
-#. TRANSLATORS: This refers to the stopwatch lap and is shown as a header where space is limited. Constrain
-#. translation length to a few characters.
-#: ../app/stopwatch/LapListView.qml:50 ../app/stopwatch/StopwatchPage.qml:113
-msgid "Lap"
-msgstr "圈"
-
-#: ../app/stopwatch/LapListView.qml:59
-msgid "Lap Time"
-msgstr "单圈时间"
-
-#: ../app/stopwatch/LapListView.qml:66
-msgid "Total Time"
-msgstr "总时间"
-
-#: ../app/stopwatch/StopwatchPage.qml:94
+#: app/stopwatch/StopwatchPage.qml:83
 msgid "Stop"
 msgstr "停止"
 
-#: ../app/stopwatch/StopwatchPage.qml:94
+#: app/stopwatch/StopwatchPage.qml:83
 msgid "Start"
 msgstr "启动"
 
-#: ../app/stopwatch/StopwatchPage.qml:94
+#: app/stopwatch/StopwatchPage.qml:83
 msgid "Resume"
-msgstr "继续"
+msgstr "恢复"
 
-#: ../app/stopwatch/StopwatchPage.qml:113
+#. TRANSLATORS: This refers to the stopwatch lap and is shown as a header where space is limited. Constrain
+#. translation length to a few characters.
+#: app/stopwatch/StopwatchPage.qml:102 app/stopwatch/LapListView.qml:58
+msgid "Lap"
+msgstr "圈"
+
+#: app/stopwatch/StopwatchPage.qml:102
 msgid "Clear"
 msgstr "清除"
 
-#: ../app/worldclock/AddWorldCityButton.qml:30
-msgid "Add"
-msgstr "添加"
+#: app/stopwatch/LapListView.qml:67
+msgid "Lap Time"
+msgstr "单圈时间"
 
-#: ../app/worldclock/AddWorldCityButton.qml:61
-#: ../app/worldclock/WorldCityList.qml:63
+#: app/stopwatch/LapListView.qml:74
+msgid "Total Time"
+msgstr "总时间"
+
+#: app/components/Information.qml:8
+#, fuzzy
+msgid "App Information"
+msgstr "信息"
+
+#: app/components/Information.qml:17
+msgid "Get the source"
+msgstr "获取源码"
+
+#: app/components/Information.qml:18
+msgid "Report issues"
+msgstr "报告问题"
+
+#: app/components/Information.qml:19
+msgid "Help translate"
+msgstr "帮助翻译"
+
+#: app/components/Information.qml:48
+#, fuzzy
+msgid "Clock App"
+msgstr "时钟"
+
+#: app/components/Information.qml:54
+#, fuzzy, qt-format
+msgid "Version %1"
+msgstr "在 %1 分钟后"
+
+#: app/components/NavigationRow.qml:51
+msgid "Clock"
+msgstr "时钟"
+
+#: app/components/NavigationRow.qml:63
+msgid "Stopwatch"
+msgstr "秒表"
+
+#: app/worldclock/WorldCityList.qml:56
+msgid "Select a city"
+msgstr "选择城市"
+
+#: app/worldclock/WorldCityList.qml:63 app/worldclock/AddWorldCityButton.qml:63
 msgid "City"
 msgstr "城市"
 
+#: app/worldclock/WorldCityList.qml:112
+msgid "Search..."
+msgstr "搜索..."
+
+#: app/worldclock/WorldCityList.qml:216
+msgid "Searching for a city"
+msgstr "城市查找中"
+
+#: app/worldclock/WorldCityList.qml:221
+msgid "No City Found"
+msgstr "未找到城市"
+
+#: app/worldclock/WorldCityList.qml:227
+msgid "Unable to connect."
+msgstr "无法连接。"
+
+#: app/worldclock/WorldCityList.qml:228
+msgid "Please check your network connection and try again"
+msgstr "请检查你的网络连接并重试"
+
 #. TRANSLATORS: this indicates if the time in a world clock
 #. is behind or ahead of the time at the current location
-#: ../app/worldclock/UserWorldCityDelegate.qml:136
+#: app/worldclock/UserWorldCityDelegate.qml:136
 msgid "behind"
 msgstr "后"
 
-#: ../app/worldclock/UserWorldCityDelegate.qml:137
+#: app/worldclock/UserWorldCityDelegate.qml:137
 msgid "ahead"
 msgstr "前"
 
 #. TRANSLATORS: the first argument is hour, followed by
 #. minute, and the translation for either 'behind' or
 #. 'ahead'
-#: ../app/worldclock/UserWorldCityDelegate.qml:147
+#: app/worldclock/UserWorldCityDelegate.qml:147
 #, qt-format
 msgid "%1h %2m %3"
 msgstr "%1 小时 %2 分钟 %3"
 
 #. TRANSLATORS: the first argument is hour, followed by the
 #. translation for either 'behind' or 'ahead'
-#: ../app/worldclock/UserWorldCityDelegate.qml:156
+#: app/worldclock/UserWorldCityDelegate.qml:156
 #, qt-format
 msgid "%1h %2"
 msgstr "%1 小时 %2"
 
 #. TRANSLATORS: the first argument is minute, followed by the
 #. translation for either 'behind' or 'ahead'
-#: ../app/worldclock/UserWorldCityDelegate.qml:164
+#: app/worldclock/UserWorldCityDelegate.qml:164
 #, qt-format
 msgid "%1m %2"
 msgstr "%1 分钟 %2"
 
-#: ../app/worldclock/UserWorldCityDelegate.qml:170
+#: app/worldclock/UserWorldCityDelegate.qml:170
 msgid "Same time"
 msgstr "同一时间"
 
-#: ../app/worldclock/WorldCityList.qml:56
-msgid "Select a city"
-msgstr "选择城市"
-
-#: ../app/worldclock/WorldCityList.qml:112
-msgid "Search..."
-msgstr "搜索..."
-
-#: ../app/worldclock/WorldCityList.qml:216
-msgid "Searching for a city"
-msgstr "城市查找中"
-
-#: ../app/worldclock/WorldCityList.qml:221
-msgid "No City Found"
-msgstr "未找到城市"
-
-#: ../app/worldclock/WorldCityList.qml:227
-msgid "Unable to connect."
-msgstr "无法连接。"
-
-#: ../app/worldclock/WorldCityList.qml:228
-msgid "Please check your network connection and try again"
-msgstr "请检查你的网络连接并重试"
+#: app/worldclock/AddWorldCityButton.qml:32
+msgid "Add"
+msgstr "添加"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:48
 msgid "Abidjan"
