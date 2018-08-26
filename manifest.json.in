@@ -1,7 +1,7 @@
 {
     "name": "com.ubuntu.clock",
     "description": "A sophisticated clock app for Ubuntu Touch",
-    "framework": "ubuntu-sdk-15.04.4",
+    "framework": "ubuntu-sdk-16.04",
     "architecture": "@CLICK_ARCH@",
     "title": "Clock",
     "icon": "clock@30.png",
@@ -12,8 +12,8 @@
             "urls": "share/url-dispatcher/urls/com.ubuntu.clock_clock.url-dispatcher"
         }
     },
-    "version": "3.9.@REVNO@",
-    "maintainer": "UBports <community@ubports.com>",
+    "version": "3.10.1",
+    "maintainer": "UBports <dev@ubports.com>",
     "x-test": {
         "autopilot": {
             "autopilot_module": "@AUTOPILOT_DIR@",
@@ -21,9 +21,5 @@
                 "python3-lxml"
             ]
         }
-    },
-    "x-source": {
-        "vcs": "@SOURCE@",
-        "vcs-revno": "@REVNO@"
     }
 }

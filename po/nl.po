@@ -8,9 +8,9 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-04 10:26+0300\n"
-"PO-Revision-Date: 2017-07-01 17:42+0000\n"
-"Last-Translator: Sander <sander.k1007@kpnmail.nl>\n"
-"Language-Team: Dutch <https://ubpweblate.tnvcomp.com/projects/ubports/clock-"
+"PO-Revision-Date: 2018-06-16 23:07+0000\n"
+"Last-Translator: Joachim Lazaroms <joachim.pc@gmail.com>\n"
+"Language-Team: Dutch <https://translate.ubports.com/projects/ubports/clock-"
 "app/nl/>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
@@ -114,7 +114,7 @@ msgstr "Sluimeren gedurende"
 
 #: app/alarm/AlarmSettingsPage.qml:183
 msgid "Vibration"
-msgstr "Trilling"
+msgstr "trillen"
 
 #: app/alarm/AlarmSettingsPage.qml:209
 msgid "Change time and date"
@@ -122,15 +122,15 @@ msgstr "Datum en tijd wijzigen"
 
 #: app/alarm/AlarmSettingsPage.qml:234
 msgid "Theme"
-msgstr ""
+msgstr "Thema"
 
 #: app/alarm/AlarmSettingsPage.qml:234
 msgid "Theme (system theme on App start)"
-msgstr ""
+msgstr "Thema (systeemthema als de app start)"
 
 #: app/alarm/AlarmSettingsPage.qml:235
 msgid "Theme (will apply after App restart)"
-msgstr ""
+msgstr "Thema (zal toegepast worden na een herstart van de app)"
 
 #: app/alarm/AlarmUtils.qml:31
 msgid "Never"
@@ -182,11 +182,11 @@ msgstr "Geluid toevoegen van"
 
 #: app/stopwatch/StopwatchPage.qml:83
 msgid "Stop"
-msgstr "Stoppen"
+msgstr "Stop"
 
 #: app/stopwatch/StopwatchPage.qml:83
 msgid "Start"
-msgstr "Starten"
+msgstr "Start"
 
 #: app/stopwatch/StopwatchPage.qml:83
 msgid "Resume"
@@ -211,40 +211,37 @@ msgid "Total Time"
 msgstr "Totale tijd"
 
 #: app/components/Information.qml:8
-#, fuzzy
 msgid "App Information"
-msgstr "Trilling"
+msgstr "App-informatie"
 
 #: app/components/Information.qml:17
 msgid "Get the source"
-msgstr ""
+msgstr "Broncode"
 
 #: app/components/Information.qml:18
 msgid "Report issues"
-msgstr ""
+msgstr "Meld problemen"
 
 #: app/components/Information.qml:19
 msgid "Help translate"
-msgstr ""
+msgstr "Help vertalen"
 
 #: app/components/Information.qml:48
-#, fuzzy
 msgid "Clock App"
-msgstr "Klok"
+msgstr "Klok-app"
 
 #: app/components/Information.qml:54
-#, fuzzy, qt-format
+#, qt-format
 msgid "Version %1"
-msgstr "over %1m"
+msgstr "Versie %1"
 
 #: app/components/NavigationRow.qml:51
 msgid "Clock"
 msgstr "Klok"
 
 #: app/components/NavigationRow.qml:63
-#, fuzzy
 msgid "Stopwatch"
-msgstr "Stoppen"
+msgstr "Stopwatch"
 
 #: app/worldclock/WorldCityList.qml:56
 msgid "Select a city"
