@@ -18,6 +18,7 @@
 
 import QtQuick 2.4
 import Ubuntu.Components 1.3
+import Alarm 1.0
 import "../timer"
 
 Page {
@@ -122,9 +123,16 @@ Page {
         ]
     }
 
+    SortedAlarmsModel {
+        id:sortedAlarmsModel
+        model: alarmPage.model
+        sortOrder: Qt.AscendingOrder
+        //Component.onCompleted: sortedAlarmsModel.sortOrder= Qt.AscendingOrder;
+    }
+
     AlarmList {
         id: alarmListView
-        model: alarmPage.model
+        model: sortedAlarmsModel
         anchors {
             top: alarmPage.header.bottom
             left: parent.left

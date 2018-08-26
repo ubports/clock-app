@@ -21,6 +21,7 @@
 #include "backend.h"
 #include "settings.h"
 #include "sound.h"
+#include "sortedalarmsmodel.h"
 
 void BackendPlugin::registerTypes(const char *uri)
 {
@@ -28,6 +29,7 @@ void BackendPlugin::registerTypes(const char *uri)
 
     qmlRegisterType<Settings>(uri, 1, 0, "AlarmSettings");
     qmlRegisterType<Sound>(uri, 1, 0, "AlarmSound");
+    qmlRegisterType<SortedAlarmsModel>(uri, 1, 0, "SortedAlarmsModel");
 }
 
 void BackendPlugin::initializeEngine(QQmlEngine *engine, const char *uri)
