@@ -37,7 +37,7 @@ UbuntuListView {
 
     Timer {
         id: alarmTimer
-        running: alarmListView.visible && alarmModel.count !== 0
+        running: alarmListView.visible && alarmListView.model.count !== 0
         interval: 5000
         repeat: true
         onTriggered: {
@@ -45,9 +45,15 @@ UbuntuListView {
         }
     }
 
-    displaced: Transition {
+    Transition {
+        id:itemTransition
         UbuntuNumberAnimation { property: "y"; duration: UbuntuAnimation.BriskDuration }
+        UbuntuNumberAnimation { property: "opacity";  from:0; to:1; duration: UbuntuAnimation.BriskDuration }
     }
+
+    addDisplaced: itemTransition
+    removeDisplaced: itemTransition
+    moveDisplaced: itemTransition
 
     delegate: AlarmDelegate {
         id: alarmDelegate
@@ -64,8 +70,7 @@ UbuntuListView {
                     iconName: "delete"
                     text: i18n.tr("Delete")
                     onTriggered: {
-                        var alarm = alarmModel.get(index)
-                        alarm.cancel()
+                        model.cancel();
                     }
                 }
             ]

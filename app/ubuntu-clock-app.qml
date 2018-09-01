@@ -23,6 +23,7 @@ import Alarm 1.0
 import Ubuntu.Components 1.3
 import QtQuick.Window 2.2
 import Qt.labs.settings 1.0
+import UserMetrics 0.1
 import "components"
 
 Window {
@@ -143,6 +144,18 @@ Window {
                 localizedTimeString: localTimeSource.localizedCurrentTimeString
                 localizedDateString: localTimeSource.localizedCurrentDateString
             }
+        }
+
+
+        Metric {
+            id: metricAlarms
+            name: "clock-alarms"
+            // Mark text for translation at a later point.
+            // It will be translated by dtr (or dgettext) to allows plural forms
+            format: i18n.tag("<b>%1</b> alarms are set")
+            emptyFormat: i18n.tag("No alarms set ")
+            domain: "com.ubuntu.clock"
+            minimum: 0.0
         }
     }
 }

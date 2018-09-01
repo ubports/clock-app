@@ -30,8 +30,8 @@ Item {
     property alias adjustable: timerCircle.adjustable
     property bool running: false
 
-    // Below logic seemss weird but it`s need to prevent the time label from poping in and out while adjusting the timer
-    property bool showTimeLabel: timerCircle.adjusting && timerTimeLbl.height || timerCircle.hasTime && !timerCircle.adjusting;
+    // Below logic seems weird but it`s need to prevent the time label from poping in and out while adjusting the timer
+    //property bool showTimeLabel: timerCircle.adjusting && timerTimeLbl.height || timerCircle.hasTime && !timerCircle.adjusting;
 
 
     signal adjusted(string adjustedTime)
@@ -48,7 +48,7 @@ Item {
             objectName: "timerTimeLbl"
             width:parent.width/3            
             height:  font.pixelSize ;
-            opacity: showTimeLabel ? 1 : 0
+            //opacity: showTimeLabel ? 1 : 0
             anchors.horizontalCenter: parent.horizontalCenter
             font.pixelSize: units.gu(2)
             font.bold: running
