@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-04 10:26+0300\n"
 "PO-Revision-Date: 2018-09-08 13:57+0000\n"
-"Last-Translator: SongInseo <andra123438@gmail.com>\n"
+"Last-Translator: Ace <quickn@cityarts.cf>\n"
 "Language-Team: Korean <https://translate.ubports.com/projects/ubports/"
 "clock-app/ko/>\n"
 "Language: ko\n"
@@ -22,7 +22,7 @@ msgstr ""
 
 #: app/clock/ClockPage.qml:257
 msgid "Retrieving location..."
-msgstr ""
+msgstr "위치 검색 중..."
 
 #: app/alarm/AlarmSound.qml:60 app/alarm/EditAlarmPage.qml:323
 msgid "Sound"
@@ -30,15 +30,15 @@ msgstr "소리"
 
 #: app/alarm/AlarmSound.qml:190
 msgid "Custom alarm sounds"
-msgstr ""
+msgstr "사용자 지정 알람 소리"
 
 #: app/alarm/AlarmSound.qml:205
 msgid "Add sound"
-msgstr ""
+msgstr "소리 추가"
 
 #: app/alarm/AlarmSound.qml:343
 msgid "Default alarm sounds"
-msgstr ""
+msgstr "기본 알람 소리"
 
 #: app/alarm/AlarmLabel.qml:37 app/alarm/AlarmLabel.qml:82
 #: app/alarm/EditAlarmPage.qml:302
@@ -97,8 +97,7 @@ msgstr "설정"
 #, qt-format
 msgid "%1 minute"
 msgid_plural "%1 minutes"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1 분"
 
 #: app/alarm/AlarmSettingsPage.qml:99
 msgid "Alarm volume"
