@@ -348,7 +348,7 @@ Item {
      * @param datetime the DateTime object that the timer alarm should be fired at.
      * @param message  the message to display when the alarm is fired.
      */
-    function startNewAlarm(datetime, message) {
+    function updateNewAlarmValues(datetime, message) {
         if(!alarm) {
             alarm = alarmComponent.createObject(_timerPage)
         }
@@ -358,7 +358,6 @@ Item {
         alarm.message = activeTimers.addPrefixToMessage(message)
         alarm.date = datetime
         alarm.enabled = true
-        alarm.save()
 
         return alarm;
     }
@@ -366,8 +365,10 @@ Item {
      * Start a new timer based on the current UI settings.
      */
     function startTimer() {
-        _timerPage.startNewAlarm(timerFace.getCircle().getTime(), timerNameField.text);
-        activeTimers.addActiveTimer(alarm);
+		var newAlarm = _timerPage.updateNewAlarmValues(timerFace.getCircle().getTime(), timerNameField.text);
+		activeTimers.addActiveTimer(alarm);
+		newAlarm.save();
+        
     }
 
     /**
