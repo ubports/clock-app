@@ -22,6 +22,8 @@ import Ubuntu.Components 1.3
 ListItem {
     id: root
 
+    enabled: model.status === Alarm.Ready;
+
     property var localTime
     property bool showAlarmFrequency
     property string alarmOccurrence: type === Alarm.Repeating ? alarmUtils.format_day_string(daysOfWeek, type)
@@ -37,7 +39,17 @@ ListItem {
     function animateTextChange() {
         textChangeAnimation.start()
     }
-
+    
+    function updateModel() {
+        mainLayout.title.text = Qt.formatTime(model.date);
+        mainLayout.subtitle.text = model.message
+        alarmStatus.checked = model.enabled;
+        if (!alarmStatus.checked && type === Alarm.Repeating) {
+            alarmOccurrence = alarmUtils.format_day_string(daysOfWeek, type)
+        }
+    }
+    
+    
     height: visible ? mainLayout.height + divider.height : 0
 
     SequentialAnimation {
@@ -97,7 +109,6 @@ ListItem {
                 anchors.rightMargin: units.gu(1)
                 anchors.right: parent.right
                 anchors.verticalCenter: parent.verticalCenter
-                checked: model.enabled && (model.status === Alarm.Ready)
                 onCheckedChanged: {
                     if (checked !== model.enabled) {
                         /*
@@ -119,27 +130,22 @@ ListItem {
                         }
                         model.enabled = checked
                         model.save()
-                    }
-                }
 
-                Connections {
-                    target: model
-                    onStatusChanged: {
-                        /*
-                        Update switch value only when the alarm save() operation
-                        is complete to avoid switching it back.
-                         */
-                        if (model.status === Alarm.Ready) {
-                            alarmStatus.checked = model.enabled;
-
-                            if (!alarmStatus.checked && type === Alarm.Repeating) {
-                                alarmOccurrence = alarmUtils.format_day_string(daysOfWeek, type)
-                            }
-                        }
                     }
                 }
             }
         }
     }
 
+    Timer {
+        id:modelUpdateTimer
+        interval: 33
+        repeat: false
+        running:(model.enabled != alarmStatus.checked
+                 || mainLayout.subtitle.text != model.message
+                 || mainLayout.title.text != Qt.formatTime(model.date ) ) && model.status === Alarm.Ready
+        onTriggered: {
+            root.updateModel()
+        }
+    }
 }

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-04 10:26+0300\n"
-"PO-Revision-Date: 2018-03-04 20:25+0000\n"
+"PO-Revision-Date: 2018-06-03 17:17+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://translate.ubports.com/projects/ubports/clock-"
 "app/he/>\n"
@@ -56,7 +56,7 @@ msgstr "התרעה"
 
 #: app/alarm/AlarmPage.qml:66 app/worldclock/WorldCityList.qml:83
 msgid "Back"
-msgstr "אחורה"
+msgstr "חזרה"
 
 #: app/alarm/AlarmPage.qml:77
 msgid "Select None"
