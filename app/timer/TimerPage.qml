@@ -368,7 +368,6 @@ Item {
 		var newAlarm = _timerPage.updateNewAlarmValues(timerFace.getCircle().getTime(), timerNameField.text);
 		activeTimers.addActiveTimer(alarm);
 		newAlarm.save();
-        
     }
 
     /**
