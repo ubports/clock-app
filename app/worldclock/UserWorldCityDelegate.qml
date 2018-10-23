@@ -59,7 +59,7 @@ ListItem {
                 textSize: Label.Medium
                 width: parent.width
                 elide: Text.ElideRight
-                color: UbuntuColors.slate
+                color: Theme.palette.normal.backgroundSecondaryText
             }
 
             Label {
@@ -68,7 +68,7 @@ ListItem {
                 textSize: Label.Medium
                 width: parent.width
                 elide: Text.ElideRight
-                color: UbuntuColors.ash
+                color: Theme.palette.normal.backgroundTertiaryText
             }
         }
 
@@ -122,7 +122,7 @@ ListItem {
             anchors.right: parent.right
             anchors.verticalCenter: parent.verticalCenter
 
-            color: UbuntuColors.slate
+            color: Theme.palette.normal.backgroundSecondaryText
             textSize: Label.Medium
             wrapMode: Text.WordWrap
             maximumLineCount: 2

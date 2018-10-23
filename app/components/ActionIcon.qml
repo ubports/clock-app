@@ -65,7 +65,7 @@ AbstractButton {
         height: width
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.topMargin: units.gu(0.5)
-        color: UbuntuColors.slate
+        color: Theme.palette.normal.backgroundSecondaryText
         asynchronous: true
     }
     Label {
