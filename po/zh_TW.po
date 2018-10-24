@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-04 10:26+0300\n"
-"PO-Revision-Date: 2018-10-23 04:58+0000\n"
+"PO-Revision-Date: 2018-10-25 10:24+0000\n"
 "Last-Translator: Louies <louies0623@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <https://translate.ubports.com/projects/"
 "ubports/clock-app/zh_Hant/>\n"
@@ -25,8 +25,9 @@ msgid "Retrieving location..."
 msgstr "正在取得位置..."
 
 #: app/alarm/AlarmSound.qml:60 app/alarm/EditAlarmPage.qml:323
+#, fuzzy
 msgid "Sound"
-msgstr "音效"
+msgstr "聲音"
 
 #: app/alarm/AlarmSound.qml:190
 msgid "Custom alarm sounds"
@@ -59,6 +60,7 @@ msgid "Back"
 msgstr "返回"
 
 #: app/alarm/AlarmPage.qml:77
+#, fuzzy
 msgid "Select None"
 msgstr "全不選"
 
@@ -198,8 +200,9 @@ msgid "Lap"
 msgstr "圈"
 
 #: app/stopwatch/StopwatchPage.qml:102
+#, fuzzy
 msgid "Clear"
-msgstr "清除"
+msgstr "明白"
 
 #: app/stopwatch/LapListView.qml:67
 msgid "Lap Time"
