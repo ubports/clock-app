@@ -50,7 +50,7 @@ AbstractButton {
 
         Icon {
             anchors.centerIn: parent
-            color: UbuntuColors.inkstone
+            color: theme.palette.normal.backgroundSecondaryText
             name: "add"
             height: units.gu(2)
             width: height

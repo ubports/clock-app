@@ -97,7 +97,7 @@ AnalogMode {
         anchors.centerIn: parent
 
         smooth: true
-        source: "../graphics/Minute_Adjust_Cirlce.png"
+        source: Theme.name == "Ubuntu.Components.Themes.Ambiance" ? "../graphics/Minute_Adjust_Cirlce.png" : "../graphics/Minute_Adjust_Cirlce_White.png"
         asynchronous: true
         fillMode: Image.PreserveAspectFit
     }

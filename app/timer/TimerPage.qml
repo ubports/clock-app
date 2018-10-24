@@ -301,6 +301,7 @@ Item {
         z:10
         parentListView : listview
         nestedListView : timersList
+        visible: dbAllTimersQuery.results.length !== 0
     }
 
     // U1db Index to index all documents storing the world city details
@@ -330,7 +331,7 @@ Item {
             right: parent.right
             topMargin: units.gu(1)
         }
-        visible: dbAllTimersQuery.results
+        visible: dbAllTimersQuery.results.length !== 0
 
         nestedListViewHack: timerNestedListViewHack
 

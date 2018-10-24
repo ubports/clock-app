@@ -50,7 +50,7 @@ ClockCircle {
         anchors.horizontalCenter: parent.horizontalCenter
         width:Math.min(parent.width,parent.height)-units.dp(4)
 
-        color: UbuntuColors.slate
+        color: Theme.palette.normal.baseText
         font.pixelSize: maxTimeFontSize
         minimumPixelSize: 6
         fontSizeMode: Text.Fit
@@ -82,7 +82,7 @@ ClockCircle {
         minimumPixelSize: 6
         fontSizeMode: Text.Fit
         visible: text !== ""
-        color: UbuntuColors.slate
+        color: Theme.palette.normal.baseText
         text: {
             if (localizedTimeString.search(Qt.locale().amText) !== -1) {
                 // 12 hour format detected with the localised AM text
