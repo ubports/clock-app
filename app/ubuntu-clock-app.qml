@@ -65,6 +65,7 @@ Window {
         // applicationName for click packages (used as an unique app identifier)
         applicationName: "com.ubuntu.clock"
 
+        theme.name: clockAppSettings.theme
         backgroundColor: theme.palette.normal.background
 
         anchors.fill: parent
@@ -74,15 +75,6 @@ Window {
         Settings {
             id:clockAppSettings
             property string theme: ""
-
-            function updateTheme() {
-                if( typeof(clockAppSettings.theme) == 'string') {
-                   clockApp.theme.name = clockAppSettings.theme
-                }
-            }
-
-            Component.onCompleted: updateTheme();
-
         }
 
         // Database to store the user preferences locally
