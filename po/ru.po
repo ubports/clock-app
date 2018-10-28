@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-04 10:26+0300\n"
-"PO-Revision-Date: 2018-10-28 11:00+0000\n"
+"PO-Revision-Date: 2018-10-28 18:51+0000\n"
 "Last-Translator: Igor Polyakov <igorpolyakov@protonmail.com>\n"
 "Language-Team: Russian <https://translate.ubports.com/projects/ubports/"
 "clock-app/ru/>\n"
@@ -194,7 +194,7 @@ msgstr "Начать"
 
 #: app/stopwatch/StopwatchPage.qml:83
 msgid "Resume"
-msgstr "Возобновить"
+msgstr "Продолжить"
 
 #. TRANSLATORS: This refers to the stopwatch lap and is shown as a header where space is limited. Constrain
 #. translation length to a few characters.
