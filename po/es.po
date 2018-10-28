@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-04 10:26+0300\n"
-"PO-Revision-Date: 2018-10-28 18:51+0000\n"
-"Last-Translator: Sergio Reyes <vincentshergio@gmail.com>\n"
+"PO-Revision-Date: 2018-11-04 00:02+0000\n"
+"Last-Translator: advocatux <advocatux@airpost.net>\n"
 "Language-Team: Spanish <https://translate.ubports.com/projects/ubports/"
 "clock-app/es/>\n"
 "Language: es\n"
@@ -64,7 +64,7 @@ msgstr "No seleccionar nada"
 
 #: app/alarm/AlarmPage.qml:79 app/alarm/AlarmRepeat.qml:66
 msgid "Select All"
-msgstr "Seleccionar todos"
+msgstr "Seleccionar todo"
 
 #: app/alarm/AlarmPage.qml:102 app/alarm/AlarmList.qml:64
 #: app/worldclock/UserWorldCityList.qml:71
