@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-04 10:26+0300\n"
-"PO-Revision-Date: 2018-02-26 08:28+0000\n"
+"PO-Revision-Date: 2018-10-28 00:00+0000\n"
 "Last-Translator: P.-H. Lin <cypressyew@gmail.com>\n"
-"Language-Team: Chinese (Traditional) "
-"<https://translate.ubports.com/projects/ubports/clock-app/zh_Hant/>\n"
+"Language-Team: Chinese (Traditional) <https://translate.ubports.com/projects/"
+"ubports/clock-app/zh_Hant/>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2.15\n"
+"X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2017-04-05 07:41+0000\n"
 
 #: app/clock/ClockPage.qml:257
@@ -25,8 +25,9 @@ msgid "Retrieving location..."
 msgstr "正在取得位置..."
 
 #: app/alarm/AlarmSound.qml:60 app/alarm/EditAlarmPage.qml:323
+#, fuzzy
 msgid "Sound"
-msgstr "音效"
+msgstr "聲音"
 
 #: app/alarm/AlarmSound.qml:190
 msgid "Custom alarm sounds"
@@ -64,7 +65,7 @@ msgstr "全不選"
 
 #: app/alarm/AlarmPage.qml:79 app/alarm/AlarmRepeat.qml:66
 msgid "Select All"
-msgstr "全部選取"
+msgstr "全選"
 
 #: app/alarm/AlarmPage.qml:102 app/alarm/AlarmList.qml:64
 #: app/worldclock/UserWorldCityList.qml:71
@@ -198,8 +199,9 @@ msgid "Lap"
 msgstr "圈"
 
 #: app/stopwatch/StopwatchPage.qml:102
+#, fuzzy
 msgid "Clear"
-msgstr "清除"
+msgstr "明白"
 
 #: app/stopwatch/LapListView.qml:67
 msgid "Lap Time"
@@ -232,7 +234,7 @@ msgstr "時鐘"
 #: app/components/Information.qml:54
 #, qt-format
 msgid "Version %1"
-msgstr "版本 %1"
+msgstr "版本：%1"
 
 #: app/components/NavigationRow.qml:51
 msgid "Clock"
@@ -825,7 +827,7 @@ msgstr "摩洛哥"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:112
 msgid "Cayman Palms"
-msgstr ""
+msgstr "開曼群島"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:112
 msgid "Cayman Islands"
@@ -1299,7 +1301,7 @@ msgstr "科威特"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:200
 msgid "Kyiv"
-msgstr ""
+msgstr "基輔"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:202
 msgid "Lagos"
@@ -1576,7 +1578,7 @@ msgstr "新喀里多尼亞"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:255
 msgid "Nuestra Señora de La Paz"
-msgstr ""
+msgstr "拉巴斯"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:257
 msgid "Oklahoma City"
@@ -1838,7 +1840,7 @@ msgstr "塞拉耶佛"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:305
 msgid "Bosnia and Herzegovina"
-msgstr ""
+msgstr "波士尼亞與赫塞哥維納"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:306
 msgid "Saskatchewan"
@@ -2056,7 +2058,7 @@ msgstr "瑞士"
 msgid ""
 "A sophisticated clock app that provides world clock, alarm and stopwatch "
 "functionality."
-msgstr ""
+msgstr "非常好的時鐘應用程序，提供世界時間、鬧鐘和碼錶的功能。"
 
 #: ubuntu-clock-app.desktop.in.in.h:3
 msgid "time;alarm;alert;clock;world;stopwatch;"
