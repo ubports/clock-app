@@ -52,7 +52,7 @@ Item {
         anchors.top: emptyIcon.bottom
         anchors.topMargin: units.gu(4)
         horizontalAlignment: Text.AlignHCenter
-        color: UbuntuColors.slate
+        color: Theme.palette.normal.backgroundSecondaryText
     }
 
     Label {
@@ -61,6 +61,6 @@ Item {
         wrapMode: Text.WordWrap
         anchors.top: emptyLabel.bottom
         horizontalAlignment: Text.AlignHCenter
-        color: UbuntuColors.ash
+        color: Theme.palette.normal.backgroundTertiaryText
     }
 }

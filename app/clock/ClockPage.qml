@@ -220,7 +220,7 @@ Item {
         text: clock.localizedDateString
         textSize: Label.Medium
         opacity: 0
-        color: UbuntuColors.slate
+        color: Theme.palette.normal.backgroundSecondaryText
     }
 
     Row {
@@ -249,7 +249,7 @@ Item {
             id: location
             objectName: "location"
 
-            color: UbuntuColors.slate
+            color: Theme.palette.normal.backgroundSecondaryText
             anchors.verticalCenter: locationIcon.verticalCenter
 
             text: {

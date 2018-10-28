@@ -182,7 +182,6 @@ Item {
                 icon.name:  "close"
                 width: units.gu(7)
                 height: units.gu(4)
-                icon.color: UbuntuColors.slate
                 onClicked: {
                     timerNameField.focus = saveTimerRow.enabled = false;
                 }
@@ -231,7 +230,6 @@ Item {
                 icon.name: "reminder-new"
                 width: units.gu(7)
                 height: units.gu(4)
-                icon.color: UbuntuColors.slate
                 enabled: timerFace.getCircle().hasTime && !isRunning
                 opacity: enabled ? 1: 0
 
