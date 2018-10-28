@@ -8,17 +8,17 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-04 10:26+0300\n"
-"PO-Revision-Date: 2018-07-21 11:38+0000\n"
-"Last-Translator: ierihon <idekovets@mail.ru>\n"
-"Language-Team: Russian <https://translate.ubports.com/projects/ubports/clock-"
-"app/ru/>\n"
+"PO-Revision-Date: 2018-10-28 18:51+0000\n"
+"Last-Translator: Igor Polyakov <igorpolyakov@protonmail.com>\n"
+"Language-Team: Russian <https://translate.ubports.com/projects/ubports/"
+"clock-app/ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<="
 "4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 2.17\n"
+"X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2017-04-05 07:41+0000\n"
 
 #: app/clock/ClockPage.qml:257
@@ -124,15 +124,17 @@ msgstr "Изменить время и дату"
 
 #: app/alarm/AlarmSettingsPage.qml:234
 msgid "Theme"
-msgstr ""
+msgstr "Тема"
 
 #: app/alarm/AlarmSettingsPage.qml:234
+#, fuzzy
 msgid "Theme (system theme on App start)"
-msgstr ""
+msgstr "Тема (при старте будет использована системная тема)"
 
 #: app/alarm/AlarmSettingsPage.qml:235
+#, fuzzy
 msgid "Theme (will apply after App restart)"
-msgstr ""
+msgstr "Тема (примениться после перезапуска приложения)"
 
 #: app/alarm/AlarmUtils.qml:31
 msgid "Never"
@@ -192,7 +194,7 @@ msgstr "Начать"
 
 #: app/stopwatch/StopwatchPage.qml:83
 msgid "Resume"
-msgstr "Возобновить"
+msgstr "Продолжить"
 
 #. TRANSLATORS: This refers to the stopwatch lap and is shown as a header where space is limited. Constrain
 #. translation length to a few characters.
