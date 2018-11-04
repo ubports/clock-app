@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-26 14:04+0000\n"
-"PO-Revision-Date: 2018-11-04 20:29+0000\n"
+"PO-Revision-Date: 2018-11-07 21:58+0000\n"
 "Last-Translator: Daniel Frańczak <danielfranczak5@wp.pl>\n"
 "Language-Team: Polish <https://translate.ubports.com/projects/ubports/"
 "clock-app/pl/>\n"
@@ -215,22 +215,22 @@ msgstr "Wersja %1"
 #: ../app/components/TimerUtils.qml:29
 #, no-c-format, qt-format
 msgid "%1d %2h %3m"
-msgstr "%1d %2h %3m"
+msgstr "za %1d %2g %3m"
 
 #: ../app/components/TimerUtils.qml:39
 #, no-c-format, qt-format
 msgid "%1h %2m"
-msgstr "%1h %2m"
+msgstr "za %1g %2m"
 
 #: ../app/components/TimerUtils.qml:49
 #, no-c-format, qt-format
 msgid "%1m"
-msgstr "%1m"
+msgstr "za %1m"
 
 #: ../app/components/TimerUtils.qml:54
 #, c-format, qt-format
 msgid " %1s"
-msgstr " %1s"
+msgstr " za %1s"
 
 #. TRANSLATORS: This refers to the stopwatch lap and is shown as a header where space is limited. Constrain
 #. translation length to a few characters.
@@ -280,7 +280,7 @@ msgstr ""
 
 #: ../app/timer/TimerPage.qml:194
 msgid "Enter timer name"
-msgstr "Wpisz nazwę stopera"
+msgstr "Wpisz nazwę budzika"
 
 #: ../app/worldclock/AddWorldCityButton.qml:32
 msgid "Add"
