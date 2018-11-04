@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-04 10:26+0300\n"
-"PO-Revision-Date: 2017-12-10 09:19+0000\n"
-"Last-Translator: Anne Onyme <anneonyme017@openmailbox.org>\n"
-"Language-Team: French <https://translate.ubports.com/projects/ubports/clock-"
-"app/fr/>\n"
+"PO-Revision-Date: 2018-11-04 00:01+0000\n"
+"Last-Translator: Anne Onyme <anneonyme017@tutanota.com>\n"
+"Language-Team: French <https://translate.ubports.com/projects/ubports/"
+"clock-app/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 2.15\n"
+"X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2017-04-05 07:40+0000\n"
 
 #: app/clock/ClockPage.qml:257
@@ -60,7 +60,7 @@ msgstr "Précédent"
 
 #: app/alarm/AlarmPage.qml:77
 msgid "Select None"
-msgstr "Annuler sélection"
+msgstr "Tout désélectionner"
 
 #: app/alarm/AlarmPage.qml:79 app/alarm/AlarmRepeat.qml:66
 msgid "Select All"
