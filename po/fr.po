@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-09-04 10:26+0300\n"
-"PO-Revision-Date: 2018-11-04 00:01+0000\n"
+"POT-Creation-Date: 2018-08-26 14:04+0000\n"
+"PO-Revision-Date: 2018-11-05 21:23+0000\n"
 "Last-Translator: Anne Onyme <anneonyme017@tutanota.com>\n"
 "Language-Team: French <https://translate.ubports.com/projects/ubports/"
 "clock-app/fr/>\n"
@@ -17,301 +17,337 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 3.0.1\n"
+"X-Generator: Weblate 3.1.1\n"
 "X-Launchpad-Export-Date: 2017-04-05 07:40+0000\n"
 
-#: app/clock/ClockPage.qml:257
-msgid "Retrieving location..."
-msgstr "Recherche de la position..."
-
-#: app/alarm/AlarmSound.qml:60 app/alarm/EditAlarmPage.qml:323
-msgid "Sound"
-msgstr "Son"
-
-#: app/alarm/AlarmSound.qml:190
-msgid "Custom alarm sounds"
-msgstr "Personnaliser les sons d'alarme"
-
-#: app/alarm/AlarmSound.qml:205
-msgid "Add sound"
-msgstr "Ajouter un son"
-
-#: app/alarm/AlarmSound.qml:343
-msgid "Default alarm sounds"
-msgstr "Sons d'alarme par défaut"
-
-#: app/alarm/AlarmLabel.qml:37 app/alarm/AlarmLabel.qml:82
-#: app/alarm/EditAlarmPage.qml:302
-msgid "Label"
-msgstr "Étiquette"
-
-#: app/alarm/AlarmPage.qml:38 app/components/AlarmBottomEdge.qml:38
-msgid "Alarms"
-msgstr "Alarmes"
-
-#: app/alarm/AlarmPage.qml:53 app/alarm/EditAlarmPage.qml:43
-#: app/alarm/EditAlarmPage.qml:188
-msgid "Alarm"
-msgstr "Alarme"
-
-#: app/alarm/AlarmPage.qml:66 app/worldclock/WorldCityList.qml:83
-msgid "Back"
-msgstr "Précédent"
-
-#: app/alarm/AlarmPage.qml:77
-msgid "Select None"
-msgstr "Tout désélectionner"
-
-#: app/alarm/AlarmPage.qml:79 app/alarm/AlarmRepeat.qml:66
-msgid "Select All"
-msgstr "Tout sélectionner"
-
-#: app/alarm/AlarmPage.qml:102 app/alarm/AlarmList.qml:64
-#: app/worldclock/UserWorldCityList.qml:71
-msgid "Delete"
-msgstr "Supprimer"
-
-#: app/alarm/AlarmPage.qml:158
-msgid "No saved alarms"
-msgstr "Aucune alarme enregistrée"
-
-#: app/alarm/AlarmPage.qml:159
-msgid "Tap the + icon to add an alarm"
-msgstr "Appuyez sur l'icône + pour ajouter une alarme"
-
-#: app/alarm/AlarmRepeat.qml:40 app/alarm/EditAlarmPage.qml:286
-msgid "Repeat"
-msgstr "Répétition"
-
-#: app/alarm/AlarmSettingsPage.qml:31
+#: ../app/MainPage.qml:157 ../app/alarm/AlarmSettingsPage.qml:31
 msgid "Settings"
 msgstr "Paramètres"
 
+#: ../app/MainPage.qml:166
+msgid "About"
+msgstr "À propos"
+
+#: ../app/alarm/AlarmLabel.qml:37 ../app/alarm/AlarmLabel.qml:82
+#: ../app/alarm/EditAlarmPage.qml:303
+msgid "Label"
+msgstr "Étiquette"
+
+#: ../app/alarm/AlarmList.qml:71 ../app/alarm/AlarmPage.qml:109
+#: ../app/timer/TimerListView.qml:84 ../app/worldclock/UserWorldCityList.qml:71
+msgid "Delete"
+msgstr "Supprimer"
+
+#: ../app/alarm/AlarmPage.qml:45 ../app/components/AlarmBottomEdge.qml:38
+msgid "Alarms"
+msgstr "Alarmes"
+
+#: ../app/alarm/AlarmPage.qml:60 ../app/alarm/EditAlarmPage.qml:43
+#: ../app/alarm/EditAlarmPage.qml:189
+msgid "Alarm"
+msgstr "Alarme"
+
+#: ../app/alarm/AlarmPage.qml:73 ../app/worldclock/WorldCityList.qml:83
+msgid "Back"
+msgstr "Précédent"
+
+#: ../app/alarm/AlarmPage.qml:84
+msgid "Select None"
+msgstr "Tout désélectionner"
+
+#: ../app/alarm/AlarmPage.qml:86 ../app/alarm/AlarmRepeat.qml:66
+msgid "Select All"
+msgstr "Tout sélectionner"
+
+#: ../app/alarm/AlarmPage.qml:172
+msgid "No saved alarms"
+msgstr "Aucune alarme enregistrée"
+
+#: ../app/alarm/AlarmPage.qml:173
+msgid "Tap the + icon to add an alarm"
+msgstr "Appuyez sur l'icône + pour ajouter une alarme"
+
+#: ../app/alarm/AlarmRepeat.qml:40 ../app/alarm/EditAlarmPage.qml:287
+msgid "Repeat"
+msgstr "Répétition"
+
 #. TRANSLATORS: Alarm stops after
 #. TRANSLATORS: Snooze for
-#: app/alarm/AlarmSettingsPage.qml:56 app/alarm/AlarmSettingsPage.qml:57
-#: app/alarm/AlarmSettingsPage.qml:58 app/alarm/AlarmSettingsPage.qml:59
-#: app/alarm/AlarmSettingsPage.qml:69 app/alarm/AlarmSettingsPage.qml:70
-#: app/alarm/AlarmSettingsPage.qml:71 app/alarm/AlarmSettingsPage.qml:72
-#: app/alarm/AlarmSettingsPage.qml:122 app/alarm/AlarmSettingsPage.qml:153
+#: ../app/alarm/AlarmSettingsPage.qml:56 ../app/alarm/AlarmSettingsPage.qml:57
+#: ../app/alarm/AlarmSettingsPage.qml:58 ../app/alarm/AlarmSettingsPage.qml:59
+#: ../app/alarm/AlarmSettingsPage.qml:69 ../app/alarm/AlarmSettingsPage.qml:70
+#: ../app/alarm/AlarmSettingsPage.qml:71 ../app/alarm/AlarmSettingsPage.qml:72
+#: ../app/alarm/AlarmSettingsPage.qml:122
+#: ../app/alarm/AlarmSettingsPage.qml:153
 #, qt-format
 msgid "%1 minute"
 msgid_plural "%1 minutes"
 msgstr[0] "%1 minute"
 msgstr[1] "%1 minutes"
 
-#: app/alarm/AlarmSettingsPage.qml:99
+#: ../app/alarm/AlarmSettingsPage.qml:99
 msgid "Alarm volume"
 msgstr "Volume de l'alarme"
 
-#: app/alarm/AlarmSettingsPage.qml:121
+#: ../app/alarm/AlarmSettingsPage.qml:121
 msgid "Alarm stops after"
 msgstr "L'alarme s'arrête après"
 
-#: app/alarm/AlarmSettingsPage.qml:152
+#: ../app/alarm/AlarmSettingsPage.qml:152
 msgid "Snooze for"
 msgstr "Répéter dans"
 
-#: app/alarm/AlarmSettingsPage.qml:183
+#: ../app/alarm/AlarmSettingsPage.qml:183
 msgid "Vibration"
 msgstr "Vibration"
 
-#: app/alarm/AlarmSettingsPage.qml:209
+#: ../app/alarm/AlarmSettingsPage.qml:209
 msgid "Change time and date"
 msgstr "Changer l'heure et la date"
 
-#: app/alarm/AlarmSettingsPage.qml:234
+#: ../app/alarm/AlarmSettingsPage.qml:234
 msgid "Theme"
-msgstr ""
+msgstr "Thème"
 
-#: app/alarm/AlarmSettingsPage.qml:234
+#: ../app/alarm/AlarmSettingsPage.qml:234
 msgid "Theme (system theme on App start)"
-msgstr ""
+msgstr "Thème (thème du système au démarrage de l'application)"
 
-#: app/alarm/AlarmSettingsPage.qml:235
+#: ../app/alarm/AlarmSettingsPage.qml:235
 msgid "Theme (will apply after App restart)"
-msgstr ""
+msgstr "Thème (s'appliquera après le redémarrage de l'application)"
 
-#: app/alarm/AlarmUtils.qml:31
+#: ../app/alarm/AlarmSound.qml:60 ../app/alarm/EditAlarmPage.qml:324
+msgid "Sound"
+msgstr "Son"
+
+#: ../app/alarm/AlarmSound.qml:190
+msgid "Custom alarm sounds"
+msgstr "Personnaliser les sons d'alarme"
+
+#: ../app/alarm/AlarmSound.qml:205
+msgid "Add sound"
+msgstr "Ajouter un son"
+
+#: ../app/alarm/AlarmSound.qml:343
+msgid "Default alarm sounds"
+msgstr "Sons d'alarme par défaut"
+
+#: ../app/alarm/AlarmUtils.qml:31
 msgid "Never"
 msgstr "Jamais"
 
-#: app/alarm/AlarmUtils.qml:37
+#: ../app/alarm/AlarmUtils.qml:37
 msgid "Weekdays"
 msgstr "En semaine"
 
-#: app/alarm/AlarmUtils.qml:41
+#: ../app/alarm/AlarmUtils.qml:41
 msgid "Weekends"
 msgstr "Les weekends"
 
-#: app/alarm/AlarmUtils.qml:45
+#: ../app/alarm/AlarmUtils.qml:45
 msgid "Daily"
 msgstr "Tous les jours"
 
-#: app/alarm/AlarmUtils.qml:81
+#: ../app/alarm/AlarmUtils.qml:81
 #, no-c-format, qt-format
 msgid "in %1d %2h %3m"
 msgstr "dans %1j %2h %3min"
 
-#: app/alarm/AlarmUtils.qml:91
+#: ../app/alarm/AlarmUtils.qml:91
 #, no-c-format, qt-format
 msgid "in %1h %2m"
 msgstr "dans %1h %2m"
 
-#: app/alarm/AlarmUtils.qml:100
+#: ../app/alarm/AlarmUtils.qml:100
 #, no-c-format, qt-format
 msgid "in %1m"
 msgstr "dans %1m"
 
-#: app/alarm/EditAlarmPage.qml:37
+#: ../app/alarm/EditAlarmPage.qml:37
 msgid "New alarm"
 msgstr "Nouvelle alarme"
 
-#: app/alarm/EditAlarmPage.qml:37
+#: ../app/alarm/EditAlarmPage.qml:37
 msgid "Edit alarm"
 msgstr "Modifier l'alarme"
 
-#: app/alarm/EditAlarmPage.qml:347
+#: ../app/alarm/EditAlarmPage.qml:348
 msgid "Delete alarm"
 msgstr "Supprimer l'alarme"
 
 #. TRANSLATORS: This is the page title. Please keep the translation length to 3 words if possible
-#: app/alarm/SoundPeerPicker.qml:27
+#: ../app/alarm/SoundPeerPicker.qml:27
 msgid "Add sound from"
 msgstr "Ajouter un son depuis"
 
-#: app/stopwatch/StopwatchPage.qml:83
-msgid "Stop"
-msgstr "Arrêter"
+#: ../app/clock/ClockPage.qml:259
+msgid "Retrieving location..."
+msgstr "Recherche de la position..."
 
-#: app/stopwatch/StopwatchPage.qml:83
-msgid "Start"
-msgstr "Démarrer"
-
-#: app/stopwatch/StopwatchPage.qml:83
-msgid "Resume"
-msgstr "Reprendre"
-
-#. TRANSLATORS: This refers to the stopwatch lap and is shown as a header where space is limited. Constrain
-#. translation length to a few characters.
-#: app/stopwatch/StopwatchPage.qml:102 app/stopwatch/LapListView.qml:58
-msgid "Lap"
-msgstr "Tour"
-
-#: app/stopwatch/StopwatchPage.qml:102
-msgid "Clear"
-msgstr "Effacer"
-
-#: app/stopwatch/LapListView.qml:67
-msgid "Lap Time"
-msgstr "Temps au tour"
-
-#: app/stopwatch/LapListView.qml:74
-msgid "Total Time"
-msgstr "Temps total"
-
-#: app/components/Information.qml:8
-#, fuzzy
+#: ../app/components/Information.qml:8
 msgid "App Information"
-msgstr "Information"
+msgstr "Informations"
 
-#: app/components/Information.qml:17
+#: ../app/components/Information.qml:17
 msgid "Get the source"
 msgstr "Récupérer le code source"
 
-#: app/components/Information.qml:18
+#: ../app/components/Information.qml:18
 msgid "Report issues"
 msgstr "Signaler un problème"
 
-#: app/components/Information.qml:19
+#: ../app/components/Information.qml:19
 msgid "Help translate"
 msgstr "Aider à traduire"
 
-#: app/components/Information.qml:48
-#, fuzzy
+#: ../app/components/Information.qml:48
 msgid "Clock App"
 msgstr "Horloge"
 
-#: app/components/Information.qml:54
-#, fuzzy, qt-format
+#: ../app/components/Information.qml:54
+#, qt-format
 msgid "Version %1"
-msgstr "dans %1m"
+msgstr "Version %1"
 
-#: app/components/NavigationRow.qml:51
-msgid "Clock"
-msgstr "Horloge"
+#: ../app/components/TimerUtils.qml:29
+#, no-c-format, qt-format
+msgid "%1d %2h %3m"
+msgstr "%1j %2h %3m"
 
-#: app/components/NavigationRow.qml:63
-msgid "Stopwatch"
-msgstr "Chronomètre"
+#: ../app/components/TimerUtils.qml:39
+#, no-c-format, qt-format
+msgid "%1h %2m"
+msgstr "%1h %2m"
 
-#: app/worldclock/WorldCityList.qml:56
-msgid "Select a city"
-msgstr "Sélectionnez une ville"
+#: ../app/components/TimerUtils.qml:49
+#, no-c-format, qt-format
+msgid "%1m"
+msgstr "%1m"
 
-#: app/worldclock/WorldCityList.qml:63 app/worldclock/AddWorldCityButton.qml:63
+#: ../app/components/TimerUtils.qml:54
+#, c-format, qt-format
+msgid " %1s"
+msgstr " %1s"
+
+#. TRANSLATORS: This refers to the stopwatch lap and is shown as a header where space is limited. Constrain
+#. translation length to a few characters.
+#: ../app/stopwatch/LapListView.qml:58 ../app/stopwatch/StopwatchPage.qml:102
+msgid "Lap"
+msgstr "Tour"
+
+#: ../app/stopwatch/LapListView.qml:67
+msgid "Lap Time"
+msgstr "Temps au tour"
+
+#: ../app/stopwatch/LapListView.qml:74
+msgid "Total Time"
+msgstr "Temps total"
+
+#: ../app/stopwatch/StopwatchPage.qml:83 ../app/timer/TimerPage.qml:260
+msgid "Stop"
+msgstr "Arrêter"
+
+#: ../app/stopwatch/StopwatchPage.qml:83 ../app/timer/TimerPage.qml:260
+msgid "Start"
+msgstr "Démarrer"
+
+#: ../app/stopwatch/StopwatchPage.qml:83
+msgid "Resume"
+msgstr "Reprendre"
+
+#: ../app/stopwatch/StopwatchPage.qml:102
+msgid "Clear"
+msgstr "Effacer"
+
+#: ../app/timer/TimerListDelegate.qml:49
+msgid "Active"
+msgstr "Actif"
+
+#: ../app/timer/TimerListView.qml:56
+msgid "Saved Timers"
+msgstr "Minuteurs enregistrés"
+
+#: ../app/timer/TimerPage.qml:126
+msgid ""
+"Please set a time before starting the timer\n"
+"By dragging the clock hands above."
+msgstr ""
+"Veuillez définir une durée avant de lancer le minuteur\n"
+"en déplaçant les aiguilles de l'horloge ci-dessus."
+
+#: ../app/timer/TimerPage.qml:194
+msgid "Enter timer name"
+msgstr "Saisissez le nom de la minuterie"
+
+#: ../app/worldclock/AddWorldCityButton.qml:32
+msgid "Add"
+msgstr "Ajouter"
+
+#: ../app/worldclock/AddWorldCityButton.qml:63
+#: ../app/worldclock/WorldCityList.qml:63
 msgid "City"
 msgstr "Ville"
 
-#: app/worldclock/WorldCityList.qml:112
-msgid "Search..."
-msgstr "Rechercher..."
-
-#: app/worldclock/WorldCityList.qml:216
-msgid "Searching for a city"
-msgstr "Recherche d'une ville en cours"
-
-#: app/worldclock/WorldCityList.qml:221
-msgid "No City Found"
-msgstr "Aucune ville trouvée"
-
-#: app/worldclock/WorldCityList.qml:227
-msgid "Unable to connect."
-msgstr "Impossible d'établir la connexion."
-
-#: app/worldclock/WorldCityList.qml:228
-msgid "Please check your network connection and try again"
-msgstr "Veuillez vérifier votre configuration réseau et réessayer"
-
 #. TRANSLATORS: this indicates if the time in a world clock
 #. is behind or ahead of the time at the current location
-#: app/worldclock/UserWorldCityDelegate.qml:136
+#: ../app/worldclock/UserWorldCityDelegate.qml:136
 msgid "behind"
 msgstr "de retard"
 
-#: app/worldclock/UserWorldCityDelegate.qml:137
+#: ../app/worldclock/UserWorldCityDelegate.qml:137
 msgid "ahead"
 msgstr "d'avance"
 
 #. TRANSLATORS: the first argument is hour, followed by
 #. minute, and the translation for either 'behind' or
 #. 'ahead'
-#: app/worldclock/UserWorldCityDelegate.qml:147
+#: ../app/worldclock/UserWorldCityDelegate.qml:147
 #, qt-format
 msgid "%1h %2m %3"
 msgstr "%3 %1h %2m"
 
 #. TRANSLATORS: the first argument is hour, followed by the
 #. translation for either 'behind' or 'ahead'
-#: app/worldclock/UserWorldCityDelegate.qml:156
+#: ../app/worldclock/UserWorldCityDelegate.qml:156
 #, qt-format
 msgid "%1h %2"
 msgstr "%1h %2"
 
 #. TRANSLATORS: the first argument is minute, followed by the
 #. translation for either 'behind' or 'ahead'
-#: app/worldclock/UserWorldCityDelegate.qml:164
+#: ../app/worldclock/UserWorldCityDelegate.qml:164
 #, qt-format
 msgid "%1m %2"
 msgstr "%2 %1m"
 
-#: app/worldclock/UserWorldCityDelegate.qml:170
+#: ../app/worldclock/UserWorldCityDelegate.qml:170
 msgid "Same time"
 msgstr "Même heure"
 
-#: app/worldclock/AddWorldCityButton.qml:32
-msgid "Add"
-msgstr "Ajouter"
+#: ../app/worldclock/WorldCityList.qml:56
+msgid "Select a city"
+msgstr "Sélectionnez une ville"
+
+#: ../app/worldclock/WorldCityList.qml:112
+msgid "Search..."
+msgstr "Rechercher..."
+
+#: ../app/worldclock/WorldCityList.qml:216
+msgid "Searching for a city"
+msgstr "Recherche d'une ville en cours"
+
+#: ../app/worldclock/WorldCityList.qml:221
+msgid "No City Found"
+msgstr "Aucune ville trouvée"
+
+#: ../app/worldclock/WorldCityList.qml:227
+msgid "Unable to connect."
+msgstr "Impossible d'établir la connexion."
+
+#: ../app/worldclock/WorldCityList.qml:228
+msgid "Please check your network connection and try again"
+msgstr "Veuillez vérifier votre configuration réseau et réessayer"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:48
 msgid "Abidjan"
@@ -2055,14 +2091,21 @@ msgstr "Zurich"
 msgid "Switzerland"
 msgstr "Suisse"
 
+#: ubuntu-clock-app.desktop.in.in.h:1
+msgid "Clock"
+msgstr "Horloge"
+
 #: ubuntu-clock-app.desktop.in.in.h:2
 msgid ""
-"A sophisticated clock app that provides world clock, alarm and stopwatch "
-"functionality."
+"A sophisticated clock app that provides world clock, alarm , stopwatch and "
+"timer functionality."
 msgstr ""
-"Une application sophistiquée qui fournit des fonctionnalités d'horloge "
-"mondiale, d'alarme et de chronomètre."
+"Une application sophistiquée servant d'horloge mondiale, de chronomètre et "
+"de minuteur."
 
 #: ubuntu-clock-app.desktop.in.in.h:3
 msgid "time;alarm;alert;clock;world;stopwatch;"
 msgstr "heure;alarme;alerte;horloge;monde;chronomètre;"
+
+#~ msgid "Stopwatch"
+#~ msgstr "Chronomètre"
