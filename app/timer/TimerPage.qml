@@ -85,11 +85,6 @@ Item {
             topMargin:units.gu(1.5)
             horizontalCenter: parent.horizontalCenter
         }
-
-        onAdjusted: {
-            timerNameField.text = "";
-        }
-
     }
 
     Component {
@@ -170,9 +165,23 @@ Item {
                 horizontalCenter: parent.horizontalCenter
             }
 
+            property bool editMode: false
+            property string timerID: ""
+
             Behavior on height {
                 UbuntuNumberAnimation{
                     duration: UbuntuAnimation.BriskDuration
+                }
+            }
+
+            onEnabledChanged: {
+                if (enabled) {
+                    timerNameField.focus = true;
+                } else {
+                    timerNameField.focus = false;
+                    timerNameField.text = "";
+                    editMode = false;
+                    timerID = "";
                 }
             }
 
@@ -182,17 +191,15 @@ Item {
                 icon.name:  "close"
                 width: units.gu(7)
                 height: units.gu(4)
-                onClicked: {
-                    timerNameField.focus = saveTimerRow.enabled = false;
-                }
+                onClicked: saveTimerRow.enabled = false
             }
 
             TextField {
                 id:timerNameField
                 width: buttonRow.width / 2 - units.gu(1)
                 placeholderText: i18n.tr("Enter timer name")
-                onAccepted: saveTimerRow.saveTimer();
                 maximumLength: 25
+                onAccepted: saveTimerRow.saveTimer();
             }
 
             ActionIcon {
@@ -200,19 +207,28 @@ Item {
                 enabled: timerNameField.displayText
                 opacity: enabled ? 1 : 0.5
                 objectName:"saveTimerAction"
-                icon.name: "reminder-new"
+                icon.name: saveTimerRow.editMode ? "ok" : "reminder-new"
                 width: units.gu(7)
                 height: units.gu(4)
                 onClicked: saveTimerRow.saveTimer();
             }
 
             function saveTimer() {
+                // Do not accept empty names
+                if (!timerNameField.text) { return; }
+
                 if (Qt.inputMethod.preeditText) {
-                    Qt.inputMethod.commit()
+                    Qt.inputMethod.commit();
                 }
-                clockDB.putDoc({"timer":{"time":timerFace.getTimerTime(),"message":timerNameField.text}});
-                saveTimerRow.enabled = false
-                timerNameField.text = "";
+
+                var timer = {
+                    "timer": {
+                        "time": timerFace.getTimerTime(),
+                        "message": timerNameField.text
+                    }
+                };
+                clockDB.putDoc(timer, saveTimerRow.timerID);
+                saveTimerRow.enabled = false;
             }
         }
 
@@ -239,7 +255,7 @@ Item {
                     }
                 }
                 onClicked: {
-                    timerNameField.focus = saveTimerRow.enabled = true;
+                    saveTimerRow.enabled = true;
                 }
 
             }
