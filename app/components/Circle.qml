@@ -1,7 +1,7 @@
 import QtQuick 2.4
 
 ShaderEffect {
-    property color color: "#4DFFFFFF"
+    property color color: Qt.rgba(Theme.palette.normal.background.r, Theme.palette.normal.background.g, Theme.palette.normal.background.b, 0.77)
     property real borderWidth: 10
     property color borderColorTop: "#6E6E6E"
     property color borderColorBottom: "#00000000"

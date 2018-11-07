@@ -138,7 +138,7 @@ Item {
             right: parent.right
             topMargin: units.gu(1)
         }
-        visible: stopwatchEngine.running || stopwatchEngine.totalTimeOfStopwatch !== 0
+        visible: stopwatchEngine.totalTimeOfStopwatch !== 0
         model: stopwatchEngine
     }
 }

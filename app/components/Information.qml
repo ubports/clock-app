@@ -41,7 +41,7 @@ Page {
         }
         Label {
             width: parent.width
-            font.pixelSize: units.gu(5)
+            font.pixelSize: units.gu(3)
             font.bold: true
             color: theme.palette.normal.backgroundText
             horizontalAlignment: Text.AlignHCenter
@@ -49,7 +49,7 @@ Page {
         }
         Label {
             width: parent.width
-            color: UbuntuColors.ash
+            color: theme.palette.normal.backgroundTertiaryText
             horizontalAlignment: Text.AlignHCenter
             text: i18n.tr("Version %1").arg("3.10.2")
         }
