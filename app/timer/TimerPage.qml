@@ -123,7 +123,7 @@ Item {
           Label {
               id:pleaseSetTimeMsg
               anchors.centerIn: parent
-              text:i18n.tr("Please set a time before starting the timer\nBy dragging the clock hands above.")
+              text:i18n.tr("Please set a time before starting the timer\nby dragging the clock hands above.")
               horizontalAlignment: Text.Center
           }
           autoClose: true

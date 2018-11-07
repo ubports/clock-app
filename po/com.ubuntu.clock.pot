@@ -269,7 +269,7 @@ msgstr ""
 #: ../app/timer/TimerPage.qml:126
 msgid ""
 "Please set a time before starting the timer\n"
-"By dragging the clock hands above."
+"by dragging the clock hands above."
 msgstr ""
 
 #: ../app/timer/TimerPage.qml:194
