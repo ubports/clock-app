@@ -91,14 +91,33 @@ UbuntuListView {
             ]
         }
 
-        onClicked: {
-            timerFace.getCircle().setTime(new Date(model.contents.time))
-            timerNameField.text = model.contents.message
-            timersListView.nestedListViewHack.release();
+        trailingActions: ListItemActions {
+            actions: [
+                Action {
+                    id: swipeEditAction
+                    objectName: "swipeEditAction"
+                    text: i18n.tr("Edit")
+                    iconName: "edit"
+                    onTriggered: {
+                        saveTimerRow.editMode = true;
+                        saveTimerRow.timerID = model.docId;
+                        updateTimerScreen();
+                        saveTimerRow.enabled = true;
+                    }
+                }
+            ]
         }
+
+        onClicked: updateTimerScreen()
 
         timerTime:  new Date(model.contents.time)
         timerMessage: model.contents.message
         activeAlarm: activeTimers.findTimerAlarmByMessage(activeTimers.addPrefixToMessage(model.contents.message)) !== null && _timerPage.isRunning;
+
+        function updateTimerScreen() {
+            timerFace.getCircle().setTime(new Date(model.contents.time));
+            timerNameField.text = model.contents.message;
+            timersListView.nestedListViewHack.release();
+        }
     }
 }
