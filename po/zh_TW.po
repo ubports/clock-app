@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-26 14:04+0000\n"
-"PO-Revision-Date: 2018-11-13 08:55+0000\n"
+"PO-Revision-Date: 2018-11-14 12:14+0000\n"
 "Last-Translator: Louies <louies0623@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <https://translate.ubports.com/projects/"
 "ubports/clock-app/zh_Hant/>\n"
@@ -146,7 +146,7 @@ msgstr "週末"
 
 #: ../app/alarm/AlarmUtils.qml:45
 msgid "Daily"
-msgstr "每日"
+msgstr "每天"
 
 #: ../app/alarm/AlarmUtils.qml:81
 #, no-c-format, qt-format
@@ -272,8 +272,8 @@ msgid ""
 "Please set a time before starting the timer\n"
 "By dragging the clock hands above."
 msgstr ""
-"請在啟動計時器之前設置一個時間\n"
-"透過移動時鐘上面的指針來設置。"
+"請在啟動計時器之前先設置一個時間\n"
+"透過移動時鐘上面的指針來進行設置。"
 
 #: ../app/timer/TimerPage.qml:194
 msgid "Enter timer name"
