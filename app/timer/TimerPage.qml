@@ -85,6 +85,12 @@ Item {
             topMargin:units.gu(1.5)
             horizontalCenter: parent.horizontalCenter
         }
+
+        onAdjusted: {
+            if (!saveTimerRow.editMode) {
+                timerNameField.text = "";
+            }
+        }
     }
 
     Component {
@@ -174,6 +180,17 @@ Item {
                 }
             }
 
+            Connections {
+                target: timersList
+                onSelectTimer: {
+                    timerFace.getCircle().setTime(new Date(model.contents.time));
+                    timerNameField.text = model.contents.message;
+                    saveTimerRow.timerID = model.docId;
+                    saveTimerRow.editMode = mode.editMode;
+                    saveTimerRow.enabled = saveTimerRow.editMode;
+                }
+            }
+
             onEnabledChanged: {
                 if (enabled) {
                     timerNameField.focus = true;
@@ -227,7 +244,8 @@ Item {
                         "message": timerNameField.text
                     }
                 };
-                clockDB.putDoc(timer, saveTimerRow.timerID);
+                var docID = saveTimerRow.editMode ? saveTimerRow.timerID : "";
+                clockDB.putDoc(timer, docID);
                 saveTimerRow.enabled = false;
             }
         }

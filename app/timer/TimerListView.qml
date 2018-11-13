@@ -24,6 +24,8 @@ UbuntuListView {
 
     property var nestedListViewHack: null
 
+    signal selectTimer(var model, var mode)
+
     clip: true
 //    pressDelay: 75
     currentIndex: -1
@@ -99,25 +101,20 @@ UbuntuListView {
                     text: i18n.tr("Edit")
                     iconName: "edit"
                     onTriggered: {
-                        saveTimerRow.editMode = true;
-                        saveTimerRow.timerID = model.docId;
-                        updateTimerScreen();
-                        saveTimerRow.enabled = true;
+                        timersListView.nestedListViewHack.release();
+                        selectTimer(model, { editMode: true });
                     }
                 }
             ]
         }
 
-        onClicked: updateTimerScreen()
+        onClicked: {
+            timersListView.nestedListViewHack.release();
+            selectTimer(model, { editMode: false });
+        }
 
         timerTime:  new Date(model.contents.time)
         timerMessage: model.contents.message
         activeAlarm: activeTimers.findTimerAlarmByMessage(activeTimers.addPrefixToMessage(model.contents.message)) !== null && _timerPage.isRunning;
-
-        function updateTimerScreen() {
-            timerFace.getCircle().setTime(new Date(model.contents.time));
-            timerNameField.text = model.contents.message;
-            timersListView.nestedListViewHack.release();
-        }
     }
 }
