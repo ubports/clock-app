@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-26 14:04+0000\n"
-"PO-Revision-Date: 2018-11-07 21:58+0000\n"
+"PO-Revision-Date: 2018-11-14 12:14+0000\n"
 "Last-Translator: Louies <louies0623@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <https://translate.ubports.com/projects/"
 "ubports/clock-app/zh_Hant/>\n"
@@ -61,7 +61,7 @@ msgstr "全選"
 
 #: ../app/alarm/AlarmPage.qml:172
 msgid "No saved alarms"
-msgstr "無已儲存鬧鐘"
+msgstr "沒有已儲存的鬧鐘"
 
 #: ../app/alarm/AlarmPage.qml:173
 msgid "Tap the + icon to add an alarm"
@@ -90,7 +90,7 @@ msgstr "鬧鐘音量"
 
 #: ../app/alarm/AlarmSettingsPage.qml:121
 msgid "Alarm stops after"
-msgstr "鬧鐘於多久後停止"
+msgstr "鬧鐘多久後停止"
 
 #: ../app/alarm/AlarmSettingsPage.qml:152
 msgid "Snooze for"
@@ -102,11 +102,11 @@ msgstr "振動"
 
 #: ../app/alarm/AlarmSettingsPage.qml:209
 msgid "Change time and date"
-msgstr "變更時間和日期"
+msgstr "變更日期與時間"
 
 #: ../app/alarm/AlarmSettingsPage.qml:234
 msgid "Theme"
-msgstr "主題"
+msgstr "佈景主題"
 
 #: ../app/alarm/AlarmSettingsPage.qml:234
 msgid "Theme (system theme on App start)"
@@ -117,21 +117,20 @@ msgid "Theme (will apply after App restart)"
 msgstr "佈景主體（將在程式重新啟動後套用）"
 
 #: ../app/alarm/AlarmSound.qml:60 ../app/alarm/EditAlarmPage.qml:324
-#, fuzzy
 msgid "Sound"
-msgstr "聲音"
+msgstr "鈴聲"
 
 #: ../app/alarm/AlarmSound.qml:190
 msgid "Custom alarm sounds"
-msgstr "自訂鬧鐘音效"
+msgstr "自訂鬧鐘鈴聲"
 
 #: ../app/alarm/AlarmSound.qml:205
 msgid "Add sound"
-msgstr "新增音效"
+msgstr "匯入鈴聲"
 
 #: ../app/alarm/AlarmSound.qml:343
 msgid "Default alarm sounds"
-msgstr "預設鬧鐘音效"
+msgstr "預設鬧鐘鈴聲"
 
 #: ../app/alarm/AlarmUtils.qml:31
 msgid "Never"
@@ -147,7 +146,7 @@ msgstr "週末"
 
 #: ../app/alarm/AlarmUtils.qml:45
 msgid "Daily"
-msgstr "每日"
+msgstr "每天"
 
 #: ../app/alarm/AlarmUtils.qml:81
 #, no-c-format, qt-format
@@ -179,7 +178,7 @@ msgstr "刪除鬧鐘"
 #. TRANSLATORS: This is the page title. Please keep the translation length to 3 words if possible
 #: ../app/alarm/SoundPeerPicker.qml:27
 msgid "Add sound from"
-msgstr "匯入音效"
+msgstr "匯入鈴聲來自"
 
 #: ../app/clock/ClockPage.qml:259
 msgid "Retrieving location..."
@@ -191,7 +190,7 @@ msgstr "應用程式資訊"
 
 #: ../app/components/Information.qml:17
 msgid "Get the source"
-msgstr "取得原始碼"
+msgstr "獲得原始碼"
 
 #: ../app/components/Information.qml:18
 msgid "Report issues"
@@ -208,41 +207,41 @@ msgstr "時鐘"
 #: ../app/components/Information.qml:54
 #, qt-format
 msgid "Version %1"
-msgstr "版本：%1"
+msgstr "版本 %1"
 
 #: ../app/components/TimerUtils.qml:29
-#, fuzzy, no-c-format, qt-format
+#, no-c-format, qt-format
 msgid "%1d %2h %3m"
-msgstr "於 %1 天 %2 小時 %3 分鐘後"
+msgstr "%1 天 %2 小時 %3 分鐘"
 
 #: ../app/components/TimerUtils.qml:39
-#, fuzzy, no-c-format, qt-format
+#, no-c-format, qt-format
 msgid "%1h %2m"
-msgstr "%2 %1 小時"
+msgstr "%1 小時 %2分鐘"
 
 #: ../app/components/TimerUtils.qml:49
-#, fuzzy, no-c-format, qt-format
+#, no-c-format, qt-format
 msgid "%1m"
-msgstr "於 %1 分鐘後"
+msgstr "%1 分鐘"
 
 #: ../app/components/TimerUtils.qml:54
 #, c-format, qt-format
 msgid " %1s"
-msgstr ""
+msgstr " %1秒"
 
 #. TRANSLATORS: This refers to the stopwatch lap and is shown as a header where space is limited. Constrain
 #. translation length to a few characters.
 #: ../app/stopwatch/LapListView.qml:58 ../app/stopwatch/StopwatchPage.qml:102
 msgid "Lap"
-msgstr "圈"
+msgstr "碼錶"
 
 #: ../app/stopwatch/LapListView.qml:67
 msgid "Lap Time"
-msgstr "單圈時間"
+msgstr "碼錶時間"
 
 #: ../app/stopwatch/LapListView.qml:74
 msgid "Total Time"
-msgstr "總時間"
+msgstr "總計時間"
 
 #: ../app/stopwatch/StopwatchPage.qml:83 ../app/timer/TimerPage.qml:260
 msgid "Stop"
@@ -254,32 +253,31 @@ msgstr "開始"
 
 #: ../app/stopwatch/StopwatchPage.qml:83
 msgid "Resume"
-msgstr "繼續"
+msgstr "恢復"
 
 #: ../app/stopwatch/StopwatchPage.qml:102
-#, fuzzy
 msgid "Clear"
-msgstr "明白"
+msgstr "清除"
 
 #: ../app/timer/TimerListDelegate.qml:49
 msgid "Active"
 msgstr "活躍"
 
 #: ../app/timer/TimerListView.qml:56
-#, fuzzy
 msgid "Saved Timers"
-msgstr "單圈時間"
+msgstr "保存的計時器"
 
 #: ../app/timer/TimerPage.qml:126
 msgid ""
 "Please set a time before starting the timer\n"
 "By dragging the clock hands above."
 msgstr ""
+"請在啟動計時器之前先設置一個時間\n"
+"透過移動時鐘上面的指針來進行設置。"
 
 #: ../app/timer/TimerPage.qml:194
-#, fuzzy
 msgid "Enter timer name"
-msgstr "變更時間和日期"
+msgstr "輸入計時器名稱"
 
 #: ../app/worldclock/AddWorldCityButton.qml:32
 msgid "Add"
@@ -298,7 +296,7 @@ msgstr "遲"
 
 #: ../app/worldclock/UserWorldCityDelegate.qml:137
 msgid "ahead"
-msgstr "早"
+msgstr "提前"
 
 #. TRANSLATORS: the first argument is hour, followed by
 #. minute, and the translation for either 'behind' or
@@ -328,7 +326,7 @@ msgstr "同時"
 
 #: ../app/worldclock/WorldCityList.qml:56
 msgid "Select a city"
-msgstr "選取城市"
+msgstr "選擇城市"
 
 #: ../app/worldclock/WorldCityList.qml:112
 msgid "Search..."
@@ -473,7 +471,7 @@ msgstr "哈薩克"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:55
 msgid "Amman"
-msgstr "安曼"
+msgstr "阿曼"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:55
 msgid "Jordan"
@@ -532,7 +530,7 @@ msgstr "阿克套"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:64
 msgid "Aruba"
-msgstr "阿鲁巴"
+msgstr "阿魯巴"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:65
 msgid "Asunción"
@@ -739,7 +737,7 @@ msgstr "斯洛伐克"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:95
 msgid "Brazzaville"
-msgstr "布拉薩市"
+msgstr "布拉薩"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:95
 msgid "Republic of the Congo"
@@ -767,7 +765,7 @@ msgstr "羅馬尼亞"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:99
 msgid "Budapest"
-msgstr "布達佩斯特"
+msgstr "布達佩斯"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:99
 msgid "Hungary"
@@ -938,7 +936,7 @@ msgstr "古拉索"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:125
 msgid "Dakar"
-msgstr "達卡"
+msgstr "達喀爾"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:125
 msgid "Senegal"
@@ -1035,7 +1033,7 @@ msgstr "智利"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:142
 msgid "Edmonton"
-msgstr "艾德蒙顿"
+msgstr "艾德蒙頓"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:143
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:299
@@ -1049,7 +1047,7 @@ msgstr "斐濟"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:146
 msgid "Fortaleza"
-msgstr "福塔雷薩"
+msgstr "福塔萊薩"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:147
 msgid "Frankfurt"
@@ -1185,7 +1183,7 @@ msgstr "檀香山"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:172
 msgid "Houston"
-msgstr "休斯頓"
+msgstr "休士頓"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:173
 msgid "Hyderabad"
@@ -1197,7 +1195,7 @@ msgstr "印第安納波利斯"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:176
 msgid "Islamabad"
-msgstr "伊斯蘭馬巴德"
+msgstr "伊斯蘭瑪巴德"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:176
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:187
@@ -1281,7 +1279,7 @@ msgstr "盧安達"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:191
 msgid "Kingston"
-msgstr "京斯頓"
+msgstr "金士頓"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:192
 msgid "Kinshasa"
@@ -1301,7 +1299,7 @@ msgstr "吉里巴斯"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:194
 msgid "Kirkland"
-msgstr "柯克蘭"
+msgstr "科克蘭"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:195
 msgid "Knox"
@@ -1443,15 +1441,15 @@ msgstr "菲律賓"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:221
 msgid "Marengo"
-msgstr "馬倫哥"
+msgstr "馬倫戈"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:222
 msgid "Martinique"
-msgstr "馬提尼克"
+msgstr "馬丁尼克"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:223
 msgid "Maseru"
-msgstr "馬賽魯"
+msgstr "馬塞盧"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:223
 msgid "Lesotho"
@@ -1576,7 +1574,7 @@ msgstr "肯亞"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:247
 msgid "Nashville"
-msgstr "納什維爾"
+msgstr "納許維爾"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:248
 msgid "Nassau"
@@ -1608,7 +1606,7 @@ msgstr "紐芬蘭"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:254
 msgid "Nouméa"
-msgstr "努美阿"
+msgstr "努美亞"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:254
 msgid "New Caledonia"
@@ -1620,7 +1618,7 @@ msgstr "拉巴斯"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:257
 msgid "Oklahoma City"
-msgstr "奧克拉荷馬市"
+msgstr "奧克蘭荷馬市"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:258
 msgid "Osaka"
@@ -2074,7 +2072,7 @@ msgstr "溫尼伯"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:344
 msgid "Wrocław"
-msgstr "洛治勞"
+msgstr "弗次瓦夫"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:346
 msgid "Zagreb"
@@ -2097,15 +2095,14 @@ msgid "Clock"
 msgstr "時鐘"
 
 #: ubuntu-clock-app.desktop.in.in.h:2
-#, fuzzy
 msgid ""
 "A sophisticated clock app that provides world clock, alarm , stopwatch and "
 "timer functionality."
-msgstr "非常好的時鐘應用程序，提供世界時間、鬧鐘和碼錶的功能。"
+msgstr "一個非常好的時鐘應用程序，提供世界時鐘、鬧鐘、碼錶和計時器功能。"
 
 #: ubuntu-clock-app.desktop.in.in.h:3
 msgid "time;alarm;alert;clock;world;stopwatch;"
-msgstr "time;alarm;alert;clock;world;stopwatch;時鐘;鬧鐘;鬧鈴;世界;碼表;"
+msgstr "時間;鬧鐘;鬧鈴;時鐘;世界;碼表;"
 
 #~ msgid "Stopwatch"
 #~ msgstr "碼表"
