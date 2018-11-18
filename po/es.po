@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-26 14:04+0000\n"
-"PO-Revision-Date: 2018-11-04 22:30+0000\n"
+"PO-Revision-Date: 2018-11-18 21:52+0000\n"
 "Last-Translator: advocatux <advocatux@airpost.net>\n"
 "Language-Team: Spanish <https://translate.ubports.com/projects/ubports/"
 "clock-app/es/>\n"
@@ -262,7 +262,7 @@ msgstr "Limpiar"
 
 #: ../app/timer/TimerListDelegate.qml:49
 msgid "Active"
-msgstr "Ocupada"
+msgstr "Activa"
 
 #: ../app/timer/TimerListView.qml:56
 msgid "Saved Timers"
