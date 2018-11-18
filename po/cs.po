@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-26 14:04+0000\n"
-"PO-Revision-Date: 2018-11-04 22:46+0000\n"
+"PO-Revision-Date: 2018-11-18 21:52+0000\n"
 "Last-Translator: Milan Korecký <milan.korecky@gmail.com>\n"
 "Language-Team: Czech <https://translate.ubports.com/projects/ubports/"
 "clock-app/cs/>\n"
@@ -332,7 +332,7 @@ msgstr "Vybrat město"
 
 #: ../app/worldclock/WorldCityList.qml:112
 msgid "Search..."
-msgstr "Hledat…"
+msgstr "Vyhledat..."
 
 #: ../app/worldclock/WorldCityList.qml:216
 msgid "Searching for a city"
