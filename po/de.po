@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-26 14:04+0000\n"
-"PO-Revision-Date: 2018-11-07 21:58+0000\n"
-"Last-Translator: Daniel Frost <one@frostinfo.de>\n"
+"PO-Revision-Date: 2018-11-25 00:02+0000\n"
+"Last-Translator: Ettore Atalan <atalanttore@googlemail.com>\n"
 "Language-Team: German <https://translate.ubports.com/projects/ubports/"
 "clock-app/de/>\n"
 "Language: de\n"
@@ -186,9 +186,8 @@ msgid "Retrieving location..."
 msgstr "Standort wird abgerufen …"
 
 #: ../app/components/Information.qml:8
-#, fuzzy
 msgid "App Information"
-msgstr "Information"
+msgstr "Anwendungsinformation"
 
 #: ../app/components/Information.qml:17
 msgid "Get the source"
@@ -203,9 +202,8 @@ msgid "Help translate"
 msgstr "Übersetzen helfen"
 
 #: ../app/components/Information.qml:48
-#, fuzzy
 msgid "Clock App"
-msgstr "Uhr"
+msgstr "Uhranwendung"
 
 #: ../app/components/Information.qml:54
 #, qt-format
@@ -213,9 +211,9 @@ msgid "Version %1"
 msgstr "Version %1"
 
 #: ../app/components/TimerUtils.qml:29
-#, fuzzy, no-c-format, qt-format
+#, no-c-format, qt-format
 msgid "%1d %2h %3m"
-msgstr "in %1 Tagen, %2 Stunden und %3 Minuten"
+msgstr "%1 T  %2 h %3 m"
 
 #: ../app/components/TimerUtils.qml:39
 #, no-c-format, qt-format
@@ -223,9 +221,9 @@ msgid "%1h %2m"
 msgstr "%1 h %2 min"
 
 #: ../app/components/TimerUtils.qml:49
-#, fuzzy, no-c-format, qt-format
+#, no-c-format, qt-format
 msgid "%1m"
-msgstr "in %1 Minuten"
+msgstr "%1 m"
 
 #: ../app/components/TimerUtils.qml:54
 #, c-format, qt-format
