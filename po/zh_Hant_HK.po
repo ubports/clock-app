@@ -8,18 +8,20 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-26 14:04+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2018-11-25 00:00+0000\n"
+"Last-Translator: Louies <louies0623@gmail.com>\n"
+"Language-Team: Chinese (Hong Kong) <https://translate.ubports.com/projects/"
+"ubports/clock-app/zh_Hant_HK/>\n"
 "Language: zh_Hant_HK\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 3.1.1\n"
 
 #: ../app/MainPage.qml:157 ../app/alarm/AlarmSettingsPage.qml:31
 msgid "Settings"
-msgstr ""
+msgstr "設定"
 
 #: ../app/MainPage.qml:166
 msgid "About"
@@ -33,7 +35,7 @@ msgstr ""
 #: ../app/alarm/AlarmList.qml:71 ../app/alarm/AlarmPage.qml:109
 #: ../app/timer/TimerListView.qml:84 ../app/worldclock/UserWorldCityList.qml:71
 msgid "Delete"
-msgstr ""
+msgstr "刪除"
 
 #: ../app/alarm/AlarmPage.qml:45 ../app/components/AlarmBottomEdge.qml:38
 msgid "Alarms"
@@ -46,7 +48,7 @@ msgstr ""
 
 #: ../app/alarm/AlarmPage.qml:73 ../app/worldclock/WorldCityList.qml:83
 msgid "Back"
-msgstr ""
+msgstr "返回"
 
 #: ../app/alarm/AlarmPage.qml:84
 msgid "Select None"
@@ -66,7 +68,7 @@ msgstr ""
 
 #: ../app/alarm/AlarmRepeat.qml:40 ../app/alarm/EditAlarmPage.qml:287
 msgid "Repeat"
-msgstr ""
+msgstr "重複"
 
 #. TRANSLATORS: Alarm stops after
 #. TRANSLATORS: Snooze for
@@ -115,7 +117,7 @@ msgstr ""
 
 #: ../app/alarm/AlarmSound.qml:60 ../app/alarm/EditAlarmPage.qml:324
 msgid "Sound"
-msgstr ""
+msgstr "聲音"
 
 #: ../app/alarm/AlarmSound.qml:190
 msgid "Custom alarm sounds"
@@ -131,7 +133,7 @@ msgstr ""
 
 #: ../app/alarm/AlarmUtils.qml:31
 msgid "Never"
-msgstr ""
+msgstr "永不"
 
 #: ../app/alarm/AlarmUtils.qml:37
 msgid "Weekdays"
@@ -143,7 +145,7 @@ msgstr ""
 
 #: ../app/alarm/AlarmUtils.qml:45
 msgid "Daily"
-msgstr ""
+msgstr "每天"
 
 #: ../app/alarm/AlarmUtils.qml:81
 #, no-c-format, qt-format
@@ -242,7 +244,7 @@ msgstr ""
 
 #: ../app/stopwatch/StopwatchPage.qml:83 ../app/timer/TimerPage.qml:260
 msgid "Stop"
-msgstr ""
+msgstr "停止"
 
 #: ../app/stopwatch/StopwatchPage.qml:83 ../app/timer/TimerPage.qml:260
 msgid "Start"
@@ -258,7 +260,7 @@ msgstr ""
 
 #: ../app/timer/TimerListDelegate.qml:49
 msgid "Active"
-msgstr ""
+msgstr "積極"
 
 #: ../app/timer/TimerListView.qml:56
 msgid "Saved Timers"
@@ -276,7 +278,7 @@ msgstr ""
 
 #: ../app/worldclock/AddWorldCityButton.qml:32
 msgid "Add"
-msgstr ""
+msgstr "加入"
 
 #: ../app/worldclock/AddWorldCityButton.qml:63
 #: ../app/worldclock/WorldCityList.qml:63
@@ -325,7 +327,7 @@ msgstr ""
 
 #: ../app/worldclock/WorldCityList.qml:112
 msgid "Search..."
-msgstr ""
+msgstr "搜尋…"
 
 #: ../app/worldclock/WorldCityList.qml:216
 msgid "Searching for a city"
