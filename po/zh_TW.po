@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-26 14:04+0000\n"
-"PO-Revision-Date: 2018-11-18 21:52+0000\n"
+"PO-Revision-Date: 2018-11-25 00:01+0000\n"
 "Last-Translator: Louies <louies0623@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <https://translate.ubports.com/projects/"
 "ubports/clock-app/zh_Hant/>\n"
@@ -118,7 +118,7 @@ msgstr "主題（將在程式重新啟動後套用）"
 
 #: ../app/alarm/AlarmSound.qml:60 ../app/alarm/EditAlarmPage.qml:324
 msgid "Sound"
-msgstr "鈴聲"
+msgstr "聲音"
 
 #: ../app/alarm/AlarmSound.qml:190
 msgid "Custom alarm sounds"
