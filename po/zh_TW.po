@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-26 14:04+0000\n"
-"PO-Revision-Date: 2018-11-14 12:14+0000\n"
+"PO-Revision-Date: 2018-11-25 00:01+0000\n"
 "Last-Translator: Louies <louies0623@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <https://translate.ubports.com/projects/"
 "ubports/clock-app/zh_Hant/>\n"
@@ -106,19 +106,19 @@ msgstr "變更日期與時間"
 
 #: ../app/alarm/AlarmSettingsPage.qml:234
 msgid "Theme"
-msgstr "佈景主題"
+msgstr "主題"
 
 #: ../app/alarm/AlarmSettingsPage.qml:234
 msgid "Theme (system theme on App start)"
-msgstr "佈景主題（程式啟動時的系統佈景主題）"
+msgstr "主題（程式啟動時的系統佈景主題）"
 
 #: ../app/alarm/AlarmSettingsPage.qml:235
 msgid "Theme (will apply after App restart)"
-msgstr "佈景主體（將在程式重新啟動後套用）"
+msgstr "主題（將在程式重新啟動後套用）"
 
 #: ../app/alarm/AlarmSound.qml:60 ../app/alarm/EditAlarmPage.qml:324
 msgid "Sound"
-msgstr "鈴聲"
+msgstr "聲音"
 
 #: ../app/alarm/AlarmSound.qml:190
 msgid "Custom alarm sounds"
@@ -126,7 +126,7 @@ msgstr "自訂鬧鐘鈴聲"
 
 #: ../app/alarm/AlarmSound.qml:205
 msgid "Add sound"
-msgstr "匯入鈴聲"
+msgstr "加入鈴聲"
 
 #: ../app/alarm/AlarmSound.qml:343
 msgid "Default alarm sounds"
@@ -178,7 +178,7 @@ msgstr "刪除鬧鐘"
 #. TRANSLATORS: This is the page title. Please keep the translation length to 3 words if possible
 #: ../app/alarm/SoundPeerPicker.qml:27
 msgid "Add sound from"
-msgstr "匯入鈴聲來自"
+msgstr "加入鈴聲來自"
 
 #: ../app/clock/ClockPage.qml:259
 msgid "Retrieving location..."
@@ -202,7 +202,7 @@ msgstr "協助翻譯"
 
 #: ../app/components/Information.qml:48
 msgid "Clock App"
-msgstr "時鐘"
+msgstr "時鐘應用程式"
 
 #: ../app/components/Information.qml:54
 #, qt-format
@@ -2098,7 +2098,7 @@ msgstr "時鐘"
 msgid ""
 "A sophisticated clock app that provides world clock, alarm , stopwatch and "
 "timer functionality."
-msgstr "一個非常好的時鐘應用程序，提供世界時鐘、鬧鐘、碼錶和計時器功能。"
+msgstr "一個非常好的時鐘應用程式，提供世界時鐘、鬧鐘、碼錶和計時器功能。"
 
 #: ubuntu-clock-app.desktop.in.in.h:3
 msgid "time;alarm;alert;clock;world;stopwatch;"
