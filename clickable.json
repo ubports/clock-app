@@ -1,4 +1,4 @@
 {
     "template": "cmake",
-    "sdk": "ubuntu-sdk-16.04"
+    "default": "clean build click-build install launch logs"
 }

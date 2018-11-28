@@ -113,6 +113,13 @@ Window {
 
         PageStack {
             id: mainStack
+            // onCurrentPageChanged: {
+            //    if(depth=0) {
+            //       console.log("page stack depth = 0!")
+            //       currentPage.bottomEdgeLoader.reload()
+            //    }
+            // }
+            // property var bottomEdgePointer: mainPage.bottomEdgeLoader
 
             Component.onCompleted: push(mainPage)
 
@@ -137,7 +144,7 @@ Window {
                 localizedDateString: localTimeSource.localizedCurrentDateString
             }
         }
-
+        theme.onNameChanged: mainPage.reloadBottomEdge()
 
         Metric {
             id: metricAlarms
@@ -151,4 +158,3 @@ Window {
         }
     }
 }
-
