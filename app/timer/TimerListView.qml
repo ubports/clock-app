@@ -24,6 +24,8 @@ UbuntuListView {
 
     property var nestedListViewHack: null
 
+    signal selectTimer(var model, var mode)
+
     clip: true
 //    pressDelay: 75
     currentIndex: -1
@@ -91,10 +93,24 @@ UbuntuListView {
             ]
         }
 
+        trailingActions: ListItemActions {
+            actions: [
+                Action {
+                    id: swipeEditAction
+                    objectName: "swipeEditAction"
+                    text: i18n.tr("Edit")
+                    iconName: "edit"
+                    onTriggered: {
+                        timersListView.nestedListViewHack.release();
+                        selectTimer(model, { editMode: true });
+                    }
+                }
+            ]
+        }
+
         onClicked: {
-            timerFace.getCircle().setTime(new Date(model.contents.time))
-            timerNameField.text = model.contents.message
             timersListView.nestedListViewHack.release();
+            selectTimer(model, { editMode: false });
         }
 
         timerTime:  new Date(model.contents.time)
