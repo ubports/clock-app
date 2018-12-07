@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-26 14:04+0000\n"
-"PO-Revision-Date: 2018-11-12 23:17+0000\n"
+"PO-Revision-Date: 2018-12-02 00:00+0000\n"
 "Last-Translator: Samson <sambelet@yahoo.com>\n"
 "Language-Team: Amharic <https://translate.ubports.com/projects/ubports/"
 "clock-app/am/>\n"
@@ -107,7 +107,7 @@ msgstr "ሰአት እና ቀን መቀየሪያ"
 
 #: ../app/alarm/AlarmSettingsPage.qml:234
 msgid "Theme"
-msgstr "ገጽታ"
+msgstr "ገጽታ:"
 
 #: ../app/alarm/AlarmSettingsPage.qml:234
 msgid "Theme (system theme on App start)"
