@@ -7,94 +7,80 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-09-04 10:26+0300\n"
-"PO-Revision-Date: 2018-07-21 11:34+0000\n"
+"POT-Creation-Date: 2018-08-26 14:04+0000\n"
+"PO-Revision-Date: 2018-12-26 10:56+0000\n"
 "Last-Translator: ierihon <idekovets@mail.ru>\n"
-"Language-Team: Belarusian <https://translate.ubports.com/projects/ubports"
-"/clock-app/be/>\n"
+"Language-Team: Belarusian <https://translate.ubports.com/projects/ubports/"
+"clock-app/be/>\n"
 "Language: be\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<="
 "4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 2.17\n"
+"X-Generator: Weblate 3.1.1\n"
 "X-Launchpad-Export-Date: 2017-04-05 07:40+0000\n"
 
-#: app/clock/ClockPage.qml:257
-msgid "Retrieving location..."
-msgstr "Вызначэнне месцазнаходжання..."
-
-#: app/alarm/AlarmSound.qml:60 app/alarm/EditAlarmPage.qml:323
-msgid "Sound"
-msgstr "Гук"
-
-#: app/alarm/AlarmSound.qml:190
-msgid "Custom alarm sounds"
-msgstr "Уласныя гукі будзільніка"
-
-#: app/alarm/AlarmSound.qml:205
-msgid "Add sound"
-msgstr "Дадаць гук"
-
-#: app/alarm/AlarmSound.qml:343
-msgid "Default alarm sounds"
-msgstr "Змоўчны гук будзільніка"
-
-#: app/alarm/AlarmLabel.qml:37 app/alarm/AlarmLabel.qml:82
-#: app/alarm/EditAlarmPage.qml:302
-msgid "Label"
-msgstr "Цэтлік"
-
-#: app/alarm/AlarmPage.qml:38 app/components/AlarmBottomEdge.qml:38
-msgid "Alarms"
-msgstr "Будзільнікі"
-
-#: app/alarm/AlarmPage.qml:53 app/alarm/EditAlarmPage.qml:43
-#: app/alarm/EditAlarmPage.qml:188
-msgid "Alarm"
-msgstr "Будзільнік"
-
-#: app/alarm/AlarmPage.qml:66 app/worldclock/WorldCityList.qml:83
-msgid "Back"
-msgstr "Назад"
-
-#: app/alarm/AlarmPage.qml:77
-msgid "Select None"
-msgstr "Зняць вылучэнне"
-
-#: app/alarm/AlarmPage.qml:79 app/alarm/AlarmRepeat.qml:66
-msgid "Select All"
-msgstr "Абраць усё"
-
-#: app/alarm/AlarmPage.qml:102 app/alarm/AlarmList.qml:64
-#: app/worldclock/UserWorldCityList.qml:71
-msgid "Delete"
-msgstr "Выдаліць"
-
-#: app/alarm/AlarmPage.qml:158
-msgid "No saved alarms"
-msgstr "Не мае захаваных будзільнікаў"
-
-#: app/alarm/AlarmPage.qml:159
-msgid "Tap the + icon to add an alarm"
-msgstr "Націсніце іконку \"+\", каб дадаць будзільнік"
-
-#: app/alarm/AlarmRepeat.qml:40 app/alarm/EditAlarmPage.qml:286
-msgid "Repeat"
-msgstr "Паўтараць"
-
-#: app/alarm/AlarmSettingsPage.qml:31
+#: ../app/MainPage.qml:157 ../app/alarm/AlarmSettingsPage.qml:31
 msgid "Settings"
 msgstr "Налады"
 
+#: ../app/MainPage.qml:166
+#, fuzzy
+msgid "About"
+msgstr "Джыбуці"
+
+#: ../app/alarm/AlarmLabel.qml:37 ../app/alarm/AlarmLabel.qml:82
+#: ../app/alarm/EditAlarmPage.qml:303
+msgid "Label"
+msgstr "Цэтлік"
+
+#: ../app/alarm/AlarmList.qml:71 ../app/alarm/AlarmPage.qml:109
+#: ../app/timer/TimerListView.qml:84 ../app/worldclock/UserWorldCityList.qml:71
+msgid "Delete"
+msgstr "Выдаліць"
+
+#: ../app/alarm/AlarmPage.qml:45 ../app/components/AlarmBottomEdge.qml:38
+msgid "Alarms"
+msgstr "Будзільнікі"
+
+#: ../app/alarm/AlarmPage.qml:60 ../app/alarm/EditAlarmPage.qml:43
+#: ../app/alarm/EditAlarmPage.qml:189
+msgid "Alarm"
+msgstr "Будзільнік"
+
+#: ../app/alarm/AlarmPage.qml:73 ../app/worldclock/WorldCityList.qml:83
+msgid "Back"
+msgstr "Назад"
+
+#: ../app/alarm/AlarmPage.qml:84
+msgid "Select None"
+msgstr "Нічога не абрана"
+
+#: ../app/alarm/AlarmPage.qml:86 ../app/alarm/AlarmRepeat.qml:66
+msgid "Select All"
+msgstr "Абраць усе"
+
+#: ../app/alarm/AlarmPage.qml:172
+msgid "No saved alarms"
+msgstr "Не мае захаваных будзільнікаў"
+
+#: ../app/alarm/AlarmPage.qml:173
+msgid "Tap the + icon to add an alarm"
+msgstr "Націсніце іконку \"+\", каб дадаць будзільнік"
+
+#: ../app/alarm/AlarmRepeat.qml:40 ../app/alarm/EditAlarmPage.qml:287
+msgid "Repeat"
+msgstr "Паўтараць"
+
 #. TRANSLATORS: Alarm stops after
 #. TRANSLATORS: Snooze for
-#: app/alarm/AlarmSettingsPage.qml:56 app/alarm/AlarmSettingsPage.qml:57
-#: app/alarm/AlarmSettingsPage.qml:58 app/alarm/AlarmSettingsPage.qml:59
-#: app/alarm/AlarmSettingsPage.qml:69 app/alarm/AlarmSettingsPage.qml:70
-#: app/alarm/AlarmSettingsPage.qml:71 app/alarm/AlarmSettingsPage.qml:72
-#: app/alarm/AlarmSettingsPage.qml:122 app/alarm/AlarmSettingsPage.qml:153
+#: ../app/alarm/AlarmSettingsPage.qml:56 ../app/alarm/AlarmSettingsPage.qml:57
+#: ../app/alarm/AlarmSettingsPage.qml:58 ../app/alarm/AlarmSettingsPage.qml:59
+#: ../app/alarm/AlarmSettingsPage.qml:69 ../app/alarm/AlarmSettingsPage.qml:70
+#: ../app/alarm/AlarmSettingsPage.qml:71 ../app/alarm/AlarmSettingsPage.qml:72
+#: ../app/alarm/AlarmSettingsPage.qml:122
+#: ../app/alarm/AlarmSettingsPage.qml:153
 #, qt-format
 msgid "%1 minute"
 msgid_plural "%1 minutes"
@@ -102,219 +88,271 @@ msgstr[0] "%1 хвіліна"
 msgstr[1] "%1 хвіліны"
 msgstr[2] "%1 хвілінаў"
 
-#: app/alarm/AlarmSettingsPage.qml:99
+#: ../app/alarm/AlarmSettingsPage.qml:99
 msgid "Alarm volume"
 msgstr "Гучнасць будзільніка"
 
-#: app/alarm/AlarmSettingsPage.qml:121
+#: ../app/alarm/AlarmSettingsPage.qml:121
 msgid "Alarm stops after"
 msgstr "Вымкненне будзільніка праз"
 
-#: app/alarm/AlarmSettingsPage.qml:152
+#: ../app/alarm/AlarmSettingsPage.qml:152
 msgid "Snooze for"
 msgstr "Паўтарыць праз"
 
-#: app/alarm/AlarmSettingsPage.qml:183
+#: ../app/alarm/AlarmSettingsPage.qml:183
 msgid "Vibration"
 msgstr "Вібрацыя"
 
-#: app/alarm/AlarmSettingsPage.qml:209
+#: ../app/alarm/AlarmSettingsPage.qml:209
 msgid "Change time and date"
 msgstr "Змяніць час і дату"
 
-#: app/alarm/AlarmSettingsPage.qml:234
+#: ../app/alarm/AlarmSettingsPage.qml:234
 msgid "Theme"
-msgstr ""
+msgstr "Тэма"
 
-#: app/alarm/AlarmSettingsPage.qml:234
+#: ../app/alarm/AlarmSettingsPage.qml:234
 msgid "Theme (system theme on App start)"
 msgstr ""
 
-#: app/alarm/AlarmSettingsPage.qml:235
+#: ../app/alarm/AlarmSettingsPage.qml:235
 msgid "Theme (will apply after App restart)"
 msgstr ""
 
-#: app/alarm/AlarmUtils.qml:31
+#: ../app/alarm/AlarmSound.qml:60 ../app/alarm/EditAlarmPage.qml:324
+msgid "Sound"
+msgstr "Гук"
+
+#: ../app/alarm/AlarmSound.qml:190
+msgid "Custom alarm sounds"
+msgstr "Уласныя гукі будзільніка"
+
+#: ../app/alarm/AlarmSound.qml:205
+msgid "Add sound"
+msgstr "Дадаць гук"
+
+#: ../app/alarm/AlarmSound.qml:343
+msgid "Default alarm sounds"
+msgstr "Змоўчны гук будзільніка"
+
+#: ../app/alarm/AlarmUtils.qml:31
 msgid "Never"
 msgstr "Ніколі"
 
-#: app/alarm/AlarmUtils.qml:37
+#: ../app/alarm/AlarmUtils.qml:37
 msgid "Weekdays"
 msgstr "Працоўныя дні"
 
-#: app/alarm/AlarmUtils.qml:41
+#: ../app/alarm/AlarmUtils.qml:41
 msgid "Weekends"
 msgstr "Непрацоўныя дні"
 
-#: app/alarm/AlarmUtils.qml:45
+#: ../app/alarm/AlarmUtils.qml:45
 msgid "Daily"
 msgstr "Штодня"
 
-#: app/alarm/AlarmUtils.qml:81
+#: ../app/alarm/AlarmUtils.qml:81
 #, no-c-format, qt-format
 msgid "in %1d %2h %3m"
 msgstr "праз %1 дз %2 г %3 хв"
 
-#: app/alarm/AlarmUtils.qml:91
+#: ../app/alarm/AlarmUtils.qml:91
 #, no-c-format, qt-format
 msgid "in %1h %2m"
 msgstr "праз %1 г %2 хв"
 
-#: app/alarm/AlarmUtils.qml:100
+#: ../app/alarm/AlarmUtils.qml:100
 #, no-c-format, qt-format
 msgid "in %1m"
 msgstr "праз %1 хв"
 
-#: app/alarm/EditAlarmPage.qml:37
+#: ../app/alarm/EditAlarmPage.qml:37
 msgid "New alarm"
 msgstr "Новы будзільнік"
 
-#: app/alarm/EditAlarmPage.qml:37
+#: ../app/alarm/EditAlarmPage.qml:37
 msgid "Edit alarm"
 msgstr "Рэдагаваць будзільнік"
 
-#: app/alarm/EditAlarmPage.qml:347
+#: ../app/alarm/EditAlarmPage.qml:348
 msgid "Delete alarm"
 msgstr "Выдаліць будзільнік"
 
 #. TRANSLATORS: This is the page title. Please keep the translation length to 3 words if possible
-#: app/alarm/SoundPeerPicker.qml:27
+#: ../app/alarm/SoundPeerPicker.qml:27
 msgid "Add sound from"
 msgstr "Дадаць гук з"
 
-#: app/stopwatch/StopwatchPage.qml:83
-msgid "Stop"
-msgstr "Спыніць"
+#: ../app/clock/ClockPage.qml:259
+msgid "Retrieving location..."
+msgstr "Вызначэнне месцазнаходжання..."
 
-#: app/stopwatch/StopwatchPage.qml:83
-msgid "Start"
-msgstr "Пачаць"
-
-#: app/stopwatch/StopwatchPage.qml:83
-msgid "Resume"
-msgstr "Працягнуць"
-
-#. TRANSLATORS: This refers to the stopwatch lap and is shown as a header where space is limited. Constrain
-#. translation length to a few characters.
-#: app/stopwatch/StopwatchPage.qml:102 app/stopwatch/LapListView.qml:58
-msgid "Lap"
-msgstr "Кола"
-
-#: app/stopwatch/StopwatchPage.qml:102
-msgid "Clear"
-msgstr "Ачысціць"
-
-#: app/stopwatch/LapListView.qml:67
-msgid "Lap Time"
-msgstr "Працягласць кола"
-
-#: app/stopwatch/LapListView.qml:74
-msgid "Total Time"
-msgstr "Агульны час"
-
-#: app/components/Information.qml:8
+#: ../app/components/Information.qml:8
 #, fuzzy
 msgid "App Information"
 msgstr "Вібрацыя"
 
-#: app/components/Information.qml:17
+#: ../app/components/Information.qml:17
 msgid "Get the source"
 msgstr ""
 
-#: app/components/Information.qml:18
+#: ../app/components/Information.qml:18
 msgid "Report issues"
 msgstr ""
 
-#: app/components/Information.qml:19
+#: ../app/components/Information.qml:19
 msgid "Help translate"
 msgstr ""
 
-#: app/components/Information.qml:48
+#: ../app/components/Information.qml:48
 #, fuzzy
 msgid "Clock App"
 msgstr "Гадзіннік"
 
-#: app/components/Information.qml:54
+#: ../app/components/Information.qml:54
 #, fuzzy, qt-format
 msgid "Version %1"
 msgstr "праз %1 хв"
 
-#: app/components/NavigationRow.qml:51
-msgid "Clock"
-msgstr "Гадзіннік"
+#: ../app/components/TimerUtils.qml:29
+#, fuzzy, no-c-format, qt-format
+msgid "%1d %2h %3m"
+msgstr "праз %1 дз %2 г %3 хв"
 
-#: app/components/NavigationRow.qml:63
-#, fuzzy
-msgid "Stopwatch"
+#: ../app/components/TimerUtils.qml:39
+#, fuzzy, no-c-format, qt-format
+msgid "%1h %2m"
+msgstr "%1 г %2 с"
+
+#: ../app/components/TimerUtils.qml:49
+#, fuzzy, no-c-format, qt-format
+msgid "%1m"
+msgstr "праз %1 хв"
+
+#: ../app/components/TimerUtils.qml:54
+#, c-format, qt-format
+msgid " %1s"
+msgstr ""
+
+#. TRANSLATORS: This refers to the stopwatch lap and is shown as a header where space is limited. Constrain
+#. translation length to a few characters.
+#: ../app/stopwatch/LapListView.qml:58 ../app/stopwatch/StopwatchPage.qml:102
+msgid "Lap"
+msgstr "Кола"
+
+#: ../app/stopwatch/LapListView.qml:67
+msgid "Lap Time"
+msgstr "Працягласць кола"
+
+#: ../app/stopwatch/LapListView.qml:74
+msgid "Total Time"
+msgstr "Агульны час"
+
+#: ../app/stopwatch/StopwatchPage.qml:83 ../app/timer/TimerPage.qml:260
+msgid "Stop"
 msgstr "Спыніць"
 
-#: app/worldclock/WorldCityList.qml:56
-msgid "Select a city"
-msgstr "Выберыце горад"
+#: ../app/stopwatch/StopwatchPage.qml:83 ../app/timer/TimerPage.qml:260
+msgid "Start"
+msgstr "Пачаць"
 
-#: app/worldclock/WorldCityList.qml:63 app/worldclock/AddWorldCityButton.qml:63
+#: ../app/stopwatch/StopwatchPage.qml:83
+msgid "Resume"
+msgstr "Працягнуць"
+
+#: ../app/stopwatch/StopwatchPage.qml:102
+msgid "Clear"
+msgstr "Ачысціць"
+
+#: ../app/timer/TimerListDelegate.qml:49
+msgid "Active"
+msgstr ""
+
+#: ../app/timer/TimerListView.qml:56
+#, fuzzy
+msgid "Saved Timers"
+msgstr "Працягласць кола"
+
+#: ../app/timer/TimerPage.qml:126
+msgid ""
+"Please set a time before starting the timer\n"
+"By dragging the clock hands above."
+msgstr ""
+
+#: ../app/timer/TimerPage.qml:194
+#, fuzzy
+msgid "Enter timer name"
+msgstr "Змяніць час і дату"
+
+#: ../app/worldclock/AddWorldCityButton.qml:32
+msgid "Add"
+msgstr "Дадаць"
+
+#: ../app/worldclock/AddWorldCityButton.qml:63
+#: ../app/worldclock/WorldCityList.qml:63
 msgid "City"
 msgstr "Горад"
 
-#: app/worldclock/WorldCityList.qml:112
-msgid "Search..."
-msgstr "Пошук..."
-
-#: app/worldclock/WorldCityList.qml:216
-msgid "Searching for a city"
-msgstr "Пошук гораду"
-
-#: app/worldclock/WorldCityList.qml:221
-msgid "No City Found"
-msgstr "Горад не знойдзены"
-
-#: app/worldclock/WorldCityList.qml:227
-msgid "Unable to connect."
-msgstr "Немагчыма далучыцца"
-
-#: app/worldclock/WorldCityList.qml:228
-msgid "Please check your network connection and try again"
-msgstr "Праверце доступ да сеціва і паспрабуйце зноў"
-
 #. TRANSLATORS: this indicates if the time in a world clock
 #. is behind or ahead of the time at the current location
-#: app/worldclock/UserWorldCityDelegate.qml:136
+#: ../app/worldclock/UserWorldCityDelegate.qml:136
 msgid "behind"
 msgstr "меней"
 
-#: app/worldclock/UserWorldCityDelegate.qml:137
+#: ../app/worldclock/UserWorldCityDelegate.qml:137
 msgid "ahead"
 msgstr "болей"
 
 #. TRANSLATORS: the first argument is hour, followed by
 #. minute, and the translation for either 'behind' or
 #. 'ahead'
-#: app/worldclock/UserWorldCityDelegate.qml:147
+#: ../app/worldclock/UserWorldCityDelegate.qml:147
 #, qt-format
 msgid "%1h %2m %3"
 msgstr "%1 г %2 хв %3 с"
 
 #. TRANSLATORS: the first argument is hour, followed by the
 #. translation for either 'behind' or 'ahead'
-#: app/worldclock/UserWorldCityDelegate.qml:156
+#: ../app/worldclock/UserWorldCityDelegate.qml:156
 #, qt-format
 msgid "%1h %2"
 msgstr "%1 г %2 с"
 
 #. TRANSLATORS: the first argument is minute, followed by the
 #. translation for either 'behind' or 'ahead'
-#: app/worldclock/UserWorldCityDelegate.qml:164
+#: ../app/worldclock/UserWorldCityDelegate.qml:164
 #, qt-format
 msgid "%1m %2"
 msgstr "%1 хв %2 с"
 
-#: app/worldclock/UserWorldCityDelegate.qml:170
+#: ../app/worldclock/UserWorldCityDelegate.qml:170
 msgid "Same time"
 msgstr "Такі ж час"
 
-#: app/worldclock/AddWorldCityButton.qml:32
-msgid "Add"
-msgstr "Дадаць"
+#: ../app/worldclock/WorldCityList.qml:56
+msgid "Select a city"
+msgstr "Выберыце горад"
+
+#: ../app/worldclock/WorldCityList.qml:112
+msgid "Search..."
+msgstr "Пошук..."
+
+#: ../app/worldclock/WorldCityList.qml:216
+msgid "Searching for a city"
+msgstr "Пошук гораду"
+
+#: ../app/worldclock/WorldCityList.qml:221
+msgid "No City Found"
+msgstr "Горад не знойдзены"
+
+#: ../app/worldclock/WorldCityList.qml:227
+msgid "Unable to connect."
+msgstr "Немагчыма далучыцца"
+
+#: ../app/worldclock/WorldCityList.qml:228
+msgid "Please check your network connection and try again"
+msgstr "Праверце доступ да сеціва і паспрабуйце зноў"
 
 #: ../backend/modules/WorldClock/statictimezonemodel.cpp:48
 msgid "Abidjan"
@@ -2058,13 +2096,22 @@ msgstr "Цурых"
 msgid "Switzerland"
 msgstr "Швейцарыя"
 
+#: ubuntu-clock-app.desktop.in.in.h:1
+msgid "Clock"
+msgstr "Гадзіннік"
+
 #: ubuntu-clock-app.desktop.in.in.h:2
+#, fuzzy
 msgid ""
-"A sophisticated clock app that provides world clock, alarm and stopwatch "
-"functionality."
+"A sophisticated clock app that provides world clock, alarm , stopwatch and "
+"timer functionality."
 msgstr ""
 "Прасунуты гадзіннік з функцыяй сусветнага часу, будзільнікам і секундамерам."
 
 #: ubuntu-clock-app.desktop.in.in.h:3
 msgid "time;alarm;alert;clock;world;stopwatch;"
 msgstr "час;будзільнік;паведамленне;гадзіннік;сусветны;секундамер;"
+
+#, fuzzy
+#~ msgid "Stopwatch"
+#~ msgstr "Спыніць"
