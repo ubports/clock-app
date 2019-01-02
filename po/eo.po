@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: ubuntu-clock-app\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-26 14:04+0000\n"
-"PO-Revision-Date: 2018-11-25 00:02+0000\n"
-"Last-Translator: Louies <louies0623@gmail.com>\n"
+"PO-Revision-Date: 2019-01-06 00:00+0000\n"
+"Last-Translator: Colin Reeder <vpzomtrrfrt@gmail.com>\n"
 "Language-Team: Esperanto <https://translate.ubports.com/projects/ubports/"
 "clock-app/eo/>\n"
 "Language: eo\n"
@@ -25,9 +25,8 @@ msgid "Settings"
 msgstr "Agordoj"
 
 #: ../app/MainPage.qml:166
-#, fuzzy
 msgid "About"
-msgstr "Ĝibutio"
+msgstr "Pri"
 
 #: ../app/alarm/AlarmLabel.qml:37 ../app/alarm/AlarmLabel.qml:82
 #: ../app/alarm/EditAlarmPage.qml:303
