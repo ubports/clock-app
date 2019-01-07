@@ -109,7 +109,7 @@ ClockCircle {
         anchors.centerIn: parent
 
         smooth: true
-        source: "../graphics/Minute_Hand.png"
+        source: Theme.name == "Ubuntu.Components.Themes.Ambiance" ? "../graphics/Minute_Hand.png" : "../graphics/Minute_Hand_White.png"
         asynchronous: true
         fillMode: Image.PreserveAspectFit
         // notLocalizedDateTimeString.split(":")[4] is minutes

@@ -42,7 +42,7 @@ ClockCircle {
         text: stopwatchFormatTime.millisToTimeString(milliseconds, true)
         font.pixelSize: units.dp(36)
         anchors.centerIn: parent
-        color: UbuntuColors.slate
+        color: Theme.palette.normal.baseText
     }
 
     Label {
@@ -51,7 +51,7 @@ ClockCircle {
 
         text: stopwatchFormatTime.millisToString(milliseconds)
         textSize: Label.Large
-        color: UbuntuColors.slate
+        color: Theme.palette.normal.baseText
         anchors {
             top: time.bottom
             topMargin: units.gu(1.5)

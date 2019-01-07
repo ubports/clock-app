@@ -35,7 +35,7 @@ Item {
             property bool isSelected: listview.currentIndex === 0
             objectName: "clockNavigationButton"
             icon.name: "clock"
-            icon.color: isSelected ? UbuntuColors.blue : UbuntuColors.slate
+            icon.color: isSelected ? UbuntuColors.blue : Theme.palette.normal.backgroundSecondaryText
             onClicked: listview.moveToClockPage()
         }
 
@@ -44,7 +44,7 @@ Item {
             id: stopwatchNavigationButton
             objectName: "stopwatchNavigationButton"
             icon.name: "stopwatch"
-            icon.color: isSelected ? UbuntuColors.blue : UbuntuColors.slate
+            icon.color: isSelected ? UbuntuColors.blue : Theme.palette.normal.backgroundSecondaryText
             onClicked:  listview.moveToStopwatchPage()
         }
 
@@ -53,7 +53,7 @@ Item {
             id: timerNavigationButton
             objectName: "timerNavigationButton"
             icon.name: "timer"
-            icon.color: isSelected ? UbuntuColors.blue : UbuntuColors.slate
+            icon.color: isSelected ? UbuntuColors.blue : Theme.palette.normal.backgroundSecondaryText
             onClicked:  listview.moveToTimerPage()
         }
     }

@@ -87,9 +87,10 @@ Item {
         }
 
         onAdjusted: {
-            timerNameField.text = "";
+            if (!saveTimerRow.editMode) {
+                timerNameField.text = "";
+            }
         }
-
     }
 
     Component {
@@ -123,7 +124,7 @@ Item {
           Label {
               id:pleaseSetTimeMsg
               anchors.centerIn: parent
-              text:i18n.tr("Please set a time before starting the timer\nBy dragging the clock hands above.")
+              text:i18n.tr("Please set a time before starting the timer\nby dragging the clock hands above.")
               horizontalAlignment: Text.Center
           }
           autoClose: true
@@ -170,9 +171,34 @@ Item {
                 horizontalCenter: parent.horizontalCenter
             }
 
+            property bool editMode: false
+            property string timerID: ""
+
             Behavior on height {
                 UbuntuNumberAnimation{
                     duration: UbuntuAnimation.BriskDuration
+                }
+            }
+
+            Connections {
+                target: timersList
+                onSelectTimer: {
+                    timerFace.getCircle().setTime(new Date(model.contents.time));
+                    timerNameField.text = model.contents.message;
+                    saveTimerRow.timerID = model.docId;
+                    saveTimerRow.editMode = mode.editMode;
+                    saveTimerRow.enabled = saveTimerRow.editMode;
+                }
+            }
+
+            onEnabledChanged: {
+                if (enabled) {
+                    timerNameField.focus = true;
+                } else {
+                    timerNameField.focus = false;
+                    timerNameField.text = "";
+                    editMode = false;
+                    timerID = "";
                 }
             }
 
@@ -182,18 +208,15 @@ Item {
                 icon.name:  "close"
                 width: units.gu(7)
                 height: units.gu(4)
-                icon.color: UbuntuColors.slate
-                onClicked: {
-                    timerNameField.focus = saveTimerRow.enabled = false;
-                }
+                onClicked: saveTimerRow.enabled = false
             }
 
             TextField {
                 id:timerNameField
                 width: buttonRow.width / 2 - units.gu(1)
                 placeholderText: i18n.tr("Enter timer name")
-                onAccepted: saveTimerRow.saveTimer();
                 maximumLength: 25
+                onAccepted: saveTimerRow.saveTimer();
             }
 
             ActionIcon {
@@ -201,19 +224,29 @@ Item {
                 enabled: timerNameField.displayText
                 opacity: enabled ? 1 : 0.5
                 objectName:"saveTimerAction"
-                icon.name: "reminder-new"
+                icon.name: saveTimerRow.editMode ? "ok" : "reminder-new"
                 width: units.gu(7)
                 height: units.gu(4)
                 onClicked: saveTimerRow.saveTimer();
             }
 
             function saveTimer() {
+                // Do not accept empty names
+                if (!timerNameField.text) { return; }
+
                 if (Qt.inputMethod.preeditText) {
-                    Qt.inputMethod.commit()
+                    Qt.inputMethod.commit();
                 }
-                clockDB.putDoc({"timer":{"time":timerFace.getTimerTime(),"message":timerNameField.text}});
-                saveTimerRow.enabled = false
-                timerNameField.text = "";
+
+                var timer = {
+                    "timer": {
+                        "time": timerFace.getTimerTime(),
+                        "message": timerNameField.text
+                    }
+                };
+                var docID = saveTimerRow.editMode ? saveTimerRow.timerID : "";
+                clockDB.putDoc(timer, docID);
+                saveTimerRow.enabled = false;
             }
         }
 
@@ -231,7 +264,6 @@ Item {
                 icon.name: "reminder-new"
                 width: units.gu(7)
                 height: units.gu(4)
-                icon.color: UbuntuColors.slate
                 enabled: timerFace.getCircle().hasTime && !isRunning
                 opacity: enabled ? 1: 0
 
@@ -241,7 +273,7 @@ Item {
                     }
                 }
                 onClicked: {
-                    timerNameField.focus = saveTimerRow.enabled = true;
+                    saveTimerRow.enabled = true;
                 }
 
             }
@@ -301,6 +333,7 @@ Item {
         z:10
         parentListView : listview
         nestedListView : timersList
+        visible: dbAllTimersQuery.results.length !== 0
     }
 
     // U1db Index to index all documents storing the world city details
@@ -330,7 +363,7 @@ Item {
             right: parent.right
             topMargin: units.gu(1)
         }
-        visible: dbAllTimersQuery.results
+        visible: dbAllTimersQuery.results.length !== 0
 
         nestedListViewHack: timerNestedListViewHack
 
@@ -348,7 +381,7 @@ Item {
      * @param datetime the DateTime object that the timer alarm should be fired at.
      * @param message  the message to display when the alarm is fired.
      */
-    function startNewAlarm(datetime, message) {
+    function updateNewAlarmValues(datetime, message) {
         if(!alarm) {
             alarm = alarmComponent.createObject(_timerPage)
         }
@@ -358,7 +391,6 @@ Item {
         alarm.message = activeTimers.addPrefixToMessage(message)
         alarm.date = datetime
         alarm.enabled = true
-        alarm.save()
 
         return alarm;
     }
@@ -366,8 +398,9 @@ Item {
      * Start a new timer based on the current UI settings.
      */
     function startTimer() {
-        _timerPage.startNewAlarm(timerFace.getCircle().getTime(), timerNameField.text);
+        var newAlarm = _timerPage.updateNewAlarmValues(timerFace.getCircle().getTime(), timerNameField.text);
         activeTimers.addActiveTimer(alarm);
+        newAlarm.save();
     }
 
     /**

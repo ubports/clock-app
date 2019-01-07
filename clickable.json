@@ -1,4 +1,3 @@
 {
-    "template": "cmake",
-    "default": "clean build click-build install launch logs"
+    "template": "cmake"
 }
