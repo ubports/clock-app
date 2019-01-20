@@ -2093,7 +2093,7 @@ msgstr ""
 
 #: ubuntu-clock-app.desktop.in.in.h:2
 msgid ""
-"A sophisticated clock app that provides world clock, alarm , stopwatch and "
+"A sophisticated clock app providing world clock, alarm, stopwatch and "
 "timer functionality."
 msgstr ""
 
