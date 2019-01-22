@@ -230,9 +230,7 @@ Page {
                 property QtObject selectedItem: null
 
                 listViewHeight: units.gu(6) + (model.count * units.gu(5))
-                titleText.text:(theme.name == selectedItem.value || !clockAppSettings.theme ) ?
-                                   (clockAppSettings.theme ? i18n.tr("Theme") : i18n.tr("Theme (system theme on App start)") ):
-                                   i18n.tr("Theme (will apply after App restart)");
+                titleText.text: i18n.tr("Theme")
                 subText.textSize: Label.Medium
 
                 //TODO This list should be retrived form the system/UITK but I couldn't find a way to do that elegently
@@ -244,20 +242,27 @@ Page {
                 }
 
                 onSelectedItemChanged:  {
-                    if(clockAppSettings.theme !== selectedItem.value  ) {
-                        clockAppSettings.theme = _selectedTheme.selectedItem.value;
-                    }
-
                     subText.text = selectedItem.name;
                 }
 
                 function updateSelectedItem(itemValue) {
                     for(var i=0; i < model.count;i++) {
-                        if(model.get(i).value == itemValue) {
+                        if(model.get(i).value === itemValue) {
                             selectedItem = model.get(i);
                             break;
                         }
                     }
+                }
+
+                Timer {
+                   id: theme_timer
+                   interval: 200; running: false; repeat: false;
+                   onTriggered: {
+                      clockAppSettings.theme = _selectedTheme.selectedItem.value
+                      clockApp.theme.name = clockAppSettings.theme
+                      _selectedTheme.isActivityVisible = false
+                      _selectedTheme.isActivityRunning = false
+                   }
                 }
 
                 Component.onCompleted: updateSelectedItem(clockAppSettings.theme);
@@ -279,6 +284,9 @@ Page {
                     onClicked: {
                         _selectedTheme.updateSelectedItem(model.value)
                         _selectedTheme.expansion.expanded = false
+                        _selectedTheme.isActivityRunning = true
+                        _selectedTheme.isActivityVisible = true
+                        theme_timer.start()
                     }
                 }
             }

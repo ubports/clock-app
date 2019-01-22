@@ -50,6 +50,10 @@ Page {
     // Clock App Alarm Model Reference Variable
     property var alarmModel
 
+    function reloadBottomEdge() {
+        bottomEdgeLoader.reload()
+    }
+
     Timer {
         id: hideBottomEdgeHintTimer
         interval: 3000
@@ -64,12 +68,15 @@ Page {
             item.hint.visible = Qt.binding( function () { return _mainPage.isClockPage } );
             hideBottomEdgeHintTimer.start();
         }
-        Component.onCompleted: setSource("components/AlarmBottomEdge.qml", {
-                                             "objectName": "bottomEdge",
-                                             "parent": _mainPage,
-                                             "pageStack": mainStack,
-                                             "hint.objectName": "bottomEdgeHint"
-                                         });
+        function reload() {
+           setSource("components/AlarmBottomEdge.qml", {
+                                               "objectName": "bottomEdge",
+                                               "parent": _mainPage,
+                                               "pageStack": mainStack,
+                                               "hint.objectName": "bottomEdgeHint"
+                                            })
+        }
+        Component.onCompleted: reload();
     }
 
     AlarmUtils {

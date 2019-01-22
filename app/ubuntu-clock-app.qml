@@ -65,6 +65,7 @@ Window {
         // applicationName for click packages (used as an unique app identifier)
         applicationName: "com.ubuntu.clock"
 
+        theme.name: clockAppSettings.theme
         backgroundColor: theme.palette.normal.background
 
         anchors.fill: parent
@@ -74,15 +75,6 @@ Window {
         Settings {
             id:clockAppSettings
             property string theme: ""
-
-            function updateTheme() {
-                if( typeof(clockAppSettings.theme) == 'string') {
-                   clockApp.theme.name = clockAppSettings.theme
-                }
-            }
-
-            Component.onCompleted: updateTheme();
-
         }
 
         // Database to store the user preferences locally
@@ -121,6 +113,13 @@ Window {
 
         PageStack {
             id: mainStack
+            // onCurrentPageChanged: {
+            //    if(depth=0) {
+            //       console.log("page stack depth = 0!")
+            //       currentPage.bottomEdgeLoader.reload()
+            //    }
+            // }
+            // property var bottomEdgePointer: mainPage.bottomEdgeLoader
 
             Component.onCompleted: push(mainPage)
 
@@ -145,7 +144,7 @@ Window {
                 localizedDateString: localTimeSource.localizedCurrentDateString
             }
         }
-
+        theme.onNameChanged: mainPage.reloadBottomEdge()
 
         Metric {
             id: metricAlarms
@@ -159,4 +158,3 @@ Window {
         }
     }
 }
-

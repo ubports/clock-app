@@ -34,6 +34,8 @@ ListItem {
     property alias titleText: expandableHeader.title
     property alias subText: expandableHeader.subtitle
     property alias listViewHeight: expandableListLoader.height
+    property alias isActivityRunning: activity.running
+    property alias isActivityVisible: activity.visible
 
     height: headerListItem.height
     expansion.height: headerListItem.height + expandableListLoader.height
@@ -46,12 +48,16 @@ ListItem {
         ListItemLayout {
             id: expandableHeader
 
+            ActivityIndicator {
+                id: activity; running: false; visible: false
+                SlotsLayout.position: SlotsLayout.Trailing
+            }
             Icon {
                 id: arrow
 
                 width: units.gu(2)
                 height: width
-                SlotsLayout.position: SlotsLayout.Trailing
+                SlotsLayout.position: SlotsLayout.Last
                 name: "go-down"
                 rotation: expandableListItem.expansion.expanded ? 180 : 0
                 asynchronous: true
